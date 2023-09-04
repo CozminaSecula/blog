@@ -22,6 +22,7 @@ format:
   html:
     theme: custom.scss
     css: styles.css
-
+cookie-consent: true
 editor: visual
+
 
