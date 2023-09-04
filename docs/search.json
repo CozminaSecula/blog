@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/2023-09-04-welcome-to-my-blog/index.html",
+    "href": "posts/2023-09-04-welcome-to-my-blog/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Have you ever had those moments where you thought about sharing your thoughts and interests but never quite got started? I’ve been there in various circumstances, but today marks the day I transform those thoughts into action and write my inaugural blog post. I genuinely appreciate you being here as I take this exciting step.\nThrough this blog, I aim to explore the world of people analytics—a subject that has piqued my curiosity for some time. I want to explore it, learn more about it, and, most importantly, share my learning with you. To ensure that this blog serves you well, I’ve established a few guiding principles:\nSimplicity: My primary goal for this blog is to keep things as simple as possible for you, the reader. Navigating through the topics I cover should be easy.\nFocus: This blog is about people analytics. I know this is a broad field, but I’m starting small, concentrating mainly on practical aspects of people analytics projects.\nConsistency: As I embark on this journey, I aim to provide you with consistent value. I’ll share information, answer questions, and strive to make each blog post a valuable resource.\nAt this stage, I’m still trying to figure out how I’ll use this blog. Through my journey into people analytics, I plan to focus on insight-oriented data projects. Expect posts that guide you through problem definition, question formulation, and the design of analysis workflows aimed at uncovering valuable insights. These will be the core topics I’ll explore, though I won’t limit myself to them.\nIn conclusion, I am grateful for joining me on this exciting adventure. This blog is more than just a personal milestone; it is also an opportunity to share my passion for people analytics with a broader audience.\nI invite you to stay tuned for upcoming posts. Your active participation, comments, and questions will be instrumental in shaping the direction of this blog.\nI am looking forward to an exciting journey ahead of me! Welcome to my blog, where we’ll explore the captivating world of people analytics."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "blog",
+    "section": "",
+    "text": "Welcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\nblogging journey\n\n\n\n\nFinally, I did it. After contemplating it for quite some time, I’ve embarked on my blogging journey. Welcome to my very first blog post!\n\n\n\n\n\n\nSep 4, 2023\n\n\nCozmina Secula\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nSep 4, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 1, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  }
+]
