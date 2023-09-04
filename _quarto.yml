@@ -3,17 +3,24 @@ project:
   output-dir: docs
 
 website:
-  title: "blog"
+  title: "Cozmina Secula"
+  open-graph: true
   navbar:
+    title: false
+    background: "#eee"
+    left: 
+      - href: index.qmd
+        text: Blog
     right:
-      - about.qmd
+      - icon: linkedin
+        href: https://www.linkedin.com/in/cozminasecula/
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/CozminaSecula
+      - icon: envelope
+        href: mailto:cozmina.secula@gmail.com
 format:
   html:
-    theme: cosmo
+    theme: custom.scss
     css: styles.css
 
 editor: visual
