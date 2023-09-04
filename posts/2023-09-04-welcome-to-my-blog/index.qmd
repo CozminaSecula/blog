@@ -7,7 +7,6 @@ categories: [news, blogging journey]
 image: "image.jpg"
 ---
 
-
 Have you ever had those moments where you thought about sharing your thoughts and interests but never quite got started? I've been there in various circumstances, but today marks the day I transform those thoughts into action and write my inaugural blog post. I genuinely appreciate you being here as I take this exciting step.
 
 Through this blog, I aim to explore the world of people analytics---a subject that has piqued my curiosity for some time. I want to explore it, learn more about it, and, most importantly, share my learning with you. To ensure that this blog serves you well, I've established a few guiding principles:
