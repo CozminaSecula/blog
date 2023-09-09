@@ -9,7 +9,7 @@ image: "image.jpg"
 
 Have you ever had those moments where you thought about sharing your thoughts and interests but never quite got started? I've been there in various circumstances, but today marks the day I transform those thoughts into action and write my inaugural blog post. I genuinely appreciate you being here as I take this exciting step.
 
-Through this blog, I aim to explore the world of people analytics---a subject that has piqued my curiosity for some time. I want to explore it, learn more about it, and, most importantly, share my learning with you. To ensure that this blog serves you well, I've established a few guiding principles:
+Through this blog, I aim to share my journey towards people analytics---a subject that has piqued my curiosity for some time. I want to explore it, learn more about it, and, most importantly, share my learning with you. To ensure that this blog serves you well, I've established a few guiding principles:
 
 **Simplicity:** My primary goal for this blog is to keep things as simple as possible for you, the reader. Navigating through the topics I cover should be easy.
 
@@ -17,7 +17,7 @@ Through this blog, I aim to explore the world of people analytics---a subject th
 
 **Consistency:** As I embark on this journey, I aim to provide you with consistent value. I'll share information, answer questions, and strive to make each blog post a valuable resource.
 
-At this stage, I'm still trying to figure out how I'll use this blog. Through my journey into people analytics, I plan to focus on insight-oriented data projects. Expect posts that guide you through problem definition, question formulation, and the design of analysis workflows aimed at uncovering valuable insights. These will be the core topics I'll explore, though I won't limit myself to them.
+At this stage, I'm still trying to figure out how I'll use this blog. Through my journey into people analytics, I plan to focus on insight-oriented data projects. Expect posts that guide you through the methodology for people analytics aimed at uncovering valuable insights. These will be the core topics I'll explore, though I won't limit myself to them.
 
 In conclusion, I am grateful for joining me on this exciting adventure. This blog is more than just a personal milestone; it is also an opportunity to share my passion for people analytics with a broader audience.
 

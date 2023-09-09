@@ -1,5 +1,5 @@
 ---
-title: "Exploring the field of people analytics"
+title: "Towards people analytics"
 subtitle: "A blog by Cozmina Secula"
 listing:
   contents: posts
