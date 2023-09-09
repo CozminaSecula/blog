@@ -23,4 +23,4 @@ In conclusion, I am grateful for joining me on this exciting adventure. This blo
 
 I invite you to stay tuned for upcoming posts. Your active participation, comments, and questions will be instrumental in shaping the direction of this blog.
 
-I am looking forward to an exciting journey ahead of me! Welcome to my blog, where we'll explore the captivating world of people analytics.
+I am looking forward to an exciting journey ahead of me! Welcome to my blog, built using [Quarto](https://quarto.org){target="_blank"}. Here we'll explore the captivating world of people analytics.

@@ -1,5 +1,9 @@
 [
   {
+    "listing": "/projects.html",
+    "items": []
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/posts/2023-09-04-welcome-to-my-blog/index.html"
