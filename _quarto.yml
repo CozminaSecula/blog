@@ -9,11 +9,13 @@ website:
     title: false
     background: "#eee"
     left: 
+      - href: about.qmd
+        text: About
+    right:
       - href: index.qmd
         text: Blog
       - href: projects.qmd
         text: Projects
-    right:
       - icon: linkedin
         href: https://www.linkedin.com/in/cozminasecula/
       - icon: github
