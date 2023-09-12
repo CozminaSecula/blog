@@ -22,3 +22,16 @@ p {
   color:#666;
   font-weight: bold
 }
+
+.presentation-download {
+    font-family: $headings-font-family;
+    background-color: #666;
+    border-color: #666;
+    color: $white;
+
+    &:hover {
+        background-color: #666;
+        border-color: #666;
+        color: $white;
+    }
+}

@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-date','listing-title','listing-reading-time','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -97,6 +97,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Cozmina Secula - Projects">
 <meta property="og:description" content="Projects I have worked on are listed on this page.">
+<meta property="og:image" content="./projects/employee-well-being-at-work/image.jpg">
 <meta property="og:site-name" content="Cozmina Secula">
 </head>
 
@@ -171,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="empirical study">empirical study <span class="quarto-category-count">(1)</span></div><div class="category" data-category="qualitative">qualitative <span class="quarto-category-count">(1)</span></div><div class="category" data-category="well-being at work">well-being at work <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -206,7 +207,42 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-
+<div class="g-col-1" data-index="0" data-categories="qualitative,empirical study,well-being at work" data-listing-date-sort="1693774800000" data-listing-file-modified-sort="1694508782228" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<a href="./projects/employee-well-being-at-work/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./projects/employee-well-being-at-work/image.jpg" class="thumbnail-image card-img" style="height: 250px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Employees’ perception of well-being at work
+</h5>
+<div class="listing-reading-time card-text text-muted">
+2 min
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('qualitative'); return false;">
+qualitative
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('empirical study'); return false;">
+empirical study
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('well-being at work'); return false;">
+well-being at work
+</div>
+</div>
+<div class="card-text listing-description">
+A qualitative study
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Sep 4, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
