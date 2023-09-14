@@ -120,11 +120,7 @@ Based on the case study description, we have data from a management consulting f
 
 : Table 1: Description of JobGrades
 
-We have also noticed that the variables are currently represented by numerical values, although Genders and JobGrade are categorical variables, not numerical ones. The next step involve:
- - replacing these numerical values with descriptive labels for both variables
- - calculate frequencies for each variable
- - create contingency table to see gender distribution across job grade
- 
+We have also noticed that the variables are currently represented by numerical values, although Genders and JobGrade are categorical variables, not numerical ones. The next step involve: - replacing these numerical values with descriptive labels for both variables - calculate frequencies for each variable - create contingency table to see gender distribution across job grade
 
 ```{r}
 #| label: JobGrade
@@ -172,10 +168,7 @@ GenderByGrade
 
 ## Data Analysis
 
-The visualization below shows that women predominantly occupy entry-level roles, while men are more prevalent in senior positions. For instance, the “clerical_officer” role comprises 80% females and 20% males, whereas the “partner” role is represented by nearly 90% males and just over 10% females.
-Up to this point, the data reveals an observable pattern, men are more prevalent in senior roles and women predominantly occupy junior roles. but it’s not completely obvious just from looking at the data whether the company experiences a diversity and inclusion issue or if this is just due to chance.
-The next step involves conducting a statistical analysis to determine the significance of this pattern. To achieve this, we will perform a Chi-squared test.
-
+The visualization below shows that women predominantly occupy entry-level roles, while men are more prevalent in senior positions. For instance, the "clerical_officer" role comprises 80% females and 20% males, whereas the "partner" role is represented by nearly 90% males and just over 10% females. Up to this point, the data reveals an observable pattern, men are more prevalent in senior roles and women predominantly occupy junior roles. but it's not completely obvious just from looking at the data whether the company experiences a diversity and inclusion issue or if this is just due to chance. The next step involves conducting a statistical analysis to determine the significance of this pattern. To achieve this, we will perform a Chi-squared test.
 
 ```{r}
 #| label: graphical-representation
@@ -198,7 +191,7 @@ ggplot(GenderByGrade, aes(x=JobGrade, y=Freq, fill=Gender))+
 
 ```
 
-# Chi-Squared Test 
+# Chi-Squared Test
 
 For the Chi-Squared test we begin by making two hypotheses:
 
@@ -206,9 +199,9 @@ H0: There is no association between gender and job grade within the organization
 
 H1: There is a significant association between gender and job grade within the organization. The observed distribution of females and males across job grades is not a result of random chance; it reflects a significant pattern of male predominance in senior roles and a greater representation of females in entry-level positions
 
-When conducted, the test gives us a “p” value as the result, using which you conclude whether your hypothesis of independence is true or not. In simple words, the “p” value is just the likelihood of your variables being independent.
+When conducted, the test gives us a "p" value as the result, using which you conclude whether your hypothesis of independence is true or not. In simple words, the "p" value is just the likelihood of your variables being independent.
 
-Particularly in this test, it’s crucial to examine the p-values. If the resulting p-value is lower than the typical predetermined significance level of 0.05, we would then reject the null hypothesis.
+Particularly in this test, it's crucial to examine the p-values. If the resulting p-value is lower than the typical predetermined significance level of 0.05, we would then reject the null hypothesis.
 
 ## Conducting a Chi Square Test in R
 
@@ -224,7 +217,6 @@ chisq.test(CrossTable)
 
 ```
 
-
 The p-value is extremely small, less than 2.2e-16, which is very close to zero. Since the p-value is less than the significance level of 0.05, we can confidently reject the null hypothesis, concluding that the two variables are dependent.
 
 This result indicates a statistically significant association between gender and job grade. It suggests that certain factors are influencing the observed distribution of genders within job grades.
@@ -238,5 +230,3 @@ In this article, we have explored the powerful combination of frequency tables a
 We provided a step-by-step explanation of how these two tools can be effectively employed together. Additionally, we presented a real-world case study, showcasing how these tools can offer valuable insights within a practical context.
 
 In conclusion, incorporating statistical tests like the Chi-Squared test alongside tools such as frequency tables empowers us to make more informed decisions based on data. Whether you are analyzing survey results, conducting market research, or exploring data sets across various fields, these tools provide a robust approach to uncovering the narratives hidden within your data.
-
-
