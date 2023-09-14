@@ -1,6 +1,6 @@
 ---
 title: "Exploring Gender Diversity in Senior Roles"
-description: "This post is a guide to using frequency tables and chi-squared test for insightful data analysis. It includes a step-by-step process, a case study, and practical applications."
+description: "This post is a guide to utilizing frequency tables and chi-squared test for insightful data analysis. A step-by-step process and a practical case study are included."
 author: "Cozmina Secula"
 date: "2023-09-14"
 image: image14.jpg
