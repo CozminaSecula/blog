@@ -1,0 +1,242 @@
+---
+title: "Exploring Gender Diversity in Senior Roles"
+description: "This post is a guide to using frequency tables and chi-squared test for insightful data analysis. It includes a step-by-step process, a case study, and practical applications."
+author: "Cozmina Secula"
+date: "2023-09-14"
+image: image14.jpg
+categories: [frequency tables, chi-squared test, categorical variables, quantitative analysis]
+format: 
+  html: 
+   code-fold: true
+   code-tools: true
+execute: 
+  echo: false
+  warning: false
+---
+
+# Introduction
+
+A people analytics project typically involves working with quantifiable data to help answer project questions and meet objectives. Quantitative data must be analyzed and interpreted to be useful, and this is where quantitative analysis techniques come into play. This post introduces two fundamental tools for initiating data analysis: frequency tables and the chi-squared test.
+
+Frequency tables are a common statistical tool used to analyze categorical data. They achieve this by counting the occurrences of variables within a data set, offering a clear summary of the distribution and patterns of these categorical variables. You'll often want to determine if there's a significant relationship between two categorical variables in your data set. The chi-squared test helps you estimate whether these two variables are associated or related by function. In simpler terms, it measures the level of independence shared by two categorical variables. When used together, these tools can reveal interesting patterns and relationships within your data.
+
+In this post, I will guide you through using frequency tables and the chi-squared test for insightful data analysis.
+
+# Understanding Frequency Tables
+
+## What is a frequency table
+
+The simplest way to summarize data for individual variables is to present them in a table, which displays specific amounts. In the case of categorical data, the table provides a summary of the number of cases (frequencies) in each category. This is known as a frequency table and is used when you want to summarize data for a single variable.
+
+However, when you want to examine the relationship between two variables simultaneously, you can use a different type of table called a contingency table or cross-tab. For example, when working with survey data, frequency tables can be incredibly useful for gaining insights into the distribution and patterns of categorical variables.
+
+# Chi-Squared Test: An Overview
+
+A chi-squared test, also known as a chi-square or χ2 test, is a statistical hypothesis test commonly employed in the analysis of contingency tables, especially when dealing with large sample sizes. In simpler terms, this test is primarily used to determine whether two categorical variables (representing two dimensions of the contingency table) are independent in influencing the values observed within the table. [Learn more on Wikipedia](https://en.wikipedia.org/wiki/Chi-squared_test).
+
+This test is frequently utilized in research to assess the independence of two variables. It operates by comparing the observed values in the table with what would be expected if the two distributions were entirely independent.
+
+In essence, the chi-squared test evaluates the likelihood of the data in a table occurring solely by chance by contrasting it with the expected outcomes if the two variables were truly independent of each other.
+
+## Applying Chi-Squared Test
+
+The procedure for assessing the presence of a significant difference between variables involves the following steps:
+
+1.  **Formulate the Hypotheses**: The null hypothesis (H0) assumes that there's no association between the variables (i.e., they are independent). The alternative hypothesis (H1) assumes that there is an association.
+2.  **Calculate Expected Values**: For each cell in the table, calculate the expected frequency if H0 is true. This is done by multiplying the row total and column total for that cell and dividing by the overall total.
+3.  **Compute Chi-Squared Statistic**: For each cell, subtract the expected frequency from the observed frequency, square the result, and divide by the expected frequency. Sum these values for all cells to get the Chi-Squared statistic.
+4.  **Determine Degrees of Freedom**: This is typically calculated as (number of rows - 1) \* (number of columns - 1).
+5.  **Compute P-value**: Using the Chi-Squared statistic and degrees of freedom, compute the P-value from a Chi-Squared distribution table.
+6.  **Interpret Result** (determine statistical significance): If the P-value is less than your chosen significance level (often 0.05), reject H0 and conclude that there is a significant association between the variables.
+
+# Case Study: Gaining Insights with Chi-Squared Test and Frequency Tables
+
+In this section, we will consider a case study focused on diversity and inclusion (D&I).The case study is sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916). Our exploration will cover the creation of frequency tables in R using both base R functions and the `tidyverse` packages. Additionally we will be going over the Chi Square test and its implementation using R.
+
+## The Business Problem
+
+The company aims to investigate the possible underrepresentation of women in senior leadership roles within the organization. This inquiry is motivated by both commercial and people-centric considerations. From a commercial standpoint, the organization seeks to foster a greater diversity of thought in senior and strategic discussions. On the other hand, from a people perspective, the organization wants to assess whether it maintains gender balance by providing positive role models for younger employees.
+
+## The Research Question
+
+Are women underrepresented in senior leadership roles within the organization?
+
+## Data Preparation
+
+The data are available [here](https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446)
+
+### Load in libraries
+
+```{r}
+#| label: load-packages
+#| echo: true
+
+
+library(tidyverse)
+library(here)
+library(ggplot2)
+
+```
+
+### Read the data
+
+Load the data set and take a look at it.
+
+```{r}
+#| label: read-the-data
+#| echo: true
+
+
+data <- here("posts","2023-09-14-frequency-tables-and-chi-squared-test", "diversity1.csv")
+diversity <- readr::read_csv(data)
+diversity
+
+```
+
+We have information about 1483 employees, each with 11 variables recorded. Our primary goal is to determine whether there is an underrepresentation of women in senior leadership positions within the organization. The specific variables we are focusing on are Gender and JobGrade. To accomplish our objective, we will begin by selecting the data related these key variables.
+
+```{r}
+#| label: select-diversity1
+#| echo: true
+
+diversity1 <- diversity %>% 
+  select(Gender, JobGrade)
+diversity1
+
+```
+
+Based on the case study description, we have data from a management consulting firm comprising 1,493 employees, with 746 being female and 745 being male. At first glance, it appears to indicate an organization with an equal gender balance, with 50 percent male and 50 percent female representation. The organization comprises eight distinct job grades, which are listed alongside their corresponding numbers in Table 1.
+
+| Grade | Job Grade                   |
+|-------|-----------------------------|
+| 1     | Clerical/Officer            |
+| 2     | Administrator/Assistant     |
+| 3     | Graduate/Trainee Consultant |
+| 4     | Consultant                  |
+| 5     | Senior Consultant           |
+| 6     | Managing Consultant         |
+| 7     | Principal Consultant        |
+| 8     | Partner                     |
+
+: Table 1: Description of JobGrades
+
+We have also noticed that the variables are currently represented by numerical values, although Genders and JobGrade are categorical variables, not numerical ones. The next step involve:
+ - replacing these numerical values with descriptive labels for both variables
+ - calculate frequencies for each variable
+ - create contingency table to see gender distribution across job grade
+ 
+
+```{r}
+#| label: JobGrade
+#| echo: true
+
+JobGrade <- factor(diversity1$JobGrade,
+    levels = c(1:8),
+    labels = c("Clerical/Officer","Administrator/Assistant","Graduate/Trainee Consultant","Consultant","Senior Consultant","Managing Consultant","Principal Consultant","Partner")) # replacing numerical values with descriptive labels for JobGrade
+
+Freq1= table(JobGrade) # creates a frequency table for the variable JobGrade
+Freq1
+PcntGrade <- table(JobGrade) # calculate the proportions of the different factor levels in JobGrade
+prop.table(PcntGrade) 
+
+#| label: Gender
+
+Gender <- factor(diversity1$Gender,
+levels = c(1,2),
+labels = c("Female", "Male")) # replacing numerical values with descriptive labels for Gender
+
+Freq2= table(Gender) # creates a frequency table for the variable Gender
+Freq2
+PcntGender <- table(Gender)
+prop.table(PcntGender) # calculate the proportions of the different factor levels in Gender
+
+
+
+```
+
+```{r}
+#| label: contingency table
+#| echo: true
+#| include: true
+
+
+CrossTable <- table(JobGrade, Gender) # create a contingency table
+CrossTable
+
+GenderByGrade <- as.data.frame(round(prop.table(CrossTable,1)*100,2))
+GenderByGrade
+
+
+
+```
+
+## Data Analysis
+
+The visualization below shows that women predominantly occupy entry-level roles, while men are more prevalent in senior positions. For instance, the “clerical_officer” role comprises 80% females and 20% males, whereas the “partner” role is represented by nearly 90% males and just over 10% females.
+Up to this point, the data reveals an observable pattern, men are more prevalent in senior roles and women predominantly occupy junior roles. but it’s not completely obvious just from looking at the data whether the company experiences a diversity and inclusion issue or if this is just due to chance.
+The next step involves conducting a statistical analysis to determine the significance of this pattern. To achieve this, we will perform a Chi-squared test.
+
+
+```{r}
+#| label: graphical-representation
+#| echo: true
+
+
+ggplot(GenderByGrade, aes(x=JobGrade, y=Freq, fill=Gender))+
+  geom_col()+
+  facet_grid(vars(Gender))+
+  guides(fill= "none")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        panel.background = element_blank())+
+   labs(title = "GenderByGrade", 
+       subtitle = "Graphical representation of male/female % within each Job grade", 
+       caption = "Caption Here", 
+       x = "Job Grade", 
+       y = "Y-Percentage", 
+       fill = "Gender")+
+   scale_y_continuous(breaks=seq(10, 100, by=10))
+
+```
+
+# Chi-Squared Test 
+
+For the Chi-Squared test we begin by making two hypotheses:
+
+H0: There is no association between gender and job grade within the organization. The observed distribution of females and males across job grades is due to random chance.
+
+H1: There is a significant association between gender and job grade within the organization. The observed distribution of females and males across job grades is not a result of random chance; it reflects a significant pattern of male predominance in senior roles and a greater representation of females in entry-level positions
+
+When conducted, the test gives us a “p” value as the result, using which you conclude whether your hypothesis of independence is true or not. In simple words, the “p” value is just the likelihood of your variables being independent.
+
+Particularly in this test, it’s crucial to examine the p-values. If the resulting p-value is lower than the typical predetermined significance level of 0.05, we would then reject the null hypothesis.
+
+## Conducting a Chi Square Test in R
+
+We will utilize data from "CrossTable", which provides information about gender and job grade.
+
+The "chisq.test()" function is an built-in function of R that enables you to perform the Chi-Square test. It will provide us with all the necessary information to determine the independence of variables within a data set and help us conclude whether they are related or not.
+
+```{r}
+#| label: chi-squared-test
+#| echo: true
+
+chisq.test(CrossTable)
+
+```
+
+
+The p-value is extremely small, less than 2.2e-16, which is very close to zero. Since the p-value is less than the significance level of 0.05, we can confidently reject the null hypothesis, concluding that the two variables are dependent.
+
+This result indicates a statistically significant association between gender and job grade. It suggests that certain factors are influencing the observed distribution of genders within job grades.
+
+However, we cannot definitively determine whether these factors may involve forms of discrimination. Further analysis is needed to investigate this possibility.
+
+# Conclusions
+
+In this article, we have explored the powerful combination of frequency tables and the Chi-Squared test in data analysis. We began by understanding the concept of frequency tables and how they benefit us in simplifying large data sets and identifying patterns. Subsequently, we delved into the Chi-Squared test, a statistical hypothesis test used to determine the presence of a significant association between two categorical variables.
+
+We provided a step-by-step explanation of how these two tools can be effectively employed together. Additionally, we presented a real-world case study, showcasing how these tools can offer valuable insights within a practical context.
+
+In conclusion, incorporating statistical tests like the Chi-Squared test alongside tools such as frequency tables empowers us to make more informed decisions based on data. Whether you are analyzing survey results, conducting market research, or exploring data sets across various fields, these tools provide a robust approach to uncovering the narratives hidden within your data.
+
+
