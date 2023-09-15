@@ -8,7 +8,7 @@
 
 <meta name="author" content="Cozmina Secula">
 <meta name="dcterms.date" content="2023-09-14">
-<meta name="description" content="This post is a guide to using frequency tables and chi-squared test for insightful data analysis. It includes a step-by-step process, a case study, and practical applications.">
+<meta name="description" content="Discover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a real-world case study on gender representation in senior roles.">
 
 <title>Cozmina Secula - Unlocking Insights: Analyzing Categorical Data with Frequency Tables and Chi-Squared Test</title>
 <style>
@@ -157,10 +157,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">Exploring Gender Diversity in Senior Roles</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+      <div class="quarto-title-block"><div><h1 class="title">Unlocking Insights: Analyzing Categorical Data with Frequency Tables and Chi-Squared Test</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
                   <div>
         <div class="description">
-          This post is a guide to using frequency tables and chi-squared test for insightful data analysis. It includes a step-by-step process, a case study, and practical applications.
+          Discover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a real-world case study on gender representation in senior roles.
         </div>
       </div>
                           <div class="quarto-categories">
@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#understanding-frequency-tables" id="toc-understanding-frequency-tables" class="nav-link" data-scroll-target="#understanding-frequency-tables">Understanding Frequency Tables</a>
   <ul class="collapse">
-  <li><a href="#what-is-a-frequency-table" id="toc-what-is-a-frequency-table" class="nav-link" data-scroll-target="#what-is-a-frequency-table">What is a frequency table</a></li>
+  <li><a href="#what-is-a-frequency-table" id="toc-what-is-a-frequency-table" class="nav-link" data-scroll-target="#what-is-a-frequency-table">What is a frequency table?</a></li>
   </ul></li>
   <li><a href="#chi-squared-test-an-overview" id="toc-chi-squared-test-an-overview" class="nav-link" data-scroll-target="#chi-squared-test-an-overview">Chi-Squared Test: An Overview</a>
   <ul class="collapse">
@@ -237,16 +237,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>A people analytics project typically involves working with quantifiable data to help answer project questions and meet objectives. Quantitative data must be analyzed and interpreted to be useful, and this is where quantitative analysis techniques come into play. This post introduces two fundamental tools for initiating data analysis: frequency tables and the chi-squared test.</p>
-<p>Frequency tables are a common statistical tool used to analyze categorical data. They achieve this by counting the occurrences of variables within a data set, offering a clear summary of the distribution and patterns of these categorical variables. You’ll often want to determine if there’s a significant relationship between two categorical variables in your data set. The chi-squared test helps you estimate whether these two variables are associated or related by function. In simpler terms, it measures the level of independence shared by two categorical variables. When used together, these tools can reveal interesting patterns and relationships within your data.</p>
-<p>In this post, I will guide you through using frequency tables and the chi-squared test for insightful data analysis.</p>
+<p>A people analytics project typically involves working with quantifiable data to address business questions and objectives. However, for data to be valuable, it requires analysis and interpretation, which is where analytical techniques become crucial. This post introduces two foundational tools for initiating data analysis: frequency tables and the chi-squared test.</p>
+<p>Frequency tables serve as common statistical instruments for categorical data analysis. They achieve this by counting the occurrences of variables within a dataset, providing a concise overview of the distribution and patterns within these categorical variables. When analyzing categorical data, it is often essential to determine if a significant relationship exists between two categorical variables within your dataset. The chi-squared test helps determine whether these two variables are associated or functionally related. In simpler terms, it quantifies the degree of independence between two categorical variables. When employed together, these two tools can unveil intriguing patterns and relationships within your data.</p>
+<p>In this post, I will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.</p>
 </section>
 <section id="understanding-frequency-tables" class="level1">
 <h1>Understanding Frequency Tables</h1>
 <section id="what-is-a-frequency-table" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-a-frequency-table">What is a frequency table</h2>
+<h2 class="anchored" data-anchor-id="what-is-a-frequency-table">What is a frequency table?</h2>
 <p>The simplest way to summarize data for individual variables is to present them in a table, which displays specific amounts. In the case of categorical data, the table provides a summary of the number of cases (frequencies) in each category. This is known as a frequency table and is used when you want to summarize data for a single variable.</p>
-<p>However, when you want to examine the relationship between two variables simultaneously, you can use a different type of table called a contingency table or cross-tab. For example, when working with survey data, frequency tables can be incredibly useful for gaining insights into the distribution and patterns of categorical variables.</p>
+<p>However, when you want to examine the relationship between two variables simultaneously, you can use a different type of table called a contingency table or cross-tab. For example, when working with survey data, frequency tables can be very useful for gaining insights into the distribution and patterns of categorical variables.</p>
 </section>
 </section>
 <section id="chi-squared-test-an-overview" class="level1">
@@ -557,9 +557,10 @@ X-squared = 164.7, df = 7, p-value &lt; 2.2e-16</code></pre>
 </section>
 <section id="conclusions" class="level1">
 <h1>Conclusions</h1>
-<p>In this article, we have explored the powerful combination of frequency tables and the Chi-Squared test in data analysis. We began by understanding the concept of frequency tables and how they benefit us in simplifying large data sets and identifying patterns. Subsequently, we delved into the Chi-Squared test, a statistical hypothesis test used to determine the presence of a significant association between two categorical variables.</p>
-<p>We provided a step-by-step explanation of how these two tools can be effectively employed together. Additionally, we presented a real-world case study, showcasing how these tools can offer valuable insights within a practical context.</p>
-<p>In conclusion, incorporating statistical tests like the Chi-Squared test alongside tools such as frequency tables empowers us to make more informed decisions based on data. Whether you are analyzing survey results, conducting market research, or exploring data sets across various fields, these tools provide a robust approach to uncovering the narratives hidden within your data.</p>
+<p>In this article, we explored the power of two fundamental tools for analyzing categorical data: frequency tables and the chi-squared test. Frequency tables provide a clear summary of the distribution and patterns within categorical variables, while the chi-squared test helps us determine if there’s a significant relationship between two categorical variables.</p>
+<p>Through a case study on gender representation in senior roles, we demonstrated how these tools can reveal crucial insights. We found a noticeable gender disparity, with men predominantly occupying senior positions and women largely in junior roles.</p>
+<p>The chi-squared test’s results, with a p-value close to zero, confirmed a significant association between gender and job grade. While this statistical evidence does not directly imply discrimination, it signals that factors beyond chance influence this distribution.</p>
+<p>To address potential discrimination and foster diversity and inclusion, further analysis and actions are necessary. These tools empower organizations to make data-driven decisions and drive positive change in their workforce dynamics.</p>
 
 
 <!-- -->
