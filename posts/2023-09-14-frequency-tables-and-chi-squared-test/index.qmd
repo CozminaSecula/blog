@@ -51,7 +51,7 @@ The procedure for assessing the presence of a significant difference between var
 
 # Case Study: Gaining Insights with Chi-Squared Test and Frequency Tables
 
-In this section, we will consider a case study focused on diversity and inclusion (D&I).The case study is sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916). Our exploration will cover the creation of frequency tables in R using both base R functions and the `tidyverse` and `ggplot2` packages. Additionally we will be going over the Chi Square test and its implementation using R.
+In this section, we will consider a case study focused on diversity and inclusion (D&I).The case study is sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916). Our exploration will cover the creation of frequency tables, data preparation and analysis in R using both base R functions and the `tidyverse` and `ggplot2` packages. Additionally we will be going over the Chi Square test and its implementation using R.
 
 ## The Business Problem
 
