@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2023-09-14">
 <meta name="description" content="This post is a guide to using frequency tables and chi-squared test for insightful data analysis. It includes a step-by-step process, a case study, and practical applications.">
 
-<title>Cozmina Secula - Exploring Gender Diversity in Senior Roles</title>
+<title>Cozmina Secula - Unlocking Insights: Analyzing Categorical Data with Frequency Tables and Chi-Squared Test</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,8 +99,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Cozmina Secula - Exploring Gender Diversity in Senior Roles">
-<meta property="og:description" content="This post is a guide to utilizing frequency tables and chi-squared test for insightful data analysis. A step-by-step process and a practical case study are included.">
+<meta property="og:title" content="Cozmina Secula - Unlocking Insights: Analyzing Categorical Data with Frequency Tables and Chi-Squared Test">
+<meta property="og:description" content="Discover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a real-world case study on gender representation in senior roles.">
 <meta property="og:image" content="diversity.jpg">
 <meta property="og:site-name" content="Cozmina Secula">
 </head>
@@ -854,8 +854,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://utteranc.es/client.js" repo="CozminaSecula/blogComments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb21" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Exploring Gender Diversity in Senior Roles"</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "This post is a guide to utilizing frequency tables and chi-squared test for insightful data analysis. A step-by-step process and a practical case study are included."</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Unlocking Insights: Analyzing Categorical Data with Frequency Tables and Chi-Squared Test"</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Discover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a real-world case study on gender representation in senior roles."</span></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Cozmina Secula"</span></span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-09-14"</span></span>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> diversity.jpg</span></span>
@@ -871,19 +871,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction</span></span>
 <span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>A people analytics project typically involves working with quantifiable data to help answer project questions and meet objectives. Quantitative data must be analyzed and interpreted to be useful, and this is where quantitative analysis techniques come into play. This post introduces two fundamental tools for initiating data analysis: frequency tables and the chi-squared test.</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>A people analytics project typically involves working with quantifiable data to address business questions and objectives. However, for data to be valuable, it requires analysis and interpretation, which is where analytical techniques become crucial. This post introduces two foundational tools for initiating data analysis: frequency tables and the chi-squared test.</span>
 <span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>Frequency tables are a common statistical tool used to analyze categorical data. They achieve this by counting the occurrences of variables within a data set, offering a clear summary of the distribution and patterns of these categorical variables. You'll often want to determine if there's a significant relationship between two categorical variables in your data set. The chi-squared test helps you estimate whether these two variables are associated or related by function. In simpler terms, it measures the level of independence shared by two categorical variables. When used together, these tools can reveal interesting patterns and relationships within your data.</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>Frequency tables serve as common statistical instruments for categorical data analysis. They achieve this by counting the occurrences of variables within a dataset, providing a concise overview of the distribution and patterns within these categorical variables. When analyzing categorical data, it is often essential to determine if a significant relationship exists between two categorical variables within your dataset. The chi-squared test helps determine whether these two variables are associated or functionally related. In simpler terms, it quantifies the degree of independence between two categorical variables. When employed together, these two tools can unveil intriguing patterns and relationships within your data.</span>
 <span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>In this post, I will guide you through using frequency tables and the chi-squared test for insightful data analysis.</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>In this post, I will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.</span>
 <span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a><span class="fu"># Understanding Frequency Tables</span></span>
 <span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is a frequency table</span></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is a frequency table?</span></span>
 <span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>The simplest way to summarize data for individual variables is to present them in a table, which displays specific amounts. In the case of categorical data, the table provides a summary of the number of cases (frequencies) in each category. This is known as a frequency table and is used when you want to summarize data for a single variable.</span>
 <span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>However, when you want to examine the relationship between two variables simultaneously, you can use a different type of table called a contingency table or cross-tab. For example, when working with survey data, frequency tables can be incredibly useful for gaining insights into the distribution and patterns of categorical variables.</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>However, when you want to examine the relationship between two variables simultaneously, you can use a different type of table called a contingency table or cross-tab. For example, when working with survey data, frequency tables can be very useful for gaining insights into the distribution and patterns of categorical variables.</span>
 <span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a><span class="fu"># Chi-Squared Test: An Overview</span></span>
 <span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a></span>
@@ -1080,11 +1080,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb21-239"><a href="#cb21-239" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-240"><a href="#cb21-240" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusions</span></span>
 <span id="cb21-241"><a href="#cb21-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-242"><a href="#cb21-242" aria-hidden="true" tabindex="-1"></a>In this article, we have explored the powerful combination of frequency tables and the Chi-Squared test in data analysis. We began by understanding the concept of frequency tables and how they benefit us in simplifying large data sets and identifying patterns. Subsequently, we delved into the Chi-Squared test, a statistical hypothesis test used to determine the presence of a significant association between two categorical variables.</span>
+<span id="cb21-242"><a href="#cb21-242" aria-hidden="true" tabindex="-1"></a>In this article, we explored the power of two fundamental tools for analyzing categorical data: frequency tables and the chi-squared test. Frequency tables provide a clear summary of the distribution and patterns within categorical variables, while the chi-squared test helps us determine if there's a significant relationship between two categorical variables.</span>
 <span id="cb21-243"><a href="#cb21-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-244"><a href="#cb21-244" aria-hidden="true" tabindex="-1"></a>We provided a step-by-step explanation of how these two tools can be effectively employed together. Additionally, we presented a real-world case study, showcasing how these tools can offer valuable insights within a practical context.</span>
+<span id="cb21-244"><a href="#cb21-244" aria-hidden="true" tabindex="-1"></a>Through a case study on gender representation in senior roles, we demonstrated how these tools can reveal crucial insights. We found a noticeable gender disparity, with men predominantly occupying senior positions and women largely in junior roles.</span>
 <span id="cb21-245"><a href="#cb21-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-246"><a href="#cb21-246" aria-hidden="true" tabindex="-1"></a>In conclusion, incorporating statistical tests like the Chi-Squared test alongside tools such as frequency tables empowers us to make more informed decisions based on data. Whether you are analyzing survey results, conducting market research, or exploring data sets across various fields, these tools provide a robust approach to uncovering the narratives hidden within your data.</span>
+<span id="cb21-246"><a href="#cb21-246" aria-hidden="true" tabindex="-1"></a>The chi-squared test's results, with a p-value close to zero, confirmed a significant association between gender and job grade. While this statistical evidence does not directly imply discrimination, it signals that factors beyond chance influence this distribution.</span>
+<span id="cb21-247"><a href="#cb21-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-248"><a href="#cb21-248" aria-hidden="true" tabindex="-1"></a>To address potential discrimination and foster diversity and inclusion, further analysis and actions are necessary. These tools empower organizations to make data-driven decisions and drive positive change in their workforce dynamics.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
