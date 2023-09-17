@@ -1,6 +1,6 @@
 ---
 title: "The Art of Problem Framing: The Foundation of Any People Analytics Project"
-description: "Effective people analytics begins with clear problem framing. Define problem statements, ask focused questions and align with organizational goals, and avoid analysis paralysis."
+description: "People analytics projects begin with problem framing. Define problem statements and ask focused questions that align with organizational goals."
 author: "Cozmina Secula"
 date: "2023-09-17"
 categories: [problem framing, organizational impact, people analytics]
@@ -8,7 +8,7 @@ categories: [problem framing, organizational impact, people analytics]
 
 Any successful people analytics project begins with a carefully framed problem. This crucial step sets the direction for everything that follows, from data collection to analysis and interpretation. Without a well-defined problem and business question, even the most sophisticated analysis can miss the mark.
 
-![](setgoals.jpg)
+![](setgoals.jpg){fig-align="center" width="400"}
 
 Imagine embarking on a journey without a clear destination. Would you set sail without knowing the port you aim to reach? Similarly, in a people analytics project, the problem statement serves as your North Star, guiding you toward relevant insights, actionable solutions, and measurable outcomes. It aligns your efforts with organizational goals and ensures that your analysis has a meaningful impact.
 
@@ -70,36 +70,6 @@ Defining the problem and formulating the question is often an iterative process.
 
 Involve stakeholders throughout the process. Engage with them to understand their specific needs, concerns, and objectives. Their insights can provide valuable context and help ensure your work is relevant and actionable.
 
-![](quiz.jpg){fig-align="center"}
-
-Now that we've gone through the process of defining a problem statement, let's test our understanding with a short quiz. This will help reinforce what we've learned and ensure we're ready to apply these concepts in our people analytics projects.
-
-1\. **True or False**: The problem statement should be vague and broad to cover all possible scenarios.
-
-2\. **Multiple Choice**: Which of the following is NOT a characteristic of a well-defined problem statement?
-
-a\) Specific
-
-b\) Measurable
-
-c\) Actionable
-
-d\) Complex
-
-3\. **Fill in the Blank**: A well-defined problem statement aligns the project with the organization's \_\_\_\_\_\_\_.
-
-4\. **True or False**: Stakeholder involvement is not necessary when defining a problem statement.
-
-5\. **Multiple Choice**: Which of the following is NOT a step in the process of defining a problem statement?
-
-a\) Understand the Context
-
-b\) Formulate the Business Question
-
-c\) Identify Key Metrics
-
-d\) Ignore Data Requirements
-
 # Conclusion
 
 In this post, we have explored the act of defining the problem statement and business questions, the cornerstone upon which successful projects are built.
@@ -120,32 +90,16 @@ To further support you in the problem definition process, here are some addition
 
 Remember to use the SMART (Specific, Measurable, Achievable, Relevant, Time-bound) criteria when defining your problem statement. This can help ensure that your problem is well-defined and sets a solid foundation for your project.
 
-To learn more about SMART goals read this article [What Are SMART Goals? Definition, Best Practices, And How To Make Your Own](https://www.tableau.com/learn/articles/smart-goals-criteria)
+To learn more about SMART goals: [What Are SMART Goals? Definition, Best Practices, And How To Make Your Own](https://www.tableau.com/learn/articles/smart-goals-criteria)
 
 ## Stakeholder Analysis
 
 Conduct a stakeholder analysis to identify who has an interest in your project, what their expectations are, and how they will be impacted. This can provide valuable insights and help ensure your work is relevant and actionable.
 
-To learn more about how to conduct a stakeholder analysis read this article [Stakeholder Analysis: Approaches, Examples, Templates, and Tools](https://www.altexsoft.com/blog/stakeholder-analysis/)
+Find out more about how to conduct a stakeholder analysis: [Stakeholder Analysis: Approaches, Examples, Templates, and Tools](https://www.altexsoft.com/blog/stakeholder-analysis/)
 
 ## Visual Thinking
 
 Use visual thinking techniques like mind maps or diagrams to help define your problem and formulate your business question. Visualizing your thoughts can make complex problems easier to understand.
 
-Learn more in this article [The Ultimate List of Visual Creative Thinking Techniques for Your Next Great Idea](https://creately.com/blog/diagrams/creative-thinking-techniques/)
-
-![](quiz2.jpg){fig-align="center" width="255"}
-
-## Check the quiz answers
-
-After going through the entire article and taking the quiz, let's check your answers. Remember, the goal is not just to get the right answers but to understand the concepts. So, even if you didn't get all the answers right, don't worry! The important thing is that you're learning and improving.
-
-1.  **False**: The problem statement should be specific and clear, not vague and broad.
-
-2.  **d) Complex**: A well-defined problem statement should be specific, measurable, and actionable, but not necessarily complex.
-
-3.  **Goals**: A well-defined problem statement aligns the project with the organization's goals.
-
-4.  **False**: Stakeholder involvement is crucial when defining a problem statement as they can provide valuable insights and context.
-
-5.  **d) Ignore Data Requirements**: Ignoring data requirements is not a step in the process of defining a problem statement. Understanding what data is needed is a key part of the process.
+Learn more in this article: [The Ultimate List of Visual Creative Thinking Techniques for Your Next Great Idea](https://creately.com/blog/diagrams/creative-thinking-techniques/)
