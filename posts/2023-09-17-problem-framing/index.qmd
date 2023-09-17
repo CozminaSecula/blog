@@ -6,7 +6,7 @@ date: "2023-09-17"
 categories: [problem framing, organizational impact, people analytics]
 ---
 
-Any successful people analytics project begins with a carefully framed problem. This crucial step sets the direction for everything that follows, from data collection to analysis and interpretation. Without a well-defined problem and business question, even the most sophisticated analysis can miss the mark.
+Any successful people analytics project begins with a carefully framed problem. This crucial step sets the direction for everything that follows, from data collection to analysis and interpretation. Without a well-defined business problem and question, even the most sophisticated analysis can miss the mark.
 
 ![](setgoal.jpg){fig-align="center" width="300"}
 
@@ -26,7 +26,7 @@ Neglecting to frame the problem in your project can lead to significant risks. F
 
 Additionally, failing to establish a well-defined problem may result in wasted resources. Analyzing data without a specific purpose can lead to collecting unnecessary data or conducting irrelevant analyses. The results may not address the business questions, rendering them useless for decision-making. It could lead to misguided strategies based on misleading insights. Hence, careful problem framing is not just a good to have but a must-have in every analytics project. The following section will guide you in defining the problem statement and formulating business questions.
 
-# Process for Defining The Problem Statement and Business Questions
+# Process for Defining the Problem Statement and Business Questions
 
 Defining the problem statement and formulating business questions is a multi-step process that requires careful consideration. Here's a step-by-step guide:
 
@@ -98,8 +98,4 @@ Conduct a stakeholder analysis to identify who has an interest in your project, 
 
 Find out more about how to conduct a stakeholder analysis: [Stakeholder Analysis: Approaches, Examples, Templates, and Tools](https://www.altexsoft.com/blog/stakeholder-analysis/)
 
-## Visual Thinking
 
-Use visual thinking techniques like mind maps or diagrams to help define your problem and formulate your business question. Visualizing your thoughts can make complex problems easier to understand.
-
-Learn more in this article: [The Ultimate List of Visual Creative Thinking Techniques for Your Next Great Idea](https://creately.com/blog/diagrams/creative-thinking-techniques/)
