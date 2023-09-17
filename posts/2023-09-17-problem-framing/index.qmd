@@ -4,6 +4,7 @@ description: "People analytics projects begin with problem framing. Define probl
 author: "Cozmina Secula"
 date: "2023-09-17"
 categories: [problem framing, organizational impact, people analytics]
+draft: true
 ---
 
 Any successful people analytics project begins with a carefully framed problem. This crucial step sets the direction for everything that follows, from data collection to analysis and interpretation. Without a well-defined business problem and question, even the most sophisticated analysis can miss the mark.
@@ -97,5 +98,3 @@ To learn more about SMART goals: [What Are SMART Goals? Definition, Best Practic
 Conduct a stakeholder analysis to identify who has an interest in your project, what their expectations are, and how they will be impacted. This can provide valuable insights and help ensure your work is relevant and actionable.
 
 Find out more about how to conduct a stakeholder analysis: [Stakeholder Analysis: Approaches, Examples, Templates, and Tools](https://www.altexsoft.com/blog/stakeholder-analysis/)
-
-

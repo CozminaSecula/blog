@@ -14,90 +14,6 @@
     "text": "Abstract\nEmployee well-being is essential for both individuals and organizations. Despite large investments by organizations in improving employee well-being, research has shown a deterioration over time. To address this problem, researchers advise organizations to look beyond statistical data and investigate the underlying causes of employees’ low perception of well-being. This study aims to explore the work environment factors and managers’ behaviors that employees perceive as influencing their well-being at work and how they perceive them. Following a qualitative research design, data were collected cross-sectionally using semi-structured interviews involving 11 employees from various occupations, organizations, and industries. A template analysis strategy was used for data analysis. The findings reveal a variety of job resources and demands that influence well-being at work. Factors such as social support at work, autonomy and flexibility in work, opportunities for professional development, and relevant feedback were all perceived by participants as positively influencing their well-being. On the other hand, dealing with the unpredictability and overload of multiple tasks and ambiguity at work negatively affected their well-being. Furthermore, the findings show that certain managerial behaviors can promote or negatively impact employee well-being. Managers’ behaviors that promote employee well-being include, for example, demonstrating appreciation and recognition at work, showing responsiveness, and providing support and clarity. Lack of responsiveness, excessive control over participants’ work, and failure to allocate resources or manage workloads were perceived as impediments to workplace well-being. This study suggests that organizations can adopt the Job Demand-Resource Model to identify the specific job resources and demands that influence employee well-being. This can lead to more effective interventions addressing these factors and increase overall employee well-being.\n\n\n\n\n\n  \n     Download Presentation"
   },
   {
-    "objectID": "posts/2023-09-17-problem-framing/index.html",
-    "href": "posts/2023-09-17-problem-framing/index.html",
-    "title": "The Art of Problem Framing: The Foundation of Any People Analytics Project",
-    "section": "",
-    "text": "Any successful people analytics project begins with a carefully framed problem. This crucial step sets the direction for everything that follows, from data collection to analysis and interpretation. Without a well-defined business problem and question, even the most sophisticated analysis can miss the mark.\nImagine embarking on a journey without a clear destination. Would you set sail without knowing the port you aim to reach? Similarly, in a people analytics project, the problem statement serves as your North Star, guiding you toward relevant insights, actionable solutions, and measurable outcomes. It aligns your efforts with organizational goals and ensures that your analysis has a meaningful impact.\nThis post discusses the significance of problem framing, its impact on analytics projects, and how to do it effectively. Whether you’re a seasoned data professional or just starting your analytics journey, this guide will provide valuable insights to enhance your problem-solving skills."
-  },
-  {
-    "objectID": "posts/2023-09-17-problem-framing/index.html#understand-the-context",
-    "href": "posts/2023-09-17-problem-framing/index.html#understand-the-context",
-    "title": "The Art of Problem Framing: The Foundation of Any People Analytics Project",
-    "section": "Understand the Context",
-    "text": "Understand the Context\nStart by understanding the broader context of your project.\n\nWhat are the organizational goals that your project should align with?\nWho are the key stakeholders?\nWhat are their expectations?"
-  },
-  {
-    "objectID": "posts/2023-09-17-problem-framing/index.html#define-the-problem",
-    "href": "posts/2023-09-17-problem-framing/index.html#define-the-problem",
-    "title": "The Art of Problem Framing: The Foundation of Any People Analytics Project",
-    "section": "Define the Problem",
-    "text": "Define the Problem\nNext, define your business problem. Make it specific, measurable, achievable, relevant, and time-bound (SMART).\n\nA well-defined problem directs your project and helps align it with the organization’s goals."
-  },
-  {
-    "objectID": "posts/2023-09-17-problem-framing/index.html#formulate-the-business-questions",
-    "href": "posts/2023-09-17-problem-framing/index.html#formulate-the-business-questions",
-    "title": "The Art of Problem Framing: The Foundation of Any People Analytics Project",
-    "section": "Formulate the Business Questions",
-    "text": "Formulate the Business Questions\nOnce you understand the problem, generate a set of focused questions. These questions should guide your analysis and lead to action."
-  },
-  {
-    "objectID": "posts/2023-09-17-problem-framing/index.html#identify-key-metrics",
-    "href": "posts/2023-09-17-problem-framing/index.html#identify-key-metrics",
-    "title": "The Art of Problem Framing: The Foundation of Any People Analytics Project",
-    "section": "Identify Key Metrics",
-    "text": "Identify Key Metrics\nIdentify the key metrics that will help you answer your business question. These metrics should be directly related to your problem and question."
-  },
-  {
-    "objectID": "posts/2023-09-17-problem-framing/index.html#data-requirements",
-    "href": "posts/2023-09-17-problem-framing/index.html#data-requirements",
-    "title": "The Art of Problem Framing: The Foundation of Any People Analytics Project",
-    "section": "Data Requirements",
-    "text": "Data Requirements\nIdentify the data you need to calculate these metrics and answer your business question.\n\nDo you already have this data, or will you need to collect it?"
-  },
-  {
-    "objectID": "posts/2023-09-17-problem-framing/index.html#analysis-plan",
-    "href": "posts/2023-09-17-problem-framing/index.html#analysis-plan",
-    "title": "The Art of Problem Framing: The Foundation of Any People Analytics Project",
-    "section": "Analysis Plan",
-    "text": "Analysis Plan\nOutline how you will analyze the data to answer your business question. This could involve descriptive statistics, inferential statistics, data visualization, etc."
-  },
-  {
-    "objectID": "posts/2023-09-17-problem-framing/index.html#iterate",
-    "href": "posts/2023-09-17-problem-framing/index.html#iterate",
-    "title": "The Art of Problem Framing: The Foundation of Any People Analytics Project",
-    "section": "Iterate",
-    "text": "Iterate\nDefining the problem and formulating the question is often an iterative process. You might need to refine your problem statement and business question as you learn more about your data and start your analysis."
-  },
-  {
-    "objectID": "posts/2023-09-17-problem-framing/index.html#stakeholder-involvement",
-    "href": "posts/2023-09-17-problem-framing/index.html#stakeholder-involvement",
-    "title": "The Art of Problem Framing: The Foundation of Any People Analytics Project",
-    "section": "Stakeholder Involvement",
-    "text": "Stakeholder Involvement\nInvolve stakeholders throughout the process. Engage with them to understand their specific needs, concerns, and objectives. Their insights can provide valuable context and help ensure your work is relevant and actionable."
-  },
-  {
-    "objectID": "posts/2023-09-17-problem-framing/index.html#smart-criteria",
-    "href": "posts/2023-09-17-problem-framing/index.html#smart-criteria",
-    "title": "The Art of Problem Framing: The Foundation of Any People Analytics Project",
-    "section": "SMART Criteria",
-    "text": "SMART Criteria\nRemember to use the SMART (Specific, Measurable, Achievable, Relevant, Time-bound) criteria when defining your problem statement. This can help ensure that your problem is well-defined and sets a solid foundation for your project.\nTo learn more about SMART goals: What Are SMART Goals? Definition, Best Practices, And How To Make Your Own"
-  },
-  {
-    "objectID": "posts/2023-09-17-problem-framing/index.html#stakeholder-analysis",
-    "href": "posts/2023-09-17-problem-framing/index.html#stakeholder-analysis",
-    "title": "The Art of Problem Framing: The Foundation of Any People Analytics Project",
-    "section": "Stakeholder Analysis",
-    "text": "Stakeholder Analysis\nConduct a stakeholder analysis to identify who has an interest in your project, what their expectations are, and how they will be impacted. This can provide valuable insights and help ensure your work is relevant and actionable.\nFind out more about how to conduct a stakeholder analysis: Stakeholder Analysis: Approaches, Examples, Templates, and Tools"
-  },
-  {
-    "objectID": "posts/2023-09-17-problem-framing/index.html#visual-thinking",
-    "href": "posts/2023-09-17-problem-framing/index.html#visual-thinking",
-    "title": "The Art of Problem Framing: The Foundation of Any People Analytics Project",
-    "section": "Visual Thinking",
-    "text": "Visual Thinking\nUse visual thinking techniques like mind maps or diagrams to help define your problem and formulate your business question. Visualizing your thoughts can make complex problems easier to understand.\nLearn more in this article: The Ultimate List of Visual Creative Thinking Techniques for Your Next Great Idea"
-  },
-  {
     "objectID": "posts/2023-09-04-welcome-to-my-blog/index.html",
     "href": "posts/2023-09-04-welcome-to-my-blog/index.html",
     "title": "Welcome To My Blog",
@@ -116,7 +32,7 @@
     "href": "index.html",
     "title": "Towards people analytics",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nThe Art of Problem Framing: The Foundation of Any People Analytics Project\n\n\n6 min\n\n\n\nproblem framing\n\n\norganizational impact\n\n\npeople analytics\n\n\n\nPeople analytics projects begin with problem framing. Define problem statements and ask focused questions that align with organizational goals.\n\n\n\nSep 17, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights: Analyzing Categorical Data with Frequency Tables and Chi-Squared Test\n\n\n10 min\n\n\n\nfrequency tables\n\n\nchi-squared test\n\n\ncategorical variables\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a real-world case study on gender representation in…\n\n\n\nSep 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n2 min\n\n\n\nnews\n\n\nblogging journey\n\n\n\nFinally, I did it. After contemplating it for quite some time, I’ve embarked on my blogging journey. Welcome to my very first blog post!\n\n\n\nSep 4, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nUnlocking Insights: Analyzing Categorical Data with Frequency Tables and Chi-Squared Test\n\n\n10 min\n\n\n\nfrequency tables\n\n\nchi-squared test\n\n\ncategorical variables\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a real-world case study on gender representation in…\n\n\n\nSep 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n2 min\n\n\n\nnews\n\n\nblogging journey\n\n\n\nFinally, I did it. After contemplating it for quite some time, I’ve embarked on my blogging journey. Welcome to my very first blog post!\n\n\n\nSep 4, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html",
