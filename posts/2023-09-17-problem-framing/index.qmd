@@ -3,12 +3,13 @@ title: "The Art of Problem Framing: The Foundation of Any People Analytics Proje
 description: "People analytics projects begin with problem framing. Define problem statements and ask focused questions that align with organizational goals."
 author: "Cozmina Secula"
 date: "2023-09-17"
+image: "setgoal.jpg"
 categories: [problem framing, organizational impact, people analytics]
 ---
 
 Any successful people analytics project begins with a carefully framed problem. This crucial step sets the direction for everything that follows, from data collection to analysis and interpretation. Without a well-defined problem and business question, even the most sophisticated analysis can miss the mark.
 
-![](setgoals.jpg){fig-align="center" width="400"}
+![](setgoal1.jpg){fig-align="center" width="400"}
 
 Imagine embarking on a journey without a clear destination. Would you set sail without knowing the port you aim to reach? Similarly, in a people analytics project, the problem statement serves as your North Star, guiding you toward relevant insights, actionable solutions, and measurable outcomes. It aligns your efforts with organizational goals and ensures that your analysis has a meaningful impact.
 
