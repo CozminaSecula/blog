@@ -16,9 +16,9 @@ execute:
 
 # Introduction
 
-A people analytics project typically involves working with quantifiable data to address business questions and objectives. However, for data to be valuable, it requires analysis and interpretation, which is where analytic techniques become crucial. This post introduces two tools for initiating data analysis with categorical data: frequency tables and the chi-squared test.
+A people analytics project typically involves working with quantifiable data to address business questions and objectives. However, for data to be valuable, it requires analysis and interpretation, which is where analytic techniques become critical. This post introduces two distinct tools for initiating data analysis with categorical data: frequency tables and the chi-squared test.
 
-Frequency tables serve as a statistical instrument for categorical data analysis. They achieve this by counting the occurrences of variables within a data set, providing a concise overview of the distribution and patterns within these categorical variables. When analyzing categorical data, it is often essential to determine if a significant relationship exists between two categorical variables within your data set. The chi-squared test helps determine whether these two variables are associated or functionally related. In simpler terms, it quantifies the degree of independence between two categorical variables. When employed together, these two tools can unveil intriguing patterns and relationships within your data.
+Frequency tables serve as a statistical instrument for categorical data analysis. They achieve this by counting the occurrences of variables within a data set, providing a concise overview of the distribution and patterns within these categorical variables. When analyzing categorical data, it is often essential to determine if a significant relationship exists between two categorical variables within data set. The chi-squared test helps determine whether these two variables are associated or functionally related. In simpler terms, it quantifies the degree of independence between two categorical variables. When employed together, these tools can unveil intriguing patterns and relationships within data.
 
 In this post, I will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.
 
@@ -32,7 +32,7 @@ However, when you want to examine the relationship between two variables simulta
 
 # Chi-Squared Test: An Overview
 
-A chi-squared test, also known as a chi-square or χ2 test, is a statistical hypothesis test commonly employed in the analysis of contingency tables, especially when dealing with large sample sizes. In simpler terms, this test is primarily used to determine whether two categorical variables (representing two dimensions of the contingency table) are independent in influencing the values observed within the table. [Learn more on Wikipedia](https://en.wikipedia.org/wiki/Chi-squared_test).
+A chi-squared test, also known as a chi-square or χ2 test, is a statistical hypothesis test commonly employed in the analysis of contingency tables, especially when dealing with large sample sizes. In simpler terms, this test is primarily used to determine whether two categorical variables (representing two dimensions of the contingency table) are independent in influencing the values observed within the table.
 
 This test is frequently utilized in research to assess the independence of two variables. It operates by comparing the observed values in the table with what would be expected if the two distributions were entirely independent.
 
@@ -51,7 +51,7 @@ The procedure for assessing the presence of a significant difference between var
 
 # Case Study: Gaining Insights with Chi-Squared Test and Frequency Tables
 
-In this section, we will consider a case study focused on diversity and inclusion (D&I).The case study is sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916). Our exploration will cover the creation of frequency tables, data preparation and analysis in R using both base R functions and the `tidyverse` and `ggplot2` packages. Additionally we will be going over the Chi Square test and its implementation using R.
+In this section, we will consider a case study focused on diversity and inclusion (D&I). The case study is sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916). Our exploration will cover the creation of frequency tables, data preparation, and analysis in R software using both base R functions and the `tidyverse` and `ggplot2` packages. Additionally, we will be going over the Chi Square test and its implementation using R.
 
 ## The Business Problem
 
@@ -168,7 +168,7 @@ GenderByGrade
 
 ## Data Analysis
 
-The visualization below shows that women predominantly occupy entry-level roles, while men are more prevalent in senior positions. For instance, the "clerical_officer" role comprises 80% females and 20% males, whereas the "partner" role is represented by nearly 90% males and just over 10% females. Up to this point, the data reveals an observable pattern, men are more prevalent in senior roles and women predominantly occupy junior roles. but it's not completely obvious just from looking at the data whether the company experiences a diversity and inclusion issue or if this is just due to chance. The next step involves conducting a statistical analysis to determine the significance of this pattern. To achieve this, we will perform a Chi-squared test.
+The visualization below shows that women predominantly occupy entry-level roles, while men are more prevalent in senior positions. For instance, the "clerical_officer" role comprises 80% females and 20% males, whereas the "partner" role is represented by nearly 90% males and just over 10% females. Up to this point, data reveal an observable pattern, men are more prevalent in senior roles and women predominantly occupy junior roles. However, it is not completely obvious just from looking at the data whether the company experiences a diversity and inclusion issue or if this is just due to chance. The next step involves conducting a statistical analysis to determine the significance of this pattern. To achieve this, we will perform a Chi-squared test.
 
 ```{r}
 #| label: graphical-representation
@@ -198,9 +198,9 @@ H0: There is no association between gender and job grade within the organization
 
 H1: There is a significant association between gender and job grade within the organization. The observed distribution of females and males across job grades is not a result of random chance; it reflects a significant pattern of male predominance in senior roles and a greater representation of females in entry-level positions
 
-When conducted, the test gives us a "p" value as the result, using which you conclude whether your hypothesis of independence is true or not. In simple words, the "p" value is just the likelihood of your variables being independent.
+When conducted, the test gives us a "p" value as the result, based on which you can conclude whether your hypothesis of independence is true or not. In other words, the "p" value is just the likelihood of your variables being independent.
 
-Particularly in this test, it's crucial to examine the p-values. If the resulting p-value is lower than the typical predetermined significance level of 0.05, we would then reject the null hypothesis.
+Particularly in this test, it is crucial to examine the p-values. If the resulting p-value is lower than the typical predetermined significance level of 0.05, we would then reject the null hypothesis.
 
 ## Conducting a Chi Square Test in R
 
@@ -220,7 +220,7 @@ The p-value is extremely small, less than 2.2e-16, which is very close to zero. 
 
 This result indicates a statistically significant association between gender and job grade. It suggests that certain factors are influencing the observed distribution of genders within job grades.
 
-However, we cannot definitively determine whether these factors may involve forms of discrimination. Further analysis is needed to investigate this possibility.
+Further analysis is needed to investigate whether these factors may involve forms of discrimination.
 
 # Conclusions
 
@@ -228,6 +228,6 @@ In this article, we explored the power of two fundamental tools for analyzing ca
 
 Through a case study on gender representation in senior roles, we demonstrated how these tools can reveal crucial insights. We found a noticeable gender disparity, with men predominantly occupying senior positions and women largely in junior roles.
 
-The chi-squared test's results, with a p-value close to zero, confirmed a significant association between gender and job grade. While this statistical evidence does not directly imply discrimination, it signals that factors beyond chance influence this distribution.
+The chi-squared test's results, with a p-value close to zero, confirmed a very strong association between gender and job grade. While this statistical evidence does not directly imply discrimination, it signals that factors beyond chance influence this distribution.
 
 To address potential discrimination and foster diversity and inclusion, further analysis and actions are necessary. These tools empower organizations to make data-driven decisions and drive positive change in their workforce dynamics.
