@@ -8,6 +8,9 @@
   },
   {
     "listing": "/index.html",
-    "items": []
+    "items": [
+      "/projects/2023-09-14-frequency-tables-and-chi-squared-test/index.html",
+      "/projects/employee-well-being-at-work/index.html"
+    ]
   }
 ]

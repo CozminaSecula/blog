@@ -1,8 +1,8 @@
 ---
-title: "Blog"
-subtitle: ""
+title: "Projects"
+subtitle: "Projects and case studies I have worked on are listed on this page."
 listing:
-  contents: posts
+  contents: projects
   sort: "date desc"
   type: default
   categories: true
