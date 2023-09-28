@@ -1,8 +1,8 @@
 ---
-title: "Projects"
-subtitle: "Projects I have worked on are listed on this page."
+title: "Blog"
+subtitle: ""
 listing:
-  contents: projects
+  contents: posts
   sort: "date desc"
   type: default
   categories: true
