@@ -2,10 +2,12 @@
 title: "Cozmina Secula"
 image: profile.jpg
 about:
-  template: trestles
+  template: jolla
+  image-width: 15em
+  image-shape: round
   links:
     - icon: envelope
-      text: Email
+      text: Contact me
       href: mailto:cozmina.secula@gmail.com
     - icon: linkedin
       text: LinkedIn
@@ -15,8 +17,6 @@ about:
       href: https://github.com/CozminaSecula
 ---
 
-Hi, I am Cozmina
+With an extensive background in B2B sales and team management, I'm expanding my skill set into new areas like data analytics, R language programming, Quarto, and data visualization.
 
-When I started working in sales, I did not know precisely what I would be doing. Relatively soon, I realized that selling was a means to what I truly enjoyed: helping customers solve business problems. Later, when I managed teams, I had the opportunity to help people develop and grow. Although I have enjoyed my work at Vodafone, after 14 years, I felt trapped in my comfort zone, which worried me. So, I left the company without a clear plan for what I wanted to do next.
-
-A new journey started, filled with challenges, acquiring new skills, and setting new goals. I learned a lot about myself and my direction. In 2023, I decided to transition to people analytics after completing a graduate degree in strategic human resource management, including coursework in organizational strategy, change management, empirical social research (qualitative and quantitative), and digital HR. My goal is to help others make data-driven decisions.
+Throughout this blog, I showcase my work in people analytics, a domain I am interested in.
