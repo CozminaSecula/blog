@@ -3,7 +3,6 @@ title: "Unlocking Insights: Analyzing Categorical Data with Frequency Tables and
 description: "Discover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a real-world case study on gender representation in senior roles."
 author: "Cozmina Secula"
 date: "2023-09-14"
-image: diversity.jpg
 categories: [frequency tables, chi-squared test, categorical variables, quantitative analysis]
 format: 
   html: 
@@ -87,7 +86,7 @@ Load the data set and take a look at it.
 #| echo: true
 
 
-data <- here("posts","2023-09-14-frequency-tables-and-chi-squared-test", "diversity1.csv")
+data <- here("projects","2023-09-14-frequency-tables-and-chi-squared-test", "diversity1.csv")
 diversity <- readr::read_csv(data)
 diversity
 

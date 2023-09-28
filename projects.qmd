@@ -4,10 +4,7 @@ subtitle: "Projects I have worked on are listed on this page."
 listing:
   contents: projects
   sort: "date desc"
-  type: grid
-  grid-columns: 3
-  image-height: 250px
-  page-size: 100
+  type: default
   categories: true
   sort-ui: true
   filter-ui: true

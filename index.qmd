@@ -1,13 +1,10 @@
 ---
-title: "Towards people analytics"
-subtitle: "A blog by Cozmina Secula"
+title: "Projects"
+subtitle: "Projects I have worked on are listed on this page."
 listing:
-  contents: posts
+  contents: projects
   sort: "date desc"
-  type: grid
-  grid-columns: 3
-  image-height: 250px
-  page-size: 100
+  type: default
   categories: true
   sort-ui: true
   filter-ui: true
