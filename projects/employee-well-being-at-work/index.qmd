@@ -4,7 +4,6 @@ description: "A qualitative study"
 author: "Cozmina Secula"
 date: "2023-09-12"
 categories: [qualitative, empirical study, well-being at work]
-image: "image.jpg"
 engine: knitr
 presentation:
    pdf:"EPWBW.pdf"
