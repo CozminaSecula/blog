@@ -10,7 +10,7 @@ website:
     title: false
     background: "#eee"
     left: 
-      - href: about.qmd
+      - href: index.qmd
         text: About
       - href: projects.qmd
         text: Projects
