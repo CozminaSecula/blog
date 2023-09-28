@@ -9,8 +9,6 @@ presentation:
    pdf:"EPWBW.pdf"
 ---
 
-The project was part of the Strategic HR Management master's program.
-
 ## Abstract
 
 Employee well-being is essential for both individuals and organizations.
