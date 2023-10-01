@@ -1,6 +1,6 @@
 ---
 title: "Projects"
-subtitle: "Projects and case studies I have worked on are listed on this page."
+subtitle: "This is a place where I share some of my work."
 listing:
   contents: projects
   sort: "date desc"
