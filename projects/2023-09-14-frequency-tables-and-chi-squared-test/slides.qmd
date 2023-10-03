@@ -256,7 +256,7 @@ ggplot(diversity1, aes(x=jobgrade, fill=gender))+
 
  - the data reveal a pattern that women are found more in junior roles and men in senior roles.
  - however, the data did not indicate if this is a coincidence or if it is statistically significant.
- - the chi-squared test can be used to interrogate the patterns presented in the graphical visualization and will tell whether there is evidence that a D&I problem might exist within this organization.
+ - the chi-squared test can be used to determine whether the observed pattern is statistically significant.
 
 
 # Chi-Squared Test

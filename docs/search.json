@@ -130,7 +130,7 @@
     "href": "projects/2023-09-14-frequency-tables-and-chi-squared-test/slides.html#does-this-organization-have-a-di-problem",
     "title": "Unlocking Insights: Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
     "section": "Does this organization have a D&I problem?",
-    "text": "Does this organization have a D&I problem?\n\n\nthe data reveal a pattern that women are found more in junior roles and men in senior roles.\nhowever, the data did not indicate if this is a coincidence or if it is statistically significant.\nthe chi-squared test can be used to interrogate the patterns presented in the graphical visualization and will tell whether there is evidence that a D&I problem might exist within this organization."
+    "text": "Does this organization have a D&I problem?\n\n\nthe data reveal a pattern that women are found more in junior roles and men in senior roles.\nhowever, the data did not indicate if this is a coincidence or if it is statistically significant.\nthe chi-squared test can be used to determine whether the observed pattern is statistically significant."
   },
   {
     "objectID": "projects/2023-09-14-frequency-tables-and-chi-squared-test/slides.html#the-hypotheses",
