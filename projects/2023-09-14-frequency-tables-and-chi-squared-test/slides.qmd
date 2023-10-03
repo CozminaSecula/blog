@@ -49,7 +49,7 @@ Employed together these tools help to unveil patterns and relationships between 
 -   chi-squared test
 
 
-# The business perspective
+# The Business Perspective
 
 ## The business needs
 
