@@ -4,6 +4,7 @@ description: "Discover how to extract valuable insights from categorical data us
 author: "Cozmina Secula"
 date: "2023-09-14"
 categories: [frequency tables, chi-squared test, categorical variables, quantitative analysis]
+draft: true
 format: 
   html: 
    code-fold: true
@@ -48,11 +49,11 @@ The procedure for assessing the presence of a significant difference between var
 5.  **Compute P-value**: Using the Chi-Squared statistic and degrees of freedom, compute the P-value from a Chi-Squared distribution table.
 6.  **Interpret Result** (determine statistical significance): If the P-value is less than your chosen significance level (often 0.05), reject H0 and conclude that there is a significant association between the variables.
 
-# Case Study: Gaining Insights with Chi-Squared Test and Frequency Tables
+# Case Study: Gaining Insights with Cross-Tabbing and Chi-Squared Test
 
-In this section, we will consider a case study focused on diversity and inclusion (D&I). The case study is sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916). Our exploration will cover the creation of frequency tables, data preparation, and analysis in R software using both base R functions and the `tidyverse` and `ggplot2` packages. Additionally, we will be going over the Chi Square test and its implementation using R.
+In this section, we will consider a case study focused on diversity and inclusion (D&I). The case study is sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916). Our exploration will cover the creation of frequency tables, data preparation, and analysis in R software using both base R functions and the `tidyverse` packages. Additionally, we will be going over the Chi Square test and its implementation using R.
 
-## The Business Problem
+## The Business Need
 
 The company aims to investigate the possible underrepresentation of women in senior leadership roles within the organization. This inquiry is motivated by both commercial and people-centric considerations. From a commercial standpoint, the organization seeks to foster a greater diversity of thought in senior and strategic discussions. On the other hand, from a people perspective, the organization wants to assess whether it maintains gender balance by providing positive role models for younger employees.
 
@@ -117,7 +118,7 @@ Based on the case study description, we have data from a management consulting f
 | 7     | Principal Consultant        |
 | 8     | Partner                     |
 
-: Table 1: Description of JobGrades
+: Table 1: Description of JobGrade
 
 We have also noticed that the variables are currently represented by numerical values, although Genders and JobGrade are categorical variables, not numerical ones. The next step involve: - replacing these numerical values with descriptive labels for both variables - calculate frequencies for each variable - create contingency table to see gender distribution across job grade
 

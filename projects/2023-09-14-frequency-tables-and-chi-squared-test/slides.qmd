@@ -1,0 +1,311 @@
+---
+title: "Unlocking Insights: Analyzing Categorical Data with Cross-Tab and Chi-Squared Test"
+description: "Discover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a case study on gender representation in senior roles."
+author: "Cozmina Secula"
+date: "2023-09-14"
+categories: [frequency tables, chi-squared test, categorical variables, quantitative analysis]
+image: image.jpeg
+format: 
+  revealjs: 
+   theme: theme.scss
+   transition: fade
+   background-transition: fade
+code-link: true
+code-fold: true
+code-tools: true
+toc-depth: 1
+execute:
+  echo: true
+  freeze: auto
+---
+
+# Overview of the Presentation
+
+```{r}
+#| echo: false
+ library(tidyverse)
+ library(kableExtra)
+```
+
+## Introducing two distinct tools for data analysis with categorical data
+
+-   frequency tables
+-   chi-squared test
+
+Employed together these tools help to unveil patterns and relationships between data.
+
+
+## Case study
+
+-   focused on diversity and inclusion (D&I)
+-   sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916)
+-   with data available [here](https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446)
+
+
+## Data exploration and analysis
+
+-   `tidyverse` package
+-   data preparation and exploration
+-   creation of cross-tab
+-   data visualization
+-   chi-squared test
+
+
+# The Necessity of Insights for the Organization
+
+## The business needs
+
+-   **commercial perspective**
+
+    -   the organization seeks to foster a greater diversity of thought in senior and strategic discussions
+
+-   **people perspective**
+
+    -   the organization wants to assess whether it maintains gender balance by providing positive role models for younger employees
+
+## The research question
+
+<br>
+
+*Are women underrepresented in senior leadership roles within the organization?*
+
+# Data Preparation and Exploration
+
+## Read data
+
+```{r}
+#| label: read-data
+#| echo: true
+#| warning: false
+
+diversity <- read_csv("../2023-09-14-frequency-tables-and-chi-squared-test/diversity1.csv")
+glimpse(diversity)
+
+```
+
+-   1.493 observations and 11 variables
+-   data type: double <dbl> for all variables
+
+## Description of variables of interest
+
+<br>
+
+::: small
+::: columns
+::: {.column width="75%"}
+| Level | Job Grade                   |
+|-------|-----------------------------|
+| 1     | Clerical/Officer            |
+| 2     | Administrator/Assistant     |
+| 3     | Graduate/Trainee Consultant |
+| 4     | Consultant                  |
+| 5     | Senior Consultant           |
+| 6     | Managing Consultant         |
+| 7     | Principal Consultant        |
+| 8     | Partner                     |
+:::
+
+::: {.column width="25%"}
+| Level | Gender |
+|-------|--------|
+| 1     | Female |
+| 2     | Male   |
+:::
+:::
+:::
+
+## Data manipulation (I)
+
+-   make new variables *gender* and *jobgrade*
+-   replacing numerical values with descriptive labels for both variables
+
+```{r}
+#| label: new-variables
+#| echo: true
+#| warning: false
+
+# create new variables "gender" and "jobgrade"
+diversity <- diversity|>
+  mutate(gender= factor(Gender,
+                        levels= c(1:2),
+                        labels= c("Female", "Male")),
+         jobgrade= factor(JobGrade,
+                          levels= c(1:8),
+                          labels= c("Clerical/Officer", "Administrator/Assistant", "Graduate/Trainee Consultant", "Consultant", "Senior Consultant", "Managing Consultant", "Principal Consultant", "Partner")))
+
+
+```
+
+## Data manipulation (II)
+
+-   detect and rectify inaccuracies in the data
+
+```{r}
+#| label: new-variables-levels
+#| echo: true
+#| warning: false
+#| output: false
+
+# variables' levels
+diversity|>
+  distinct(gender, jobgrade)
+
+# filter and drop "NA" levels and name the new data frame "diversity1"
+diversity1 <- diversity|>
+  filter(gender!="NA")|>
+  droplevels()
+
+#variables' levels filtered
+diversity1|>
+  distinct(gender, jobgrade)
+
+
+
+```
+
+## Cross-tab for insights
+
+::: small
+```{r}
+#| label: cross-tab
+#| echo: true
+#| warning: false
+
+# cross-tab; count and make a table for "gender" and "jobgrade" data
+diversity1|>
+  count(gender, jobgrade)|>
+  pivot_wider(names_from = gender, values_from = n)|>
+  kable(col.names = c("JobGrade", "Female", "Male"),
+        align = "lrr")
+```
+:::
+
+## Proportions of gender within each jobgrade
+
+::: small
+```{r}
+#| label: proportions
+#| echo: true
+#| warning: false
+
+diversity1|>
+  count(gender, jobgrade)|>
+  group_by(jobgrade)|>
+  mutate(prop= round(n/sum(n)*100),2)|>
+  pivot_wider(id_cols = jobgrade, names_from = gender, values_from = prop)|>
+  kable(col.names = c("Job Grade", "Female (%)", "Male (%)"),
+        align = "lrr")
+
+  
+```
+:::
+
+## Gender by job grade
+
+::: small
+```{r}
+#| label: graph I
+#| echo: true
+#| warning: false
+#| fig-width: 8
+#| fig-height: 4
+#| fig-align: center
+
+ggplot(diversity1, aes(x=jobgrade, fill=gender))+
+  geom_bar(position = "fill")+
+  labs(title = "Gender by Job Grade",
+      x = "Job Grade",
+      y = "Proportions",
+      fill= "Gender")+
+  theme_minimal(base_size = 14)+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  scale_fill_manual(values = c("Female" = "#00589b", "Male"= "#ccddeb"))
+
+```
+:::
+
+## *Are women underrepresented in senior leadership roles within the organization?*
+
+::: goal
+::: small
+Up to this point, data reveal an observable pattern, men are more prevalent in senior roles and women predominantly occupy junior roles.
+:::
+:::
+
+```{r}
+#| label: graph II
+#| echo: false
+#| warning: false
+#| fig-width: 12
+#| fig-align: center
+
+ggplot(diversity1, aes(x=jobgrade, fill=gender))+
+  geom_bar(position = "fill")+
+  labs(title = "Gender by Job Grade",
+      x = "Job Grade",
+      y = "Proportions",
+      fill= "Gender")+
+  theme_minimal(base_size = 14)+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  scale_fill_manual(values = c("Female" = "#00589b", "Male"= "#ccddeb"))
+ 
+```
+
+
+## The next step
+
+<br>
+
+ - conducting a statistical analysis to determine the significance of the observed pattern.
+ - performing a Chi-squared test.
+
+
+# Chi-Squared Test
+
+## The hypotheses
+
+<br>
+
+::: small
+**H0**: There is no association between gender and job grade within the organization.
+
+ - the observed distribution of females and males across job grades is due to random chance.
+
+**H1**: There is a significant association between gender and job grade within the organization. 
+
+ - the observed distribution of females and males across job grades is not a result of random chance; it reflects a significant pattern of male predominance in senior roles and a greater representation of females in entry-level positions.
+:::
+
+
+## Chi squared test in R
+
+```{r}
+#| label: chi-squared-test
+#| echo: true
+#| warning: false
+
+cross_tab <- table(diversity1$jobgrade, diversity1$gender)
+chisq.test(cross_tab)
+```
+
+::: goal
+::: small
+-   the p-value is extremely small, less than 2.2e-16, which is very close to zero.
+-   since the p-value is less than the significance level of 0.05, we can confidently reject the null hypothesis, concluding that the two variables are dependent.
+-   this result indicates a statistically significant association between gender and job grade.
+-   it suggests that certain factors are influencing the observed distribution of genders within job grades.
+:::
+:::
+
+# Conclusions
+
+## Conclusions
+
+-   frequency tables provided a clear summary of the distribution and an observable pattern: **men are more prevalent in senior roles and women predominantly occupy junior roles**.
+
+-   the chi-squared test's results, with a p-value close to zero, confirmed **a very strong association between gender and job grade**.
+
+## Recommendation
+
+-   while this statistical evidence does not directly imply discrimination, it signals that factors beyond chance influence this distribution.
+-   to address potential discrimination and foster diversity and inclusion within the organization, further analysis and actions are necessary.

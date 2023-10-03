@@ -29,7 +29,6 @@ website:
     center: |
       <span class="container"><strong>[Contact Cozmina Secula](mailto:cozmina.secula@gmail.com){target="_blank"}</strong></span>
     background: "#eee"
-  favicon: "profile.jpg"
   
 format:
   html:
