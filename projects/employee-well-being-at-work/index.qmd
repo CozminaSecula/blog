@@ -3,7 +3,7 @@ title: "Employees' perception of well-being at work: A qualitative study"
 description: "An empirical study that explores how employees perceive the work environment factors and managers' behaviors influencing their well-being at work."
 author: "Cozmina Secula"
 date: "2023-09-12"
-categories: [qualitative, empirical study, well-being at work]
+categories: [qualitative analysis, empirical study, well-being at work]
 image: "wordcloud.jpg"
 engine: knitr
 presentation:

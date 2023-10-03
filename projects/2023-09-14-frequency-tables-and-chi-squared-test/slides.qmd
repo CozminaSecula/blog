@@ -3,7 +3,7 @@ title: "Unlocking Insights: Analyzing Categorical Data with Cross-Tab and Chi-Sq
 description: "Discover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a case study on gender representation in senior roles."
 author: "Cozmina Secula"
 date: "2023-09-14"
-categories: [frequency tables, chi-squared test, categorical variables, quantitative analysis]
+categories: [frequency tables, chi-squared test, categorical data, quantitative analysis]
 image: image.jpeg
 format: 
   revealjs: 
@@ -11,8 +11,6 @@ format:
    transition: fade
    background-transition: fade
 code-link: true
-code-fold: true
-code-tools: true
 toc-depth: 1
 execute:
   echo: true
@@ -51,7 +49,7 @@ Employed together these tools help to unveil patterns and relationships between 
 -   chi-squared test
 
 
-# The Necessity of Insights for the Organization
+# The business perspective
 
 ## The business needs
 
@@ -92,7 +90,7 @@ glimpse(diversity)
 
 ::: small
 ::: columns
-::: {.column width="75%"}
+::: {.column width="65%"}
 | Level | Job Grade                   |
 |-------|-----------------------------|
 | 1     | Clerical/Officer            |
@@ -105,7 +103,7 @@ glimpse(diversity)
 | 8     | Partner                     |
 :::
 
-::: {.column width="25%"}
+::: {.column width="35%"}
 | Level | Gender |
 |-------|--------|
 | 1     | Female |
@@ -252,12 +250,13 @@ ggplot(diversity1, aes(x=jobgrade, fill=gender))+
 ```
 
 
-## The next step
+## Does this organization have a D&I problem?
 
 <br>
 
- - conducting a statistical analysis to determine the significance of the observed pattern.
- - performing a Chi-squared test.
+ - the data reveal a pattern that women are found more in junior roles and men in senior roles.
+ - however, the data did not indicate if this is a coincidence or if it is statistically significant.
+ - the chi-squared test can be used to interrogate the patterns presented in the graphical visualization and will tell whether there is evidence that a D&I problem might exist within this organization.
 
 
 # Chi-Squared Test
@@ -301,11 +300,11 @@ chisq.test(cross_tab)
 
 ## Conclusions
 
--   frequency tables provided a clear summary of the distribution and an observable pattern: **men are more prevalent in senior roles and women predominantly occupy junior roles**.
+-   frequency tables provided a clear summary of the distribution of gender on job grade and an observable pattern: **men are more prevalent in senior roles and women predominantly occupy junior roles**.
 
 -   the chi-squared test's results, with a p-value close to zero, confirmed **a very strong association between gender and job grade**.
 
 ## Recommendation
 
--   while this statistical evidence does not directly imply discrimination, it signals that factors beyond chance influence this distribution.
--   to address potential discrimination and foster diversity and inclusion within the organization, further analysis and actions are necessary.
+-   while this statistical evidence does not directly imply that there is a D&I problem within the organization, it signals that factors beyond chance influence this distribution.
+-   to address potential gender bias or discrimination and foster diversity and inclusion within the organization, further analysis and actions are necessary.

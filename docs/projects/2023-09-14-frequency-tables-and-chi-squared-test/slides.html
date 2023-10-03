@@ -408,7 +408,7 @@ Cozmina Secula
 </section><section id="TOC"><nav role="doc-toc"><h2 id="toc-title">Table of contents</h2>
 <ul>
 <li><a href="#/overview-of-the-presentation" id="/toc-overview-of-the-presentation">Overview of the Presentation</a></li>
-<li><a href="#/the-necessity-of-insights-for-the-organization" id="/toc-the-necessity-of-insights-for-the-organization">The Necessity of Insights for the Organization</a></li>
+<li><a href="#/the-business-perspective" id="/toc-the-business-perspective">The business perspective</a></li>
 <li><a href="#/data-preparation-and-exploration" id="/toc-data-preparation-and-exploration">Data Preparation and Exploration</a></li>
 <li><a href="#/chi-squared-test" id="/toc-chi-squared-test">Chi-Squared Test</a></li>
 <li><a href="#/conclusions" id="/toc-conclusions">Conclusions</a></li>
@@ -435,7 +435,7 @@ Cozmina Secula
 <li>creation of cross-tab</li>
 <li>data visualization</li>
 <li>chi-squared test</li>
-</ul></section></section><section><section id="the-necessity-of-insights-for-the-organization" class="title-slide slide level1 center"><h1>The Necessity of Insights for the Organization</h1>
+</ul></section></section><section><section id="the-business-perspective" class="title-slide slide level1 center"><h1>The business perspective</h1>
 
 </section><section id="the-business-needs" class="slide level2"><h2>The business needs</h2>
 <ul>
@@ -458,9 +458,9 @@ Cozmina Secula
 
 </section><section id="read-data" class="slide level2"><h2>Read data</h2>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>diversity <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../2023-09-14-frequency-tables-and-chi-squared-test/diversity1.csv"</span>)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>diversity <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../2023-09-14-frequency-tables-and-chi-squared-test/diversity1.csv"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">glimpse</span>(diversity)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>Rows: 1,493
 Columns: 11
 $ BossGender       &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
@@ -484,7 +484,7 @@ $ leaver           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 <p><br></p>
 <div class="small">
 <div class="columns">
-<div class="column" style="width:75%;">
+<div class="column" style="width:65%;">
 <table>
 <thead><tr class="header">
 <th>Level</th>
@@ -525,7 +525,7 @@ $ leaver           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 </tr>
 </tbody>
 </table>
-</div><div class="column" style="width:25%;">
+</div><div class="column" style="width:35%;">
 <table>
 <thead><tr class="header">
 <th>Level</th>
@@ -552,7 +552,7 @@ $ leaver           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 <li>replacing numerical values with descriptive labels for both variables</li>
 </ul>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># create new variables "gender" and "jobgrade"</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># create new variables "gender" and "jobgrade"</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>diversity <span class="ot">&lt;-</span> diversity<span class="sc">|&gt;</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">mutate</span>(<span class="at">gender=</span> <span class="fu">factor</span>(Gender,</span>
 <span id="cb3-4"><a href="#cb3-4"></a>                        <span class="at">levels=</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>),</span>
@@ -560,14 +560,13 @@ $ leaver           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 <span id="cb3-6"><a href="#cb3-6"></a>         <span class="at">jobgrade=</span> <span class="fu">factor</span>(JobGrade,</span>
 <span id="cb3-7"><a href="#cb3-7"></a>                          <span class="at">levels=</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>),</span>
 <span id="cb3-8"><a href="#cb3-8"></a>                          <span class="at">labels=</span> <span class="fu">c</span>(<span class="st">"Clerical/Officer"</span>, <span class="st">"Administrator/Assistant"</span>, <span class="st">"Graduate/Trainee Consultant"</span>, <span class="st">"Consultant"</span>, <span class="st">"Senior Consultant"</span>, <span class="st">"Managing Consultant"</span>, <span class="st">"Principal Consultant"</span>, <span class="st">"Partner"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 </section><section id="data-manipulation-ii" class="slide level2"><h2>Data manipulation (II)</h2>
 <ul>
 <li>detect and rectify inaccuracies in the data</li>
 </ul>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># variables' levels</span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># variables' levels</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>diversity<span class="sc">|&gt;</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">distinct</span>(gender, jobgrade)</span>
 <span id="cb4-4"><a href="#cb4-4"></a></span>
@@ -579,18 +578,17 @@ $ leaver           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 <span id="cb4-10"><a href="#cb4-10"></a><span class="co">#variables' levels filtered</span></span>
 <span id="cb4-11"><a href="#cb4-11"></a>diversity1<span class="sc">|&gt;</span></span>
 <span id="cb4-12"><a href="#cb4-12"></a>  <span class="fu">distinct</span>(gender, jobgrade)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 </section><section id="cross-tab-for-insights" class="slide level2"><h2>Cross-tab for insights</h2>
 <div class="small">
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># cross-tab; count and make a table for "gender" and "jobgrade" data</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># cross-tab; count and make a table for "gender" and "jobgrade" data</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>diversity1<span class="sc">|&gt;</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">count</span>(gender, jobgrade)<span class="sc">|&gt;</span></span>
 <span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> gender, <span class="at">values_from =</span> n)<span class="sc">|&gt;</span></span>
 <span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"JobGrade"</span>, <span class="st">"Female"</span>, <span class="st">"Male"</span>),</span>
 <span id="cb5-6"><a href="#cb5-6"></a>        <span class="at">align =</span> <span class="st">"lrr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
+<div class="cell-output-display">
 <table data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">JobGrade</th>
@@ -646,14 +644,14 @@ $ leaver           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 </section><section id="proportions-of-gender-within-each-jobgrade" class="slide level2"><h2>Proportions of gender within each jobgrade</h2>
 <div class="small">
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>diversity1<span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>diversity1<span class="sc">|&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">count</span>(gender, jobgrade)<span class="sc">|&gt;</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">group_by</span>(jobgrade)<span class="sc">|&gt;</span></span>
 <span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">mutate</span>(<span class="at">prop=</span> <span class="fu">round</span>(n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>),<span class="dv">2</span>)<span class="sc">|&gt;</span></span>
 <span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> jobgrade, <span class="at">names_from =</span> gender, <span class="at">values_from =</span> prop)<span class="sc">|&gt;</span></span>
 <span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Job Grade"</span>, <span class="st">"Female (%)"</span>, <span class="st">"Male (%)"</span>),</span>
 <span id="cb6-7"><a href="#cb6-7"></a>        <span class="at">align =</span> <span class="st">"lrr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
+<div class="cell-output-display">
 <table data-quarto-postprocess="true">
 <thead><tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Job Grade</th>
@@ -709,7 +707,7 @@ $ leaver           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 </section><section id="gender-by-job-grade" class="slide level2"><h2>Gender by job grade</h2>
 <div class="small">
 <div class="cell" data-layout-align="center">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ggplot</span>(diversity1, <span class="fu">aes</span>(<span class="at">x=</span>jobgrade, <span class="at">fill=</span>gender))<span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ggplot</span>(diversity1, <span class="fu">aes</span>(<span class="at">x=</span>jobgrade, <span class="at">fill=</span>gender))<span class="sc">+</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>)<span class="sc">+</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Gender by Job Grade"</span>,</span>
 <span id="cb7-4"><a href="#cb7-4"></a>      <span class="at">x =</span> <span class="st">"Job Grade"</span>,</span>
@@ -718,7 +716,7 @@ $ leaver           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 <span id="cb7-7"><a href="#cb7-7"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)<span class="sc">+</span></span>
 <span id="cb7-8"><a href="#cb7-8"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
 <span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"#00589b"</span>, <span class="st">"Male"</span><span class="ot">=</span> <span class="st">"#ccddeb"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img data-src="slides_files/figure-revealjs/graph I-1.png" width="768"></p>
 </figure>
@@ -733,11 +731,12 @@ $ leaver           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 </div>
 </div>
 
-<img data-src="slides_files/figure-revealjs/graph II-1.png" width="1152" class="r-stretch quarto-figure-center"></section><section id="the-next-step" class="slide level2"><h2>The next step</h2>
+<img data-src="slides_files/figure-revealjs/graph II-1.png" width="1152" class="r-stretch quarto-figure-center"></section><section id="does-this-organization-have-a-di-problem" class="slide level2"><h2>Does this organization have a D&amp;I problem?</h2>
 <p><br></p>
 <ul>
-<li>conducting a statistical analysis to determine the significance of the observed pattern.</li>
-<li>performing a Chi-squared test.</li>
+<li>the data reveal a pattern that women are found more in junior roles and men in senior roles.</li>
+<li>however, the data did not indicate if this is a coincidence or if it is statistically significant.</li>
+<li>the chi-squared test can be used to interrogate the patterns presented in the graphical visualization and will tell whether there is evidence that a D&amp;I problem might exist within this organization.</li>
 </ul></section></section><section><section id="chi-squared-test" class="title-slide slide level1 center"><h1>Chi-Squared Test</h1>
 
 </section><section id="the-hypotheses" class="slide level2"><h2>The hypotheses</h2>
@@ -754,9 +753,9 @@ $ leaver           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 </div>
 </section><section id="chi-squared-test-in-r" class="slide level2"><h2>Chi squared test in R</h2>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>cross_tab <span class="ot">&lt;-</span> <span class="fu">table</span>(diversity1<span class="sc">$</span>jobgrade, diversity1<span class="sc">$</span>gender)</span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>cross_tab <span class="ot">&lt;-</span> <span class="fu">table</span>(diversity1<span class="sc">$</span>jobgrade, diversity1<span class="sc">$</span>gender)</span>
 <span id="cb8-2"><a href="#cb8-2"></a><span class="fu">chisq.test</span>(cross_tab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stdout">
+<div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's Chi-squared test
 
@@ -778,12 +777,12 @@ X-squared = 164.7, df = 7, p-value &lt; 2.2e-16</code></pre>
 
 </section><section id="conclusions-1" class="slide level2"><h2>Conclusions</h2>
 <ul>
-<li><p>frequency tables provided a clear summary of the distribution and an observable pattern: <strong>men are more prevalent in senior roles and women predominantly occupy junior roles</strong>.</p></li>
+<li><p>frequency tables provided a clear summary of the distribution of gender on job grade and an observable pattern: <strong>men are more prevalent in senior roles and women predominantly occupy junior roles</strong>.</p></li>
 <li><p>the chi-squared test’s results, with a p-value close to zero, confirmed <strong>a very strong association between gender and job grade</strong>.</p></li>
 </ul></section><section id="recommendation" class="slide level2"><h2>Recommendation</h2>
 <ul>
-<li>while this statistical evidence does not directly imply discrimination, it signals that factors beyond chance influence this distribution.</li>
-<li>to address potential discrimination and foster diversity and inclusion within the organization, further analysis and actions are necessary.</li>
+<li>while this statistical evidence does not directly imply that there is a D&amp;I problem within the organization, it signals that factors beyond chance influence this distribution.</li>
+<li>to address potential gender bias or discrimination and foster diversity and inclusion within the organization, further analysis and actions are necessary.</li>
 </ul>
 
 <div class="footer footer-default">
