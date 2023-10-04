@@ -5,7 +5,6 @@ author: "Cozmina Secula"
 date: "2023-09-14"
 categories: [frequency tables, chi-squared test, categorical variables, quantitative analysis]
 image: image.jpeg
-
 ---
 
 # Introduction
@@ -18,6 +17,8 @@ The presentation will guide you through the utilization of frequency tables and 
 
 # Slides
 
-<iframe src="slides.html" width="100%" height="600">
+
+
+<iframe src="slides.html" width="100%" height="500px" border="0" >
 
 </iframe>

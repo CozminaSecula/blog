@@ -8,6 +8,7 @@ format:
    theme: theme.scss
    transition: fade
    background-transition: fade
+   embed-resources: true
 code-link: true
 toc-depth: 1
 execute:
