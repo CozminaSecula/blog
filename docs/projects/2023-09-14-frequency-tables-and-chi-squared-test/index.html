@@ -236,6 +236,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A people analytics project typically involves working with quantifiable data to address business questions and objectives. However, for data to be valuable, it requires analysis and interpretation, which is where analytic techniques become critical. This post introduces two distinct tools for initiating data analysis with categorical data: frequency tables and the chi-squared test.</p>
 <p>Frequency tables serve as a statistical instrument for categorical data analysis. They achieve this by counting the occurrences of variables within a data set, providing a concise overview of the distribution and patterns within these categorical variables. When analyzing categorical data, it is often essential to determine if a significant relationship exists between two categorical variables within data set. The chi-squared test helps determine whether these two variables are associated or functionally related. In simpler terms, it quantifies the degree of independence between two categorical variables. When employed together, these tools can unveil intriguing patterns and relationships within data.</p>
 <p>In this post, I will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.</p>
+<iframe src="slides.html" width="100%" height="600">
+</iframe>
 </section>
 <section id="understanding-frequency-tables" class="level1">
 <h1>Understanding Frequency Tables</h1>
@@ -855,233 +857,237 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Cozmina Secula"</span></span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-09-14"</span></span>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [frequency tables, chi-squared test, categorical variables, quantitative analysis]</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co">  html: </span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co">   code-fold: true</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="co">   code-tools: true</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span><span class="co"> </span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction</span></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>A people analytics project typically involves working with quantifiable data to address business questions and objectives. However, for data to be valuable, it requires analysis and interpretation, which is where analytic techniques become critical. This post introduces two distinct tools for initiating data analysis with categorical data: frequency tables and the chi-squared test.</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>Frequency tables serve as a statistical instrument for categorical data analysis. They achieve this by counting the occurrences of variables within a data set, providing a concise overview of the distribution and patterns within these categorical variables. When analyzing categorical data, it is often essential to determine if a significant relationship exists between two categorical variables within data set. The chi-squared test helps determine whether these two variables are associated or functionally related. In simpler terms, it quantifies the degree of independence between two categorical variables. When employed together, these tools can unveil intriguing patterns and relationships within data.</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>In this post, I will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html: </span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co">   code-fold: true</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co">   code-tools: true</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span><span class="co"> </span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>A people analytics project typically involves working with quantifiable data to address business questions and objectives. However, for data to be valuable, it requires analysis and interpretation, which is where analytic techniques become critical. This post introduces two distinct tools for initiating data analysis with categorical data: frequency tables and the chi-squared test.</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>Frequency tables serve as a statistical instrument for categorical data analysis. They achieve this by counting the occurrences of variables within a data set, providing a concise overview of the distribution and patterns within these categorical variables. When analyzing categorical data, it is often essential to determine if a significant relationship exists between two categorical variables within data set. The chi-squared test helps determine whether these two variables are associated or functionally related. In simpler terms, it quantifies the degree of independence between two categorical variables. When employed together, these tools can unveil intriguing patterns and relationships within data.</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>In this post, I will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a><span class="fu"># Understanding Frequency Tables</span></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;iframe</span> <span class="er">src</span><span class="ot">=</span><span class="st">"slides.html"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"100%"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"600"</span><span class="kw">&gt;&lt;/iframe&gt;</span></span>
 <span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is a frequency table?</span></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>The simplest way to summarize data for individual variables is to present them in a table, which displays specific amounts. In the case of categorical data, the table provides a summary of the number of cases (frequencies) in each category. This is known as a frequency table and is used when you want to summarize data for a single variable.</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a><span class="fu"># Understanding Frequency Tables</span></span>
 <span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>However, when you want to examine the relationship between two variables simultaneously, you can use a different type of table called a contingency table or cross-tab. This table does a cross-tabulation of the frequency of occurrence for each category of interest. For example, when working with survey data, frequency tables can be very useful for gaining insights into the distribution and patterns of categorical variables.</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is a frequency table?</span></span>
 <span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a><span class="fu"># Chi-Squared Test: An Overview</span></span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>The simplest way to summarize data for individual variables is to present them in a table, which displays specific amounts. In the case of categorical data, the table provides a summary of the number of cases (frequencies) in each category. This is known as a frequency table and is used when you want to summarize data for a single variable.</span>
 <span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>A chi-squared test, also known as a chi-square or χ2 test, is a statistical hypothesis test commonly employed in the analysis of contingency tables, especially when dealing with large sample sizes. In simpler terms, this test is primarily used to determine whether two categorical variables (representing two dimensions of the contingency table) are independent in influencing the values observed within the table.</span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>However, when you want to examine the relationship between two variables simultaneously, you can use a different type of table called a contingency table or cross-tab. This table does a cross-tabulation of the frequency of occurrence for each category of interest. For example, when working with survey data, frequency tables can be very useful for gaining insights into the distribution and patterns of categorical variables.</span>
 <span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>This test is frequently utilized in research to assess the independence of two variables. It operates by comparing the observed values in the table with what would be expected if the two distributions were entirely independent.</span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a><span class="fu"># Chi-Squared Test: An Overview</span></span>
 <span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>In essence, the chi-squared test evaluates the likelihood of the data in a table occurring solely by chance by contrasting it with the expected outcomes if the two variables were truly independent of each other.</span>
+<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>A chi-squared test, also known as a chi-square or χ2 test, is a statistical hypothesis test commonly employed in the analysis of contingency tables, especially when dealing with large sample sizes. In simpler terms, this test is primarily used to determine whether two categorical variables (representing two dimensions of the contingency table) are independent in influencing the values observed within the table.</span>
 <span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Applying Chi-Squared Test</span></span>
+<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>This test is frequently utilized in research to assess the independence of two variables. It operates by comparing the observed values in the table with what would be expected if the two distributions were entirely independent.</span>
 <span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a>The procedure for assessing the presence of a significant difference between variables involves the following steps:</span>
+<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a>In essence, the chi-squared test evaluates the likelihood of the data in a table occurring solely by chance by contrasting it with the expected outcomes if the two variables were truly independent of each other.</span>
 <span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Formulate the Hypotheses**: The null hypothesis (H0) assumes that there's no association between the variables (i.e., they are independent). The alternative hypothesis (H1) assumes that there is an association.</span>
-<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Calculate Expected Values**: For each cell in the table, calculate the expected frequency if H0 is true. This is done by multiplying the row total and column total for that cell and dividing by the overall total.</span>
-<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Compute Chi-Squared Statistic**: For each cell, subtract the expected frequency from the observed frequency, square the result, and divide by the expected frequency. Sum these values for all cells to get the Chi-Squared statistic.</span>
-<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Determine Degrees of Freedom**: This is typically calculated as (number of rows - 1) <span class="sc">\*</span> (number of columns - 1).</span>
-<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>**Compute P-value**: Using the Chi-Squared statistic and degrees of freedom, compute the P-value from a Chi-Squared distribution table.</span>
-<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>**Interpret Result** (determine statistical significance): If the P-value is less than your chosen significance level (often 0.05), reject H0 and conclude that there is a significant association between the variables.</span>
-<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a><span class="fu"># Case Study: Gaining Insights with Cross-Tabbing and Chi-Squared Test</span></span>
-<span id="cb21-53"><a href="#cb21-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a>In this section, we will consider a case study focused on diversity and inclusion (D&amp;I). The case study is sourced from the book <span class="co">[</span><span class="ot">Predictive HR Analytics : Mastering the HR Metric</span><span class="co">](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916)</span>. Our exploration will cover the creation of frequency tables, data preparation, and analysis in R software using both base R functions and the <span class="in">`tidyverse`</span> packages. Additionally, we will be going over the Chi Square test and its implementation using R.</span>
+<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## Applying Chi-Squared Test</span></span>
+<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a>The procedure for assessing the presence of a significant difference between variables involves the following steps:</span>
+<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Formulate the Hypotheses**: The null hypothesis (H0) assumes that there's no association between the variables (i.e., they are independent). The alternative hypothesis (H1) assumes that there is an association.</span>
+<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Calculate Expected Values**: For each cell in the table, calculate the expected frequency if H0 is true. This is done by multiplying the row total and column total for that cell and dividing by the overall total.</span>
+<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Compute Chi-Squared Statistic**: For each cell, subtract the expected frequency from the observed frequency, square the result, and divide by the expected frequency. Sum these values for all cells to get the Chi-Squared statistic.</span>
+<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Determine Degrees of Freedom**: This is typically calculated as (number of rows - 1) <span class="sc">\*</span> (number of columns - 1).</span>
+<span id="cb21-53"><a href="#cb21-53" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>**Compute P-value**: Using the Chi-Squared statistic and degrees of freedom, compute the P-value from a Chi-Squared distribution table.</span>
+<span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>**Interpret Result** (determine statistical significance): If the P-value is less than your chosen significance level (often 0.05), reject H0 and conclude that there is a significant association between the variables.</span>
 <span id="cb21-55"><a href="#cb21-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-56"><a href="#cb21-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Business Need</span></span>
+<span id="cb21-56"><a href="#cb21-56" aria-hidden="true" tabindex="-1"></a><span class="fu"># Case Study: Gaining Insights with Cross-Tabbing and Chi-Squared Test</span></span>
 <span id="cb21-57"><a href="#cb21-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-58"><a href="#cb21-58" aria-hidden="true" tabindex="-1"></a>The company aims to investigate the possible underrepresentation of women in senior leadership roles within the organization. This inquiry is motivated by both commercial and people-centric considerations. From a commercial standpoint, the organization seeks to foster a greater diversity of thought in senior and strategic discussions. On the other hand, from a people perspective, the organization wants to assess whether it maintains gender balance by providing positive role models for younger employees.</span>
+<span id="cb21-58"><a href="#cb21-58" aria-hidden="true" tabindex="-1"></a>In this section, we will consider a case study focused on diversity and inclusion (D&amp;I). The case study is sourced from the book <span class="co">[</span><span class="ot">Predictive HR Analytics : Mastering the HR Metric</span><span class="co">](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916)</span>. Our exploration will cover the creation of frequency tables, data preparation, and analysis in R software using both base R functions and the <span class="in">`tidyverse`</span> packages. Additionally, we will be going over the Chi Square test and its implementation using R.</span>
 <span id="cb21-59"><a href="#cb21-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-60"><a href="#cb21-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Research Question</span></span>
+<span id="cb21-60"><a href="#cb21-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Business Need</span></span>
 <span id="cb21-61"><a href="#cb21-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-62"><a href="#cb21-62" aria-hidden="true" tabindex="-1"></a>Are women underrepresented in senior leadership roles within the organization?</span>
+<span id="cb21-62"><a href="#cb21-62" aria-hidden="true" tabindex="-1"></a>The company aims to investigate the possible underrepresentation of women in senior leadership roles within the organization. This inquiry is motivated by both commercial and people-centric considerations. From a commercial standpoint, the organization seeks to foster a greater diversity of thought in senior and strategic discussions. On the other hand, from a people perspective, the organization wants to assess whether it maintains gender balance by providing positive role models for younger employees.</span>
 <span id="cb21-63"><a href="#cb21-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-64"><a href="#cb21-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Preparation</span></span>
+<span id="cb21-64"><a href="#cb21-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Research Question</span></span>
 <span id="cb21-65"><a href="#cb21-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-66"><a href="#cb21-66" aria-hidden="true" tabindex="-1"></a>The data are available <span class="co">[</span><span class="ot">here</span><span class="co">](https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446)</span></span>
+<span id="cb21-66"><a href="#cb21-66" aria-hidden="true" tabindex="-1"></a>Are women underrepresented in senior leadership roles within the organization?</span>
 <span id="cb21-67"><a href="#cb21-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-68"><a href="#cb21-68" aria-hidden="true" tabindex="-1"></a><span class="fu">### Load in libraries</span></span>
+<span id="cb21-68"><a href="#cb21-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Preparation</span></span>
 <span id="cb21-69"><a href="#cb21-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-72"><a href="#cb21-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-73"><a href="#cb21-73" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-packages</span></span>
-<span id="cb21-74"><a href="#cb21-74" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb21-75"><a href="#cb21-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-76"><a href="#cb21-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-77"><a href="#cb21-77" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb21-78"><a href="#cb21-78" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb21-79"><a href="#cb21-79" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb21-70"><a href="#cb21-70" aria-hidden="true" tabindex="-1"></a>The data are available <span class="co">[</span><span class="ot">here</span><span class="co">](https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446)</span></span>
+<span id="cb21-71"><a href="#cb21-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-72"><a href="#cb21-72" aria-hidden="true" tabindex="-1"></a><span class="fu">### Load in libraries</span></span>
+<span id="cb21-73"><a href="#cb21-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-76"><a href="#cb21-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-77"><a href="#cb21-77" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-packages</span></span>
+<span id="cb21-78"><a href="#cb21-78" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb21-79"><a href="#cb21-79" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-80"><a href="#cb21-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-81"><a href="#cb21-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-82"><a href="#cb21-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-83"><a href="#cb21-83" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read the data</span></span>
+<span id="cb21-81"><a href="#cb21-81" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb21-82"><a href="#cb21-82" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb21-83"><a href="#cb21-83" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb21-84"><a href="#cb21-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-85"><a href="#cb21-85" aria-hidden="true" tabindex="-1"></a>Load the data set and take a look at it.</span>
+<span id="cb21-85"><a href="#cb21-85" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb21-86"><a href="#cb21-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-89"><a href="#cb21-89" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-90"><a href="#cb21-90" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: read-the-data</span></span>
-<span id="cb21-91"><a href="#cb21-91" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb21-92"><a href="#cb21-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-93"><a href="#cb21-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-94"><a href="#cb21-94" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"projects"</span>,<span class="st">"2023-09-14-frequency-tables-and-chi-squared-test"</span>, <span class="st">"diversity1.csv"</span>)</span>
-<span id="cb21-95"><a href="#cb21-95" aria-hidden="true" tabindex="-1"></a>diversity <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(data)</span>
-<span id="cb21-96"><a href="#cb21-96" aria-hidden="true" tabindex="-1"></a>diversity</span>
+<span id="cb21-87"><a href="#cb21-87" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read the data</span></span>
+<span id="cb21-88"><a href="#cb21-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-89"><a href="#cb21-89" aria-hidden="true" tabindex="-1"></a>Load the data set and take a look at it.</span>
+<span id="cb21-90"><a href="#cb21-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-93"><a href="#cb21-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-94"><a href="#cb21-94" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: read-the-data</span></span>
+<span id="cb21-95"><a href="#cb21-95" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb21-96"><a href="#cb21-96" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-97"><a href="#cb21-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-98"><a href="#cb21-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-99"><a href="#cb21-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-100"><a href="#cb21-100" aria-hidden="true" tabindex="-1"></a>We have information about 1483 employees, each with 11 variables recorded. Our primary goal is to determine whether there is an underrepresentation of women in senior leadership positions within the organization. The specific variables we are focusing on are Gender and JobGrade. To accomplish our objective, we will begin by selecting the data related these key variables.</span>
+<span id="cb21-98"><a href="#cb21-98" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"projects"</span>,<span class="st">"2023-09-14-frequency-tables-and-chi-squared-test"</span>, <span class="st">"diversity1.csv"</span>)</span>
+<span id="cb21-99"><a href="#cb21-99" aria-hidden="true" tabindex="-1"></a>diversity <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(data)</span>
+<span id="cb21-100"><a href="#cb21-100" aria-hidden="true" tabindex="-1"></a>diversity</span>
 <span id="cb21-101"><a href="#cb21-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-104"><a href="#cb21-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-105"><a href="#cb21-105" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: select-diversity1</span></span>
-<span id="cb21-106"><a href="#cb21-106" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb21-107"><a href="#cb21-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-108"><a href="#cb21-108" aria-hidden="true" tabindex="-1"></a>diversity1 <span class="ot">&lt;-</span> diversity <span class="sc">%&gt;%</span> </span>
-<span id="cb21-109"><a href="#cb21-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Gender, JobGrade)</span>
-<span id="cb21-110"><a href="#cb21-110" aria-hidden="true" tabindex="-1"></a>diversity1</span>
+<span id="cb21-102"><a href="#cb21-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-103"><a href="#cb21-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-104"><a href="#cb21-104" aria-hidden="true" tabindex="-1"></a>We have information about 1483 employees, each with 11 variables recorded. Our primary goal is to determine whether there is an underrepresentation of women in senior leadership positions within the organization. The specific variables we are focusing on are Gender and JobGrade. To accomplish our objective, we will begin by selecting the data related these key variables.</span>
+<span id="cb21-105"><a href="#cb21-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-108"><a href="#cb21-108" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-109"><a href="#cb21-109" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: select-diversity1</span></span>
+<span id="cb21-110"><a href="#cb21-110" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
 <span id="cb21-111"><a href="#cb21-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-112"><a href="#cb21-112" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-113"><a href="#cb21-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-114"><a href="#cb21-114" aria-hidden="true" tabindex="-1"></a>Based on the case study description, we have data from a management consulting firm comprising 1,493 employees, with 746 being female and 745 being male. At first glance, it appears to indicate an organization with an equal gender balance, with 50 percent male and 50 percent female representation. The organization comprises eight distinct job grades, which are listed alongside their corresponding numbers in Table 1.</span>
+<span id="cb21-112"><a href="#cb21-112" aria-hidden="true" tabindex="-1"></a>diversity1 <span class="ot">&lt;-</span> diversity <span class="sc">%&gt;%</span> </span>
+<span id="cb21-113"><a href="#cb21-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Gender, JobGrade)</span>
+<span id="cb21-114"><a href="#cb21-114" aria-hidden="true" tabindex="-1"></a>diversity1</span>
 <span id="cb21-115"><a href="#cb21-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-116"><a href="#cb21-116" aria-hidden="true" tabindex="-1"></a>| Grade | Job Grade                   |</span>
-<span id="cb21-117"><a href="#cb21-117" aria-hidden="true" tabindex="-1"></a>|-------|-----------------------------|</span>
-<span id="cb21-118"><a href="#cb21-118" aria-hidden="true" tabindex="-1"></a>| 1     | Clerical/Officer            |</span>
-<span id="cb21-119"><a href="#cb21-119" aria-hidden="true" tabindex="-1"></a>| 2     | Administrator/Assistant     |</span>
-<span id="cb21-120"><a href="#cb21-120" aria-hidden="true" tabindex="-1"></a>| 3     | Graduate/Trainee Consultant |</span>
-<span id="cb21-121"><a href="#cb21-121" aria-hidden="true" tabindex="-1"></a>| 4     | Consultant                  |</span>
-<span id="cb21-122"><a href="#cb21-122" aria-hidden="true" tabindex="-1"></a>| 5     | Senior Consultant           |</span>
-<span id="cb21-123"><a href="#cb21-123" aria-hidden="true" tabindex="-1"></a>| 6     | Managing Consultant         |</span>
-<span id="cb21-124"><a href="#cb21-124" aria-hidden="true" tabindex="-1"></a>| 7     | Principal Consultant        |</span>
-<span id="cb21-125"><a href="#cb21-125" aria-hidden="true" tabindex="-1"></a>| 8     | Partner                     |</span>
-<span id="cb21-126"><a href="#cb21-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-127"><a href="#cb21-127" aria-hidden="true" tabindex="-1"></a>: Table 1: Description of JobGrade</span>
-<span id="cb21-128"><a href="#cb21-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-129"><a href="#cb21-129" aria-hidden="true" tabindex="-1"></a>We have also noticed that the variables are currently represented by numerical values, although Genders and JobGrade are categorical variables, not numerical ones. The next step involve: - replacing these numerical values with descriptive labels for both variables - calculate frequencies for each variable - create contingency table to see gender distribution across job grade</span>
+<span id="cb21-116"><a href="#cb21-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-117"><a href="#cb21-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-118"><a href="#cb21-118" aria-hidden="true" tabindex="-1"></a>Based on the case study description, we have data from a management consulting firm comprising 1,493 employees, with 746 being female and 745 being male. At first glance, it appears to indicate an organization with an equal gender balance, with 50 percent male and 50 percent female representation. The organization comprises eight distinct job grades, which are listed alongside their corresponding numbers in Table 1.</span>
+<span id="cb21-119"><a href="#cb21-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-120"><a href="#cb21-120" aria-hidden="true" tabindex="-1"></a>| Grade | Job Grade                   |</span>
+<span id="cb21-121"><a href="#cb21-121" aria-hidden="true" tabindex="-1"></a>|-------|-----------------------------|</span>
+<span id="cb21-122"><a href="#cb21-122" aria-hidden="true" tabindex="-1"></a>| 1     | Clerical/Officer            |</span>
+<span id="cb21-123"><a href="#cb21-123" aria-hidden="true" tabindex="-1"></a>| 2     | Administrator/Assistant     |</span>
+<span id="cb21-124"><a href="#cb21-124" aria-hidden="true" tabindex="-1"></a>| 3     | Graduate/Trainee Consultant |</span>
+<span id="cb21-125"><a href="#cb21-125" aria-hidden="true" tabindex="-1"></a>| 4     | Consultant                  |</span>
+<span id="cb21-126"><a href="#cb21-126" aria-hidden="true" tabindex="-1"></a>| 5     | Senior Consultant           |</span>
+<span id="cb21-127"><a href="#cb21-127" aria-hidden="true" tabindex="-1"></a>| 6     | Managing Consultant         |</span>
+<span id="cb21-128"><a href="#cb21-128" aria-hidden="true" tabindex="-1"></a>| 7     | Principal Consultant        |</span>
+<span id="cb21-129"><a href="#cb21-129" aria-hidden="true" tabindex="-1"></a>| 8     | Partner                     |</span>
 <span id="cb21-130"><a href="#cb21-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-133"><a href="#cb21-133" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-134"><a href="#cb21-134" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: JobGrade</span></span>
-<span id="cb21-135"><a href="#cb21-135" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb21-136"><a href="#cb21-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-137"><a href="#cb21-137" aria-hidden="true" tabindex="-1"></a>JobGrade <span class="ot">&lt;-</span> <span class="fu">factor</span>(diversity1<span class="sc">$</span>JobGrade,</span>
-<span id="cb21-138"><a href="#cb21-138" aria-hidden="true" tabindex="-1"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>),</span>
-<span id="cb21-139"><a href="#cb21-139" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Clerical/Officer"</span>,<span class="st">"Administrator/Assistant"</span>,<span class="st">"Graduate/Trainee Consultant"</span>,<span class="st">"Consultant"</span>,<span class="st">"Senior Consultant"</span>,<span class="st">"Managing Consultant"</span>,<span class="st">"Principal Consultant"</span>,<span class="st">"Partner"</span>)) <span class="co"># replacing numerical values with descriptive labels for JobGrade</span></span>
+<span id="cb21-131"><a href="#cb21-131" aria-hidden="true" tabindex="-1"></a>: Table 1: Description of JobGrade</span>
+<span id="cb21-132"><a href="#cb21-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-133"><a href="#cb21-133" aria-hidden="true" tabindex="-1"></a>We have also noticed that the variables are currently represented by numerical values, although Genders and JobGrade are categorical variables, not numerical ones. The next step involve: - replacing these numerical values with descriptive labels for both variables - calculate frequencies for each variable - create contingency table to see gender distribution across job grade</span>
+<span id="cb21-134"><a href="#cb21-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-137"><a href="#cb21-137" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-138"><a href="#cb21-138" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: JobGrade</span></span>
+<span id="cb21-139"><a href="#cb21-139" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
 <span id="cb21-140"><a href="#cb21-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-141"><a href="#cb21-141" aria-hidden="true" tabindex="-1"></a>Freq1<span class="ot">=</span> <span class="fu">table</span>(JobGrade) <span class="co"># creates a frequency table for the variable JobGrade</span></span>
-<span id="cb21-142"><a href="#cb21-142" aria-hidden="true" tabindex="-1"></a>Freq1</span>
-<span id="cb21-143"><a href="#cb21-143" aria-hidden="true" tabindex="-1"></a>PcntGrade <span class="ot">&lt;-</span> <span class="fu">table</span>(JobGrade) <span class="co"># calculate the proportions of the different factor levels in JobGrade</span></span>
-<span id="cb21-144"><a href="#cb21-144" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(PcntGrade) </span>
-<span id="cb21-145"><a href="#cb21-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-146"><a href="#cb21-146" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: Gender</span></span>
-<span id="cb21-147"><a href="#cb21-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-148"><a href="#cb21-148" aria-hidden="true" tabindex="-1"></a>Gender <span class="ot">&lt;-</span> <span class="fu">factor</span>(diversity1<span class="sc">$</span>Gender,</span>
-<span id="cb21-149"><a href="#cb21-149" aria-hidden="true" tabindex="-1"></a><span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),</span>
-<span id="cb21-150"><a href="#cb21-150" aria-hidden="true" tabindex="-1"></a><span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Female"</span>, <span class="st">"Male"</span>)) <span class="co"># replacing numerical values with descriptive labels for Gender</span></span>
+<span id="cb21-141"><a href="#cb21-141" aria-hidden="true" tabindex="-1"></a>JobGrade <span class="ot">&lt;-</span> <span class="fu">factor</span>(diversity1<span class="sc">$</span>JobGrade,</span>
+<span id="cb21-142"><a href="#cb21-142" aria-hidden="true" tabindex="-1"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>),</span>
+<span id="cb21-143"><a href="#cb21-143" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Clerical/Officer"</span>,<span class="st">"Administrator/Assistant"</span>,<span class="st">"Graduate/Trainee Consultant"</span>,<span class="st">"Consultant"</span>,<span class="st">"Senior Consultant"</span>,<span class="st">"Managing Consultant"</span>,<span class="st">"Principal Consultant"</span>,<span class="st">"Partner"</span>)) <span class="co"># replacing numerical values with descriptive labels for JobGrade</span></span>
+<span id="cb21-144"><a href="#cb21-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-145"><a href="#cb21-145" aria-hidden="true" tabindex="-1"></a>Freq1<span class="ot">=</span> <span class="fu">table</span>(JobGrade) <span class="co"># creates a frequency table for the variable JobGrade</span></span>
+<span id="cb21-146"><a href="#cb21-146" aria-hidden="true" tabindex="-1"></a>Freq1</span>
+<span id="cb21-147"><a href="#cb21-147" aria-hidden="true" tabindex="-1"></a>PcntGrade <span class="ot">&lt;-</span> <span class="fu">table</span>(JobGrade) <span class="co"># calculate the proportions of the different factor levels in JobGrade</span></span>
+<span id="cb21-148"><a href="#cb21-148" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(PcntGrade) </span>
+<span id="cb21-149"><a href="#cb21-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-150"><a href="#cb21-150" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: Gender</span></span>
 <span id="cb21-151"><a href="#cb21-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-152"><a href="#cb21-152" aria-hidden="true" tabindex="-1"></a>Freq2<span class="ot">=</span> <span class="fu">table</span>(Gender) <span class="co"># creates a frequency table for the variable Gender</span></span>
-<span id="cb21-153"><a href="#cb21-153" aria-hidden="true" tabindex="-1"></a>Freq2</span>
-<span id="cb21-154"><a href="#cb21-154" aria-hidden="true" tabindex="-1"></a>PcntGender <span class="ot">&lt;-</span> <span class="fu">table</span>(Gender)</span>
-<span id="cb21-155"><a href="#cb21-155" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(PcntGender) <span class="co"># calculate the proportions of the different factor levels in Gender</span></span>
-<span id="cb21-156"><a href="#cb21-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-157"><a href="#cb21-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-158"><a href="#cb21-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-159"><a href="#cb21-159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-152"><a href="#cb21-152" aria-hidden="true" tabindex="-1"></a>Gender <span class="ot">&lt;-</span> <span class="fu">factor</span>(diversity1<span class="sc">$</span>Gender,</span>
+<span id="cb21-153"><a href="#cb21-153" aria-hidden="true" tabindex="-1"></a><span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),</span>
+<span id="cb21-154"><a href="#cb21-154" aria-hidden="true" tabindex="-1"></a><span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Female"</span>, <span class="st">"Male"</span>)) <span class="co"># replacing numerical values with descriptive labels for Gender</span></span>
+<span id="cb21-155"><a href="#cb21-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-156"><a href="#cb21-156" aria-hidden="true" tabindex="-1"></a>Freq2<span class="ot">=</span> <span class="fu">table</span>(Gender) <span class="co"># creates a frequency table for the variable Gender</span></span>
+<span id="cb21-157"><a href="#cb21-157" aria-hidden="true" tabindex="-1"></a>Freq2</span>
+<span id="cb21-158"><a href="#cb21-158" aria-hidden="true" tabindex="-1"></a>PcntGender <span class="ot">&lt;-</span> <span class="fu">table</span>(Gender)</span>
+<span id="cb21-159"><a href="#cb21-159" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(PcntGender) <span class="co"># calculate the proportions of the different factor levels in Gender</span></span>
 <span id="cb21-160"><a href="#cb21-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-163"><a href="#cb21-163" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-164"><a href="#cb21-164" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: contingency table</span></span>
-<span id="cb21-165"><a href="#cb21-165" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb21-166"><a href="#cb21-166" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: true</span></span>
-<span id="cb21-167"><a href="#cb21-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-168"><a href="#cb21-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-169"><a href="#cb21-169" aria-hidden="true" tabindex="-1"></a>CrossTable <span class="ot">&lt;-</span> <span class="fu">table</span>(JobGrade, Gender) <span class="co"># create a contingency table</span></span>
-<span id="cb21-170"><a href="#cb21-170" aria-hidden="true" tabindex="-1"></a>CrossTable</span>
+<span id="cb21-161"><a href="#cb21-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-162"><a href="#cb21-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-163"><a href="#cb21-163" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-164"><a href="#cb21-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-167"><a href="#cb21-167" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-168"><a href="#cb21-168" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: contingency table</span></span>
+<span id="cb21-169"><a href="#cb21-169" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb21-170"><a href="#cb21-170" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: true</span></span>
 <span id="cb21-171"><a href="#cb21-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-172"><a href="#cb21-172" aria-hidden="true" tabindex="-1"></a>GenderByGrade <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">round</span>(<span class="fu">prop.table</span>(CrossTable,<span class="dv">1</span>)<span class="sc">*</span><span class="dv">100</span>,<span class="dv">2</span>))</span>
-<span id="cb21-173"><a href="#cb21-173" aria-hidden="true" tabindex="-1"></a>GenderByGrade</span>
-<span id="cb21-174"><a href="#cb21-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-172"><a href="#cb21-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-173"><a href="#cb21-173" aria-hidden="true" tabindex="-1"></a>CrossTable <span class="ot">&lt;-</span> <span class="fu">table</span>(JobGrade, Gender) <span class="co"># create a contingency table</span></span>
+<span id="cb21-174"><a href="#cb21-174" aria-hidden="true" tabindex="-1"></a>CrossTable</span>
 <span id="cb21-175"><a href="#cb21-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-176"><a href="#cb21-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-177"><a href="#cb21-177" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-176"><a href="#cb21-176" aria-hidden="true" tabindex="-1"></a>GenderByGrade <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">round</span>(<span class="fu">prop.table</span>(CrossTable,<span class="dv">1</span>)<span class="sc">*</span><span class="dv">100</span>,<span class="dv">2</span>))</span>
+<span id="cb21-177"><a href="#cb21-177" aria-hidden="true" tabindex="-1"></a>GenderByGrade</span>
 <span id="cb21-178"><a href="#cb21-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-179"><a href="#cb21-179" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Analysis</span></span>
+<span id="cb21-179"><a href="#cb21-179" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-180"><a href="#cb21-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-181"><a href="#cb21-181" aria-hidden="true" tabindex="-1"></a>The visualization below shows that women predominantly occupy entry-level roles, while men are more prevalent in senior positions. For instance, the "clerical_officer" role comprises 80% females and 20% males, whereas the "partner" role is represented by nearly 90% males and just over 10% females. Up to this point, data reveal an observable pattern, men are more prevalent in senior roles and women predominantly occupy junior roles. However, it is not completely obvious just from looking at the data whether the company experiences a diversity and inclusion issue or if this is just due to chance. The next step involves conducting a statistical analysis to determine the significance of this pattern. To achieve this, we will perform a Chi-squared test.</span>
+<span id="cb21-181"><a href="#cb21-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb21-182"><a href="#cb21-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-185"><a href="#cb21-185" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-186"><a href="#cb21-186" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: graphical-representation</span></span>
-<span id="cb21-187"><a href="#cb21-187" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb21-188"><a href="#cb21-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-189"><a href="#cb21-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-190"><a href="#cb21-190" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(GenderByGrade, <span class="fu">aes</span>(<span class="at">x=</span>JobGrade, <span class="at">y=</span>Freq, <span class="at">fill=</span>Gender))<span class="sc">+</span></span>
-<span id="cb21-191"><a href="#cb21-191" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()<span class="sc">+</span></span>
-<span id="cb21-192"><a href="#cb21-192" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="fu">vars</span>(Gender))<span class="sc">+</span></span>
-<span id="cb21-193"><a href="#cb21-193" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill=</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
-<span id="cb21-194"><a href="#cb21-194" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
-<span id="cb21-195"><a href="#cb21-195" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_blank</span>())<span class="sc">+</span></span>
-<span id="cb21-196"><a href="#cb21-196" aria-hidden="true" tabindex="-1"></a>   <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"GenderByGrade"</span>, </span>
-<span id="cb21-197"><a href="#cb21-197" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Graphical representation of male/female % within each Job grade"</span>, </span>
-<span id="cb21-198"><a href="#cb21-198" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Job Grade"</span>, </span>
-<span id="cb21-199"><a href="#cb21-199" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Percentage"</span>, </span>
-<span id="cb21-200"><a href="#cb21-200" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Gender"</span>)<span class="sc">+</span></span>
-<span id="cb21-201"><a href="#cb21-201" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="at">by=</span><span class="dv">10</span>))</span>
-<span id="cb21-202"><a href="#cb21-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-203"><a href="#cb21-203" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-204"><a href="#cb21-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-205"><a href="#cb21-205" aria-hidden="true" tabindex="-1"></a><span class="fu"># Chi-Squared Test</span></span>
+<span id="cb21-183"><a href="#cb21-183" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Analysis</span></span>
+<span id="cb21-184"><a href="#cb21-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-185"><a href="#cb21-185" aria-hidden="true" tabindex="-1"></a>The visualization below shows that women predominantly occupy entry-level roles, while men are more prevalent in senior positions. For instance, the "clerical_officer" role comprises 80% females and 20% males, whereas the "partner" role is represented by nearly 90% males and just over 10% females. Up to this point, data reveal an observable pattern, men are more prevalent in senior roles and women predominantly occupy junior roles. However, it is not completely obvious just from looking at the data whether the company experiences a diversity and inclusion issue or if this is just due to chance. The next step involves conducting a statistical analysis to determine the significance of this pattern. To achieve this, we will perform a Chi-squared test.</span>
+<span id="cb21-186"><a href="#cb21-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-189"><a href="#cb21-189" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-190"><a href="#cb21-190" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: graphical-representation</span></span>
+<span id="cb21-191"><a href="#cb21-191" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb21-192"><a href="#cb21-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-193"><a href="#cb21-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-194"><a href="#cb21-194" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(GenderByGrade, <span class="fu">aes</span>(<span class="at">x=</span>JobGrade, <span class="at">y=</span>Freq, <span class="at">fill=</span>Gender))<span class="sc">+</span></span>
+<span id="cb21-195"><a href="#cb21-195" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()<span class="sc">+</span></span>
+<span id="cb21-196"><a href="#cb21-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="fu">vars</span>(Gender))<span class="sc">+</span></span>
+<span id="cb21-197"><a href="#cb21-197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill=</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb21-198"><a href="#cb21-198" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb21-199"><a href="#cb21-199" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_blank</span>())<span class="sc">+</span></span>
+<span id="cb21-200"><a href="#cb21-200" aria-hidden="true" tabindex="-1"></a>   <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"GenderByGrade"</span>, </span>
+<span id="cb21-201"><a href="#cb21-201" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Graphical representation of male/female % within each Job grade"</span>, </span>
+<span id="cb21-202"><a href="#cb21-202" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Job Grade"</span>, </span>
+<span id="cb21-203"><a href="#cb21-203" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Percentage"</span>, </span>
+<span id="cb21-204"><a href="#cb21-204" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Gender"</span>)<span class="sc">+</span></span>
+<span id="cb21-205"><a href="#cb21-205" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="at">by=</span><span class="dv">10</span>))</span>
 <span id="cb21-206"><a href="#cb21-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-207"><a href="#cb21-207" aria-hidden="true" tabindex="-1"></a>For the Chi-Squared test we begin by making two hypotheses:</span>
+<span id="cb21-207"><a href="#cb21-207" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb21-208"><a href="#cb21-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-209"><a href="#cb21-209" aria-hidden="true" tabindex="-1"></a>H0: There is no association between gender and job grade within the organization. The observed distribution of females and males across job grades is due to random chance.</span>
+<span id="cb21-209"><a href="#cb21-209" aria-hidden="true" tabindex="-1"></a><span class="fu"># Chi-Squared Test</span></span>
 <span id="cb21-210"><a href="#cb21-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-211"><a href="#cb21-211" aria-hidden="true" tabindex="-1"></a>H1: There is a significant association between gender and job grade within the organization. The observed distribution of females and males across job grades is not a result of random chance; it reflects a significant pattern of male predominance in senior roles and a greater representation of females in entry-level positions</span>
+<span id="cb21-211"><a href="#cb21-211" aria-hidden="true" tabindex="-1"></a>For the Chi-Squared test we begin by making two hypotheses:</span>
 <span id="cb21-212"><a href="#cb21-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-213"><a href="#cb21-213" aria-hidden="true" tabindex="-1"></a>When conducted, the test gives us a "p" value as the result, based on which you can conclude whether your hypothesis of independence is true or not. In other words, the "p" value is just the likelihood of your variables being independent.</span>
+<span id="cb21-213"><a href="#cb21-213" aria-hidden="true" tabindex="-1"></a>H0: There is no association between gender and job grade within the organization. The observed distribution of females and males across job grades is due to random chance.</span>
 <span id="cb21-214"><a href="#cb21-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-215"><a href="#cb21-215" aria-hidden="true" tabindex="-1"></a>Particularly in this test, it is crucial to examine the p-values. If the resulting p-value is lower than the typical predetermined significance level of 0.05, we would then reject the null hypothesis.</span>
+<span id="cb21-215"><a href="#cb21-215" aria-hidden="true" tabindex="-1"></a>H1: There is a significant association between gender and job grade within the organization. The observed distribution of females and males across job grades is not a result of random chance; it reflects a significant pattern of male predominance in senior roles and a greater representation of females in entry-level positions</span>
 <span id="cb21-216"><a href="#cb21-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-217"><a href="#cb21-217" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conducting a Chi Square Test in R</span></span>
+<span id="cb21-217"><a href="#cb21-217" aria-hidden="true" tabindex="-1"></a>When conducted, the test gives us a "p" value as the result, based on which you can conclude whether your hypothesis of independence is true or not. In other words, the "p" value is just the likelihood of your variables being independent.</span>
 <span id="cb21-218"><a href="#cb21-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-219"><a href="#cb21-219" aria-hidden="true" tabindex="-1"></a>We will utilize data from "CrossTable", which provides information about gender and job grade.</span>
+<span id="cb21-219"><a href="#cb21-219" aria-hidden="true" tabindex="-1"></a>Particularly in this test, it is crucial to examine the p-values. If the resulting p-value is lower than the typical predetermined significance level of 0.05, we would then reject the null hypothesis.</span>
 <span id="cb21-220"><a href="#cb21-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-221"><a href="#cb21-221" aria-hidden="true" tabindex="-1"></a>The "chisq.test()" function is an built-in function of R that enables you to perform the Chi-Square test. It will provide us with all the necessary information to determine the independence of variables within a data set and help us conclude whether they are related or not.</span>
+<span id="cb21-221"><a href="#cb21-221" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conducting a Chi Square Test in R</span></span>
 <span id="cb21-222"><a href="#cb21-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-225"><a href="#cb21-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-226"><a href="#cb21-226" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: chi-squared-test</span></span>
-<span id="cb21-227"><a href="#cb21-227" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb21-228"><a href="#cb21-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-229"><a href="#cb21-229" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(CrossTable)</span>
-<span id="cb21-230"><a href="#cb21-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-231"><a href="#cb21-231" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-223"><a href="#cb21-223" aria-hidden="true" tabindex="-1"></a>We will utilize data from "CrossTable", which provides information about gender and job grade.</span>
+<span id="cb21-224"><a href="#cb21-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-225"><a href="#cb21-225" aria-hidden="true" tabindex="-1"></a>The "chisq.test()" function is an built-in function of R that enables you to perform the Chi-Square test. It will provide us with all the necessary information to determine the independence of variables within a data set and help us conclude whether they are related or not.</span>
+<span id="cb21-226"><a href="#cb21-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-229"><a href="#cb21-229" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-230"><a href="#cb21-230" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: chi-squared-test</span></span>
+<span id="cb21-231"><a href="#cb21-231" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
 <span id="cb21-232"><a href="#cb21-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-233"><a href="#cb21-233" aria-hidden="true" tabindex="-1"></a>The p-value is extremely small, less than 2.2e-16, which is very close to zero. Since the p-value is less than the significance level of 0.05, we can confidently reject the null hypothesis, concluding that the two variables are dependent.</span>
+<span id="cb21-233"><a href="#cb21-233" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(CrossTable)</span>
 <span id="cb21-234"><a href="#cb21-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-235"><a href="#cb21-235" aria-hidden="true" tabindex="-1"></a>This result indicates a statistically significant association between gender and job grade. It suggests that certain factors are influencing the observed distribution of genders within job grades.</span>
+<span id="cb21-235"><a href="#cb21-235" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb21-236"><a href="#cb21-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-237"><a href="#cb21-237" aria-hidden="true" tabindex="-1"></a>Further analysis is needed to investigate whether these factors may involve forms of discrimination.</span>
+<span id="cb21-237"><a href="#cb21-237" aria-hidden="true" tabindex="-1"></a>The p-value is extremely small, less than 2.2e-16, which is very close to zero. Since the p-value is less than the significance level of 0.05, we can confidently reject the null hypothesis, concluding that the two variables are dependent.</span>
 <span id="cb21-238"><a href="#cb21-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-239"><a href="#cb21-239" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusions</span></span>
+<span id="cb21-239"><a href="#cb21-239" aria-hidden="true" tabindex="-1"></a>This result indicates a statistically significant association between gender and job grade. It suggests that certain factors are influencing the observed distribution of genders within job grades.</span>
 <span id="cb21-240"><a href="#cb21-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-241"><a href="#cb21-241" aria-hidden="true" tabindex="-1"></a>In this article, we explored the power of two fundamental tools for analyzing categorical data: frequency tables and the chi-squared test. Frequency tables provide a clear summary of the distribution and patterns within categorical variables, while the chi-squared test helps us determine if there's a significant relationship between two categorical variables.</span>
+<span id="cb21-241"><a href="#cb21-241" aria-hidden="true" tabindex="-1"></a>Further analysis is needed to investigate whether these factors may involve forms of discrimination.</span>
 <span id="cb21-242"><a href="#cb21-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-243"><a href="#cb21-243" aria-hidden="true" tabindex="-1"></a>Through a case study on gender representation in senior roles, we demonstrated how these tools can reveal crucial insights. We found a noticeable gender disparity, with men predominantly occupying senior positions and women largely in junior roles.</span>
+<span id="cb21-243"><a href="#cb21-243" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusions</span></span>
 <span id="cb21-244"><a href="#cb21-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-245"><a href="#cb21-245" aria-hidden="true" tabindex="-1"></a>The chi-squared test's results, with a p-value close to zero, confirmed a very strong association between gender and job grade. While this statistical evidence does not directly imply discrimination, it signals that factors beyond chance influence this distribution.</span>
+<span id="cb21-245"><a href="#cb21-245" aria-hidden="true" tabindex="-1"></a>In this article, we explored the power of two fundamental tools for analyzing categorical data: frequency tables and the chi-squared test. Frequency tables provide a clear summary of the distribution and patterns within categorical variables, while the chi-squared test helps us determine if there's a significant relationship between two categorical variables.</span>
 <span id="cb21-246"><a href="#cb21-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-247"><a href="#cb21-247" aria-hidden="true" tabindex="-1"></a>To address potential discrimination and foster diversity and inclusion, further analysis and actions are necessary. These tools empower organizations to make data-driven decisions and drive positive change in their workforce dynamics.</span>
+<span id="cb21-247"><a href="#cb21-247" aria-hidden="true" tabindex="-1"></a>Through a case study on gender representation in senior roles, we demonstrated how these tools can reveal crucial insights. We found a noticeable gender disparity, with men predominantly occupying senior positions and women largely in junior roles.</span>
+<span id="cb21-248"><a href="#cb21-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-249"><a href="#cb21-249" aria-hidden="true" tabindex="-1"></a>The chi-squared test's results, with a p-value close to zero, confirmed a very strong association between gender and job grade. While this statistical evidence does not directly imply discrimination, it signals that factors beyond chance influence this distribution.</span>
+<span id="cb21-250"><a href="#cb21-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-251"><a href="#cb21-251" aria-hidden="true" tabindex="-1"></a>To address potential discrimination and foster diversity and inclusion, further analysis and actions are necessary. These tools empower organizations to make data-driven decisions and drive positive change in their workforce dynamics.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

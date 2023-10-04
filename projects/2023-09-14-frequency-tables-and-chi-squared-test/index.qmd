@@ -4,7 +4,6 @@ description: "Discover how to extract valuable insights from categorical data us
 author: "Cozmina Secula"
 date: "2023-09-14"
 categories: [frequency tables, chi-squared test, categorical variables, quantitative analysis]
-draft: true
 format: 
   html: 
    code-fold: true
@@ -21,6 +20,11 @@ A people analytics project typically involves working with quantifiable data to 
 Frequency tables serve as a statistical instrument for categorical data analysis. They achieve this by counting the occurrences of variables within a data set, providing a concise overview of the distribution and patterns within these categorical variables. When analyzing categorical data, it is often essential to determine if a significant relationship exists between two categorical variables within data set. The chi-squared test helps determine whether these two variables are associated or functionally related. In simpler terms, it quantifies the degree of independence between two categorical variables. When employed together, these tools can unveil intriguing patterns and relationships within data.
 
 In this post, I will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.
+
+
+<iframe src="slides.html" width="100%" height="600"></iframe>
+
+
 
 # Understanding Frequency Tables
 
