@@ -7,7 +7,7 @@ about:
   image-shape: round
   links:
     - icon: envelope
-      text: Contact me
+      text: Contact
       href: mailto:cozmina.secula@gmail.com
     - icon: linkedin
       text: LinkedIn

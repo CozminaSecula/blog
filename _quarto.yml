@@ -21,15 +21,7 @@ website:
         href: https://github.com/CozminaSecula
       - icon: envelope
         href: mailto:cozmina.secula@gmail.com
-  page-footer: 
-    left: |
-      <span class="container"><strong>Made with [Quarto](https://quarto.org/){target="_blank"}</strong></span>
-    right: |
-      <span class="container"><strong>[Github Repo](https://github.com/CozminaSecula/blog){target="_blank"}</strong></span>
-    center: |
-      <span class="container"><strong>[Contact Cozmina Secula](mailto:cozmina.secula@gmail.com){target="_blank"}</strong></span>
-    background: "#eee"
-  
+
 format:
   html:
     theme: custom.scss

@@ -1,10 +1,8 @@
 ---
 title: "Unlocking Insights: Analyzing Categorical Data with Cross-Tab and Chi-Squared Test"
 description: "Discover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a case study on gender representation in senior roles."
-author: "Cozmina Secula"
-date: "2023-09-14"
 categories: [frequency tables, chi-squared test, categorical data, quantitative analysis]
-image: image.jpeg
+draft: true
 format: 
   revealjs: 
    theme: theme.scss
@@ -30,15 +28,11 @@ execute:
 -   frequency tables
 -   chi-squared test
 
-Employed together these tools help to unveil patterns and relationships between data.
-
-
 ## Case study
 
 -   focused on diversity and inclusion (D&I)
 -   sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916)
 -   with data available [here](https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446)
-
 
 ## Data exploration and analysis
 
@@ -47,7 +41,6 @@ Employed together these tools help to unveil patterns and relationships between 
 -   creation of cross-tab
 -   data visualization
 -   chi-squared test
-
 
 # The Business Perspective
 
@@ -249,15 +242,13 @@ ggplot(diversity1, aes(x=jobgrade, fill=gender))+
  
 ```
 
-
 ## Does this organization have a D&I problem?
 
 <br>
 
- - the data reveal a pattern that women are found more in junior roles and men in senior roles.
- - however, the data did not indicate if this is a coincidence or if it is statistically significant.
- - the chi-squared test can be used to determine whether the observed pattern is statistically significant.
-
+-   the data reveal a pattern that women are found more in junior roles and men in senior roles.
+-   however, the data did not indicate if this is a coincidence or if it is statistically significant.
+-   the chi-squared test can be used to determine whether the observed pattern is statistically significant.
 
 # Chi-Squared Test
 
@@ -268,13 +259,12 @@ ggplot(diversity1, aes(x=jobgrade, fill=gender))+
 ::: small
 **H0**: There is no association between gender and job grade within the organization.
 
- - the observed distribution of females and males across job grades is due to random chance.
+-   the observed distribution of females and males across job grades is due to random chance.
 
-**H1**: There is a significant association between gender and job grade within the organization. 
+**H1**: There is a significant association between gender and job grade within the organization.
 
- - the observed distribution of females and males across job grades is not a result of random chance; it reflects a significant pattern of male predominance in senior roles and a greater representation of females in entry-level positions.
+-   the observed distribution of females and males across job grades is not a result of random chance; it reflects a significant pattern of male predominance in senior roles and a greater representation of females in entry-level positions.
 :::
-
 
 ## Chi squared test in R
 
