@@ -1,9 +1,9 @@
 ---
-title: "Unlocking Insights: Analyzing Categorical Data with Cross-Tab and Chi-Squared Test"
+title: "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test"
 description: "Discover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a case study on gender representation in senior roles."
 author: "Cozmina Secula"
 date: "2023-09-14"
-categories: [frequency tables, chi-squared test, categorical variables, quantitative analysis]
+categories: [frequency tables, chi-squared test, categorical variable, quantitative analysis]
 image: image.jpeg
 ---
 
@@ -17,8 +17,6 @@ The presentation will guide you through the utilization of frequency tables and 
 
 # Slides
 
-
-
-<iframe src="slides.html" width="100%" height="500px" border="0" >
+<iframe src="slides.html" width="100%" height="500px" border="0">
 
 </iframe>

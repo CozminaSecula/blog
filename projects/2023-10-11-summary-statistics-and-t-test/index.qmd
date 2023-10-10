@@ -1,24 +1,24 @@
 ---
-title: "Unlocking Insights: Analyzing Categorical Data with Cross-Tab and Chi-Squared Test"
-description: "Discover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a case study on gender representation in senior roles."
+title: "Unlocking Insights (II): Analyzing BAME Representation with Summary Statistics and Independent Samples t-Test for Inclusive Workplaces"
+description: "Discover how to extract valuable insights from data using summary statistics and the independent samples t-test, with a case study on team diversity within a large organization."
 author: "Cozmina Secula"
-date: "2023-09-14"
-categories: [frequency tables, chi-squared test, categorical variables, quantitative analysis]
-image: image.jpeg
+date: "2023-10-11"
+categories: [summary statistics, independent samples t-test, continuous variable, categorical variable, quantitative analysis]
+image: image2.jpeg
 ---
 
 # Introduction
 
-A people analytics project typically involves working with quantifiable data to address business questions and objectives. However, for data to be valuable, it requires analysis and interpretation, which is where analytic techniques become critical. This presentation introduces two distinct tools for initiating data analysis with categorical data: frequency tables and the chi-squared test.
+In the [previous analysis](https://cozminasecula.github.io/blog/projects/2023-09-14-frequency-tables-and-chi-squared-test/), I introduced you to the fundamental concept of using frequency tables and the chi-squared test to analyze categorical data.
 
-Frequency tables serve as a statistical instrument for categorical data analysis. They achieve this by counting the occurrences of variables within a data set, providing a concise overview of the distribution and patterns within these categorical variables. When analyzing categorical data, it is often essential to determine if a significant relationship exists between two categorical variables within data set. The chi-squared test helps determine whether these two variables are associated or functionally related. In simpler terms, it quantifies the degree of independence between two categorical variables. When employed together, these tools can unveil intriguing patterns and relationships within data.
+Building on that foundation, this post goes one step further by offering two tools for data analysis, which will work with both continuous and categorical data: summary statistics and the independent samples t-test.
 
-The presentation will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.
+Summary statistics is a part of descriptive statistics serving as a powerful means to extract valuable insights from a data set. It may include essential metrics such as the total number of values, the mean value, and the standard deviation. These statistics provide a clear picture of data trends and distribution, aiding in the interpretation of data patterns.On the other hand, the independent-samples t-test is employed to compare means between two distinct groups of data.It helps us investigate whether these two groups differ significantly in a particular dimension. When employed together, these tools can unveil intriguing patterns and relationships within data.
+
+The presentation will guide you through the utilization of summary statistics and the independent-samples t-test for insightful data analysis.
 
 # Slides
 
-
-
-<iframe src="slides.html" width="100%" height="500px" border="0" >
+<iframe src="slides1.html" width="100%" height="500px" border="0">
 
 </iframe>
