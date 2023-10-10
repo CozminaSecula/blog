@@ -39,7 +39,7 @@ execute:
 
 ## Data exploration and analysis
 
--   `tidyverse` package
+-   `tidyverse`, `kableExtra`, `car` packages
 -   data preparation and exploration
 -   summary statistics
 -   data visualization
