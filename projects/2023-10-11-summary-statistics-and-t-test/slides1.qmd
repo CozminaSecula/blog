@@ -1,5 +1,5 @@
 ---
-title: "Unlocking Insights: Analyzing Data with Summary Statistics and Independent Samples t-Test"
+title: "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test"
 description: "Discover how to extract valuable insights using summary statistics and the independent samples t-test, with a case study on team diversity within a large organization."
 categories: [summary statistics, independent samples t-test, continuous variable, categorical variable, quantitative analysis]
 draft: true
@@ -215,3 +215,4 @@ ggplot(bame_profession, aes(x=profession, y= BAME, color = profession))+
  - there is a higher variance of BAME representation in the "Professional Service" profession compared to the "Sales Staff" profession
 :::
 :::
+

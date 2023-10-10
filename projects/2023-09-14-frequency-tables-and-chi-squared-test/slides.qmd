@@ -1,5 +1,5 @@
 ---
-title: "Unlocking Insights: Analyzing Categorical Data with Cross-Tab and Chi-Squared Test"
+title: "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test"
 description: "Discover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a case study on gender representation in senior roles."
 categories: [frequency tables, chi-squared test, categorical data, quantitative analysis]
 draft: true
@@ -37,7 +37,7 @@ execute:
 
 ## Data exploration and analysis
 
--   `tidyverse` package
+-   `tidyverse`, `kableExtra` packages
 -   data preparation and exploration
 -   creation of cross-tab
 -   data visualization
