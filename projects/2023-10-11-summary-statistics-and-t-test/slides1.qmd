@@ -1,0 +1,217 @@
+---
+title: "Unlocking Insights: Analyzing Data with Summary Statistics and Independent Samples t-Test"
+description: "Discover how to extract valuable insights using summary statistics and the independent samples t-test, with a case study on team diversity within a large organization."
+categories: [summary statistics, independent samples t-test, continuous variable, categorical variable, quantitative analysis]
+draft: true
+format: 
+  revealjs: 
+   theme: theme.scss
+   transition: fade
+   background-transition: fade
+   embed-resources: true
+code-link: true
+toc-depth: 1
+execute:
+  echo: true
+  freeze: auto
+---
+
+# Overview of the Presentation
+
+```{r}
+#| echo: false
+ library(tidyverse)
+ library(kableExtra)
+ library(car)
+
+```
+
+## Introducing two distinct tools for data analysis with numerical and categorical data
+
+-   summary statistics
+-   independent samples t-test
+
+## Case study
+
+-   focused on diversity and inclusion (D&I)
+-   sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916)
+-   with data available [here](https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446)
+
+## Data exploration and analysis
+
+-   `tidyverse` package
+-   data preparation and exploration
+-   summary statistics
+-   data visualization
+-   independent samples t-test
+
+# The Business Perspective
+
+## The organization goal: to enhance diversity by ensuring robust representation of BAME individuals
+
+::: small
+-   **Commercial perspective**
+
+    -   a more diverse workforce offers a competitive edge by enhancing the organization's understanding of its customers and subsequently improving overall performance
+
+-   **People perspective**
+
+    -   the organization gains access to a broader candidate pool, boosts employee engagement, and elevates retention rates.
+:::
+
+## The research question
+
+<br>
+
+*How does the distribution of BAME individuals vary across different professions?*
+
+# Data Preparation and Exploration
+
+## Read data
+
+```{r}
+#| label: read-data
+#| echo: true
+#| warning: false
+
+diversity <- read_csv("../2023-10-11-summary-statistics-and-t-test/diversity2.csv")
+glimpse(diversity)
+
+```
+
+-   928 observations and 30 variables
+-   data type: double <dbl> for all variables
+
+## Description of variables of interest
+
+<br>
+
+::: small
+-   **Variables of Interest:**
+
+    -   **BAME:** Percentage of the unit comprised of Black, Asian, or Minority Ethnic employees.
+
+    -   **Function:** Function 1 = Sales staff (customer-facing roles) or 2 = Professional Service (non-customer-facing roles).
+
+-   Both variables are of data type double (dbl).
+
+-   The "BAME" variable is numerical, while the "Function" variable is categorical and needs to be transformed into a factor for R analysis.
+:::
+
+## Data preparation (I)
+
+::: small
+```{r}
+#| label: new-variable-function-as-factor
+
+# Create a new variable named "profession" with two levels "Sales Staff" and "Professional Service"
+diversity <- diversity|>
+  mutate(profession = factor(Function,
+                           levels = c(1:2),
+                           labels = c("Sales Staff", "Professional Service")))
+
+
+# Check levels of the new variable
+diversity|>
+  distinct(diversity$profession)
+
+# Drop "NA" levels as they are not meaningful for the analysis
+diversity_filtered <- diversity|>
+  filter(profession != "NA")|>
+  droplevels()
+
+# Check variable levels after dropping "NA" 
+diversity_filtered|>
+  distinct(profession)
+
+```
+:::
+
+## Data preparation (II)
+
+::: small
+```{r}
+
+#| label: new-data-frame-BAME_profession
+
+
+# Creating a new data frame "bame_profession" including variables of interest
+
+bame_profession <- diversity_filtered|>
+  select(BAME, profession)
+
+glimpse(bame_profession)
+```
+:::
+
+## Summary statistics: Measures of center
+
+<br>
+
+::: small
+```{r}
+#| label: mesures-of-center
+
+bame_profession|>
+  group_by(profession)|>
+  summarise(mean=mean(BAME, na.rm = TRUE),
+            median=median(BAME, na.rm = TRUE),
+            iqr=IQR(BAME, na.rm =TRUE),
+            sd=sd(BAME, na.rm = TRUE),
+            n= sum(!is.na(BAME)))|>
+  kable(col.names = c("Profession", "Mean", "Median", "IQR", "Std. Deviation", "Sum"), align = "cccc")
+  
+```
+:::
+
+::: goal
+::: small
+-   there is a difference between the mean, median, and standard deviation of the "Sales Staff" and "Professional Service" groups.
+-   404 individuals from "Sales Staff" and 342 individuals from "Professional Service" reported BAME percentages.
+:::
+:::
+
+## Summary statistics: Density plot
+
+:::small
+```{r}
+#| label: density-plot
+
+ggplot(bame_profession, aes(x=BAME, fill=profession))+
+  geom_density(alpha = 0.5)+
+  labs(title = "BAME distribution by Profession",
+      x = "BAME",
+      y = "Density",
+      fill = "Profession")
+
+```
+:::
+
+:::goal
+:::small
+
+ - there are more "Sales Staff" with lower percentages of BAME individuals
+ - there is a more even distribution of BAME percentages across "Professional Service" individuals
+:::
+:::
+
+## Summary statistics: Boxplots with points
+
+:::small
+```{r}
+#|llabel: boxplot with points
+
+ggplot(bame_profession, aes(x=profession, y= BAME, color = profession))+
+  geom_boxplot(width = 0.5)+
+  geom_point(position = position_jitter(height = 0), size = 0.75, alpha= 0.5)+
+  labs( title= "BAME distribution by Profession", 
+        x= NULL,
+        y= "BAME percentage")
+```
+:::
+
+:::goal
+:::small
+ - there is a higher variance of BAME representation in the "Professional Service" profession compared to the "Sales Staff" profession
+:::
+:::
