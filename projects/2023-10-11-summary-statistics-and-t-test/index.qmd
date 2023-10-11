@@ -1,5 +1,5 @@
 ---
-title: "Unlocking Insights (II): Analyzing BAME Representation with Summary Statistics and Independent Samples t-Test for Inclusive Workplaces"
+title: "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test"
 description: "Discover how to extract valuable insights from data using summary statistics and the independent samples t-test, with a case study on team diversity within a large organization."
 author: "Cozmina Secula"
 date: "2023-10-11"
