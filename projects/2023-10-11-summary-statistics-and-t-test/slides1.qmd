@@ -92,7 +92,7 @@ glimpse(diversity)
 ::: small
 -   **Variables of Interest:**
 
-    -   **BAME:** Percentage of the unit comprised of Black, Asian, or Minority Ethnic employees.
+    -   **BAME:** Percentage of the team comprised of Black, Asian, or Minority Ethnic employees.
 
     -   **Function:** Function 1 = Sales staff (customer-facing roles) or 2 = Professional Service (non-customer-facing roles).
 
@@ -146,6 +146,8 @@ bame_profession <- diversity_filtered|>
 glimpse(bame_profession)
 ```
 :::
+
+# Summary statistics
 
 ## Summary statistics: Measures of center
 
@@ -321,7 +323,7 @@ t.test(bame_profession$BAME ~ bame_profession$profession, var.equal = FALSE)
 :::
 :::
 
-#Conclusions
+# Conclusions
 
 ## Conslusions
 
