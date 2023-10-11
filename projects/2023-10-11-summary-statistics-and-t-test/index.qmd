@@ -9,7 +9,7 @@ image: image2.jpeg
 
 # Introduction
 
-In the [previous analysis](https://cozminasecula.github.io/blog/projects/2023-09-14-frequency-tables-and-chi-squared-test/), I introduced two fundamental concepts to analyze categorical data: frequency tables and the chi-squared test.
+In the [previous post](https://cozminasecula.github.io/blog/projects/2023-09-14-frequency-tables-and-chi-squared-test/), I introduced two fundamental concepts to analyze categorical data: frequency tables and the chi-squared test.
 
 This post goes one step further by offering two tools for data analysis, which will work with continuous and categorical data: summary statistics and the independent samples t-test.
 

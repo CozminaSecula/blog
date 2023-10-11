@@ -43,7 +43,7 @@ execute:
 ## Data exploration and analysis
 
 -   `tidyverse`, `kableExtra`, `car` packages
--   data preparation and exploration
+-   data preparation 
 -   summary statistics
 -   data visualization
 -   independent samples t-test
@@ -96,7 +96,7 @@ glimpse(diversity)
 
     -   **Function:** Function 1 = Sales staff (customer-facing roles) or 2 = Professional Service (non-customer-facing roles).
 
--   Both variables are of data type double (dbl).
+-   Both variables are of data type double (dbl), in the data set.
 
 -   The "BAME" variable is numerical, while the "Function" variable is categorical and needs to be transformed into a factor for R analysis.
 :::
@@ -171,7 +171,7 @@ bame_profession|>
 
 ::: goal
 ::: small
--   There is a difference between the mean, median, and standard deviation of the "Sales Staff" and "Professional Service" groups.
+-   There is a difference between the mean, median, and standard deviation of the BAME percentage in the "Sales Staff" and "Professional Service" groups.
 -   404 teams within the "Sales Staff" profession and 342 teams within "Professional Service" profession reported the percentages of BAME.
 :::
 :::
@@ -197,7 +197,6 @@ ggplot(bame_profession, aes(x=BAME, fill=profession))+
 :::
 
 ::: {.column width="25%"}
-
 <br><br><br><br><br>
 
 BAME percentages are lower among "Sales Staff"; they are more evenly distributed among "Professional Service" teams.
@@ -225,12 +224,8 @@ ggplot(bame_profession, aes(x=profession, y= BAME, color = profession))+
 ```
 :::
 
-
 ::: {.column width="25%"}
-
-
 <br><br><br><br><br>
-
 
 There is a higher variance of BAME representation in the "Professional Service" profession compared to the "Sales Staff" profession.
 :::
@@ -242,34 +237,30 @@ There is a higher variance of BAME representation in the "Professional Service" 
 <br><br>
 
 ::: small
-
- - The distribution of BAME individuals varies across the two professions with more "Sales Staff" teams with a lower percentage of BAME individuals and "Professional Service" with a more evenly distribution.
- - However, these findings are derived from summary statistics and visual examinations, which may not be highly precise.
-  - To gain greater confidence in comparing BAME representation between the two professions and to gain a deeper understanding of the organization's ethnicity dynamics, we will conduct an Independent Samples t-Test.
-  
+-   The distribution of BAME individuals varies across the two professions with more "Sales Staff" teams with a lower percentage of BAME individuals and "Professional Service" with a more evenly distribution.
+-   However, these findings are derived from summary statistics and visual examinations, which may not be highly precise.
+-   To gain greater confidence in comparing BAME representation between the two professions and to gain a deeper understanding of the organization's ethnicity dynamics, we will conduct an Independent Samples t-Test.
 :::
-
 
 # Independent Samples t-Test
 
-## Levene’s Test for Equality of Variances (I)
+## Levene's Test for Equality of Variances (I)
 
 ::: small
 ::: goal
-One of the data requirements for Independent Samples t-Test is homogeneity of variances (i.e., variances approximately equal across groups).
+One of the requirements for the Independent Samples t-Test is the homogeneity of variances (i.e., variances approximately equal across groups).
 :::
 
- - When this requirement is violated and the sample sizes for each group differ, the p value is not trustworthy. However, the Independent Samples t Test output also includes an approximate t statistic that is not based on assuming equal population variances. This alternative statistic, called the Welch t Test statistic, may be used when equal variances among populations cannot be assumed.
+-   If this requirement is violated and the sample sizes for each group differ, the p-value is unreliable. An approximate t-statistic is also included in the independent samples t-test output, which does not assume equal variances across populations. The Welch t-test statistic can be used when equal variances between populations cannot be assumed.
 :::
 
-## Levene’s Test for Equality of Variances (II)
+## Levene's Test for Equality of Variances (II)
 
-:::small
-
+::: small
 **The hypotheses**
 
- - H0: The population variances of "Sales Staff" and "Professional Service" are equal.
- - H1: The population variances of "Sales Staff" and "Professional Service" are not equal.
+-   H0: The population variances of "Sales Staff" and "Professional Service" are equal.
+-   H1: The population variances of "Sales Staff" and "Professional Service" are not equal.
 
 ```{r}
 #| label: levene's-test-for-equality-of-variances
@@ -278,28 +269,27 @@ leveneTest(bame_profession$BAME, group = bame_profession$profession, center=mean
 
 ```
 
- - The p-value is 4.141e-09, less than 0.05. This indicates that there's very strong evidence against the null hypothesis. We reject the null hypothesis of Levene's Test.
+-   The p-value is 4.141e-09, less than 0.05. This indicates that there's very strong evidence against the null hypothesis. We reject the null hypothesis of Levene's Test.
 
- - This imply that the variances of the two groups are not equal (i.e., that the homogeneity of variances assumption is violated)
+-   This imply that the variances of the two groups are not equal (i.e., that the homogeneity of variances assumption is violated)
 :::
- 
+
 ## Independent Samples t-Test (I)
 
-
 ::: small
- - We want to test whether the means for BAME individuals among "Sales Staff" profession and BAME individuals among "Professional Service" profession in this organization are statistically different.
- - We can use an Independent Samples t-Test to compare the mean of BAME percentages for "Sales Staff" and " Professional Service"
- 
- <br>
- 
- **The hypotheses**
- 
- - H0:The difference of the means are is equal to 0
- - H1:The difference of the means is not equal to 0.
-::: 
- 
+-   We want to test whether the means for BAME individuals among "Sales Staff" profession and BAME individuals among "Professional Service" profession in this organization are statistically different.
+-   We can use an Independent Samples t-Test to compare the mean of BAME percentages for "Sales Staff" and " Professional Service"
+
+<br>
+
+**The hypotheses**
+
+-   H0:The difference of the means are is equal to 0
+-   H1:The difference of the means is not equal to 0.
+:::
+
 ## Independent Samples t-Test (II)
- 
+
 ::: small
 ```{r}
 #| label: Independent-Samples-t-Test
@@ -313,27 +303,27 @@ t.test(bame_profession$BAME ~ bame_profession$profession, var.equal = FALSE)
 ## Independent Samples t-Test (III)
 
 ::: small
- - The result of Levene’s Test tells us that we should look at the Welch Two Sample t-test due to the fact the variances of the two groups are not equal.
- - The p-value = 2.345e-08 for t-test for unequal variances is less than 0.001; we conclude that there is a significant difference in mean percentage BAME between the two functions.
+-   The result of Levene's Test tells us that we should look at the Welch Two Sample t-test due to the fact the variances of the two groups are not equal.
+-   The p-value = 2.345e-08 for t-test for unequal variances is less than 0.001; we conclude that there is a significant difference in mean percentage BAME between the two functions.
 
-:::goal
-  - In comparing the "Sales Staff" and the "Professional Service" functions, the mean proportion of BAME staff is significantly lower in "Sales Staff" than in "Professional Service".
-  - The average proportion of BAME staff in teams within the "Sales Staff" is 9.7 %, and by comparison, the average proportion of BAME staff in teams within the "Professional Service" function is 14.39 %. 
-  - Deeper analysis shows that the likelihood of this difference occurring by chance alone is less than 1 in 1,000, suggesting there is an issue that needs attention within the "Sales Staff" function within the organization.
+::: goal
+-   In comparing the "Sales Staff" and the "Professional Service" functions, the mean proportion of BAME staff is significantly lower in "Sales Staff" than in "Professional Service".
+-   The average proportion of BAME staff in teams within the "Sales Staff" is 9.7 %, and by comparison, the average proportion of BAME staff in teams within the "Professional Service" function is 14.39 %.
+-   Deeper analysis shows that the likelihood of this difference occurring by chance alone is less than 1 in 1,000, suggesting there is an issue that needs attention within the "Sales Staff" function within the organization.
 :::
 :::
 
 # Conclusions
 
-## Conslusions
+## Conclusions
 
 ::: small
- - summary statistics and graphical visualization provided a clear summary of the distribution of BAME individuals across the two professions: **more "Sales Staff" teams have a lower percentage of BAME individuals and "Professional Service" teams have a more evenly distribution.**
- 
- - the independent samples t-test's results, with a p-value close to the 0, **confirmed a strong difference in mean percentage BAME between the two functions, suggesting there is an issue that needs attention within the "Sales Staff" function within the organization.**
+-   summary statistics and graphical visualization provided a clear summary of the distribution of BAME individuals across the two professions: **more "Sales Staff" teams have a lower percentage of BAME individuals and "Professional Service" teams have a more evenly distribution.**
+
+-   the independent samples t-test's results, with a p-value close to the 0, **confirmed a strong difference in mean percentage BAME between the two functions, suggesting there is an issue that needs attention within the "Sales Staff" function within the organization.**
 :::
 
 ## Recomendations
 
- - From this analysis, we find out that the organization faces some challenges in BAME representation across professions, particularly in the "Sales Staff".
- - Further, the organization may continue the investigation to find out what factors influence or are associated with variations in diversity across the two teams.
+-   According to our analysis, the organization faces challenges in BAME representation across professions, particularly in the “Sales Staff ”.
+-   Further research may be conducted to determine what factors influence or are associated with differences in diversity between the two teams.
