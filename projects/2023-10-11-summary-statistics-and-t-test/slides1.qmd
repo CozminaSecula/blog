@@ -43,7 +43,7 @@ execute:
 ## Data exploration and analysis
 
 -   `tidyverse`, `kableExtra`, `car` packages
--   data preparation 
+-   data preparation
 -   summary statistics
 -   data visualization
 -   independent samples t-test
@@ -171,7 +171,7 @@ bame_profession|>
 
 ::: goal
 ::: small
--   There is a difference between the mean, median, and standard deviation of the BAME percentage in the "Sales Staff" and "Professional Service" groups.
+-   There is a difference between the mean, median, IQR, and standard deviation of the BAME percentage in the "Sales Staff" and "Professional Service" groups.
 -   404 teams within the "Sales Staff" profession and 342 teams within "Professional Service" profession reported the percentages of BAME.
 :::
 :::
@@ -214,7 +214,7 @@ BAME percentages are lower among "Sales Staff"; they are more evenly distributed
 
 ggplot(bame_profession, aes(x=profession, y= BAME, color = profession))+
   geom_boxplot(width = 0.5)+
-  geom_point(position = position_jitter(height = 0), size = 0.75, alpha= 0.5)+
+  geom_point(position = position_jitter(height = 0), size = 1, alpha= 0.5)+
   labs( title= "BAME variance by Profession", 
         x= NULL,
         y= "BAME percentage")+
@@ -251,7 +251,7 @@ There is a higher variance of BAME representation in the "Professional Service" 
 One of the requirements for the Independent Samples t-Test is the homogeneity of variances (i.e., variances approximately equal across groups).
 :::
 
--   If this requirement is violated and the sample sizes for each group differ, the p-value is unreliable. An approximate t-statistic is also included in the independent samples t-test output, which does not assume equal variances across populations. The Welch t-test statistic can be used when equal variances between populations cannot be assumed.
+-   If this requirement is violated and the sample sizes for each group differ, there is an option to calculate t-test statistics. An approximate t-statistic is also included in the independent samples t-test output, which does not assume equal variances across populations. The Welch t-test statistic can be used when equal variances between populations cannot be assumed.
 :::
 
 ## Levene's Test for Equality of Variances (II)
@@ -325,5 +325,5 @@ t.test(bame_profession$BAME ~ bame_profession$profession, var.equal = FALSE)
 
 ## Recomendations
 
--   According to our analysis, the organization faces challenges in BAME representation across professions, particularly in the “Sales Staff ”.
+-   According to our analysis, the organization faces challenges in BAME representation across professions, particularly in the "Sales Staff".
 -   Further research may be conducted to determine what factors influence or are associated with differences in diversity between the two teams.
