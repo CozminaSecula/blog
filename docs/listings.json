@@ -1,5 +1,11 @@
 [
   {
+    "listing": "/notes.html",
+    "items": [
+      "/notes/middle-managers-and-d&i/index.html"
+    ]
+  },
+  {
     "listing": "/projects.html",
     "items": [
       "/projects/2023-10-11-summary-statistics-and-t-test/index.html",

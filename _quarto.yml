@@ -14,6 +14,8 @@ website:
         text: About
       - href: projects.qmd
         text: Projects
+      - href: notes.qmd
+        text: Notes
     right: 
       - icon: linkedin
         href: https://www.linkedin.com/in/cozminasecula/
