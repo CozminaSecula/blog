@@ -122,9 +122,11 @@ What (the author saw) most organizations do. They say:
 1.  I care about DEI (diversity, equity, and inclusion).
 2.  Here are a million metrics about things related to demographic identity.
 3.  Women and Black employees leave the company at higher rates than other groups.
-4.  I better implement all kinds of best practices without actually figuring out what is going on at my organization or giving any thought to whether these practices are "best" for my organization.
-    -   I might form an ERG, conduct an annual engagement survey, and hope for the best.
-    -   Ask Black employees about their experiences and then ignore the results because they are not "statistically significant", and/or dismiss their interviews as "anecdotal".
+
+They better implement all kinds of best practices without actually figuring out what is going on at their organization or giving any thought to whether these practices are "best" for their organization.
+
+  -   I might form an ERG, conduct an annual engagement survey, and hope for the best.
+  -   Ask Black employees about their experiences and then ignore the results because they are not "statistically significant", and/or dismiss their interviews as "anecdotal".
 
 ::: callout-tip
 ## Instead, the author suggests to try:
@@ -234,11 +236,10 @@ Study all groups and compare their experiences. Instead of only focusing on the 
 This helps provide a more comprehensive picture.
 :::
 
-# Recapping
+# 5 H's technique
 
 Five (simple) techniques to make the most of your people data:
 
-**5 H's technique**
 
 1.  Be humble but not afraid - **Humility**
 2.  The scientific method to the rescue - **Hypotheses**
