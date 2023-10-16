@@ -1,11 +1,13 @@
 ---
 title: "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success"
-description: "Notes from the article: *Evidence-Based Solutions for* **Inclusion in the Workplace**: *Actions for Middle Managers*"
+description: "Notes from the article: Evidence-Based Solutions for Inclusion in the Workplace: Actions for Middle Managers"
 date: 2023-10-12
 categories: [Diversity & Inclusion, Middle Managers]
 ---
 
-Takeaways from the article [Evidence-Based Solutions for Inclusion in the Workplace: Actions for Middle Managers](https://wpa.wharton.upenn.edu/content/academic-papers/evidence-based-solutions-for-inclusion-in-the-workplace-actions-for-middle-managers/).
+Takeaways from the article [Evidence-Based Solutions for Inclusion in the Workplace: Actions for Middle Managers](https://wpa.wharton.upenn.edu/content/academic-papers/evidence-based-solutions-for-inclusion-in-the-workplace-actions-for-middle-managers/)[^1].
+
+[^1]: [Source of the article](https://wpa.wharton.upenn.edu/content/academic-papers/evidence-based-solutions-for-inclusion-in-the-workplace-actions-for-middle-managers/)
 
 Experts at Wharton People Analytics and DiversityInc Media collaborated to investigate and share insights on which diversity and inclusion practices "work" and for which desired workplace outcomes.
 
