@@ -7,9 +7,7 @@ categories: [Data Analytics, People Analytics]
 
 The NYU Center for Data Science's Andrea Jones-Rooy discusses five simple techniques to make the most of people's data in a [2021 Wharton People Analytics Conference presentation](https://www.youtube.com/watch?v=NrrRJO9apqs&list=PL0EdWFC9ZZrWJ2B40bkLZ2bbJAQDmr3cX&index=21).
 
-{{< video https://www.youtube.com/watch?v=NrrRJO9apqs&list=PL0EdWFC9ZZrWJ2B40bkLZ2bbJAQDmr3cX&index=21 >}}
-
-All the content below is a transcription of the presentation[^1].
+Below is a transcription of the presentation[^1].
 
 [^1]: [2021 Wharton People Analytics Conference presentation](https://www.youtube.com/watch?v=NrrRJO9apqs&list=PL0EdWFC9ZZrWJ2B40bkLZ2bbJAQDmr3cX&index=21)
 
@@ -23,13 +21,13 @@ The author explains that:
 
 [^2]: [Another related resource to the topic.](https://www.linkedin.com/feed/update/urn:li:activity:7061745307490885632/)
 
-1.  Being humble but not afraid
-2.  The scientific method to the rescue
-3.  Down with the tyranny of means
-4.  Obsession with statistical significance is probably leading you astray
-5.  Thou shalt not select on the dependent variable
+1.  Be aware of the battles with data.
+2.  Use the scientific method.
+3.  Do not rely solely on means.
+4.  Be cautious with statistical significance.
+5.  Avoid selecting on the dependent variable.
 
-## 1. Being humble but not afraid \| Be aware of the battles with data
+## 1. Be aware of the battles with data
 
 Your data may not be as good as you think, but that does not mean you have to throw it away.
 
@@ -113,7 +111,7 @@ There is:
 2.  Measurement. How to measure what you want?
 3.  Data siloing with people data. Remember, performance data does not equal truth.
 
-## 2. The scientific method to the rescue \| Use the scientific method
+## 2. Use the scientific method
 
 > If you are not sure where to focus your analysis or what data to collect, start with a theory and hypothesis.
 
@@ -159,7 +157,7 @@ If you are overwhelmed, and do not know where to start, or what data to get:
 2.  Use a theory and a hypothesis to focus your analysis (will help clarify what data you need);
 3.  Look for observable implications.
 
-# 3. Down with the tyranny of means \| Do not rely solely on means
+# 3. Do not rely solely on means
 
 > There is a ton of value to starting simple, and there are also a lot of techniques in between means and machine learning.
 
@@ -186,7 +184,7 @@ The mean for men is 4, and the mean for women is 4, but the standard deviation f
 You're already learning something about the experiences of your people.
 :::
 
-# 4. Obsession with statistical significance is probably leading you astray \| Be cautious with statistical significance
+# 4. Be cautious with statistical significance
 
 > This is so important. Companies get fixated on this and miss important results.
 
@@ -209,9 +207,9 @@ Instead, you do not have to throw it away. It is a piece of information, but the
 Focus on substantive significance, considering if the differences you observe are acceptable to you as a fair and equitable leader.
 :::
 
-# 5. Thou shalt not select on the dependent variable \| Avoid selecting on the dependent variable
+# 5. Avoid selecting on the dependent variable
 
-> **Do not just study the outcome you want to understand.**
+> Do not just study the outcome you want to understand.
 
 What (the author saw) most organizations do. They say:
 
@@ -236,12 +234,4 @@ Study all groups and compare their experiences, instead of only focusing on the 
 This helps provide a more comprehensive picture.
 :::
 
-# 5 H's technique
 
-Five (simple) techniques to make the most of your people data:
-
-1.  Be humble but not afraid - **Humility**
-2.  The scientific method to the rescue - **Hypotheses**
-3.  Down with the tyranny of means - **Histograms**
-4.  Your obsession with statistical significance is probably loading you astray - **Happenstance** becoming less obsessed with statistical
-5.  Thou shalt not select the dependent variable - t**H**e full picture

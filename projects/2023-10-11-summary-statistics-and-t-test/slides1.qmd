@@ -50,7 +50,7 @@ execute:
 
 # The Business Perspective
 
-## The organization goal: to enhance diversity by ensuring robust representation of BAME individuals
+## The organization's goal: to enhance diversity by ensuring robust representation of BAME individuals
 
 ::: small
 -   **Commercial perspective**
@@ -271,21 +271,21 @@ leveneTest(bame_profession$BAME, group = bame_profession$profession, center=mean
 
 -   The p-value is 4.141e-09, less than 0.05. This indicates that there's very strong evidence against the null hypothesis. We reject the null hypothesis of Levene's Test.
 
--   This imply that the variances of the two groups are not equal (i.e., that the homogeneity of variances assumption is violated)
+-   This implies that the variances of the two groups are not equal (i.e., that the homogeneity of variances assumption is violated)
 :::
 
 ## Independent Samples t-Test (I)
 
 ::: small
--   We want to test whether the means for BAME individuals among "Sales Staff" profession and BAME individuals among "Professional Service" profession in this organization are statistically different.
+-   We want to test whether the means for BAME individuals in "Sales Staff" profession and BAME individuals in "Professional Service" profession in this organization are statistically different.
 -   We can use an Independent Samples t-Test to compare the mean of BAME percentages for "Sales Staff" and " Professional Service"
 
 <br>
 
 **The hypotheses**
 
--   H0:The difference of the means are is equal to 0
--   H1:The difference of the means is not equal to 0.
+-   H0: The difference of the means is equal to 0
+-   H1: The difference of the means is not equal to 0.
 :::
 
 ## Independent Samples t-Test (II)
@@ -304,12 +304,12 @@ t.test(bame_profession$BAME ~ bame_profession$profession, var.equal = FALSE)
 
 ::: small
 -   The result of Levene's Test tells us that we should look at the Welch Two Sample t-test due to the fact the variances of the two groups are not equal.
--   The p-value = 2.345e-08 for t-test for unequal variances is less than 0.001; we conclude that there is a significant difference in mean percentage BAME between the two functions.
+-   The p-value = 2.345e-08 for the t-test for unequal variances is less than 0.001; we conclude that there is a significant difference in mean percentage BAME between the two functions.
 
 ::: goal
 -   In comparing the "Sales Staff" and the "Professional Service" functions, the mean proportion of BAME staff is significantly lower in "Sales Staff" than in "Professional Service".
 -   The average proportion of BAME staff in teams within the "Sales Staff" is 9.7 %, and by comparison, the average proportion of BAME staff in teams within the "Professional Service" function is 14.39 %.
--   Deeper analysis shows that the likelihood of this difference occurring by chance alone is less than 1 in 1,000, suggesting there is an issue that needs attention within the "Sales Staff" function within the organization.
+-   A deeper analysis shows that the likelihood of this difference occurring by chance alone is less than 1 in 1,000, suggesting there is an issue that needs attention within the "Sales Staff" function within the organization.
 :::
 :::
 
@@ -320,10 +320,10 @@ t.test(bame_profession$BAME ~ bame_profession$profession, var.equal = FALSE)
 ::: small
 -   summary statistics and graphical visualization provided a clear summary of the distribution of BAME individuals across the two professions: **more "Sales Staff" teams have a lower percentage of BAME individuals and "Professional Service" teams have a more evenly distribution.**
 
--   the independent samples t-test's results, with a p-value close to the 0, **confirmed a strong difference in mean percentage BAME between the two functions, suggesting there is an issue that needs attention within the "Sales Staff" function within the organization.**
+-   the independent samples t-test's results, with a p-value close to 0, **confirmed a strong difference in mean percentage BAME between the two functions, suggesting there is an issue that needs attention within the "Sales Staff" function within the organization.**
 :::
 
-## Recomendations
+## Recommendations
 
 -   According to our analysis, the organization faces challenges in BAME representation across professions, particularly in the "Sales Staff".
 -   Further research may be conducted to determine what factors influence or are associated with differences in diversity between the two teams.
