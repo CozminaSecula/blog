@@ -204,14 +204,15 @@ diversity1|>
 #| fig-align: center
 
 ggplot(diversity1, aes(x=jobgrade, fill=gender))+
-  geom_bar(position = "fill")+
+  geom_bar(position = "fill", width = 0.7)+
   labs(title = "Gender by Job Grade",
       x = "Job Grade",
       y = "Proportions",
       fill= "Gender")+
   theme_minimal(base_size = 14)+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-  scale_fill_manual(values = c("Female" = "#00589b", "Male"= "#ccddeb"))
+  scale_fill_manual(values = c("Female" = "#00589b", "Male"= "#ccddeb"))+
+  coord_flip()
+
 
 ```
 :::
@@ -232,14 +233,15 @@ Up to this point, data reveal an observable pattern, men are more prevalent in s
 #| fig-align: center
 
 ggplot(diversity1, aes(x=jobgrade, fill=gender))+
-  geom_bar(position = "fill")+
+  geom_bar(position = "fill", width = 0.7)+
   labs(title = "Gender by Job Grade",
       x = "Job Grade",
       y = "Proportions",
       fill= "Gender")+
   theme_minimal(base_size = 14)+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-  scale_fill_manual(values = c("Female" = "#00589b", "Male"= "#ccddeb"))
+  scale_fill_manual(values = c("Female" = "#00589b", "Male"= "#ccddeb"))+
+  coord_flip()
+
  
 ```
 
