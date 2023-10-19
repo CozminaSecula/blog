@@ -187,7 +187,7 @@ bame_profession|>
 ggplot(bame_profession, aes(x=BAME, fill=profession))+
   geom_density(alpha = 0.5)+
   labs(title = "BAME distribution by Profession",
-      x = "BAME",
+      x = "BAME percentage",
       y = "Density",
       fill = "Profession")+
   theme_minimal(base_size = 14)+
