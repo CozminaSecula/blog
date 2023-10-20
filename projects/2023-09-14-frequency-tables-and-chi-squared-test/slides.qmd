@@ -257,7 +257,7 @@ ggplot(diversity1, aes(x=jobgrade, fill=gender))+
  
 ```
 
-## Does this organization have a D&I issue?
+## Does this organization have a gender diversity issue?
 
 <br>
 
@@ -311,5 +311,5 @@ chisq.test(cross_tab)
 
 ## Recommendation
 
--   While this statistical evidence does not directly imply that there is a D&I problem within the organization, it signals that factors beyond chance influence this distribution.
+-   While this statistical evidence does not directly imply a gender diversity issue within the organization, it signals that factors beyond chance influence the gender distribution across job grades.
 -   To address potential gender bias or discrimination and foster diversity and inclusion within the organization, further analysis and actions are necessary.
