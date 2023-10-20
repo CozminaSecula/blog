@@ -16,7 +16,7 @@ execute:
   freeze: auto
 ---
 
-# Overview of the Presentation
+# Overview of the Content
 
 ```{r}
 #| label: load-packages
@@ -29,48 +29,60 @@ execute:
 
 ```
 
-## Introducing two distinct tools for data analysis with numerical and categorical data
+## Introducing two distinct tools for data analysis with numerical and categorical data using R
 
--   summary statistics
--   independent samples t-test
+-   Summary statistics
+-   Independent samples t-test
 
 ## Case study
 
--   focused on diversity and inclusion (D&I)
--   sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916)
--   with data available [here](https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446)
+-   Focused on diversity and inclusion (D&I)
+-   Sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916)
+-   With data available [here](https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446)
 
-## Data exploration and analysis
+## Data preparation and exploration
 
--   `tidyverse`, `kableExtra`, `car` packages
--   data preparation
--   summary statistics
--   data visualization
--   independent samples t-test
+-   Packages: `tidyverse`, `kableExtra`, `car`, `paleteer` 
+-   Data preparation
+-   Summary statistics
+-   Data visualization
+-   Independent samples t-test
 
-# The Business Perspective
+# Problem Statement
 
-## The organization's goal: to enhance diversity by ensuring robust representation of BAME individuals
+## The Goal
+
+::: goal
+::: small
+A hypothetical company aims to employ scientific methods and procedures to tackle a significant problem: employee diversity. It recognizes that:
+:::
+:::
 
 ::: small
--   **Commercial perspective**
+-   **Commercial Perspective**
 
-    -   a more diverse workforce offers a competitive edge by enhancing the organization's understanding of its customers and subsequently improving overall performance
+    -   A more diverse workforce can provide a competitive advantage by enhancing the organization's understanding of its customers, consequently improving overall performance.
 
--   **People perspective**
 
-    -   the organization gains access to a broader candidate pool, boosts employee engagement, and elevates retention rates.
+-   **People Perspective**
+
+    -   The organization gains access to a broader candidate pool, increases employee engagement, and elevates retention rates.
 :::
 
 ## The research question
 
 <br>
 
-*How does the distribution of BAME individuals vary across different professions?*
+::: goal
+
+How does the distribution of Black, Asian, or Minority Ethnic (BAME) employees vary across different professions?
+
+:::
 
 # Data Preparation and Exploration
 
-## Read data
+## Look at the data - The structure
+
 
 ```{r}
 #| label: read-data
@@ -80,10 +92,16 @@ execute:
 diversity <- read_csv("../2023-10-11-summary-statistics-and-t-test/diversity2.csv")
 glimpse(diversity)
 
+
+
 ```
 
--   928 observations and 30 variables
--   data type: double <dbl> for all variables
+::: small
+
+ - The organization comprises 29,976 employees in two functional areas across the UK, and these employees are organized into 928 teams.
+ - The data set contains 30 variables.
+ 
+:::
 
 ## Description of variables of interest
 
@@ -197,9 +215,9 @@ ggplot(bame_profession, aes(x=BAME, fill=profession))+
 :::
 
 ::: {.column width="25%"}
-<br><br><br><br><br>
+<br><br><br><br>
 
-BAME percentages are lower among "Sales Staff"; they are more evenly distributed among "Professional Service" teams.
+The percentages of BAME employees are lower within "Sales Staff" teams, whereas they are more evenly distributed among "Professional Service" teams.
 :::
 :::
 :::
@@ -214,7 +232,7 @@ BAME percentages are lower among "Sales Staff"; they are more evenly distributed
 
 ggplot(bame_profession, aes(x=profession, y= BAME, color = profession))+
   geom_boxplot(width = 0.5)+
-  geom_point(position = position_jitter(height = 0), size = 1, alpha= 0.5)+
+  geom_jitter(width = 0.3)+
   labs( title= "BAME variance by Profession", 
         x= NULL,
         y= "BAME percentage")+
@@ -232,14 +250,14 @@ There is a higher variance of BAME representation in the "Professional Service" 
 :::
 :::
 
-## *How does the distribution of BAME individuals vary across different professions?*
+## How does the distribution of BAME employees vary across different professions? (I)
 
-<br><br>
+<br>
 
 ::: small
--   The distribution of BAME individuals varies across the two professions with more "Sales Staff" teams with a lower percentage of BAME individuals and "Professional Service" with a more evenly distribution.
--   However, these findings are derived from summary statistics and visual examinations, which may not be highly precise.
--   To gain greater confidence in comparing BAME representation between the two professions and to gain a deeper understanding of the organization's ethnicity dynamics, we will conduct an Independent Samples t-Test.
+-   BAME employees are distributed differently across the two professions. There are more "Sales Staff" teams with a lower percentage of BAME employees, while "Professional Service" teams have a more even distribution.
+ - It's essential to note that these findings are based on summary statistics and visual examinations, which may not be highly precise.
+ - To gain more confidence in comparing BAME representation between the two professions and to deepen our understanding of the organization's ethnicity dynamics, we will conduct an Independent Samples t-Test.
 :::
 
 # Independent Samples t-Test
@@ -251,7 +269,7 @@ There is a higher variance of BAME representation in the "Professional Service" 
 One of the requirements for the Independent Samples t-Test is the homogeneity of variances (i.e., variances approximately equal across groups).
 :::
 
--   If this requirement is violated and the sample sizes for each group differ, there is an option to calculate t-test statistics. An approximate t-statistic is also included in the independent samples t-test output, which does not assume equal variances across populations. The Welch t-test statistic can be used when equal variances between populations cannot be assumed.
+-   If this requirement is violated, and the sample sizes for each group differ, we can calculate t-test statistics. The independent samples t-test output also includes an approximate t-statistic, which doesn't assume equal variances across populations. The Welch t-test statistic can be employed when equal variances between populations cannot be assumed.
 :::
 
 ## Levene's Test for Equality of Variances (II)
@@ -269,16 +287,16 @@ leveneTest(bame_profession$BAME, group = bame_profession$profession, center=mean
 
 ```
 
--   The p-value is 4.141e-09, less than 0.05. This indicates that there's very strong evidence against the null hypothesis. We reject the null hypothesis of Levene's Test.
+-   The p-value is 4.141e-09, which is less than 0.05. This indicates very strong evidence against the null hypothesis, leading us to reject the null hypothesis of Levene's Test.
 
--   This implies that the variances of the two groups are not equal (i.e., that the homogeneity of variances assumption is violated)
+-   This suggests that the variances of the two groups are not equal, meaning the assumption of homogeneity of variances is violated.
 :::
 
 ## Independent Samples t-Test (I)
 
 ::: small
--   We want to test whether the means for BAME individuals in "Sales Staff" profession and BAME individuals in "Professional Service" profession in this organization are statistically different.
--   We can use an Independent Samples t-Test to compare the mean of BAME percentages for "Sales Staff" and " Professional Service"
+-   We want to determine if there is a statistically significant difference between the mean percentages of BAME employees in the "Sales Staff" and "Professional Service" professions within this organization.
+-   To achieve this, we can employ an Independent Samples t-Test to compare the means of BAME percentages for "Sales Staff" and "Professional Service."
 
 <br>
 
@@ -302,28 +320,30 @@ t.test(bame_profession$BAME ~ bame_profession$profession, var.equal = FALSE)
 
 ## Independent Samples t-Test (III)
 
-::: small
--   The result of Levene's Test tells us that we should look at the Welch Two Sample t-test due to the fact the variances of the two groups are not equal.
--   The p-value = 2.345e-08 for the t-test for unequal variances is less than 0.001; we conclude that there is a significant difference in mean percentage BAME between the two functions.
+<br>
 
-::: goal
--   In comparing the "Sales Staff" and the "Professional Service" functions, the mean proportion of BAME staff is significantly lower in "Sales Staff" than in "Professional Service".
--   The average proportion of BAME staff in teams within the "Sales Staff" is 9.7 %, and by comparison, the average proportion of BAME staff in teams within the "Professional Service" function is 14.39 %.
--   A deeper analysis shows that the likelihood of this difference occurring by chance alone is less than 1 in 1,000, suggesting there is an issue that needs attention within the "Sales Staff" function within the organization.
-:::
+ - The result of Levene's Test suggests that we should consider using the Welch Two Sample t-test because the variances of the two groups are not equal.
+ - The p-value is 2.345e-08 for the t-test for unequal variances, which is less than 0.001. Therefore, we can conclude that there is a significant difference in the mean percentage of BAME employees between the two functions.
+
+## How does the distribution of BAME employees vary across different professions? (II)
+
+::: small
+ - When comparing the "Sales Staff" and "Professional Service" functions, it becomes evident that the mean proportion of BAME staff is significantly lower in "Sales Staff" than in "Professional Service."
+ - Specifically, the average proportion of BAME staff in teams within the "Sales Staff" function is 9.7%, while in "Professional Service" teams, it stands at 14.39%.
+ - A more in-depth analysis reveals that the likelihood of this difference occurring by chance alone is less than 1 in 1,000, suggesting that there is a significant issue within the "Sales Staff" function that requires attention in the organization.
 :::
 
 # Conclusions
 
-## Conclusions
+## Analyzing BAME distribution across professional functions
 
 ::: small
--   summary statistics and graphical visualization provided a clear summary of the distribution of BAME individuals across the two professions: **more "Sales Staff" teams have a lower percentage of BAME individuals and "Professional Service" teams have a more evenly distribution.**
+-   Summary statistics and graphical visualization offer a concise overview of the distribution of BAME employees in the two professions. It's evident that more "Sales Staff" teams have a lower percentage of BAME employees, while "Professional Service" teams exhibit a more even distribution.
 
--   the independent samples t-test's results, with a p-value close to 0, **confirmed a strong difference in mean percentage BAME between the two functions, suggesting there is an issue that needs attention within the "Sales Staff" function within the organization.**
+-   The results of the independent samples t-test, with a p-value close to 0, confirm a significant difference in the mean percentage of BAME employees between the two functions. This implies that there is an issue that needs attention within the "Sales Staff" function in the organization.
 :::
 
 ## Recommendations
 
 -   According to our analysis, the organization faces challenges in BAME representation across professions, particularly in the "Sales Staff".
--   Further research may be conducted to determine what factors influence or are associated with differences in diversity between the two teams.
+-   Further research should be conducted to identify the factors influencing or associated with the diversity disparities between these two teams.
