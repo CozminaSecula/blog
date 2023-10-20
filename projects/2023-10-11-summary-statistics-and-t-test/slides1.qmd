@@ -161,7 +161,7 @@ glimpse(bame_profession)
 
 # Summary statistics
 
-## Summary statistics: Measures of center
+## Summary statistics
 
 <br>
 
