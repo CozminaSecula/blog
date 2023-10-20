@@ -16,7 +16,7 @@ execute:
   freeze: auto
 ---
 
-# Overview of the Presentation
+# Overview of the Content
 
 ```{r}
 #| echo: false
@@ -24,46 +24,56 @@ execute:
  library(kableExtra)
 ```
 
-## Introducing two distinct tools for data analysis with categorical data
+## Introducing two distinct tools for data analysis with categorical data using R
 
--   frequency tables
--   chi-squared test
+-   Frequency tables
+-   Chi-squared test
 
 ## Case study
 
--   focused on diversity and inclusion (D&I)
--   sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916)
--   with data available [here](https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446)
+-   Focused on diversity and inclusion (D&I)
+-   Sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916)
+-   With data available [here](https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446)
 
-## Data exploration and analysis
+## Data preparation and exploration
 
--   `tidyverse`, `kableExtra` packages
--   data preparation and exploration
--   creation of cross-tab
--   data visualization
--   chi-squared test
+-   Packages: `tidyverse`, `kableExtra` 
+-   Data preparation and exploration
+-   Creation of cross-tab
+-   Data visualization
+-   Chi-squared test
 
-# The Business Perspective
+# Problem Statement
 
 ## The business needs
 
--   **commercial perspective**
+:::goal
+:::small
+A hypothetical company aims to employ scientific methods and procedures to address a significant people problem: gender diversity.
+:::
+:::
 
-    -   the organization seeks to foster a greater diversity of thought in senior and strategic discussions
+-   **Commercial perspective**
 
--   **people perspective**
+    -   The organization seeks to foster a greater diversity of thought in senior and strategic discussions.
 
-    -   the organization wants to assess whether it maintains gender balance by providing positive role models for younger employees
+-   **People perspective**
+
+    -   The organization wants to assess whether it maintains gender balance by providing positive role models for younger employees.
 
 ## The research question
 
 <br>
 
-*Are women underrepresented in senior leadership roles within the organization?*
+::: goal
+Are women underrepresented in senior leadership roles within the organization?
+:::
 
 # Data Preparation and Exploration
 
-## Read data
+## Look at the data - The structure
+
+:::small
 
 ```{r}
 #| label: read-data
@@ -75,8 +85,10 @@ glimpse(diversity)
 
 ```
 
--   1.493 observations and 11 variables
--   data type: double <dbl> for all variables
+-   The organization, a management consulting firm, has 1,493 employees.
+-   The data set contains 11 variables.
+-   Data type: double <dbl> for all variables.
+:::
 
 ## Description of variables of interest
 
@@ -106,10 +118,10 @@ glimpse(diversity)
 :::
 :::
 
-## Data manipulation (I)
+## Data preparation (I)
 
--   make new variables *gender* and *jobgrade*
--   replacing numerical values with descriptive labels for both variables
+-   Create new variables *gender* and *jobgrade*.
+-   Replace numerical values with descriptive labels for both variables.
 
 ```{r}
 #| label: new-variables
@@ -128,9 +140,9 @@ diversity <- diversity|>
 
 ```
 
-## Data manipulation (II)
+## Data preparation (II)
 
--   detect and rectify inaccuracies in the data
+-   Detect and rectify inaccuracies in the data
 
 ```{r}
 #| label: new-variables-levels
@@ -217,11 +229,11 @@ ggplot(diversity1, aes(x=jobgrade, fill=gender))+
 ```
 :::
 
-## *Are women underrepresented in senior leadership roles within the organization?*
+## Are women underrepresented in senior leadership roles within the organization?
 
 ::: goal
 ::: small
-Up to this point, data reveal an observable pattern, men are more prevalent in senior roles and women predominantly occupy junior roles.
+Up to this point, the data reveal a clear pattern: men are more common in senior roles, while women tend to occupy junior positions.
 :::
 :::
 
@@ -245,13 +257,13 @@ ggplot(diversity1, aes(x=jobgrade, fill=gender))+
  
 ```
 
-## Does this organization have a D&I problem?
+## Does this organization have a D&I issue?
 
 <br>
 
--   the data reveal a pattern that women are found more in junior roles and men in senior roles.
--   however, the data did not indicate if this is a coincidence or if it is statistically significant.
--   the chi-squared test can be used to determine whether the observed pattern is statistically significant.
+-   The data indicate a pattern where women are more commonly in junior roles and men in senior roles.
+-   However, it's unclear from the data whether this pattern is coincidental or statistically significant.
+-   To assess this, we can employ a chi-squared test to determine the statistical significance of the observed pattern.
 
 # Chi-Squared Test
 
@@ -282,22 +294,22 @@ chisq.test(cross_tab)
 
 ::: goal
 ::: small
--   the p-value is extremely small, less than 2.2e-16, which is very close to zero.
--   since the p-value is less than the significance level of 0.05, we can confidently reject the null hypothesis, concluding that the two variables are dependent.
--   this result indicates a statistically significant association between gender and job grade.
--   it suggests that certain factors are influencing the observed distribution of genders within job grades.
+-   The p-value is extremely small, less than 2.2e-16, which is very close to zero.
+-   Since the p-value is less than the significance level of 0.05, we can confidently reject the null hypothesis, concluding that the two variables are dependent.
+-   This result indicates a statistically significant association between gender and job grade.
+-   It suggests that certain factors are influencing the observed distribution of genders within job grades.
 :::
 :::
 
 # Conclusions
 
-## Conclusions
+## Analyzing gender distribution across job grades
 
--   frequency tables provided a clear summary of the distribution of gender on job grade and an observable pattern: **men are more prevalent in senior roles and women predominantly occupy junior roles**.
+-   Frequency tables and graphical visualization offer a concise summary of gender distribution across job grades, revealing a clear pattern: **men are more common in senior roles, while women predominantly hold junior positions.**
 
--   the chi-squared test's results, with a p-value close to zero, confirmed **a very strong association between gender and job grade**.
+-   The results of the chi-squared test, with a p-value close to zero, confirm **a very strong association between gender and job grade.**
 
 ## Recommendation
 
--   while this statistical evidence does not directly imply that there is a D&I problem within the organization, it signals that factors beyond chance influence this distribution.
--   to address potential gender bias or discrimination and foster diversity and inclusion within the organization, further analysis and actions are necessary.
+-   While this statistical evidence does not directly imply that there is a D&I problem within the organization, it signals that factors beyond chance influence this distribution.
+-   To address potential gender bias or discrimination and foster diversity and inclusion within the organization, further analysis and actions are necessary.

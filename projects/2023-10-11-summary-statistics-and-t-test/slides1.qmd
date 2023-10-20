@@ -42,7 +42,7 @@ execute:
 
 ## Data preparation and exploration
 
--   Packages: `tidyverse`, `kableExtra`, `car`, `paleteer` 
+-   Packages: `tidyverse`, `kableExtra`, `car`, `paleteer`
 -   Data preparation
 -   Summary statistics
 -   Data visualization
@@ -54,7 +54,7 @@ execute:
 
 ::: goal
 ::: small
-A hypothetical company aims to employ scientific methods and procedures to tackle a significant problem: employee diversity. It recognizes that:
+A hypothetical company aims to employ scientific methods and procedures to tackle a significant people problem: employee diversity. It recognizes that:
 :::
 :::
 
@@ -62,7 +62,6 @@ A hypothetical company aims to employ scientific methods and procedures to tackl
 -   **Commercial Perspective**
 
     -   A more diverse workforce can provide a competitive advantage by enhancing the organization's understanding of its customers, consequently improving overall performance.
-
 
 -   **People Perspective**
 
@@ -74,15 +73,12 @@ A hypothetical company aims to employ scientific methods and procedures to tackl
 <br>
 
 ::: goal
-
 How does the distribution of Black, Asian, or Minority Ethnic (BAME) employees vary across different professions?
-
 :::
 
 # Data Preparation and Exploration
 
 ## Look at the data - The structure
-
 
 ```{r}
 #| label: read-data
@@ -97,10 +93,8 @@ glimpse(diversity)
 ```
 
 ::: small
-
- - The organization comprises 29,976 employees in two functional areas across the UK, and these employees are organized into 928 teams.
- - The data set contains 30 variables.
- 
+-   The organization comprises 29,976 employees in two functional areas across the UK, and these employees are organized into 928 teams.
+-   The data set contains 30 variables.
 :::
 
 ## Description of variables of interest
@@ -256,8 +250,8 @@ There is a higher variance of BAME representation in the "Professional Service" 
 
 ::: small
 -   BAME employees are distributed differently across the two professions. There are more "Sales Staff" teams with a lower percentage of BAME employees, while "Professional Service" teams have a more even distribution.
- - It's essential to note that these findings are based on summary statistics and visual examinations, which may not be highly precise.
- - To gain more confidence in comparing BAME representation between the two professions and to deepen our understanding of the organization's ethnicity dynamics, we will conduct an Independent Samples t-Test.
+-   It's essential to note that these findings are based on summary statistics and visual examinations, which may not be highly precise.
+-   To gain more confidence in comparing BAME representation between the two professions and to deepen our understanding of the organization's ethnicity dynamics, we will conduct an Independent Samples t-Test.
 :::
 
 # Independent Samples t-Test
@@ -322,15 +316,15 @@ t.test(bame_profession$BAME ~ bame_profession$profession, var.equal = FALSE)
 
 <br>
 
- - The result of Levene's Test suggests that we should consider using the Welch Two Sample t-test because the variances of the two groups are not equal.
- - The p-value is 2.345e-08 for the t-test for unequal variances, which is less than 0.001. Therefore, we can conclude that there is a significant difference in the mean percentage of BAME employees between the two functions.
+-   The result of Levene's Test suggests that we should consider using the Welch Two Sample t-test because the variances of the two groups are not equal.
+-   The p-value is 2.345e-08 for the t-test for unequal variances, which is less than 0.001. Therefore, we can conclude that there is a significant difference in the mean percentage of BAME employees between the two functions.
 
 ## How does the distribution of BAME employees vary across different professions? (II)
 
 ::: small
- - When comparing the "Sales Staff" and "Professional Service" functions, it becomes evident that the mean proportion of BAME staff is significantly lower in "Sales Staff" than in "Professional Service."
- - Specifically, the average proportion of BAME staff in teams within the "Sales Staff" function is 9.7%, while in "Professional Service" teams, it stands at 14.39%.
- - A more in-depth analysis reveals that the likelihood of this difference occurring by chance alone is less than 1 in 1,000, suggesting that there is a significant issue within the "Sales Staff" function that requires attention in the organization.
+-   When comparing the "Sales Staff" and "Professional Service" functions, it becomes evident that the mean proportion of BAME staff is significantly lower in "Sales Staff" than in "Professional Service."
+-   Specifically, the average proportion of BAME staff in teams within the "Sales Staff" function is 9.7%, while in "Professional Service" teams, it stands at 14.39%.
+-   A more in-depth analysis reveals that the likelihood of this difference occurring by chance alone is less than 1 in 1,000, suggesting that there is a significant issue within the "Sales Staff" function that requires attention in the organization.
 :::
 
 # Conclusions
