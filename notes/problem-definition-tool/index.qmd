@@ -5,9 +5,7 @@ date: 2023-10-21
 categories: [Problem Definition]
 ---
 
-In a people analytics project, it is essential to begin by defining the problem we aim to solve and formulating the questions we want to address. Here are my notes on the steps of problem definition from Innovation Skills Accelerator: Problem Definition[^1] .
-
-[^1]: Innovation Skills Accelerator: Problem Definition
+In a people analytics project, it is essential to begin by defining the problem we aim to solve and formulating the questions we want to address. Here are my notes on the steps of problem definition from [Innovation Skills Accelerator: Problem Definition.](https://www.youtube.com/watch?v=zP_oBt71GK8)
 
 # What is a problem?
 
@@ -62,7 +60,7 @@ Avoid generic statements like "people" in favor of a specific description of tho
 
 -   Those affected may be the organization, people, or both.
 -   People may be affected at certain points in their employee lifetime, such as onboarding, development, or retention.
--   Once identified the people affected, interview them by inviting to review the problem definition.
+-   Identify the people affected and invite them to review the problem definition.
 
 **4. Reframing the problem**
 
