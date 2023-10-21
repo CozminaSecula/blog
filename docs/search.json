@@ -11,7 +11,7 @@
     "href": "projects/2023-10-11-summary-statistics-and-t-test/index.html",
     "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
     "section": "",
-    "text": "Introduction\nIn the previous post, I introduced two fundamental concepts to analyze categorical data: frequency tables and the chi-squared test.\nThis post goes one step further by offering two tools for data analysis, which will work with continuous and categorical data: summary statistics and the independent samples t-test.\nAs part of descriptive statistics, summary statistics can provide valuable insights into data sets. It may include essential metrics such as the total number of values, the mean value, and the standard deviation. These statistics provide a clear picture of data trends and distribution, aiding in the interpretation of data patterns. On the other hand, the independent-samples t-test is employed to compare means between two distinct groups. It helps us investigate whether these two groups differ significantly in a particular dimension. When used together, these tools can reveal intriguing patterns and relationships within data.\nThe presentation will guide you through the utilization of summary statistics and the independent-samples t-test for insightful data analysis.\n\n\nSlides"
+    "text": "Introduction\nIn the previous post, I introduced two fundamental concepts to analyze categorical data: frequency tables and the chi-squared test.\nThis post goes one step further by offering two tools for data analysis, which will work with continuous and categorical data: summary statistics and the independent samples t-test.\nAs part of descriptive statistics, summary statistics can provide valuable insights into data sets. It may include essential metrics such as the total number of values, the mean value, and the standard deviation. These statistics provide a clear picture of data trends and distribution, aiding in the interpretation of data patterns. On the other hand, the independent-samples t-test (part of inferential statistics) is employed to compare means between two distinct groups. It helps us investigate whether these two groups differ significantly in a particular dimension. When used together, these tools can reveal intriguing patterns and relationships within data.\nThe presentation will guide you through the utilization of summary statistics and the independent-samples t-test for insightful data analysis.\n\n\nSlides"
   },
   {
     "objectID": "projects/employee-well-being-at-work/index.html",
@@ -201,5 +201,40 @@
     "title": "5 Ways to Make the Most of Data",
     "section": "2. Use the scientific method",
     "text": "2. Use the scientific method\n\nIf you are not sure where to focus your analysis or what data to collect, start with a theory and hypothesis.\n\nWhat (the author saw) most organizations do. They say:\n\nI care about DEI (diversity, equity, and inclusion).\nHere are a million metrics about things related to demographic identity.\nWomen and Black employees leave the company at higher rates than other groups.\n\nThey better implement all kinds of best practices without actually figuring out what is going on at their organization or giving any thought to whether these practices are “best” for their organization.\n\nI might form an ERG, conduct an annual engagement survey, and hope for the best.\nAsk Black employees about their experiences and then ignore the results because they are not “statistically significant”, and/or dismiss their interviews as “anecdotal”.\n\n\n\n\n\n\n\nInstead, the author suggests to try:\n\n\n\n\nBe curious about something – Why are Black talent leaving the company?\nObserve - They are leaving at X rate, vs white talent at Y rate.\nHave a theory – Lack of inclusion leads to disengagement.\nHypothesis - One possible, observable implication: If talked over at meetings, or interrupted, you do not feel included, and you are more likely to leave.\nCollect data – Record interruption or speaking time!\nTest hypotheses – If the theory is correct, I should observe that being interrupted predicts leaving. I should observe evidence consistent with the H1.\nRevise theory and repeat – I reject H0. Now, I can explore more avenues, refine theory, and maybe implement policy.\n\n\n\nThe only two stages in our data analysis that involve data:\n\nObservation\nCollection and testing.\n\nOtherwise, it is all thinking.\nWhen we think of data science, we tend to think of spreadsheets graphs, and data dashboards.\nIt is mostly sitting and thinking hard about what to look for and how to know if you have learned something.\nSummary\nIf you are overwhelmed, and do not know where to start, or what data to get:\n\nBegin from a place of curiosity (start with questions, not answers);\nUse a theory and a hypothesis to focus your analysis (will help clarify what data you need);\nLook for observable implications."
+  },
+  {
+    "objectID": "notes/problem-definition-tool/index.html",
+    "href": "notes/problem-definition-tool/index.html",
+    "title": "Problem Definition Tool",
+    "section": "",
+    "text": "In a people analytics project, it is essential to begin by defining the problem we aim to solve and formulating the questions we want to address. Here are my notes on the steps of problem definition from Innovation Skills Accelerator: Problem Definition1 ."
+  },
+  {
+    "objectID": "notes/problem-definition-tool/index.html#problem-identification",
+    "href": "notes/problem-definition-tool/index.html#problem-identification",
+    "title": "Problem Definition Tool",
+    "section": "Problem identification",
+    "text": "Problem identification\nProblem identification also knows as problem definition, is the first step in any problem solving process.\n\n“If I had one hour to save the world, I would spend 55 minutes defining the problem and only 5 minutes on finding the solution”.\nAlbert Einstein"
+  },
+  {
+    "objectID": "notes/problem-definition-tool/index.html#footnotes",
+    "href": "notes/problem-definition-tool/index.html#footnotes",
+    "title": "Problem Definition Tool",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nInnovation Skills Accelerator: Problem Definition↩︎"
+  },
+  {
+    "objectID": "notes/problem-definition-tool/index.html#what-is-problem-definition",
+    "href": "notes/problem-definition-tool/index.html#what-is-problem-definition",
+    "title": "Problem Definition Tool",
+    "section": "What is problem definition?",
+    "text": "What is problem definition?\nProblem definition is a process of articulating a specific and actionable problem and identifying the root cause of that problem by using data, research, and collaboration.\n\nCreating a problem definition in 4 steps\n1. From issue to problem\n\nWrite down the issue you are trying to solve in a few lines. When you start, the issue is likely to be very broad.\nArticulate the problem. Write a one-paragraph problem definition. It should address the basics, including:\n\nWhat is the problem?\nWhen does it occur?\nWhere does it occur?\n\n\n\n\n\n\n\n\nTip\n\n\n\n\nTake care that the problem is not a solution in disguise.\nAvoid complex jargon and technical terms when you write.\nReviewing the problem definition is a group collaborative exercise.\n\n\n\n2. Articulating root causes\n\nWhy do we think this problem is happening? Write down all possible causes.\n5X WHY - Root cause analysis:\n\nMake a list of whys (at least five) that describe why the problem is happening.\nAsk why those problems are happening.\nRepeat the exercise. Five times.\nDevelop a hypothesis for the most likely causes.\nRepeat five times to create a likely list.\nPrioritize those problems that are solvable by working with others.\n\n\n3. Identifying those most affected\n\nWrite down a list of those who are most affected by the problem.\n\n\n\n\n\n\n\nTip\n\n\n\nAvoid generic statements like “people” in favor of a specific description of those immediately impacted.\n\n\n\nThose affected may be the organization, people, or both.\nPeople may be affected at certain points in their employee lifetime, such as onboarding, development, or retention.\nOnce identified the people affected, interview them by inviting to review the problem definition.\n\n4. Reframing the problem\n\nLASSO framework:\n\nL - LIMITED. Have I limited the scope? Have I narrowed a large problem down to a more readily definable smaller problem?\nA - ACTIONABLE. Have I described something actionable that we can realistically do something about?\nS - SPECIFIC. Have I described something specific, concrete, or detailed?\nS - SUPPORTED. Have I described a problem that will be supported? My organization cares enough about the problem to take action and invest in the evaluation process to determine whether the solution will work.\nO - OWNER. Have I identified the problem owner? Someone needs to be on point to manage the process and communicate back to stakeholders."
+  },
+  {
+    "objectID": "notes/problem-definition-tool/index.html#key-challenges-in-defining-problem-process",
+    "href": "notes/problem-definition-tool/index.html#key-challenges-in-defining-problem-process",
+    "title": "Problem Definition Tool",
+    "section": "Key Challenges in Defining Problem Process",
+    "text": "Key Challenges in Defining Problem Process\n\nThe constant temptation to articulate a solution rather than a particular problem.\nThe identified problem is too broad to be actionable.\nThe identified problem may not be actionable by you with the resources you have at your disposal.\nThe failure to articulate assumptions and root causes and to identify who else may already be working on the problem.\nThe lack of success metrics needed to assess if a solution works."
   }
 ]

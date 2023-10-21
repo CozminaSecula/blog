@@ -1,0 +1,82 @@
+---
+title: "Problem Definition Tool"
+description: "Notes from Innovation Skills Accelerator: Problem Definition"
+date: 2023-10-21
+categories: [Problem Definition]
+---
+
+In a people analytics project, it is essential to begin by defining the problem we aim to solve and formulating the questions we want to address. Here are my notes on the steps of problem definition from Innovation Skills Accelerator: Problem Definition[^1] .
+
+[^1]: Innovation Skills Accelerator: Problem Definition
+
+# What is a problem?
+
+A problem is a gap between the current situation and the desired goal.
+
+# Problem definition
+
+Problem definition is the first step in any problem-solving process.
+
+> "If I had one hour to save the world, I would spend 55 minutes defining the problem and only 5 minutes on finding the solution".
+>
+> *Albert Einstein*
+
+## What is problem definition?
+
+Problem definition is a process of articulating a specific and actionable problem and identifying the root cause of that problem by using data, research, and collaboration.
+
+### Creating a problem definition in 4 steps
+
+**1. From issue to problem**
+
+-   Write down the issue you are trying to solve in a few lines. When you start, the issue is likely to be very broad.
+-   Articulate the problem. Write a one-paragraph problem definition. It should address the basics, including:
+    -   What is the problem?
+    -   When does it occur?
+    -   Where does it occur?
+
+::: callout-tip
+1.  Take care that the problem is not a solution in disguise.
+2.  Avoid complex jargon and technical terms when you write.
+3.  Reviewing the problem definition is a group collaborative exercise.
+:::
+
+**2. Articulating root causes**
+
+-   Why do we think this problem is happening? Write down all possible causes.
+-   5X WHY - Root cause analysis:
+    -   Make a list of whys (at least five) that describe why the problem is happening.
+    -   Ask why those problems are happening.
+    -   Repeat the exercise. Five times.
+    -   Develop a hypothesis for the most likely causes.
+    -   Repeat five times to create a likely list.
+    -   Prioritize those problems that are solvable by working with others.
+
+**3. Identifying those most affected**
+
+-   Write down a list of those who are most affected by the problem.
+
+::: callout-tip
+Avoid generic statements like "people" in favor of a specific description of those immediately impacted.
+:::
+
+-   Those affected may be the organization, people, or both.
+-   People may be affected at certain points in their employee lifetime, such as onboarding, development, or retention.
+-   Once identified the people affected, interview them by inviting to review the problem definition.
+
+**4. Reframing the problem**
+
+-   LASSO framework:
+    -   **L - LIMITED**. Have I limited the scope? Have I narrowed a large problem down to a more readily definable smaller problem?
+    -   **A - ACTIONABLE**. Have I described something actionable that we can realistically do something about?
+    -   **S - SPECIFIC**. Have I described something specific, concrete, or detailed?
+    -   **S - SUPPORTED**. Have I described a problem that will be supported? My organization cares enough about the problem to take action and invest in the evaluation process to determine whether the solution will work.
+    -   **O - OWNER**. Have I identified the problem owner? Someone needs to be on point to manage the process and communicate back to stakeholders.
+
+## Key Challenges in Defining Problem Process
+
+-   The constant temptation to articulate a solution rather than a particular problem.
+-   The identified problem is too broad to be actionable.
+-   The identified problem may not be actionable by you with the resources you have at your disposal.
+-   The failure to articulate assumptions and root causes and to identify who else may already be working on the problem.
+-   The lack of success metrics needed to assess if a solution works.
