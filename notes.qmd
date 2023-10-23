@@ -1,6 +1,6 @@
 ---
 title: "Cozmina's notes"
-subtitle: "This is a place where I share some of my notes." 
+subtitle: "In this space, I curate and share notes from various sources."
 search: false
 sidebar_position: 1
 metadata-files: ["./notes/_listing_meta.yml"]
