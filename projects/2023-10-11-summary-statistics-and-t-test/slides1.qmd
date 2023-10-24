@@ -227,7 +227,7 @@ The percentages of BAME employees are lower within "Sales Staff" teams, whereas 
 ggplot(bame_profession, aes(x=profession, y= BAME, color = profession))+
   geom_boxplot(width = 0.5)+
   geom_jitter(width = 0.3)+
-  labs( title= "BAME variance by Profession", 
+  labs( title= "BAME representation by Profession", 
         x= NULL,
         y= "BAME percentage")+
   theme_minimal(base_size = 14)+
@@ -237,9 +237,9 @@ ggplot(bame_profession, aes(x=profession, y= BAME, color = profession))+
 :::
 
 ::: {.column width="25%"}
-<br><br><br><br><br>
+<br><br><br><br>
 
-There is a higher variance of BAME representation in the "Professional Service" profession compared to the "Sales Staff" profession.
+There is a higher percentage of BAME employees in the "Professional Service" profession, indicating greater diversity than in the "Sales Staff" profession.
 :::
 :::
 :::
