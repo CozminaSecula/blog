@@ -239,7 +239,7 @@ ggplot(bame_profession, aes(x=profession, y= BAME, color = profession))+
 ::: {.column width="25%"}
 <br><br><br>
 
-The distribution of scores of the percentage of BAME employees in the “Professional Service” profession is higher, indicating greater diversity than in the “Sales Staff” profession.
+The distribution of scores of the percentage of BAME employees in the "Professional Service" profession is higher, indicating greater diversity than in the "Sales Staff" profession.
 :::
 :::
 :::

@@ -1,5 +1,5 @@
 ---
-title: "Segmenting for Perspective"
+title: "Segmenting for Perspective: Discover Insights Through Segmentation"
 description: "Discover how segmentation can help an organization to understand compensation differences across various factors such as roles, departments, experience, and demographic groups."
 author: "Cozmina Secula"
 date: "2023-10-30"
@@ -9,11 +9,11 @@ image: image.jpeg
 
 # Introduction
 
-Segmentation is an essential part of people analytics, helping to understand and derive insights from data. 
+Segmentation is an essential part of people analytics, helping to understand and derive insights from data.
 
-In this project, I used segmentation to understand compensation differences across various factors such as roles, departments, experience, and demographic groups. 
+In this project, I used segmentation to understand compensation differences across various factors such as roles, departments, experience, and demographic groups.
 
-This may help inform the development of a competitive compensation strategy. 
+This may help inform the development of a competitive compensation strategy.
 
 A competitive compensation strategy can help attract and retain top talent, improve employee morale and motivation, and ultimately drive business success.
 
