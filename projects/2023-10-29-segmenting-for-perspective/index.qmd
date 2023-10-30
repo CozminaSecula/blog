@@ -1,6 +1,6 @@
 ---
 title: "Segmenting for Perspective"
-description: "Discover Insight through Segmentation"
+description: "Discover how segmentation can help an organization to understand compensation differences across various factors such as roles, departments, experience, and demographic groups."
 author: "Cozmina Secula"
 date: "2023-10-30"
 categories: [employee segmentation, people analytics]
