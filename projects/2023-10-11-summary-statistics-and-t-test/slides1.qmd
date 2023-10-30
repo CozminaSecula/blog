@@ -183,8 +183,9 @@ bame_profession|>
 
 ::: goal
 ::: small
--   There is a difference between the mean, median, IQR, and standard deviation of the BAME percentage in the "Sales Staff" and "Professional Service" groups.
+
 -   404 teams within the "Sales Staff" profession and 342 teams within "Professional Service" profession reported the percentages of BAME.
+
 :::
 :::
 
