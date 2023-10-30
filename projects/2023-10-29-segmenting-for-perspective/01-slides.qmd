@@ -24,35 +24,33 @@ toc-depth: 1
 
 A hypothetical company's compensation strategy is based on a one-size-fits-all approach, which may not effectively motivate employees or align with business goals.
 
-  - HR can use data analytics to segment employees based on their roles, experience, and demographics.
+-   HR can use data analytics to segment employees based on their roles, experience, and demographics.
 
-  - Segmenting employee data helps to identify opportunities for pay increases or adjustments.
- 
+-   Segmenting employee data helps to identify opportunities for pay increases or adjustments.
+
 ## Aim of this project
 
 <br>
 
-:::goal
-&#9989; To understand compensation differences across various factors such as roles, departments, experience, and demographic groups through segment  employee data.
+::: goal
+✅ To understand compensation differences based on various factors such as roles, departments, experience, and demographic groups by segmenting employee data.
 :::
 
-:::small
- 
- - This will help inform the development of a competitive compensation strategy.
+::: small
+-   This will help inform the development of a competitive compensation strategy.
 
- - A competitive compensation strategy can help attract and retain top talent, improve employee morale and motivation, and ultimately drive business success.
-
+-   A competitive compensation strategy can help attract and retain top talent, improve employee morale and motivation, and ultimately drive business success.
 :::
 
 ## Research Questions
 
 <br>
 
-&#9989; How does compensation compare across different departments, roles, and experience levels?
+✅ How does compensation compare across different departments, roles, and experience levels?
 
 <br>
 
-&#9989; Are there any disparities in compensation between different demographic groups that can be addressed?
+✅ Are there any disparities in compensation between different demographic groups that can be addressed?
 
 # The Dataset
 
@@ -66,8 +64,7 @@ A hypothetical company's compensation strategy is based on a one-size-fits-all a
 
 ## A glimpse at the data set
 
-:::small
-
+::: small
 ```{r echo=FALSE}
 library(tidyverse)
 library(peopleanalytics)
@@ -89,14 +86,11 @@ peopleanalytics::employees|>
   
 
 ```
-
 :::
 
+## Data summary
 
-## Data summary 
-
-:::small
-
+::: small
 ```{r echo=FALSE}
 
 employees|>
@@ -105,34 +99,30 @@ employees|>
 
 
 ```
-
 :::
 
 # Segmenting Employee Data
 
 ::: small
 # 1. How does compensation compare across different departments, roles, and experience levels?
-
 :::
 
 ## Variables of interest
 
-:::small
-| Variable of interest | Variable Name (data set)| Description of Variable                     | Data type|
-|--------------------- |-------------------------|---------------------------------------------|----------|
-| Compensation         | annual_comp             | Hourly rate * 2080                          | Numeric  |
-| Role                 | job_title               | Job title                                   | Nominal  |
-| Department           | dept                    | Department of which an employee is a member | Nominal  |
-| Experience           | job_lvl                 | Job level, where 1 = Junior and 5 = Senior  | Ordinal  |
-
+::: small
+| Variable of interest | Variable Name (data set) | Description of Variable                     | Data type |
+|---------------|---------------|----------------------------|---------------|
+| Compensation         | annual_comp              | Hourly rate \* 2080                         | Numeric   |
+| Role                 | job_title                | Job title                                   | Nominal   |
+| Department           | dept                     | Department of which an employee is a member | Nominal   |
+| Experience           | job_lvl                  | Job level, where 1 = Junior and 5 = Senior  | Ordinal   |
 :::
 
 ## Data Preparation
 
-- **Compensation**
+-   **Compensation**
 
-:::small
-
+::: small
 ```{r}
 
 min(employees$annual_comp) #min value for annual compensation
@@ -162,15 +152,13 @@ employees <- employees|>
 levels(employees$annual_interval)
 
 ```
-
 :::
 
 ## Data Preparation
 
-- **Experience**
+-   **Experience**
 
 ::: small
-
 ```{r}
 employees|>
   distinct(job_lvl)  #check the levels for experience (job_lvl) variable
@@ -183,30 +171,26 @@ employees <- employees|>
                               labels=c("Junior","Intermediate","Experienced","Expert","Senior")))
 levels(employees$job_level)
 ```
-
 :::
 
 ## Data Preparation
 
- - **Department**
- 
-::: small
+-   **Department**
 
+::: small
 ```{r echo=FALSE}
 employees|>
   distinct(dept)|> #check the levels for department (dept) variable
   datatable()
 
 ```
-
 :::
 
 ## Data Preparation
 
- - **Role**
- 
-::: small
+-   **Role**
 
+::: small
 ```{r echo=FALSE}
 
 employees|>
@@ -214,15 +198,13 @@ employees|>
   datatable((options = list(pageLength = 5)))
 
 ```
-
 :::
 
 ## Segmenting Data
 
-- Descriptive Statistics - **only active employees**
+-   Descriptive Statistics - **only active employees**
 
 ::: small
-
 ```{r echo=FALSE}
 
 employees|>
@@ -236,13 +218,11 @@ employees|>
   datatable()
  
 ```
-
 :::
 
-## **Number of Employees Dy Department and Role** 
+## **Number of Employees Dy Department and Role**
 
 ::: small
-
 ```{r echo=FALSE, fig.width= 8, fig.height=7}
 # Prepare data
 
@@ -275,14 +255,11 @@ ggplot(data_dept_role, aes(x = job_title, y= Count, fill=dept))+
 
 
 ```
-
 :::
-
 
 ## **Compensation interval** by **departments and roles**
 
 ::: small
-
 ```{r echo=FALSE}
 
 dept_job_title_comp_n <- employees|>
@@ -292,7 +269,6 @@ dept_job_title_comp_n <- employees|>
 
 
 ```
-
 
 ```{r echo=FALSE}
           
@@ -304,20 +280,16 @@ comp_dept_role <- dept_job_title_comp_n|>
 
 ```
 
-
-
 ```{r echo=FALSE}
 comp_dept_role|>
   DT::datatable((options = list(pageLength = 5)))
 
 ```
-
 :::
 
-## **Compensation by Department** 
+## **Compensation by Department**
 
 ::: small
-
 ```{r echo=FALSE, fig.width= 10, fig.height=7}
 
 
@@ -339,13 +311,11 @@ ggplot(dept_job_title_comp_n, aes(x= annual_interval, y= dept, fill = Count)) +
       color = "black" , face = "bold",
       halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc")))
 ```
-
 :::
 
-## **Compensation by Role** 
+## **Compensation by Role**
 
 ::: small
-
 ```{r echo=FALSE, fig.width= 12, fig.height=7 }
 
 
@@ -368,13 +338,11 @@ ggplot(dept_job_title_comp_n, aes(x= annual_interval, y= job_title, fill = Count
       halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc")))
         
 ```
-
 :::
 
-## How does **compensation** compare across **departments and roles**? 
+## How does **compensation** compare across **departments and roles**?
 
 ::: small
-
 ```{r echo=FALSE, fig.width= 12, fig.height=6 }
 
 dept_job_title_comp <- employees|>
@@ -407,13 +375,11 @@ ggplot(dept_job_title_comp, aes( x= job_title, y=annual_comp, fill=dept))+
     
   
 ```
-
 :::
 
 ## **Compensation interval** by **departments and experience**
 
 ::: small
-
 ```{r echo=FALSE}
 dept_job_level_comp_n <- employees|>
   group_by(dept, job_level, annual_interval)|>
@@ -428,13 +394,11 @@ comp_dept_experience <- dept_job_level_comp_n|>
 comp_dept_experience |>
   DT::datatable((options = list(pageLength = 5)))
 ```
-
 :::
 
-## **Compensation by Experience** 
+## **Compensation by Experience**
 
 ::: small
-
 ```{r echo=FALSE, fig.width= 12, fig.height=6 }
 
 
@@ -456,13 +420,11 @@ ggplot(dept_job_level_comp_n,aes(x= annual_interval, y= job_level, fill = Count)
       color = "black" , face = "bold",
       halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc")))
 ```
-
 :::
 
 ## How does **compensation** compare across **experience levels**?
 
 ::: small
-
 ```{r echo=FALSE, fig.width= 12, fig.height=6 }
 
 
@@ -493,32 +455,26 @@ ggplot(employees, aes( x= job_level, y=annual_comp, fill=dept))+
 
 
 ```
-
-::: 
+:::
 
 ::: small
-
 # 2. Are there any disparities in compensation between different demographic groups that can be addressed?
-
 :::
 
 ## Variables of interest
 
 ::: small
-
-| Variable of interest | Variable Name (data set)| Description of Variable                     | Data type|
-|--------------------- |-------------------------|---------------------------------------------|----------|
-| Age                  | age                     | Employee age in years                       | Numeric  |
-| Gender               | gender                  | Gender self-identification                  | Nominal  |
-
+| Variable of interest | Variable Name (data set) | Description of Variable    | Data type |
+|---------------|---------------|----------------------------|---------------|
+| Age                  | age                      | Employee age in years      | Numeric   |
+| Gender               | gender                   | Gender self-identification | Nominal   |
 :::
 
 ## Data Preparation
 
-- **Age (I)**
+-   **Age (I)**
 
 ::: small
-
 ```{r}
 
 min(employees$age)
@@ -527,7 +483,7 @@ max(employees$age)
 
 ```
 
-- Create a new variable **`generation`** based on employees' age.
+-   Create a new variable **`generation`** based on employees' age.
 
 ```{r}
 
@@ -544,15 +500,13 @@ determine_generation <- function(age) {
 
 
 ```
-
 :::
 
 ## Data Preparation
 
-- **Age (II)**
+-   **Age (II)**
 
 ::: small
-
 ```{r echo=FALSE}
 # Create a new variable `generation`
 
@@ -565,20 +519,18 @@ employees|>
 
 
 ```
-
 :::
 
 ## Data Preparation
 
-- **Age (III)**
+-   **Age (III)**
 
 ::: small
-
 The generations are defined as follows:
 
-| Generation Z |Millennial (Generation Y) |Generation X |Baby Boomers |
-|--------------|---------------------------|-------------|-------------|
-| Ages 18-24   |Ages 25-40                 |Ages 41-56   | Ages 57-60  |
+| Generation Z | Millennial (Generation Y) | Generation X | Baby Boomers |
+|--------------|---------------------------|--------------|--------------|
+| Ages 18-24   | Ages 25-40                | Ages 41-56   | Ages 57-60   |
 
 ```{r echo=FALSE}
 # Define the order of the levels
@@ -591,29 +543,25 @@ employees$generation <- factor(employees$generation, levels = generation_cohort)
 
 
 ```
-
 :::
 
 ## Data Preparation
 
-- **Gender**
+-   **Gender**
 
 ::: small
-
 ```{r echo=FALSE}
 employees|>
   distinct(gender)|>
   datatable()
 ```
-
 :::
 
 ## Segmenting Data
 
-- **Compensation by generations**
+-   **Compensation by generations**
 
 ::: small
-
 ```{r echo=FALSE }
 
 employees|>
@@ -628,15 +576,13 @@ employees|>
 
 
 ```
-
 :::
 
 ## Segmenting Data
 
-- **Compensation by gender**
+-   **Compensation by gender**
 
 ::: small
-
 ```{r echo=FALSE }
 
 employees|>
@@ -651,13 +597,11 @@ employees|>
  
 
 ```
-
 :::
 
 ## **Compensation by generational groups**
 
 ::: small
-
 ```{r echo=FALSE, fig.width= 12, fig.height=6 }
 
 comp_gen_dept <- employees|>
@@ -683,13 +627,11 @@ ggplot(comp_gen_dept,aes(x= annual_interval, y= generation, fill = Count)) +
       color = "black" , face = "bold",
       halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc")))
 ```
-
 :::
 
 ## How does **compensation** compare among **generational groups**?
 
 ::: small
-
 ```{r echo=FALSE, fig.width= 12, fig.height=6 }
 
 comp_gen_dept <- employees|>
@@ -721,13 +663,11 @@ ggplot(comp_gen_dept, aes( x= generation, y=annual_comp, fill=dept))+
 
 
 ```
-
 :::
 
 ## **Compensation by gender**
 
 ::: small
-
 ```{r echo=FALSE, fig.width= 12, fig.height=6 }
 
 comp_gender_dept <- employees|>
@@ -753,13 +693,11 @@ ggplot(comp_gender_dept,aes(x= annual_interval, y= gender, fill = Count)) +
       color = "black" , face = "bold",
       halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc")))
 ```
-
 :::
 
 ## How does **compensation** compare among **genders**?
 
 ::: small
-
 ```{r echo=FALSE, fig.width= 12, fig.height=6 }
 
 
@@ -792,33 +730,26 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 
 
 ```
-
 :::
 
 ::: small
-
 # What we have learned?
-
 :::
-
-
 
 ## Segmenting employee data based on departments, roles, and experiences, we found:
 
 <br>
 
 ::: small
+🔵 A large portion of employees in R&D department earn compensation ranging from 150.0K-200.0K.
 
-   &#128309; A large portion of employees in R&D department earn compensation ranging from 150.0K-200.0K.
+🔵 The Sales Manager role has the highest median compensation, followed by the HR Manager
 
-   &#128309; The Sales Manager role has the highest median compensation, followed by the HR Manager
+🔵 A significant number of Sales Executives (Sales) and Research Scientists (R&D) earn between 150.0K and 200.0K.
 
-   &#128309; A significant number of Sales Executives (Sales) and Research Scientists (R&D) earn between 150.0K and 200.0K.
+🔵 Senior level of experience in the Sales department has the highest median compensation. The Expert level of experience in the HR department has the lowest median.
 
-   &#128309; Senior level of experience in the Sales department has the highest median compensation. The Expert level of experience in the HR department has the lowest median.
-
-   &#128309; A significant number of employees with intermediate levels of experience earn between 150.0K and 200.0K
-
+🔵 A significant number of employees with intermediate levels of experience earn between 150.0K and 200.0K
 :::
 
 ## Segmenting employee data based on demographics groups, we found:
@@ -826,15 +757,13 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 <br>
 
 ::: small
+🔵 A significant number of employees from the Millennial generation earn between 150.0K and 200.0K.
 
-  &#128309; A significant number of employees from the Millennial generation earn between 150.0K and 200.0K.
-  
-  &#128309; The Baby Boomers group from the HR department has the lowest median compensation, followed by the Generation Z group from the Sales department.
-  
-  &#128309; There is a balance between the portion of men and women who earn between 150.0K and 200.0k
-  
-  &#128309; Women from the HR department have the lowest median compensation compared with men within the same department and women from the other departments.
- 
+🔵 The Baby Boomers group from the HR department has the lowest median compensation, followed by the Generation Z group from the Sales department.
+
+🔵 There is a balance between the portion of men and women who earn between 150.0K and 200.0k
+
+🔵 Women from the HR department have the lowest median compensation compared with men within the same department and women from the other departments.
 :::
 
 # Conclusion
@@ -844,11 +773,9 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 <br>
 
 ::: small
+✅ By segmenting employee data by role, department, experience, and demographics, evidence-based learning opportunities were identified.
 
-&#9989; By segmenting employee data by role, department, experience, and demographics, evidence-based learning opportunities were identified.
+✅ Identifying segments with high or low statistical differences from the average helped us better understand differences in compensation.
 
-&#9989; Identifying segments with high or low statistical differences from the average helped us better understand differences in compensation.
-
-&#9989; The insights discovered represent excellent research opportunities focused on organizational needs.
-
-::: 
+✅ The insights discovered represent excellent research opportunities focused on organizational needs.
+:::
