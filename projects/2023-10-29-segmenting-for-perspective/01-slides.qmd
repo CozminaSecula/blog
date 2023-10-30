@@ -1,0 +1,854 @@
+---
+title: "Segmenting for Perspective"
+subtitle: "Discover Insights Through Segmentation"
+author: "Cozmina Secula"
+date: 2023-10-30
+draft: true
+format:
+  revealjs:
+   theme: theme.scss
+   transition: fade
+   background-transition: fade
+   embeded-resources: true
+execute:
+  freeze: auto
+  echo: true
+toc-depth: 1
+---
+
+# Project Description
+
+## The Scenario
+
+<br>
+
+A hypothetical company's compensation strategy is based on a one-size-fits-all approach, which may not effectively motivate employees or align with business goals.
+
+  - HR can use data analytics to segment employees based on their roles, experience, and demographics.
+
+  - Segmenting employee data helps to identify opportunities for pay increases or adjustments.
+ 
+## Aim of this project
+
+<br>
+
+:::goal
+&#9989; To understand compensation differences across various factors such as roles, departments, experience, and demographic groups through segment  employee data.
+:::
+
+:::small
+ 
+ - This will help inform the development of a competitive compensation strategy.
+
+ - A competitive compensation strategy can help attract and retain top talent, improve employee morale and motivation, and ultimately drive business success.
+
+:::
+
+## Research Questions
+
+<br>
+
+&#9989; How does compensation compare across different departments, roles, and experience levels?
+
+<br>
+
+&#9989; Are there any disparities in compensation between different demographic groups that can be addressed?
+
+# The Dataset
+
+## A glimpse at the data set
+
+:::small
+
+```{r echo=FALSE}
+library(tidyverse)
+library(peopleanalytics)
+library(skimr)
+library(DT)
+library(kableExtra)
+library(gt)
+library(ggtext)
+library(scales)
+library(xaringan)
+library(cowplot)
+
+
+data("employees")
+
+peopleanalytics::employees|>
+      DT::datatable((options = list(pageLength = 4)))
+    
+  
+
+```
+
+:::
+
+## Data Description
+
+<br>
+
+-   Data is sourced from the book : [The Fundamentals of People Analytics With Applications in R](https://link.springer.com/book/10.1007/978-3-031-28674-2)
+
+-   The data set used in this project is **`employees`** and contains information on active and terminated employees, with a data dictionary available in the book.
+
+
+## Data summary 
+
+:::small
+
+```{r echo=FALSE}
+
+employees|>
+  skim()|>
+  datatable((options = list(pageLength = 5)))
+
+
+```
+
+:::
+
+# Segmenting Employee Data
+
+::: small
+# 1. How does compensation compare across different departments, roles, and experience levels?
+
+:::
+
+## Variables of interest
+
+:::small
+| Variable of interest | Variable Name (data set)| Description of Variable                     | Data type|
+|--------------------- |-------------------------|---------------------------------------------|----------|
+| Compensation         | annual_comp             | Hourly rate * 2080                          | Numeric  |
+| Role                 | job_title               | Job title                                   | Nominal  |
+| Department           | dept                    | Department of which an employee is a member | Nominal  |
+| Experience           | job_lvl                 | Job level, where 1 = Junior and 5 = Senior  | Ordinal  |
+
+:::
+
+## Data Preparation
+
+- **Compensation**
+
+:::small
+
+```{r}
+
+min(employees$annual_comp) #min value for annual compensation
+max(employees$annual_comp) #max value for annual compensation
+
+# Create a new variable with interval values for compensation (annual_interval)
+
+
+employees <- employees %>%
+  filter(active == "Yes") %>%
+  mutate(annual_interval = case_when(
+    annual_comp < 100000 ~ "62.4k-100.0k",
+    annual_comp >= 100000 & annual_comp < 150000 ~ "100.0K-150.0K",
+    annual_comp >= 150000 & annual_comp < 200000 ~ "150.0K-200.0K",
+    annual_comp >= 200000 & annual_comp < 210000 ~ "200.0k-208.0K",
+    annual_comp > 208000 ~ "Over 208.0k"
+      ))
+
+comp_value <- c(50000, 100000, 150000, 200000, Inf)
+comp_interval <- c("62.4k-100.0k","100.0K-150.0k","150.0K-200.0K","200.0k-208.0K")
+employees <- employees|>
+  mutate(annual_interval=cut(annual_comp, 
+                           breaks = comp_value,
+                           labels = comp_interval))
+
+
+levels(employees$annual_interval)
+
+```
+
+:::
+
+## Data Preparation
+
+- **Experience**
+
+::: small
+
+```{r}
+employees|>
+  distinct(job_lvl)  #check the levels for experience (job_lvl) variable
+
+# Converting job_lvl from numeric to a factor 
+
+employees <- employees|>
+  mutate(job_level= factor(job_lvl, ordered = TRUE,
+                              levels=c(1:5),
+                              labels=c("Junior","Intermediate","Experienced","Expert","Senior")))
+levels(employees$job_level)
+```
+
+:::
+
+## Data Preparation
+
+ - **Department**
+ 
+::: small
+
+```{r echo=FALSE}
+employees|>
+  distinct(dept)|> #check the levels for department (dept) variable
+  datatable()
+
+```
+
+:::
+
+## Data Preparation
+
+ - **Role**
+ 
+::: small
+
+```{r echo=FALSE}
+
+employees|>
+  distinct(job_title)|> #check the levels for role (job_title) variable
+  datatable((options = list(pageLength = 5)))
+
+```
+
+:::
+
+## Segmenting Data
+
+- Descriptive Statistics - **only active employees**
+
+::: small
+
+```{r echo=FALSE}
+
+employees|>
+  filter(active== "Yes")|>
+  group_by(dept)|>
+  summarise(Employee = n(),
+            Mean= round(mean(annual_comp, na.rm = TRUE),2),
+            Median= round(median(annual_comp, na.rm = TRUE),2),
+            IQR= round(IQR(annual_comp, na.rm = TRUE),2),
+            Sd.Dev = round(sd(annual_comp, na.rm = TRUE),2))|>
+  datatable()
+ 
+```
+
+:::
+
+## **Number of Employees Dy Department and Role** 
+
+::: small
+
+```{r echo=FALSE, fig.width= 8, fig.height=7}
+# Prepare data
+
+data_dept_role <- employees|>
+  group_by(dept, job_title)|>
+  filter(active=="Yes")|>
+  summarise(Count= n())|>
+  mutate(job_title= forcats::fct_reorder(job_title, Count))
+
+colors <- c("Human Resources" = "#EAF3FFFF", "Research & Development" = "#C5DAF6FF", "Sales"= "#A1C2EDFF")
+
+ggplot(data_dept_role, aes(x = job_title, y= Count, fill=dept))+
+  geom_bar(stat = "identity", position = "dodge", width = 0.7)+
+  geom_text(aes(label=Count), hjust= 0, position= position_dodge(0.9), size= 3.5)+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 360, hjust = 1.2), legend.position = "none",
+  strip.text.y = element_text(vjust = 0, margin = margin(1, 0, 1, 0), 
+    size = rel(0.95), face = "bold"),
+  panel.background = element_blank(),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  plot.background = element_blank())+
+  labs(x="",
+       y= "Number of Employees",
+       fill= "")+
+  scale_fill_manual(values = colors)+
+  coord_flip()+
+  facet_grid(dept ~., scales = "free_y", space = "free_y", switch = "y")
+
+
+
+```
+
+:::
+
+
+## Data table : **compensation interval** by **departments and roles**
+
+::: small
+
+```{r echo=FALSE}
+
+dept_job_title_comp_n <- employees|>
+  group_by(dept, job_title, annual_interval)|>
+  filter(active == "Yes")|>
+  summarise(Count= n())
+
+
+```
+
+
+```{r echo=FALSE}
+          
+comp_dept_role <- dept_job_title_comp_n|>
+  rename("Department" = dept,
+         "Compensation Interval" = annual_interval,
+         "Count" = Count)
+
+
+```
+
+
+
+```{r echo=FALSE}
+comp_dept_role|>
+  DT::datatable((options = list(pageLength = 5)))
+
+```
+
+:::
+
+## **Compensation by Department** 
+
+::: small
+
+```{r echo=FALSE, fig.width= 10, fig.height=7}
+
+
+ggplot(dept_job_title_comp_n, aes(x= annual_interval, y= dept, fill = Count)) +
+  geom_tile() + 
+  labs(title = 'A large portion of employees in R&D earn compensation ranging from 150.0K-200.0K.', 
+       x= 'Compensation', 
+       y= 'Department') +
+  guides(fill = guide_legend(title = "Employee Count")) +
+  scale_fill_continuous(low = "#E5E6E8FF", high = "#0070C0") +
+  theme(panel.background = element_blank(), 
+        axis.ticks.x = element_blank(), 
+        axis.ticks.y = element_blank(), 
+        plot.title = element_text(hjust = 0),
+        axis.title.x = element_text(margin = margin(t= 10, r= 0, b= 0, l= 0)),
+        axis.title.y = element_text(margin = margin(t= 0, r= 10, b= 0, l= 0)),
+        strip.text = element_textbox(
+      size=12,
+      color = "black" , face = "bold",
+      halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc")))
+```
+
+:::
+
+## **Compensation by Role** 
+
+::: small
+
+```{r echo=FALSE, fig.width= 12, fig.height=7 }
+
+
+ggplot(dept_job_title_comp_n, aes(x= annual_interval, y= job_title, fill = Count)) +
+  geom_tile() + 
+  labs(title = 'A significant number of Sales Executives (Sales) and Research Scientists (R&D) earn between 150.0K and 200.0K.',  
+       x= 'Compensation', 
+       y= 'Role') +
+  guides(fill = guide_legend(title = "Employee Count")) +
+  scale_fill_continuous(low = "#E5E6E8FF", high = "#0070C0") +
+  theme(panel.background = element_blank(), 
+        axis.ticks.x = element_blank(), 
+        axis.ticks.y = element_blank(), 
+        plot.title = element_text(hjust = 0),
+        axis.title.x = element_text(margin = margin(t= 10, r= 0, b= 0, l= 0)),
+        axis.title.y = element_text(margin = margin(t= 0, r= 10, b= 0, l= 0)),
+        strip.text = element_textbox(
+      size=12,
+      color = "black" , face = "bold",
+      halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc")))
+        
+```
+
+:::
+
+## How does **compensation** compare across **departments and roles**? 
+
+::: small
+
+```{r echo=FALSE, fig.width= 12, fig.height=6 }
+
+dept_job_title_comp <- employees|>
+  group_by(dept, job_title, annual_comp)|>
+  filter(active == "Yes")
+
+colors <- c("Human Resources" = "#EAF3FFFF", "Research & Development" = "#C5DAF6FF", "Sales"= "#A1C2EDFF")
+
+ggplot(dept_job_title_comp, aes( x= job_title, y=annual_comp, fill=dept))+
+  geom_boxplot()+
+  geom_jitter(width = 0.2)+
+  facet_grid(~ dept)+
+  scale_fill_manual(values = colors)+
+  theme_half_open(12)+
+  background_grid()+
+  theme(
+    strip.background = element_blank(),
+    strip.text = element_textbox(
+      size=12,
+      color = "#404040", fill = "#C5DAF6FF" , box.color = "#C5DAF6FF" , face = "bold",
+      halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc"),
+      padding = margin(2, 0, 1, 0), margin = margin(3, 3, 3, 3)),
+      legend.position = "none")+
+  scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = "k", accuracy = 0.1),
+                     limits= c(50e3, 250e3), breaks = seq(50e3, 250e3, by=50e3))+
+  labs(title = "The Sales Manager role has the highest median compensation, followed by the HR Manager.",
+       y= "Compensation",
+       x= "Role")+
+  coord_flip()
+    
+  
+```
+
+:::
+
+## Data table : **compensation interval** by **departments and experience**
+
+::: small
+
+```{r echo=FALSE}
+dept_job_level_comp_n <- employees|>
+  group_by(dept, job_level, annual_interval)|>
+  filter(active == "Yes")|>
+  summarise(Count= n())
+
+comp_dept_experience <- dept_job_level_comp_n|>
+  rename("Department" = dept,
+         "Experience" = job_level,
+         "Count" = Count)
+
+comp_dept_experience |>
+  DT::datatable((options = list(pageLength = 5)))
+```
+
+:::
+
+## **Compensation by Experience** 
+
+::: small
+
+```{r echo=FALSE, fig.width= 12, fig.height=6 }
+
+
+ggplot(dept_job_level_comp_n,aes(x= annual_interval, y= job_level, fill = Count)) +
+  geom_tile() + 
+  labs(title = 'A significant number of employees with intermediate levels of experience earn between 150.0K and 200.0K.',  
+       x= 'Compensation', 
+       y= 'Experience') +
+  guides(fill = guide_legend(title = "Employee Count")) +
+  scale_fill_continuous(low = "#E5E6E8FF", high = "#0070C0") +
+  theme(panel.background = element_blank(), 
+        axis.ticks.x = element_blank(), 
+        axis.ticks.y = element_blank(), 
+        plot.title = element_text(hjust = 0),
+        axis.title.x = element_text(margin = margin(t= 10, r= 0, b= 0, l= 0)),
+        axis.title.y = element_text(margin = margin(t= 0, r= 10, b= 0, l= 0)),
+        strip.text = element_textbox(
+      size=12,
+      color = "black" , face = "bold",
+      halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc")))
+```
+
+:::
+
+## How does **compensation** compare across **experience levels**?
+
+::: small
+
+```{r echo=FALSE, fig.width= 12, fig.height=6 }
+
+
+colors <- c("Human Resources" = "#EAF3FFFF", "Research & Development" = "#C5DAF6FF", "Sales"= "#A1C2EDFF")
+
+ggplot(employees, aes( x= job_level, y=annual_comp, fill=dept))+
+  geom_boxplot()+
+  geom_jitter(width = 0.2)+
+  facet_grid(~ dept)+
+  scale_fill_manual(values = colors)+
+  theme_half_open(12)+
+  background_grid()+
+  theme(
+    strip.background = element_blank(),
+    strip.text = element_textbox(
+      size=12,
+      color = "black", fill = "#C5DAF6FF" , box.color = "#C5DAF6FF" ,face = "bold",
+      halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc"),
+      padding = margin(2, 0, 1, 0), margin = margin(3, 3, 3, 3)),
+      legend.position = "none")+
+  scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = "k", accuracy = 0.1),
+                     limits= c(50e3, 250e3), breaks = seq(50e3, 250e3, by=50e3))+
+  labs(title = "Senior level of experience in the Sales department has the highest median compensation.
+       The Expert level of experience in the HR department has the lowest median.",
+       y= "Compensation",
+       x= "Experience Levels")+
+  coord_flip()
+
+
+```
+
+::: 
+
+::: small
+
+# 2. Are there any disparities in compensation between different demographic groups that can be addressed?
+
+:::
+
+## Variables of interest
+
+::: small
+
+| Variable of interest | Variable Name (data set)| Description of Variable                     | Data type|
+|--------------------- |-------------------------|---------------------------------------------|----------|
+| Age                  | age                     | Employee age in years                       | Numeric  |
+| Gender               | gender                  | Gender self-identification                  | Nominal  |
+
+:::
+
+## Data Preparation
+
+- **Age (I)**
+
+::: small
+
+```{r}
+
+min(employees$age)
+max(employees$age)
+
+
+```
+
+- Create a new variable **`generation`** based on employees' age.
+
+```{r}
+
+determine_generation <- function(age) {
+  case_when(
+    age >= 18 & age <= 24 ~ "Generation Z",
+    age >= 25 & age <= 40 ~ "Millennial",
+    age >= 41 & age <= 56 ~ "Generation X",
+    age >= 57 & age <= 60 ~ "Baby Boomers",
+    TRUE ~ "Age not in range"
+  )
+}
+
+
+
+```
+
+:::
+
+## Data Preparation
+
+- **Age (II)**
+
+::: small
+
+```{r echo=FALSE}
+# Create a new variable `generation`
+
+employees <- employees|>
+  mutate(generation= determine_generation(age))
+
+employees|>
+  distinct(generation)|>
+  datatable()
+
+
+```
+
+:::
+
+## Data Preparation
+
+- **Age (III)**
+
+::: small
+
+The generations are defined as follows:
+
+| Generation Z |Millennial (Generation Y) |Generation X |Baby Boomers |
+|--------------|---------------------------|-------------|-------------|
+| Ages 18-24   |Ages 25-40                 |Ages 41-56   | Ages 57-60  |
+
+```{r echo=FALSE}
+# Define the order of the levels
+
+generation_cohort <- c("Generation Z", "Millennial", "Generation X", "Baby Boomers", "Age not in range")
+
+# Convert the 'generation' variable to a factor and specify the order of the levels
+
+employees$generation <- factor(employees$generation, levels = generation_cohort)
+
+
+```
+
+:::
+
+## Data Preparation
+
+- **Gender**
+
+::: small
+
+```{r echo=FALSE}
+employees|>
+  distinct(gender)|>
+  datatable()
+```
+
+:::
+
+## Segmenting Data
+
+- **Compensation by generations**
+
+::: small
+
+```{r echo=FALSE }
+
+employees|>
+  filter(active== "Yes")|>
+  group_by(generation)|>
+  summarise(Total = n(),
+            Mean= round(mean(annual_comp, na.rm = TRUE),2),
+            Median= round(median(annual_comp, na.rm = TRUE),2),
+            IQR= round(IQR(annual_comp, na.rm = TRUE),2),
+            Sd.Dev = round(sd(annual_comp, na.rm = TRUE)))|>
+  datatable()
+
+
+```
+
+:::
+
+## Segmenting Data
+
+- **Compensation by gender**
+
+::: small
+
+```{r echo=FALSE }
+
+employees|>
+  filter(active== "Yes")|>
+  group_by(gender)|>
+  summarise(Total = n(),
+            Mean= round(mean(annual_comp, na.rm = TRUE),2),
+            Median= round(median(annual_comp, na.rm = TRUE),2),
+            IQR= round(IQR(annual_comp, na.rm = TRUE),2),
+            Sd.Dev = round(sd(annual_comp, na.rm = TRUE)))|>
+  datatable()
+ 
+
+```
+
+:::
+
+## **Compensation by generational groups**
+
+::: small
+
+```{r echo=FALSE, fig.width= 12, fig.height=6 }
+
+comp_gen_dept <- employees|>
+  group_by(generation, annual_interval, dept)|>
+  filter(active == "Yes")|>
+  summarise(Count=n())
+
+ggplot(comp_gen_dept,aes(x= annual_interval, y= generation, fill = Count)) +
+  geom_tile() + 
+  labs(title = 'A significant number of employees from the Millennial generation earn between 150.0K and 200.0K.',  
+       x= 'Compensation', 
+       y= 'Generation') +
+  guides(fill = guide_legend(title = "Employee Count")) +
+  scale_fill_continuous(low = "#E5E6E8FF", high = "#0070C0") +
+  theme(panel.background = element_blank(), 
+        axis.ticks.x = element_blank(), 
+        axis.ticks.y = element_blank(), 
+        plot.title = element_text(hjust = 0),
+        axis.title.x = element_text(margin = margin(t= 10, r= 0, b= 0, l= 0)),
+        axis.title.y = element_text(margin = margin(t= 0, r= 10, b= 0, l= 0)),
+        strip.text = element_textbox(
+      size=12,
+      color = "black" , face = "bold",
+      halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc")))
+```
+
+:::
+
+## How does **compensation** compare among **generational groups**?
+
+::: small
+
+```{r echo=FALSE, fig.width= 12, fig.height=6 }
+
+comp_gen_dept <- employees|>
+  group_by(generation, annual_comp, dept)|>
+  filter(active == "Yes")
+
+ggplot(comp_gen_dept, aes( x= generation, y=annual_comp, fill=dept))+
+  geom_boxplot()+
+  geom_jitter(width = 0.2)+
+  facet_grid(~ dept)+
+  scale_fill_manual(values = colors)+
+  theme_half_open(12)+
+  background_grid()+
+  theme(
+    strip.background = element_blank(),
+    strip.text = element_textbox(
+      size=12,
+      color = "black", fill = "#C5DAF6FF" , box.color = "#C5DAF6FF" , face = "bold",
+      halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc"),
+      padding = margin(2, 0, 1, 0), margin = margin(3, 3, 3, 3)),
+      legend.position = "none")+
+  scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = "k", accuracy = 0.1),
+                     limits= c(50e3, 250e3), breaks = seq(50e3, 250e3, by=50e3))+
+  labs(title = "The Baby Boomers group from the HR department has the lowest median compensation,
+       followed by the Generation Z group from the Sales department.",
+       y= "Compensation",
+       x= "Generation")+
+  coord_flip()
+
+
+```
+
+:::
+
+## **Compensation by gender**
+
+::: small
+
+```{r echo=FALSE, fig.width= 12, fig.height=6 }
+
+comp_gender_dept <- employees|>
+  group_by(gender, annual_interval, dept)|>
+  filter(active == "Yes")|>
+  summarise(Count=n())
+
+ggplot(comp_gender_dept,aes(x= annual_interval, y= gender, fill = Count)) +
+  geom_tile() + 
+  labs(title = 'There is a balance between the portion of men and women who earn between 150.0K and 200.0k.',  
+       x= 'Compensation', 
+       y= 'Gender') +
+  guides(fill = guide_legend(title = "Employee Count")) +
+  scale_fill_continuous(low = "#E5E6E8FF", high = "#0070C0") +
+  theme(panel.background = element_blank(), 
+        axis.ticks.x = element_blank(), 
+        axis.ticks.y = element_blank(), 
+        plot.title = element_text(hjust = 0),
+        axis.title.x = element_text(margin = margin(t= 10, r= 0, b= 0, l= 0)),
+        axis.title.y = element_text(margin = margin(t= 0, r= 10, b= 0, l= 0)),
+        strip.text = element_textbox(
+      size=12,
+      color = "black" , face = "bold",
+      halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc")))
+```
+
+:::
+
+## How does **compensation** compare among **genders**?
+
+::: small
+
+```{r echo=FALSE, fig.width= 12, fig.height=6 }
+
+
+comp_gender_dept <- employees|>
+  group_by(gender, annual_comp, dept)|>
+  filter(active == "Yes")
+
+ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
+  geom_boxplot()+
+  geom_jitter(width = 0.2)+
+  facet_grid(~ dept)+
+  scale_fill_manual(values = colors)+
+  theme_half_open(12)+
+  background_grid()+
+  theme(
+    strip.background = element_blank(),
+    strip.text = element_textbox(
+      size=12,
+      color = "black", fill = "#C5DAF6FF" , box.color = "#C5DAF6FF" ,face = "bold",
+      halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc"),
+      padding = margin(2, 0, 1, 0), margin = margin(3, 3, 3, 3)),
+      legend.position = "none")+
+  scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = "k", accuracy = 0.1),
+                     limits= c(50e3, 250e3), breaks = seq(50e3, 250e3, by=50e3))+
+  labs(title = "Women from the HR department have the lowest median compensation
+       compared with men within the same department and women from the other departments.",
+       y= "Compensation",
+       x= "Gender")+
+  coord_flip()
+
+
+```
+
+:::
+
+::: small
+
+# What we learned?
+
+:::
+
+
+
+## Segmenting employee data based on departments, roles, and experiences, we found:
+
+<br>
+
+::: small
+
+   &#128309; A large portion of employees in R&D department earn compensation ranging from 150.0K-200.0K.
+
+   &#128309; The Sales Manager role has the highest median compensation, followed by the HR Manager
+
+   &#128309; A significant number of Sales Executives (Sales) and Research Scientists (R&D) earn between 150.0K and 200.0K.
+
+   &#128309; Senior level of experience in the Sales department has the highest median compensation. The Expert level of experience in the HR department has the lowest median.
+
+   &#128309; A significant number of employees with intermediate levels of experience earn between 150.0K and 200.0K
+
+:::
+
+## Segmenting employee data based on demographics groups, we found:
+
+<br>
+
+::: small
+
+  &#128309; A significant number of employees from the Millennial generation earn between 150.0K and 200.0K.
+  
+  &#128309; The Baby Boomers group from the HR department has the lowest median compensation, followed by the Generation Z group from the Sales department.
+  
+  &#128309; There is a balance between the portion of men and women who earn between 150.0K and 200.0k
+  
+  &#128309; Women from the HR department have the lowest median compensation compared with men within the same department and women from the other departments.
+ 
+:::
+
+# Conclusion
+
+## Conclusions
+
+<br>
+
+::: small
+
+&#9989; By segmenting employee data by role, department, experience, and demographics, evidence-based learning opportunities were identified.
+
+&#9989; Identifying segments with high or low statistical differences from the average helped us better understand differences in compensation.
+
+&#9989; The insights discovered represent excellent research opportunities focused on organizational needs.
+
+::: 
