@@ -13,6 +13,7 @@ format:
 execute:
   freeze: auto
   echo: true
+  warning: false
 toc-depth: 1
 ---
 
