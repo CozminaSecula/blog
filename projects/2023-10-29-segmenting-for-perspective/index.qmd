@@ -9,9 +9,9 @@ image: image.jpeg
 
 # Introduction
 
-Segmentation is an essential part of any analytics, helping to understand and derive insights from data. 
+Segmentation is an essential part of people analytics, helping to understand and derive insights from data. 
 
-In this project, I used segmentation to understand compensation differences across various factors such as roles, departments, experience, and demographic groups through segmented employee data. 
+In this project, I used segmentation to understand compensation differences across various factors such as roles, departments, experience, and demographic groups. 
 
 This may help inform the development of a competitive compensation strategy. 
 

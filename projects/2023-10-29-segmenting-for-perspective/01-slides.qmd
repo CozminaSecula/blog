@@ -56,6 +56,14 @@ A hypothetical company's compensation strategy is based on a one-size-fits-all a
 
 # The Dataset
 
+## Data Description
+
+<br>
+
+-   Data is sourced from the book : [The Fundamentals of People Analytics With Applications in R](https://link.springer.com/book/10.1007/978-3-031-28674-2)
+
+-   The data set used in this project is **`employees`** and contains information on active and terminated employees, with a data dictionary available in the book.
+
 ## A glimpse at the data set
 
 :::small
@@ -83,14 +91,6 @@ peopleanalytics::employees|>
 ```
 
 :::
-
-## Data Description
-
-<br>
-
--   Data is sourced from the book : [The Fundamentals of People Analytics With Applications in R](https://link.springer.com/book/10.1007/978-3-031-28674-2)
-
--   The data set used in this project is **`employees`** and contains information on active and terminated employees, with a data dictionary available in the book.
 
 
 ## Data summary 
@@ -279,7 +279,7 @@ ggplot(data_dept_role, aes(x = job_title, y= Count, fill=dept))+
 :::
 
 
-## Data table : **compensation interval** by **departments and roles**
+## **Compensation interval** by **departments and roles**
 
 ::: small
 
@@ -410,7 +410,7 @@ ggplot(dept_job_title_comp, aes( x= job_title, y=annual_comp, fill=dept))+
 
 :::
 
-## Data table : **compensation interval** by **departments and experience**
+## **Compensation interval** by **departments and experience**
 
 ::: small
 
@@ -797,7 +797,7 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 
 ::: small
 
-# What we learned?
+# What we have learned?
 
 :::
 
