@@ -4,11 +4,11 @@ subtitle: "This is a place where I share some of my work."
 listing:
   contents: projects
   sort: "date desc"
-  type: default
+  type: grid
   categories: true
   sort-ui: true
   filter-ui: true
-  fields: [date, title, reading-time, description, categories, image]
+  fields: [date, title, description, categories, image]
 page-layout: full
 title-block-banner: true
 ---
