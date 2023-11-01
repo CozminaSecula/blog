@@ -17,7 +17,7 @@ This may help inform the development of a competitive compensation strategy.
 
 A competitive compensation strategy can help attract and retain top talent, improve employee morale and motivation, and ultimately drive business success.
 
-# Slides
+# Presentation
 
 <iframe src="01-slides.html" width="100%" height="500px">
 

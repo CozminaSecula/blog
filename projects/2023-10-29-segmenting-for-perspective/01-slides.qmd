@@ -112,7 +112,7 @@ employees|>
 
 ::: small
 | Variable of interest | Variable Name (data set) | Description of Variable                     | Data type |
-|---------------|---------------|----------------------------|---------------|
+|----------------|----------------|-------------------------|----------------|
 | Compensation         | annual_comp              | Hourly rate \* 2080                         | Numeric   |
 | Role                 | job_title                | Job title                                   | Nominal   |
 | Department           | dept                     | Department of which an employee is a member | Nominal   |
@@ -466,7 +466,7 @@ ggplot(employees, aes( x= job_level, y=annual_comp, fill=dept))+
 
 ::: small
 | Variable of interest | Variable Name (data set) | Description of Variable    | Data type |
-|---------------|---------------|----------------------------|---------------|
+|----------------|----------------|-------------------------|----------------|
 | Age                  | age                      | Employee age in years      | Numeric   |
 | Gender               | gender                   | Gender self-identification | Nominal   |
 :::

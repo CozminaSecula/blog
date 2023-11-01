@@ -24,6 +24,6 @@ The findings reveal a variety of job resources and demands that influence well-b
 
 This study suggests that organizations can adopt the Job Demand-Resource Model to identify the specific job resources and demands that influence employee well-being. This can lead to more effective interventions addressing these factors and increase overall employee well-being.
 
-## Slides
+## Presentation
 
 {{< pdf EPWBW.pdf width=600 height=400 >}}

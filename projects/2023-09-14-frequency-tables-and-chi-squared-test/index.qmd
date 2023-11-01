@@ -15,7 +15,7 @@ Frequency tables serve as a statistical instrument for categorical data analysis
 
 The presentation will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.
 
-# Slides
+# Presentation
 
 <iframe src="slides.html" width="100%" height="500px" border="0">
 

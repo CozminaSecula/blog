@@ -17,7 +17,7 @@ As part of descriptive statistics, summary statistics can provide valuable insig
 
 The presentation will guide you through the utilization of summary statistics and the independent-samples t-test for insightful data analysis.
 
-# Slides
+# Presentation
 
 <iframe src="slides1.html" width="100%" height="500px" border="0">
 

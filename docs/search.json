@@ -4,14 +4,14 @@
     "href": "projects/2023-09-14-frequency-tables-and-chi-squared-test/index.html",
     "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
     "section": "",
-    "text": "Introduction\nA people analytics project typically involves working with quantifiable data to address business questions and objectives. However, for data to be valuable, it requires analysis and interpretation, which is where analytic techniques become critical. This presentation introduces two distinct tools for initiating data analysis with categorical data: frequency tables and the chi-squared test.\nFrequency tables serve as a statistical instrument for categorical data analysis. They achieve this by counting the occurrences of variables within a data set, providing a concise overview of the distribution and patterns within these categorical variables. When analyzing categorical data, it is often essential to determine if a significant relationship exists between two categorical variables within data set. The chi-squared test helps determine whether these two variables are associated or functionally related. In simpler terms, it quantifies the degree of independence between two categorical variables. When employed together, these tools can unveil intriguing patterns and relationships within data.\nThe presentation will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.\n\n\nSlides"
+    "text": "Introduction\nA people analytics project typically involves working with quantifiable data to address business questions and objectives. However, for data to be valuable, it requires analysis and interpretation, which is where analytic techniques become critical. This presentation introduces two distinct tools for initiating data analysis with categorical data: frequency tables and the chi-squared test.\nFrequency tables serve as a statistical instrument for categorical data analysis. They achieve this by counting the occurrences of variables within a data set, providing a concise overview of the distribution and patterns within these categorical variables. When analyzing categorical data, it is often essential to determine if a significant relationship exists between two categorical variables within data set. The chi-squared test helps determine whether these two variables are associated or functionally related. In simpler terms, it quantifies the degree of independence between two categorical variables. When employed together, these tools can unveil intriguing patterns and relationships within data.\nThe presentation will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.\n\n\nPresentation"
   },
   {
     "objectID": "projects/2023-10-11-summary-statistics-and-t-test/index.html",
     "href": "projects/2023-10-11-summary-statistics-and-t-test/index.html",
     "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
     "section": "",
-    "text": "Introduction\nIn the previous post, I introduced two fundamental concepts to analyze categorical data: frequency tables and the chi-squared test.\nThis post goes one step further by offering two tools for data analysis, which will work with continuous and categorical data: summary statistics and the independent samples t-test.\nAs part of descriptive statistics, summary statistics can provide valuable insights into data sets. It may include essential metrics such as the total number of values, the mean value, and the standard deviation. These statistics provide a clear picture of data trends and distribution, aiding in the interpretation of data patterns. On the other hand, the independent-samples t-test (part of inferential statistics) is employed to compare means between two distinct groups. It helps us investigate whether these two groups differ significantly in a particular dimension. When used together, these tools can reveal intriguing patterns and relationships within data.\nThe presentation will guide you through the utilization of summary statistics and the independent-samples t-test for insightful data analysis.\n\n\nSlides"
+    "text": "Introduction\nIn the previous post, I introduced two fundamental concepts to analyze categorical data: frequency tables and the chi-squared test.\nThis post goes one step further by offering two tools for data analysis, which will work with continuous and categorical data: summary statistics and the independent samples t-test.\nAs part of descriptive statistics, summary statistics can provide valuable insights into data sets. It may include essential metrics such as the total number of values, the mean value, and the standard deviation. These statistics provide a clear picture of data trends and distribution, aiding in the interpretation of data patterns. On the other hand, the independent-samples t-test (part of inferential statistics) is employed to compare means between two distinct groups. It helps us investigate whether these two groups differ significantly in a particular dimension. When used together, these tools can reveal intriguing patterns and relationships within data.\nThe presentation will guide you through the utilization of summary statistics and the independent-samples t-test for insightful data analysis.\n\n\nPresentation"
   },
   {
     "objectID": "projects/employee-well-being-at-work/index.html",
@@ -242,7 +242,7 @@
     "href": "projects/2023-10-29-segmenting-for-perspective/index.html",
     "title": "Segmenting for Perspective: Discover Insights Through Segmentation",
     "section": "",
-    "text": "Introduction\nSegmentation is an essential part of people analytics, helping to understand and obtain insights from data.\nIn this project, I used segmentation to understand compensation differences across various factors such as roles, departments, experience, and demographic groups.\nThis may help inform the development of a competitive compensation strategy.\nA competitive compensation strategy can help attract and retain top talent, improve employee morale and motivation, and ultimately drive business success.\n\n\nSlides"
+    "text": "Introduction\nSegmentation is an essential part of people analytics, helping to understand and obtain insights from data.\nIn this project, I used segmentation to understand compensation differences across various factors such as roles, departments, experience, and demographic groups.\nThis may help inform the development of a competitive compensation strategy.\nA competitive compensation strategy can help attract and retain top talent, improve employee morale and motivation, and ultimately drive business success.\n\n\nPresentation"
   },
   {
     "objectID": "projects/employee-well-being-at-work/index.html#slides",
@@ -250,5 +250,12 @@
     "title": "Employees’ perception of well-being at work: A qualitative study",
     "section": "Slides",
     "text": "Slides\nUnable to display PDF file. Download instead."
+  },
+  {
+    "objectID": "projects/employee-well-being-at-work/index.html#presentation",
+    "href": "projects/employee-well-being-at-work/index.html#presentation",
+    "title": "Employees’ perception of well-being at work: A qualitative study",
+    "section": "Presentation",
+    "text": "Presentation\nUnable to display PDF file. Download instead."
   }
 ]
