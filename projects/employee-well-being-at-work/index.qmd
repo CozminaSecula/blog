@@ -23,4 +23,4 @@ This study suggests that organizations can adopt the Job Demand-Resource Model t
 
 ## Presentation
 
-{{< pdf EPWBW.pdf width=600 height=400 >}}
+{{< pdf EPWBW.pdf width="600" height= "400" >}}
