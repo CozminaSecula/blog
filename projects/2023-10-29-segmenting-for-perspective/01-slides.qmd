@@ -19,15 +19,19 @@ toc-depth: 1
 
 # Project Description
 
-## The Scenario
+## The Context
 
 <br>
 
-A hypothetical company's compensation strategy is based on a one-size-fits-all approach, which may not effectively motivate employees or align with business goals.
+:::small
+  - A fictional company provides a range of products and services while sustaining a diverse workforce across various roles. However, the company's compensation strategy has remained unchanged for the past three years.
+ 
+  - The company aims to understand disparities in compensation, seeking insights based on factors such as roles, departments, experience, and demographic groups. This understanding will enable the company to address potential inequities and enhance its compensation strategy effectively.
 
--   HR can use data analytics to segment employees based on their roles, experience, and demographics.
+  - How can the company employ data analytics to gain insights into compensation differences?
 
--   Segmenting employee data helps to identify opportunities for pay increases or adjustments.
+:::
+
 
 ## Aim of this project
 
@@ -112,7 +116,7 @@ employees|>
 
 ::: small
 | Variable of interest | Variable Name (data set) | Description of Variable                     | Data type |
-|----------------|----------------|-------------------------|----------------|
+|-----------------|-----------------|-----------------------|-----------------|
 | Compensation         | annual_comp              | Hourly rate \* 2080                         | Numeric   |
 | Role                 | job_title                | Job title                                   | Nominal   |
 | Department           | dept                     | Department of which an employee is a member | Nominal   |
@@ -466,7 +470,7 @@ ggplot(employees, aes( x= job_level, y=annual_comp, fill=dept))+
 
 ::: small
 | Variable of interest | Variable Name (data set) | Description of Variable    | Data type |
-|----------------|----------------|-------------------------|----------------|
+|-----------------|-----------------|-----------------------|-----------------|
 | Age                  | age                      | Employee age in years      | Numeric   |
 | Gender               | gender                   | Gender self-identification | Nominal   |
 :::
