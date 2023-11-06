@@ -2,236 +2,103 @@
 title: "5 Ways to Make the Most of Data"
 description: "Notes from 2021 Wharton People Analytics Conference presentation"
 date: 2023-10-16
-categories: [Data Analytics, People Analytics]
+categories: [Business Analytics, People Analytics]
 ---
 
-The NYU Center for Data Science's Andrea Jones-Rooy discusses five simple techniques to make the most of people's data in a [2021 Wharton People Analytics Conference presentation](https://www.youtube.com/watch?v=NrrRJO9apqs&list=PL0EdWFC9ZZrWJ2B40bkLZ2bbJAQDmr3cX&index=21).
+[In a 2021 presentation at the Wharton People Analytics Conference by Andrea Jones-Rooy from the NYU Center for Data Science](https://www.youtube.com/watch?v=NrrRJO9apqs&list=PL0EdWFC9ZZrWJ2B40bkLZ2bbJAQDmr3cX&index=21), several techniques for making the most of people's data were discussed.
 
-Below is a transcription of the presentation[^1].
+The author explains that these techniques are as follows:
 
-[^1]: [2021 Wharton People Analytics Conference presentation](https://www.youtube.com/watch?v=NrrRJO9apqs&list=PL0EdWFC9ZZrWJ2B40bkLZ2bbJAQDmr3cX&index=21)
+## Data Quality Awareness
 
-The author explains that:
-
-> -   While data science techniques like machine learning and deep learning are impressive, ***it is essential to focus on simpler techniques that are cheaper and faster***.
->
-> -   While companies can do many awesome things with data science techniques, ***they can also learn from simpler techniques***.
-
-# 5 Ways to Make the Most of Data[^2]
-
-[^2]: [Another related resource to the topic.](https://www.linkedin.com/feed/update/urn:li:activity:7061745307490885632/)
-
-1.  Be aware of the battles with data.
-2.  Use the scientific method.
-3.  Do not rely solely on means.
-4.  Be cautious with statistical significance.
-5.  Avoid selecting on the dependent variable.
-
-## 1. Be aware of the battles with data
-
-Your data may not be as good as you think, but that does not mean you have to throw it away.
-
-Why your data is probably as not good as you think it is?
-
-There are some reasons:
-
--   **Selection bias**
-
-Often when we are working with data, like the results of an engagement survey, we are not working with a random sample.  
-
-Much of the statistics is built on the assumption that we are working with a random representative sample.
-
-We are not.
+Your data may not be as accurate as you think, and this can be due to issues such as selection bias. For instance, when conducting an engagement survey, it's essential to consider if the participants were selected randomly. 
 
 ::: callout-tip
 ## Tip
 
-You do not have to throw away your engagement survey data.
+Don't discard data just because it's not perfectly representative.
 
-Just because it is not representative, clarify what you are measuring.
-
-Instead of saying something like ninety percent of people would recommend this company to a friend, say ninety percent of **people** **who took this survey**, to remember that there are people out there or some percentage that haven't taken it, whose opinions you actually might be most interested in or always very interested in. 
-
-Companies often throw this out, but the participation rates are data. If more and more people are not participating in your engagement survey over time, that is information.
+Participation rates in surveys also hold valuable information. If more and more people are not participating in your engagement survey over time, that is information.
 :::
 
--   **Measurement**
 
-You are probably not measuring what you think you are measuring.
+## Exclusion and Inclusion
 
-Many companies when they want to measure talent, measure something like leadership. They assess people's leadership skills by giving them a score from one to five. However, these scores often reflect how much you like someone rather than their leadership abilities.
-
-There are better ways to measure this, but most companies do not use them. They ask if you are a leader or not, and give you a score.
-
-Also, they do not regularly check if their measurement methods are still good. Sometimes, they change the criteria from leadership to something else like grit, without proper validation.
+Consider what aspects of your data analysis you might have missed. When conducting surveys, ask directly about the concerns and priorities of respondents instead of assuming what they feel.
 
 ::: callout-tip
 ## Tip
 
-Ask yourself: How do I know I am measuring what I think I am measuring? (validity)
+Consider these questions: 
 
-There are techniques such as:
+ - What have I overlooked?
+ 
+ - What other aspects should I explore? 
+ 
+This process is all about exclusion, which means inquiring about the things you haven't considered yet.
 
--   **conceptualization** - What do I mean by the thing I am talking about?
--   **operationalization** - How am I going to turn that into a number? How am I going to go back and check the validity that I am measuring what I want?
-
-Many companies do not take this step.
-
-Ask yourself: What am I not asking about? What else could I ask about? (exclusion)
-
-What is the exclusion? (asking about what you want to ask about on a survey). For example, think about your engagement surveys.
-
-You want to ensure you are asking questions that matter to the people. One good way to do that is to first ask them what matters to you rather than just saying do you feel you belong or do you feel ....
-
-Make sure you are asking your people:
-
--   **what do they want about**
--   **what they want to tell you**
 :::
 
--   **Data siloing with people's data**
+## Data Siloing
 
-People say they have performance data, engagement data, and DEI data separately rather than mix them all.
+Many organizations segregate performance, engagement, and diversity data into separate categories. 
 
 ::: callout-tip
 ## Tip
 
-Performance data in particular is not objective truth. Data about your people is data about your people. We do not have to keep it in separate categories.
+It is essential to recognize that performance data isn't an absolute truth. It is merely information about your workforce. 
 
-There is:
-
--   **similarity bias**
--   **what we are looking for** in the first place
--   **context** that we have to take into account.
+There's no need to maintain strict segregation between data categories. These categories can be integrated for a more comprehensive view.
 :::
 
-**Summary**
 
-1.  Selection Bias. Who are you over or under-counting?
-2.  Measurement. How to measure what you want?
-3.  Data siloing with people data. Remember, performance data does not equal truth.
-
-## 2. Use the scientific method
+## Scientific Method Utilization
 
 > If you are not sure where to focus your analysis or what data to collect, start with a theory and hypothesis.
 
-What (the author saw) most organizations do. They say:
-
-1.  I care about DEI (diversity, equity, and inclusion).
-2.  Here are a million metrics about things related to demographic identity.
-3.  Women and Black employees leave the company at higher rates than other groups.
-
-They better implement all kinds of best practices without actually figuring out what is going on at their organization or giving any thought to whether these practices are "best" for their organization.
-
--   I might form an ERG, conduct an annual engagement survey, and hope for the best.
--   Ask Black employees about their experiences and then ignore the results because they are not "statistically significant", and/or dismiss their interviews as "anecdotal".
+Start by being curious, observe, create a theory and hypothesis, collect data, test your hypothesis, and refine your approach based on the results.
 
 ::: callout-tip
-## Instead, the author suggests to try:
+## The author suggests to try:
 
--   **Be curious about something** -- Why are Black talent leaving the company?
--   **Observe** - They are leaving at X rate, vs white talent at Y rate.
--   **Have a theory** -- Lack of inclusion leads to disengagement.
--   **Hypothesis** - One possible, observable implication: If talked over at meetings, or interrupted, you do not feel included, and you are more likely to leave.
--   **Collect data** -- Record interruption or speaking time!
--   **Test hypotheses** -- If the theory is correct, I should observe that being interrupted predicts leaving. I should observe evidence consistent with the H1.
--   **Revise theory and repeat** -- I reject H0. Now, I can explore more avenues, refine theory, and maybe implement policy.
+-   **Be curious about something** -- Why are younger employees leaving at a different rate compared to older employees?
+-   **Observe** -- They are leaving at X rate, vs older talent at Y rate.
+-   **Have a theory** -- For example, consider if a lack of inclusion is causing disengagement.
+-   **Make a hypothesis** -- Think about something you can see, like if people are being interrupted in meetings. This could make them feel excluded and more likely to leave.
+-   **Collect data** -- Keep a record of interruptions or speaking time in meetings.
+-   **Test hypotheses** -- See if the data shows that being interrupted is connected to leaving. Look for evidence supporting your theory. 
+-   **Revise theory and repeat** -- If your theory is right, and you find consistent evidence, you can make changes or policies based on this. If not, you might need to explore other ideas and refine your theory.
 :::
 
-The only two stages in our data analysis that involve data:
 
--   **Observation**
--   **Collection** and **testing.**
-
-Otherwise, it is all thinking.
-
-When we think of data science, we tend to think of spreadsheets graphs, and data dashboards.
-
-It is mostly sitting and thinking hard about **what to look for** and **how to know if you have learned something.**
-
-**Summary**
-
-If you are overwhelmed, and do not know where to start, or what data to get:
-
-1.  Begin from a place of curiosity (start with questions, not answers);
-2.  Use a theory and a hypothesis to focus your analysis (will help clarify what data you need);
-3.  Look for observable implications.
-
-# 3. Do not rely solely on means
+# Avoid Reliance on Means
 
 > There is a ton of value to starting simple, and there are also a lot of techniques in between means and machine learning.
 
-There are times when companies say: This is the mean of engagement rate of data, let's make a machine learning model to predict it from now on.
+Instead of focusing on the average or mean numbers, think about how the experiences of different groups might be different, even if the averages look similar. For instance, an equal average score for men and women doesn't indicate the same experiences. Understanding these differences is essential.
 
-What (the author saw) most organizations do. They say:
 
-1.  The mean engagement scores between men and women are the same. There must be no bias!
-2.  The mean performance scores between white and Asian talent are the same. No bias!
-
-::: callout-tip
-## Instead, the author suggests to try:
-
-**A histogram**
-
-You will see a very different picture.
-
-The means might be the same, but there are very different experiences of the people in your company from different groups.
-
-If you do not do histograms, do the standard deviation.
-
-The mean for men is 4, and the mean for women is 4, but the standard deviation for women is much higher.
-
-You're already learning something about the experiences of your people.
-:::
-
-# 4. Be cautious with statistical significance
+# Cautious Interpretation of Statistical Significance
 
 > This is so important. Companies get fixated on this and miss important results.
 
-What (the author saw) most organizations do. They say:
-
-1.  The mean performance scores are 3.9 for women and 4.0 for men, and the difference **is statistically significant** !!!!
-2.  The mean performance scores are 3.2 for Latino/a/x talent and 4.0 for white talent, but the difference **is not** statistically significant.
+Don't get lost in statistical math. Focus on what the numbers mean for your company's goals and values. 
 
 ::: callout-tip
 ## Instead, the author suggests to try:
 
--   **Remember that statistical significance rewards sample size** and can lead to ignoring important results.
+ - Think about whether it's important for your company's goals and values. 
+ 
+ - Focus on substantive significance: Ask if observed differences align with your values as a leader.
+ 
+ - Consider the practical implications beyond statistical significance.
 
-If you are working with a very small population, the gap in the mean or whatever metric you are looking at, the gap between that population and another one must be much bigger for statistical significance to be detected. Whereas if you are working with two large groups, men and women at your organization, you are much more likely to detect statistical significance with a small difference.
-
-Instead, you do not have to throw it away. It is a piece of information, but there is a lot else out there that you can think about.
-
--   **Focus on substantive significance**: Is this difference something I, a decent person who wants to run a fair and equitable company am okay with? *3.2 versus 4 is not something I would be okay with*.
-
-Focus on substantive significance, considering if the differences you observe are acceptable to you as a fair and equitable leader.
 :::
 
-# 5. Avoid selecting on the dependent variable
+# Avoid Selecting on the Dependent Variable
 
 > Do not just study the outcome you want to understand.
 
-What (the author saw) most organizations do. They say:
+Instead of concentrating on one group or issue, examine and compare multiple groups and outcomes. This broader approach provides a comprehensive understanding and prevents essential insights from being overlooked.
 
-1.  I want to understand why Black talent is less engaged; let's ask Black talent only.
-2.  I want to understand what makes someone a top performer; let's study all the top performers.
-
-You're missing part of the picture, an important part of the picture.
-
-::: callout-tip
-## Instead, the author suggests to try:
-
-**Ask all groups about engagement.**
-
-Then compare the reports from Black employees, Asian employees, etc., and study all performers and then compare top, mid, etc..
-
-Why do this?
-
-This is not obvious, but it is very common to look at people who have the outcome we want, see what they do, and emulate it.
-
-Study all groups and compare their experiences, instead of only focusing on the group with the outcome you want to understand.
-
-This helps provide a more comprehensive picture.
-:::
-
-
+In conclusion, these techniques offer valuable insights for effectively utilizing data, making informed decisions, and avoiding common pitfalls in data analysis.

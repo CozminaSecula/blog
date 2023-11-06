@@ -128,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Data Analytics</div>
+                <div class="quarto-category">Business Analytics</div>
                 <div class="quarto-category">People Analytics</div>
               </div>
                   </div>
@@ -157,14 +157,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ways-to-make-the-most-of-data2" id="toc-ways-to-make-the-most-of-data2" class="nav-link active" data-scroll-target="#ways-to-make-the-most-of-data2">5 Ways to Make the Most of Data</a>
-  <ul class="collapse">
-  <li><a href="#be-aware-of-the-battles-with-data" id="toc-be-aware-of-the-battles-with-data" class="nav-link" data-scroll-target="#be-aware-of-the-battles-with-data">1. Be aware of the battles with data</a></li>
-  <li><a href="#use-the-scientific-method" id="toc-use-the-scientific-method" class="nav-link" data-scroll-target="#use-the-scientific-method">2. Use the scientific method</a></li>
-  </ul></li>
-  <li><a href="#do-not-rely-solely-on-means" id="toc-do-not-rely-solely-on-means" class="nav-link" data-scroll-target="#do-not-rely-solely-on-means">3. Do not rely solely on means</a></li>
-  <li><a href="#be-cautious-with-statistical-significance" id="toc-be-cautious-with-statistical-significance" class="nav-link" data-scroll-target="#be-cautious-with-statistical-significance">4. Be cautious with statistical significance</a></li>
-  <li><a href="#avoid-selecting-on-the-dependent-variable" id="toc-avoid-selecting-on-the-dependent-variable" class="nav-link" data-scroll-target="#avoid-selecting-on-the-dependent-variable">5. Avoid selecting on the dependent variable</a></li>
+  <li><a href="#data-quality-awareness" id="toc-data-quality-awareness" class="nav-link active" data-scroll-target="#data-quality-awareness">Data Quality Awareness</a></li>
+  <li><a href="#exclusion-and-inclusion" id="toc-exclusion-and-inclusion" class="nav-link" data-scroll-target="#exclusion-and-inclusion">Exclusion and Inclusion</a></li>
+  <li><a href="#data-siloing" id="toc-data-siloing" class="nav-link" data-scroll-target="#data-siloing">Data Siloing</a></li>
+  <li><a href="#scientific-method-utilization" id="toc-scientific-method-utilization" class="nav-link" data-scroll-target="#scientific-method-utilization">Scientific Method Utilization</a></li>
+  <li><a href="#avoid-reliance-on-means" id="toc-avoid-reliance-on-means" class="nav-link" data-scroll-target="#avoid-reliance-on-means">Avoid Reliance on Means</a></li>
+  <li><a href="#cautious-interpretation-of-statistical-significance" id="toc-cautious-interpretation-of-statistical-significance" class="nav-link" data-scroll-target="#cautious-interpretation-of-statistical-significance">Cautious Interpretation of Statistical Significance</a></li>
+  <li><a href="#avoid-selecting-on-the-dependent-variable" id="toc-avoid-selecting-on-the-dependent-variable" class="nav-link" data-scroll-target="#avoid-selecting-on-the-dependent-variable">Avoid Selecting on the Dependent Variable</a></li>
   </ul>
 </nav>
     </div>
@@ -174,35 +173,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>The NYU Center for Data Science’s Andrea Jones-Rooy discusses five simple techniques to make the most of people’s data in a <a href="https://www.youtube.com/watch?v=NrrRJO9apqs&amp;list=PL0EdWFC9ZZrWJ2B40bkLZ2bbJAQDmr3cX&amp;index=21">2021 Wharton People Analytics Conference presentation</a>.</p>
-<p>Below is a transcription of the presentation<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<p>The author explains that:</p>
-<blockquote class="blockquote">
-<ul>
-<li><p>While data science techniques like machine learning and deep learning are impressive, <strong><em>it is essential to focus on simpler techniques that are cheaper and faster</em></strong>.</p></li>
-<li><p>While companies can do many awesome things with data science techniques, <strong><em>they can also learn from simpler techniques</em></strong>.</p></li>
-</ul>
-</blockquote>
-<section id="ways-to-make-the-most-of-data2" class="level1">
-<h1>5 Ways to Make the Most of Data<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></h1>
-<ol type="1">
-<li>Be aware of the battles with data.</li>
-<li>Use the scientific method.</li>
-<li>Do not rely solely on means.</li>
-<li>Be cautious with statistical significance.</li>
-<li>Avoid selecting on the dependent variable.</li>
-</ol>
-<section id="be-aware-of-the-battles-with-data" class="level2">
-<h2 class="anchored" data-anchor-id="be-aware-of-the-battles-with-data">1. Be aware of the battles with data</h2>
-<p>Your data may not be as good as you think, but that does not mean you have to throw it away.</p>
-<p>Why your data is probably as not good as you think it is?</p>
-<p>There are some reasons:</p>
-<ul>
-<li><strong>Selection bias</strong></li>
-</ul>
-<p>Often when we are working with data, like the results of an engagement survey, we are not working with a random sample. &nbsp;</p>
-<p>Much of the statistics is built on the assumption that we are working with a random representative sample.</p>
-<p>We are not.</p>
+<p><a href="https://www.youtube.com/watch?v=NrrRJO9apqs&amp;list=PL0EdWFC9ZZrWJ2B40bkLZ2bbJAQDmr3cX&amp;index=21">In a 2021 presentation at the Wharton People Analytics Conference by Andrea Jones-Rooy from the NYU Center for Data Science</a>, several techniques for making the most of people’s data were discussed.</p>
+<p>The author explains that these techniques are as follows:</p>
+<section id="data-quality-awareness" class="level2">
+<h2 class="anchored" data-anchor-id="data-quality-awareness">Data Quality Awareness</h2>
+<p>Your data may not be as accurate as you think, and this can be due to issues such as selection bias. For instance, when conducting an engagement survey, it’s essential to consider if the participants were selected randomly.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -213,170 +188,92 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You do not have to throw away your engagement survey data.</p>
-<p>Just because it is not representative, clarify what you are measuring.</p>
-<p>Instead of saying something like ninety percent of people would recommend this company to a friend, say ninety percent of <strong>people</strong> <strong>who took this survey</strong>, to remember that there are people out there or some percentage that haven’t taken it, whose opinions you actually might be most interested in or always very interested in.&nbsp;</p>
-<p>Companies often throw this out, but the participation rates are data. If more and more people are not participating in your engagement survey over time, that is information.</p>
+<p>Don’t discard data just because it’s not perfectly representative.</p>
+<p>Participation rates in surveys also hold valuable information. If more and more people are not participating in your engagement survey over time, that is information.</p>
 </div>
 </div>
-<ul>
-<li><strong>Measurement</strong></li>
-</ul>
-<p>You are probably not measuring what you think you are measuring.</p>
-<p>Many companies when they want to measure talent, measure something like leadership. They assess people’s leadership skills by giving them a score from one to five. However, these scores often reflect how much you like someone rather than their leadership abilities.</p>
-<p>There are better ways to measure this, but most companies do not use them. They ask if you are a leader or not, and give you a score.</p>
-<p>Also, they do not regularly check if their measurement methods are still good. Sometimes, they change the criteria from leadership to something else like grit, without proper validation.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Ask yourself: How do I know I am measuring what I think I am measuring? (validity)</p>
-<p>There are techniques such as:</p>
-<ul>
-<li><strong>conceptualization</strong> - What do I mean by the thing I am talking about?</li>
-<li><strong>operationalization</strong> - How am I going to turn that into a number? How am I going to go back and check the validity that I am measuring what I want?</li>
-</ul>
-<p>Many companies do not take this step.</p>
-<p>Ask yourself: What am I not asking about? What else could I ask about? (exclusion)</p>
-<p>What is the exclusion? (asking about what you want to ask about on a survey). For example, think about your engagement surveys.</p>
-<p>You want to ensure you are asking questions that matter to the people. One good way to do that is to first ask them what matters to you rather than just saying do you feel you belong or do you feel ….</p>
-<p>Make sure you are asking your people:</p>
-<ul>
-<li><strong>what do they want about</strong></li>
-<li><strong>what they want to tell you</strong></li>
-</ul>
-</div>
-</div>
-<ul>
-<li><strong>Data siloing with people’s data</strong></li>
-</ul>
-<p>People say they have performance data, engagement data, and DEI data separately rather than mix them all.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Performance data in particular is not objective truth. Data about your people is data about your people. We do not have to keep it in separate categories.</p>
-<p>There is:</p>
-<ul>
-<li><strong>similarity bias</strong></li>
-<li><strong>what we are looking for</strong> in the first place</li>
-<li><strong>context</strong> that we have to take into account.</li>
-</ul>
-</div>
-</div>
-<p><strong>Summary</strong></p>
-<ol type="1">
-<li>Selection Bias. Who are you over or under-counting?</li>
-<li>Measurement. How to measure what you want?</li>
-<li>Data siloing with people data. Remember, performance data does not equal truth.</li>
-</ol>
 </section>
-<section id="use-the-scientific-method" class="level2">
-<h2 class="anchored" data-anchor-id="use-the-scientific-method">2. Use the scientific method</h2>
+<section id="exclusion-and-inclusion" class="level2">
+<h2 class="anchored" data-anchor-id="exclusion-and-inclusion">Exclusion and Inclusion</h2>
+<p>Consider what aspects of your data analysis you might have missed. When conducting surveys, ask directly about the concerns and priorities of respondents instead of assuming what they feel.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider these questions:</p>
+<ul>
+<li><p>What have I overlooked?</p></li>
+<li><p>What other aspects should I explore?</p></li>
+</ul>
+<p>This process is all about exclusion, which means inquiring about the things you haven’t considered yet.</p>
+</div>
+</div>
+</section>
+<section id="data-siloing" class="level2">
+<h2 class="anchored" data-anchor-id="data-siloing">Data Siloing</h2>
+<p>Many organizations segregate performance, engagement, and diversity data into separate categories.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is essential to recognize that performance data isn’t an absolute truth. It is merely information about your workforce.</p>
+<p>There’s no need to maintain strict segregation between data categories. These categories can be integrated for a more comprehensive view.</p>
+</div>
+</div>
+</section>
+<section id="scientific-method-utilization" class="level2">
+<h2 class="anchored" data-anchor-id="scientific-method-utilization">Scientific Method Utilization</h2>
 <blockquote class="blockquote">
 <p>If you are not sure where to focus your analysis or what data to collect, start with a theory and hypothesis.</p>
 </blockquote>
-<p>What (the author saw) most organizations do. They say:</p>
-<ol type="1">
-<li>I care about DEI (diversity, equity, and inclusion).</li>
-<li>Here are a million metrics about things related to demographic identity.</li>
-<li>Women and Black employees leave the company at higher rates than other groups.</li>
-</ol>
-<p>They better implement all kinds of best practices without actually figuring out what is going on at their organization or giving any thought to whether these practices are “best” for their organization.</p>
-<ul>
-<li>I might form an ERG, conduct an annual engagement survey, and hope for the best.</li>
-<li>Ask Black employees about their experiences and then ignore the results because they are not “statistically significant”, and/or dismiss their interviews as “anecdotal”.</li>
-</ul>
+<p>Start by being curious, observe, create a theory and hypothesis, collect data, test your hypothesis, and refine your approach based on the results.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Instead, the author suggests to try:
+The author suggests to try:
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>Be curious about something</strong> – Why are Black talent leaving the company?</li>
-<li><strong>Observe</strong> - They are leaving at X rate, vs white talent at Y rate.</li>
-<li><strong>Have a theory</strong> – Lack of inclusion leads to disengagement.</li>
-<li><strong>Hypothesis</strong> - One possible, observable implication: If talked over at meetings, or interrupted, you do not feel included, and you are more likely to leave.</li>
-<li><strong>Collect data</strong> – Record interruption or speaking time!</li>
-<li><strong>Test hypotheses</strong> – If the theory is correct, I should observe that being interrupted predicts leaving. I should observe evidence consistent with the H1.</li>
-<li><strong>Revise theory and repeat</strong> – I reject H0. Now, I can explore more avenues, refine theory, and maybe implement policy.</li>
+<li><strong>Be curious about something</strong> – Why are younger employees leaving at a different rate compared to older employees?</li>
+<li><strong>Observe</strong> – They are leaving at X rate, vs older talent at Y rate.</li>
+<li><strong>Have a theory</strong> – For example, consider if a lack of inclusion is causing disengagement.</li>
+<li><strong>Make a hypothesis</strong> – Think about something you can see, like if people are being interrupted in meetings. This could make them feel excluded and more likely to leave.</li>
+<li><strong>Collect data</strong> – Keep a record of interruptions or speaking time in meetings.</li>
+<li><strong>Test hypotheses</strong> – See if the data shows that being interrupted is connected to leaving. Look for evidence supporting your theory.</li>
+<li><strong>Revise theory and repeat</strong> – If your theory is right, and you find consistent evidence, you can make changes or policies based on this. If not, you might need to explore other ideas and refine your theory.</li>
 </ul>
 </div>
 </div>
-<p>The only two stages in our data analysis that involve data:</p>
-<ul>
-<li><strong>Observation</strong></li>
-<li><strong>Collection</strong> and <strong>testing.</strong></li>
-</ul>
-<p>Otherwise, it is all thinking.</p>
-<p>When we think of data science, we tend to think of spreadsheets graphs, and data dashboards.</p>
-<p>It is mostly sitting and thinking hard about <strong>what to look for</strong> and <strong>how to know if you have learned something.</strong></p>
-<p><strong>Summary</strong></p>
-<p>If you are overwhelmed, and do not know where to start, or what data to get:</p>
-<ol type="1">
-<li>Begin from a place of curiosity (start with questions, not answers);</li>
-<li>Use a theory and a hypothesis to focus your analysis (will help clarify what data you need);</li>
-<li>Look for observable implications.</li>
-</ol>
 </section>
-</section>
-<section id="do-not-rely-solely-on-means" class="level1">
-<h1>3. Do not rely solely on means</h1>
+<section id="avoid-reliance-on-means" class="level1">
+<h1>Avoid Reliance on Means</h1>
 <blockquote class="blockquote">
 <p>There is a ton of value to starting simple, and there are also a lot of techniques in between means and machine learning.</p>
 </blockquote>
-<p>There are times when companies say: This is the mean of engagement rate of data, let’s make a machine learning model to predict it from now on.</p>
-<p>What (the author saw) most organizations do. They say:</p>
-<ol type="1">
-<li>The mean engagement scores between men and women are the same. There must be no bias!</li>
-<li>The mean performance scores between white and Asian talent are the same. No bias!</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Instead, the author suggests to try:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>A histogram</strong></p>
-<p>You will see a very different picture.</p>
-<p>The means might be the same, but there are very different experiences of the people in your company from different groups.</p>
-<p>If you do not do histograms, do the standard deviation.</p>
-<p>The mean for men is 4, and the mean for women is 4, but the standard deviation for women is much higher.</p>
-<p>You’re already learning something about the experiences of your people.</p>
-</div>
-</div>
+<p>Instead of focusing on the average or mean numbers, think about how the experiences of different groups might be different, even if the averages look similar. For instance, an equal average score for men and women doesn’t indicate the same experiences. Understanding these differences is essential.</p>
 </section>
-<section id="be-cautious-with-statistical-significance" class="level1">
-<h1>4. Be cautious with statistical significance</h1>
+<section id="cautious-interpretation-of-statistical-significance" class="level1">
+<h1>Cautious Interpretation of Statistical Significance</h1>
 <blockquote class="blockquote">
 <p>This is so important. Companies get fixated on this and miss important results.</p>
 </blockquote>
-<p>What (the author saw) most organizations do. They say:</p>
-<ol type="1">
-<li>The mean performance scores are 3.9 for women and 4.0 for men, and the difference <strong>is statistically significant</strong> !!!!</li>
-<li>The mean performance scores are 3.2 for Latino/a/x talent and 4.0 for white talent, but the difference <strong>is not</strong> statistically significant.</li>
-</ol>
+<p>Don’t get lost in statistical math. Focus on what the numbers mean for your company’s goals and values.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -388,58 +285,25 @@ Instead, the author suggests to try:
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>Remember that statistical significance rewards sample size</strong> and can lead to ignoring important results.</li>
+<li><p>Think about whether it’s important for your company’s goals and values.</p></li>
+<li><p>Focus on substantive significance: Ask if observed differences align with your values as a leader.</p></li>
+<li><p>Consider the practical implications beyond statistical significance.</p></li>
 </ul>
-<p>If you are working with a very small population, the gap in the mean or whatever metric you are looking at, the gap between that population and another one must be much bigger for statistical significance to be detected. Whereas if you are working with two large groups, men and women at your organization, you are much more likely to detect statistical significance with a small difference.</p>
-<p>Instead, you do not have to throw it away. It is a piece of information, but there is a lot else out there that you can think about.</p>
-<ul>
-<li><strong>Focus on substantive significance</strong>: Is this difference something I, a decent person who wants to run a fair and equitable company am okay with? <em>3.2 versus 4 is not something I would be okay with</em>.</li>
-</ul>
-<p>Focus on substantive significance, considering if the differences you observe are acceptable to you as a fair and equitable leader.</p>
 </div>
 </div>
 </section>
 <section id="avoid-selecting-on-the-dependent-variable" class="level1">
-<h1>5. Avoid selecting on the dependent variable</h1>
+<h1>Avoid Selecting on the Dependent Variable</h1>
 <blockquote class="blockquote">
 <p>Do not just study the outcome you want to understand.</p>
 </blockquote>
-<p>What (the author saw) most organizations do. They say:</p>
-<ol type="1">
-<li>I want to understand why Black talent is less engaged; let’s ask Black talent only.</li>
-<li>I want to understand what makes someone a top performer; let’s study all the top performers.</li>
-</ol>
-<p>You’re missing part of the picture, an important part of the picture.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Instead, the author suggests to try:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Ask all groups about engagement.</strong></p>
-<p>Then compare the reports from Black employees, Asian employees, etc., and study all performers and then compare top, mid, etc..</p>
-<p>Why do this?</p>
-<p>This is not obvious, but it is very common to look at people who have the outcome we want, see what they do, and emulate it.</p>
-<p>Study all groups and compare their experiences, instead of only focusing on the group with the outcome you want to understand.</p>
-<p>This helps provide a more comprehensive picture.</p>
-</div>
-</div>
+<p>Instead of concentrating on one group or issue, examine and compare multiple groups and outcomes. This broader approach provides a comprehensive understanding and prevents essential insights from being overlooked.</p>
+<p>In conclusion, these techniques offer valuable insights for effectively utilizing data, making informed decisions, and avoiding common pitfalls in data analysis.</p>
 
 
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p><a href="https://www.youtube.com/watch?v=NrrRJO9apqs&amp;list=PL0EdWFC9ZZrWJ2B40bkLZ2bbJAQDmr3cX&amp;index=21">2021 Wharton People Analytics Conference presentation</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p><a href="https://www.linkedin.com/feed/update/urn:li:activity:7061745307490885632/">Another related resource to the topic.</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -144,7 +144,7 @@
     "href": "notes/make-the-most-of-your-data/index.html",
     "title": "5 Ways to Make the Most of Data",
     "section": "",
-    "text": "The NYU Center for Data Science’s Andrea Jones-Rooy discusses five simple techniques to make the most of people’s data in a 2021 Wharton People Analytics Conference presentation.\nBelow is a transcription of the presentation1.\nThe author explains that:"
+    "text": "In a 2021 presentation at the Wharton People Analytics Conference by Andrea Jones-Rooy from the NYU Center for Data Science, several techniques for making the most of people’s data were discussed.\nThe author explains that these techniques are as follows:"
   },
   {
     "objectID": "notes/make-the-most-of-your-data/index.html#being-humble-but-not-afraid-be-aware-of-the-battles-with-data",
@@ -257,5 +257,33 @@
     "title": "Employees’ perception of well-being at work: A qualitative study",
     "section": "Presentation",
     "text": "Presentation\nUnable to display PDF file. Download instead."
+  },
+  {
+    "objectID": "notes/make-the-most-of-your-data/index.html#data-quality-awareness",
+    "href": "notes/make-the-most-of-your-data/index.html#data-quality-awareness",
+    "title": "5 Ways to Make the Most of Data",
+    "section": "Data Quality Awareness",
+    "text": "Data Quality Awareness\nYour data may not be as accurate as you think, and this can be due to issues such as selection bias. For instance, when conducting an engagement survey, it’s essential to consider if the participants were selected randomly.\n\n\n\n\n\n\nTip\n\n\n\nDon’t discard data just because it’s not perfectly representative.\nParticipation rates in surveys also hold valuable information. If more and more people are not participating in your engagement survey over time, that is information."
+  },
+  {
+    "objectID": "notes/make-the-most-of-your-data/index.html#exclusion-and-inclusion",
+    "href": "notes/make-the-most-of-your-data/index.html#exclusion-and-inclusion",
+    "title": "5 Ways to Make the Most of Data",
+    "section": "Exclusion and Inclusion",
+    "text": "Exclusion and Inclusion\nConsider what aspects of your data analysis you might have missed. When conducting surveys, ask directly about the concerns and priorities of respondents instead of assuming what they feel.\n\n\n\n\n\n\nTip\n\n\n\nConsider these questions:\n\nWhat have I overlooked?\nWhat other aspects should I explore?\n\nThis process is all about exclusion, which means inquiring about the things you haven’t considered yet."
+  },
+  {
+    "objectID": "notes/make-the-most-of-your-data/index.html#data-siloing",
+    "href": "notes/make-the-most-of-your-data/index.html#data-siloing",
+    "title": "5 Ways to Make the Most of Data",
+    "section": "Data Siloing",
+    "text": "Data Siloing\nMany organizations segregate performance, engagement, and diversity data into separate categories.\n\n\n\n\n\n\nTip\n\n\n\nIt is essential to recognize that performance data isn’t an absolute truth. It is merely information about your workforce.\nThere’s no need to maintain strict segregation between data categories. These categories can be integrated for a more comprehensive view."
+  },
+  {
+    "objectID": "notes/make-the-most-of-your-data/index.html#scientific-method-utilization",
+    "href": "notes/make-the-most-of-your-data/index.html#scientific-method-utilization",
+    "title": "5 Ways to Make the Most of Data",
+    "section": "Scientific Method Utilization",
+    "text": "Scientific Method Utilization\n\nIf you are not sure where to focus your analysis or what data to collect, start with a theory and hypothesis.\n\nStart by being curious, observe, create a theory and hypothesis, collect data, test your hypothesis, and refine your approach based on the results.\n\n\n\n\n\n\nThe author suggests to try:\n\n\n\n\nBe curious about something – Why are younger employees leaving at a different rate compared to older employees?\nObserve – They are leaving at X rate, vs older talent at Y rate.\nHave a theory – For example, consider if a lack of inclusion is causing disengagement.\nMake a hypothesis – Think about something you can see, like if people are being interrupted in meetings. This could make them feel excluded and more likely to leave.\nCollect data – Keep a record of interruptions or speaking time in meetings.\nTest hypotheses – See if the data shows that being interrupted is connected to leaving. Look for evidence supporting your theory.\nRevise theory and repeat – If your theory is right, and you find consistent evidence, you can make changes or policies based on this. If not, you might need to explore other ideas and refine your theory."
   }
 ]
