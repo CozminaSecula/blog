@@ -108,7 +108,7 @@ To answer the research questions, a **descriptive analysis** will be performed t
 ### Variables of interest
 
 | Variable of interest | Variable Name (data set) | Description of Variable                                                                                                                                              | Data type   |
-|-----------------|-----------------|----------------------|-----------------|
+|----------------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
 | Compensation         | annual_comp              | Hourly rate \* 2080                                                                                                                                                  | Continuous  |
 | Role                 | job_title                | Job title                                                                                                                                                            | Categorical |
 | Department           | dept                     | Department of which an employee is a member                                                                                                                          | Categorical |
@@ -634,7 +634,7 @@ ggplot(experience_salary_increase_n,aes(x= salary_increase_interval, y= job_leve
 ### Variables of interest
 
 | Variable of interest | Variable Name (data set) | Description of Variable    | Data type   |
-|----------------|-----------------|-------------------------|----------------|
+|----------------------|--------------------------|----------------------------|-------------|
 | Age                  | age                      | Employee age in years      | Continuous  |
 | Gender               | gender                   | Gender self-identification | Categorical |
 
