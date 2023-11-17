@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "projects/2023-09-14-frequency-tables-and-chi-squared-test/index.html",
-    "href": "projects/2023-09-14-frequency-tables-and-chi-squared-test/index.html",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
     "section": "",
-    "text": "Introduction\nA people analytics project typically involves working with quantifiable data to address business questions and objectives. However, for data to be valuable, it requires analysis and interpretation, which is where analytic techniques become critical. This presentation introduces two distinct tools for initiating data analysis with categorical data: frequency tables and the chi-squared test.\nFrequency tables serve as a statistical instrument for categorical data analysis. They achieve this by counting the occurrences of variables within a data set, providing a concise overview of the distribution and patterns within these categorical variables. When analyzing categorical data, it is often essential to determine if a significant relationship exists between two categorical variables within data set. The chi-squared test helps determine whether these two variables are associated or functionally related. In simpler terms, it quantifies the degree of independence between two categorical variables. When employed together, these tools can unveil intriguing patterns and relationships within data.\nThe presentation will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.\n\n\nPresentation"
-  },
-  {
-    "objectID": "projects/2023-10-11-summary-statistics-and-t-test/index.html",
-    "href": "projects/2023-10-11-summary-statistics-and-t-test/index.html",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "",
-    "text": "Introduction\nIn the previous post, I introduced two fundamental concepts to analyze categorical data: frequency tables and the chi-squared test.\nThis post goes one step further by offering two tools for data analysis, which will work with continuous and categorical data: summary statistics and the independent samples t-test.\nAs part of descriptive statistics, summary statistics can provide valuable insights into data sets. It may include essential metrics such as the total number of values, the mean value, and the standard deviation. These statistics provide a clear picture of data trends and distribution, aiding in the interpretation of data patterns. On the other hand, the independent-samples t-test (part of inferential statistics) is employed to compare means between two distinct groups. It helps us investigate whether these two groups differ significantly in a particular dimension. When used together, these tools can reveal intriguing patterns and relationships within data.\nThe presentation will guide you through the utilization of summary statistics and the independent-samples t-test for insightful data analysis.\n\n\nPresentation"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSegmenting for Perspective: Discover Insights Through Segmentation\n\n\n\nemployee segmentation\n\n\npeople analytics\n\n\n\nDiscover how segmentation can help an organization to understand compensation differences across various factors such as roles, departments, experience, and demographic…\n\n\n\nNov 17, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test\n\n\n\nsummary statistics\n\n\nindependent samples t-test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from data using summary statistics and the independent samples t-test, with a case study on team diversity within a large…\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test\n\n\n\nfrequency tables\n\n\nchi-squared test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a case study on gender representation in senior roles.\n\n\n\nSep 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEmployees’ perception of well-being at work: A qualitative study\n\n\n\nqualitative analysis\n\n\nempirical study\n\n\nwell-being at work\n\n\n\nAn empirical study that explores how employees perceive the work environment factors and managers’ behaviors influencing their well-being at work.\n\n\n\nSep 12, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/employee-well-being-at-work/index.html",
@@ -28,11 +21,74 @@
     "text": "Employee well-being is essential for both individuals and organizations.\nDespite large investments by organizations in improving employee well-being, research has shown a deterioration over time. To address this problem, researchers advise organizations to look beyond statistical data and investigate the underlying causes of employees’ low perception of well-being.\nThis study aims to explore the work environment factors and managers’ behaviors that employees perceive as influencing their well-being at work and how they perceive them.\nFollowing a qualitative research design, data were collected cross-sectionally using semi-structured interviews involving 11 employees from various occupations, organizations, and industries. A template analysis strategy was used for data analysis.\nThe findings reveal a variety of job resources and demands that influence well-being at work. Factors such as social support at work, autonomy and flexibility in work, opportunities for professional development, and relevant feedback were all perceived by participants as positively influencing their well-being. On the other hand, dealing with the unpredictability and overload of multiple tasks and ambiguity at work negatively affected their well-being. Furthermore, the findings show that certain managerial behaviors can promote or negatively impact employee well-being. Managers’ behaviors that promote employee well-being include, for example, demonstrating appreciation and recognition at work, showing responsiveness, and providing support and clarity. Lack of responsiveness, excessive control over participants’ work, and failure to allocate resources or manage workloads were perceived as impediments to workplace well-being.\nThis study suggests that organizations can adopt the Job Demand-Resource Model to identify the specific job resources and demands that influence employee well-being. This can lead to more effective interventions addressing these factors and increase overall employee well-being."
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
+    "objectID": "projects/employee-well-being-at-work/index.html#presentation",
+    "href": "projects/employee-well-being-at-work/index.html#presentation",
+    "title": "Employees’ perception of well-being at work: A qualitative study",
+    "section": "Presentation",
+    "text": "Presentation\nUnable to display PDF file. Download instead."
+  },
+  {
+    "objectID": "notes/problem-definition-tool/index.html",
+    "href": "notes/problem-definition-tool/index.html",
+    "title": "Problem Definition Tool",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSegmenting for Perspective: Discover Insights Through Segmentation\n\n\n\nemployee segmentation\n\n\npeople analytics\n\n\n\nDiscover how segmentation can help an organization to understand compensation differences across various factors such as roles, departments, experience, and demographic…\n\n\n\nNov 17, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSegmenting for Perspective: Discover Insights Through Segmentation\n\n\n\nemployee segmentation\n\n\npeople analytics\n\n\n\nDiscover how segmentation can help an organization to understand compensation differences across various factors such as roles, departments, experience, and demographic…\n\n\n\nOct 30, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test\n\n\n\nsummary statistics\n\n\nindependent samples t-test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from data using summary statistics and the independent samples t-test, with a case study on team diversity within a large…\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test\n\n\n\nfrequency tables\n\n\nchi-squared test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a case study on gender representation in senior roles.\n\n\n\nSep 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEmployees’ perception of well-being at work: A qualitative study\n\n\n\nqualitative analysis\n\n\nempirical study\n\n\nwell-being at work\n\n\n\nAn empirical study that explores how employees perceive the work environment factors and managers’ behaviors influencing their well-being at work.\n\n\n\nSep 12, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "In a people analytics project, it is essential to begin by defining the problem we aim to solve and formulating the questions we want to address. Here are my notes on the steps of problem definition from Innovation Skills Accelerator: Problem Definition."
+  },
+  {
+    "objectID": "notes/problem-definition-tool/index.html#what-is-problem-definition",
+    "href": "notes/problem-definition-tool/index.html#what-is-problem-definition",
+    "title": "Problem Definition Tool",
+    "section": "What is problem definition?",
+    "text": "What is problem definition?\nProblem definition is a process of articulating a specific and actionable problem and identifying the root cause of that problem by using data, research, and collaboration.\n\nCreating a problem definition in 4 steps\n1. From issue to problem\n\nWrite down the issue you are trying to solve in a few lines. When you start, the issue is likely to be very broad.\nArticulate the problem. Write a one-paragraph problem definition. It should address the basics, including:\n\nWhat is the problem?\nWhen does it occur?\nWhere does it occur?\n\n\n\n\n\n\n\n\nTip\n\n\n\n\nTake care that the problem is not a solution in disguise.\nAvoid complex jargon and technical terms when you write.\nReviewing the problem definition is a group collaborative exercise.\n\n\n\n2. Articulating root causes\n\nWhy do we think this problem is happening? Write down all possible causes.\n5X WHY - Root cause analysis:\n\nMake a list of whys (at least five) that describe why the problem is happening.\nAsk why those problems are happening.\nRepeat the exercise. Five times.\nDevelop a hypothesis for the most likely causes.\nRepeat five times to create a likely list.\nPrioritize those problems that are solvable by working with others.\n\n\n3. Identifying those most affected\n\nWrite down a list of those who are most affected by the problem.\n\n\n\n\n\n\n\nTip\n\n\n\nAvoid generic statements like “people” in favor of a specific description of those immediately impacted.\n\n\n\nThose affected may be the organization, people, or both.\nPeople may be affected at certain points in their employee lifetime, such as onboarding, development, or retention.\nIdentify the people affected and invite them to review the problem definition.\n\n4. Reframing the problem\n\nLASSO framework:\n\nL - LIMITED. Have I limited the scope? Have I narrowed a large problem down to a more readily definable smaller problem?\nA - ACTIONABLE. Have I described something actionable that we can realistically do something about?\nS - SPECIFIC. Have I described something specific, concrete, or detailed?\nS - SUPPORTED. Have I described a problem that will be supported? My organization cares enough about the problem to take action and invest in the evaluation process to determine whether the solution will work.\nO - OWNER. Have I identified the problem owner? Someone needs to be on point to manage the process and communicate back to stakeholders."
+  },
+  {
+    "objectID": "notes/problem-definition-tool/index.html#key-challenges-in-defining-problem-process",
+    "href": "notes/problem-definition-tool/index.html#key-challenges-in-defining-problem-process",
+    "title": "Problem Definition Tool",
+    "section": "Key Challenges in Defining Problem Process",
+    "text": "Key Challenges in Defining Problem Process\n\nThe constant temptation to articulate a solution rather than a particular problem.\nThe identified problem is too broad to be actionable.\nThe identified problem may not be actionable by you with the resources you have at your disposal.\nThe failure to articulate assumptions and root causes and to identify who else may already be working on the problem.\nThe lack of success metrics needed to assess if a solution works."
+  },
+  {
+    "objectID": "notes/make-the-most-of-your-data/index.html",
+    "href": "notes/make-the-most-of-your-data/index.html",
+    "title": "7 Ways to Make the Most of Data",
+    "section": "",
+    "text": "In a 2021 presentation at the Wharton People Analytics Conference by Andrea Jones-Rooy from the NYU Center for Data Science, several techniques for making the most of people’s data were discussed.\nThe author explains that these techniques are as follows:"
+  },
+  {
+    "objectID": "notes/make-the-most-of-your-data/index.html#data-quality-awareness",
+    "href": "notes/make-the-most-of-your-data/index.html#data-quality-awareness",
+    "title": "7 Ways to Make the Most of Data",
+    "section": "1. Data Quality Awareness",
+    "text": "1. Data Quality Awareness\nYour data may not be as accurate as you think, and this can be due to issues such as selection bias. For instance, when conducting an engagement survey, it’s essential to consider if the participants were selected randomly.\n\n\n\n\n\n\nTip\n\n\n\nDon’t discard data just because it’s not perfectly representative.\nParticipation rates in surveys also hold valuable information. If more and more people are not participating in your engagement survey over time, that is information."
+  },
+  {
+    "objectID": "notes/make-the-most-of-your-data/index.html#exclusion-and-inclusion",
+    "href": "notes/make-the-most-of-your-data/index.html#exclusion-and-inclusion",
+    "title": "7 Ways to Make the Most of Data",
+    "section": "2. Exclusion and Inclusion",
+    "text": "2. Exclusion and Inclusion\nConsider what aspects of your data analysis you might have missed. When conducting surveys, ask directly about the concerns and priorities of respondents instead of assuming what they feel.\n\n\n\n\n\n\nTip\n\n\n\nConsider these questions:\n\nWhat have I overlooked?\nWhat other aspects should I explore?\n\nThis process is all about exclusion, which means inquiring about the things you haven’t considered yet."
+  },
+  {
+    "objectID": "notes/make-the-most-of-your-data/index.html#data-siloing",
+    "href": "notes/make-the-most-of-your-data/index.html#data-siloing",
+    "title": "7 Ways to Make the Most of Data",
+    "section": "3. Data Siloing",
+    "text": "3. Data Siloing\nMany organizations segregate performance, engagement, and diversity data into separate categories.\n\n\n\n\n\n\nTip\n\n\n\nIt is essential to recognize that performance data isn’t an absolute truth. It is merely information about your workforce.\nThere’s no need to maintain strict segregation between data categories. These categories can be integrated for a more comprehensive view."
+  },
+  {
+    "objectID": "notes/make-the-most-of-your-data/index.html#scientific-method-utilization",
+    "href": "notes/make-the-most-of-your-data/index.html#scientific-method-utilization",
+    "title": "7 Ways to Make the Most of Data",
+    "section": "4. Scientific Method Utilization",
+    "text": "4. Scientific Method Utilization\n\nIf you are not sure where to focus your analysis or what data to collect, start with a theory and hypothesis.\n\nStart by being curious, observe, create a theory and hypothesis, collect data, test your hypothesis, and refine your approach based on the results.\n\n\n\n\n\n\nThe author suggests to try:\n\n\n\n\nBe curious about something – Why are younger employees leaving at a different rate compared to older employees?\nObserve – They are leaving at X rate, vs older talent at Y rate.\nHave a theory – For example, consider if a lack of inclusion is causing disengagement.\nMake a hypothesis – Think about something you can see, like if people are being interrupted in meetings. This could make them feel excluded and more likely to leave.\nCollect data – Keep a record of interruptions or speaking time in meetings.\nTest hypotheses – See if the data shows that being interrupted is connected to leaving. Look for evidence supporting your theory.\nRevise theory and repeat – If your theory is right, and you find consistent evidence, you can make changes or policies based on this. If not, you might need to explore other ideas and refine your theory."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Cozmina Secula",
+    "section": "",
+    "text": "With an extensive background in B2B sales and team management, I’m expanding my skill set into new areas like data analytics, R language programming, Quarto, and data visualization.\nThroughout this blog, I showcase my work in people analytics, a domain I am interested in."
   },
   {
     "objectID": "index.html",
@@ -40,55 +96,6 @@
     "title": "Cozmina Secula",
     "section": "",
     "text": "With an extensive background in B2B sales and team management, I’m expanding my skill set into new areas like people analytics, R language programming, Quarto, and data visualization. This is the space where I share my journey of learning and growth."
-  },
-  {
-    "objectID": "notes/post-with-code/index.html",
-    "href": "notes/post-with-code/index.html",
-    "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
-    "section": "",
-    "text": "Takeaways from the article Evidence-Based Solutions for Inclusion in the Workplace: Actions for Middle Managers.\nExperts at Wharton People Analytics and DiversityInc Media collaborated to investigate and share insights on which diversity and inclusion practices “work” and for which desired workplace outcomes.\nIn the authors’ view, middle managers are crucial to translating diversity and inclusion (D&I) strategies into action for three reasons:\nThe article focuses on two key findings: belonging and turnover intent.\nIt also includes a summary of challenges that companies face in motivating middle managers to incorporate D&I work into their interactions with employees."
-  },
-  {
-    "objectID": "notes/post-with-code/index.html#belonging-a-key-to-employee-engagement-and-retention",
-    "href": "notes/post-with-code/index.html#belonging-a-key-to-employee-engagement-and-retention",
-    "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
-    "section": "Belonging: A Key to Employee Engagement and Retention",
-    "text": "Belonging: A Key to Employee Engagement and Retention\nOne of the key findings in the study focuses on the concept of “belonging.” Employees who feel they belong, are accepted, and are comfortable in their workplace tend to have higher engagement, performance, promotion, and retention levels. They also have a 50% lower turnover rate than those who feel excluded. Middle managers should be invested in enhancing their direct reports’ sense of belonging."
-  },
-  {
-    "objectID": "notes/post-with-code/index.html#mentoring-and-sponsorship-a-path-to-belonging",
-    "href": "notes/post-with-code/index.html#mentoring-and-sponsorship-a-path-to-belonging",
-    "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
-    "section": "Mentoring and Sponsorship: A Path to Belonging",
-    "text": "Mentoring and Sponsorship: A Path to Belonging\nThe study highlights that mentoring and sponsorship are effective strategies to help employees feel accepted and build their networks. Middle managers can play a crucial role in facilitating these relationships by identifying mentors for their employees and enhancing existing mentor-mentee connections."
-  },
-  {
-    "objectID": "notes/post-with-code/index.html#personal-stories-for-inclusion",
-    "href": "notes/post-with-code/index.html#personal-stories-for-inclusion",
-    "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
-    "section": "Personal Stories for Inclusion",
-    "text": "Personal Stories for Inclusion\nAnother approach that has proven effective is when managers share their personal stories. This encourages their direct reports to share their own experiences, fostering a sense of belonging and acceptance. When employees believe that they are part of an inclusive workplace, they are more likely to stay and contribute to the organization’s success."
-  },
-  {
-    "objectID": "notes/post-with-code/index.html#workplace-policies-and-middle-managers",
-    "href": "notes/post-with-code/index.html#workplace-policies-and-middle-managers",
-    "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
-    "section": "Workplace Policies and Middle Managers",
-    "text": "Workplace Policies and Middle Managers\nDuring economic upheaval, middle managers should encourage employees to use the company’s policies. This support can be instrumental in retaining talent and ensuring a supportive work environment. Middle managers can take ownership in communicating D&I initiatives, encourage team members to utilize relevant programs, and publicly advocate for a flexible approach to meet employees’ needs."
-  },
-  {
-    "objectID": "notes/post-with-code/index.html#managerial-involvement",
-    "href": "notes/post-with-code/index.html#managerial-involvement",
-    "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
-    "section": "Managerial involvement",
-    "text": "Managerial involvement\nMiddle managers should collect, compile, synthesize and share feedback on the team’s climate to understand what motivates team members to do their jobs well and stay in their current organizations."
-  },
-  {
-    "objectID": "notes/post-with-code/index.html#visibility-and-recognition",
-    "href": "notes/post-with-code/index.html#visibility-and-recognition",
-    "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
-    "section": "Visibility and Recognition",
-    "text": "Visibility and Recognition\nVisibility plays a crucial role in motivating employees to stay with their current organization. Middle managers can increase their visibility by acknowledging their team members’ accomplishments, showcasing underrepresented employees on company websites, and involving a representative sample of team members in discussions and updates."
   },
   {
     "objectID": "notes/middle-managers-and-d&i/index.html",
@@ -140,41 +147,6 @@
     "text": "Visibility and Recognition\nVisibility plays a crucial role in motivating employees to stay with their current organization. Middle managers can increase their visibility by acknowledging their team members’ accomplishments, showcasing underrepresented employees on company websites, and involving a representative sample of team members in discussions and updates."
   },
   {
-    "objectID": "notes/make-the-most-of-your-data/index.html",
-    "href": "notes/make-the-most-of-your-data/index.html",
-    "title": "7 Ways to Make the Most of Data",
-    "section": "",
-    "text": "In a 2021 presentation at the Wharton People Analytics Conference by Andrea Jones-Rooy from the NYU Center for Data Science, several techniques for making the most of people’s data were discussed.\nThe author explains that these techniques are as follows:"
-  },
-  {
-    "objectID": "notes/make-the-most-of-your-data/index.html#being-humble-but-not-afraid-be-aware-of-the-battles-with-data",
-    "href": "notes/make-the-most-of-your-data/index.html#being-humble-but-not-afraid-be-aware-of-the-battles-with-data",
-    "title": "5 Ways to Make the Most of Data",
-    "section": "1. Being humble but not afraid | Be aware of the battles with data",
-    "text": "1. Being humble but not afraid | Be aware of the battles with data\nYour data may not be as good as you think, but that does not mean you have to throw it away.\nWhy your data is probably as not good as you think it is?\nThere are some reasons:\n\nSelection bias\n\nOften when we are working with data, like the results of an engagement survey, we are not working with a random sample.  \nMuch of the statistics is built on the assumption that we are working with a random representative sample.\nWe are not.\n\n\n\n\n\n\nTip\n\n\n\nYou do not have to throw away your engagement survey data.\nJust because it is not representative, clarify what you are measuring.\nInstead of saying something like ninety percent of people would recommend this company to a friend, say ninety percent of people who took this survey, to remember that there are people out there or some percentage that haven’t taken it, whose opinions you actually might be most interested in or always very interested in. \nCompanies often throw this out, but the participation rates are data. If more and more people are not participating in your engagement survey over time, that is information.\n\n\n\nMeasurement\n\nYou are probably not measuring what you think you are measuring.\nMany companies when they want to measure talent, measure something like leadership. They assess people’s leadership skills by giving them a score from one to five. However, these scores often reflect how much you like someone rather than their leadership abilities.\nThere are better ways to measure this, but most companies do not use them. They ask if you are a leader or not, and give you a score.\nAlso, they do not regularly check if their measurement methods are still good. Sometimes, they change the criteria from leadership to something else like grit, without proper validation.\n\n\n\n\n\n\nTip\n\n\n\nAsk yourself: How do I know I am measuring what I think I am measuring? (validity)\nThere are techniques such as:\n\nconceptualization - What do I mean by the thing I am talking about?\noperationalization - How am I going to turn that into a number? How am I going to go back and check the validity that I am measuring what I want?\n\nMany companies do not take this step.\nAsk yourself: What am I not asking about? What else could I ask about? (exclusion)\nWhat is the exclusion? (asking about what you want to ask about on a survey). For example, think about your engagement surveys.\nYou want to ensure you are asking questions that matter to the people. One good way to do that is to first ask them what matters to you rather than just saying do you feel you belong or do you feel ….\nMake sure you are asking your people:\n\nwhat do they want about\nwhat they want to tell you\n\n\n\n\nData siloing with people’s data\n\nPeople say they have performance data, engagement data, and DEI data separately rather than mix them all.\n\n\n\n\n\n\nTip\n\n\n\nPerformance data in particular is not objective truth. Data about your people is data about your people. We do not have to keep it in separate categories.\nThere is:\n\nsimilarity bias\nwhat we are looking for in the first place\ncontext that we have to take into account.\n\n\n\nSummary\n\nSelection Bias. Who are you over or under-counting?\nMeasurement. How to measure what you want?\nData siloing with people data. Remember, performance data does not equal truth."
-  },
-  {
-    "objectID": "notes/make-the-most-of-your-data/index.html#the-scientific-method-to-the-rescue-use-the-scientific-method",
-    "href": "notes/make-the-most-of-your-data/index.html#the-scientific-method-to-the-rescue-use-the-scientific-method",
-    "title": "5 Ways to Make the Most of Data",
-    "section": "2. The scientific method to the rescue | Use the scientific method",
-    "text": "2. The scientific method to the rescue | Use the scientific method\n\nIf you are not sure where to focus your analysis or what data to collect, start with a theory and hypothesis.\n\nWhat (the author saw) most organizations do. They say:\n\nI care about DEI (diversity, equity, and inclusion).\nHere are a million metrics about things related to demographic identity.\nWomen and Black employees leave the company at higher rates than other groups.\n\nThey better implement all kinds of best practices without actually figuring out what is going on at their organization or giving any thought to whether these practices are “best” for their organization.\n\nI might form an ERG, conduct an annual engagement survey, and hope for the best.\nAsk Black employees about their experiences and then ignore the results because they are not “statistically significant”, and/or dismiss their interviews as “anecdotal”.\n\n\n\n\n\n\n\nInstead, the author suggests to try:\n\n\n\n\nBe curious about something – Why are Black talent leaving the company?\nObserve - They are leaving at X rate, vs white talent at Y rate.\nHave a theory – Lack of inclusion leads to disengagement.\nHypothesis - One possible, observable implication: If talked over at meetings, or interrupted, you do not feel included, and you are more likely to leave.\nCollect data – Record interruption or speaking time!\nTest hypotheses – If the theory is correct, I should observe that being interrupted predicts leaving. I should observe evidence consistent with the H1.\nRevise theory and repeat – I reject H0. Now, I can explore more avenues, refine theory, and maybe implement policy.\n\n\n\nThe only two stages in our data analysis that involve data:\n\nObservation\nCollection and testing.\n\nOtherwise, it is all thinking.\nWhen we think of data science, we tend to think of spreadsheets graphs, and data dashboards.\nIt is mostly sitting and thinking hard about what to look for and how to know if you have learned something.\nSummary\nIf you are overwhelmed, and do not know where to start, or what data to get:\n\nBegin from a place of curiosity (start with questions, not answers);\nUse a theory and a hypothesis to focus your analysis (will help clarify what data you need);\nLook for observable implications."
-  },
-  {
-    "objectID": "notes/make-the-most-of-your-data/index.html#footnotes",
-    "href": "notes/make-the-most-of-your-data/index.html#footnotes",
-    "title": "5 Ways to Make the Most of Data",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\n2021 Wharton People Analytics Conference presentation↩︎\nAnother related resource to the topic.↩︎"
-  },
-  {
-    "objectID": "notes/make-the-most-of-your-data/index.html#instead-the-author-suggests-to-try-3",
-    "href": "notes/make-the-most-of-your-data/index.html#instead-the-author-suggests-to-try-3",
-    "title": "5 Ways to Make the Most of Data",
-    "section": "Instead, the author suggests to try:",
-    "text": "Instead, the author suggests to try:\nAsk all groups about engagement.\nThen compare the reports from Black employees, Asian employees etc., and study all performers and then compare top, mid etc..\nWhy do this?\nThis is not obvious, but it is very common to look at people who have the outcome we want, and see what they do, and emulate it.\nStudy all groups and compare their experiences. Instead of only focusing on the group with the outcome you want to understand.\nThis helps provide a more comprehensive picture."
-  },
-  {
     "objectID": "notes/middle-managers-and-d&i/index.html#footnotes",
     "href": "notes/middle-managers-and-d&i/index.html#footnotes",
     "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
@@ -182,109 +154,18 @@
     "text": "Footnotes\n\n\nSource of the article↩︎"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Cozmina Secula",
+    "objectID": "projects/2023-09-14-frequency-tables-and-chi-squared-test/index.html",
+    "href": "projects/2023-09-14-frequency-tables-and-chi-squared-test/index.html",
+    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
     "section": "",
-    "text": "With an extensive background in B2B sales and team management, I’m expanding my skill set into new areas like data analytics, R language programming, Quarto, and data visualization.\nThroughout this blog, I showcase my work in people analytics, a domain I am interested in."
+    "text": "Introduction\nA people analytics project typically involves working with quantifiable data to address business questions and objectives. However, for data to be valuable, it requires analysis and interpretation, which is where analytic techniques become critical. This presentation introduces two distinct tools for initiating data analysis with categorical data: frequency tables and the chi-squared test.\nFrequency tables serve as a statistical instrument for categorical data analysis. They achieve this by counting the occurrences of variables within a data set, providing a concise overview of the distribution and patterns within these categorical variables. When analyzing categorical data, it is often essential to determine if a significant relationship exists between two categorical variables within data set. The chi-squared test helps determine whether these two variables are associated or functionally related. In simpler terms, it quantifies the degree of independence between two categorical variables. When employed together, these tools can unveil intriguing patterns and relationships within data.\nThe presentation will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.\n\n\nPresentation"
   },
   {
-    "objectID": "notes/make-the-most-of-your-data/index.html#be-aware-of-the-battles-with-data",
-    "href": "notes/make-the-most-of-your-data/index.html#be-aware-of-the-battles-with-data",
-    "title": "5 Ways to Make the Most of Data",
-    "section": "1. Be aware of the battles with data",
-    "text": "1. Be aware of the battles with data\nYour data may not be as good as you think, but that does not mean you have to throw it away.\nWhy your data is probably as not good as you think it is?\nThere are some reasons:\n\nSelection bias\n\nOften when we are working with data, like the results of an engagement survey, we are not working with a random sample.  \nMuch of the statistics is built on the assumption that we are working with a random representative sample.\nWe are not.\n\n\n\n\n\n\nTip\n\n\n\nYou do not have to throw away your engagement survey data.\nJust because it is not representative, clarify what you are measuring.\nInstead of saying something like ninety percent of people would recommend this company to a friend, say ninety percent of people who took this survey, to remember that there are people out there or some percentage that haven’t taken it, whose opinions you actually might be most interested in or always very interested in. \nCompanies often throw this out, but the participation rates are data. If more and more people are not participating in your engagement survey over time, that is information.\n\n\n\nMeasurement\n\nYou are probably not measuring what you think you are measuring.\nMany companies when they want to measure talent, measure something like leadership. They assess people’s leadership skills by giving them a score from one to five. However, these scores often reflect how much you like someone rather than their leadership abilities.\nThere are better ways to measure this, but most companies do not use them. They ask if you are a leader or not, and give you a score.\nAlso, they do not regularly check if their measurement methods are still good. Sometimes, they change the criteria from leadership to something else like grit, without proper validation.\n\n\n\n\n\n\nTip\n\n\n\nAsk yourself: How do I know I am measuring what I think I am measuring? (validity)\nThere are techniques such as:\n\nconceptualization - What do I mean by the thing I am talking about?\noperationalization - How am I going to turn that into a number? How am I going to go back and check the validity that I am measuring what I want?\n\nMany companies do not take this step.\nAsk yourself: What am I not asking about? What else could I ask about? (exclusion)\nWhat is the exclusion? (asking about what you want to ask about on a survey). For example, think about your engagement surveys.\nYou want to ensure you are asking questions that matter to the people. One good way to do that is to first ask them what matters to you rather than just saying do you feel you belong or do you feel ….\nMake sure you are asking your people:\n\nwhat do they want about\nwhat they want to tell you\n\n\n\n\nData siloing with people’s data\n\nPeople say they have performance data, engagement data, and DEI data separately rather than mix them all.\n\n\n\n\n\n\nTip\n\n\n\nPerformance data in particular is not objective truth. Data about your people is data about your people. We do not have to keep it in separate categories.\nThere is:\n\nsimilarity bias\nwhat we are looking for in the first place\ncontext that we have to take into account.\n\n\n\nSummary\n\nSelection Bias. Who are you over or under-counting?\nMeasurement. How to measure what you want?\nData siloing with people data. Remember, performance data does not equal truth."
-  },
-  {
-    "objectID": "notes/make-the-most-of-your-data/index.html#use-the-scientific-method",
-    "href": "notes/make-the-most-of-your-data/index.html#use-the-scientific-method",
-    "title": "5 Ways to Make the Most of Data",
-    "section": "2. Use the scientific method",
-    "text": "2. Use the scientific method\n\nIf you are not sure where to focus your analysis or what data to collect, start with a theory and hypothesis.\n\nWhat (the author saw) most organizations do. They say:\n\nI care about DEI (diversity, equity, and inclusion).\nHere are a million metrics about things related to demographic identity.\nWomen and Black employees leave the company at higher rates than other groups.\n\nThey better implement all kinds of best practices without actually figuring out what is going on at their organization or giving any thought to whether these practices are “best” for their organization.\n\nI might form an ERG, conduct an annual engagement survey, and hope for the best.\nAsk Black employees about their experiences and then ignore the results because they are not “statistically significant”, and/or dismiss their interviews as “anecdotal”.\n\n\n\n\n\n\n\nInstead, the author suggests to try:\n\n\n\n\nBe curious about something – Why are Black talent leaving the company?\nObserve - They are leaving at X rate, vs white talent at Y rate.\nHave a theory – Lack of inclusion leads to disengagement.\nHypothesis - One possible, observable implication: If talked over at meetings, or interrupted, you do not feel included, and you are more likely to leave.\nCollect data – Record interruption or speaking time!\nTest hypotheses – If the theory is correct, I should observe that being interrupted predicts leaving. I should observe evidence consistent with the H1.\nRevise theory and repeat – I reject H0. Now, I can explore more avenues, refine theory, and maybe implement policy.\n\n\n\nThe only two stages in our data analysis that involve data:\n\nObservation\nCollection and testing.\n\nOtherwise, it is all thinking.\nWhen we think of data science, we tend to think of spreadsheets graphs, and data dashboards.\nIt is mostly sitting and thinking hard about what to look for and how to know if you have learned something.\nSummary\nIf you are overwhelmed, and do not know where to start, or what data to get:\n\nBegin from a place of curiosity (start with questions, not answers);\nUse a theory and a hypothesis to focus your analysis (will help clarify what data you need);\nLook for observable implications."
-  },
-  {
-    "objectID": "notes/problem-definition-tool/index.html",
-    "href": "notes/problem-definition-tool/index.html",
-    "title": "Problem Definition Tool",
+    "objectID": "projects/2023-10-11-summary-statistics-and-t-test/index.html",
+    "href": "projects/2023-10-11-summary-statistics-and-t-test/index.html",
+    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
     "section": "",
-    "text": "In a people analytics project, it is essential to begin by defining the problem we aim to solve and formulating the questions we want to address. Here are my notes on the steps of problem definition from Innovation Skills Accelerator: Problem Definition."
-  },
-  {
-    "objectID": "notes/problem-definition-tool/index.html#problem-identification",
-    "href": "notes/problem-definition-tool/index.html#problem-identification",
-    "title": "Problem Definition Tool",
-    "section": "Problem identification",
-    "text": "Problem identification\nProblem identification also knows as problem definition, is the first step in any problem solving process.\n\n“If I had one hour to save the world, I would spend 55 minutes defining the problem and only 5 minutes on finding the solution”.\nAlbert Einstein"
-  },
-  {
-    "objectID": "notes/problem-definition-tool/index.html#footnotes",
-    "href": "notes/problem-definition-tool/index.html#footnotes",
-    "title": "Problem Definition Tool",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nInnovation Skills Accelerator: Problem Definition↩︎"
-  },
-  {
-    "objectID": "notes/problem-definition-tool/index.html#what-is-problem-definition",
-    "href": "notes/problem-definition-tool/index.html#what-is-problem-definition",
-    "title": "Problem Definition Tool",
-    "section": "What is problem definition?",
-    "text": "What is problem definition?\nProblem definition is a process of articulating a specific and actionable problem and identifying the root cause of that problem by using data, research, and collaboration.\n\nCreating a problem definition in 4 steps\n1. From issue to problem\n\nWrite down the issue you are trying to solve in a few lines. When you start, the issue is likely to be very broad.\nArticulate the problem. Write a one-paragraph problem definition. It should address the basics, including:\n\nWhat is the problem?\nWhen does it occur?\nWhere does it occur?\n\n\n\n\n\n\n\n\nTip\n\n\n\n\nTake care that the problem is not a solution in disguise.\nAvoid complex jargon and technical terms when you write.\nReviewing the problem definition is a group collaborative exercise.\n\n\n\n2. Articulating root causes\n\nWhy do we think this problem is happening? Write down all possible causes.\n5X WHY - Root cause analysis:\n\nMake a list of whys (at least five) that describe why the problem is happening.\nAsk why those problems are happening.\nRepeat the exercise. Five times.\nDevelop a hypothesis for the most likely causes.\nRepeat five times to create a likely list.\nPrioritize those problems that are solvable by working with others.\n\n\n3. Identifying those most affected\n\nWrite down a list of those who are most affected by the problem.\n\n\n\n\n\n\n\nTip\n\n\n\nAvoid generic statements like “people” in favor of a specific description of those immediately impacted.\n\n\n\nThose affected may be the organization, people, or both.\nPeople may be affected at certain points in their employee lifetime, such as onboarding, development, or retention.\nIdentify the people affected and invite them to review the problem definition.\n\n4. Reframing the problem\n\nLASSO framework:\n\nL - LIMITED. Have I limited the scope? Have I narrowed a large problem down to a more readily definable smaller problem?\nA - ACTIONABLE. Have I described something actionable that we can realistically do something about?\nS - SPECIFIC. Have I described something specific, concrete, or detailed?\nS - SUPPORTED. Have I described a problem that will be supported? My organization cares enough about the problem to take action and invest in the evaluation process to determine whether the solution will work.\nO - OWNER. Have I identified the problem owner? Someone needs to be on point to manage the process and communicate back to stakeholders."
-  },
-  {
-    "objectID": "notes/problem-definition-tool/index.html#key-challenges-in-defining-problem-process",
-    "href": "notes/problem-definition-tool/index.html#key-challenges-in-defining-problem-process",
-    "title": "Problem Definition Tool",
-    "section": "Key Challenges in Defining Problem Process",
-    "text": "Key Challenges in Defining Problem Process\n\nThe constant temptation to articulate a solution rather than a particular problem.\nThe identified problem is too broad to be actionable.\nThe identified problem may not be actionable by you with the resources you have at your disposal.\nThe failure to articulate assumptions and root causes and to identify who else may already be working on the problem.\nThe lack of success metrics needed to assess if a solution works."
-  },
-  {
-    "objectID": "projects/2023-10-29-segmenting-for-perspective/index.html",
-    "href": "projects/2023-10-29-segmenting-for-perspective/index.html",
-    "title": "Segmenting for Perspective: Discover Insights Through Segmentation",
-    "section": "",
-    "text": "Introduction\nSegmentation is an essential part of people analytics, helping to understand and obtain insights from data.\nIn this project, I used segmentation to understand compensation differences across various factors such as roles, departments, experience, and demographic groups.\nThis may help inform the development of a competitive compensation strategy.\nA competitive compensation strategy can help attract and retain top talent, improve employee morale and motivation, and ultimately drive business success.\n\n\nPresentation"
-  },
-  {
-    "objectID": "projects/employee-well-being-at-work/index.html#slides",
-    "href": "projects/employee-well-being-at-work/index.html#slides",
-    "title": "Employees’ perception of well-being at work: A qualitative study",
-    "section": "Slides",
-    "text": "Slides\nUnable to display PDF file. Download instead."
-  },
-  {
-    "objectID": "projects/employee-well-being-at-work/index.html#presentation",
-    "href": "projects/employee-well-being-at-work/index.html#presentation",
-    "title": "Employees’ perception of well-being at work: A qualitative study",
-    "section": "Presentation",
-    "text": "Presentation\nUnable to display PDF file. Download instead."
-  },
-  {
-    "objectID": "notes/make-the-most-of-your-data/index.html#data-quality-awareness",
-    "href": "notes/make-the-most-of-your-data/index.html#data-quality-awareness",
-    "title": "7 Ways to Make the Most of Data",
-    "section": "1. Data Quality Awareness",
-    "text": "1. Data Quality Awareness\nYour data may not be as accurate as you think, and this can be due to issues such as selection bias. For instance, when conducting an engagement survey, it’s essential to consider if the participants were selected randomly.\n\n\n\n\n\n\nTip\n\n\n\nDon’t discard data just because it’s not perfectly representative.\nParticipation rates in surveys also hold valuable information. If more and more people are not participating in your engagement survey over time, that is information."
-  },
-  {
-    "objectID": "notes/make-the-most-of-your-data/index.html#exclusion-and-inclusion",
-    "href": "notes/make-the-most-of-your-data/index.html#exclusion-and-inclusion",
-    "title": "7 Ways to Make the Most of Data",
-    "section": "2. Exclusion and Inclusion",
-    "text": "2. Exclusion and Inclusion\nConsider what aspects of your data analysis you might have missed. When conducting surveys, ask directly about the concerns and priorities of respondents instead of assuming what they feel.\n\n\n\n\n\n\nTip\n\n\n\nConsider these questions:\n\nWhat have I overlooked?\nWhat other aspects should I explore?\n\nThis process is all about exclusion, which means inquiring about the things you haven’t considered yet."
-  },
-  {
-    "objectID": "notes/make-the-most-of-your-data/index.html#data-siloing",
-    "href": "notes/make-the-most-of-your-data/index.html#data-siloing",
-    "title": "7 Ways to Make the Most of Data",
-    "section": "3. Data Siloing",
-    "text": "3. Data Siloing\nMany organizations segregate performance, engagement, and diversity data into separate categories.\n\n\n\n\n\n\nTip\n\n\n\nIt is essential to recognize that performance data isn’t an absolute truth. It is merely information about your workforce.\nThere’s no need to maintain strict segregation between data categories. These categories can be integrated for a more comprehensive view."
-  },
-  {
-    "objectID": "notes/make-the-most-of-your-data/index.html#scientific-method-utilization",
-    "href": "notes/make-the-most-of-your-data/index.html#scientific-method-utilization",
-    "title": "7 Ways to Make the Most of Data",
-    "section": "4. Scientific Method Utilization",
-    "text": "4. Scientific Method Utilization\n\nIf you are not sure where to focus your analysis or what data to collect, start with a theory and hypothesis.\n\nStart by being curious, observe, create a theory and hypothesis, collect data, test your hypothesis, and refine your approach based on the results.\n\n\n\n\n\n\nThe author suggests to try:\n\n\n\n\nBe curious about something – Why are younger employees leaving at a different rate compared to older employees?\nObserve – They are leaving at X rate, vs older talent at Y rate.\nHave a theory – For example, consider if a lack of inclusion is causing disengagement.\nMake a hypothesis – Think about something you can see, like if people are being interrupted in meetings. This could make them feel excluded and more likely to leave.\nCollect data – Keep a record of interruptions or speaking time in meetings.\nTest hypotheses – See if the data shows that being interrupted is connected to leaving. Look for evidence supporting your theory.\nRevise theory and repeat – If your theory is right, and you find consistent evidence, you can make changes or policies based on this. If not, you might need to explore other ideas and refine your theory."
+    "text": "Introduction\nIn the previous post, I introduced two fundamental concepts to analyze categorical data: frequency tables and the chi-squared test.\nThis post goes one step further by offering two tools for data analysis, which will work with continuous and categorical data: summary statistics and the independent samples t-test.\nAs part of descriptive statistics, summary statistics can provide valuable insights into data sets. It may include essential metrics such as the total number of values, the mean value, and the standard deviation. These statistics provide a clear picture of data trends and distribution, aiding in the interpretation of data patterns. On the other hand, the independent-samples t-test (part of inferential statistics) is employed to compare means between two distinct groups. It helps us investigate whether these two groups differ significantly in a particular dimension. When used together, these tools can reveal intriguing patterns and relationships within data.\nThe presentation will guide you through the utilization of summary statistics and the independent-samples t-test for insightful data analysis.\n\n\nPresentation"
   },
   {
     "objectID": "projects/2023-11-17-segmenting-for-perspective/index.html",
