@@ -272,7 +272,7 @@ employees|>
 
  gt_plt_summary(employees1) 
 
- datatable(employees1)
+ datatable(employees1, options = list(pageLength = 5))
 ```
 
 ## Descriptive Statistics
