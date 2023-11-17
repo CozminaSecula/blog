@@ -108,7 +108,7 @@ To answer the research questions, a **descriptive analysis** will be performed t
 ### Variables of interest
 
 | Variable of interest | Variable Name (data set) | Description of Variable                                                                                                                                              | Data type   |
-|----------------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
+|----------|----------|------------------------------------------|----------|
 | Compensation         | annual_comp              | Hourly rate \* 2080                                                                                                                                                  | Continuous  |
 | Role                 | job_title                | Job title                                                                                                                                                            | Categorical |
 | Department           | dept                     | Department of which an employee is a member                                                                                                                          | Categorical |
@@ -550,7 +550,7 @@ ggplot(dept_salary_increase_n,aes(x= salary_increase_interval, y= dept, fill = p
   labs(title = 'At least 61% of employees from each department \nreceived a salary increase between 11%-15% \nfor their most recent compensation adjustment.',  
        x= 'Salary Increase', 
        y= 'Department') +
-  guides(fill = guide_legend(title = "Number of Employees")) +
+  guides(fill = guide_legend(title = "% of Employees")) +
   scale_fill_continuous(low = "#E5E6E8FF", high = "#0070C0") +
   theme(panel.background = element_blank(), 
         axis.ticks.x = element_blank(), 
@@ -582,7 +582,7 @@ ggplot(role_salary_increase_n,aes(x= salary_increase_interval, y= job_title, fil
   labs(title = 'More than 54% of employees from each role \nreceived a salary increase between 11%-15% \nfor their most recent compensation adjustment.',  
        x= 'Salary Increase', 
        y= 'Role') +
-  guides(fill = guide_legend(title = "Number of Employees")) +
+  guides(fill = guide_legend(title = "% of Employees")) +
   scale_fill_continuous(low = "#E5E6E8FF", high = "#0070C0") +
   theme(panel.background = element_blank(), 
         axis.ticks.x = element_blank(), 
@@ -614,7 +614,7 @@ ggplot(experience_salary_increase_n,aes(x= salary_increase_interval, y= job_leve
   labs(title = 'More than 60% of employees from each experience level \nreceived a salary increase between 11%-15% \nfor their most recent compensation adjustment.',  
        x= 'Salary Increase', 
        y= 'Experience level') +
-  guides(fill = guide_legend(title = "Number of Employees")) +
+  guides(fill = guide_legend(title = "% of Employees")) +
   scale_fill_continuous(low = "#E5E6E8FF", high = "#0070C0") +
   theme(panel.background = element_blank(), 
         axis.ticks.x = element_blank(), 
@@ -634,7 +634,7 @@ ggplot(experience_salary_increase_n,aes(x= salary_increase_interval, y= job_leve
 ### Variables of interest
 
 | Variable of interest | Variable Name (data set) | Description of Variable    | Data type   |
-|----------------------|--------------------------|----------------------------|-------------|
+|----------------|-------------------|---------------------|----------------|
 | Age                  | age                      | Employee age in years      | Continuous  |
 | Gender               | gender                   | Gender self-identification | Categorical |
 
@@ -886,9 +886,9 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 
 -   Compensation By Generations
 
--   A significant number of employees from the Millennial generation earn between 150.0K and 200.0K.
+    -   A significant number of employees from the Millennial generation earn between 150.0K and 200.0K.
 
--   The Baby Boomers group from the HR department has the lowest average compensation, followed by the Generation Z group from the Sales department.
+    -   The Baby Boomers group from the HR department has the lowest average compensation, followed by the Generation Z group from the Sales department.
 
 -   Compensation By Gender
 
