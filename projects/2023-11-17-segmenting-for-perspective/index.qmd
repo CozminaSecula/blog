@@ -14,8 +14,8 @@ code-fold: true
 code-link: true
 code-tools: true
 fig-align: center
-fig-height: 5
-fig-width: 7
+fig-height: 6
+fig-width: 8
 ---
 
 # Project Description
@@ -108,7 +108,7 @@ To answer the research questions, a **descriptive analysis** will be performed t
 ### Variables of interest
 
 | Variable of interest | Variable Name (data set) | Description of Variable                                                                                                                                              | Data type   |
-|-------------|-------------|-----------------------------------|-------------|
+|--------------|--------------|-----------------------------|--------------|
 | Compensation         | annual_comp              | Hourly rate \* 2080                                                                                                                                                  | Continuous  |
 | Role                 | job_title                | Job title                                                                                                                                                            | Categorical |
 | Department           | dept                     | Department of which an employee is a member                                                                                                                          | Categorical |
@@ -395,12 +395,14 @@ ggplot(data_dept_role, aes(x = reorder(job_title,Count), y= Count, fill=dept))+
 
 ```{r}
 
-dept_job_title_comp_n <- employees1|>
-  group_by(dept, job_title, annual_interval)|>
+dept_comp_n <- employees1|>
+  group_by(dept, annual_interval)|>
   summarise(Count= n())
 
-ggplot(dept_job_title_comp_n, aes(x= annual_interval, y= dept, fill = Count)) +
+ggplot(dept_comp_n, aes(x= annual_interval, y= dept, fill = Count)) +
   geom_tile() + 
+  geom_text(aes(label=Count), vjust= 0.5, hjust= 0.5)+
+  coord_fixed()+
   labs(title = 'A large portion of employees in R&D earn compensation ranging \nfrom 150.0K-200.0K.', 
        x= 'Compensation', 
        y= 'Department') +
@@ -423,9 +425,15 @@ ggplot(dept_job_title_comp_n, aes(x= annual_interval, y= dept, fill = Count)) +
 
 ```{r}
 
-ggplot(dept_job_title_comp_n, aes(x= annual_interval, y= job_title, fill = Count)) +
+job_title_comp_n <- employees1|>
+  group_by(job_title, annual_interval)|>
+  summarise(Count= n())
+
+ggplot(job_title_comp_n, aes(x= annual_interval, y= job_title, fill = Count)) +
   geom_tile() + 
-  labs(title = 'A significant number of Sales Executives (Sales) and Research Scientists (R&D) \n earn between 150.0K and 200.0K.',  
+  coord_fixed()+
+  geom_text(aes(label=Count), vjust= 0.5, hjust= 0.5)+
+  labs(title = 'A significant number of Sales Executives (Sales) \nand Research Scientists (R&D) \nearn between 150.0K and 200.0K.',  
        x= 'Compensation', 
        y= 'Role') +
   guides(fill = guide_legend(title = "Number of Employees")) +
@@ -437,7 +445,7 @@ ggplot(dept_job_title_comp_n, aes(x= annual_interval, y= job_title, fill = Count
         axis.title.x = element_text(margin = margin(t= 10, r= 0, b= 0, l= 0)),
         axis.title.y = element_text(margin = margin(t= 0, r= 10, b= 0, l= 0)),
         strip.text = element_textbox(
-      size=12,
+      size=10,
       color = "#404040" , face = "bold",
       halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc")))
 
@@ -477,13 +485,15 @@ ggplot(employees1, aes(x=annual_comp, y=job_title, fill=dept))+
 
 ```{r}
 
-dept_job_level_comp_n <- employees1|>
-  group_by(dept, job_level, annual_interval)|>
+job_level_comp_n <- employees1|>
+  group_by(job_level, annual_interval)|>
   summarise(Count= n())
 
-ggplot(dept_job_level_comp_n,aes(x= annual_interval, y= job_level, fill = Count)) +
+ggplot(job_level_comp_n,aes(x= annual_interval, y= job_level, fill = Count)) +
   geom_tile() + 
-  labs(title = 'A significant number of employees with intermediate levels of experience \nearn between 150.0K and 200.0K.',  
+  geom_text(aes(label=Count), vjust= 0.5, hjust= 0.5)+
+  coord_fixed()+
+  labs(title = 'A significant number of employees with intermediate and junior levels of experience \nearn between 150.0K and 200.0K.',  
        x= 'Compensation', 
        y= 'Experience') +
   guides(fill = guide_legend(title = "Employee Count")) +
@@ -547,6 +557,7 @@ dept_salary_increase_n <- employees1|>
 ggplot(dept_salary_increase_n,aes(x= salary_increase_interval, y= dept, fill = percentage)) +
   geom_tile() + 
   geom_text(aes(label = percentage), vjust = 0.5, hjust = 0.5) +
+  coord_fixed()+
   labs(title = 'At least 61% of employees from each department \nreceived a salary increase between 11%-15% \nfor their most recent compensation adjustment.',  
        x= 'Salary Increase', 
        y= 'Department') +
@@ -579,6 +590,7 @@ role_salary_increase_n <- employees1|>
 ggplot(role_salary_increase_n,aes(x= salary_increase_interval, y= job_title, fill = percentage)) +
   geom_tile() + 
   geom_text(aes(label = percentage), vjust = 0.5, hjust = 0.5) +
+  coord_fixed()+
   labs(title = 'More than 54% of employees from each role \nreceived a salary increase between 11%-15% \nfor their most recent compensation adjustment.',  
        x= 'Salary Increase', 
        y= 'Role') +
@@ -611,6 +623,7 @@ experience_salary_increase_n <- employees1|>
 ggplot(experience_salary_increase_n,aes(x= salary_increase_interval, y= job_level, fill = percentage)) +
   geom_tile() + 
   geom_text(aes(label = percentage), vjust = 0.5, hjust = 0.5) +
+  coord_fixed()+
   labs(title = 'More than 60% of employees from each experience level \nreceived a salary increase between 11%-15% \nfor their most recent compensation adjustment.',  
        x= 'Salary Increase', 
        y= 'Experience level') +
@@ -634,7 +647,7 @@ ggplot(experience_salary_increase_n,aes(x= salary_increase_interval, y= job_leve
 ### Variables of interest
 
 | Variable of interest | Variable Name (data set) | Description of Variable    | Data type   |
-|-----------------|------------------|--------------------|-----------------|
+|------------------|------------------|--------------------|------------------|
 | Age                  | age                      | Employee age in years      | Continuous  |
 | Gender               | gender                   | Gender self-identification | Categorical |
 
@@ -714,13 +727,15 @@ employees|>
 ### Compensation by Generational Groups
 
 ```{r}
-comp_gen_dept <- employees|>
-  group_by(generation, annual_interval, dept)|>
+comp_gen <- employees|>
+  group_by(generation, annual_interval)|>
   filter(active == "Yes")|>
   summarise(Count=n())
 
-ggplot(comp_gen_dept,aes(x= annual_interval, y= generation, fill = Count)) +
+ggplot(comp_gen,aes(x= annual_interval, y= generation, fill = Count)) +
   geom_tile() + 
+  geom_text(aes(label = Count), vjust = 0.5, hjust = 0.5) +
+  coord_fixed()+
   labs(title = 'A significant number of employees from the Millennial generation \nearn between 150.0K and 200.0K.',  
        x= 'Compensation', 
        y= 'Generation') +
@@ -734,7 +749,7 @@ ggplot(comp_gen_dept,aes(x= annual_interval, y= generation, fill = Count)) +
         axis.title.y = element_text(margin = margin(t= 0, r= 10, b= 0, l= 0)),
         strip.text = element_textbox(
       size=12,
-      color = "black" , face = "bold",
+      color = "#404040" , face = "bold",
       halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc")))
 ```
 
@@ -763,7 +778,7 @@ ggplot(comp_gen_dept, aes( x= generation, y=annual_comp, fill=dept))+
       axis.text.x = element_text(size = 7))+
   scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = "k", accuracy = 0.1),
                      limits= c(50e3, 250e3), breaks = seq(50e3, 250e3, by=50e3))+
-  labs(title = "The Baby Boomers group from the HR has the lowest average compensation,\n followed by the Generation Z group from the Sales department./n",
+  labs(title = "The Baby Boomers group from the HR has the lowest average compensation,\n followed by the Generation Z group from the Sales department.\n",
        y= "Compensation",
        x= "Generation")+
   coord_flip()+
@@ -793,14 +808,16 @@ employees|>
 ### Compensation by Gender
 
 ```{r}
-comp_gender_dept <- employees|>
-  group_by(gender, annual_interval, dept)|>
+comp_gender <- employees|>
+  group_by(gender, annual_interval)|>
   filter(active == "Yes")|>
   summarise(Count=n())
 
-ggplot(comp_gender_dept,aes(x= annual_interval, y= gender, fill = Count)) +
+ggplot(comp_gender,aes(x= annual_interval, y= gender, fill = Count)) +
   geom_tile() + 
-  labs(title = 'There is a balance between the portion of men and women \nwho earn between 150.0K and 200.0k.',  
+  geom_text(aes(label = Count), vjust = 0.5, hjust = 0.5) +
+  coord_fixed()+
+  labs(title = 'The highest number of employees for both men and women \nis in the 150.0k-200.0k range, \nwhile the lowest number of employees for both men and women \n is in the 200.0k-250.0k range.',  
        x= 'Compensation', 
        y= 'Gender') +
   guides(fill = guide_legend(title = "Employee Count")) +
@@ -813,7 +830,7 @@ ggplot(comp_gender_dept,aes(x= annual_interval, y= gender, fill = Count)) +
         axis.title.y = element_text(margin = margin(t= 0, r= 10, b= 0, l= 0)),
         strip.text = element_textbox(
       size=12,
-      color = "black" , face = "bold",
+      color = "#404040" , face = "bold",
       halign = 0.5, linetype = 1, r= unit(5, "pt"), width = unit(1, "npc")))
 ```
 
@@ -872,7 +889,7 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 
 -   Compensation by Experience levels
 
-    -   A significant number of employees with intermediate levels of experience earn between 150.0K and 200.0K
+    -   A significant number of employees with intermediate and junior levels of experience earn between 150.0K and 200.0K
     -   Senior level of experience in the Sales department has the highest average compensation.
     -   The Expert level of experience in the HR department has the lowest average.
 
@@ -892,7 +909,7 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 
 -   Compensation By Gender
 
-    -   There is a balance between the portion of men and women who earn between 150.0K and 200.0k.
+    -   The highest number of employees for both men and women is in the 150.0k-200.0k range, while the lowest number of employees for both men and women  is in the 200.0k-250.0k range.
     -   Women from the HR department have the lowest average compensation compared with men within the same department and women from the other departments.
 
 # Conclusion
