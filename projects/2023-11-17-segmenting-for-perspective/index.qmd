@@ -108,7 +108,7 @@ To answer the research questions, a **descriptive analysis** will be performed t
 ### Variables of interest
 
 | Variable of interest | Variable Name (data set) | Description of Variable                                                                                                                                              | Data type   |
-|-----------------|-----------------|--------------------|-----------------|
+|------------------|------------------|--------------------|------------------|
 | Compensation         | annual_comp              | Hourly rate \* 2080                                                                                                                                                  | Continuous  |
 | Role                 | job_title                | Job title                                                                                                                                                            | Categorical |
 | Department           | dept                     | Department of which an employee is a member                                                                                                                          | Categorical |
@@ -289,7 +289,6 @@ employees1|>
             Count=sum(!is.na(annual_comp)))|>
   datatable(options = list(pageLength=5))
 ```
-
 
 ```{r}
 #| output: false
@@ -554,7 +553,7 @@ ggplot(employees1, aes( x= job_level, y=annual_comp, fill=dept))+
 ```
 
 ::: {.callout-note appearance="simple"}
-\*The boxplot for the Expert level in Human Resources shows an outlier. It is necessary to investigate why this observation has a value that is too large compared to other values for this category in the data set.
+\*The boxplot for the Expert level in Human Resources shows an outlier. It is necessary to investigate why this observation has an extreme value compared to other values for this category in the data set.
 :::
 
 ### Salary Increase by Department
@@ -661,7 +660,7 @@ ggplot(experience_salary_increase_n,aes(x= salary_increase_interval, y= job_leve
 ### Variables of interest
 
 | Variable of interest | Variable Name (data set) | Description of Variable    | Data type   |
-|-----------------|-----------------|---------------------|-----------------|
+|-----------------|-----------------|--------------------|-----------------|
 | Age                  | age                      | Employee age in years      | Continuous  |
 | Gender               | gender                   | Gender self-identification | Categorical |
 
@@ -801,7 +800,7 @@ ggplot(comp_gen_dept, aes( x= generation, y=annual_comp, fill=dept))+
 ```
 
 ::: {.callout-note appearance="simple"}
-\*The boxplot for the Baby Boomers generation from the R&D Department shows outliers. It is necessary to investigate why these observations have values that are too large compared to other values for this category in the data set.
+\*The boxplot for the Baby Boomers generation from the R&D Department shows outliers. It is necessary to investigate why these observations have extreme values compared to other values for this category in the data set.
 :::
 
 ### Compensation by Gender
@@ -883,7 +882,7 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 
 ## 1. How does compensation compare across different departments, roles, and experience levels?
 
--   The average annual compensation across all departments is 137.180$
+-   The average annual compensation across all departments is 137.180\$
 
 -   Annual Compensation Intervals
 
@@ -893,9 +892,9 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 
 -   Compensation by Department
 
-    -   The R&D department has the highest number of employees, with 305 (37%) employees earning between 150K-200k. 
-    -   Compared to R&D, the Sales department has 153 (43%) sales employees who earn between 150k-208k. 
-   
+    -   37% of employees (305) from R&D department earn between 150K-200k.
+    -   37% of employees (153) from Sales department earn between 150k-200k.
+
 -   Compensation by Role
 
     -   A significant number of Sales Executives (Sales) and Research Scientists (R&D) earn between 150K and 200K.
@@ -906,7 +905,7 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 
     -   There are 323 employees with intermediate and junior levels of experience who earn salaries ranging from 150K to 200K.
     -   In contrast, 125 employees with experienced, expert, and senior levels of experience earn in the same range.
-    -   Senior level of experience in the Sales department has the highest average compensation. 
+    -   Senior level of experience in the Sales department has the highest average compensation.
     -   The Expert level of experience in the HR department has the lowest average.
 
 -   Last Salary Increase
@@ -916,14 +915,14 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
     -   The Human Resources department had the lowest percentage of employees receiving a salary increase of 15%-20%, at 21.57%.
     -   **By Role**: Over 54% of employees across all roles received a salary increase between 11%-15% for their most recent compensation adjustment.
     -   **By Experience Level**: As the experience level increases, the percentage of employees receiving a salary increase of 15% or more, decreases.
-    -  In particular, the highest percentage of employees who received a salary increase between 15%-25% is at the Junior level, while the Senior level has the lowest percentage.
+    -   In particular, the highest percentage of employees who received a salary increase between 15%-25% is at the Junior level, while the Senior level has the lowest percentage.
 
 ## 2. Are there any disparities in compensation between different demographic groups that can be addressed?
 
 -   Compensation By Generations
 
-    -   The majority of employees fall into the millennial generation and earn between 150k-200k. 
-    -   This is followed by Generation X, with most employees also earning within the same range. 
+    -   The majority of employees fall into the millennial generation and earn between 150k-200k.
+    -   This is followed by Generation X, with most employees also earning within the same range.
     -   The smallest representation comes from Generation Z and Baby Boomers, who mainly earn between 100k-200k.
     -   The Baby Boomers group from the HR has the lowest average compensation, followed by the Generation Z group from the Sales department.
 
@@ -935,5 +934,3 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 # Conclusion
 
 In this project, I aimed to analyze compensation differences based on variables such as roles, departments, experience, and demographic groups. By analyzing employee data, companies can identify learning opportunities backed by evidence. This information can then be used to develop a more competitive compensation strategy, which can have various benefits, such as attracting and retaining high-performing employees, boosting employee morale and motivation, and ultimately contributing to the success of the business.
-
-
