@@ -474,7 +474,7 @@ ggplot(employees1, aes(x=annual_comp, y=job_title, fill=dept))+
   scale_x_continuous(labels = scales::label_number(scale = 1e-3, suffix = "k", accuracy = 0.1),
                      limits= c(50e3, 250e3), breaks = seq(50e3, 250e3, by=50e3))+
   guides(fill="none")+
-  labs(title = "The Sales Manager role has the highest average (median) compensation ($164.320), \nfollowed by the HR Manager ($151.840) for the manager role. \nThe Vice President role has the lowest average compensation ($68.640). \n",
+  labs(title = "The Sales Manager role has the largest average (median) compensation ($164.320), \nfollowed by the HR Manager ($151.840) for the manager role. \nThe Vice President role has the smallest average compensation ($68.640). \n",
        x= "Compensation",
        y= "Role")+
   theme_half_open(font_size=10)+
@@ -539,7 +539,7 @@ ggplot(employees1, aes( x= job_level, y=annual_comp, fill=dept))+
       padding = margin(2, 0, 1, 0), margin = margin(3, 3, 3, 3)),
       panel.spacing = unit(1, "lines"),
       axis.text.x = element_text(size = 7))+
-    labs(title = "Senior level of experience in the Sales department has the highest \naverage (median) compensation. The Expert level* of experience in the HR department \nhas the lowest. \n",
+    labs(title = "Senior level of experience in the Sales department has the largest \naverage (median) compensation. The Expert level* of experience in the HR department \nhas the smallest. \n",
        y= "Compensation",
        x= "Experience Levels")+
   coord_flip()+
@@ -786,7 +786,7 @@ ggplot(comp_gen_dept, aes( x= generation, y=annual_comp, fill=dept))+
       axis.text.x = element_text(size = 7))+
   scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = "k", accuracy = 0.1),
                      limits= c(50e3, 250e3), breaks = seq(50e3, 250e3, by=50e3))+
-  labs(title = "The Baby Boomers group from the HR has the lowest average (median) compensation,\n followed by the Generation Z group from the Sales department.\n",
+  labs(title = "The Baby Boomers group from the HR has the smallest average (median) compensation,\n followed by the Generation Z group from the Sales department.\n",
        y= "Compensation",
        x= "Generation")+
   coord_flip()+
@@ -866,7 +866,7 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
       axis.text.x = element_text(size = 7))+
   scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = "k", accuracy = 0.1),
                      limits= c(50e3, 250e3), breaks = seq(50e3, 250e3, by=50e3))+
-  labs(title = "Women from the HR department have the lowest average (median) compensation \ncompared with men within the same department and women from the other \ndepartments.\n",
+  labs(title = "Women from the HR department have the smallest average (median) compensation \ncompared with men within the same department and women from the other \ndepartments.\n",
        y= "Compensation",
        x= "Gender")+
   coord_flip()+
@@ -887,21 +887,20 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 
 -   Compensation by Department
 
-    -   37% of employees (305) from R&D department earn between 150K-200k.
-    -   37% of employees (130) from Sales department earn between 150k-200k.
+    -   The R&D department has the largest number of employees who earn between 150k-200k. 37% of the R&D department, 305 employees, fall into this salary range.      -   The Sales department has the same percentage of employees earning between 150k-200k, but due to its smaller size, this percentage represents only 130 employees.
 
 -   Compensation by Role
 
     -   A significant number of Sales Executives (Sales) and Research Scientists (R&D) earn between 150K and 200K.
-    -   The Sales Manager role has the highest average compensation, followed by the HR Manager for the manager role.
-    -   The Vice President role has the lowest average compensation.
+    -   The Sales Manager role has the largest average compensation, followed by the HR Manager for the manager role.
+    -   The Vice President role has the smallest average compensation.
 
 -   Compensation by Experience levels
 
     -   There are 323 employees with intermediate and junior levels of experience who earn salaries ranging from 150K to 200K.
     -   In contrast, 125 employees with experienced, expert, and senior levels of experience earn in the same range.
-    -   Senior level of experience in the Sales department has the highest average compensation.
-    -   The Expert level of experience in the HR department has the lowest average.
+    -   Senior level of experience in the Sales department has the largest average compensation.
+    -   The Expert level of experience in the HR department has the smallest average.
 
 -   Last Salary Increase
 
@@ -919,12 +918,12 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
     -   The majority of employees fall into the millennial generation and earn between 150k-200k.
     -   This is followed by Generation X, with most employees also earning within the same range.
     -   The smallest representation comes from Generation Z and Baby Boomers, who mainly earn between 100k-200k.
-    -   The Baby Boomers group from the HR has the lowest average compensation, followed by the Generation Z group from the Sales department.
+    -   The Baby Boomers group from the HR has the smallest average compensation, followed by the Generation Z group from the Sales department.
 
 -   Compensation By Gender
 
     -   There is a gender disparity in the number of employees across different compensation levels in the company.
-    -   Women from the HR department have the lowest average compensation compared with men within the same department and women from the other departments.
+    -   Women from the HR department have the smallest average (median) compensation compared with men within the same department and women from the other departments.
 
 # Conclusion
 
