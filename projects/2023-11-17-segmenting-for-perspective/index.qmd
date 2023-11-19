@@ -474,7 +474,7 @@ ggplot(employees1, aes(x=annual_comp, y=job_title, fill=dept))+
   scale_x_continuous(labels = scales::label_number(scale = 1e-3, suffix = "k", accuracy = 0.1),
                      limits= c(50e3, 250e3), breaks = seq(50e3, 250e3, by=50e3))+
   guides(fill="none")+
-  labs(title = "The Sales Manager role has the highest average compensation, \nfollowed by the HR Manager for the manager role. \nThe Vice President role has the lowest average compensation. \n",
+  labs(title = "The Sales Manager role has the highest average (median) compensation ($164.320), \nfollowed by the HR Manager ($151.840) for the manager role. \nThe Vice President role has the lowest average compensation ($68.640). \n",
        x= "Compensation",
        y= "Role")+
   theme_half_open(font_size=10)+
@@ -539,7 +539,7 @@ ggplot(employees1, aes( x= job_level, y=annual_comp, fill=dept))+
       padding = margin(2, 0, 1, 0), margin = margin(3, 3, 3, 3)),
       panel.spacing = unit(1, "lines"),
       axis.text.x = element_text(size = 7))+
-    labs(title = "Senior level of experience in the Sales department has the highest \naverage compensation. The Expert level* of experience in the HR department \nhas the lowest average. \n",
+    labs(title = "Senior level of experience in the Sales department has the highest \naverage (median) compensation. The Expert level* of experience in the HR department \nhas the lowest. \n",
        y= "Compensation",
        x= "Experience Levels")+
   coord_flip()+
@@ -786,7 +786,7 @@ ggplot(comp_gen_dept, aes( x= generation, y=annual_comp, fill=dept))+
       axis.text.x = element_text(size = 7))+
   scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = "k", accuracy = 0.1),
                      limits= c(50e3, 250e3), breaks = seq(50e3, 250e3, by=50e3))+
-  labs(title = "The Baby Boomers group from the HR has the lowest average compensation,\n followed by the Generation Z group from the Sales department.\n",
+  labs(title = "The Baby Boomers group from the HR has the lowest average (median) compensation,\n followed by the Generation Z group from the Sales department.\n",
        y= "Compensation",
        x= "Generation")+
   coord_flip()+
@@ -866,7 +866,7 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
       axis.text.x = element_text(size = 7))+
   scale_y_continuous(labels = scales::label_number(scale = 1e-3, suffix = "k", accuracy = 0.1),
                      limits= c(50e3, 250e3), breaks = seq(50e3, 250e3, by=50e3))+
-  labs(title = "Women from the HR department have the lowest average compensation \ncompared with men within the same department and women from the other \ndepartments.\n",
+  labs(title = "Women from the HR department have the lowest average (median) compensation \ncompared with men within the same department and women from the other \ndepartments.\n",
        y= "Compensation",
        x= "Gender")+
   coord_flip()+
@@ -877,7 +877,7 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 
 ## 1. How does compensation compare across different departments, roles, and experience levels?
 
--   The average annual compensation across all departments is 137.180\$
+-   The average (median) annual compensation across all departments is $137.180
 
 -   Annual Compensation Intervals
 
