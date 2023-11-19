@@ -411,7 +411,7 @@ ggplot(dept_comp_n, aes(x= annual_interval, y= dept, fill = Count)) +
   geom_tile() + 
   geom_text(aes(label=Count), vjust= 0.5, hjust= 0.5)+
   coord_fixed()+
-  labs(title = '37% of employees (305) from R&D department earn between 150K-200k. \n37% of employees (130) from Sales department earn between 150k-200k.', 
+  labs(title = 'The R&D department has the largest number of employees who earn between 150k-200k. \n37% of the R&D department, 305 employees, fall into this salary range. \nThe Sales department has the same percentage of employees earning between 150k-200k, \nbut due to its smaller size, this percentage represents only 130 employees.', 
        x= 'Compensation', 
        y= 'Department') +
   guides(fill = guide_legend(title = "Number of Employees")) +
@@ -655,7 +655,7 @@ ggplot(experience_salary_increase_n,aes(x= salary_increase_interval, y= job_leve
 ### Variables of interest
 
 | Variable of interest | Variable Name (data set) | Description of Variable    | Data type   |
-|------------------|------------------|--------------------|------------------|
+|------------------|------------------|-------------------|------------------|
 | Age                  | age                      | Employee age in years      | Continuous  |
 | Gender               | gender                   | Gender self-identification | Categorical |
 
