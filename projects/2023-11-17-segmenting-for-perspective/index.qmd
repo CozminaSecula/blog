@@ -358,9 +358,9 @@ ggplot(employees|>filter(active=="Yes"), aes(x=annual_comp, fill=annual_interval
 ```
 
 ::: {.callout-note appearance="simple"}
--   **25.79% of the annual compensation of active employees falls between 62.4k-100k**
--   **68.28% of the annual compensation of active employees falls between 100k-200k**
--   **5.9% of the annual compensation of active employees falls between 200k-208k**
+-   **25.79% of active employees earn between 62.4k-100k**
+-   **68.28% of active employees earn between 100k-200k**
+-   **5.9% of active employees earn between 200k-208k**
 :::
 
 ### Employees by Departments and Roles
@@ -877,17 +877,18 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 
 ## 1. How does compensation compare across different departments, roles, and experience levels?
 
--   The average (median) annual compensation across all departments is $137.180
+-   The average (median) annual compensation across all departments is \$137.180
 
 -   Annual Compensation Intervals
 
-    -   25.79% of the annual compensation falls between 62k-100k
-    -   68.28% of the annual compensation falls between 100k-200k
-    -   5.9% of the annual compensation falls between 200k-208k
+    -   25.79% of active employees earn between 62.4k-100k
+    -   68.28% of active employees earn between 100k-200k
+    -   5.9% of active employees earn between 200k-208k
 
 -   Compensation by Department
 
-    -   The R&D department has the largest number of employees who earn between 150k-200k. 37% of the R&D department, 305 employees, fall into this salary range.      -   The Sales department has the same percentage of employees earning between 150k-200k, but due to its smaller size, this percentage represents only 130 employees.
+    -   The R&D department has the largest number of employees who earn between 150k-200k. 37% of the R&D department, 305 employees, fall into this salary range.
+     -  The Sales department has the same percentage of employees earning between 150k-200k, but due to its smaller size, this percentage represents only 130 employees.
 
 -   Compensation by Role
 
