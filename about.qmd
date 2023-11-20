@@ -15,6 +15,9 @@ about:
     - icon: github
       text: Github
       href: https://github.com/CozminaSecula
+    - icon: file
+      text: Resume
+      href: /blog/CV.html
 ---
 
 With an extensive background in B2B sales and team management, I'm expanding my skill set into new areas like data analytics, R language programming, Quarto, and data visualization.
