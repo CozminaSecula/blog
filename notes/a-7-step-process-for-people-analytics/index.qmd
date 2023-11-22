@@ -10,7 +10,7 @@ These notes are from an [article](https://www.emerald.com/insight/content/doi/10
 
 # The meaning of HR Analytics
 
-HR analytics is a new field that involves collecting, analyzing, and visualizing data to make informed decisions. It also includes conducting ethical research based on evidence.
+HR analytics involves collecting, analyzing, and visualizing data to make informed decisions. It also includes conducting ethical research based on evidence.
 
 # HR Analytics cycle
 
@@ -26,7 +26,7 @@ This article presents the HR analytics cycle as a seven-step process to help org
 
 ## ***Step 1*** : *determine stakeholder requirements*
 
-Determining stakeholder requirements is essential for the success of any HR research and analytics initiative. It involves establishing a partnership with key stakeholders, such as executives, line managers, senior HR leaders, HR business partners, employees, and technology vendors. Each stakeholder has a different perspective and set of concerns regarding HR analytics practices and activities. While line managers primarily focus on data visualization and reporting of key metrics and analytical insights, executives and senior HR leaders are more concerned with how HR analytics supports HR strategy, execution, workforce decisions, and overall business outcomes.Leading HR analytics in organizations has an important role in assisting stakeholders with framing realistic, measurable, value-added, evidence-based, and ethical questions. This helps formulate and frame HR research and analytics questions, identify strategic and tactical priorities, secure stakeholder commitment, and provide communication on the ongoing progress of key HR research and analytics initiatives.
+Determining stakeholder requirements is essential for the success of any HR research and analytics initiative. It involves establishing a partnership with key stakeholders, such as executives, line managers, senior HR leaders, HR business partners, employees, and technology vendors. Each stakeholder has a different perspective and set of concerns regarding HR analytics practices and activities. While line managers primarily focus on data visualization and reporting of key metrics and analytical insights, executives and senior HR leaders are more concerned with how HR analytics supports HR strategy, execution, workforce decisions, and overall business outcomes. Leading HR analytics in organizations has an important role in assisting stakeholders with framing realistic, measurable, value-added, evidence-based, and ethical questions. This helps formulate and frame HR research and analytics questions, identify strategic and tactical priorities, secure stakeholder commitment, and provide communication on the ongoing progress of key HR research and analytics initiatives.
 
 During this step, many questions are likely to arise.
 
@@ -38,7 +38,7 @@ During this step, many questions are likely to arise.
 
 ## ***Step 2*** : *define HR research and analytics agenda*
 
-The HR research and analytics agenda should be defined based on stakeholder needs and expectations. The evolving nature of business and the future of work has reshaped long-term and short-term requirements. Long-term requirements are now typically one year, while short-term requirements align with quarterly or monthly results.Short-term and long-term research requirements can be both strategic and tactical in nature.
+The HR research and analytics agenda should be defined based on stakeholder needs and expectations. The evolving nature of business and the future of work has reshaped long-term and short-term requirements. Long-term requirements are now typically one year, while short-term requirements align with quarterly or monthly results. Short-term and long-term research requirements can be both strategic and tactical in nature.
 
 ::: callout-tip
 ## Tips to establish an HR analytics and research agenda:
@@ -99,7 +99,7 @@ Sources of data may or may not exist depending on your organization's current HR
 
 The HR analytics cycle involves data collection through primary research, secondary research, or mining internal data in the Human Resource Information System (HRIS).
 
--   Primary research is new or original research that addresses a specific research question or set of questions (e.g. a research project or experiment to identify which factors enable or inhibit employee engagement and performance, selection research using validated personality instruments for leadership succession, employee and organizational surveys for action planning and change, organizational network analysis to determine the level of collaboration by specific jobs and roles).Primary research addresses specific questions and can be done in-house or in collaboration with universities.
+-   Primary research is new or original research that addresses a specific research question or set of questions (e.g. a research project or experiment to identify which factors enable or inhibit employee engagement and performance, selection research using validated personality instruments for leadership succession, employee and organizational surveys for action planning and change, organizational network analysis to determine the level of collaboration by specific jobs and roles). Primary research addresses specific questions and can be done in-house or in collaboration with universities.
 
 -   Secondary research provides data from existing sources, such as scientific studies, reports from credible institutes, HR benchmarking, labor market databases.
 
@@ -152,7 +152,7 @@ HR analytics is not a revolutionary idea, but rather an evolutionary capability 
 
 In terms of getting started and building HR analytical capabilities, organizations tend to be enticed into procuring R, Python and the latest HCM technology platforms with novel data visualization tools and subsequently hire a low-level HR analyst to operate these tools without clarity about their HR analytics vision, strategy and the capabilities and outcomes they hope to achieve.
 
-To effectively start with HR analytics, organizations should hire a well-qualified HR analytics leader with  with the right disciplinary background and skill set before investing in any technological or analytical resources. This leader can help establish the overall vision, strategy, and capabilities for success, rather than hiring a low-level HR analyst who lacks clarity about their vision, strategy, and desired outcomes.
+To effectively start with HR analytics, organizations should hire a well-qualified HR analytics leader with the right disciplinary background and skill set before investing in any technological or analytical resources. This leader can help establish the overall vision, strategy, and capabilities for success, rather than hiring a low-level HR analyst who lacks clarity about their vision, strategy, and desired outcomes.
 
 ## Who should perform HR analytics?
 
@@ -168,7 +168,7 @@ The recommendation is for the establishment of an â€œHR Analytics and Strategyâ€
 
 # Conclusion
 
-HR analytics involves various practices and data sources, including HR research and experimentation. It provides strategic insights for decision-makers, aiding in the creation of smarter workforce decisions. Creating an HR research agenda in advance will help to avoid reactive data gathering and assure ethical practices in HR analytics, fostering an evidence-based, analytics-driven innovation plan for success.
+HR analytics involves various practices and data sources, including HR research and experimentation. It provides strategic insights for decision-makers, aiding in the creation of smarter workforce decisions. Creating an HR research agenda in advance will help to avoid reactive data gathering and assure ethical practices in HR analytics, fostering an evidence-based, analytics-driven innovation plan for success. The HR analytics cycle coupled with the HR strategy framework can help HR leaders and practitioners avoid costly missteps in terms of implementing potentially unethical or questionable HR analytics practices while thoughtfully considering their strategic HR choices when it comes to creating an evidence-based and HR analytics-driven innovation strategy for success.
 
 
 
