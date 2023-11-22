@@ -11,7 +11,7 @@ The author explains that these techniques are as follows:
 
 ## 1. Data Quality Awareness
 
-Your data may not be as accurate as you think, and this can be due to issues such as selection bias. For instance, when conducting an engagement survey, it's essential to consider if the participants were selected randomly. 
+Your data may not be as accurate as you think, and this can be due to issues such as selection bias. For instance, when conducting an engagement survey, it's essential to consider if the participants were selected randomly.
 
 ::: callout-tip
 ## Tip
@@ -21,7 +21,6 @@ Don't discard data just because it's not perfectly representative.
 Participation rates in surveys also hold valuable information. If more and more people are not participating in your engagement survey over time, that is information.
 :::
 
-
 ## 2. Exclusion and Inclusion
 
 Consider what aspects of your data analysis you might have missed. When conducting surveys, ask directly about the concerns and priorities of respondents instead of assuming what they feel.
@@ -29,28 +28,26 @@ Consider what aspects of your data analysis you might have missed. When conducti
 ::: callout-tip
 ## Tip
 
-Consider these questions: 
+Consider these questions:
 
- - What have I overlooked?
- 
- - What other aspects should I explore? 
- 
+-   What have I overlooked?
+
+-   What other aspects should I explore?
+
 This process is all about exclusion, which means inquiring about the things you haven't considered yet.
-
 :::
 
 ## 3. Data Siloing
 
-Many organizations segregate performance, engagement, and diversity data into separate categories. 
+Many organizations segregate performance, engagement, and diversity data into separate categories.
 
 ::: callout-tip
 ## Tip
 
-It is essential to recognize that performance data isn't an absolute truth. It is merely information about your workforce. 
+It is essential to recognize that performance data isn't an absolute truth. It is merely information about your workforce.
 
 There's no need to maintain strict segregation between data categories. These categories can be integrated for a more comprehensive view.
 :::
-
 
 ## 4. Scientific Method Utilization
 
@@ -66,10 +63,9 @@ Start by being curious, observe, create a theory and hypothesis, collect data, t
 -   **Have a theory** -- For example, consider if a lack of inclusion is causing disengagement.
 -   **Make a hypothesis** -- Think about something you can see, like if people are being interrupted in meetings. This could make them feel excluded and more likely to leave.
 -   **Collect data** -- Keep a record of interruptions or speaking time in meetings.
--   **Test hypotheses** -- See if the data shows that being interrupted is connected to leaving. Look for evidence supporting your theory. 
+-   **Test hypotheses** -- See if the data shows that being interrupted is connected to leaving. Look for evidence supporting your theory.
 -   **Revise theory and repeat** -- If your theory is right, and you find consistent evidence, you can make changes or policies based on this. If not, you might need to explore other ideas and refine your theory.
 :::
-
 
 # 5. Avoid Reliance on Means
 
@@ -77,22 +73,20 @@ Start by being curious, observe, create a theory and hypothesis, collect data, t
 
 Instead of focusing on the average or mean numbers, think about how the experiences of different groups might be different, even if the averages look similar. For instance, an equal average score for men and women doesn't indicate the same experiences. Understanding these differences is essential.
 
-
 # 6. Cautious Interpretation of Statistical Significance
 
 > This is so important. Companies get fixated on this and miss important results.
 
-Don't get lost in statistical math. Focus on what the numbers mean for your company's goals and values. 
+Don't get lost in statistical math. Focus on what the numbers mean for your company's goals and values.
 
 ::: callout-tip
 ## The author suggests to try:
 
- - Think about whether it's important for your company's goals and values. 
- 
- - Focus on substantive significance: Ask if observed differences align with your values as a leader.
- 
- - Consider the practical implications beyond statistical significance.
+-   Think about whether it's important for your company's goals and values.
 
+-   Focus on substantive significance: Ask if observed differences align with your values as a leader.
+
+-   Consider the practical implications beyond statistical significance.
 :::
 
 # 7. Avoid Selecting on the Dependent Variable

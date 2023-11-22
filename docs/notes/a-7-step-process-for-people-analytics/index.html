@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2023-11-22">
+<meta name="description" content="Notes from a paper that introduce HR Analytics as a seven-step process">
+
+<title>Cozmina Secula - 7 Steps for Making HR Analytics work in organizations</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Cozmina Secula - 7 Steps for Making HR Analytics work in organizations">
+<meta property="og:description" content="Notes from a paper that introduce HR Analytics as a seven-step process">
+<meta property="og:image" content="img.png">
+<meta property="og:site-name" content="Cozmina Secula">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html" rel="" target="">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../notes.html" rel="" target="">
+ <span class="menu-text">Notes</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/cozminasecula/" rel="" target=""><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/CozminaSecula" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:cozmina.secula@gmail.com" rel="" target=""><i class="bi bi-envelope" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">7 Steps for Making HR Analytics work in organizations</h1>
+                  <div>
+        <div class="description">
+          Notes from a paper that introduce HR Analytics as a seven-step process
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">HR Startegy</div>
+                <div class="quarto-category">HR Analytics cycle</div>
+                <div class="quarto-category">People Analytics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 22, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-meaning-of-hr-analytics" id="toc-the-meaning-of-hr-analytics" class="nav-link active" data-scroll-target="#the-meaning-of-hr-analytics">The meaning of HR Analytics</a></li>
+  <li><a href="#hr-analytics-cycle" id="toc-hr-analytics-cycle" class="nav-link" data-scroll-target="#hr-analytics-cycle">HR Analytics cycle</a>
+  <ul class="collapse">
+  <li><a href="#step-1-determine-stakeholder-requirements" id="toc-step-1-determine-stakeholder-requirements" class="nav-link" data-scroll-target="#step-1-determine-stakeholder-requirements"><strong><em>Step 1</em></strong> : <em>determine stakeholder requirements</em></a></li>
+  <li><a href="#step-2-define-hr-research-and-analytics-agenda" id="toc-step-2-define-hr-research-and-analytics-agenda" class="nav-link" data-scroll-target="#step-2-define-hr-research-and-analytics-agenda"><strong><em>Step 2</em></strong> : <em>define HR research and analytics agenda</em></a></li>
+  <li><a href="#step-3-identify-data-sources" id="toc-step-3-identify-data-sources" class="nav-link" data-scroll-target="#step-3-identify-data-sources"><strong><em>Step 3</em></strong> : <em>identify data sources</em></a></li>
+  <li><a href="#step-4-gather-data" id="toc-step-4-gather-data" class="nav-link" data-scroll-target="#step-4-gather-data"><strong><em>Step 4</em></strong> : <em>gather data</em></a></li>
+  <li><a href="#step-5-transforming-data" id="toc-step-5-transforming-data" class="nav-link" data-scroll-target="#step-5-transforming-data"><strong><em>Step 5</em></strong> : <em>transforming data</em></a></li>
+  <li><a href="#step-6-communicate-intelligence-results" id="toc-step-6-communicate-intelligence-results" class="nav-link" data-scroll-target="#step-6-communicate-intelligence-results"><strong><em>Step 6</em></strong> : <em>communicate intelligence results</em></a></li>
+  <li><a href="#step-7-enable-strategy-and-decision-making" id="toc-step-7-enable-strategy-and-decision-making" class="nav-link" data-scroll-target="#step-7-enable-strategy-and-decision-making"><strong><em>Step 7</em></strong> : <em>enable strategy and decision-making</em></a></li>
+  </ul></li>
+  <li><a href="#implications-and-guidelines-for-practice" id="toc-implications-and-guidelines-for-practice" class="nav-link" data-scroll-target="#implications-and-guidelines-for-practice">Implications and guidelines for practice</a>
+  <ul class="collapse">
+  <li><a href="#is-hr-analytics-a-new-revolutionary-idea-or-evolutionary-capability" id="toc-is-hr-analytics-a-new-revolutionary-idea-or-evolutionary-capability" class="nav-link" data-scroll-target="#is-hr-analytics-a-new-revolutionary-idea-or-evolutionary-capability">Is HR analytics a new, revolutionary idea or evolutionary capability?</a></li>
+  <li><a href="#what-is-the-best-way-to-get-started-with-hr-analytics" id="toc-what-is-the-best-way-to-get-started-with-hr-analytics" class="nav-link" data-scroll-target="#what-is-the-best-way-to-get-started-with-hr-analytics">What is the best way to get started with HR analytics?</a></li>
+  <li><a href="#who-should-perform-hr-analytics" id="toc-who-should-perform-hr-analytics" class="nav-link" data-scroll-target="#who-should-perform-hr-analytics">Who should perform HR analytics?</a></li>
+  <li><a href="#where-should-hr-analytics-reside" id="toc-where-should-hr-analytics-reside" class="nav-link" data-scroll-target="#where-should-hr-analytics-reside">Where should HR analytics reside?</a></li>
+  <li><a href="#should-the-hr-analytics-team-be-connected-to-hr-strategy" id="toc-should-the-hr-analytics-team-be-connected-to-hr-strategy" class="nav-link" data-scroll-target="#should-the-hr-analytics-team-be-connected-to-hr-strategy">Should the HR analytics team be connected to HR strategy?</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>These notes are from an <a href="https://www.emerald.com/insight/content/doi/10.1108/JWAM-03-2020-0020/full/html">article</a> that introduces the HR analytics cycle as a simple and organized process for gathering, analyzing, communicating, and using evidence-based HR research and analytical insights to help organizations achieve their goals.</p>
+<section id="the-meaning-of-hr-analytics" class="level1">
+<h1>The meaning of HR Analytics</h1>
+<p>HR analytics is a new field that involves collecting, analyzing, and visualizing data to make informed decisions. It also includes conducting ethical research based on evidence.</p>
+</section>
+<section id="hr-analytics-cycle" class="level1">
+<h1>HR Analytics cycle</h1>
+<p>This article presents the HR analytics cycle as a seven-step process to help organizations develop their HR research and analytics capabilities. This enables them to make evidence-based decisions and execute their business strategy more effectively. It involves determining stakeholder requirements, defining an agenda, and executing HR research and analytics projects.</p>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img.png" class="img-fluid figure-img" alt="http://localhost:7151/notes/a-7-step-process-for-people-analytics/index.html" width="1000"></p>
+<figcaption class="figure-caption">HR Analytics cycle<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></figcaption>
+</figure>
+</div>
+<section id="step-1-determine-stakeholder-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-determine-stakeholder-requirements"><strong><em>Step 1</em></strong> : <em>determine stakeholder requirements</em></h2>
+<p>Determining stakeholder requirements is essential for the success of any HR research and analytics initiative. It involves establishing a partnership with key stakeholders, such as executives, line managers, senior HR leaders, HR business partners, employees, and technology vendors. Each stakeholder has a different perspective and set of concerns regarding HR analytics practices and activities. While line managers primarily focus on data visualization and reporting of key metrics and analytical insights, executives and senior HR leaders are more concerned with how HR analytics supports HR strategy, execution, workforce decisions, and overall business outcomes.Leading HR analytics in organizations has an important role in assisting stakeholders with framing realistic, measurable, value-added, evidence-based, and ethical questions. This helps formulate and frame HR research and analytics questions, identify strategic and tactical priorities, secure stakeholder commitment, and provide communication on the ongoing progress of key HR research and analytics initiatives.</p>
+<p>During this step, many questions are likely to arise.</p>
+<blockquote class="blockquote">
+<p>“There are naive questions, tedious questions, ill-phrased questions, questions put after inadequate self-criticism. But every question is a cry to understand the world. There is no such thing as a dumb question”.</p>
+<p>Carl Sagan<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</blockquote>
+</section>
+<section id="step-2-define-hr-research-and-analytics-agenda" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-define-hr-research-and-analytics-agenda"><strong><em>Step 2</em></strong> : <em>define HR research and analytics agenda</em></h2>
+<p>The HR research and analytics agenda should be defined based on stakeholder needs and expectations. The evolving nature of business and the future of work has reshaped long-term and short-term requirements. Long-term requirements are now typically one year, while short-term requirements align with quarterly or monthly results.Short-term and long-term research requirements can be both strategic and tactical in nature.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tips to establish an HR analytics and research agenda:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>organize stakeholder requirements by theme or major topic</li>
+<li>pose broad research questions</li>
+<li>generate targeted questions and hypotheses</li>
+<li>identify long-term and short-term requirements</li>
+<li>share the agenda with stakeholders, refine it iteratively</li>
+<li>strive for a balanced agenda</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="step-3-identify-data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-identify-data-sources"><strong><em>Step 3</em></strong> : <em>identify data sources</em></h2>
+<p>Once the HR research and analytics agenda is established, the next step is to identify the sources of data that will help to answer the HR research and analytics questions and hypotheses. Data sources can be public or private, and may include university libraries, governmental databases, internal employee data, and external benchmarking data.</p>
+<p>Sources of data may or may not exist depending on your organization’s current HR research and analytics practices.</p>
+<p><strong>Common data sources</strong>:</p>
+<hr>
+<ol type="1">
+<li><p>Employee/organizational surveys</p></li>
+<li><p>Employee/talent profiling (tracking and modeling individual data on critical talent or high-potential employees)</p></li>
+<li><p>HR metrics including scorecards and dashboards</p></li>
+<li><p>Partnership or outsourced research including membership-based research consortia</p></li>
+<li><p>Workforce forecasting (e.g.&nbsp;workforce supply/demand and segmentation analysis to forecast and plan when to staff up or cut back)</p></li>
+<li><p>Ad hoc HRIS data mining and analysis</p></li>
+<li><p>HR benchmarking</p></li>
+<li><p>Learning measurement/analytics</p></li>
+<li><p>HR program evaluation</p></li>
+<li><p>Return-on-investment (ROI) projects</p></li>
+<li><p>Labor market, talent pool and site/location identification research</p></li>
+<li><p>Advanced organizational behavior (OB) research and modeling</p></li>
+<li><p>Selection research involving the use of validated personality instruments that measure various employee traits, states, characteristics, attributes, attitudes, beliefs and/or values</p></li>
+<li><p>Talent supply chain (analytics to make decisions in real time for optimizing immediate talent demands in terms of changing business conditions)</p></li>
+<li><p>360 degree or multirater feedback (360-degree leadership and management assessments or performance appraisal/evaluations)</p></li>
+<li><p>Sentiment analysis (interpretation and classification of emotions whether positive, negative and neutral within text data using text and/or thematic analysis techniques)</p></li>
+<li><p>Using organizational network analysis (ONA) tools</p></li>
+</ol>
+</section>
+<section id="step-4-gather-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-gather-data"><strong><em>Step 4</em></strong> : <em>gather data</em></h2>
+<p>The HR analytics cycle involves data collection through primary research, secondary research, or mining internal data in the Human Resource Information System (HRIS).</p>
+<ul>
+<li><p>Primary research is new or original research that addresses a specific research question or set of questions (e.g.&nbsp;a research project or experiment to identify which factors enable or inhibit employee engagement and performance, selection research using validated personality instruments for leadership succession, employee and organizational surveys for action planning and change, organizational network analysis to determine the level of collaboration by specific jobs and roles).Primary research addresses specific questions and can be done in-house or in collaboration with universities.</p></li>
+<li><p>Secondary research provides data from existing sources, such as scientific studies, reports from credible institutes, HR benchmarking, labor market databases.</p></li>
+<li><p>Theory-driven (deductive) and data-driven (inductive) approaches to mining and modeling data from the organization’s HRIS, SaaS-based platforms (e.g.&nbsp;data aggregation and visualization products, employee engagement tools, social or organizational network technologies) and other external data sources are another way to gather, query and analyze data about the workforce, provided it is done ethically and responsibility.</p></li>
+</ul>
+</section>
+<section id="step-5-transforming-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-transforming-data"><strong><em>Step 5</em></strong> : <em>transforming data</em></h2>
+<p>Transforming data into meaningful insights is a challenging yet essential task. While software firms like Oracle, Salesforce, SAP, SAS, and Workday have integrated HR analytical capabilities into their products, they cannot magically interpret all the “Big Data” available. HR strategy often involves manual work by qualified researchers, analysts, and data scientists. To improve analytical capabilities, it is suggested that organizations start small and build their HR analytical capabilities over time. Meta-analysis (i.e.&nbsp;an analysis of analysis) is a practical approach to explore and understand multiple data sources in relation to each other, enabling organizations to understand workforce insights.</p>
+<p>For example:</p>
+<ul>
+<li><p>To what extent are the results from individual 360-degree assessments consistent with your employee survey data, exit survey data, or actual turnover?</p></li>
+<li><p>Are high-potential, emerging leaders leaving the organization for the same reasons year over year (e.g.&nbsp;little to no advancement and promotion opportunities, few organizational leadership opportunities, lack of decision rights, low base pay relative to the market)?</p></li>
+</ul>
+<p>Performing a meta-analysis enables you to answer these questions and, more importantly, codify and make sense of disparate data sources to collect critical workforce insights.</p>
+<p>Performing the meta-analysis can be simple or complex. This largely depends on the nature of the data gathered, sophistication and competency of the HR researcher, analyst or data scientist and the amount of resources and time to conduct the analysis.</p>
+</section>
+<section id="step-6-communicate-intelligence-results" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-communicate-intelligence-results"><strong><em>Step 6</em></strong> : <em>communicate intelligence results</em></h2>
+<p>The sixth step of the HR analytics cycle involves communicating intelligence results through storytelling.</p>
+<p>This approach can be powerful in presenting data-driven insights. The story’s veracity and the ethicality of data-driven insights must be considered. Inaccurate or misleading insights can lead to bad workforce decisions and organizational consequences. Hence, communicating and reporting HR analytical insights involves not only some ethical interpretation on the part of the HR analytics team but also speaking truth to power.</p>
+<p>Advances have been made in linking HR to business strategy and performance through the use of balanced scorecards, HR scorecards, and workforce scorecards. While, not all data can be expressed in simple metrics, scorecards and dashboards are effective tools for communicating strategic metrics and are best used as communication and reporting tools for strategy execution once an agreed-upon strategy is in place.</p>
+</section>
+<section id="step-7-enable-strategy-and-decision-making" class="level2">
+<h2 class="anchored" data-anchor-id="step-7-enable-strategy-and-decision-making"><strong><em>Step 7</em></strong> : <em>enable strategy and decision-making</em></h2>
+<p>The final step of the HR analytics cycle is to enable HR strategy creation and evidence-based decision-making.</p>
+<p>The HR analytics cycle aims to enable HR strategy creation and evidence-based decision-making. Strategy is a multidimensional concept that includes a plan, ploy, pattern, position, and perspective. It involves asking intelligent questions, identifying strengths, weaknesses, opportunities, and threats (SWOT), knowing the right things at the right time, scenario planning, evidence-based decision-making, establishing priorities and goals, and effectively managing execution. HR strategy focuses on aligning people policies, practices, and processes with the overall business strategy to achieve the organization’s goals and objectives<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<p>There are various models, frameworks, and guidelines on HR decision-making, such as Boudreau and Ramstad’s HR decision science approach, evidence-based HR<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, and Dulebohn and Johnson’s classification framework for HR decision-making in the context of HR information systems and analytics<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. These models and frameworks represent a complementary approach for enabling HR strategy and decision-making in the context of HR analytics. The data and insights derived from HR analytics play a central role in influencing HR strategy, decision-making, and strategic choices.</p>
+</section>
+</section>
+<section id="implications-and-guidelines-for-practice" class="level1">
+<h1>Implications and guidelines for practice</h1>
+<section id="is-hr-analytics-a-new-revolutionary-idea-or-evolutionary-capability" class="level2">
+<h2 class="anchored" data-anchor-id="is-hr-analytics-a-new-revolutionary-idea-or-evolutionary-capability">Is HR analytics a new, revolutionary idea or evolutionary capability?</h2>
+<p>HR analytics is not a revolutionary idea, but rather an evolutionary capability with a rich history and promising future. It has its roots in various HR research and measurement practices, such as workforce and HR research, action research, assessment centers, data-driven methods for change, employee and organizational surveys, evaluation/ROI, evidence-based practice, HR decision science, HR benchmarking, human capital measurement and metrics, personnel/employee/talent selection, scorecards, and workforce forecasting. The new focus is on the availability of new technological and analytical resources and the renewed interest in analytics by organizational leaders to improve HR’s impact on organizational effectiveness and other important business outcomes.</p>
+</section>
+<section id="what-is-the-best-way-to-get-started-with-hr-analytics" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-the-best-way-to-get-started-with-hr-analytics">What is the best way to get started with HR analytics?</h2>
+<p>In terms of getting started and building HR analytical capabilities, organizations tend to be enticed into procuring R, Python and the latest HCM technology platforms with novel data visualization tools and subsequently hire a low-level HR analyst to operate these tools without clarity about their HR analytics vision, strategy and the capabilities and outcomes they hope to achieve.</p>
+<p>To effectively start with HR analytics, organizations should hire a well-qualified HR analytics leader with with the right disciplinary background and skill set before investing in any technological or analytical resources. This leader can help establish the overall vision, strategy, and capabilities for success, rather than hiring a low-level HR analyst who lacks clarity about their vision, strategy, and desired outcomes.</p>
+</section>
+<section id="who-should-perform-hr-analytics" class="level2">
+<h2 class="anchored" data-anchor-id="who-should-perform-hr-analytics">Who should perform HR analytics?</h2>
+<p>HR analytics is a collaborative effort among practitioners from various disciplines, including business management, HR behavior, and organizational psychology. However, it requires an applied researcher with a background in social, behavioral, and organizational sciences to accurately interpret insights from HR analytics in individual, group, and organizational contexts.</p>
+</section>
+<section id="where-should-hr-analytics-reside" class="level2">
+<h2 class="anchored" data-anchor-id="where-should-hr-analytics-reside">Where should HR analytics reside?</h2>
+<p>Over 75% of Fortune 1,000 firms in the US have HR research and analytics teams. Some argue for HR analytics to be in a business intelligence function and report to the line management function outside of the HR function. The authors argue that the HR analytics function should be led by someone trained in the social, behavioral, and organizational sciences (e.g.&nbsp;strategic HRM and organizational behavior, industrial and organizational psychology). However, the HR profession must lead in ensuring HR analytics is evidence-based and ethical and collaborates with other functions like business intelligence and finance.</p>
+</section>
+<section id="should-the-hr-analytics-team-be-connected-to-hr-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="should-the-hr-analytics-team-be-connected-to-hr-strategy">Should the HR analytics team be connected to HR strategy?</h2>
+<p>The recommendation is for the establishment of an “HR Analytics and Strategy” function would be ideal and ensure a coordinated effort between HR analytics, strategy creation and execution, human capital decisions, and the adoption of evidence-based practices.</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>HR analytics involves various practices and data sources, including HR research and experimentation. It provides strategic insights for decision-makers, aiding in the creation of smarter workforce decisions. Creating an HR research agenda in advance will help to avoid reactive data gathering and assure ethical practices in HR analytics, fostering an evidence-based, analytics-driven innovation plan for success.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><a href="https://www.emerald.com/insight/search?q=Salvatore%20V.%20Falletta" title="Salvatore V. Falletta">Falletta, S.V.</a>&nbsp;and&nbsp;<a href="https://www.emerald.com/insight/search?q=Wendy%20L.%20Combs" title="Wendy L. Combs">Combs, W.L.</a>&nbsp;(2021), “The HR analytics cycle: a seven-step process for building evidence-based and ethical HR analytics capabilities”,&nbsp;<a href="https://www.emerald.com/insight/publication/issn/2205-2062"><em>Journal of Work-Applied Management</em></a>, Vol. 13 No.&nbsp;1, pp.&nbsp;51-68.&nbsp;<a href="https://doi.org/10.1108/JWAM-03-2020-0020" class="uri">https://doi.org/10.1108/JWAM-03-2020-0020</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Sagan, C. (1996), The Demon-Haunted World: Science as a Candle in the Dark, Ballantine Books, New York, NY<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Cascio, W. and Boudreau, J. (2014), “HR strategy: optimizing risks, optimizing rewards”, Journal of Organizational Effectiveness: People and Performance, Vol. 1 No.&nbsp;1, pp.&nbsp;77-97.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Boudreau, J.W. and Ramstad, P.M. (2007), Beyond HR: The New Science of Human Capital, Harvard Business School Press, Boston, MA<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Dulebohn, J.H. and Johnson, R.D. (2013), "Human resource metrics and decision support: a classification framework", Human Resource Management Review, Vol. 23 No.&nbsp;1, pp.&nbsp;71-83<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="CozminaSecula/blogComments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
