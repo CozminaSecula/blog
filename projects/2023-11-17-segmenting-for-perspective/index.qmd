@@ -20,21 +20,19 @@ fig-width: 8
 
 # Project Description
 
-## The Context
+## Problem statement
 
--   Imagine a company that offers a wide range of products and services. This inclusive and diverse company values representation across essential roles in its workforce, ensuring equal opportunities for all employees. However, their compensation strategy has not seen any significant changes or updates over the past three years.
+ Imagine a company with a diverse workforce and a wide range of products and services. The company aims to enhance its compensation strategy to ensure all employees receive fair and effective compensation. However, the company lacks insights into potential disparities in its current compensation strategy.
 
--   The company aims to understand disparities in compensation, seeking insights based on factors such as roles, departments, experience, and demographic groups. This understanding will enable the company to address potential inequities and enhance its compensation strategy effectively.
-
--   How can the company employ data analytics to gain insights into compensation differences?
+ How can the company enhance its compensation strategy to ensure fair and effective compensation for all employees, given that it lacks insights into potential disparities in its current compensation strategy?
 
 ## Aim of this project
 
 ✅ To understand compensation differences across various factors such as roles, departments, experience, and demographic groups through segmenting employee data.
 
--   This will help inform the development of a competitive compensation strategy.
+-   This will help inform the development of a fair and effective compensation strategy.
 
--   A competitive compensation strategy can help attract and retain top talent, improve employee morale and motivation, and ultimately drive business success.
+-   A fair and effective compensation strategy can help attract and retain top talent, improve employee morale and motivation, and ultimately drive business success.
 
 ## Research Questions
 
@@ -888,7 +886,7 @@ ggplot(comp_gender_dept, aes( x= gender, y=annual_comp, fill=dept))+
 -   Compensation by Department
 
     -   The R&D department has the largest number of employees who earn between 150k-200k. 37% of the R&D department, 305 employees, fall into this salary range.
-     -  The Sales department has the same percentage of employees earning between 150k-200k, but due to its smaller size, this percentage represents only 130 employees.
+    -   The Sales department has the same percentage of employees earning between 150k-200k, but due to its smaller size, this percentage represents only 130 employees.
 
 -   Compensation by Role
 
