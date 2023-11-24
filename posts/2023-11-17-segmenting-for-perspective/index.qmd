@@ -22,9 +22,9 @@ fig-width: 8
 
 ## Problem statement
 
- Imagine a company with a diverse workforce and a wide range of products and services. The company aims to enhance its compensation strategy to ensure all employees receive fair and effective compensation. However, the company lacks insights into potential disparities in its current compensation strategy.
+Imagine a company with a diverse workforce and a wide range of products and services. The company aims to enhance its compensation strategy to ensure all employees receive fair and effective compensation. However, the company lacks insights into potential disparities in its current compensation strategy.
 
- How can the company enhance its compensation strategy to ensure fair and effective compensation for all employees, given that it lacks insights into potential disparities in its current compensation strategy?
+How can the company enhance its compensation strategy to ensure fair and effective compensation for all employees, given that it lacks insights into potential disparities in its current compensation strategy?
 
 ## Aim of this project
 
