@@ -1,8 +1,8 @@
 ---
-title: "Projects"
+title: "Posts"
 subtitle: "This is a place where I share some of my work."
 listing:
-  contents: projects
+  contents: posts
   sort: "date desc"
   type: grid
   categories: true

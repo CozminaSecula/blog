@@ -8,7 +8,7 @@ freeze: true
 title-block-banner: true
 
 # Author name of all blog posts
-author: 'Cozmina Secula'
+
 
 # Table of content settings
 toc: true
