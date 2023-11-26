@@ -40,6 +40,8 @@ How can the company enhance its compensation strategy to ensure fair and effecti
 
 -   Are there any disparities in compensation between different demographic groups that can be addressed?
 
+
+
 ## Data Collection
 
 -   Data is sourced from the book : [The Fundamentals of People Analytics With Applications in R](https://link.springer.com/book/10.1007/978-3-031-28674-2)
