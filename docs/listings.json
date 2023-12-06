@@ -1,11 +1,11 @@
 [
   {
-    "listing": "/projects.html",
+    "listing": "/posts.html",
     "items": [
-      "/projects/2023-11-17-segmenting-for-perspective/index.html",
-      "/projects/2023-10-11-summary-statistics-and-t-test/index.html",
-      "/projects/2023-09-14-frequency-tables-and-chi-squared-test/index.html",
-      "/projects/employee-well-being-at-work/index.html"
+      "/posts/2023-12-05-create-a-dashboard/index.html",
+      "/posts/2023-10-11-summary-statistics-and-t-test/index.html",
+      "/posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html",
+      "/posts/employee-well-being-at-work/index.html"
     ]
   },
   {
@@ -15,15 +15,6 @@
       "/notes/problem-definition-tool/index.html",
       "/notes/make-the-most-of-your-data/index.html",
       "/notes/middle-managers-and-d&i/index.html"
-    ]
-  },
-  {
-    "listing": "/posts.html",
-    "items": [
-      "/posts/2023-11-17-segmenting-for-perspective/index.html",
-      "/posts/2023-10-11-summary-statistics-and-t-test/index.html",
-      "/posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html",
-      "/posts/employee-well-being-at-work/index.html"
     ]
   }
 ]
