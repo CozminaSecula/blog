@@ -110,4 +110,4 @@ In summary, to create a dashboard:
 
 -   Finally, I used a template that allowed me to create a custom dashboard using R, complete with personalized colors and styles.
 
-I hope this post will inspire you to create and use dashboards effectively to answer your inquiries with valuable insights derived from data.
+And that's all! I hope this post will inspire you to create and use dashboards effectively to answer your inquiries with valuable insights derived from data.
