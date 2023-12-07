@@ -4,7 +4,7 @@
     "href": "posts.html",
     "title": "Posts",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCreating a Dashboard with Quarto\n\n\n\ndashboard\n\n\ndata visualization\n\n\n\nCreating a customized dashboard with Quarto to visualize and analyze data.\n\n\n\nDec 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test\n\n\n\nsummary statistics\n\n\nindependent samples t-test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from data using summary statistics and the independent samples t-test, with a case study on team diversity within a large…\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test\n\n\n\nfrequency tables\n\n\nchi-squared test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a case study on gender representation in senior roles.\n\n\n\nSep 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEmployees’ perception of well-being at work: A qualitative study\n\n\n\nqualitative analysis\n\n\nempirical study\n\n\nwell-being at work\n\n\n\nAn empirical study that explores how employees perceive the work environment factors and managers’ behaviors influencing their well-being at work.\n\n\n\nSep 12, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCreating a Dashboard with Quarto\n\n\n\ndashboard\n\n\ndata visualization\n\n\n\nCreating a customized dashboard with Quarto to visualize and present data.\n\n\n\nDec 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test\n\n\n\nsummary statistics\n\n\nindependent samples t-test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from data using summary statistics and the independent samples t-test, with a case study on team diversity within a large…\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test\n\n\n\nfrequency tables\n\n\nchi-squared test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a case study on gender representation in senior roles.\n\n\n\nSep 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEmployees’ perception of well-being at work: A qualitative study\n\n\n\nqualitative analysis\n\n\nempirical study\n\n\nwell-being at work\n\n\n\nAn empirical study that explores how employees perceive the work environment factors and managers’ behaviors influencing their well-being at work.\n\n\n\nSep 12, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/employee-well-being-at-work/index.html",
@@ -179,7 +179,7 @@
     "href": "index.html",
     "title": "Cozmina Secula",
     "section": "",
-    "text": "With an extensive background in B2B sales and people management, I’m expanding my skill set into new areas like people analytics, R programming language, Quarto, and data visualization. This is the space where I share my journey of learning and growth."
+    "text": "With an extensive background in B2B sales and people management, I’m expanding my skill set into new areas like data analytics, R programming language, Quarto, and data visualization. This is the space where I share my journey of learning and growth."
   },
   {
     "objectID": "notes/make-the-most-of-your-data/index.html",
@@ -250,41 +250,6 @@
     "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
     "section": "",
     "text": "Introduction\nIn the previous post, I introduced two fundamental concepts to analyze categorical data: frequency tables and the chi-squared test.\nThis post goes one step further by offering two tools for data analysis, which will work with continuous and categorical data: summary statistics and the independent samples t-test.\nAs part of descriptive statistics, summary statistics can provide valuable insights into data sets. It may include essential metrics such as the total number of values, the mean value, and the standard deviation. These statistics provide a clear picture of data trends and distribution, aiding in the interpretation of data patterns. On the other hand, the independent-samples t-test (part of inferential statistics) is employed to compare means between two distinct groups. It helps us investigate whether these two groups differ significantly in a particular dimension. When used together, these tools can reveal intriguing patterns and relationships within data.\nThe presentation will guide you through the utilization of summary statistics and the independent-samples t-test for insightful data analysis.\n\n\nPresentation"
-  },
-  {
-    "objectID": "posts/2023-11-17-segmenting-for-perspective/index.html",
-    "href": "posts/2023-11-17-segmenting-for-perspective/index.html",
-    "title": "Creating a Dashboard with Quarto",
-    "section": "",
-    "text": "Four months ago, I started to learn data analytics and visualization. My chosen tools for analysis, documenting, presenting, and sharing my work are R and Quarto. To acquire specific skills and knowledge, I adopted a project-based approach and designed projects around my learning objectives. However, I encountered a challenge: how can I effectively display different visual data in one place using my current software? I needed a tool to simplify data presentation while allowing for tailored content. That’s when I discovered Quarto Dashboards, a recent addition to Quarto. This feature allowed me to create a custom dashboard using R, complete with personalized colors and styles. With the help of Quarto’s instructions and examples, I successfully crafted a dashboard, documenting my learning process. In the following sections, I will share how I created the dashboard.\nYou can find the finished dashboard here:\nThe code for the dashboard is on GitHub."
-  },
-  {
-    "objectID": "posts/2023-11-17-segmenting-for-perspective/index.html#customization",
-    "href": "posts/2023-11-17-segmenting-for-perspective/index.html#customization",
-    "title": "Creating a Dashboard with Quarto",
-    "section": "Customization",
-    "text": "Customization\nThe dashboard allows selecting from 25 themes or creating personalized themes using Sass. For this dashboard I opted for the litera theme and customized the background color of the navbar, text, and navigation."
-  },
-  {
-    "objectID": "posts/2023-11-17-segmenting-for-perspective/index.html#designing-navigation-bar",
-    "href": "posts/2023-11-17-segmenting-for-perspective/index.html#designing-navigation-bar",
-    "title": "Creating a Dashboard with Quarto",
-    "section": "Designing Navigation Bar",
-    "text": "Designing Navigation Bar\nYou can choose a title and optionally add a logo or author. You can also decide between a single-page dashboard or multiple pages. I chose to use five pages in this dashboard."
-  },
-  {
-    "objectID": "posts/2023-11-17-segmenting-for-perspective/index.html#designing-the-dashboard-layout",
-    "href": "posts/2023-11-17-segmenting-for-perspective/index.html#designing-the-dashboard-layout",
-    "title": "Creating a Dashboard with Quarto",
-    "section": "Designing the Dashboard Layout",
-    "text": "Designing the Dashboard Layout\nYou can arrange dashboard components using rows and columns and use tabsets to include multiple views of data. Here are more details and layout options. I organized the dashboard with columns and tabsets for clear visualizations. Each column had tabs displaying different visualizations. Below is an example: on the left, the average compensation by department and experience level is displayed, while on the right, a visualization summarizes the spread of data within each category."
-  },
-  {
-    "objectID": "posts/2023-11-17-segmenting-for-perspective/index.html#finalizing-and-sharing-the-dashboard",
-    "href": "posts/2023-11-17-segmenting-for-perspective/index.html#finalizing-and-sharing-the-dashboard",
-    "title": "Creating a Dashboard with Quarto",
-    "section": "Finalizing and Sharing the Dashboard",
-    "text": "Finalizing and Sharing the Dashboard\nOnce your dashboard is done, you may want to share it with others. I hosted the dashboard using GitHub Pages. In the GitHub repository for your dashboard, go to ‘Settings’ and then ‘Pages.’ Select the branch and folder of your dashboard’s index.html file, click ‘Save,’ and you’ll get a URL to display your work. Here’s the final link for this dashboard: https://cozminasecula.github.io/dashboard/."
   },
   {
     "objectID": "posts/2023-12-05-create-a-dashboard/index.html",

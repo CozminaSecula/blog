@@ -17,4 +17,4 @@ about:
       href: https://github.com/CozminaSecula
 ---
 
-With an extensive background in B2B sales and people management, I'm expanding my skill set into new areas like people analytics, R programming language, Quarto, and data visualization. This is the space where I share my journey of learning and growth.
+With an extensive background in B2B sales and people management, I'm expanding my skill set into new areas like data analytics, R programming language, Quarto, and data visualization. This is the space where I share my journey of learning and growth.

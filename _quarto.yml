@@ -23,7 +23,7 @@ website:
         href: https://github.com/CozminaSecula
       - icon: envelope
         href: mailto:cozmina.secula@gmail.com
-
+      
 format:
   html:
     theme: custom.scss
