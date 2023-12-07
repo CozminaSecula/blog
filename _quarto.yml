@@ -28,7 +28,7 @@ format:
   html:
     theme: custom.scss
     css: styles.css
-    include-in-header: translate-widget.html
+    include-before-body: translate-widget.html
 
 editor: visual
 
