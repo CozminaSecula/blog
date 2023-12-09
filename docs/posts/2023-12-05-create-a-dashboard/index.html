@@ -248,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>Four months ago, I started to learn data analytics and visualization. My chosen tools for analysis, documenting, presenting, and sharing my work are R and Quarto. To acquire specific skills and knowledge, I adopted a project-based approach and designed projects around my learning objectives. However, I encountered a challenge: how can I effectively display different visual data in one place using my current software? I needed a tool to simplify data presentation while allowing for tailored content. That’s when I discovered <a href="https://quarto.org/docs/dashboards/">Quarto Dashboards</a>, a recent addition to Quarto. This feature allowed me to create a custom dashboard using R, complete with personalized colors and styles. With the help of <a href="https://quarto.org/docs/dashboards/">Quarto’s instructions</a> and <a href="https://quarto.org/docs/dashboards/examples/">examples</a>, I successfully crafted a dashboard, documenting my learning process. In the following sections, I will share how I created the dashboard.</p>
+<p>Over the last few weeks, I have spent some time doing data analysis and visualization. The chosen tools for analysis, documenting, presenting, and sharing my work are R and Quarto. To acquire specific skills and knowledge, I adopted a project-based approach and designed small projects around my learning objectives. However, I encountered a challenge: how can I effectively display different visual data in one place, such as a dashboard? I needed a tool to simplify data presentation while allowing for tailored content. That’s when I discovered <a href="https://quarto.org/docs/dashboards/">Quarto Dashboards</a>, a recent addition to Quarto. This feature allowed me to create a custom dashboard using R, complete with personalized colors and styles. In the following sections, I will share how I created the dashboard.</p>
 <p>You can find the finished dashboard here:</p>
 <center>
 <p><a href="https://cozminasecula.github.io/dashboard/"><img src="../2023-12-05-create-a-dashboard/1_final.png" style="width:70%"></a><br></p>
@@ -257,15 +257,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </center>
 <p><br></p>
-<p>The <a href="https://github.com/CozminaSecula/dashboard/blob/master/index.qmd">code</a> for the dashboard is on GitHub.</p>
+<p>The <a href="https://github.com/CozminaSecula/dashboard/blob/master/index.qmd">code</a> for the dashboard can be accessed on GitHub.</p>
 <section id="goals-and-data-set" class="level1">
 <h1>Goals and Data Set</h1>
-<p>I had two goals for this project. Firstly, I aimed to segment a data set into various categories to investigate how compensation differs based on factors like an employee’s role, department, experience level, and demographics. Secondly, I wanted to craft a customized dashboard using R and its packages, enabling personalized visualizations tailored to specific needs.</p>
-<p>The data set I utilized comes from the book <a href="https://link.springer.com/book/10.1007/978-3-031-28674-2">The Fundamentals of People Analytics With Applications in R</a>. It’s named <code>employee</code> and it is available in the <code>peopleanalytics</code> package. It includes information about both current and former employees, with field definitions provided in the book’s data dictionary.</p>
+<p>This project has two goals. Firstly, I aimed to segment a data set into various categories to investigate how compensation differs based on factors like an employee’s role, department, experience level, and demographics. Secondly, I wanted to craft a customized dashboard using R and its packages, enabling personalized visualizations tailored to specific needs.</p>
+<p>The data set is reported in the book <a href="https://link.springer.com/book/10.1007/978-3-031-28674-2">The Fundamentals of People Analytics With Applications in R</a>. It’s named <code>employee</code> and is available in the <code>peopleanalytics</code> package including information about both current and former employees, with field definitions provided in the book’s data dictionary.</p>
 </section>
 <section id="setting-up-the-project" class="level1">
 <h1>Setting Up the Project</h1>
-<p>To initiate the project, I created a new Quarto document in R Studio, my preferred environment for using Quarto. It’s important to note that Dashboards are new in the upcoming 1.4 release of Quarto and are still under active development. Before beginning, I ensured I had the latest pre-release version of Quarto installed, following the recommendations from the Quarto website. Within the Quarto document, I selected the dashboard format and specified layout components.</p>
+<p>To initiate the project, I created a new Quarto document in R Studio. It’s important to note that Dashboards are new in the upcoming 1.4 release of Quarto and are still under active development. Before beginning, I ensured I had the latest pre-release version of Quarto installed, following the recommendations from the Quarto website. Within the Quarto document, I selected the dashboard format and specified layout components.</p>
 </section>
 <section id="reading-and-preparing-the-data" class="level1">
 <h1>Reading and Preparing the Data</h1>
