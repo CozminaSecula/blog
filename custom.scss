@@ -11,6 +11,19 @@ $theme: "litera" !default;
 $font-family-sans-serif:      "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 
 
+//  Warwick colors 
+$aubergine: #552D62;
+$aubergine2: #886C91; //paler
+$ruby: #9A1310;
+$ruby2: #B85A58; //paler
+$sky: #00407A;
+$sky2: #4D79A2; //paler
+$gray: #393A3B;
+$gray2: #747576; //paler
+
+$primary:       $aubergine !default;
+
+
 /*-- scss:rules --*/
 
 // litera is serif by default: revert to san-serif
@@ -36,3 +49,40 @@ p {
     }
 }
 
+
+// iframes for slides embedded 
+
+iframe.slide-deck {
+  border: 3px solid $gray;
+  width: 100%;
+}
+
+.ar4x3 {
+  aspect-ratio: 4 / 3;  
+}
+
+.ar3x2 {
+  aspect-ratio: 3 / 2;  
+}
+
+// icon-links
+.icon-link {
+    background-color: transparent;
+    color: $primary;
+    border: 2px solid !important;
+    border-color: $primary;
+    padding: 5px .4rem 5px .4rem !important;
+    margin-top: 4px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    border-radius: 5px; 
+    display: inline-block;
+    text-decoration: none;
+}
+
+.icon-link:hover{
+    background-color: $primary;
+    border-color: $primary;
+    color: $body-bg;
+    text-decoration: none;
+}
