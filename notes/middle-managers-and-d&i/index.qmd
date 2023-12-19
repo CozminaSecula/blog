@@ -5,7 +5,7 @@ date: 2023-10-12
 categories: [Diversity & Inclusion, Middle Managers]
 ---
 
-Takeaways from the article [Evidence-Based Solutions for Inclusion in the Workplace: Actions for Middle Managers](https://wpa.wharton.upenn.edu/content/academic-papers/evidence-based-solutions-for-inclusion-in-the-workplace-actions-for-middle-managers/)[^1].
+<br>Takeaways from the article [Evidence-Based Solutions for Inclusion in the Workplace: Actions for Middle Managers](https://wpa.wharton.upenn.edu/content/academic-papers/evidence-based-solutions-for-inclusion-in-the-workplace-actions-for-middle-managers/)[^1].
 
 [^1]: [Source of the article](https://wpa.wharton.upenn.edu/content/academic-papers/evidence-based-solutions-for-inclusion-in-the-workplace-actions-for-middle-managers/)
 

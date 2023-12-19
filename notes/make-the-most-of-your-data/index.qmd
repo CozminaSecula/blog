@@ -5,7 +5,7 @@ date: 2023-10-16
 categories: [Business Analytics, People Analytics]
 ---
 
-[In a 2021 presentation at the Wharton People Analytics Conference by Andrea Jones-Rooy from the NYU Center for Data Science](https://www.youtube.com/watch?v=NrrRJO9apqs&list=PL0EdWFC9ZZrWJ2B40bkLZ2bbJAQDmr3cX&index=21), several techniques for making the most of people's data were discussed.
+<br>[In a 2021 presentation at the Wharton People Analytics Conference by Andrea Jones-Rooy from the NYU Center for Data Science](https://www.youtube.com/watch?v=NrrRJO9apqs&list=PL0EdWFC9ZZrWJ2B40bkLZ2bbJAQDmr3cX&index=21), several techniques for making the most of people's data were discussed.
 
 The author explains that these techniques are as follows:
 
