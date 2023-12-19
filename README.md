@@ -1,3 +1,1 @@
-Exploring the field of people analytics.
-
-Source code for my personal blog: https://cozminasecula.github.io/blog/
+Source code for my blog: https://cozminasecula.github.io/blog/
