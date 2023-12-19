@@ -5,9 +5,11 @@ date: 2023-10-12
 categories: [Diversity & Inclusion, Middle Managers]
 ---
 
-<br>Takeaways from the article [Evidence-Based Solutions for Inclusion in the Workplace: Actions for Middle Managers](https://wpa.wharton.upenn.edu/content/academic-papers/evidence-based-solutions-for-inclusion-in-the-workplace-actions-for-middle-managers/)[^1].
+<br>
 
-[^1]: [Source of the article](https://wpa.wharton.upenn.edu/content/academic-papers/evidence-based-solutions-for-inclusion-in-the-workplace-actions-for-middle-managers/)
+Takeaways from the article [Evidence-Based Solutions for Inclusion in the Workplace: Actions for Middle Managers](https://wpa.wharton.upenn.edu/content/academic-papers/evidence-based-solutions-for-inclusion-in-the-workplace-actions-for-middle-managers/)[^1].
+
+[^1]: Evidence-Based Solutions for Inclusion in the Workplace: Actions for Middle Managers, Contributors: Stephanie J. Creary, Nancy Rothbard, Elena Mariscal, Olivia Moore, Jared Scruggs, and Natalia Villarmán
 
 Experts at Wharton People Analytics and DiversityInc Media collaborated to investigate and share insights on which diversity and inclusion practices "work" and for which desired workplace outcomes.
 
