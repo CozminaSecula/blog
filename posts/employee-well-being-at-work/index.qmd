@@ -7,11 +7,9 @@ categories: [qualitative analysis, empirical study, well-being at work]
 image: "wordcloud.jpg"
 ---
 
-## Abstract
+# Abstract
 
-Employee well-being is essential for both individuals and organizations.
-
-Despite large investments by organizations in improving employee well-being, research has shown a deterioration over time. To address this problem, researchers advise organizations to look beyond statistical data and investigate the underlying causes of employees' low perception of well-being.
+Employee well-being is essential for both individuals and organizations. However, despite large investments by organizations in improving employee well-being, research has shown a deterioration over time. To address this problem, researchers advise organizations to look beyond statistical data and investigate the underlying causes of employees' low perception of well-being.
 
 This study aims to explore the work environment factors and managers' behaviors that employees perceive as influencing their well-being at work and how they perceive them.
 

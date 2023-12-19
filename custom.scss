@@ -21,7 +21,7 @@ $sky2: #4D79A2; //paler
 $gray: #393A3B;
 $gray2: #747576; //paler
 
-$primary:       $aubergine !default;
+
 
 
 /*-- scss:rules --*/
@@ -53,8 +53,7 @@ p {
 // iframes for slides embedded 
 
 iframe.slide-deck {
-  border: 3px solid $gray;
-  width: 100%;
+   width: 100%;
 }
 
 .ar4x3 {

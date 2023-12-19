@@ -13,6 +13,8 @@ execute:
 fig-align: center
 ---
 
+<br>
+
 Over the last few weeks, I have spent some time doing data analysis and visualization. The chosen tools for analysis, documenting, presenting, and sharing my work are R and Quarto. To acquire specific skills and knowledge, I adopted a project-based approach and designed small projects around my learning objectives. However, I encountered a challenge: how can I effectively display different visual data in one place, such as a dashboard? I needed a tool to simplify data presentation while allowing for tailored content. That's when I discovered [Quarto Dashboards](https://quarto.org/docs/dashboards/), a recent addition to Quarto. This feature allowed me to create a custom dashboard using R, complete with personalized colors and styles. In the following sections, I will share how I created the dashboard.
 
 You can find the finished dashboard here:
@@ -31,7 +33,7 @@ The [code](https://github.com/CozminaSecula/dashboard/blob/master/index.qmd) for
 
 # Goals and Data Set
 
-This project has two goals. Firstly, I aimed to segment a data set into various categories to investigate how compensation differs based on factors like an employee's role, department, experience level, and demographics. Secondly, I wanted to craft a customized dashboard using R and its packages, enabling personalized visualizations tailored to specific needs.
+This project had two goals. Firstly, I aimed to segment a data set into various categories to investigate how compensation differs based on factors like an employee's role, department, experience level, and demographics. Secondly, I wanted to craft a customized dashboard using R and its packages, enabling personalized visualizations tailored to specific needs.
 
 The data set is reported in the book [The Fundamentals of People Analytics With Applications in R](https://link.springer.com/book/10.1007/978-3-031-28674-2). It's named `employee` and is available in the `peopleanalytics` package including information about both current and former employees, with field definitions provided in the book's data dictionary.
 

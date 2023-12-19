@@ -13,8 +13,9 @@ title-block-banner: true
 # Table of content settings
 toc: true
 toc-depth: 3
+toc-title: Table of contents
+toc-location: left
 
-page-layout: article
 
 comments: 
   utterances: 
