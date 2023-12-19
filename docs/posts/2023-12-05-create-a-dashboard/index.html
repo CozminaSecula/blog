@@ -111,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:site_name" content="Cozmina Secula">
 </head>
 
-<body class="nav-fixed">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -160,7 +160,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Creating a Dashboard with Quarto</h1>
@@ -199,10 +199,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
   <li><a href="#goals-and-data-set" id="toc-goals-and-data-set" class="nav-link active" data-scroll-target="#goals-and-data-set">Goals and Data Set</a></li>
@@ -219,6 +218,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -248,9 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p><br></p>
-<p><br></p>
-<p>Over the last few weeks, I have spent some time doing data analysis and visualization. The chosen tools for analysis, documenting, presenting, and sharing my work are R and Quarto. To acquire specific skills and knowledge, I adopted a project-based approach and designed small projects around my learning objectives. However, I encountered a challenge: how can I effectively display different visual data in one place, such as a dashboard? I needed a tool to simplify data presentation while allowing for tailored content. That’s when I discovered <a href="https://quarto.org/docs/dashboards/">Quarto Dashboards</a>, a recent addition to Quarto. This feature allowed me to create a custom dashboard using R, complete with personalized colors and styles. In the following sections, I will share how I created the dashboard.</p>
+<p><br>Over the last few weeks, I have spent some time doing data analysis and visualization. The chosen tools for analysis, documenting, presenting, and sharing my work are R and Quarto. To acquire specific skills and knowledge, I adopted a project-based approach and designed small projects around my learning objectives. However, I encountered a challenge: how can I effectively display different visual data in one place, such as a dashboard? I needed a tool to simplify data presentation while allowing for tailored content. That’s when I discovered <a href="https://quarto.org/docs/dashboards/">Quarto Dashboards</a>, a recent addition to Quarto. This feature allowed me to create a custom dashboard using R, complete with personalized colors and styles. In the following sections, I will share how I created the dashboard.</p>
 <p>You can find the finished dashboard here:</p>
 <center>
 <p><a href="https://cozminasecula.github.io/dashboard/"><img src="../2023-12-05-create-a-dashboard/1_final.png" style="width:70%"></a><br></p>
@@ -262,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The <a href="https://github.com/CozminaSecula/dashboard/blob/master/index.qmd">code</a> for the dashboard can be accessed on GitHub.</p>
 <section id="goals-and-data-set" class="level1">
 <h1>Goals and Data Set</h1>
-<p>This project has two goals. Firstly, I aimed to segment a data set into various categories to investigate how compensation differs based on factors like an employee’s role, department, experience level, and demographics. Secondly, I wanted to craft a customized dashboard using R and its packages, enabling personalized visualizations tailored to specific needs.</p>
+<p>This project had two goals. Firstly, I aimed to segment a data set into various categories to investigate how compensation differs based on factors like an employee’s role, department, experience level, and demographics. Secondly, I wanted to craft a customized dashboard using R and its packages, enabling personalized visualizations tailored to specific needs.</p>
 <p>The data set is reported in the book <a href="https://link.springer.com/book/10.1007/978-3-031-28674-2">The Fundamentals of People Analytics With Applications in R</a>. It’s named <code>employee</code> and is available in the <code>peopleanalytics</code> package including information about both current and former employees, with field definitions provided in the book’s data dictionary.</p>
 </section>
 <section id="setting-up-the-project" class="level1">
