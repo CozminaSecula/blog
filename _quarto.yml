@@ -5,7 +5,8 @@ project:
 website:
   title: "Cozmina Secula"
   open-graph: true
- 
+  
+
   navbar:
     title: false
     background: "#eee"

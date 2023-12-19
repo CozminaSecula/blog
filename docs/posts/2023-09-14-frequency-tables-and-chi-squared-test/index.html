@@ -23,6 +23,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -171,8 +205,38 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#introducing-two-distinct-tools-for-data-analysis-with-categorical-data-using-r" id="toc-introducing-two-distinct-tools-for-data-analysis-with-categorical-data-using-r" class="nav-link" data-scroll-target="#introducing-two-distinct-tools-for-data-analysis-with-categorical-data-using-r">Introducing two distinct tools for data analysis with categorical data using R</a></li>
+  <li><a href="#case-study" id="toc-case-study" class="nav-link" data-scroll-target="#case-study">Case study</a></li>
+  <li><a href="#data-preparation-and-exploration" id="toc-data-preparation-and-exploration" class="nav-link" data-scroll-target="#data-preparation-and-exploration">Data preparation and exploration</a></li>
+  </ul></li>
+  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement">Problem Statement</a>
+  <ul class="collapse">
+  <li><a href="#the-business-needs" id="toc-the-business-needs" class="nav-link" data-scroll-target="#the-business-needs">The business needs</a></li>
+  <li><a href="#the-research-question" id="toc-the-research-question" class="nav-link" data-scroll-target="#the-research-question">The research question</a></li>
+  </ul></li>
+  <li><a href="#data-preparation-and-exploration-1" id="toc-data-preparation-and-exploration-1" class="nav-link" data-scroll-target="#data-preparation-and-exploration-1">Data Preparation and Exploration</a>
+  <ul class="collapse">
+  <li><a href="#load-libraries" id="toc-load-libraries" class="nav-link" data-scroll-target="#load-libraries">Load libraries</a></li>
+  <li><a href="#look-at-the-data---the-structure" id="toc-look-at-the-data---the-structure" class="nav-link" data-scroll-target="#look-at-the-data---the-structure">Look at the data - The structure</a></li>
+  <li><a href="#variables-of-interest" id="toc-variables-of-interest" class="nav-link" data-scroll-target="#variables-of-interest">Variables of interest</a></li>
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data preparation</a></li>
+  <li><a href="#cross-tab" id="toc-cross-tab" class="nav-link" data-scroll-target="#cross-tab">Cross-tab</a></li>
+  <li><a href="#proportions-of-gender-within-each-jobgrade" id="toc-proportions-of-gender-within-each-jobgrade" class="nav-link" data-scroll-target="#proportions-of-gender-within-each-jobgrade">Proportions of gender within each jobgrade</a></li>
+  <li><a href="#are-women-underrepresented-in-senior-leadership-roles-within-the-organization" id="toc-are-women-underrepresented-in-senior-leadership-roles-within-the-organization" class="nav-link" data-scroll-target="#are-women-underrepresented-in-senior-leadership-roles-within-the-organization">Are women underrepresented in senior leadership roles within the organization?</a></li>
+  <li><a href="#does-this-organization-have-a-gender-diversity-issue" id="toc-does-this-organization-have-a-gender-diversity-issue" class="nav-link" data-scroll-target="#does-this-organization-have-a-gender-diversity-issue">Does this organization have a gender diversity issue?</a></li>
+  </ul></li>
+  <li><a href="#chi-squared-test" id="toc-chi-squared-test" class="nav-link" data-scroll-target="#chi-squared-test">Chi-Squared Test</a>
+  <ul class="collapse">
+  <li><a href="#the-hypotheses" id="toc-the-hypotheses" class="nav-link" data-scroll-target="#the-hypotheses">The hypotheses</a></li>
+  <li><a href="#chi-squared-test-in-r" id="toc-chi-squared-test-in-r" class="nav-link" data-scroll-target="#chi-squared-test-in-r">Chi squared test in R</a></li>
+  </ul></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a>
+  <ul class="collapse">
+  <li><a href="#analyzing-gender-distribution-across-job-grades" id="toc-analyzing-gender-distribution-across-job-grades" class="nav-link" data-scroll-target="#analyzing-gender-distribution-across-job-grades">Analyzing gender distribution across job grades</a></li>
+  <li><a href="#recommendation" id="toc-recommendation" class="nav-link" data-scroll-target="#recommendation">Recommendation</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -212,14 +276,432 @@ ul.task-list li input[type="checkbox"] {
 <h1>Introduction</h1>
 <p>A people analytics project typically involves working with quantifiable data to address business questions and objectives. However, for data to be valuable, it requires analysis and interpretation, which is where analytic techniques become critical. This post introduces two distinct tools for initiating data analysis with categorical data: frequency tables and the chi-squared test.</p>
 <p>Frequency tables serve as a statistical instrument for categorical data analysis. They achieve this by counting the occurrences of variables within a data set, providing a concise overview of the distribution and patterns within these categorical variables. When analyzing categorical data, it is often essential to determine if a significant relationship exists between two categorical variables within data set. The chi-squared test helps determine whether these two variables are associated or functionally related. In simpler terms, it quantifies the degree of independence between two categorical variables. When employed together, these tools can unveil intriguing patterns and relationships within data.</p>
-<p>The slides will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.</p>
+<p>The rest of this post will guide you through the utilization of frequency tables and the chi-squared test for insightful data analysis.</p>
+<section id="introducing-two-distinct-tools-for-data-analysis-with-categorical-data-using-r" class="level2">
+<h2 class="anchored" data-anchor-id="introducing-two-distinct-tools-for-data-analysis-with-categorical-data-using-r">Introducing two distinct tools for data analysis with categorical data using R</h2>
+<ul>
+<li>Frequency tables</li>
+<li>Chi-squared test</li>
+</ul>
 </section>
-<section id="slides" class="level1">
-<h1>Slides</h1>
-<iframe class="slide-deck ar4x3" src="slides.html">
-</iframe>
+<section id="case-study" class="level2">
+<h2 class="anchored" data-anchor-id="case-study">Case study</h2>
+<ul>
+<li>Focused on diversity and inclusion (D&amp;I)</li>
+<li>Sourced from the book <a href="https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916">Predictive HR Analytics : Mastering the HR Metric</a></li>
+<li>With data available <a href="https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446">here</a></li>
+</ul>
+</section>
+<section id="data-preparation-and-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation-and-exploration">Data preparation and exploration</h2>
+<ul>
+<li>Packages: <code>tidyverse</code>, <code>kableExtra</code></li>
+<li>Data preparation and exploration</li>
+<li>Creation of cross-tab</li>
+<li>Data visualization</li>
+<li>Chi-squared test</li>
+</ul>
+</section>
+</section>
+<section id="problem-statement" class="level1">
+<h1>Problem Statement</h1>
+<section id="the-business-needs" class="level2">
+<h2 class="anchored" data-anchor-id="the-business-needs">The business needs</h2>
+<p>A hypothetical company aims to employ scientific methods and procedures to address a significant people problem: gender diversity.</p>
+<ul>
+<li><p><strong>Commercial perspective</strong></p>
+<ul>
+<li>The organization seeks to foster a greater diversity of thought in senior and strategic discussions.</li>
+</ul></li>
+<li><p><strong>People perspective</strong></p>
+<ul>
+<li>The organization wants to assess whether it maintains gender balance by providing positive role models for younger employees.</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-research-question" class="level2">
+<h2 class="anchored" data-anchor-id="the-research-question">The research question</h2>
+<p><strong>Are women underrepresented in senior leadership roles within the organization?</strong></p>
+</section>
+</section>
+<section id="data-preparation-and-exploration-1" class="level1">
+<h1>Data Preparation and Exploration</h1>
+<section id="load-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="load-libraries">Load libraries</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">library</span>(kableExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="look-at-the-data---the-structure" class="level2">
+<h2 class="anchored" data-anchor-id="look-at-the-data---the-structure">Look at the data - The structure</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>diversity <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"diversity1.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(diversity)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1,493
+Columns: 11
+$ BossGender       &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+$ Gender           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2,…
+$ JobGrade         &lt;dbl&gt; 6, 5, 5, 3, 6, 7, 6, 5, 6, 6, 5, 5, 5, 5, 3, 7, 6, 5,…
+$ Age              &lt;dbl&gt; 39, 37, 35, 30, 33, 40, 49, 37, 33, 38, 42, 31, 39, 2…
+$ Tenure           &lt;dbl&gt; 0, 6, 1, 3, 0, 0, 8, 1, 11, 2, 11, 6, 2, 0, 4, 2, 1, …
+$ Status           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+$ PerformanceScore &lt;dbl&gt; 4, 4, 4, 4, NA, 4, 4, 5, 4, 4, 4, 4, 4, 4, 5, 4, 4, 4…
+$ BossPerformance  &lt;dbl&gt; 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 4, 4, 4,…
+$ Division         &lt;dbl&gt; 12, 12, 6, 6, 8, 1, 8, 8, 8, 8, 6, 6, 6, 6, 6, 10, 7,…
+$ Country          &lt;dbl&gt; 3, 4, 7, 7, 7, 7, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 3, 8,…
+$ leaver           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…</code></pre>
+</div>
+</div>
+<ul>
+<li>The organization, a management consulting firm, has 1,493 employees.</li>
+<li>The data set contains 11 variables.</li>
+<li>Data type (in the data set): numeric for all variables.</li>
+</ul>
+</section>
+<section id="variables-of-interest" class="level2">
+<h2 class="anchored" data-anchor-id="variables-of-interest">Variables of interest</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<table class="table">
+<thead>
+<tr class="header">
+<th>Level</th>
+<th>Job Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Clerical/Officer</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Administrator/Assistant</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Graduate/Trainee Consultant</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Consultant</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Senior Consultant</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Managing Consultant</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Principal Consultant</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Partner</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:35%;">
+<table class="table">
+<thead>
+<tr class="header">
+<th>Level</th>
+<th>Gender</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Female</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Male</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="data-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation">Data preparation</h2>
+<ul>
+<li>Transform variables of interest <em>gender</em> and <em>jobgrade</em> by replacing numerical values with descriptive labels for both variables.</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create new variables "gender" and "jobgrade"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>diversity <span class="ot">&lt;-</span> diversity<span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gender=</span> <span class="fu">factor</span>(Gender,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                        <span class="at">levels=</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">labels=</span> <span class="fu">c</span>(<span class="st">"Female"</span>, <span class="st">"Male"</span>)),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">jobgrade=</span> <span class="fu">factor</span>(JobGrade,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                          <span class="at">levels=</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                          <span class="at">labels=</span> <span class="fu">c</span>(<span class="st">"Clerical/Officer"</span>, <span class="st">"Administrator/Assistant"</span>, <span class="st">"Graduate/Trainee Consultant"</span>, <span class="st">"Consultant"</span>, <span class="st">"Senior Consultant"</span>, <span class="st">"Managing Consultant"</span>, <span class="st">"Principal Consultant"</span>, <span class="st">"Partner"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>Detect and rectify inaccuracies in the data</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># variables' levels</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>diversity<span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(gender, jobgrade)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># filter and drop "NA" levels and name the new data frame "diversity1"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>diversity1 <span class="ot">&lt;-</span> diversity<span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gender<span class="sc">!=</span><span class="st">"NA"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">droplevels</span>()</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#variables' levels filtered</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>diversity1<span class="sc">|&gt;</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(gender, jobgrade)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="cross-tab" class="level2">
+<h2 class="anchored" data-anchor-id="cross-tab">Cross-tab</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cross-tab; count and make a table for "gender" and "jobgrade" data</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>diversity1<span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(gender, jobgrade)<span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> gender, <span class="at">values_from =</span> n)<span class="sc">|&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"JobGrade"</span>, <span class="st">"Female"</span>, <span class="st">"Male"</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">align =</span> <span class="st">"lrr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">JobGrade</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Female</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Male</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Clerical/Officer</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Administrator/Assistant</td>
+<td style="text-align: right;">227</td>
+<td style="text-align: right;">116</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Graduate/Trainee Consultant</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">103</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consultant</td>
+<td style="text-align: right;">139</td>
+<td style="text-align: right;">104</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Senior Consultant</td>
+<td style="text-align: right;">98</td>
+<td style="text-align: right;">152</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Managing Consultant</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">171</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Principal Consultant</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">62</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Partner</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">29</td>
+</tr>
+</tbody>
+</table>
 
 
+</div>
+</div>
+</section>
+<section id="proportions-of-gender-within-each-jobgrade" class="level2">
+<h2 class="anchored" data-anchor-id="proportions-of-gender-within-each-jobgrade">Proportions of gender within each jobgrade</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>diversity1<span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(gender, jobgrade)<span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(jobgrade)<span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop=</span> <span class="fu">round</span>(n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>))<span class="sc">|&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> jobgrade, <span class="at">names_from =</span> gender, <span class="at">values_from =</span> prop)<span class="sc">|&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Job Grade"</span>, <span class="st">"Female (%)"</span>, <span class="st">"Male (%)"</span>),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">align =</span> <span class="st">"lrr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Job Grade</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Female (%)</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Male (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Clerical/Officer</td>
+<td style="text-align: right;">79</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Administrator/Assistant</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Graduate/Trainee Consultant</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">39</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consultant</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">43</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Senior Consultant</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">61</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Managing Consultant</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">72</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Principal Consultant</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">77</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Partner</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">88</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="are-women-underrepresented-in-senior-leadership-roles-within-the-organization" class="level2">
+<h2 class="anchored" data-anchor-id="are-women-underrepresented-in-senior-leadership-roles-within-the-organization">Are women underrepresented in senior leadership roles within the organization?</h2>
+<p>Up to this point, the data reveal a clear pattern: males are more common in senior roles, while females tend to occupy junior positions.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom label function</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>percent_label <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(<span class="dv">100</span><span class="sc">*</span>x, <span class="st">"%"</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diversity1, <span class="fu">aes</span>(<span class="at">x=</span>jobgrade, <span class="at">fill=</span>gender))<span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">width =</span> <span class="fl">0.7</span>)<span class="sc">+</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Gender by Job Grade"</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Job Grade"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Proportions"</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill=</span> <span class="st">"Gender"</span>)<span class="sc">+</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)<span class="sc">+</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>())<span class="sc">+</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"#00589b"</span>, <span class="st">"Male"</span><span class="ot">=</span> <span class="st">"#ccddeb"</span>))<span class="sc">+</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent_label, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.25</span>))<span class="sc">+</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/graph II-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="does-this-organization-have-a-gender-diversity-issue" class="level2">
+<h2 class="anchored" data-anchor-id="does-this-organization-have-a-gender-diversity-issue">Does this organization have a gender diversity issue?</h2>
+<ul>
+<li>The data indicate a pattern where women are more commonly in junior roles and men in senior roles.</li>
+<li>However, it’s unclear from the data whether this pattern is coincidental or statistically significant.</li>
+<li>To assess this, we can employ a chi-squared test to determine the statistical significance of the observed pattern.</li>
+</ul>
+</section>
+</section>
+<section id="chi-squared-test" class="level1">
+<h1>Chi-Squared Test</h1>
+<section id="the-hypotheses" class="level2">
+<h2 class="anchored" data-anchor-id="the-hypotheses">The hypotheses</h2>
+<p><strong>H0</strong>: There is no association between gender and job grade within the organization.</p>
+<ul>
+<li>the observed distribution of females and males across job grades is due to random chance.</li>
+</ul>
+<p><strong>H1</strong>: There is a significant association between gender and job grade within the organization.</p>
+<ul>
+<li>the observed distribution of females and males across job grades is not a result of random chance; it reflects a significant pattern of male predominance in senior roles and a greater representation of females in entry-level positions.</li>
+</ul>
+</section>
+<section id="chi-squared-test-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="chi-squared-test-in-r">Chi squared test in R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cross_tab <span class="ot">&lt;-</span> <span class="fu">table</span>(diversity1<span class="sc">$</span>jobgrade, diversity1<span class="sc">$</span>gender)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(cross_tab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test
+
+data:  cross_tab
+X-squared = 164.7, df = 7, p-value &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<ul>
+<li>The p-value is extremely small, less than 2.2e-16, which is very close to zero.</li>
+<li>Since the p-value is less than the significance level of 0.05, we can confidently reject the null hypothesis, concluding that the two variables are dependent.</li>
+<li>This result indicates a statistically significant association between gender and job grade.</li>
+<li>It suggests that certain factors are influencing the observed distribution of genders within job grades.</li>
+</ul>
+</section>
+</section>
+<section id="conclusions" class="level1">
+<h1>Conclusions</h1>
+<section id="analyzing-gender-distribution-across-job-grades" class="level2">
+<h2 class="anchored" data-anchor-id="analyzing-gender-distribution-across-job-grades">Analyzing gender distribution across job grades</h2>
+<ul>
+<li><p>Frequency tables and graphical visualization offer a concise summary of gender distribution across job grades, revealing a clear pattern: <strong>men are more common in senior roles, while women predominantly hold junior positions.</strong></p></li>
+<li><p>The results of the chi-squared test, with a p-value close to zero, confirm <strong>a very strong association between gender and job grade.</strong></p></li>
+</ul>
+</section>
+<section id="recommendation" class="level2">
+<h2 class="anchored" data-anchor-id="recommendation">Recommendation</h2>
+<ul>
+<li>While this statistical evidence does not directly imply a gender diversity issue within the organization, it signals that factors beyond chance influence the gender distribution across job grades.</li>
+<li>To address potential gender bias or discrimination and foster diversity and inclusion within the organization, further analysis and actions are necessary.</li>
+</ul>
+
+
+</section>
 </section>
 
 </main> <!-- /main -->

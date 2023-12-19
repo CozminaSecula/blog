@@ -23,6 +23,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -172,7 +206,41 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#introducing-two-distinct-tools-for-data-analysis-with-numerical-and-categorical-data-using-r" id="toc-introducing-two-distinct-tools-for-data-analysis-with-numerical-and-categorical-data-using-r" class="nav-link" data-scroll-target="#introducing-two-distinct-tools-for-data-analysis-with-numerical-and-categorical-data-using-r">Introducing two distinct tools for data analysis with numerical and categorical data using R</a>
+  <ul class="collapse">
+  <li><a href="#case-study" id="toc-case-study" class="nav-link" data-scroll-target="#case-study">Case study</a></li>
+  <li><a href="#data-preparation-and-exploration" id="toc-data-preparation-and-exploration" class="nav-link" data-scroll-target="#data-preparation-and-exploration">Data preparation and exploration</a></li>
+  </ul></li>
+  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement">Problem Statement</a>
+  <ul class="collapse">
+  <li><a href="#the-goal" id="toc-the-goal" class="nav-link" data-scroll-target="#the-goal">The Goal</a></li>
+  <li><a href="#the-research-question" id="toc-the-research-question" class="nav-link" data-scroll-target="#the-research-question">The research question</a></li>
+  </ul></li>
+  <li><a href="#data-preparation-and-exploration-1" id="toc-data-preparation-and-exploration-1" class="nav-link" data-scroll-target="#data-preparation-and-exploration-1">Data Preparation and Exploration</a>
+  <ul class="collapse">
+  <li><a href="#load-packages" id="toc-load-packages" class="nav-link" data-scroll-target="#load-packages">Load packages</a></li>
+  <li><a href="#look-at-the-data---the-structure" id="toc-look-at-the-data---the-structure" class="nav-link" data-scroll-target="#look-at-the-data---the-structure">Look at the data - The structure</a></li>
+  <li><a href="#variables-of-interest" id="toc-variables-of-interest" class="nav-link" data-scroll-target="#variables-of-interest">Variables of interest</a></li>
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data preparation</a></li>
+  </ul></li>
+  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics">Summary statistics</a>
+  <ul class="collapse">
+  <li><a href="#measures-of-center" id="toc-measures-of-center" class="nav-link" data-scroll-target="#measures-of-center">Measures of center</a></li>
+  <li><a href="#density-plot" id="toc-density-plot" class="nav-link" data-scroll-target="#density-plot">Density plot</a></li>
+  <li><a href="#boxplots-with-points" id="toc-boxplots-with-points" class="nav-link" data-scroll-target="#boxplots-with-points">Boxplots with points</a></li>
+  <li><a href="#how-does-the-distribution-of-bame-employees-vary-across-different-professions-i" id="toc-how-does-the-distribution-of-bame-employees-vary-across-different-professions-i" class="nav-link" data-scroll-target="#how-does-the-distribution-of-bame-employees-vary-across-different-professions-i">How does the distribution of BAME employees vary across different professions? (I)</a></li>
+  </ul></li>
+  <li><a href="#independent-samples-t-test" id="toc-independent-samples-t-test" class="nav-link" data-scroll-target="#independent-samples-t-test">Independent Samples t-Test</a>
+  <ul class="collapse">
+  <li><a href="#levenes-test-for-equality-of-variances" id="toc-levenes-test-for-equality-of-variances" class="nav-link" data-scroll-target="#levenes-test-for-equality-of-variances">Levene’s Test for Equality of Variances</a></li>
+  <li><a href="#independent-samples-t-test-1" id="toc-independent-samples-t-test-1" class="nav-link" data-scroll-target="#independent-samples-t-test-1">Independent Samples t-Test</a></li>
+  <li><a href="#how-does-the-distribution-of-bame-employees-vary-across-different-professions-ii" id="toc-how-does-the-distribution-of-bame-employees-vary-across-different-professions-ii" class="nav-link" data-scroll-target="#how-does-the-distribution-of-bame-employees-vary-across-different-professions-ii">How does the distribution of BAME employees vary across different professions? (II)</a></li>
+  </ul></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a>
+  <ul class="collapse">
+  <li><a href="#analyzing-bame-distribution-across-professional-functions" id="toc-analyzing-bame-distribution-across-professional-functions" class="nav-link" data-scroll-target="#analyzing-bame-distribution-across-professional-functions">Analyzing BAME distribution across professional functions</a></li>
+  <li><a href="#recommendations" id="toc-recommendations" class="nav-link" data-scroll-target="#recommendations">Recommendations</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -213,14 +281,429 @@ ul.task-list li input[type="checkbox"] {
 <p>In the <a href="https://cozminasecula.github.io/blog/projects/2023-09-14-frequency-tables-and-chi-squared-test/">previous post</a>, I introduced two fundamental concepts to analyze categorical data: frequency tables and the chi-squared test.</p>
 <p>This post goes one step further by offering two tools for data analysis, which will work with continuous and categorical data: summary statistics and the independent samples t-test.</p>
 <p>As part of descriptive statistics, summary statistics can provide valuable insights into data sets. It may include essential metrics such as the total number of values, the mean value, and the standard deviation. These statistics provide a clear picture of data trends and distribution, aiding in the interpretation of data patterns. On the other hand, the independent-samples t-test (part of inferential statistics) is employed to compare means between two distinct groups. It helps us investigate whether these two groups differ significantly in a particular dimension. When used together, these tools can reveal intriguing patterns and relationships within data.</p>
-<p>The slides will guide you through the utilization of summary statistics and the independent-samples t-test for insightful data analysis.</p>
+<p>The rest of the post will guide you through the utilization of summary statistics and the independent-samples t-test for insightful data analysis.</p>
 </section>
-<section id="slides" class="level1">
-<h1>Slides</h1>
-<iframe class="slide-deck ar4x3" src="slides1.html">
-</iframe>
+<section id="introducing-two-distinct-tools-for-data-analysis-with-numerical-and-categorical-data-using-r" class="level1">
+<h1>Introducing two distinct tools for data analysis with numerical and categorical data using R</h1>
+<ul>
+<li>Summary statistics</li>
+<li>Independent samples t-test</li>
+</ul>
+<section id="case-study" class="level2">
+<h2 class="anchored" data-anchor-id="case-study">Case study</h2>
+<ul>
+<li>Focused on diversity and inclusion (D&amp;I)</li>
+<li>Sourced from the book <a href="https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916">Predictive HR Analytics : Mastering the HR Metric</a></li>
+<li>With data available <a href="https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446">here</a></li>
+</ul>
+</section>
+<section id="data-preparation-and-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation-and-exploration">Data preparation and exploration</h2>
+<ul>
+<li>Packages: <code>tidyverse</code>, <code>kableExtra</code>, <code>car</code>, <code>paleteer</code></li>
+<li>Data preparation</li>
+<li>Summary statistics</li>
+<li>Data visualization</li>
+<li>Independent samples t-test</li>
+</ul>
+</section>
+</section>
+<section id="problem-statement" class="level1">
+<h1>Problem Statement</h1>
+<section id="the-goal" class="level2">
+<h2 class="anchored" data-anchor-id="the-goal">The Goal</h2>
+<p>A hypothetical company aims to employ scientific methods and procedures to tackle a significant people problem: employee diversity. It recognizes that:</p>
+<ul>
+<li><p><strong>Commercial Perspective</strong></p>
+<ul>
+<li>A more diverse workforce can provide a competitive advantage by enhancing the organization’s understanding of its customers, consequently improving overall performance.</li>
+</ul></li>
+<li><p><strong>People Perspective</strong></p>
+<ul>
+<li>The organization gains access to a broader candidate pool, increases employee engagement, and elevates retention rates.</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-research-question" class="level2">
+<h2 class="anchored" data-anchor-id="the-research-question">The research question</h2>
+<p><strong>How does the distribution of Black, Asian, or Minority Ethnic (BAME) employees vary across different professions?</strong></p>
+</section>
+</section>
+<section id="data-preparation-and-exploration-1" class="level1">
+<h1>Data Preparation and Exploration</h1>
+<section id="load-packages" class="level2">
+<h2 class="anchored" data-anchor-id="load-packages">Load packages</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">library</span>(car)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">library</span>(paletteer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="look-at-the-data---the-structure" class="level2">
+<h2 class="anchored" data-anchor-id="look-at-the-data---the-structure">Look at the data - The structure</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>diversity <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"diversity2.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(diversity)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 928
+Columns: 30
+$ DepartmentGroupNumber &lt;dbl&gt; 18, 19, 29, 30, 35, 37, 44, 45, 47, 50, 51, 63, …
+$ GroupSize             &lt;dbl&gt; 18, 28, 11, 17, 32, 60, 23, 36, 32, 70, 52, 15, …
+$ PercentMale           &lt;dbl&gt; 65, 67, 33, 32, 18, 65, 15, 26, 65, 5, 75, 50, 5…
+$ BAME                  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+$ NumberTeamLeads       &lt;dbl&gt; 3, 4, 2, 2, 5, 9, 3, 5, 5, 10, 7, 2, 4, 3, 9, 7,…
+$ NumberFeMaleTeamLeads &lt;dbl&gt; 1, 0, 0, 0, 3, 0, 1, 0, 0, 2, 0, 0, 1, 0, 1, 0, …
+$ Location              &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 2, 2, …
+$ LondonorNot           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, …
+$ Function              &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, …
+$ EMPsurvEngage_1       &lt;dbl&gt; 100, 96, 100, 100, 81, 97, 91, 100, 91, 97, 92, …
+$ EMPsurvEngage_2       &lt;dbl&gt; 100, 86, 91, 100, 69, 97, 100, 94, 88, 97, 94, 1…
+$ EMPsurvEngage_3       &lt;dbl&gt; 94, 86, 100, 100, 72, 87, 100, 89, 91, 93, 98, 9…
+$ EMPsurvEngage_4       &lt;dbl&gt; 78, 54, 82, 94, 44, 92, 87, 97, 81, 90, 98, 87, …
+$ EMPsurvEngage_5       &lt;dbl&gt; 100, 96, 100, 100, 81, 97, 100, 97, 97, 99, 94, …
+$ EMPsurvEngage_6       &lt;dbl&gt; 94, 57, 82, 88, 44, 78, 87, 94, 72, 90, 88, 87, …
+$ EMPsurvEngage_7       &lt;dbl&gt; 89, 89, 100, 100, 84, 92, 96, 97, 94, 99, 98, 10…
+$ EMPsurvEngage_8       &lt;dbl&gt; 72, 82, 73, 88, 38, 55, 91, 69, 69, 80, 69, 80, …
+$ EMPsurvEngage_9       &lt;dbl&gt; 78, 82, 91, 94, 47, 83, 96, 78, 81, 93, 85, 93, …
+$ EMPsurvEngagement     &lt;dbl&gt; 89, 81, 91, 96, 62, 86, 94, 91, 85, 93, 91, 92, …
+$ EMPorgIntegrity1      &lt;dbl&gt; 72, 75, 73, 100, 59, 87, 100, 61, 69, 69, 67, 60…
+$ EMPorgIntegrity2      &lt;dbl&gt; 78, 86, 91, 100, 81, 92, 100, 89, 91, 94, 92, 10…
+$ EMPorgIntegrity3      &lt;dbl&gt; 89, 89, 91, 100, 88, 93, 100, 89, 97, 97, 94, 10…
+$ EMPorgIntegrity4      &lt;dbl&gt; 89, 89, 91, 100, 78, 80, 100, 81, 78, 80, 80, 93…
+$ EMPorgIntegrity5      &lt;dbl&gt; 18, 19, 29, 30, 35, 37, 44, 45, 47, 50, 51, 63, …
+$ EmpSurvOrgIntegrity   &lt;dbl&gt; 69.2, 71.6, 75.0, 86.0, 68.2, 77.8, 88.8, 73.0, …
+$ EMPsurvSUP1           &lt;dbl&gt; 72, 79, 73, 100, 81, 88, 100, 75, 78, 96, 98, 87…
+$ EMPsurvSUP2           &lt;dbl&gt; 89, 79, 91, 100, 78, 92, 100, 83, 94, 96, 94, 93…
+$ EMPsurvSUP3           &lt;dbl&gt; 89, 64, 73, 100, 72, 78, 96, 78, 72, 90, 94, 100…
+$ EMPsurvSUP4           &lt;dbl&gt; 83, 82, 73, 100, 75, 87, 100, 78, 84, 91, 98, 80…
+$ EmpSurvSupervisor     &lt;dbl&gt; 83.25, 76.00, 77.50, 100.00, 76.50, 86.25, 99.00…</code></pre>
+</div>
+</div>
+<ul>
+<li>The organization comprises 29,976 employees in two functional areas across the UK, and these employees are organized into 928 teams.</li>
+<li>The data set contains 30 variables.</li>
+</ul>
+</section>
+<section id="variables-of-interest" class="level2">
+<h2 class="anchored" data-anchor-id="variables-of-interest">Variables of interest</h2>
+<ul>
+<li><p><strong>BAME:</strong> Percentage of the team comprised of Black, Asian, or Minority Ethnic employees.</p></li>
+<li><p><strong>Function:</strong> Function 1 = Sales staff (customer-facing roles) or 2 = Professional Service (non-customer-facing roles).</p></li>
+<li><p>The data set contains both variables of interest as numbers.</p></li>
+<li><p>The “BAME” variable is numerical, while the “Function” variable is categorical and needs to be transformed into a factor for analysis.</p></li>
+</ul>
+</section>
+<section id="data-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation">Data preparation</h2>
+<ul>
+<li>Create a new variable named “profession” with two levels “Sales Staff” and “Professional Service”</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new variable named "profession" with two levels "Sales Staff" and "Professional Service"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>diversity <span class="ot">&lt;-</span> diversity<span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">profession =</span> <span class="fu">factor</span>(Function,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Sales Staff"</span>, <span class="st">"Professional Service"</span>)))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Check levels of the new variable</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>diversity<span class="sc">|&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(diversity<span class="sc">$</span>profession)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 1
+  `diversity$profession`
+  &lt;fct&gt;                 
+1 Professional Service  
+2 Sales Staff           
+3 &lt;NA&gt;                  </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop "NA" levels as they are not meaningful for the analysis</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>diversity_filtered <span class="ot">&lt;-</span> diversity<span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(profession <span class="sc">!=</span> <span class="st">"NA"</span>)<span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">droplevels</span>()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Check variable levels after dropping "NA" </span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>diversity_filtered<span class="sc">|&gt;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(profession)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 1
+  profession          
+  &lt;fct&gt;               
+1 Professional Service
+2 Sales Staff         </code></pre>
+</div>
+</div>
+<ul>
+<li>Create a new data frame “bame_profession” including variables of interest</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a new data frame "bame_profession" including variables of interest</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>bame_profession <span class="ot">&lt;-</span> diversity_filtered<span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(BAME, profession)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(bame_profession)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 927
+Columns: 2
+$ BAME       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ profession &lt;fct&gt; Professional Service, Professional Service, Professional Se…</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="summary-statistics" class="level1">
+<h1>Summary statistics</h1>
+<section id="measures-of-center" class="level2">
+<h2 class="anchored" data-anchor-id="measures-of-center">Measures of center</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>bame_profession<span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(profession)<span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean=</span><span class="fu">mean</span>(BAME, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">median=</span><span class="fu">median</span>(BAME, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">iqr=</span><span class="fu">IQR</span>(BAME, <span class="at">na.rm =</span><span class="cn">TRUE</span>),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd=</span><span class="fu">sd</span>(BAME, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">n=</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(BAME)))<span class="sc">|&gt;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Profession"</span>, <span class="st">"Mean"</span>, <span class="st">"Median"</span>, <span class="st">"IQR"</span>, <span class="st">"Std. Deviation"</span>, <span class="st">"Sum"</span>), <span class="at">align =</span> <span class="st">"cccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Profession</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Mean</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Median</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">IQR</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Std. Deviation</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Sales Staff</td>
+<td style="text-align: center;">0.0968317</td>
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;">0.09</td>
+<td style="text-align: center;">0.0976745</td>
+<td style="text-align: center;">404</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Professional Service</td>
+<td style="text-align: center;">0.1438596</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">0.16</td>
+<td style="text-align: center;">0.1247931</td>
+<td style="text-align: center;">342</td>
+</tr>
+</tbody>
+</table>
 
 
+</div>
+</div>
+<ul>
+<li>404 teams within the “Sales Staff” profession and 342 teams within “Professional Service” profession reported the percentages of BAME.</li>
+</ul>
+</section>
+<section id="density-plot" class="level2">
+<h2 class="anchored" data-anchor-id="density-plot">Density plot</h2>
+<div class="columns">
+<div class="column" style="width:75%;">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom label function</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>percent_label <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(<span class="dv">100</span><span class="sc">*</span>x, <span class="st">"%"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(bame_profession, <span class="fu">aes</span>(<span class="at">x=</span>BAME, <span class="at">fill=</span>profession))<span class="sc">+</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"BAME distribution by Profession"</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"BAME percentage"</span>,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Density"</span>,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> <span class="st">"Profession"</span>)<span class="sc">+</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)<span class="sc">+</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Sales Staff"</span><span class="ot">=</span> <span class="st">"#33645FFF"</span>, <span class="st">"Professional Service"</span> <span class="ot">=</span> <span class="st">"#9D1B1FFF"</span> ))<span class="sc">+</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> percent_label)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/density-plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:25%;">
+<p><br><br><br><br></p>
+<p><strong>The percentages of BAME employees are lower within “Sales Staff” teams, whereas they are more evenly distributed among “Professional Service” teams.</strong></p>
+</div>
+</div>
+</section>
+<section id="boxplots-with-points" class="level2">
+<h2 class="anchored" data-anchor-id="boxplots-with-points">Boxplots with points</h2>
+<div class="columns">
+<div class="column" style="width:75%;">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom label function</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>percent_label_1 <span class="ot">&lt;-</span> <span class="cf">function</span>(y) {</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(<span class="dv">100</span><span class="sc">*</span>y, <span class="st">"%"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(bame_profession, <span class="fu">aes</span>(<span class="at">x=</span>profession, <span class="at">y=</span> BAME, <span class="at">color =</span> profession))<span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.3</span>)<span class="sc">+</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">title=</span> <span class="st">"BAME representation by Profession"</span>, </span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span> <span class="cn">NULL</span>,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">y=</span> <span class="st">"BAME percentage"</span>)<span class="sc">+</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)<span class="sc">+</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Sales Staff"</span><span class="ot">=</span> <span class="st">"#33645FFF"</span>, <span class="st">"Professional Service"</span> <span class="ot">=</span> <span class="st">"#9D1B1FFF"</span> ))<span class="sc">+</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent_label_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/boxplot-with-points-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:25%;">
+<p><br><br><br></p>
+<p><strong>The distribution of scores of the percentage of BAME employees in the “Professional Service” profession is higher, indicating greater diversity than in the “Sales Staff” profession.</strong></p>
+</div>
+</div>
+</section>
+<section id="how-does-the-distribution-of-bame-employees-vary-across-different-professions-i" class="level2">
+<h2 class="anchored" data-anchor-id="how-does-the-distribution-of-bame-employees-vary-across-different-professions-i">How does the distribution of BAME employees vary across different professions? (I)</h2>
+<ul>
+<li>BAME employees are distributed differently across the two professions. There are more “Sales Staff” teams with a lower percentage of BAME employees, while “Professional Service” teams have a more even distribution.</li>
+<li>It’s essential to note that these findings are based on summary statistics and visual examinations, which may not be highly precise.</li>
+<li>To gain more confidence in comparing BAME representation between the two professions and to deepen our understanding of the organization’s ethnicity dynamics, we will conduct an Independent Samples t-Test.</li>
+</ul>
+</section>
+</section>
+<section id="independent-samples-t-test" class="level1">
+<h1>Independent Samples t-Test</h1>
+<section id="levenes-test-for-equality-of-variances" class="level2">
+<h2 class="anchored" data-anchor-id="levenes-test-for-equality-of-variances">Levene’s Test for Equality of Variances</h2>
+<p>One of the requirements for the independent Samples t-test is the homogeneity of variances (i.e., variances approximately equal across groups).</p>
+<p>However, if this requirement is violated and the sample sizes for each group differ, we can calculate t-test statistics. The independent samples t-test output also includes an approximate t-statistic, which doesn’t assume equal variances across populations. The Welch t-test statistic can be employed when equal variances between populations cannot be assumed.</p>
+<p><strong>The hypotheses</strong></p>
+<ul>
+<li>H0: The population variances of “Sales Staff” and “Professional Service” are equal.</li>
+<li>H1: The population variances of “Sales Staff” and “Professional Service” are not equal.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(bame_profession<span class="sc">$</span>BAME, <span class="at">group =</span> bame_profession<span class="sc">$</span>profession, <span class="at">center=</span>mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Levene's Test for Homogeneity of Variance (center = mean)
+       Df F value    Pr(&gt;F)    
+group   1  35.396 4.141e-09 ***
+      744                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<ul>
+<li><p>The p-value is 4.141e-09, which is less than 0.05. This indicates very strong evidence against the null hypothesis, leading us to reject the null hypothesis of Levene’s Test.</p></li>
+<li><p>This suggests that the variances of the two groups are not equal, meaning the assumption of homogeneity of variances is violated.</p></li>
+</ul>
+</section>
+<section id="independent-samples-t-test-1" class="level2">
+<h2 class="anchored" data-anchor-id="independent-samples-t-test-1">Independent Samples t-Test</h2>
+<ul>
+<li>We want to determine if there is a statistically significant difference between the mean percentages of BAME employees in the “Sales Staff” and “Professional Service” professions within this organization.</li>
+<li>To achieve this, we can employ an Independent Samples t-Test to compare the means of BAME percentages for “Sales Staff” and “Professional Service.”</li>
+</ul>
+<p><strong>The hypotheses</strong></p>
+<ul>
+<li>H0: The difference of the means is equal to 0</li>
+<li>H1: The difference of the means is not equal to 0.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(bame_profession<span class="sc">$</span>BAME <span class="sc">~</span> bame_profession<span class="sc">$</span>profession, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two Sample t-test
+
+data:  bame_profession$BAME by bame_profession$profession
+t = -5.7695, df = 744, p-value = 1.166e-08
+alternative hypothesis: true difference in means between group Sales Staff and group Professional Service is not equal to 0
+95 percent confidence interval:
+ -0.06302979 -0.03102614
+sample estimates:
+         mean in group Sales Staff mean in group Professional Service 
+                        0.09683168                         0.14385965 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(bame_profession<span class="sc">$</span>BAME <span class="sc">~</span> bame_profession<span class="sc">$</span>profession, <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  bame_profession$BAME by bame_profession$profession
+t = -5.6553, df = 640.61, p-value = 2.345e-08
+alternative hypothesis: true difference in means between group Sales Staff and group Professional Service is not equal to 0
+95 percent confidence interval:
+ -0.06335727 -0.03069866
+sample estimates:
+         mean in group Sales Staff mean in group Professional Service 
+                        0.09683168                         0.14385965 </code></pre>
+</div>
+</div>
+<ul>
+<li>The result of Levene’s Test suggests that we should consider using the Welch Two Sample t-test because the variances of the two groups are not equal.</li>
+<li>The p-value is 2.345e-08 for the t-test for unequal variances, which is less than 0.001. Therefore, we can conclude that there is a significant difference in the mean percentage of BAME employees between the two functions.</li>
+</ul>
+</section>
+<section id="how-does-the-distribution-of-bame-employees-vary-across-different-professions-ii" class="level2">
+<h2 class="anchored" data-anchor-id="how-does-the-distribution-of-bame-employees-vary-across-different-professions-ii">How does the distribution of BAME employees vary across different professions? (II)</h2>
+<ul>
+<li>When comparing the “Sales Staff” and “Professional Service” functions, it becomes evident that the mean proportion of BAME staff is significantly lower in “Sales Staff” than in “Professional Service.”</li>
+<li>Specifically, the average proportion of BAME staff in teams within the “Sales Staff” function is 9.7%, while in “Professional Service” teams, it stands at 14.39%.</li>
+<li>A more in-depth analysis reveals that the likelihood of this difference occurring by chance alone is less than 1 in 1,000, suggesting that there is a significant issue within the “Sales Staff” function that requires attention in the organization.</li>
+</ul>
+</section>
+</section>
+<section id="conclusions" class="level1">
+<h1>Conclusions</h1>
+<section id="analyzing-bame-distribution-across-professional-functions" class="level2">
+<h2 class="anchored" data-anchor-id="analyzing-bame-distribution-across-professional-functions">Analyzing BAME distribution across professional functions</h2>
+<ul>
+<li><p>Summary statistics and graphical visualization offer a concise overview of the distribution of BAME employees in the two professions. It’s evident that more “Sales Staff” teams have a lower percentage of BAME employees, while “Professional Service” teams exhibit a more even distribution.</p></li>
+<li><p>The results of the independent samples t-test, with a p-value close to 0, confirm a significant difference in the mean percentage of BAME employees between the two functions. This implies that there is an issue that needs attention within the “Sales Staff” function in the organization.</p></li>
+</ul>
+</section>
+<section id="recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="recommendations">Recommendations</h2>
+<ul>
+<li>According to our analysis, the organization faces challenges in BAME representation across professions, particularly in the “Sales Staff”.</li>
+<li>Further research should be conducted to identify the factors influencing or associated with the diversity disparities between these two teams.</li>
+</ul>
+
+
+</section>
 </section>
 
 </main> <!-- /main -->

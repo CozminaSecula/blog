@@ -15,10 +15,301 @@ This post goes one step further by offering two tools for data analysis, which w
 
 As part of descriptive statistics, summary statistics can provide valuable insights into data sets. It may include essential metrics such as the total number of values, the mean value, and the standard deviation. These statistics provide a clear picture of data trends and distribution, aiding in the interpretation of data patterns. On the other hand, the independent-samples t-test (part of inferential statistics) is employed to compare means between two distinct groups. It helps us investigate whether these two groups differ significantly in a particular dimension. When used together, these tools can reveal intriguing patterns and relationships within data.
 
-The slides will guide you through the utilization of summary statistics and the independent-samples t-test for insightful data analysis.
+The rest of the post will guide you through the utilization of summary statistics and the independent-samples t-test for insightful data analysis.
 
-# Slides
+# Introducing two distinct tools for data analysis with numerical and categorical data using R
 
-<iframe class="slide-deck ar4x3" src="slides1.html">
+-   Summary statistics
+-   Independent samples t-test
 
-</iframe>
+## Case study
+
+-   Focused on diversity and inclusion (D&I)
+-   Sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916)
+-   With data available [here](https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446)
+
+## Data preparation and exploration
+
+-   Packages: `tidyverse`, `kableExtra`, `car`, `paleteer`
+-   Data preparation
+-   Summary statistics
+-   Data visualization
+-   Independent samples t-test
+
+# Problem Statement
+
+## The Goal
+
+A hypothetical company aims to employ scientific methods and procedures to tackle a significant people problem: employee diversity. It recognizes that:
+
+-   **Commercial Perspective**
+
+    -   A more diverse workforce can provide a competitive advantage by enhancing the organization's understanding of its customers, consequently improving overall performance.
+
+-   **People Perspective**
+
+    -   The organization gains access to a broader candidate pool, increases employee engagement, and elevates retention rates.
+
+## The research question
+
+**How does the distribution of Black, Asian, or Minority Ethnic (BAME) employees vary across different professions?**
+
+# Data Preparation and Exploration
+
+## Load packages
+
+```{r}
+#| label: load-packages
+#| echo: true
+#| warning: false
+#| message: false
+
+ library(tidyverse)
+ library(kableExtra)
+ library(car)
+ library(paletteer)
+
+
+```
+
+## Look at the data - The structure
+
+```{r}
+#| label: read-data
+#| echo: true
+#| warning: false
+#| code-fold: true
+
+diversity <- read_csv("diversity2.csv")
+glimpse(diversity)
+
+
+
+```
+
+-   The organization comprises 29,976 employees in two functional areas across the UK, and these employees are organized into 928 teams.
+-   The data set contains 30 variables.
+
+## Variables of interest
+
+-   **BAME:** Percentage of the team comprised of Black, Asian, or Minority Ethnic employees.
+
+-   **Function:** Function 1 = Sales staff (customer-facing roles) or 2 = Professional Service (non-customer-facing roles).
+
+-   The data set contains both variables of interest as numbers.
+
+-   The "BAME" variable is numerical, while the "Function" variable is categorical and needs to be transformed into a factor for analysis.
+
+## Data preparation
+
+-   Create a new variable named "profession" with two levels "Sales Staff" and "Professional Service"
+
+```{r}
+#| label: new-variable-function-as-factor
+#| echo: true
+#| code-fold: true
+
+# Create a new variable named "profession" with two levels "Sales Staff" and "Professional Service"
+diversity <- diversity|>
+  mutate(profession = factor(Function,
+                           levels = c(1:2),
+                           labels = c("Sales Staff", "Professional Service")))
+
+
+# Check levels of the new variable
+diversity|>
+  distinct(diversity$profession)
+
+# Drop "NA" levels as they are not meaningful for the analysis
+diversity_filtered <- diversity|>
+  filter(profession != "NA")|>
+  droplevels()
+
+# Check variable levels after dropping "NA" 
+diversity_filtered|>
+  distinct(profession)
+
+```
+
+-   Create a new data frame "bame_profession" including variables of interest
+
+```{r}
+#| label: new-data-frame-BAME_profession
+#| echo: true
+#| code-fold: true
+
+
+# Creating a new data frame "bame_profession" including variables of interest
+
+bame_profession <- diversity_filtered|>
+  select(BAME, profession)
+
+glimpse(bame_profession)
+```
+
+# Summary statistics
+
+## Measures of center
+
+```{r}
+#| label: mesures-of-center
+#| echo: true
+#| code-fold: true
+
+bame_profession|>
+  group_by(profession)|>
+  summarise(mean=mean(BAME, na.rm = TRUE),
+            median=median(BAME, na.rm = TRUE),
+            iqr=IQR(BAME, na.rm =TRUE),
+            sd=sd(BAME, na.rm = TRUE),
+            n= sum(!is.na(BAME)))|>
+  kable(col.names = c("Profession", "Mean", "Median", "IQR", "Std. Deviation", "Sum"), align = "cccc")
+  
+```
+
+-   404 teams within the "Sales Staff" profession and 342 teams within "Professional Service" profession reported the percentages of BAME.
+
+## Density plot
+
+::: columns
+::: {.column width="75%"}
+```{r}
+#| label: density-plot
+#| echo: true
+#| warning: false
+#| message: false
+#| code-fold: true
+
+# Custom label function
+
+percent_label <- function(x) {
+  paste0(100*x, "%")
+}
+
+ggplot(bame_profession, aes(x=BAME, fill=profession))+
+  geom_density(alpha = 0.5)+
+  labs(title = "BAME distribution by Profession",
+      x = "BAME percentage",
+      y = "Density",
+      fill = "Profession")+
+  theme_minimal(base_size = 14)+
+  scale_fill_manual(values = c("Sales Staff"= "#33645FFF", "Professional Service" = "#9D1B1FFF" ))+
+   scale_x_continuous(labels = percent_label)
+
+```
+:::
+
+::: {.column width="25%"}
+<br><br><br><br>
+
+**The percentages of BAME employees are lower within "Sales Staff" teams, whereas they are more evenly distributed among "Professional Service" teams.**
+:::
+:::
+
+## Boxplots with points
+
+::: columns
+::: {.column width="75%"}
+```{r}
+#| label: boxplot-with-points
+#| echo: true
+#| code-fold: true
+#| warning: false
+#| message: false
+
+# Custom label function
+
+percent_label_1 <- function(y) {
+  paste0(100*y, "%")
+}
+
+ggplot(bame_profession, aes(x=profession, y= BAME, color = profession))+
+  geom_boxplot(width = 0.5)+
+  geom_jitter(width = 0.3)+
+  labs( title= "BAME representation by Profession", 
+        x= NULL,
+        y= "BAME percentage")+
+  theme_minimal(base_size = 14)+
+  scale_color_manual(values = c("Sales Staff"= "#33645FFF", "Professional Service" = "#9D1B1FFF" ))+
+  theme(legend.position = "none")+
+  scale_y_continuous(labels = percent_label_1)
+  
+```
+:::
+
+::: {.column width="25%"}
+<br><br><br>
+
+**The distribution of scores of the percentage of BAME employees in the "Professional Service" profession is higher, indicating greater diversity than in the "Sales Staff" profession.**
+:::
+:::
+
+## How does the distribution of BAME employees vary across different professions? (I)
+
+-   BAME employees are distributed differently across the two professions. There are more "Sales Staff" teams with a lower percentage of BAME employees, while "Professional Service" teams have a more even distribution.
+-   It's essential to note that these findings are based on summary statistics and visual examinations, which may not be highly precise.
+-   To gain more confidence in comparing BAME representation between the two professions and to deepen our understanding of the organization's ethnicity dynamics, we will conduct an Independent Samples t-Test.
+
+# Independent Samples t-Test
+
+## Levene's Test for Equality of Variances
+
+One of the requirements for the independent Samples t-test is the homogeneity of variances (i.e., variances approximately equal across groups).
+
+However, if this requirement is violated and the sample sizes for each group differ, we can calculate t-test statistics. The independent samples t-test output also includes an approximate t-statistic, which doesn't assume equal variances across populations. The Welch t-test statistic can be employed when equal variances between populations cannot be assumed.
+
+**The hypotheses**
+
+-   H0: The population variances of "Sales Staff" and "Professional Service" are equal.
+-   H1: The population variances of "Sales Staff" and "Professional Service" are not equal.
+
+```{r}
+#| label: levene's-test-for-equality-of-variances
+
+leveneTest(bame_profession$BAME, group = bame_profession$profession, center=mean)
+
+```
+
+-   The p-value is 4.141e-09, which is less than 0.05. This indicates very strong evidence against the null hypothesis, leading us to reject the null hypothesis of Levene's Test.
+
+-   This suggests that the variances of the two groups are not equal, meaning the assumption of homogeneity of variances is violated.
+
+## Independent Samples t-Test
+
+-   We want to determine if there is a statistically significant difference between the mean percentages of BAME employees in the "Sales Staff" and "Professional Service" professions within this organization.
+-   To achieve this, we can employ an Independent Samples t-Test to compare the means of BAME percentages for "Sales Staff" and "Professional Service."
+
+**The hypotheses**
+
+-   H0: The difference of the means is equal to 0
+-   H1: The difference of the means is not equal to 0.
+
+```{r}
+#| label: Independent-Samples-t-Test
+
+t.test(bame_profession$BAME ~ bame_profession$profession, var.equal = TRUE)
+t.test(bame_profession$BAME ~ bame_profession$profession, var.equal = FALSE)
+
+```
+
+-   The result of Levene's Test suggests that we should consider using the Welch Two Sample t-test because the variances of the two groups are not equal.
+-   The p-value is 2.345e-08 for the t-test for unequal variances, which is less than 0.001. Therefore, we can conclude that there is a significant difference in the mean percentage of BAME employees between the two functions.
+
+## How does the distribution of BAME employees vary across different professions? (II)
+
+-   When comparing the "Sales Staff" and "Professional Service" functions, it becomes evident that the mean proportion of BAME staff is significantly lower in "Sales Staff" than in "Professional Service."
+-   Specifically, the average proportion of BAME staff in teams within the "Sales Staff" function is 9.7%, while in "Professional Service" teams, it stands at 14.39%.
+-   A more in-depth analysis reveals that the likelihood of this difference occurring by chance alone is less than 1 in 1,000, suggesting that there is a significant issue within the "Sales Staff" function that requires attention in the organization.
+
+# Conclusions
+
+## Analyzing BAME distribution across professional functions
+
+-   Summary statistics and graphical visualization offer a concise overview of the distribution of BAME employees in the two professions. It's evident that more "Sales Staff" teams have a lower percentage of BAME employees, while "Professional Service" teams exhibit a more even distribution.
+
+-   The results of the independent samples t-test, with a p-value close to 0, confirm a significant difference in the mean percentage of BAME employees between the two functions. This implies that there is an issue that needs attention within the "Sales Staff" function in the organization.
+
+## Recommendations
+
+-   According to our analysis, the organization faces challenges in BAME representation across professions, particularly in the "Sales Staff".
+-   Further research should be conducted to identify the factors influencing or associated with the diversity disparities between these two teams.
