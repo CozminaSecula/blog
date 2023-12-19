@@ -2,7 +2,6 @@
 title: "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test"
 description: "Discover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a case study on gender representation in senior roles."
 categories: [frequency tables, chi-squared test, categorical data, quantitative analysis]
-draft: true
 format: 
   revealjs: 
    theme: theme.scss
@@ -37,7 +36,7 @@ execute:
 
 ## Data preparation and exploration
 
--   Packages: `tidyverse`, `kableExtra` 
+-   Packages: `tidyverse`, `kableExtra`
 -   Data preparation and exploration
 -   Creation of cross-tab
 -   Data visualization
@@ -47,8 +46,8 @@ execute:
 
 ## The business needs
 
-:::goal
-:::small
+::: goal
+::: small
 A hypothetical company aims to employ scientific methods and procedures to address a significant people problem: gender diversity.
 :::
 :::
@@ -73,8 +72,7 @@ Are women underrepresented in senior leadership roles within the organization?
 
 ## Look at the data - The structure
 
-:::small
-
+::: small
 ```{r}
 #| label: read-data
 #| echo: true
