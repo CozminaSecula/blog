@@ -25,7 +25,7 @@
     "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#data-preparation-and-exploration",
     "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
     "section": "Data preparation and exploration",
-    "text": "Data preparation and exploration\n\nPackages: tidyverse, kableExtra, car, paleteer\nData preparation\nSummary statistics\nData visualization\nIndependent samples t-test"
+    "text": "Data preparation and exploration\n\nPackages: tidyverse, kableExtra, car, paleteer, DT\nData preparation\nSummary statistics\nData visualization\nIndependent samples t-test"
   },
   {
     "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#the-goal",
@@ -46,7 +46,7 @@
     "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#load-packages",
     "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
     "section": "Load packages",
-    "text": "Load packages\n\n library(tidyverse)\n library(kableExtra)\n library(car)\n library(paletteer)"
+    "text": "Load packages\n\n library(tidyverse)\n library(kableExtra)\n library(car)\n library(paletteer)\n library(DT)"
   },
   {
     "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#look-at-the-data---the-structure",
@@ -67,21 +67,21 @@
     "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#data-preparation",
     "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
     "section": "Data preparation",
-    "text": "Data preparation\n\nCreate a new variable named “profession” with two levels “Sales Staff” and “Professional Service”\n\n\n\nCode\n# Create a new variable named \"profession\" with two levels \"Sales Staff\" and \"Professional Service\"\ndiversity &lt;- diversity|&gt;\n  mutate(profession = factor(Function,\n                           levels = c(1:2),\n                           labels = c(\"Sales Staff\", \"Professional Service\")))\n\n\n# Check levels of the new variable\ndiversity|&gt;\n  distinct(diversity$profession)\n\n\n# A tibble: 3 × 1\n  `diversity$profession`\n  &lt;fct&gt;                 \n1 Professional Service  \n2 Sales Staff           \n3 &lt;NA&gt;                  \n\n\nCode\n# Drop \"NA\" levels as they are not meaningful for the analysis\ndiversity_filtered &lt;- diversity|&gt;\n  filter(profession != \"NA\")|&gt;\n  droplevels()\n\n# Check variable levels after dropping \"NA\" \ndiversity_filtered|&gt;\n  distinct(profession)\n\n\n# A tibble: 2 × 1\n  profession          \n  &lt;fct&gt;               \n1 Professional Service\n2 Sales Staff         \n\n\n\nCreate a new data frame “bame_profession” including variables of interest\n\n\n\nCode\n# Creating a new data frame \"bame_profession\" including variables of interest\n\nbame_profession &lt;- diversity_filtered|&gt;\n  select(BAME, profession)\n\nglimpse(bame_profession)\n\n\nRows: 927\nColumns: 2\n$ BAME       &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ profession &lt;fct&gt; Professional Service, Professional Service, Professional Se…"
+    "text": "Data preparation\n\nCreate a new variable named “profession” with two levels “Sales Staff” and “Professional Service”\n\n\n\nCode\n# Create a new variable named \"profession\" with two levels \"Sales Staff\" and \"Professional Service\"\ndiversity &lt;- diversity|&gt;\n  mutate(profession = factor(Function,\n                           levels = c(1:2),\n                           labels = c(\"Sales Staff\", \"Professional Service\")))\n\n\n# Check levels of the new variable\ndiversity|&gt;\n  distinct(diversity$profession)\n\n\n# A tibble: 3 × 1\n  `diversity$profession`\n  &lt;fct&gt;                 \n1 Professional Service  \n2 Sales Staff           \n3 &lt;NA&gt;                  \n\n\nCode\n# Drop \"NA\" levels as they are not meaningful for the analysis\ndiversity_filtered &lt;- diversity|&gt;\n  filter(profession != \"NA\")|&gt;\n  droplevels()\n\n# Check variable levels after dropping \"NA\" \ndiversity_filtered|&gt;\n  distinct(profession)\n\n\n# A tibble: 2 × 1\n  profession          \n  &lt;fct&gt;               \n1 Professional Service\n2 Sales Staff         \n\n\n\nCreate a new data frame “bame_profession” including variables of interest\n\n\n\nCode\n# Creating a new data frame \"bame_profession\" including variables of interest\n\nbame_profession &lt;- diversity_filtered|&gt;\n  select(BAME, profession)\n\ndatatable(bame_profession)"
   },
   {
     "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#measures-of-center",
     "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#measures-of-center",
     "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
     "section": "Measures of center",
-    "text": "Measures of center\n\n\nCode\nbame_profession|&gt;\n  group_by(profession)|&gt;\n  summarise(mean=mean(BAME, na.rm = TRUE),\n            median=median(BAME, na.rm = TRUE),\n            iqr=IQR(BAME, na.rm =TRUE),\n            sd=sd(BAME, na.rm = TRUE),\n            n= sum(!is.na(BAME)))|&gt;\n  kable(col.names = c(\"Profession\", \"Mean\", \"Median\", \"IQR\", \"Std. Deviation\", \"Sum\"), align = \"cccc\")\n\n\n\n\n\nProfession\nMean\nMedian\nIQR\nStd. Deviation\nSum\n\n\n\n\nSales Staff\n0.0968317\n0.05\n0.09\n0.0976745\n404\n\n\nProfessional Service\n0.1438596\n0.10\n0.16\n0.1247931\n342\n\n\n\n\n\n\n\n\n404 teams within the “Sales Staff” profession and 342 teams within “Professional Service” profession reported the percentages of BAME."
+    "text": "Measures of center\n\n\nCode\nbame_profession|&gt;\n  group_by(profession)|&gt;\n  summarise(mean=mean(BAME, na.rm = TRUE),\n            median=median(BAME, na.rm = TRUE),\n            iqr=IQR(BAME, na.rm =TRUE),\n            sd=sd(BAME, na.rm = TRUE),\n            n= sum(!is.na(BAME)))|&gt;\n  kable(col.names = c(\"Profession\", \"Mean\", \"Median\", \"IQR\", \"Std. Deviation\", \"Sum\"), align = \"cccc\")\n\n\n\n\n\nProfession\nMean\nMedian\nIQR\nStd. Deviation\nSum\n\n\n\n\nSales Staff\n0.0968317\n0.05\n0.09\n0.0976745\n404\n\n\nProfessional Service\n0.1438596\n0.10\n0.16\n0.1247931\n342\n\n\n\n\n\n\n\n\n404 teams within the “Sales Staff” profession and 342 teams within “Professional Service” profession reported the percentages of BAME.\nNote the difference between the mean and median of the percentage of BAME for each profession category."
   },
   {
     "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#density-plot",
     "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#density-plot",
     "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
     "section": "Density plot",
-    "text": "Density plot\n\n\n\n\nCode\n# Custom label function\n\npercent_label &lt;- function(x) {\n  paste0(100*x, \"%\")\n}\n\nggplot(bame_profession, aes(x=BAME, fill=profession))+\n  geom_density(alpha = 0.5)+\n  labs(title = \"BAME distribution by Profession\",\n      x = \"BAME percentage\",\n      y = \"Density\",\n      fill = \"Profession\")+\n  theme_minimal(base_size = 14)+\n  scale_fill_manual(values = c(\"Sales Staff\"= \"#33645FFF\", \"Professional Service\" = \"#9D1B1FFF\" ))+\n   scale_x_continuous(labels = percent_label)\n\n\n\n\n\n\n\n\n\n\n\nThe percentages of BAME employees are lower within “Sales Staff” teams, whereas they are more evenly distributed among “Professional Service” teams."
+    "text": "Density plot\n\n\n\n\nCode\n# Custom label function\n\npercent_label &lt;- function(x) {\n  paste0(100*x, \"%\")\n}\n\nggplot(bame_profession, aes(x=BAME, fill=profession))+\n  geom_density(alpha = 0.5)+\n  labs(title = \"BAME distribution by Profession\",\n      x = \"BAME percentage\",\n      y = \"Density\",\n      fill = \"Profession\")+\n  theme_minimal(base_size = 14)+\n  theme(panel.grid.minor = element_blank(),\n        axis.text.y = element_blank())+\n  scale_fill_manual(values = c(\"Sales Staff\"= \"#33645FFF\", \"Professional Service\" = \"#9D1B1FFF\" ))+\n   scale_x_continuous(labels = percent_label)\n\n\n\n\n\n\n\n\n\n\n\nThe percentages of BAME employees are lower within “Sales Staff” teams compared to “Professional Service” teams."
   },
   {
     "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#boxplots-with-points",
@@ -361,7 +361,7 @@
     "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#data-preparation-and-exploration",
     "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
     "section": "Data preparation and exploration",
-    "text": "Data preparation and exploration\n\nPackages: tidyverse, kableExtra\nData preparation and exploration\nCreation of cross-tab\nData visualization\nChi-squared test"
+    "text": "Data preparation and exploration\n\nPackages: tidyverse, kableExtra, DT\nData preparation and exploration\nCreation of cross-tab\nData visualization\nChi-squared test"
   },
   {
     "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#the-business-needs",
@@ -396,14 +396,14 @@
     "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#variables-of-interest",
     "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
     "section": "Variables of interest",
-    "text": "Variables of interest\n\n\n\n\n\nLevel\nJob Grade\n\n\n\n\n1\nClerical/Officer\n\n\n2\nAdministrator/Assistant\n\n\n3\nGraduate/Trainee Consultant\n\n\n4\nConsultant\n\n\n5\nSenior Consultant\n\n\n6\nManaging Consultant\n\n\n7\nPrincipal Consultant\n\n\n8\nPartner\n\n\n\n\n\n\n\nLevel\nGender\n\n\n\n\n1\nFemale\n\n\n2\nMale"
+    "text": "Variables of interest\n\nTo answer the research question, the variables of interest are: JobGrade and Gender.\n\n\n\n\n\n\nLevel\nJob Grade\n\n\n\n\n1\nClerical/Officer\n\n\n2\nAdministrator/Assistant\n\n\n3\nGraduate/Trainee Consultant\n\n\n4\nConsultant\n\n\n5\nSenior Consultant\n\n\n6\nManaging Consultant\n\n\n7\nPrincipal Consultant\n\n\n8\nPartner\n\n\n\n\n\n\n\nLevel\nGender\n\n\n\n\n1\nFemale\n\n\n2\nMale"
   },
   {
     "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#data-preparation",
     "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#data-preparation",
     "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
     "section": "Data preparation",
-    "text": "Data preparation\n\nTransform variables of interest gender and jobgrade by replacing numerical values with descriptive labels for both variables.\n\n\n\nCode\n# create new variables \"gender\" and \"jobgrade\"\ndiversity &lt;- diversity|&gt;\n  mutate(gender= factor(Gender,\n                        levels= c(1:2),\n                        labels= c(\"Female\", \"Male\")),\n         jobgrade= factor(JobGrade,\n                          levels= c(1:8),\n                          labels= c(\"Clerical/Officer\", \"Administrator/Assistant\", \"Graduate/Trainee Consultant\", \"Consultant\", \"Senior Consultant\", \"Managing Consultant\", \"Principal Consultant\", \"Partner\")))\n\n\n\nDetect and rectify inaccuracies in the data\n\n\n\nCode\n# variables' levels\ndiversity|&gt;\n  distinct(gender, jobgrade)\n\n# filter and drop \"NA\" levels and name the new data frame \"diversity1\"\ndiversity1 &lt;- diversity|&gt;\n  filter(gender!=\"NA\")|&gt;\n  droplevels()\n\n#variables' levels filtered\ndiversity1|&gt;\n  distinct(gender, jobgrade)"
+    "text": "Data preparation\n\nTransform variables of interest gender and jobgrade by replacing numerical values with descriptive labels for both variables.\n\n\n\nCode\n# create new variables \"gender\" and \"jobgrade\"\ndiversity &lt;- diversity|&gt;\n  mutate(gender= factor(Gender,\n                        levels= c(1:2),\n                        labels= c(\"Female\", \"Male\")),\n         jobgrade= factor(JobGrade,\n                          levels= c(1:8),\n                          labels= c(\"Clerical/Officer\", \"Administrator/Assistant\", \"Graduate/Trainee Consultant\", \"Consultant\", \"Senior Consultant\", \"Managing Consultant\", \"Principal Consultant\", \"Partner\")))\n\n\n\nDetect and rectify inaccuracies in the data\n\n\n\nCode\n# variables' levels\ndiversity|&gt;\n  distinct(gender, jobgrade)\n\n# filter and drop \"NA\" levels and name the new data frame \"diversity1\"\ndiversity1 &lt;- diversity|&gt;\n  filter(gender!=\"NA\")|&gt;\n  droplevels()\n\n#variables' levels filtered\ndiversity1|&gt;\n  distinct(gender, jobgrade)\n\n\n\nCreate a cross-tab with data for the two variables\n\n\n\nCode\n# cross-tab; count and make a table for \"gender\" and \"jobgrade\" data\ndiversity1|&gt;\n  count(gender, jobgrade)|&gt;\n  pivot_wider(names_from = gender, values_from = n)|&gt;\n  kable(col.names = c(\"JobGrade\", \"Female\", \"Male\"),\n        align = \"lrr\")\n\n\n\n\n\nJobGrade\nFemale\nMale\n\n\n\n\nClerical/Officer\n31\n8\n\n\nAdministrator/Assistant\n227\n116\n\n\nGraduate/Trainee Consultant\n160\n103\n\n\nConsultant\n139\n104\n\n\nSenior Consultant\n98\n152\n\n\nManaging Consultant\n68\n171\n\n\nPrincipal Consultant\n19\n62\n\n\nPartner\n4\n29\n\n\n\n\n\n\n\n\nProportions of gender within each jobgrade\n\n\n\nCode\ndiversity1|&gt;\n  count(gender, jobgrade)|&gt;\n  group_by(jobgrade)|&gt;\n  mutate(prop= round(n/sum(n)*100))|&gt;\n  pivot_wider(id_cols = jobgrade, names_from = gender, values_from = prop)|&gt;\n  kable(col.names = c(\"Job Grade\", \"Female (%)\", \"Male (%)\"),\n        align = \"lrr\")\n\n\n\n\n\nJob Grade\nFemale (%)\nMale (%)\n\n\n\n\nClerical/Officer\n79\n21\n\n\nAdministrator/Assistant\n66\n34\n\n\nGraduate/Trainee Consultant\n61\n39\n\n\nConsultant\n57\n43\n\n\nSenior Consultant\n39\n61\n\n\nManaging Consultant\n28\n72\n\n\nPrincipal Consultant\n23\n77\n\n\nPartner\n12\n88"
   },
   {
     "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#cross-tab",
@@ -424,7 +424,7 @@
     "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#are-women-underrepresented-in-senior-leadership-roles-within-the-organization",
     "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
     "section": "Are women underrepresented in senior leadership roles within the organization?",
-    "text": "Are women underrepresented in senior leadership roles within the organization?\nUp to this point, the data reveal a clear pattern: males are more common in senior roles, while females tend to occupy junior positions.\n\n\nCode\n# Custom label function\n\npercent_label &lt;- function(x) {\n  paste0(100*x, \"%\")\n}\n\n\nggplot(diversity1, aes(x=jobgrade, fill=gender))+\n  geom_bar(position = \"fill\", width = 0.7)+\n  labs(title = \"Gender by Job Grade\",\n      x = \"Job Grade\",\n      y = \"Proportions\",\n      fill= \"Gender\")+\n  theme_minimal(base_size = 14)+\n  theme(plot.background = element_blank(),\n        panel.grid = element_blank())+\n  scale_fill_manual(values = c(\"Female\" = \"#00589b\", \"Male\"= \"#ccddeb\"))+\n   scale_y_continuous(labels = percent_label, breaks = seq(0, 1, 0.25))+\n  coord_flip()"
+    "text": "Are women underrepresented in senior leadership roles within the organization?\n\nUp to this point, the data reveal a clear pattern: males are more common in senior roles, while females tend to occupy junior positions.\n\n\n\nCode\n# Custom label function\n\npercent_label &lt;- function(x) {\n  paste0(100*x, \"%\")\n}\n\n\nggplot(diversity1, aes(x=jobgrade, fill=gender))+\n  geom_bar(position = \"fill\", width = 0.7)+\n  labs(title = \"Gender by Job Grade\",\n      x = \"Job Grade\",\n      y = \"Proportions\",\n      fill= \"Gender\")+\n  theme_minimal(base_size = 14)+\n  theme(plot.background = element_blank(),\n        panel.grid = element_blank())+\n  scale_fill_manual(values = c(\"Female\" = \"#00589b\", \"Male\"= \"#ccddeb\"))+\n   scale_y_continuous(labels = percent_label, breaks = seq(0, 1, 0.25))+\n  coord_flip()"
   },
   {
     "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#does-this-organization-have-a-gender-diversity-issue",
@@ -495,5 +495,33 @@
     "title": "Creating a Dashboard with Quarto",
     "section": "Finalizing and Sharing the Dashboard",
     "text": "Finalizing and Sharing the Dashboard\nOnce your dashboard is done, you may want to share it with others. I hosted the dashboard using GitHub Pages. In the GitHub repository for your dashboard, go to ‘Settings’ and then ‘Pages.’ Select the branch and folder of your dashboard’s index.html file, click ‘Save,’ and you’ll get a URL to display your work. Here’s the final link for this dashboard: https://cozminasecula.github.io/dashboard/."
+  },
+  {
+    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#load-packages",
+    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#load-packages",
+    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
+    "section": "Load packages",
+    "text": "Load packages\n\n library(tidyverse)\n library(kableExtra)\n library(DT)"
+  },
+  {
+    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#read-the-data",
+    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#read-the-data",
+    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
+    "section": "Read the data",
+    "text": "Read the data\n\n\nCode\ndiversity &lt;- read_csv(\"diversity1.csv\")\ndatatable(diversity, options = list(dom = 'ftp', paging = TRUE), filter = \"top\")\n\n\n\n\n\n\n\n\nThe organization, a management consulting firm, has 1.493 employees (1.493 observations).\nThe data set contains 11 variables.\nData type: numeric for all variables."
+  },
+  {
+    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#read-the-data",
+    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#read-the-data",
+    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
+    "section": "Read the data",
+    "text": "Read the data\n\n\nCode\ndiversity &lt;- read_csv(\"diversity2.csv\")\n\ndatatable(diversity, options = list(dom = 'ftp', paging = TRUE), filter = \"top\")\n\n\n\n\n\n\n\n\nThe organization comprises 29,976 employees in two functional areas across the UK, and these employees are organized into 928 teams.\nThe data set contains 30 variables."
+  },
+  {
+    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#recommendation",
+    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#recommendation",
+    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
+    "section": "Recommendation",
+    "text": "Recommendation\n\nAccording to our analysis, the organization faces challenges in BAME representation across professions, particularly in the “Sales Staff”.\nFurther research should be conducted to identify the factors influencing or associated with the diversity disparities between these two teams."
   }
 ]

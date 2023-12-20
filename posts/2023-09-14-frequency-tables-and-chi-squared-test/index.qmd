@@ -28,15 +28,13 @@ The rest of this post will guide you through the utilization of frequency tables
 
 ## Data preparation and exploration
 
--   Packages: `tidyverse`, `kableExtra`
+-   Packages: `tidyverse`, `kableExtra`, `DT`
 -   Data preparation and exploration
 -   Creation of cross-tab
 -   Data visualization
 -   Chi-squared test
 
 # Problem Statement
-
-## The business needs
 
 A hypothetical company aims to employ scientific methods and procedures to address a significant people problem: gender diversity.
 
@@ -48,9 +46,9 @@ A hypothetical company aims to employ scientific methods and procedures to addre
 
     -   The organization wants to assess whether it maintains gender balance by providing positive role models for younger employees.
 
-## The research question
+# Research question
 
-**Are women underrepresented in senior leadership roles within the organization?**
+> **Are women underrepresented in senior leadership roles within the organization?**
 
 # Data Preparation and Exploration
 
@@ -62,25 +60,34 @@ A hypothetical company aims to employ scientific methods and procedures to addre
 #| warning: false
  library(tidyverse)
  library(kableExtra)
+ library(DT)
 ```
 
-## Look at the data - The structure
+## Read the data
 
 ```{r}
 #| label: read-data
 #| echo: true
 #| warning: false
+#| code-fold: true
 
 diversity <- read_csv("diversity1.csv")
-glimpse(diversity)
+datatable(diversity, options = list(dom = 'ftp', paging = TRUE), filter = "top")
+
 
 ```
 
--   The organization, a management consulting firm, has 1,493 employees.
--   The data set contains 11 variables.
--   Data type (in the data set): numeric for all variables.
+<br>
+ 
+ -   The organization, a management consulting firm, has 1.493 employees (1.493 observations).
+
+ -   The data set contains 11 variables.
+
+ -   Data type: numeric for all variables.
 
 ## Variables of interest
+
+-   To answer the research question, the variables of interest are: **JobGrade** and **Gender**.
 
 ::: columns
 ::: {.column width="65%"}
@@ -152,7 +159,7 @@ diversity1|>
 
 ```
 
-## Cross-tab
+-   Create a cross-tab with data for the two variables
 
 ```{r}
 #| label: cross-tab
@@ -168,7 +175,7 @@ diversity1|>
         align = "lrr")
 ```
 
-## Proportions of gender within each jobgrade
+-   Proportions of gender within each jobgrade
 
 ```{r}
 #| label: proportions
@@ -191,7 +198,7 @@ diversity1|>
 
 ## Are women underrepresented in senior leadership roles within the organization?
 
-Up to this point, the data reveal a clear pattern: males are more common in senior roles, while females tend to occupy junior positions.
+> **Up to this point, the data reveal a clear pattern: males are more common in senior roles, while females tend to occupy junior positions.**
 
 ```{r}
 #| label: graph II
@@ -258,7 +265,7 @@ chisq.test(cross_tab)
 -   This result indicates a statistically significant association between gender and job grade.
 -   It suggests that certain factors are influencing the observed distribution of genders within job grades.
 
-# Conclusions
+# Conclusion
 
 ## Analyzing gender distribution across job grades
 

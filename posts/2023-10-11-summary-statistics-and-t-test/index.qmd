@@ -30,15 +30,13 @@ The rest of the post will guide you through the utilization of summary statistic
 
 ## Data preparation and exploration
 
--   Packages: `tidyverse`, `kableExtra`, `car`, `paleteer`
+-   Packages: `tidyverse`, `kableExtra`, `car`, `paleteer`, `DT`
 -   Data preparation
 -   Summary statistics
 -   Data visualization
 -   Independent samples t-test
 
 # Problem Statement
-
-## The Goal
 
 A hypothetical company aims to employ scientific methods and procedures to tackle a significant people problem: employee diversity. It recognizes that:
 
@@ -50,9 +48,9 @@ A hypothetical company aims to employ scientific methods and procedures to tackl
 
     -   The organization gains access to a broader candidate pool, increases employee engagement, and elevates retention rates.
 
-## The research question
+# Research question
 
-**How does the distribution of Black, Asian, or Minority Ethnic (BAME) employees vary across different professions?**
+> **How does the distribution of Black, Asian, or Minority Ethnic (BAME) employees vary across different professions?**
 
 # Data Preparation and Exploration
 
@@ -68,11 +66,12 @@ A hypothetical company aims to employ scientific methods and procedures to tackl
  library(kableExtra)
  library(car)
  library(paletteer)
+ library(DT)
 
 
 ```
 
-## Look at the data - The structure
+## Read the data
 
 ```{r}
 #| label: read-data
@@ -81,13 +80,16 @@ A hypothetical company aims to employ scientific methods and procedures to tackl
 #| code-fold: true
 
 diversity <- read_csv("diversity2.csv")
-glimpse(diversity)
 
+datatable(diversity, options = list(dom = 'ftp', paging = TRUE), filter = "top")
 
 
 ```
 
+<br>
+
 -   The organization comprises 29,976 employees in two functional areas across the UK, and these employees are organized into 928 teams.
+
 -   The data set contains 30 variables.
 
 ## Variables of interest
@@ -144,7 +146,7 @@ diversity_filtered|>
 bame_profession <- diversity_filtered|>
   select(BAME, profession)
 
-glimpse(bame_profession)
+datatable(bame_profession)
 ```
 
 # Summary statistics
@@ -168,6 +170,8 @@ bame_profession|>
 ```
 
 -   404 teams within the "Sales Staff" profession and 342 teams within "Professional Service" profession reported the percentages of BAME.
+
+- Note the difference between the mean and median of the percentage of BAME for each profession category.
 
 ## Density plot
 
@@ -193,6 +197,8 @@ ggplot(bame_profession, aes(x=BAME, fill=profession))+
       y = "Density",
       fill = "Profession")+
   theme_minimal(base_size = 14)+
+  theme(panel.grid.minor = element_blank(),
+        axis.text.y = element_blank())+
   scale_fill_manual(values = c("Sales Staff"= "#33645FFF", "Professional Service" = "#9D1B1FFF" ))+
    scale_x_continuous(labels = percent_label)
 
@@ -202,7 +208,7 @@ ggplot(bame_profession, aes(x=BAME, fill=profession))+
 ::: {.column width="25%"}
 <br><br><br><br>
 
-**The percentages of BAME employees are lower within "Sales Staff" teams, whereas they are more evenly distributed among "Professional Service" teams.**
+**The percentages of BAME employees are lower within "Sales Staff" teams compared to "Professional Service" teams.**
 :::
 :::
 
@@ -301,7 +307,7 @@ t.test(bame_profession$BAME ~ bame_profession$profession, var.equal = FALSE)
 -   Specifically, the average proportion of BAME staff in teams within the "Sales Staff" function is 9.7%, while in "Professional Service" teams, it stands at 14.39%.
 -   A more in-depth analysis reveals that the likelihood of this difference occurring by chance alone is less than 1 in 1,000, suggesting that there is a significant issue within the "Sales Staff" function that requires attention in the organization.
 
-# Conclusions
+# Conclusion
 
 ## Analyzing BAME distribution across professional functions
 
@@ -309,7 +315,7 @@ t.test(bame_profession$BAME ~ bame_profession$profession, var.equal = FALSE)
 
 -   The results of the independent samples t-test, with a p-value close to 0, confirm a significant difference in the mean percentage of BAME employees between the two functions. This implies that there is an issue that needs attention within the "Sales Staff" function in the organization.
 
-## Recommendations
+## Recommendation
 
 -   According to our analysis, the organization faces challenges in BAME representation across professions, particularly in the "Sales Staff".
 -   Further research should be conducted to identify the factors influencing or associated with the diversity disparities between these two teams.
