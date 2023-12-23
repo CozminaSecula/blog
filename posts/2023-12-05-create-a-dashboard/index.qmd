@@ -31,13 +31,13 @@ The [code](https://github.com/CozminaSecula/dashboard/blob/master/index.qmd) for
 
 # Goals and Data Set
 
-This project had two goals. Firstly, I aimed to segment a data set into various categories to investigate how compensation differs based on factors like an employee's role, department, experience level, and demographics. Secondly, I wanted to craft a customized dashboard using R and its packages, enabling personalized visualizations tailored to specific needs.
+The project had two goals. Firstly, I aimed to segment a data set into various categories to investigate how compensation differs based on factors like an employee's role, department, experience level, and demographics. Secondly, I wanted to craft a customized dashboard using R and its packages, enabling personalized visualizations tailored to specific needs.
 
 The data set is reported in the book [The Fundamentals of People Analytics With Applications in R](https://link.springer.com/book/10.1007/978-3-031-28674-2). It's named `employee` and is available in the `peopleanalytics` package including information about both current and former employees, with field definitions provided in the book's data dictionary.
 
 # Setting Up the Project
 
-To initiate the project, I created a new Quarto document in R Studio. It's important to note that Dashboards are new in the upcoming 1.4 release of Quarto and are still under active development. Before beginning, I ensured I had the latest pre-release version of Quarto installed, following the recommendations from the Quarto website. Within the Quarto document, I selected the dashboard format and specified layout components.
+To initiate the project, I created a new Quarto document in R Studio. It's important to note that dashboards are new in the upcoming 1.4 release of Quarto and are still under active development. Before beginning, I ensured I had the latest pre-release version of Quarto installed, following the recommendations from the Quarto website. Within the Quarto document, I selected the dashboard format and specified layout components.
 
 # Reading and Preparing the Data
 
@@ -55,7 +55,7 @@ library(scales)
 
 ```
 
-Initially, I explored the data set to select variables essential for the analysis. This data set contains information about 1470 employees and 36 variables. To learn more about the data see [here](https://link.springer.com/chapter/10.1007/978-3-031-28674-2_1). For this project, focusing on compensation differences based on roles, departments, experience levels, and demographics, I selected 7 specific variables see [here](https://cozminasecula.github.io/dashboard/#data). The primary questions guiding this analysis were:
+The primary questions guiding this analysis were:
 
 -   How does the last salary increase vary across departments, roles, experience levels, generations, and genders?
 
@@ -63,9 +63,11 @@ Initially, I explored the data set to select variables essential for the analysi
 
 -   How does compensation compare across different departments, roles, experience levels, generations, and genders?
 
+Initially, I explored the data set to select variables essential for the analysis. The data set contains information about 1470 employees and 36 variables. To learn more about the data see [here](https://link.springer.com/chapter/10.1007/978-3-031-28674-2_1). For this project, focusing on compensation differences based on roles, departments, experience levels, and demographics, I selected 7 specific variables see [here](https://cozminasecula.github.io/dashboard/#data). 
+
 # Data Exploration
 
-Employing base R and the `tidyverse` package, I addressed initial questions related to the data set. I created new columns and variables to explore the data and then created graphics to visualize it. As this part is not central to this post, I will not delve into details.If you are interested in more details, you can find the code in [this file on GitHub](https://github.com/CozminaSecula/dashboard/blob/master/index.qmd).
+Employing base R and the `tidyverse` package, I addressed initial questions related to the data set. I created new columns and variables to explore the data and then graphics to visualize it. As this part is not central to this post, I will not delve into details. If you are interested in more details, you can find the code in [this file on GitHub](https://github.com/CozminaSecula/dashboard/blob/master/index.qmd).
 
 # Creating a Dashboard
 

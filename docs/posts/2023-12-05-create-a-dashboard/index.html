@@ -263,12 +263,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The <a href="https://github.com/CozminaSecula/dashboard/blob/master/index.qmd">code</a> for the dashboard can be accessed on GitHub.</p>
 <section id="goals-and-data-set" class="level1">
 <h1>Goals and Data Set</h1>
-<p>This project had two goals. Firstly, I aimed to segment a data set into various categories to investigate how compensation differs based on factors like an employee’s role, department, experience level, and demographics. Secondly, I wanted to craft a customized dashboard using R and its packages, enabling personalized visualizations tailored to specific needs.</p>
+<p>The project had two goals. Firstly, I aimed to segment a data set into various categories to investigate how compensation differs based on factors like an employee’s role, department, experience level, and demographics. Secondly, I wanted to craft a customized dashboard using R and its packages, enabling personalized visualizations tailored to specific needs.</p>
 <p>The data set is reported in the book <a href="https://link.springer.com/book/10.1007/978-3-031-28674-2">The Fundamentals of People Analytics With Applications in R</a>. It’s named <code>employee</code> and is available in the <code>peopleanalytics</code> package including information about both current and former employees, with field definitions provided in the book’s data dictionary.</p>
 </section>
 <section id="setting-up-the-project" class="level1">
 <h1>Setting Up the Project</h1>
-<p>To initiate the project, I created a new Quarto document in R Studio. It’s important to note that Dashboards are new in the upcoming 1.4 release of Quarto and are still under active development. Before beginning, I ensured I had the latest pre-release version of Quarto installed, following the recommendations from the Quarto website. Within the Quarto document, I selected the dashboard format and specified layout components.</p>
+<p>To initiate the project, I created a new Quarto document in R Studio. It’s important to note that dashboards are new in the upcoming 1.4 release of Quarto and are still under active development. Before beginning, I ensured I had the latest pre-release version of Quarto installed, following the recommendations from the Quarto website. Within the Quarto document, I selected the dashboard format and specified layout components.</p>
 </section>
 <section id="reading-and-preparing-the-data" class="level1">
 <h1>Reading and Preparing the Data</h1>
@@ -281,16 +281,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtext)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Initially, I explored the data set to select variables essential for the analysis. This data set contains information about 1470 employees and 36 variables. To learn more about the data see <a href="https://link.springer.com/chapter/10.1007/978-3-031-28674-2_1">here</a>. For this project, focusing on compensation differences based on roles, departments, experience levels, and demographics, I selected 7 specific variables see <a href="https://cozminasecula.github.io/dashboard/#data">here</a>. The primary questions guiding this analysis were:</p>
+<p>The primary questions guiding this analysis were:</p>
 <ul>
 <li><p>How does the last salary increase vary across departments, roles, experience levels, generations, and genders?</p></li>
 <li><p>How is compensation distributed across different departments, roles, experience levels, generations, and genders?</p></li>
 <li><p>How does compensation compare across different departments, roles, experience levels, generations, and genders?</p></li>
 </ul>
+<p>Initially, I explored the data set to select variables essential for the analysis. The data set contains information about 1470 employees and 36 variables. To learn more about the data see <a href="https://link.springer.com/chapter/10.1007/978-3-031-28674-2_1">here</a>. For this project, focusing on compensation differences based on roles, departments, experience levels, and demographics, I selected 7 specific variables see <a href="https://cozminasecula.github.io/dashboard/#data">here</a>.</p>
 </section>
 <section id="data-exploration" class="level1">
 <h1>Data Exploration</h1>
-<p>Employing base R and the <code>tidyverse</code> package, I addressed initial questions related to the data set. I created new columns and variables to explore the data and then created graphics to visualize it. As this part is not central to this post, I will not delve into details.If you are interested in more details, you can find the code in <a href="https://github.com/CozminaSecula/dashboard/blob/master/index.qmd">this file on GitHub</a>.</p>
+<p>Employing base R and the <code>tidyverse</code> package, I addressed initial questions related to the data set. I created new columns and variables to explore the data and then graphics to visualize it. As this part is not central to this post, I will not delve into details. If you are interested in more details, you can find the code in <a href="https://github.com/CozminaSecula/dashboard/blob/master/index.qmd">this file on GitHub</a>.</p>
 </section>
 <section id="creating-a-dashboard" class="level1">
 <h1>Creating a Dashboard</h1>
