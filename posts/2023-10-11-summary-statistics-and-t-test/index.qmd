@@ -146,7 +146,6 @@ diversity_filtered|>
 bame_profession <- diversity_filtered|>
   select(BAME, profession)
 
-datatable(bame_profession)
 ```
 
 # Summary statistics
@@ -162,27 +161,88 @@ bame_profession|>
   group_by(profession)|>
   summarise(mean=mean(BAME, na.rm = TRUE),
             median=median(BAME, na.rm = TRUE),
-            iqr=IQR(BAME, na.rm =TRUE),
-            sd=sd(BAME, na.rm = TRUE),
             n= sum(!is.na(BAME)))|>
-  kable(col.names = c("Profession", "Mean", "Median", "IQR", "Std. Deviation", "Sum"), align = "cccc")
+  kable(col.names = c("Profession", "Mean", "Median", "Sum"), align = "cccc")
   
 ```
 
 -   404 teams within the "Sales Staff" profession and 342 teams within "Professional Service" profession reported the percentages of BAME.
 
-- Note the difference between the mean and median of the percentage of BAME for each profession category.
+-   Note the difference between the mean and median of the percentage of BAME for each profession category.
 
-## Density plot
 
-::: columns
-::: {.column width="75%"}
+### What is the distribution of BAME employees for all teams and professionals across organization?
+
+```{r}
+#| label: histogram
+#| echo: true
+#| warning: false
+#| message: false
+#| code-fold: true
+
+# Custom label function
+
+percent_label_1 <- function(x) {
+  paste0(100*x, "%")
+}
+
+ggplot(bame_profession, aes(x=BAME))+
+  geom_bar()+
+  scale_x_binned(labels = percent_label_1)+
+  theme_minimal(base_size = 12)+
+   theme(legend.position = "none")+
+     labs(title = "The most frequent values (around 300 of teams) fall into the range \nbetween 0 - 5%. As the level of percentage increase \nthe frequency decrease.",
+          subtitle = "Distribution of BAME employees",
+          x= "BAME employees",
+          y= "Count")
+
+
+
+```
+
+
+The distribution has a long tail on the right side, and we can say that it is skewed to the right. When the data is skewed, the median is a better measure of the central tendency. Next, we will plot a box plot for each professional category. The box plot shows how much the data is spread out.
+
+### What is the distribution of BAME employees within the two professions?
+
+
 ```{r}
 #| label: density-plot
 #| echo: true
 #| warning: false
 #| message: false
 #| code-fold: true
+
+# Custom label function
+
+percent_label_1 <- function(y) {
+  paste0(100*y, "%")
+}
+
+ggplot(bame_profession, aes(x=profession, y=BAME, color=profession))+
+  geom_violin()+
+  geom_boxplot(width=0.1, color="black", alpha=0.2)+
+  theme_minimal(base_size = 12)+
+  scale_color_manual(values = c("Sales Staff"= "#33645FFF", "Professional Service" = "#9D1B1FFF" ))+
+  theme(legend.position = "none")+
+        scale_y_continuous(labels = percent_label_1)+
+  labs( title = "There is greater BAME distribution in the Professional Service \nprofession compared with the Sales profession.", 
+        subtitle = "BAME percentage by Profession", 
+        x= NULL,
+        y= "BAME percentage")
+
+```
+
+The box plot for the "Professional Service" profession has a longer length than the box plot for "Sales Staff". This indicates that the data is more dispersed and there is greater diversity within the "Professional Service" profession.
+
+The following density plot shows that BAME employees are significantly underrepresented in sales staff compared to professional service teams.
+
+```{r}
+#| label: density plot
+#| echo: true
+#| code-fold: true
+#| warning: false
+#| message: false
 
 # Custom label function
 
@@ -196,59 +256,14 @@ ggplot(bame_profession, aes(x=BAME, fill=profession))+
       x = "BAME percentage",
       y = "Density",
       fill = "Profession")+
-  theme_minimal(base_size = 14)+
+  theme_minimal(base_size = 12)+
   theme(panel.grid.minor = element_blank(),
         axis.text.y = element_blank())+
   scale_fill_manual(values = c("Sales Staff"= "#33645FFF", "Professional Service" = "#9D1B1FFF" ))+
    scale_x_continuous(labels = percent_label)
-
-```
-:::
-
-::: {.column width="25%"}
-<br><br><br><br>
-
-**The percentages of BAME employees are lower within "Sales Staff" teams compared to "Professional Service" teams.**
-:::
-:::
-
-## Boxplots with points
-
-::: columns
-::: {.column width="75%"}
-```{r}
-#| label: boxplot-with-points
-#| echo: true
-#| code-fold: true
-#| warning: false
-#| message: false
-
-# Custom label function
-
-percent_label_1 <- function(y) {
-  paste0(100*y, "%")
-}
-
-ggplot(bame_profession, aes(x=profession, y= BAME, color = profession))+
-  geom_boxplot(width = 0.5)+
-  geom_jitter(width = 0.3)+
-  labs( title= "BAME representation by Profession", 
-        x= NULL,
-        y= "BAME percentage")+
-  theme_minimal(base_size = 14)+
-  scale_color_manual(values = c("Sales Staff"= "#33645FFF", "Professional Service" = "#9D1B1FFF" ))+
-  theme(legend.position = "none")+
-  scale_y_continuous(labels = percent_label_1)
   
 ```
-:::
 
-::: {.column width="25%"}
-<br><br><br>
-
-**The distribution of scores of the percentage of BAME employees in the "Professional Service" profession is higher, indicating greater diversity than in the "Sales Staff" profession.**
-:::
-:::
 
 ## How does the distribution of BAME employees vary across different professions? (I)
 
