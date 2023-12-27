@@ -21,6 +21,16 @@ $sky2: #4D79A2; //paler
 $gray: #393A3B;
 $gray2: #747576; //paler
 
+$white: #fff !default;
+$black: #000 !default;
+
+$sandstone-blue: #325d88 !default;
+$bluegray: #c7d3e0 !default;
+$darker-green: #5a7a2b !default;
+$light-gray: #f1f3f5 !default;
+$mid-gray: #75776d !default;
+$darker-gray: #687178 !default;
+
 
 
 
@@ -84,4 +94,9 @@ iframe.slide-deck {
     border-color: $primary;
     color: $body-bg;
     text-decoration: none;
+}
+
+// make blockquote text dark enough
+.blockquote {
+  color: $mid-gray;
 }

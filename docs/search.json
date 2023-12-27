@@ -508,14 +508,14 @@
     "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#read-the-data",
     "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
     "section": "Read the data",
-    "text": "Read the data\n\n\nCode\ndiversity &lt;- read_csv(\"diversity1.csv\")\ndatatable(diversity, options = list(dom = 'ftp', paging = TRUE), filter = \"top\")\n\n\n\n\n\n\n\n\nThe organization, a management consulting firm, has 1.493 employees (1.493 observations).\nThe data set contains 11 variables.\nData type: numeric for all variables."
+    "text": "Read the data\nSee Table 1 for Data Set\n\n\nCode\ndiversity &lt;- read_csv(\"diversity1.csv\")\ndatatable(diversity, options = list(dom = 'ftp', paging = TRUE), filter = \"top\")\n\n\n\n\nTable 1: Data Set\n\n\n\n\n\n\n\n\n\n\n\n\nThe organization, a management consulting firm, has 1.493 employees (1.493 observations).\nThe data set contains 11 variables.\nData type: numeric for all variables."
   },
   {
     "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#read-the-data",
     "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#read-the-data",
     "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
     "section": "Read the data",
-    "text": "Read the data\n\n\nCode\ndiversity &lt;- read_csv(\"diversity2.csv\")\n\ndatatable(diversity, options = list(dom = 'ftp', paging = TRUE), filter = \"top\")\n\n\n\n\n\n\n\n\nThe organization comprises 29,976 employees in two functional areas across the UK, and these employees are organized into 928 teams.\nThe data set contains 30 variables."
+    "text": "Read the data\nSee Table 1 for Data Set\n\n\nCode\ndiversity &lt;- read_csv(\"diversity2.csv\")\n\ndatatable(diversity, options = list(dom = 'ftp', paging = TRUE), filter = \"top\")\n\n\n\n\nTable 1: Data Set\n\n\n\n\n\n\n\n\n\n\n\n\nThe organization comprises 29,976 employees in two functional areas across the UK, and these employees are organized into 928 teams.\nThe data set contains 30 variables."
   },
   {
     "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#recommendation",
