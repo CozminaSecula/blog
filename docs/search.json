@@ -4,7 +4,7 @@
     "href": "posts.html",
     "title": "Posts",
     "section": "",
-    "text": "Translate Widget\n\n\n    \n    \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCreating a Dashboard with Quarto\n\n\n\ndashboard\n\n\ndata visualization\n\n\n\nCreating a customized dashboard with Quarto to visualize and present data.\n\n\n\nDec 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test\n\n\n\nsummary statistics\n\n\nindependent samples t-test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from data using summary statistics and the independent samples t-test, with a case study on team diversity within a large…\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test\n\n\n\nfrequency tables\n\n\nchi-squared test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from categorical data using frequency tables and the chi-squared test, with a case study on gender representation in senior roles.\n\n\n\nSep 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEmployees’ perception of well-being at work: A qualitative study\n\n\n\nqualitative analysis\n\n\nempirical study\n\n\nwell-being at work\n\n\n\nAn empirical study that explores how employees perceive the work environment factors and managers’ behaviors influencing their well-being at work.\n\n\n\nSep 12, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Translate Widget\n\n\n    \n    \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCreating a Dashboard with Quarto\n\n\n\ndashboard\n\n\ndata visualization\n\n\n\nCreating a customized dashboard with Quarto to visualize and present data.\n\n\n\nDec 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test\n\n\n\nsummary statistics\n\n\nindependent samples t-test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from data using summary statistics and the independent samples t-test, with a case study on team diversity within a large…\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test\n\n\n\ncross-table\n\n\nchi-squared test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from categorical data using cross-tables and the chi-squared test, with a case study on gender representation in senior roles.\n\n\n\nSep 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEmployees’ perception of well-being at work: A qualitative study\n\n\n\nqualitative analysis\n\n\nempirical study\n\n\nwell-being at work\n\n\n\nAn empirical study that explores how employees perceive the work environment factors and managers’ behaviors influencing their well-being at work.\n\n\n\nSep 12, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/employee-well-being-at-work/index.html#presentation",
@@ -523,5 +523,75 @@
     "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
     "section": "Recommendation",
     "text": "Recommendation\n\nAccording to our analysis, the organization faces challenges in BAME representation across professions, particularly in the “Sales Staff”.\nFurther research should be conducted to identify the factors influencing or associated with the diversity disparities between these two teams."
+  },
+  {
+    "objectID": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#case-study",
+    "href": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#case-study",
+    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test",
+    "section": "Case study",
+    "text": "Case study\n\nFocused on diversity and inclusion (D&I)\nSourced from the book Predictive HR Analytics : Mastering the HR Metric\nWith data available here"
+  },
+  {
+    "objectID": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#problem-statement",
+    "href": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#problem-statement",
+    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test",
+    "section": "Problem Statement",
+    "text": "Problem Statement\nA hypothetical company aims to employ data analytics to address a significant people problem: gender diversity.\nFrom a commercial perspective, the organization seeks to foster a greater diversity of thought in senior and strategic discussions. On the other hand, from a people perspective, the organization wants to assess whether it maintains gender balance by providing positive role models for younger employees."
+  },
+  {
+    "objectID": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#analysis-question",
+    "href": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#analysis-question",
+    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test",
+    "section": "Analysis question",
+    "text": "Analysis question\nAre women underrepresented in senior leadership roles within the organization?"
+  },
+  {
+    "objectID": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#data-preparation-and-exploration",
+    "href": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#data-preparation-and-exploration",
+    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test",
+    "section": "Data Preparation and exploration",
+    "text": "Data Preparation and exploration\n\nData set\nFor this case study I used a data set available here.\n\nDescriptionData summary\n\n\n\nA hypothetical organization, a management consulting firm, has 1.493 employees.\nThe data set contains 11 variables.\nData type (in the data set): numeric for all variables.\n\n\n\n\ndiversity1 &lt;- read_csv(\"./diversity1.csv\")\n\nskimr::skim(diversity1)\n\n\nData summary\n\n\nName\ndiversity1\n\n\nNumber of rows\n1493\n\n\nNumber of columns\n11\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nnumeric\n11\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nBossGender\n0\n1.00\n1.69\n0.46\n1\n1\n2\n2\n2\n▃▁▁▁▇\n\n\nGender\n2\n1.00\n1.50\n0.50\n1\n1\n1\n2\n2\n▇▁▁▁▇\n\n\nJobGrade\n0\n1.00\n4.02\n1.73\n1\n2\n4\n5\n8\n▆▅▇▃▂\n\n\nAge\n0\n1.00\n38.27\n9.57\n16\n31\n38\n46\n66\n▂▇▇▅▁\n\n\nTenure\n0\n1.00\n10.00\n9.88\n0\n2\n7\n14\n42\n▇▃▁▁▁\n\n\nStatus\n0\n1.00\n1.24\n0.76\n1\n1\n1\n1\n5\n▇▁▁▁▁\n\n\nPerformanceScore\n203\n0.86\n4.13\n0.34\n4\n4\n4\n4\n5\n▇▁▁▁▁\n\n\nBossPerformance\n44\n0.97\n3.74\n0.65\n2\n3\n4\n4\n5\n▁▅▁▇▂\n\n\nDivision\n0\n1.00\n8.27\n3.91\n1\n5\n10\n11\n12\n▂▁▁▁▇\n\n\nCountry\n0\n1.00\n8.21\n1.76\n1\n8\n9\n9\n10\n▁▁▁▂▇\n\n\nleaver\n2\n1.00\n1.07\n0.26\n1\n1\n1\n1\n2\n▇▁▁▁▁\n\n\n\n\n\n\n\n\n\n\nVariables of interest\nTo answer the question, the variables of interest are JobGrade and Gender.\nThe organization has eight distinct job grades, which are detailed below.\nOf the 1.493 employees, 746 are female and 745 are male.\n\n\n\n\n\nLevel\nJob Grade\n\n\n\n\n1\nClerical/Officer\n\n\n2\nAdministrator/Assistant\n\n\n3\nGraduate/Trainee Consultant\n\n\n4\nConsultant\n\n\n5\nSenior Consultant\n\n\n6\nManaging Consultant\n\n\n7\nPrincipal Consultant\n\n\n8\nPartner\n\n\n\n\n\n\n\nLevel\nGender\n\n\n\n\n1\nFemale\n\n\n2\nMale\n\n\n\n\n\n\n\nData preparation\n\nChange variables of interest as categorical\nIn the original data set, all variables are numeric. However, our variables of interest are not numeric; they are categorical. As a result, for the analysis, I will treat these variables as categorical. So, first, I will change the variables to categorical.\n\n\nCode\n# create new variables \"gender\" and \"jobgrade\"\ndiversity1 &lt;- diversity1 |&gt;\n  mutate(gender= factor(Gender,\n                        levels= c(1:2),\n                        labels= c(\"Female\", \"Male\")),\n         jobgrade= factor(JobGrade,\n                          levels= c(1:8),\n                          labels= c(\"Clerical/Officer\", \"Administrator/Assistant\", \"Graduate/Trainee Consultant\", \"Consultant\", \"Senior Consultant\", \"Managing Consultant\", \"Principal Consultant\", \"Partner\")))\n\n\n\n\n\nCreate Cross-Table with the data for the two variables\n\n\nCode\ndiversity1 |&gt;\n  filter(gender != \"NA\") |&gt;\n  tabyl(jobgrade, gender) |&gt;\n  gt()|&gt;\n  cols_label(jobgrade = \"Job Grade\") |&gt;\n  tab_header(title = \"Cross-table of gender and job grade \",\n             subtitle = \"Count\")\n\n\n\n\n\n\n\n\nCross-table of gender and job grade\n\n\nCount\n\n\nJob Grade\nFemale\nMale\n\n\n\n\nClerical/Officer\n31\n8\n\n\nAdministrator/Assistant\n227\n116\n\n\nGraduate/Trainee Consultant\n160\n103\n\n\nConsultant\n139\n104\n\n\nSenior Consultant\n98\n152\n\n\nManaging Consultant\n68\n171\n\n\nPrincipal Consultant\n19\n62\n\n\nPartner\n4\n29\n\n\n\n\n\n\n\nWe can see a pattern more clearly by expressing the data as percentages. I will convert the values to a percentage of the total numbers of each job grade.\n\n\nCode\ndiversity1 |&gt;\n  filter(gender != \"NA\") |&gt;\n  tabyl(jobgrade, gender) |&gt;\n  adorn_percentages() |&gt;\n  mutate(across(where(is.numeric), ~ round(.x, 2)*100)) |&gt;\n  gt()|&gt;\n  cols_label(jobgrade = \"Job Grade\") |&gt;\n  tab_header(title = \"Cross-table of gender and job grade \",\n             subtitle = \"Percent %\")\n\n\n\n\n\n\n\n\nCross-table of gender and job grade\n\n\nPercent %\n\n\nJob Grade\nFemale\nMale\n\n\n\n\nClerical/Officer\n79\n21\n\n\nAdministrator/Assistant\n66\n34\n\n\nGraduate/Trainee Consultant\n61\n39\n\n\nConsultant\n57\n43\n\n\nSenior Consultant\n39\n61\n\n\nManaging Consultant\n28\n72\n\n\nPrincipal Consultant\n23\n77\n\n\nPartner\n12\n88"
+  },
+  {
+    "objectID": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#are-women-underrepresented-in-senior-leadership-roles-within-the-organization",
+    "href": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#are-women-underrepresented-in-senior-leadership-roles-within-the-organization",
+    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test",
+    "section": "Are women underrepresented in senior leadership roles within the organization?",
+    "text": "Are women underrepresented in senior leadership roles within the organization?\nUp to this point, the data reveal a clear pattern: males are more common in senior roles, while females tend to occupy junior positions.\n\n\nCode\n# Custom label function\n\npercent_label &lt;- function(x) {\n  paste0(100*x, \"%\")\n}\n\ndiversity1 |&gt;\nfilter(gender != \"NA\") |&gt;\nggplot(aes(x=jobgrade, fill= gender))+\n  geom_bar(position = \"fill\", width = 0.6)+\n  labs(title = \"Gender by Job Grade\",\n      x = \"Job Grade\",\n      y = \"Proportions\",\n      fill= \"Gender\")+\n  theme_minimal(base_size = 14)+\n  theme(plot.background = element_blank(),\n        panel.grid = element_blank())+\n  scale_fill_manual(values = c(\"Female\" = \"#414040\", \"Male\"= \"#BFBEBE\"))+\n  scale_y_continuous(labels = percent_label, breaks = seq(0, 1, 0.25))+\n  coord_flip()"
+  },
+  {
+    "objectID": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#does-this-organization-have-a-gender-diversity-issue",
+    "href": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#does-this-organization-have-a-gender-diversity-issue",
+    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test",
+    "section": "Does this organization have a gender diversity issue?",
+    "text": "Does this organization have a gender diversity issue?\n\nThe data indicate a pattern where women are more commonly in junior roles and men in senior roles.\nHowever, it’s unclear from the data whether this pattern is by chance or statistically significant.\nTo assess this, we can employ a chi-squared test to determine the statistical significance of the observed pattern."
+  },
+  {
+    "objectID": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#the-hypotheses",
+    "href": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#the-hypotheses",
+    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test",
+    "section": "The hypotheses",
+    "text": "The hypotheses\nH0: There is no association between gender and job grade within the organization.\n\nthe observed distribution of females and males across job grades is due to random chance.\n\nH1: There is a significant association between gender and job grade within the organization.\n\nthe observed distribution of females and males across job grades is not a result of random chance; it reflects a significant pattern of male predominance in senior roles and a greater representation of females in entry-level positions."
+  },
+  {
+    "objectID": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#chi-squared-test-in-r",
+    "href": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#chi-squared-test-in-r",
+    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test",
+    "section": "Chi squared test in R",
+    "text": "Chi squared test in R\n\ncross_tab &lt;- table(diversity1$jobgrade, diversity1$gender)\nchisq.test(cross_tab)\n\n\n    Pearson's Chi-squared test\n\ndata:  cross_tab\nX-squared = 164.7, df = 7, p-value &lt; 2.2e-16\n\n\n\nThe p-value is extremely small, less than 2.2e-16, which is very close to zero.\nSince the p-value is less than the significance level of 0.05, we can confidently reject the null hypothesis, concluding that the two variables are dependent.\nThis result indicates a statistically significant association between gender and job grade.\nIt suggests that certain factors are influencing the observed distribution of genders within job grades."
+  },
+  {
+    "objectID": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#analyzing-gender-distribution-across-job-grades",
+    "href": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#analyzing-gender-distribution-across-job-grades",
+    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test",
+    "section": "Analyzing gender distribution across job grades",
+    "text": "Analyzing gender distribution across job grades\n\nCross-tables and graphical visualization offer a concise summary of gender distribution across job grades, revealing a clear pattern: men are more common in senior roles, while women predominantly hold junior positions.\nThe results of the chi-squared test, with a p-value close to zero, confirm a very strong association between gender and job grade."
+  },
+  {
+    "objectID": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#recommendation",
+    "href": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#recommendation",
+    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test",
+    "section": "Recommendation",
+    "text": "Recommendation\n\nWhile this statistical evidence does not directly imply a gender diversity issue within the organization, it signals that factors beyond chance influence the gender distribution across job grades.\nTo address potential gender bias or discrimination and foster diversity and inclusion within the organization, further analysis and actions are necessary."
   }
 ]

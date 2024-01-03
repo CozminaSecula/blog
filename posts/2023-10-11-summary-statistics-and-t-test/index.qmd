@@ -236,11 +236,11 @@ ggplot(bame_profession, aes(x=profession, y=BAME, color=profession))+
 
 The box plot[^1] for the "Professional Service" profession has a longer length than the box plot for "Sales Staff". This indicates that the data is more dispersed and there is greater diversity within the "Professional Service" profession.
 
-:::{.callout-important}
+[^1]: [![A typical boxplot. The ends of the box mark the quartiles, and the vertical line through the box is located at the median. The whiskers of a boxplot extend to values known as adjacent values. These are the values in the data that are furthest away from the median on either side of the box, but are still within a distance of 1.5 times the interquartile range from the nearest end of the box (that is, the nearer quartile). In many cases the whiskers actually extend right out to the most extreme values in the data set. However, in other cases they do not. Any values in the data set that are more extreme than the adjacent values are plotted as separate points on the boxplot. This identifies them as potential outliers that may need further investigation.](boxplot.png)](https://www.open.edu/openlearn/mod/oucontent/view.php?printable=1&id=4089)
+
+::: callout-important
 Note the potential outliers that may need further investigation. What is different in those teams where the percentage of BAME employees has extreme values?
 :::
-
-[^1]: [![A typical boxplot. The ends of the box mark the quartiles, and the vertical line through the box is located at the median. The whiskers of a boxplot extend to values known as adjacent values. These are the values in the data that are furthest away from the median on either side of the box, but are still within a distance of 1.5 times the interquartile range from the nearest end of the box (that is, the nearer quartile). In many cases the whiskers actually extend right out to the most extreme values in the data set. However, in other cases they do not. Any values in the data set that are more extreme than the adjacent values are plotted as separate points on the boxplot. This identifies them as potential outliers that may need further investigation.](boxplot.png)](https://www.open.edu/openlearn/mod/oucontent/view.php?printable=1&id=4089)
 
 ```{r}
 #| label: density plot
