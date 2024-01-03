@@ -9,15 +9,15 @@ image: image2.jpeg
 
 # Introduction
 
-In the [previous post](https://cozminasecula.github.io/blog/projects/2023-09-14-frequency-tables-and-chi-squared-test/), I introduced two fundamental concepts to analyze categorical data: frequency tables and the chi-squared test.
+In the [previous post](https://cozminasecula.github.io/blog/posts/2023-09-14-cross-tables-and-chi-squared-test/), I introduced two fundamental concepts to analyze categorical data: cross-table and the chi-squared test.
 
-This post goes one step further by offering two tools for data analysis, which will work with continuous and categorical data: summary statistics and the independent samples t-test.
+This post goes one step further by offering two tools for data analysis, which will work with numeric and categorical data: summary statistics and the independent samples t-test.
 
 As part of descriptive statistics, summary statistics can provide valuable insights into data sets. It may include essential metrics such as the total number of values, the mean value, and the standard deviation. These statistics provide a clear picture of data trends and distribution, aiding in the interpretation of data patterns. On the other hand, the independent-samples t-test (part of inferential statistics) is employed to compare means between two distinct groups. It helps us investigate whether these two groups differ significantly in a particular dimension. When used together, these tools can reveal intriguing patterns and relationships within data.
 
 The rest of the post will guide you through the utilization of summary statistics and the independent-samples t-test for insightful data analysis.
 
-# Introducing two distinct tools for data analysis with numerical and categorical data using R
+# Introducing two distinct tools for data analysis with numeric and categorical data using R
 
 -   Summary statistics
 -   Independent samples t-test
@@ -28,25 +28,17 @@ The rest of the post will guide you through the utilization of summary statistic
 -   Sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916)
 -   With data available [here](https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446)
 
-## Data preparation and exploration
+## Problem Statement
 
--   Packages: `tidyverse`, `kableExtra`, `car`, `paleteer`, `DT`
--   Data preparation
--   Summary statistics
--   Data visualization
--   Independent samples t-test
-
-# Problem Statement
-
-A hypothetical company aims to employ scientific methods and procedures to tackle a significant people problem: employee diversity. It recognizes that:
+A hypothetical company aims to employ data analytics to tackle a significant people problem: employee diversity. It recognizes that:
 
 -   **Commercial Perspective** : a more diverse workforce can provide a competitive advantage by enhancing the organization's understanding of its customers, consequently improving overall performance.
 
 -   **People Perspective** : the organization gains access to a broader candidate pool, increases employee engagement, and elevates retention rates.
 
-# Research question
+## Analysis question
 
-> How does the distribution of Black, Asian, or Minority Ethnic (BAME) employees vary across different professions?
+**How does the distribution of Black, Asian, or Minority Ethnic (BAME) employees vary across different professions?**
 
 # Data Preparation and Exploration
 
@@ -62,34 +54,38 @@ A hypothetical company aims to employ scientific methods and procedures to tackl
  library(kableExtra)
  library(car)
  library(paletteer)
- library(DT)
-
+ 
 
 ```
 
-## Read the data
 
-See @tbl-data for Data Set
+## Data set
+
+For this case study I used a data set available here.
+
+::: {.panel-tabset group="dataset"}
+## Description
+
+-   The company, a hypothetical organization, comprises 29,976 employees in two functional areas across the UK, and these employees are organized into 928 teams.
+
+-   The data set contains 30 variables.
+
+-   Data type (in the data set): numeric for all variables.
+
+## Data summary
 
 ```{r}
-#| label: tbl-data
-#| echo: true
+#| label: read-data
+#| message: false
 #| warning: false
-#| code-fold: true
-#| tbl-cap: Data Set
 
 diversity <- read_csv("diversity2.csv")
 
-datatable(diversity, options = list(dom = 'ftp', paging = TRUE), filter = "top")
+skimr::skim(diversity)
 
 
 ```
-
-<br>
-
--   The organization comprises 29,976 employees in two functional areas across the UK, and these employees are organized into 928 teams.
-
--   The data set contains 30 variables.
+:::
 
 ## Variables of interest
 
@@ -99,53 +95,29 @@ datatable(diversity, options = list(dom = 'ftp', paging = TRUE), filter = "top")
 
 -   The data set contains both variables of interest as numbers.
 
--   The "BAME" variable is numerical, while the "Function" variable is categorical and needs to be transformed into a factor for analysis.
+-   The "BAME" variable is numeric, while the "Function" variable is categorical and needs to be transformed into a factor for analysis in R.
 
 ## Data preparation
 
--   Create a new variable named "profession" with two levels "Sales Staff" and "Professional Service"
+-   Change the variable "Function" to categorical by creating a new variable named “profession” with two levels “Sales Staff” and “Professional Service”.
 
 ```{r}
-#| label: new-variable-function-as-factor
+#| label: create-new-variable-profession
 #| echo: true
 #| code-fold: true
 
 # Create a new variable named "profession" with two levels "Sales Staff" and "Professional Service"
+# Drop "NA" levels as they are not meaningful for the analysis
+
 diversity <- diversity|>
   mutate(profession = factor(Function,
                            levels = c(1:2),
-                           labels = c("Sales Staff", "Professional Service")))
-
-
-# Check levels of the new variable
-diversity|>
-  distinct(diversity$profession)
-
-# Drop "NA" levels as they are not meaningful for the analysis
-diversity_filtered <- diversity|>
+                           labels = c("Sales Staff", "Professional Service")))|>
   filter(profession != "NA")|>
   droplevels()
 
-# Check variable levels after dropping "NA" 
-diversity_filtered|>
-  distinct(profession)
-
 ```
 
--   Create a new data frame "bame_profession" including variables of interest
-
-```{r}
-#| label: new-data-frame-BAME_profession
-#| echo: true
-#| code-fold: true
-
-
-# Creating a new data frame "bame_profession" including variables of interest
-
-bame_profession <- diversity_filtered|>
-  select(BAME, profession)
-
-```
 
 # Summary statistics
 
@@ -155,9 +127,9 @@ See @tbl-measures-of-center for Measures of Center
 #| label: tbl-measures-of-center
 #| echo: true
 #| code-fold: true
-#| tbl-cap: Measures of Center
+#| tbl-cap: Measures of Center Tendency
 
-bame_profession|>
+diversity|>
   group_by(profession)|>
   summarise(mean=mean(BAME, na.rm = TRUE),
             median=median(BAME, na.rm = TRUE),
@@ -169,7 +141,7 @@ bame_profession|>
 -   404 teams within the "Sales Staff" profession and 342 teams within "Professional Service" profession reported the percentages of BAME.
 
 ::: callout-note
-Note the difference between the mean and median of the percentage of BAME for each profession category.
+Note the difference between the mean and median of the percentage of BAME for each profession category. 
 :::
 
 ### What is the distribution of BAME employees for all teams and professionals across organization?
@@ -187,7 +159,7 @@ percent_label_1 <- function(x) {
   paste0(100*x, "%")
 }
 
-ggplot(bame_profession, aes(x=BAME))+
+ggplot(diversity, aes(x=BAME))+
   geom_bar()+
   scale_x_binned(labels = percent_label_1)+
   theme_minimal(base_size = 12)+
@@ -220,7 +192,7 @@ percent_label_1 <- function(y) {
   paste0(100*y, "%")
 }
 
-ggplot(bame_profession, aes(x=profession, y=BAME, color=profession))+
+ggplot(diversity, aes(x=profession, y=BAME, color=profession))+
   geom_violin()+
   geom_boxplot(width=0.1, color="black", alpha=0.2)+
   theme_minimal(base_size = 12)+
@@ -255,7 +227,7 @@ percent_label <- function(x) {
   paste0(100*x, "%")
 }
 
-ggplot(bame_profession, aes(x=BAME, fill=profession))+
+ggplot(diversity, aes(x=BAME, fill=profession))+
   geom_density(alpha = 0.5)+
   labs(title = "BAME employees are significantly underrepresented in Sales Staff \ncompared to Professional Service teams.",
       subtitle= "BAME distribution by Profession",
@@ -292,7 +264,7 @@ However, if this requirement is violated and the sample sizes for each group dif
 ```{r}
 #| label: levene's-test-for-equality-of-variances
 
-leveneTest(bame_profession$BAME, group = bame_profession$profession, center=mean)
+leveneTest(diversity$BAME, group = diversity$profession, center=mean)
 
 ```
 
@@ -313,8 +285,8 @@ leveneTest(bame_profession$BAME, group = bame_profession$profession, center=mean
 ```{r}
 #| label: Independent-Samples-t-Test
 
-t.test(bame_profession$BAME ~ bame_profession$profession, var.equal = TRUE)
-t.test(bame_profession$BAME ~ bame_profession$profession, var.equal = FALSE)
+t.test(diversity$BAME ~ diversity$profession, var.equal = TRUE)
+t.test(diversity$BAME ~ diversity$profession, var.equal = FALSE)
 
 ```
 

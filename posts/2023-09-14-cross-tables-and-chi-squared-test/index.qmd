@@ -44,15 +44,13 @@ cross_tbl|>
 
 ```
 
-
-
 Such a table is called a cross-table. For every combination of two variables, we see the number of objects with that combination. Cross-tables are a nice way to visualize two categorical variables. Moreover, when analyzing categorical data, we may want to investigate if there is a relationship between variables. We can use the chi-squared test to determine whether two variables are associated or functionally related. The chi-squared test quantifies the degree of independence between two categorical variables. When employed together, the cross-table and chi-squared test can reveal intriguing patterns and relationships within the data.
 
 The rest of this post will guide you through the utilization of cross-table and the chi-squared test for insightful data analysis.
 
 # Introducing two distinct tools for data analysis with categorical data using R
 
--   Frequency tables
+-   Cross-table
 -   Chi-squared test
 
 ## Case study
@@ -110,7 +108,6 @@ The organization has eight distinct job grades, which are detailed below.
 Of the 1.493 employees, 746 are female and 745 are male.
 
 ::: columns
-
 ::: {.column width="65%"}
 | Level | Job Grade                   |
 |-------|-----------------------------|
@@ -130,7 +127,6 @@ Of the 1.493 employees, 746 are female and 745 are male.
 | 1     | Female |
 | 2     | Male   |
 :::
-
 :::
 
 ### Data preparation
