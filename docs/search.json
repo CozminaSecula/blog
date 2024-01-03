@@ -46,7 +46,7 @@
     "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#load-packages",
     "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
     "section": "Load packages",
-    "text": "Load packages\n\n library(tidyverse)\n library(kableExtra)\n library(car)\n library(paletteer)"
+    "text": "Load packages\n\n library(tidyverse)\n library(car)\n library(paletteer)\n library(kableExtra)"
   },
   {
     "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#look-at-the-data---the-structure",
