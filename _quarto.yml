@@ -24,6 +24,13 @@ website:
         href: https://github.com/CozminaSecula
       - icon: envelope
         href: mailto:cozmina.secula@gmail.com
+ 
+ 
+  page-footer: 
+    left: >-
+      &#169; 2024 Cozmina Secula &#8729; Made with [Quarto](https://quarto.org)
+ 
+ 
       
 format:
   html:
