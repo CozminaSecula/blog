@@ -5,6 +5,7 @@ author: "Cozmina Secula"
 date: "2023-09-12"
 categories: [qualitative analysis, empirical study, well-being at work]
 image: "wordcloud.jpg"
+sidebar: false
 ---
 
 # Abstract

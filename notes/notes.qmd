@@ -1,0 +1,50 @@
+---
+title: "Learning resources"
+subtitle: "In this space, I curate and share notes/resources from various sources."
+title-block-banner: true
+format: 
+ html: 
+  toc: true
+  page-layout: article
+---
+
+<br>
+
+## Why this space?
+
+Working on data-based projects while developing my R and Quarto skills, I gathered resources to help myself. Learning from others inspired me to share these resources with anyone interested. This space is meant to be helpful for those looking to learn about insight-oriented data projects and related topics.
+
+## What is in this space?
+
+::: colums
+::: {.column width="30%"}
+**Insight-Oriented\
+Data Projects Resources**\
+This section provides\
+information on resources\
+that can be used for\
+insight-oriented data projects.
+
+:::
+
+::: {.column width="35%"}
+**R Resources**\
+
+This section\
+include links on resources\
+to learn data cleaning,\
+data analysis and visualization\
+with R.
+:::
+
+::: {.column width="30%"}
+**Quarto Tools**\
+
+This section includes\
+tools, examples, and articles\
+related to Quarto\
+available on the internet.\
+:::
+:::
+
+Please note that this is a work in progress, and I am constantly adding resources.

@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2023-09-14">
 <meta name="description" content="Discover how to extract valuable insights from categorical data using cross-tables and the chi-squared test, with a case study on gender representation in senior roles.">
 
-<title>Cozmina Secula - Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test</title>
+<title>Making sense of data - Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,7 +61,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
@@ -105,10 +104,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Cozmina Secula - Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test">
+<meta property="og:title" content="Making sense of data - Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test">
 <meta property="og:description" content="Discover how to extract valuable insights from categorical data using cross-tables and the chi-squared test, with a case study on gender representation in senior roles.">
 <meta property="og:image" content="image.jpeg">
-<meta property="og:site_name" content="Cozmina Secula">
+<meta property="og:site_name" content="Making sense of data">
 </head>
 
 <body class="floating nav-fixed">
@@ -132,8 +131,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../notes.html"> 
-<span class="menu-text">Notes</span></a>
+    <a class="nav-link" href="../../notes/notes.html"> 
+<span class="menu-text">Learning resources</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -266,6 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>A data analytics project typically involves working with quantifiable data to address business questions and objectives. However, for data to be valuable, it requires analysis and interpretation, which is where analytic techniques become critical. This post introduces two distinct tools for initiating data analysis with categorical data: cross-table and the chi-squared test.</p>
@@ -278,23 +278,23 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
 </figcaption>
 <div aria-describedby="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="wgbedhlihc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wgbedhlihc table {
+<div id="gracxbsdvf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gracxbsdvf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wgbedhlihc thead, #wgbedhlihc tbody, #wgbedhlihc tfoot, #wgbedhlihc tr, #wgbedhlihc td, #wgbedhlihc th {
+#gracxbsdvf thead, #gracxbsdvf tbody, #gracxbsdvf tfoot, #gracxbsdvf tr, #gracxbsdvf td, #gracxbsdvf th {
   border-style: none;
 }
 
-#wgbedhlihc p {
+#gracxbsdvf p {
   margin: 0;
   padding: 0;
 }
 
-#wgbedhlihc .gt_table {
+#gracxbsdvf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -320,12 +320,12 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-left-color: #D3D3D3;
 }
 
-#wgbedhlihc .gt_caption {
+#gracxbsdvf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wgbedhlihc .gt_title {
+#gracxbsdvf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -337,7 +337,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-bottom-width: 0;
 }
 
-#wgbedhlihc .gt_subtitle {
+#gracxbsdvf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -349,7 +349,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-top-width: 0;
 }
 
-#wgbedhlihc .gt_heading {
+#gracxbsdvf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -361,13 +361,13 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-right-color: #D3D3D3;
 }
 
-#wgbedhlihc .gt_bottom_border {
+#gracxbsdvf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wgbedhlihc .gt_col_headings {
+#gracxbsdvf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -382,7 +382,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-right-color: #D3D3D3;
 }
 
-#wgbedhlihc .gt_col_heading {
+#gracxbsdvf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -402,7 +402,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   overflow-x: hidden;
 }
 
-#wgbedhlihc .gt_column_spanner_outer {
+#gracxbsdvf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -414,15 +414,15 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 4px;
 }
 
-#wgbedhlihc .gt_column_spanner_outer:first-child {
+#gracxbsdvf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wgbedhlihc .gt_column_spanner_outer:last-child {
+#gracxbsdvf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wgbedhlihc .gt_column_spanner {
+#gracxbsdvf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -434,11 +434,11 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   width: 100%;
 }
 
-#wgbedhlihc .gt_spanner_row {
+#gracxbsdvf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wgbedhlihc .gt_group_heading {
+#gracxbsdvf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -464,7 +464,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   text-align: left;
 }
 
-#wgbedhlihc .gt_empty_group_heading {
+#gracxbsdvf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -479,15 +479,15 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   vertical-align: middle;
 }
 
-#wgbedhlihc .gt_from_md > :first-child {
+#gracxbsdvf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wgbedhlihc .gt_from_md > :last-child {
+#gracxbsdvf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wgbedhlihc .gt_row {
+#gracxbsdvf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -506,7 +506,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   overflow-x: hidden;
 }
 
-#wgbedhlihc .gt_stub {
+#gracxbsdvf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -519,7 +519,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#wgbedhlihc .gt_stub_row_group {
+#gracxbsdvf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -533,15 +533,15 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   vertical-align: top;
 }
 
-#wgbedhlihc .gt_row_group_first td {
+#gracxbsdvf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wgbedhlihc .gt_row_group_first th {
+#gracxbsdvf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wgbedhlihc .gt_summary_row {
+#gracxbsdvf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -551,16 +551,16 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#wgbedhlihc .gt_first_summary_row {
+#gracxbsdvf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wgbedhlihc .gt_first_summary_row.thick {
+#gracxbsdvf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wgbedhlihc .gt_last_summary_row {
+#gracxbsdvf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -570,7 +570,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-bottom-color: #D3D3D3;
 }
 
-#wgbedhlihc .gt_grand_summary_row {
+#gracxbsdvf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -580,7 +580,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#wgbedhlihc .gt_first_grand_summary_row {
+#gracxbsdvf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -590,7 +590,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-top-color: #D3D3D3;
 }
 
-#wgbedhlihc .gt_last_grand_summary_row_top {
+#gracxbsdvf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -600,11 +600,11 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-bottom-color: #D3D3D3;
 }
 
-#wgbedhlihc .gt_striped {
+#gracxbsdvf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wgbedhlihc .gt_table_body {
+#gracxbsdvf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -613,7 +613,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-bottom-color: #D3D3D3;
 }
 
-#wgbedhlihc .gt_footnotes {
+#gracxbsdvf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -627,7 +627,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-right-color: #D3D3D3;
 }
 
-#wgbedhlihc .gt_footnote {
+#gracxbsdvf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -636,7 +636,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#wgbedhlihc .gt_sourcenotes {
+#gracxbsdvf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -650,7 +650,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-right-color: #D3D3D3;
 }
 
-#wgbedhlihc .gt_sourcenote {
+#gracxbsdvf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -658,63 +658,63 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#wgbedhlihc .gt_left {
+#gracxbsdvf .gt_left {
   text-align: left;
 }
 
-#wgbedhlihc .gt_center {
+#gracxbsdvf .gt_center {
   text-align: center;
 }
 
-#wgbedhlihc .gt_right {
+#gracxbsdvf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wgbedhlihc .gt_font_normal {
+#gracxbsdvf .gt_font_normal {
   font-weight: normal;
 }
 
-#wgbedhlihc .gt_font_bold {
+#gracxbsdvf .gt_font_bold {
   font-weight: bold;
 }
 
-#wgbedhlihc .gt_font_italic {
+#gracxbsdvf .gt_font_italic {
   font-style: italic;
 }
 
-#wgbedhlihc .gt_super {
+#gracxbsdvf .gt_super {
   font-size: 65%;
 }
 
-#wgbedhlihc .gt_footnote_marks {
+#gracxbsdvf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wgbedhlihc .gt_asterisk {
+#gracxbsdvf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wgbedhlihc .gt_indent_1 {
+#gracxbsdvf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wgbedhlihc .gt_indent_2 {
+#gracxbsdvf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wgbedhlihc .gt_indent_3 {
+#gracxbsdvf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wgbedhlihc .gt_indent_4 {
+#gracxbsdvf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wgbedhlihc .gt_indent_5 {
+#gracxbsdvf .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1118,23 +1118,23 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">subtitle =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="dexalzeegh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dexalzeegh table {
+<div id="kolcwiyhhd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kolcwiyhhd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dexalzeegh thead, #dexalzeegh tbody, #dexalzeegh tfoot, #dexalzeegh tr, #dexalzeegh td, #dexalzeegh th {
+#kolcwiyhhd thead, #kolcwiyhhd tbody, #kolcwiyhhd tfoot, #kolcwiyhhd tr, #kolcwiyhhd td, #kolcwiyhhd th {
   border-style: none;
 }
 
-#dexalzeegh p {
+#kolcwiyhhd p {
   margin: 0;
   padding: 0;
 }
 
-#dexalzeegh .gt_table {
+#kolcwiyhhd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1160,12 +1160,12 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-left-color: #D3D3D3;
 }
 
-#dexalzeegh .gt_caption {
+#kolcwiyhhd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dexalzeegh .gt_title {
+#kolcwiyhhd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1177,7 +1177,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-bottom-width: 0;
 }
 
-#dexalzeegh .gt_subtitle {
+#kolcwiyhhd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1189,7 +1189,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-top-width: 0;
 }
 
-#dexalzeegh .gt_heading {
+#kolcwiyhhd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1201,13 +1201,13 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-right-color: #D3D3D3;
 }
 
-#dexalzeegh .gt_bottom_border {
+#kolcwiyhhd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dexalzeegh .gt_col_headings {
+#kolcwiyhhd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1222,7 +1222,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-right-color: #D3D3D3;
 }
 
-#dexalzeegh .gt_col_heading {
+#kolcwiyhhd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1242,7 +1242,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   overflow-x: hidden;
 }
 
-#dexalzeegh .gt_column_spanner_outer {
+#kolcwiyhhd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1254,15 +1254,15 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 4px;
 }
 
-#dexalzeegh .gt_column_spanner_outer:first-child {
+#kolcwiyhhd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dexalzeegh .gt_column_spanner_outer:last-child {
+#kolcwiyhhd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dexalzeegh .gt_column_spanner {
+#kolcwiyhhd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1274,11 +1274,11 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   width: 100%;
 }
 
-#dexalzeegh .gt_spanner_row {
+#kolcwiyhhd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dexalzeegh .gt_group_heading {
+#kolcwiyhhd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1304,7 +1304,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   text-align: left;
 }
 
-#dexalzeegh .gt_empty_group_heading {
+#kolcwiyhhd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1319,15 +1319,15 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   vertical-align: middle;
 }
 
-#dexalzeegh .gt_from_md > :first-child {
+#kolcwiyhhd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dexalzeegh .gt_from_md > :last-child {
+#kolcwiyhhd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dexalzeegh .gt_row {
+#kolcwiyhhd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1346,7 +1346,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   overflow-x: hidden;
 }
 
-#dexalzeegh .gt_stub {
+#kolcwiyhhd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1359,7 +1359,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#dexalzeegh .gt_stub_row_group {
+#kolcwiyhhd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1373,15 +1373,15 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   vertical-align: top;
 }
 
-#dexalzeegh .gt_row_group_first td {
+#kolcwiyhhd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dexalzeegh .gt_row_group_first th {
+#kolcwiyhhd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dexalzeegh .gt_summary_row {
+#kolcwiyhhd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1391,16 +1391,16 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#dexalzeegh .gt_first_summary_row {
+#kolcwiyhhd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dexalzeegh .gt_first_summary_row.thick {
+#kolcwiyhhd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dexalzeegh .gt_last_summary_row {
+#kolcwiyhhd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1410,7 +1410,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-bottom-color: #D3D3D3;
 }
 
-#dexalzeegh .gt_grand_summary_row {
+#kolcwiyhhd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1420,7 +1420,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#dexalzeegh .gt_first_grand_summary_row {
+#kolcwiyhhd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1430,7 +1430,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-top-color: #D3D3D3;
 }
 
-#dexalzeegh .gt_last_grand_summary_row_top {
+#kolcwiyhhd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1440,11 +1440,11 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-bottom-color: #D3D3D3;
 }
 
-#dexalzeegh .gt_striped {
+#kolcwiyhhd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dexalzeegh .gt_table_body {
+#kolcwiyhhd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1453,7 +1453,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-bottom-color: #D3D3D3;
 }
 
-#dexalzeegh .gt_footnotes {
+#kolcwiyhhd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1467,7 +1467,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-right-color: #D3D3D3;
 }
 
-#dexalzeegh .gt_footnote {
+#kolcwiyhhd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1476,7 +1476,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#dexalzeegh .gt_sourcenotes {
+#kolcwiyhhd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1490,7 +1490,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-right-color: #D3D3D3;
 }
 
-#dexalzeegh .gt_sourcenote {
+#kolcwiyhhd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1498,63 +1498,63 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#dexalzeegh .gt_left {
+#kolcwiyhhd .gt_left {
   text-align: left;
 }
 
-#dexalzeegh .gt_center {
+#kolcwiyhhd .gt_center {
   text-align: center;
 }
 
-#dexalzeegh .gt_right {
+#kolcwiyhhd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dexalzeegh .gt_font_normal {
+#kolcwiyhhd .gt_font_normal {
   font-weight: normal;
 }
 
-#dexalzeegh .gt_font_bold {
+#kolcwiyhhd .gt_font_bold {
   font-weight: bold;
 }
 
-#dexalzeegh .gt_font_italic {
+#kolcwiyhhd .gt_font_italic {
   font-style: italic;
 }
 
-#dexalzeegh .gt_super {
+#kolcwiyhhd .gt_super {
   font-size: 65%;
 }
 
-#dexalzeegh .gt_footnote_marks {
+#kolcwiyhhd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dexalzeegh .gt_asterisk {
+#kolcwiyhhd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dexalzeegh .gt_indent_1 {
+#kolcwiyhhd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dexalzeegh .gt_indent_2 {
+#kolcwiyhhd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dexalzeegh .gt_indent_3 {
+#kolcwiyhhd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dexalzeegh .gt_indent_4 {
+#kolcwiyhhd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dexalzeegh .gt_indent_5 {
+#kolcwiyhhd .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1635,23 +1635,23 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">subtitle =</span> <span class="st">"Percent %"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="ofcfhkrnxs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ofcfhkrnxs table {
+<div id="ntdychbtag" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ntdychbtag table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ofcfhkrnxs thead, #ofcfhkrnxs tbody, #ofcfhkrnxs tfoot, #ofcfhkrnxs tr, #ofcfhkrnxs td, #ofcfhkrnxs th {
+#ntdychbtag thead, #ntdychbtag tbody, #ntdychbtag tfoot, #ntdychbtag tr, #ntdychbtag td, #ntdychbtag th {
   border-style: none;
 }
 
-#ofcfhkrnxs p {
+#ntdychbtag p {
   margin: 0;
   padding: 0;
 }
 
-#ofcfhkrnxs .gt_table {
+#ntdychbtag .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1677,12 +1677,12 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-left-color: #D3D3D3;
 }
 
-#ofcfhkrnxs .gt_caption {
+#ntdychbtag .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ofcfhkrnxs .gt_title {
+#ntdychbtag .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1694,7 +1694,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-bottom-width: 0;
 }
 
-#ofcfhkrnxs .gt_subtitle {
+#ntdychbtag .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1706,7 +1706,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-top-width: 0;
 }
 
-#ofcfhkrnxs .gt_heading {
+#ntdychbtag .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1718,13 +1718,13 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-right-color: #D3D3D3;
 }
 
-#ofcfhkrnxs .gt_bottom_border {
+#ntdychbtag .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ofcfhkrnxs .gt_col_headings {
+#ntdychbtag .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1739,7 +1739,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-right-color: #D3D3D3;
 }
 
-#ofcfhkrnxs .gt_col_heading {
+#ntdychbtag .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1759,7 +1759,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   overflow-x: hidden;
 }
 
-#ofcfhkrnxs .gt_column_spanner_outer {
+#ntdychbtag .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1771,15 +1771,15 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 4px;
 }
 
-#ofcfhkrnxs .gt_column_spanner_outer:first-child {
+#ntdychbtag .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ofcfhkrnxs .gt_column_spanner_outer:last-child {
+#ntdychbtag .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ofcfhkrnxs .gt_column_spanner {
+#ntdychbtag .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1791,11 +1791,11 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   width: 100%;
 }
 
-#ofcfhkrnxs .gt_spanner_row {
+#ntdychbtag .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ofcfhkrnxs .gt_group_heading {
+#ntdychbtag .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1821,7 +1821,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   text-align: left;
 }
 
-#ofcfhkrnxs .gt_empty_group_heading {
+#ntdychbtag .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1836,15 +1836,15 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   vertical-align: middle;
 }
 
-#ofcfhkrnxs .gt_from_md > :first-child {
+#ntdychbtag .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ofcfhkrnxs .gt_from_md > :last-child {
+#ntdychbtag .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ofcfhkrnxs .gt_row {
+#ntdychbtag .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1863,7 +1863,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   overflow-x: hidden;
 }
 
-#ofcfhkrnxs .gt_stub {
+#ntdychbtag .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1876,7 +1876,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#ofcfhkrnxs .gt_stub_row_group {
+#ntdychbtag .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1890,15 +1890,15 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   vertical-align: top;
 }
 
-#ofcfhkrnxs .gt_row_group_first td {
+#ntdychbtag .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ofcfhkrnxs .gt_row_group_first th {
+#ntdychbtag .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ofcfhkrnxs .gt_summary_row {
+#ntdychbtag .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1908,16 +1908,16 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#ofcfhkrnxs .gt_first_summary_row {
+#ntdychbtag .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ofcfhkrnxs .gt_first_summary_row.thick {
+#ntdychbtag .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ofcfhkrnxs .gt_last_summary_row {
+#ntdychbtag .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1927,7 +1927,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-bottom-color: #D3D3D3;
 }
 
-#ofcfhkrnxs .gt_grand_summary_row {
+#ntdychbtag .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1937,7 +1937,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#ofcfhkrnxs .gt_first_grand_summary_row {
+#ntdychbtag .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1947,7 +1947,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-top-color: #D3D3D3;
 }
 
-#ofcfhkrnxs .gt_last_grand_summary_row_top {
+#ntdychbtag .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1957,11 +1957,11 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-bottom-color: #D3D3D3;
 }
 
-#ofcfhkrnxs .gt_striped {
+#ntdychbtag .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ofcfhkrnxs .gt_table_body {
+#ntdychbtag .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1970,7 +1970,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-bottom-color: #D3D3D3;
 }
 
-#ofcfhkrnxs .gt_footnotes {
+#ntdychbtag .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1984,7 +1984,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-right-color: #D3D3D3;
 }
 
-#ofcfhkrnxs .gt_footnote {
+#ntdychbtag .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1993,7 +1993,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#ofcfhkrnxs .gt_sourcenotes {
+#ntdychbtag .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2007,7 +2007,7 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   border-right-color: #D3D3D3;
 }
 
-#ofcfhkrnxs .gt_sourcenote {
+#ntdychbtag .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2015,63 +2015,63 @@ Table&nbsp;1: Cross-table of gender and job type for twenty employees
   padding-right: 5px;
 }
 
-#ofcfhkrnxs .gt_left {
+#ntdychbtag .gt_left {
   text-align: left;
 }
 
-#ofcfhkrnxs .gt_center {
+#ntdychbtag .gt_center {
   text-align: center;
 }
 
-#ofcfhkrnxs .gt_right {
+#ntdychbtag .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ofcfhkrnxs .gt_font_normal {
+#ntdychbtag .gt_font_normal {
   font-weight: normal;
 }
 
-#ofcfhkrnxs .gt_font_bold {
+#ntdychbtag .gt_font_bold {
   font-weight: bold;
 }
 
-#ofcfhkrnxs .gt_font_italic {
+#ntdychbtag .gt_font_italic {
   font-style: italic;
 }
 
-#ofcfhkrnxs .gt_super {
+#ntdychbtag .gt_super {
   font-size: 65%;
 }
 
-#ofcfhkrnxs .gt_footnote_marks {
+#ntdychbtag .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ofcfhkrnxs .gt_asterisk {
+#ntdychbtag .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ofcfhkrnxs .gt_indent_1 {
+#ntdychbtag .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ofcfhkrnxs .gt_indent_2 {
+#ntdychbtag .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ofcfhkrnxs .gt_indent_3 {
+#ntdychbtag .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ofcfhkrnxs .gt_indent_4 {
+#ntdychbtag .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ofcfhkrnxs .gt_indent_5 {
+#ntdychbtag .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2639,6 +2639,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="https://utteranc.es/client.js" repo="CozminaSecula/blogComments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2024 Cozmina Secula ∙ Made with <a href="https://quarto.org">Quarto</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

@@ -1,0 +1,49 @@
+---
+title: "Quarto Tools"
+title-block-banner: true
+format: 
+ html: 
+  toc: true
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+#| label: load-libraries
+
+
+library(DT)
+library(shiny)
+
+```
+
+# Quarto Tools
+
+[Quarto](https://quarto.org/) is an open-source scientific and technical publishing system with support for multiple languages and environments. It offers a wide range of functionalities, making it versatile for various tasks. There are many resources on the web to learn about Quarto. Here, I have collected some of them that I find particularly helpful for my Quarto code, blog, presentations, and workflow.
+
+If you want to start your journey with Quarto, I recommend the [Quarto documentation](https://quarto.org/), which is the best place to learn everything you might want to know about Quarto.
+
+<br>
+
+```{r}
+#| column: page-right
+
+qt <- matrix(c('#documenting #r #reporting', 
+               '#documenting #r #reporting',
+               "Generate documents, presentations and more. Produce HTML, PDF, MS Word, reveal.js, MS Powerpoint, Beamer, websites, blogs, books",
+               "Data reporting and communication",
+                'NA',
+                'NA',
+                '<a href="https://rstudio.github.io/cheatsheets/html/quarto.html">Publish and Share with Quarto :: Cheatsheet</a>',
+               '<a href="https://res.cloudinary.com/dyd911kmh/image/upload/v1676540721/Marketing/Blog/Quarto_Cheat_Sheet.pdf">Quarto Cheat Sheet</a>'), ncol = 4)
+
+colnames(qt) <- c('Category', 'Description', 'Code', 'Details')
+
+
+datatable(qt, escape = FALSE) 
+          
+          
+
+
+```

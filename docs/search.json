@@ -4,7 +4,7 @@
     "href": "posts.html",
     "title": "Posts",
     "section": "",
-    "text": "Translate Widget\n\n\n    \n    \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCreating a Dashboard with Quarto\n\n\n\ndashboard\n\n\ndata visualization\n\n\n\nCreating a customized dashboard with Quarto to visualize and present data.\n\n\n\nDec 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test\n\n\n\nsummary statistics\n\n\nindependent samples t-test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from data using summary statistics and the independent samples t-test, with a case study on team diversity within a large…\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test\n\n\n\ncross-table\n\n\nchi-squared test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from categorical data using cross-tables and the chi-squared test, with a case study on gender representation in senior roles.\n\n\n\nSep 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEmployees’ perception of well-being at work: A qualitative study\n\n\n\nqualitative analysis\n\n\nempirical study\n\n\nwell-being at work\n\n\n\nAn empirical study that explores how employees perceive the work environment factors and managers’ behaviors influencing their well-being at work.\n\n\n\nSep 12, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Translate Widget\n\n\n    \n    \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nKey Driver Analysis to understand customer loyalty in a financial organization (case study)\n\n\n\nkey driver analysis\n\n\ndata cleaning\n\n\ndata visualization\n\n\n\nAnalysing customer input to try to understand what factors are most important in influencing customer loyalty.\n\n\n\nJan 15, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreating a Dashboard with Quarto\n\n\n\ndashboard\n\n\ndata visualization\n\n\n\nCreating a customized dashboard with Quarto to visualize and present data.\n\n\n\nDec 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test\n\n\n\nsummary statistics\n\n\nindependent samples t-test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from data using summary statistics and the independent samples t-test, with a case study on team diversity within a large…\n\n\n\nOct 11, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test\n\n\n\ncross-table\n\n\nchi-squared test\n\n\nquantitative analysis\n\n\n\nDiscover how to extract valuable insights from categorical data using cross-tables and the chi-squared test, with a case study on gender representation in senior roles.\n\n\n\nSep 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEmployees’ perception of well-being at work: A qualitative study\n\n\n\nqualitative analysis\n\n\nempirical study\n\n\nwell-being at work\n\n\n\nAn empirical study that explores how employees perceive the work environment factors and managers’ behaviors influencing their well-being at work.\n\n\n\nSep 12, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/employee-well-being-at-work/index.html#presentation",
@@ -12,454 +12,6 @@
     "title": "Employees’ perception of well-being at work: A qualitative study",
     "section": "Presentation",
     "text": "Presentation\nUnable to display PDF file. Download instead."
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#case-study",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#case-study",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Case study",
-    "text": "Case study\n\nFocused on diversity and inclusion (D&I)\nSourced from the book Predictive HR Analytics : Mastering the HR Metric\nWith data available here"
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#data-preparation-and-exploration",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#data-preparation-and-exploration",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Data preparation and exploration",
-    "text": "Data preparation and exploration\n\nPackages: tidyverse, kableExtra, car, paleteer, DT\nData preparation\nSummary statistics\nData visualization\nIndependent samples t-test"
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#the-goal",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#the-goal",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "The Goal",
-    "text": "The Goal\nA hypothetical company aims to employ scientific methods and procedures to tackle a significant people problem: employee diversity. It recognizes that:\n\nCommercial Perspective\n\nA more diverse workforce can provide a competitive advantage by enhancing the organization’s understanding of its customers, consequently improving overall performance.\n\nPeople Perspective\n\nThe organization gains access to a broader candidate pool, increases employee engagement, and elevates retention rates."
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#the-research-question",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#the-research-question",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "The research question",
-    "text": "The research question\nHow does the distribution of Black, Asian, or Minority Ethnic (BAME) employees vary across different professions?"
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#load-packages",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#load-packages",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Load packages",
-    "text": "Load packages\n\n library(tidyverse)\n library(car)\n library(paletteer)\n library(kableExtra)"
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#look-at-the-data---the-structure",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#look-at-the-data---the-structure",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Look at the data - The structure",
-    "text": "Look at the data - The structure\n\n\nCode\ndiversity &lt;- read_csv(\"diversity2.csv\")\nglimpse(diversity)\n\n\nRows: 928\nColumns: 30\n$ DepartmentGroupNumber &lt;dbl&gt; 18, 19, 29, 30, 35, 37, 44, 45, 47, 50, 51, 63, …\n$ GroupSize             &lt;dbl&gt; 18, 28, 11, 17, 32, 60, 23, 36, 32, 70, 52, 15, …\n$ PercentMale           &lt;dbl&gt; 65, 67, 33, 32, 18, 65, 15, 26, 65, 5, 75, 50, 5…\n$ BAME                  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ NumberTeamLeads       &lt;dbl&gt; 3, 4, 2, 2, 5, 9, 3, 5, 5, 10, 7, 2, 4, 3, 9, 7,…\n$ NumberFeMaleTeamLeads &lt;dbl&gt; 1, 0, 0, 0, 3, 0, 1, 0, 0, 2, 0, 0, 1, 0, 1, 0, …\n$ Location              &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 2, 2, …\n$ LondonorNot           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, …\n$ Function              &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, …\n$ EMPsurvEngage_1       &lt;dbl&gt; 100, 96, 100, 100, 81, 97, 91, 100, 91, 97, 92, …\n$ EMPsurvEngage_2       &lt;dbl&gt; 100, 86, 91, 100, 69, 97, 100, 94, 88, 97, 94, 1…\n$ EMPsurvEngage_3       &lt;dbl&gt; 94, 86, 100, 100, 72, 87, 100, 89, 91, 93, 98, 9…\n$ EMPsurvEngage_4       &lt;dbl&gt; 78, 54, 82, 94, 44, 92, 87, 97, 81, 90, 98, 87, …\n$ EMPsurvEngage_5       &lt;dbl&gt; 100, 96, 100, 100, 81, 97, 100, 97, 97, 99, 94, …\n$ EMPsurvEngage_6       &lt;dbl&gt; 94, 57, 82, 88, 44, 78, 87, 94, 72, 90, 88, 87, …\n$ EMPsurvEngage_7       &lt;dbl&gt; 89, 89, 100, 100, 84, 92, 96, 97, 94, 99, 98, 10…\n$ EMPsurvEngage_8       &lt;dbl&gt; 72, 82, 73, 88, 38, 55, 91, 69, 69, 80, 69, 80, …\n$ EMPsurvEngage_9       &lt;dbl&gt; 78, 82, 91, 94, 47, 83, 96, 78, 81, 93, 85, 93, …\n$ EMPsurvEngagement     &lt;dbl&gt; 89, 81, 91, 96, 62, 86, 94, 91, 85, 93, 91, 92, …\n$ EMPorgIntegrity1      &lt;dbl&gt; 72, 75, 73, 100, 59, 87, 100, 61, 69, 69, 67, 60…\n$ EMPorgIntegrity2      &lt;dbl&gt; 78, 86, 91, 100, 81, 92, 100, 89, 91, 94, 92, 10…\n$ EMPorgIntegrity3      &lt;dbl&gt; 89, 89, 91, 100, 88, 93, 100, 89, 97, 97, 94, 10…\n$ EMPorgIntegrity4      &lt;dbl&gt; 89, 89, 91, 100, 78, 80, 100, 81, 78, 80, 80, 93…\n$ EMPorgIntegrity5      &lt;dbl&gt; 18, 19, 29, 30, 35, 37, 44, 45, 47, 50, 51, 63, …\n$ EmpSurvOrgIntegrity   &lt;dbl&gt; 69.2, 71.6, 75.0, 86.0, 68.2, 77.8, 88.8, 73.0, …\n$ EMPsurvSUP1           &lt;dbl&gt; 72, 79, 73, 100, 81, 88, 100, 75, 78, 96, 98, 87…\n$ EMPsurvSUP2           &lt;dbl&gt; 89, 79, 91, 100, 78, 92, 100, 83, 94, 96, 94, 93…\n$ EMPsurvSUP3           &lt;dbl&gt; 89, 64, 73, 100, 72, 78, 96, 78, 72, 90, 94, 100…\n$ EMPsurvSUP4           &lt;dbl&gt; 83, 82, 73, 100, 75, 87, 100, 78, 84, 91, 98, 80…\n$ EmpSurvSupervisor     &lt;dbl&gt; 83.25, 76.00, 77.50, 100.00, 76.50, 86.25, 99.00…\n\n\n\nThe organization comprises 29,976 employees in two functional areas across the UK, and these employees are organized into 928 teams.\nThe data set contains 30 variables."
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#variables-of-interest",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#variables-of-interest",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Variables of interest",
-    "text": "Variables of interest\n\nBAME: Percentage of the team comprised of Black, Asian, or Minority Ethnic employees.\nFunction: Function 1 = Sales staff (customer-facing roles) or 2 = Professional Service (non-customer-facing roles).\nThe data set contains both variables of interest as numbers.\nThe “BAME” variable is numeric, while the “Function” variable is categorical and needs to be transformed into a factor for analysis in R."
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#data-preparation",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#data-preparation",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Data preparation",
-    "text": "Data preparation\n\nChange the variable “Function” to categorical by creating a new variable named “profession” with two levels “Sales Staff” and “Professional Service”.\n\n\n\nCode\n# Create a new variable named \"profession\" with two levels \"Sales Staff\" and \"Professional Service\"\n# Drop \"NA\" levels as they are not meaningful for the analysis\n\ndiversity &lt;- diversity|&gt;\n  mutate(profession = factor(Function,\n                           levels = c(1:2),\n                           labels = c(\"Sales Staff\", \"Professional Service\")))|&gt;\n  filter(profession != \"NA\")|&gt;\n  droplevels()"
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#measures-of-center",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#measures-of-center",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Measures of center",
-    "text": "Measures of center\n\n\nCode\nbame_profession|&gt;\n  group_by(profession)|&gt;\n  summarise(mean=mean(BAME, na.rm = TRUE),\n            median=median(BAME, na.rm = TRUE),\n            n= sum(!is.na(BAME)))|&gt;\n  kable(col.names = c(\"Profession\", \"Mean\", \"Median\", \"Sum\"), align = \"cccc\")\n\n\n\n\n\nProfession\nMean\nMedian\nSum\n\n\n\n\nSales Staff\n0.0968317\n0.05\n404\n\n\nProfessional Service\n0.1438596\n0.10\n342\n\n\n\n\n\n\n\n\n404 teams within the “Sales Staff” profession and 342 teams within “Professional Service” profession reported the percentages of BAME.\nNote the difference between the mean and median of the percentage of BAME for each profession category.\n\n\nWhat is the distribution of BAME employees for all teams and professionals across organization?\n\n\nCode\n# Custom label function\n\npercent_label_1 &lt;- function(x) {\n  paste0(100*x, \"%\")\n}\n\nggplot(bame_profession, aes(x=BAME))+\n  geom_bar()+\n  scale_x_binned(labels = percent_label_1)+\n  theme_minimal(base_size = 12)+\n   theme(legend.position = \"none\")+\n     labs(title = \"The most frequent values (around 300 of teams) fall into the range \\nbetween 0 - 5%. As the level of percentage increase \\nthe frequency decrease.\",\n          subtitle = \"Distribution of BAME employees\",\n          x= \"BAME employees\",\n          y= \"Count\")\n\n\n\n\n\n\n\n\n\nThe distribution has a long tail on the right side, and we can say that it is skewed to the right. When the data is skewed, the median is a better measure of the central tendency. Next, we will plot a box plot for each professional category. The box plot shows how much the data is spread out.\n\n\nWhat is the distribution of BAME employees within the two professions?\n\n\nCode\n# Custom label function\n\npercent_label_1 &lt;- function(y) {\n  paste0(100*y, \"%\")\n}\n\nggplot(bame_profession, aes(x=profession, y=BAME, color=profession))+\n  geom_violin()+\n  geom_boxplot(width=0.1, color=\"black\", alpha=0.2)+\n  theme_minimal(base_size = 12)+\n  scale_color_manual(values = c(\"Sales Staff\"= \"#33645FFF\", \"Professional Service\" = \"#9D1B1FFF\" ))+\n  theme(legend.position = \"none\")+\n        scale_y_continuous(labels = percent_label_1)+\n  labs( title = \"There is greater BAME distribution in the Professional Service \\nprofession compared with the Sales profession.\", \n        subtitle = \"BAME percentage by Profession\", \n        x= NULL,\n        y= \"BAME percentage\")\n\n\n\n\n\n\n\n\n\nThe box plot for the “Professional Service” profession has a longer length than the box plot for “Sales Staff”. This indicates that the data is more dispersed and there is greater diversity within the “Professional Service” profession.\nThe following density plot shows that BAME employees are significantly underrepresented in sales staff compared to professional service teams.\n\n\nCode\n# Custom label function\n\npercent_label &lt;- function(x) {\n  paste0(100*x, \"%\")\n}\n\nggplot(bame_profession, aes(x=BAME, fill=profession))+\n  geom_density(alpha = 0.5)+\n  labs(title = \"BAME distribution by Profession\",\n      x = \"BAME percentage\",\n      y = \"Density\",\n      fill = \"Profession\")+\n  theme_minimal(base_size = 12)+\n  theme(panel.grid.minor = element_blank(),\n        axis.text.y = element_blank())+\n  scale_fill_manual(values = c(\"Sales Staff\"= \"#33645FFF\", \"Professional Service\" = \"#9D1B1FFF\" ))+\n   scale_x_continuous(labels = percent_label)"
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#density-plot",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#density-plot",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Density plot",
-    "text": "Density plot\n\n\n\n\nCode\n# Custom label function\n\npercent_label &lt;- function(x) {\n  paste0(100*x, \"%\")\n}\n\nggplot(bame_profession, aes(x=BAME, fill=profession))+\n  geom_density(alpha = 0.5)+\n  labs(title = \"BAME distribution by Profession\",\n      x = \"BAME percentage\",\n      y = \"Density\",\n      fill = \"Profession\")+\n  theme_minimal(base_size = 14)+\n  theme(panel.grid.minor = element_blank(),\n        axis.text.y = element_blank())+\n  scale_fill_manual(values = c(\"Sales Staff\"= \"#33645FFF\", \"Professional Service\" = \"#9D1B1FFF\" ))+\n   scale_x_continuous(labels = percent_label)\n\n\n\n\n\n\n\n\n\n\n\nThe percentages of BAME employees are lower within “Sales Staff” teams compared to “Professional Service” teams."
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#boxplots-with-points",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#boxplots-with-points",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Boxplots with points",
-    "text": "Boxplots with points\n\n\n\n\nCode\n# Custom label function\n\npercent_label_1 &lt;- function(y) {\n  paste0(100*y, \"%\")\n}\n\nggplot(bame_profession, aes(x=profession, y= BAME, color = profession))+\n  geom_boxplot(width = 0.5)+\n  geom_jitter(width = 0.3)+\n  labs( title= \"BAME representation by Profession\", \n        x= NULL,\n        y= \"BAME percentage\")+\n  theme_minimal(base_size = 14)+\n  scale_color_manual(values = c(\"Sales Staff\"= \"#33645FFF\", \"Professional Service\" = \"#9D1B1FFF\" ))+\n  theme(legend.position = \"none\")+\n  scale_y_continuous(labels = percent_label_1)\n\n\n\n\n\n\n\n\n\n\n\nThe distribution of scores of the percentage of BAME employees in the “Professional Service” profession is higher, indicating greater diversity than in the “Sales Staff” profession."
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#how-does-the-distribution-of-bame-employees-vary-across-different-professions-i",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#how-does-the-distribution-of-bame-employees-vary-across-different-professions-i",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "How does the distribution of BAME employees vary across different professions? (I)",
-    "text": "How does the distribution of BAME employees vary across different professions? (I)\n\nBAME employees are distributed differently across the two professions. There are more “Sales Staff” teams with a lower percentage of BAME employees, while “Professional Service” teams have a more even distribution.\nIt’s essential to note that these findings are based on summary statistics and visual examinations, which may not be highly precise.\nTo gain more confidence in comparing BAME representation between the two professions and to deepen our understanding of the organization’s ethnicity dynamics, we will conduct an Independent Samples t-Test."
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#levenes-test-for-equality-of-variances",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#levenes-test-for-equality-of-variances",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Levene’s Test for Equality of Variances",
-    "text": "Levene’s Test for Equality of Variances\nOne of the requirements for the independent Samples t-test is the homogeneity of variances (i.e., variances approximately equal across groups).\nHowever, if this requirement is violated and the sample sizes for each group differ, we can calculate t-test statistics. The independent samples t-test output also includes an approximate t-statistic, which doesn’t assume equal variances across populations. The Welch t-test statistic can be employed when equal variances between populations cannot be assumed.\nThe hypotheses\n\nH0: The population variances of “Sales Staff” and “Professional Service” are equal.\nH1: The population variances of “Sales Staff” and “Professional Service” are not equal.\n\n\nleveneTest(diversity$BAME, group = diversity$profession, center=mean)\n\nLevene's Test for Homogeneity of Variance (center = mean)\n       Df F value    Pr(&gt;F)    \ngroup   1  35.396 4.141e-09 ***\n      744                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nThe p-value is 4.141e-09, which is less than 0.05. This indicates very strong evidence against the null hypothesis, leading us to reject the null hypothesis of Levene’s Test.\nThis suggests that the variances of the two groups are not equal, meaning the assumption of homogeneity of variances is violated."
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#independent-samples-t-test-1",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#independent-samples-t-test-1",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Independent Samples t-Test",
-    "text": "Independent Samples t-Test\n\nWe want to determine if there is a statistically significant difference between the mean percentages of BAME employees in the “Sales Staff” and “Professional Service” professions within this organization.\nTo achieve this, we can employ an Independent Samples t-Test to compare the means of BAME percentages for “Sales Staff” and “Professional Service.”\n\nThe hypotheses\n\nH0: The difference of the means is equal to 0\nH1: The difference of the means is not equal to 0.\n\n\nt.test(diversity$BAME ~ diversity$profession, var.equal = TRUE)\n\n\n    Two Sample t-test\n\ndata:  diversity$BAME by diversity$profession\nt = -5.7695, df = 744, p-value = 1.166e-08\nalternative hypothesis: true difference in means between group Sales Staff and group Professional Service is not equal to 0\n95 percent confidence interval:\n -0.06302979 -0.03102614\nsample estimates:\n         mean in group Sales Staff mean in group Professional Service \n                        0.09683168                         0.14385965 \n\nt.test(diversity$BAME ~ diversity$profession, var.equal = FALSE)\n\n\n    Welch Two Sample t-test\n\ndata:  diversity$BAME by diversity$profession\nt = -5.6553, df = 640.61, p-value = 2.345e-08\nalternative hypothesis: true difference in means between group Sales Staff and group Professional Service is not equal to 0\n95 percent confidence interval:\n -0.06335727 -0.03069866\nsample estimates:\n         mean in group Sales Staff mean in group Professional Service \n                        0.09683168                         0.14385965 \n\n\n\nThe result of Levene’s Test suggests that we should consider using the Welch Two Sample t-test because the variances of the two groups are not equal.\nThe p-value is 2.345e-08 for the t-test for unequal variances, which is less than 0.001. Therefore, we can conclude that there is a significant difference in the mean percentage of BAME employees between the two functions."
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#how-does-the-distribution-of-bame-employees-vary-across-different-professions-ii",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#how-does-the-distribution-of-bame-employees-vary-across-different-professions-ii",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "How does the distribution of BAME employees vary across different professions? (II)",
-    "text": "How does the distribution of BAME employees vary across different professions? (II)\n\nWhen comparing the “Sales Staff” and “Professional Service” functions, it becomes evident that the mean proportion of BAME staff is significantly lower in “Sales Staff” than in “Professional Service.”\nSpecifically, the average proportion of BAME staff in teams within the “Sales Staff” function is 9.7%, while in “Professional Service” teams, it stands at 14.39%.\nA more in-depth analysis reveals that the likelihood of this difference occurring by chance alone is less than 1 in 1,000, suggesting that there is a significant issue within the “Sales Staff” function that requires attention in the organization."
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#analyzing-bame-distribution-across-professional-functions",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#analyzing-bame-distribution-across-professional-functions",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Analyzing BAME distribution across professional functions",
-    "text": "Analyzing BAME distribution across professional functions\n\nSummary statistics and graphical visualization offer a concise overview of the distribution of BAME employees in the two professions. It’s evident that more “Sales Staff” teams have a lower percentage of BAME employees, while “Professional Service” teams exhibit a more even distribution.\nThe results of the independent samples t-test, with a p-value close to 0, confirm a significant difference in the mean percentage of BAME employees between the two functions. This implies that there is an issue that needs attention within the “Sales Staff” function in the organization."
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#recommendations",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#recommendations",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Recommendations",
-    "text": "Recommendations\n\nAccording to our analysis, the organization faces challenges in BAME representation across professions, particularly in the “Sales Staff”.\nFurther research should be conducted to identify the factors influencing or associated with the diversity disparities between these two teams."
-  },
-  {
-    "objectID": "notes/middle-managers-and-d&i/index.html",
-    "href": "notes/middle-managers-and-d&i/index.html",
-    "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
-    "section": "",
-    "text": "Takeaways from the article Evidence-Based Solutions for Inclusion in the Workplace: Actions for Middle Managers1.\nExperts at Wharton People Analytics and DiversityInc Media collaborated to investigate and share insights on which diversity and inclusion practices “work” and for which desired workplace outcomes.\nIn the authors’ view, middle managers are crucial to translating diversity and inclusion (D&I) strategies into action for three reasons:\nThe article focuses on two key findings: belonging and turnover intent."
-  },
-  {
-    "objectID": "notes/middle-managers-and-d&i/index.html#belonging-a-key-to-employee-engagement-and-retention",
-    "href": "notes/middle-managers-and-d&i/index.html#belonging-a-key-to-employee-engagement-and-retention",
-    "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
-    "section": "Belonging: A Key to Employee Engagement and Retention",
-    "text": "Belonging: A Key to Employee Engagement and Retention\nOne of the key findings in the study focuses on the concept of “belonging.” Employees who feel they belong, are accepted, and are comfortable in their workplace tend to have higher engagement, performance, promotion, and retention levels. They also have a 50% lower turnover rate than those who feel excluded. Middle managers should be invested in enhancing their direct reports’ sense of belonging."
-  },
-  {
-    "objectID": "notes/middle-managers-and-d&i/index.html#mentoring-and-sponsorship-a-path-to-belonging",
-    "href": "notes/middle-managers-and-d&i/index.html#mentoring-and-sponsorship-a-path-to-belonging",
-    "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
-    "section": "Mentoring and Sponsorship: A Path to Belonging",
-    "text": "Mentoring and Sponsorship: A Path to Belonging\nThe study highlights that mentoring and sponsorship are effective strategies to help employees feel accepted and build their networks. Middle managers can play a crucial role in facilitating these relationships by identifying mentors for their employees and enhancing existing mentor-mentee connections."
-  },
-  {
-    "objectID": "notes/middle-managers-and-d&i/index.html#personal-stories-for-inclusion",
-    "href": "notes/middle-managers-and-d&i/index.html#personal-stories-for-inclusion",
-    "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
-    "section": "Personal Stories for Inclusion",
-    "text": "Personal Stories for Inclusion\nAnother approach that has proven effective is when managers share their personal stories. This encourages their direct reports to share their own experiences, fostering a sense of belonging and acceptance. When employees believe that they are part of an inclusive workplace, they are more likely to stay and contribute to the organization’s success."
-  },
-  {
-    "objectID": "notes/middle-managers-and-d&i/index.html#workplace-policies-and-middle-managers",
-    "href": "notes/middle-managers-and-d&i/index.html#workplace-policies-and-middle-managers",
-    "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
-    "section": "Workplace Policies and Middle Managers",
-    "text": "Workplace Policies and Middle Managers\nDuring economic upheaval, middle managers should encourage employees to use the company’s policies. This support can be instrumental in retaining talent and ensuring a supportive work environment. Middle managers can take ownership in communicating D&I initiatives, encourage team members to utilize relevant programs, and publicly advocate for a flexible approach to meet employees’ needs."
-  },
-  {
-    "objectID": "notes/middle-managers-and-d&i/index.html#managerial-involvement",
-    "href": "notes/middle-managers-and-d&i/index.html#managerial-involvement",
-    "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
-    "section": "Managerial involvement",
-    "text": "Managerial involvement\nMiddle managers should collect, compile, synthesize and share feedback on the team’s climate to understand what motivates team members to do their jobs well and stay in their current organizations."
-  },
-  {
-    "objectID": "notes/middle-managers-and-d&i/index.html#visibility-and-recognition",
-    "href": "notes/middle-managers-and-d&i/index.html#visibility-and-recognition",
-    "title": "Middle Managers and Diversity & Inclusion: Bridging the Gap for Business Success",
-    "section": "Visibility and Recognition",
-    "text": "Visibility and Recognition\nVisibility plays a crucial role in motivating employees to stay with their current organization. Middle managers can increase their visibility by acknowledging their team members’ accomplishments, showcasing underrepresented employees on company websites, and involving a representative sample of team members in discussions and updates."
-  },
-  {
-    "objectID": "notes/a-7-step-process-for-people-analytics/index.html",
-    "href": "notes/a-7-step-process-for-people-analytics/index.html",
-    "title": "7 Steps for Making HR Analytics work in organizations",
-    "section": "",
-    "text": "These notes are from the article titled The HR analytics cycle: a seven-step process for building evidence-based and ethical HR analytics capabilities that introduces the HR analytics cycle as a simple and organized process for gathering, analyzing, communicating, and using evidence-based HR research and analytical insights to help organizations achieve their goals."
-  },
-  {
-    "objectID": "notes/a-7-step-process-for-people-analytics/index.html#step-1-determine-stakeholder-requirements",
-    "href": "notes/a-7-step-process-for-people-analytics/index.html#step-1-determine-stakeholder-requirements",
-    "title": "7 Steps for Making HR Analytics work in organizations",
-    "section": "Step 1 : determine stakeholder requirements",
-    "text": "Step 1 : determine stakeholder requirements\nDetermining stakeholder requirements is essential for the success of any HR research and analytics initiative. It involves establishing a partnership with key stakeholders, such as executives, line managers, senior HR leaders, HR business partners, employees, and technology vendors. Each stakeholder has a different perspective and set of concerns regarding HR analytics practices and activities. While line managers primarily focus on data visualization and reporting of key metrics and analytical insights, executives and senior HR leaders are more concerned with how HR analytics supports HR strategy, execution, workforce decisions, and overall business outcomes. Leading HR analytics in organizations has an important role in assisting stakeholders with framing realistic, measurable, value-added, evidence-based, and ethical questions. This helps formulate and frame HR research and analytics questions, identify strategic and tactical priorities, secure stakeholder commitment, and provide communication on the ongoing progress of key HR research and analytics initiatives.\nDuring this step, many questions are likely to arise.\n\n“There are naive questions, tedious questions, ill-phrased questions, questions put after inadequate self-criticism. But every question is a cry to understand the world. There is no such thing as a dumb question”.\nCarl Sagan2"
-  },
-  {
-    "objectID": "notes/a-7-step-process-for-people-analytics/index.html#step-2-define-hr-research-and-analytics-agenda",
-    "href": "notes/a-7-step-process-for-people-analytics/index.html#step-2-define-hr-research-and-analytics-agenda",
-    "title": "7 Steps for Making HR Analytics work in organizations",
-    "section": "Step 2 : define HR research and analytics agenda",
-    "text": "Step 2 : define HR research and analytics agenda\nThe HR research and analytics agenda should be defined based on stakeholder needs and expectations. The evolving nature of business and the future of work has reshaped long-term and short-term requirements. Long-term requirements are now typically one year, while short-term requirements align with quarterly or monthly results. Short-term and long-term research requirements can be both strategic and tactical in nature.\n\n\n\n\n\n\nTips to establish an HR analytics and research agenda:\n\n\n\n\norganize stakeholder requirements by theme or major topic\npose broad research questions\ngenerate targeted questions and hypotheses\nidentify long-term and short-term requirements\nshare the agenda with stakeholders, refine it iteratively\nstrive for a balanced agenda"
-  },
-  {
-    "objectID": "notes/a-7-step-process-for-people-analytics/index.html#step-3-identify-data-sources",
-    "href": "notes/a-7-step-process-for-people-analytics/index.html#step-3-identify-data-sources",
-    "title": "7 Steps for Making HR Analytics work in organizations",
-    "section": "Step 3 : identify data sources",
-    "text": "Step 3 : identify data sources\nOnce the HR research and analytics agenda is established, the next step is to identify the sources of data that will help to answer the HR research and analytics questions and hypotheses. Data sources can be public or private, and may include university libraries, governmental databases, internal employee data, and external benchmarking data.\nSources of data may or may not exist depending on your organization’s current HR research and analytics practices.\nCommon data sources:\n\n\nEmployee/organizational surveys\nEmployee/talent profiling (tracking and modeling individual data on critical talent or high-potential employees)\nHR metrics including scorecards and dashboards\nPartnership or outsourced research including membership-based research consortia\nWorkforce forecasting (e.g. workforce supply/demand and segmentation analysis to forecast and plan when to staff up or cut back)\nAd hoc HRIS data mining and analysis\nHR benchmarking\nLearning measurement/analytics\nHR program evaluation\nReturn-on-investment (ROI) projects\nLabor market, talent pool and site/location identification research\nAdvanced organizational behavior (OB) research and modeling\nSelection research involving the use of validated personality instruments that measure various employee traits, states, characteristics, attributes, attitudes, beliefs and/or values\nTalent supply chain (analytics to make decisions in real time for optimizing immediate talent demands in terms of changing business conditions)\n360 degree or multirater feedback (360-degree leadership and management assessments or performance appraisal/evaluations)\nSentiment analysis (interpretation and classification of emotions whether positive, negative and neutral within text data using text and/or thematic analysis techniques)\nUsing organizational network analysis (ONA) tools"
-  },
-  {
-    "objectID": "notes/a-7-step-process-for-people-analytics/index.html#step-4-gather-data",
-    "href": "notes/a-7-step-process-for-people-analytics/index.html#step-4-gather-data",
-    "title": "7 Steps for Making HR Analytics work in organizations",
-    "section": "Step 4 : gather data",
-    "text": "Step 4 : gather data\nThe HR analytics cycle involves data collection through primary research, secondary research, or mining internal data in the Human Resource Information System (HRIS).\n\nPrimary research is new or original research that addresses a specific research question or set of questions (e.g. a research project or experiment to identify which factors enable or inhibit employee engagement and performance, selection research using validated personality instruments for leadership succession, employee and organizational surveys for action planning and change, organizational network analysis to determine the level of collaboration by specific jobs and roles). Primary research addresses specific questions and can be done in-house or in collaboration with universities.\nSecondary research provides data from existing sources, such as scientific studies, reports from credible institutes, HR benchmarking, labor market databases.\nTheory-driven (deductive) and data-driven (inductive) approaches to mining and modeling data from the organization’s HRIS, SaaS-based platforms (e.g. data aggregation and visualization products, employee engagement tools, social or organizational network technologies) and other external data sources are another way to gather, query and analyze data about the workforce, provided it is done ethically and responsibility."
-  },
-  {
-    "objectID": "notes/a-7-step-process-for-people-analytics/index.html#step-5-transforming-data",
-    "href": "notes/a-7-step-process-for-people-analytics/index.html#step-5-transforming-data",
-    "title": "7 Steps for Making HR Analytics work in organizations",
-    "section": "Step 5 : transforming data",
-    "text": "Step 5 : transforming data\nTransforming data into meaningful insights is a challenging yet essential task. While software firms like Oracle, Salesforce, SAP, SAS, and Workday have integrated HR analytical capabilities into their products, they cannot magically interpret all the “Big Data” available. HR strategy often involves manual work by qualified researchers, analysts, and data scientists. To improve analytical capabilities, it is suggested that organizations start small and build their HR analytical capabilities over time. Meta-analysis (i.e. an analysis of analysis) is a practical approach to explore and understand multiple data sources in relation to each other, enabling organizations to understand workforce insights.\nFor example:\n\nTo what extent are the results from individual 360-degree assessments consistent with your employee survey data, exit survey data, or actual turnover?\nAre high-potential, emerging leaders leaving the organization for the same reasons year over year (e.g. little to no advancement and promotion opportunities, few organizational leadership opportunities, lack of decision rights, low base pay relative to the market)?\n\nPerforming a meta-analysis enables you to answer these questions and, more importantly, codify and make sense of disparate data sources to collect critical workforce insights.\nPerforming the meta-analysis can be simple or complex. This largely depends on the nature of the data gathered, sophistication and competency of the HR researcher, analyst or data scientist and the amount of resources and time to conduct the analysis."
-  },
-  {
-    "objectID": "notes/a-7-step-process-for-people-analytics/index.html#step-6-communicate-intelligence-results",
-    "href": "notes/a-7-step-process-for-people-analytics/index.html#step-6-communicate-intelligence-results",
-    "title": "7 Steps for Making HR Analytics work in organizations",
-    "section": "Step 6 : communicate intelligence results",
-    "text": "Step 6 : communicate intelligence results\nThe sixth step of the HR analytics cycle involves communicating intelligence results through storytelling.\nThis approach can be powerful in presenting data-driven insights. The story’s veracity and the ethicality of data-driven insights must be considered. Inaccurate or misleading insights can lead to bad workforce decisions and organizational consequences. Hence, communicating and reporting HR analytical insights involves not only some ethical interpretation on the part of the HR analytics team but also speaking truth to power.\nAdvances have been made in linking HR to business strategy and performance through the use of balanced scorecards, HR scorecards, and workforce scorecards. While, not all data can be expressed in simple metrics, scorecards and dashboards are effective tools for communicating strategic metrics and are best used as communication and reporting tools for strategy execution once an agreed-upon strategy is in place."
-  },
-  {
-    "objectID": "notes/a-7-step-process-for-people-analytics/index.html#step-7-enable-strategy-and-decision-making",
-    "href": "notes/a-7-step-process-for-people-analytics/index.html#step-7-enable-strategy-and-decision-making",
-    "title": "7 Steps for Making HR Analytics work in organizations",
-    "section": "Step 7 : enable strategy and decision-making",
-    "text": "Step 7 : enable strategy and decision-making\nThe final step of the HR analytics cycle is to enable HR strategy creation and evidence-based decision-making.\nThe HR analytics cycle aims to enable HR strategy creation and evidence-based decision-making. Strategy is a multidimensional concept that includes a plan, ploy, pattern, position, and perspective. It involves asking intelligent questions, identifying strengths, weaknesses, opportunities, and threats (SWOT), knowing the right things at the right time, scenario planning, evidence-based decision-making, establishing priorities and goals, and effectively managing execution. HR strategy focuses on aligning people policies, practices, and processes with the overall business strategy to achieve the organization’s goals and objectives3.\nThere are various models, frameworks, and guidelines on HR decision-making, such as Boudreau and Ramstad’s HR decision science approach, evidence-based HR4, and Dulebohn and Johnson’s classification framework for HR decision-making in the context of HR information systems and analytics5. These models and frameworks represent a complementary approach for enabling HR strategy and decision-making in the context of HR analytics. The data and insights derived from HR analytics play a central role in influencing HR strategy, decision-making, and strategic choices."
-  },
-  {
-    "objectID": "notes/a-7-step-process-for-people-analytics/index.html#is-hr-analytics-a-new-revolutionary-idea-or-evolutionary-capability",
-    "href": "notes/a-7-step-process-for-people-analytics/index.html#is-hr-analytics-a-new-revolutionary-idea-or-evolutionary-capability",
-    "title": "7 Steps for Making HR Analytics work in organizations",
-    "section": "Is HR analytics a new, revolutionary idea or evolutionary capability?",
-    "text": "Is HR analytics a new, revolutionary idea or evolutionary capability?\nHR analytics is not a revolutionary idea, but rather an evolutionary capability with a rich history and promising future. It has its roots in various HR research and measurement practices, such as workforce and HR research, action research, assessment centers, data-driven methods for change, employee and organizational surveys, evaluation/ROI, evidence-based practice, HR decision science, HR benchmarking, human capital measurement and metrics, personnel/employee/talent selection, scorecards, and workforce forecasting. The new focus is on the availability of new technological and analytical resources and the renewed interest in analytics by organizational leaders to improve HR’s impact on organizational effectiveness and other important business outcomes."
-  },
-  {
-    "objectID": "notes/a-7-step-process-for-people-analytics/index.html#what-is-the-best-way-to-get-started-with-hr-analytics",
-    "href": "notes/a-7-step-process-for-people-analytics/index.html#what-is-the-best-way-to-get-started-with-hr-analytics",
-    "title": "7 Steps for Making HR Analytics work in organizations",
-    "section": "What is the best way to get started with HR analytics?",
-    "text": "What is the best way to get started with HR analytics?\nIn terms of getting started and building HR analytical capabilities, organizations tend to be enticed into procuring R, Python and the latest HCM technology platforms with novel data visualization tools and subsequently hire a low-level HR analyst to operate these tools without clarity about their HR analytics vision, strategy and the capabilities and outcomes they hope to achieve.\nTo effectively start with HR analytics, organizations should hire a well-qualified HR analytics leader with the right disciplinary background and skill set before investing in any technological or analytical resources. This leader can help establish the overall vision, strategy, and capabilities for success, rather than hiring a low-level HR analyst who lacks clarity about their vision, strategy, and desired outcomes."
-  },
-  {
-    "objectID": "notes/a-7-step-process-for-people-analytics/index.html#who-should-perform-hr-analytics",
-    "href": "notes/a-7-step-process-for-people-analytics/index.html#who-should-perform-hr-analytics",
-    "title": "7 Steps for Making HR Analytics work in organizations",
-    "section": "Who should perform HR analytics?",
-    "text": "Who should perform HR analytics?\nHR analytics is a collaborative effort among practitioners from various disciplines, including business management, HR behavior, and organizational psychology. However, it requires an applied researcher with a background in social, behavioral, and organizational sciences to accurately interpret insights from HR analytics in individual, group, and organizational contexts."
-  },
-  {
-    "objectID": "notes/a-7-step-process-for-people-analytics/index.html#where-should-hr-analytics-reside",
-    "href": "notes/a-7-step-process-for-people-analytics/index.html#where-should-hr-analytics-reside",
-    "title": "7 Steps for Making HR Analytics work in organizations",
-    "section": "Where should HR analytics reside?",
-    "text": "Where should HR analytics reside?\nOver 75% of Fortune 1,000 firms in the US have HR research and analytics teams. Some argue for HR analytics to be in a business intelligence function and report to the line management function outside of the HR function. The authors argue that the HR analytics function should be led by someone trained in the social, behavioral, and organizational sciences (e.g. strategic HRM and organizational behavior, industrial and organizational psychology). However, the HR profession must lead in ensuring HR analytics is evidence-based and ethical and collaborates with other functions like business intelligence and finance."
-  },
-  {
-    "objectID": "notes/a-7-step-process-for-people-analytics/index.html#should-the-hr-analytics-team-be-connected-to-hr-strategy",
-    "href": "notes/a-7-step-process-for-people-analytics/index.html#should-the-hr-analytics-team-be-connected-to-hr-strategy",
-    "title": "7 Steps for Making HR Analytics work in organizations",
-    "section": "Should the HR analytics team be connected to HR strategy?",
-    "text": "Should the HR analytics team be connected to HR strategy?\nThe recommendation is for the establishment of an “HR Analytics and Strategy” function would be ideal and ensure a coordinated effort between HR analytics, strategy creation and execution, human capital decisions, and the adoption of evidence-based practices."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Cozmina Secula",
-    "section": "",
-    "text": "Translate Widget\n    \n    \n    \nWith an extensive background in B2B sales and team management, I’m expanding my skill set into new areas like data analytics, R language programming, Quarto, and data visualization.\nThroughout this blog, I showcase my work in people analytics, a domain I am interested in."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Cozmina Secula",
-    "section": "",
-    "text": "Translate Widget\n    \n    \n    \nWith an extensive background in B2B sales and people management, I’m expanding my skill set into new areas like data analytics, R programming language, Quarto, and data visualization. This is the space where I share my journey of learning and growth."
-  },
-  {
-    "objectID": "notes/make-the-most-of-your-data/index.html",
-    "href": "notes/make-the-most-of-your-data/index.html",
-    "title": "7 Ways to Make the Most of Data",
-    "section": "",
-    "text": "In a 2021 presentation at the Wharton People Analytics Conference by Andrea Jones-Rooy from the NYU Center for Data Science, several techniques for making the most of people’s data were discussed.\nThe author explains that these techniques are as follows:"
-  },
-  {
-    "objectID": "notes/make-the-most-of-your-data/index.html#data-quality-awareness",
-    "href": "notes/make-the-most-of-your-data/index.html#data-quality-awareness",
-    "title": "7 Ways to Make the Most of Data",
-    "section": "1. Data Quality Awareness",
-    "text": "1. Data Quality Awareness\nYour data may not be as accurate as you think, and this can be due to issues such as selection bias. For instance, when conducting an engagement survey, it’s essential to consider if the participants were selected randomly.\n\n\n\n\n\n\nTip\n\n\n\nDon’t discard data just because it’s not perfectly representative.\nParticipation rates in surveys also hold valuable information. If more and more people are not participating in your engagement survey over time, that is information."
-  },
-  {
-    "objectID": "notes/make-the-most-of-your-data/index.html#exclusion-and-inclusion",
-    "href": "notes/make-the-most-of-your-data/index.html#exclusion-and-inclusion",
-    "title": "7 Ways to Make the Most of Data",
-    "section": "2. Exclusion and Inclusion",
-    "text": "2. Exclusion and Inclusion\nConsider what aspects of your data analysis you might have missed. When conducting surveys, ask directly about the concerns and priorities of respondents instead of assuming what they feel.\n\n\n\n\n\n\nTip\n\n\n\nConsider these questions:\n\nWhat have I overlooked?\nWhat other aspects should I explore?\n\nThis process is all about exclusion, which means inquiring about the things you haven’t considered yet."
-  },
-  {
-    "objectID": "notes/make-the-most-of-your-data/index.html#data-siloing",
-    "href": "notes/make-the-most-of-your-data/index.html#data-siloing",
-    "title": "7 Ways to Make the Most of Data",
-    "section": "3. Data Siloing",
-    "text": "3. Data Siloing\nMany organizations segregate performance, engagement, and diversity data into separate categories.\n\n\n\n\n\n\nTip\n\n\n\nIt is essential to recognize that performance data isn’t an absolute truth. It is merely information about your workforce.\nThere’s no need to maintain strict segregation between data categories. These categories can be integrated for a more comprehensive view."
-  },
-  {
-    "objectID": "notes/make-the-most-of-your-data/index.html#scientific-method-utilization",
-    "href": "notes/make-the-most-of-your-data/index.html#scientific-method-utilization",
-    "title": "7 Ways to Make the Most of Data",
-    "section": "4. Scientific Method Utilization",
-    "text": "4. Scientific Method Utilization\n\nIf you are not sure where to focus your analysis or what data to collect, start with a theory and hypothesis.\n\nStart by being curious, observe, create a theory and hypothesis, collect data, test your hypothesis, and refine your approach based on the results.\n\n\n\n\n\n\nThe author suggests to try:\n\n\n\n\nBe curious about something – Why are younger employees leaving at a different rate compared to older employees?\nObserve – They are leaving at X rate, vs older talent at Y rate.\nHave a theory – For example, consider if a lack of inclusion is causing disengagement.\nMake a hypothesis – Think about something you can see, like if people are being interrupted in meetings. This could make them feel excluded and more likely to leave.\nCollect data – Keep a record of interruptions or speaking time in meetings.\nTest hypotheses – See if the data shows that being interrupted is connected to leaving. Look for evidence supporting your theory.\nRevise theory and repeat – If your theory is right, and you find consistent evidence, you can make changes or policies based on this. If not, you might need to explore other ideas and refine your theory."
-  },
-  {
-    "objectID": "notes/problem-definition-tool/index.html",
-    "href": "notes/problem-definition-tool/index.html",
-    "title": "Problem Definition Tool",
-    "section": "",
-    "text": "In a people analytics project, it is essential to begin by defining the problem we aim to solve and formulating the questions we want to address. Here are my notes on the steps of problem definition from Innovation Skills Accelerator: Problem Definition."
-  },
-  {
-    "objectID": "notes/problem-definition-tool/index.html#what-is-problem-definition",
-    "href": "notes/problem-definition-tool/index.html#what-is-problem-definition",
-    "title": "Problem Definition Tool",
-    "section": "What is problem definition?",
-    "text": "What is problem definition?\nProblem definition is a process of articulating a specific and actionable problem and identifying the root cause of that problem by using data, research, and collaboration.\n\nCreating a problem definition in 4 steps\n1. From issue to problem\n\nWrite down the issue you are trying to solve in a few lines. When you start, the issue is likely to be very broad.\nArticulate the problem. Write a one-paragraph problem definition. It should address the basics, including:\n\nWhat is the problem?\nWhen does it occur?\nWhere does it occur?\n\n\n\n\n\n\n\n\nTip\n\n\n\n\nTake care that the problem is not a solution in disguise.\nAvoid complex jargon and technical terms when you write.\nReviewing the problem definition is a group collaborative exercise.\n\n\n\n2. Articulating root causes\n\nWhy do we think this problem is happening? Write down all possible causes.\n5X WHY - Root cause analysis:\n\nMake a list of whys (at least five) that describe why the problem is happening.\nAsk why those problems are happening.\nRepeat the exercise. Five times.\nDevelop a hypothesis for the most likely causes.\nRepeat five times to create a likely list.\nPrioritize those problems that are solvable by working with others.\n\n\n3. Identifying those most affected\n\nWrite down a list of those who are most affected by the problem.\n\n\n\n\n\n\n\nTip\n\n\n\nAvoid generic statements like “people” in favor of a specific description of those immediately impacted.\n\n\n\nThose affected may be the organization, people, or both.\nPeople may be affected at certain points in their employee lifetime, such as onboarding, development, or retention.\nIdentify the people affected and invite them to review the problem definition.\n\n4. Reframing the problem\n\nLASSO framework:\n\nL - LIMITED. Have I limited the scope? Have I narrowed a large problem down to a more readily definable smaller problem?\nA - ACTIONABLE. Have I described something actionable that we can realistically do something about?\nS - SPECIFIC. Have I described something specific, concrete, or detailed?\nS - SUPPORTED. Have I described a problem that will be supported? My organization cares enough about the problem to take action and invest in the evaluation process to determine whether the solution will work.\nO - OWNER. Have I identified the problem owner? Someone needs to be on point to manage the process and communicate back to stakeholders."
-  },
-  {
-    "objectID": "notes/problem-definition-tool/index.html#key-challenges-in-defining-problem-process",
-    "href": "notes/problem-definition-tool/index.html#key-challenges-in-defining-problem-process",
-    "title": "Problem Definition Tool",
-    "section": "Key Challenges in Defining Problem Process",
-    "text": "Key Challenges in Defining Problem Process\n\nThe constant temptation to articulate a solution rather than a particular problem.\nThe identified problem is too broad to be actionable.\nThe identified problem may not be actionable by you with the resources you have at your disposal.\nThe failure to articulate assumptions and root causes and to identify who else may already be working on the problem.\nThe lack of success metrics needed to assess if a solution works."
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#introducing-two-distinct-tools-for-data-analysis-with-categorical-data-using-r",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#introducing-two-distinct-tools-for-data-analysis-with-categorical-data-using-r",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Introducing two distinct tools for data analysis with categorical data using R",
-    "text": "Introducing two distinct tools for data analysis with categorical data using R\n\nFrequency tables\nChi-squared test"
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#case-study",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#case-study",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Case study",
-    "text": "Case study\n\nFocused on diversity and inclusion (D&I)\nSourced from the book Predictive HR Analytics : Mastering the HR Metric\nWith data available here"
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#data-preparation-and-exploration",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#data-preparation-and-exploration",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Data preparation and exploration",
-    "text": "Data preparation and exploration\n\nPackages: tidyverse, kableExtra, DT\nData preparation and exploration\nCreation of cross-tab\nData visualization\nChi-squared test"
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#the-business-needs",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#the-business-needs",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "The business needs",
-    "text": "The business needs\nA hypothetical company aims to employ scientific methods and procedures to address a significant people problem: gender diversity.\n\nCommercial perspective\n\nThe organization seeks to foster a greater diversity of thought in senior and strategic discussions.\n\nPeople perspective\n\nThe organization wants to assess whether it maintains gender balance by providing positive role models for younger employees."
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#the-research-question",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#the-research-question",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "The research question",
-    "text": "The research question\nAre women underrepresented in senior leadership roles within the organization?"
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#load-libraries",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#load-libraries",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Load libraries",
-    "text": "Load libraries\n\n library(tidyverse)\n library(kableExtra)"
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#look-at-the-data---the-structure",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#look-at-the-data---the-structure",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Look at the data - The structure",
-    "text": "Look at the data - The structure\n\ndiversity &lt;- read_csv(\"diversity1.csv\")\nglimpse(diversity)\n\nRows: 1,493\nColumns: 11\n$ BossGender       &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…\n$ Gender           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2,…\n$ JobGrade         &lt;dbl&gt; 6, 5, 5, 3, 6, 7, 6, 5, 6, 6, 5, 5, 5, 5, 3, 7, 6, 5,…\n$ Age              &lt;dbl&gt; 39, 37, 35, 30, 33, 40, 49, 37, 33, 38, 42, 31, 39, 2…\n$ Tenure           &lt;dbl&gt; 0, 6, 1, 3, 0, 0, 8, 1, 11, 2, 11, 6, 2, 0, 4, 2, 1, …\n$ Status           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…\n$ PerformanceScore &lt;dbl&gt; 4, 4, 4, 4, NA, 4, 4, 5, 4, 4, 4, 4, 4, 4, 5, 4, 4, 4…\n$ BossPerformance  &lt;dbl&gt; 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 4, 4, 4,…\n$ Division         &lt;dbl&gt; 12, 12, 6, 6, 8, 1, 8, 8, 8, 8, 6, 6, 6, 6, 6, 10, 7,…\n$ Country          &lt;dbl&gt; 3, 4, 7, 7, 7, 7, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 3, 8,…\n$ leaver           &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…\n\n\n\nThe organization, a management consulting firm, has 1,493 employees.\nThe data set contains 11 variables.\nData type (in the data set): numeric for all variables."
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#variables-of-interest",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#variables-of-interest",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Variables of interest",
-    "text": "Variables of interest\n\nTo answer the research question, the variables of interest are: JobGrade and Gender.\n\n\n\n\n\n\nLevel\nJob Grade\n\n\n\n\n1\nClerical/Officer\n\n\n2\nAdministrator/Assistant\n\n\n3\nGraduate/Trainee Consultant\n\n\n4\nConsultant\n\n\n5\nSenior Consultant\n\n\n6\nManaging Consultant\n\n\n7\nPrincipal Consultant\n\n\n8\nPartner\n\n\n\n\n\n\n\nLevel\nGender\n\n\n\n\n1\nFemale\n\n\n2\nMale"
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#data-preparation",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#data-preparation",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Data preparation",
-    "text": "Data preparation\n\nTransform variables of interest gender and jobgrade by replacing numerical values with descriptive labels for both variables.\n\n\n\nCode\n# create new variables \"gender\" and \"jobgrade\"\ndiversity &lt;- diversity|&gt;\n  mutate(gender= factor(Gender,\n                        levels= c(1:2),\n                        labels= c(\"Female\", \"Male\")),\n         jobgrade= factor(JobGrade,\n                          levels= c(1:8),\n                          labels= c(\"Clerical/Officer\", \"Administrator/Assistant\", \"Graduate/Trainee Consultant\", \"Consultant\", \"Senior Consultant\", \"Managing Consultant\", \"Principal Consultant\", \"Partner\")))\n\n\n\nDetect and rectify inaccuracies in the data\n\n\n\nCode\n# variables' levels\ndiversity|&gt;\n  distinct(gender, jobgrade)\n\n# filter and drop \"NA\" levels and name the new data frame \"diversity1\"\ndiversity1 &lt;- diversity|&gt;\n  filter(gender!=\"NA\")|&gt;\n  droplevels()\n\n#variables' levels filtered\ndiversity1|&gt;\n  distinct(gender, jobgrade)\n\n\n\nCreate a cross-tab with data for the two variables\n\n\n\nCode\n# cross-tab; count and make a table for \"gender\" and \"jobgrade\" data\ndiversity1|&gt;\n  count(gender, jobgrade)|&gt;\n  pivot_wider(names_from = gender, values_from = n)|&gt;\n  kable(col.names = c(\"JobGrade\", \"Female\", \"Male\"),\n        align = \"lrr\")\n\n\n\n\n\nJobGrade\nFemale\nMale\n\n\n\n\nClerical/Officer\n31\n8\n\n\nAdministrator/Assistant\n227\n116\n\n\nGraduate/Trainee Consultant\n160\n103\n\n\nConsultant\n139\n104\n\n\nSenior Consultant\n98\n152\n\n\nManaging Consultant\n68\n171\n\n\nPrincipal Consultant\n19\n62\n\n\nPartner\n4\n29\n\n\n\n\n\n\n\n\nProportions of gender within each jobgrade\n\n\n\nCode\ndiversity1|&gt;\n  count(gender, jobgrade)|&gt;\n  group_by(jobgrade)|&gt;\n  mutate(prop= round(n/sum(n)*100))|&gt;\n  pivot_wider(id_cols = jobgrade, names_from = gender, values_from = prop)|&gt;\n  kable(col.names = c(\"Job Grade\", \"Female (%)\", \"Male (%)\"),\n        align = \"lrr\")\n\n\n\n\n\nJob Grade\nFemale (%)\nMale (%)\n\n\n\n\nClerical/Officer\n79\n21\n\n\nAdministrator/Assistant\n66\n34\n\n\nGraduate/Trainee Consultant\n61\n39\n\n\nConsultant\n57\n43\n\n\nSenior Consultant\n39\n61\n\n\nManaging Consultant\n28\n72\n\n\nPrincipal Consultant\n23\n77\n\n\nPartner\n12\n88"
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#cross-tab",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#cross-tab",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Cross-tab",
-    "text": "Cross-tab\n\n\nCode\n# cross-tab; count and make a table for \"gender\" and \"jobgrade\" data\ndiversity1|&gt;\n  count(gender, jobgrade)|&gt;\n  pivot_wider(names_from = gender, values_from = n)|&gt;\n  kable(col.names = c(\"JobGrade\", \"Female\", \"Male\"),\n        align = \"lrr\")\n\n\n\n\n\nJobGrade\nFemale\nMale\n\n\n\n\nClerical/Officer\n31\n8\n\n\nAdministrator/Assistant\n227\n116\n\n\nGraduate/Trainee Consultant\n160\n103\n\n\nConsultant\n139\n104\n\n\nSenior Consultant\n98\n152\n\n\nManaging Consultant\n68\n171\n\n\nPrincipal Consultant\n19\n62\n\n\nPartner\n4\n29"
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#proportions-of-gender-within-each-jobgrade",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#proportions-of-gender-within-each-jobgrade",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Proportions of gender within each jobgrade",
-    "text": "Proportions of gender within each jobgrade\n\n\nCode\ndiversity1|&gt;\n  count(gender, jobgrade)|&gt;\n  group_by(jobgrade)|&gt;\n  mutate(prop= round(n/sum(n)*100))|&gt;\n  pivot_wider(id_cols = jobgrade, names_from = gender, values_from = prop)|&gt;\n  kable(col.names = c(\"Job Grade\", \"Female (%)\", \"Male (%)\"),\n        align = \"lrr\")\n\n\n\n\n\nJob Grade\nFemale (%)\nMale (%)\n\n\n\n\nClerical/Officer\n79\n21\n\n\nAdministrator/Assistant\n66\n34\n\n\nGraduate/Trainee Consultant\n61\n39\n\n\nConsultant\n57\n43\n\n\nSenior Consultant\n39\n61\n\n\nManaging Consultant\n28\n72\n\n\nPrincipal Consultant\n23\n77\n\n\nPartner\n12\n88"
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#are-women-underrepresented-in-senior-leadership-roles-within-the-organization",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#are-women-underrepresented-in-senior-leadership-roles-within-the-organization",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Are women underrepresented in senior leadership roles within the organization?",
-    "text": "Are women underrepresented in senior leadership roles within the organization?\n\nUp to this point, the data reveal a clear pattern: males are more common in senior roles, while females tend to occupy junior positions.\n\n\n\nCode\n# Custom label function\n\npercent_label &lt;- function(x) {\n  paste0(100*x, \"%\")\n}\n\n\nggplot(diversity1, aes(x=jobgrade, fill=gender))+\n  geom_bar(position = \"fill\", width = 0.7)+\n  labs(title = \"Gender by Job Grade\",\n      x = \"Job Grade\",\n      y = \"Proportions\",\n      fill= \"Gender\")+\n  theme_minimal(base_size = 14)+\n  theme(plot.background = element_blank(),\n        panel.grid = element_blank())+\n  scale_fill_manual(values = c(\"Female\" = \"#00589b\", \"Male\"= \"#ccddeb\"))+\n   scale_y_continuous(labels = percent_label, breaks = seq(0, 1, 0.25))+\n  coord_flip()"
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#does-this-organization-have-a-gender-diversity-issue",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#does-this-organization-have-a-gender-diversity-issue",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Does this organization have a gender diversity issue?",
-    "text": "Does this organization have a gender diversity issue?\n\nThe data indicate a pattern where women are more commonly in junior roles and men in senior roles.\nHowever, it’s unclear from the data whether this pattern is coincidental or statistically significant.\nTo assess this, we can employ a chi-squared test to determine the statistical significance of the observed pattern."
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#the-hypotheses",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#the-hypotheses",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "The hypotheses",
-    "text": "The hypotheses\nH0: There is no association between gender and job grade within the organization.\n\nthe observed distribution of females and males across job grades is due to random chance.\n\nH1: There is a significant association between gender and job grade within the organization.\n\nthe observed distribution of females and males across job grades is not a result of random chance; it reflects a significant pattern of male predominance in senior roles and a greater representation of females in entry-level positions."
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#chi-squared-test-in-r",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#chi-squared-test-in-r",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Chi squared test in R",
-    "text": "Chi squared test in R\n\ncross_tab &lt;- table(diversity1$jobgrade, diversity1$gender)\nchisq.test(cross_tab)\n\n\n    Pearson's Chi-squared test\n\ndata:  cross_tab\nX-squared = 164.7, df = 7, p-value &lt; 2.2e-16\n\n\n\nThe p-value is extremely small, less than 2.2e-16, which is very close to zero.\nSince the p-value is less than the significance level of 0.05, we can confidently reject the null hypothesis, concluding that the two variables are dependent.\nThis result indicates a statistically significant association between gender and job grade.\nIt suggests that certain factors are influencing the observed distribution of genders within job grades."
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#analyzing-gender-distribution-across-job-grades",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#analyzing-gender-distribution-across-job-grades",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Analyzing gender distribution across job grades",
-    "text": "Analyzing gender distribution across job grades\n\nFrequency tables and graphical visualization offer a concise summary of gender distribution across job grades, revealing a clear pattern: men are more common in senior roles, while women predominantly hold junior positions.\nThe results of the chi-squared test, with a p-value close to zero, confirm a very strong association between gender and job grade."
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#recommendation",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#recommendation",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Recommendation",
-    "text": "Recommendation\n\nWhile this statistical evidence does not directly imply a gender diversity issue within the organization, it signals that factors beyond chance influence the gender distribution across job grades.\nTo address potential gender bias or discrimination and foster diversity and inclusion within the organization, further analysis and actions are necessary."
   },
   {
     "objectID": "posts/2023-12-05-create-a-dashboard/index.html",
@@ -495,34 +47,6 @@
     "title": "Creating a Dashboard with Quarto",
     "section": "Finalizing and Sharing the Dashboard",
     "text": "Finalizing and Sharing the Dashboard\nOnce your dashboard is done, you may want to share it with others. I hosted the dashboard using GitHub Pages. In the GitHub repository for your dashboard, go to ‘Settings’ and then ‘Pages.’ Select the branch and folder of your dashboard’s index.html file, click ‘Save,’ and you’ll get a URL to display your work. Here’s the final link for this dashboard: https://cozminasecula.github.io/dashboard/."
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#load-packages",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#load-packages",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Load packages",
-    "text": "Load packages\n\n library(tidyverse)\n library(kableExtra)\n library(DT)"
-  },
-  {
-    "objectID": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#read-the-data",
-    "href": "posts/2023-09-14-frequency-tables-and-chi-squared-test/index.html#read-the-data",
-    "title": "Unlocking Insights (I): Analyzing Categorical Data with Cross-Tab and Chi-Squared Test",
-    "section": "Read the data",
-    "text": "Read the data\nSee Table 1 for Data Set\n\n\nCode\ndiversity &lt;- read_csv(\"diversity1.csv\")\ndatatable(diversity, options = list(dom = 'ftp', paging = TRUE), filter = \"top\")\n\n\n\n\nTable 1: Data Set\n\n\n\n\n\n\n\n\n\n\n\n\nThe organization, a management consulting firm, has 1.493 employees (1.493 observations).\nThe data set contains 11 variables.\nData type: numeric for all variables."
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#read-the-data",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#read-the-data",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Read the data",
-    "text": "Read the data\nSee Table 1 for Data Set\n\n\nCode\ndiversity &lt;- read_csv(\"diversity2.csv\")\n\ndatatable(diversity, options = list(dom = 'ftp', paging = TRUE), filter = \"top\")\n\n\n\n\nTable 1: Data Set\n\n\n\n\n\n\n\n\n\n\n\n\nThe organization comprises 29,976 employees in two functional areas across the UK, and these employees are organized into 928 teams.\nThe data set contains 30 variables."
-  },
-  {
-    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#recommendation",
-    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#recommendation",
-    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
-    "section": "Recommendation",
-    "text": "Recommendation\n\nAccording to our analysis, the organization faces challenges in BAME representation across professions, particularly in the “Sales Staff”.\nFurther research should be conducted to identify the factors influencing or associated with the diversity disparities between these two teams."
   },
   {
     "objectID": "posts/2023-09-14-cross-tables-and-chi-squared-test/index.html#case-study",
@@ -595,6 +119,77 @@
     "text": "Recommendation\n\nWhile this statistical evidence does not directly imply a gender diversity issue within the organization, it signals that factors beyond chance influence the gender distribution across job grades.\nTo address potential gender bias or discrimination and foster diversity and inclusion within the organization, further analysis and actions are necessary."
   },
   {
+    "objectID": "notes/quarto-tools.html",
+    "href": "notes/quarto-tools.html",
+    "title": "Quarto Tools",
+    "section": "",
+    "text": "Translate Widget\n\n\n    \n    \n    \n\n\n\n\n\n\n\n\n\n\nQuarto Tools\nQuarto is an open-source scientific and technical publishing system with support for multiple languages and environments. It offers a wide range of functionalities, making it versatile for various tasks. There are many resources on the web to learn about Quarto. Here, I have collected some of them that I find particularly helpful for my Quarto code, blog, presentations, and workflow.\nIf you want to start your journey with Quarto, I recommend the Quarto documentation, which is the best place to learn everything you might want to know about Quarto.",
+    "crumbs": [
+      "Quarto Tools"
+    ]
+  },
+  {
+    "objectID": "notes/analytics-project.html",
+    "href": "notes/analytics-project.html",
+    "title": "Insight-Oriented Data Projects Resources",
+    "section": "",
+    "text": "Translate Widget\n\n\n    \n    \n    \n\n\n\n\n\n\n\n\n\n\nInsight-Oriented Data Projects Resources\nAn insight-oriented data project starts with a clear purpose: to discover, understand, explain, or solve business problems. Significant effort is focused on defining the problem, formulating the question you want to answer, and designing an analysis workflow to provide insights for resolving the question. Data are collected, analyzed, and interpreted systematically to address specific problems and assist with making informed decisions.",
+    "crumbs": [
+      "Insight-Oriented Data Projects Resources"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Cozmina Secula",
+    "section": "",
+    "text": "Translate Widget\n    \n    \n    \nWith an extensive background in B2B sales and team management, I’m expanding my skill set into new areas like data analytics, R language programming, Quarto, and data visualization.\nThroughout this blog, I showcase my work in people analytics, a domain I am interested in."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Translate Widget\n\n\n    \n    \n    \n\n\n\n\n\n\n\n\n\nAbout the blog\nMaking Sense of Data was created to help solving problems by using data to answer questions following an insight-oriented data approach rooted in the scientific method.\nWhen I started this journey, I had to make several choices. One was to choose the software for analyzing data. Although I was familiar with Excel, I began considering whether to enhance my Excel skills or start learning a statistical program. Ultimately, I decided to learn R, a statistical program. The R community offers many open resources that significantly help my learning process. In addition, I wanted to document and share my work. And Quarto became the perfect tool for me to do this. I was able to create this space where I can share my learning and my work.\nThis blog is about my journey to make sense of data. It has two sections: one for storing and sharing projects, notes, and ideas, and another for sharing R and Quarto open resources I’ve gathered along the way. I hope you will find it useful, and feel free to share it with anyone!\n\n\nAbout me\nCozmina Secula, Creator of Making Sense of Data blog\n\nWith an extensive background in B2B sales and people management, I became interested in using data to answer questions during a master’s program in strategic human resource management at “Alexandru Ioan Cuza” University, Iasi.\nAfter completing a research project with qualitative data, I started working with quantitative data. This led me to initiate Making Sense of Data blog, focusing on turning data into meaningful insights. I am also passionate about open-source knowledge."
+  },
+  {
+    "objectID": "notes/notes.html#why-this-space",
+    "href": "notes/notes.html#why-this-space",
+    "title": "Learning resources",
+    "section": "Why this space?",
+    "text": "Why this space?\nWorking on data-based projects while developing my R and Quarto skills, I gathered resources to help myself. Learning from others inspired me to share these resources with anyone interested. This space is meant to be helpful for those looking to learn about insight-oriented data projects and related topics.",
+    "crumbs": [
+      "Learning resources"
+    ]
+  },
+  {
+    "objectID": "notes/notes.html#what-is-in-this-space",
+    "href": "notes/notes.html#what-is-in-this-space",
+    "title": "Learning resources",
+    "section": "What is in this space?",
+    "text": "What is in this space?\n\n\nInsight-Oriented\nData Projects Resources\nThis section provides\ninformation on resources\nthat can be used for\ninsight-oriented data projects.\n\n\nR Resources\n\nThis section\ninclude links on resources\nto learn data cleaning,\ndata analysis and visualization\nwith R.\n\n\nQuarto Tools\n\nThis section includes\ntools, examples, and articles\nrelated to Quarto\navailable on the internet.\n\n\n\nPlease note that this is a work in progress, and I am constantly adding resources.",
+    "crumbs": [
+      "Learning resources"
+    ]
+  },
+  {
+    "objectID": "notes/R-resources.html",
+    "href": "notes/R-resources.html",
+    "title": "R Resources",
+    "section": "",
+    "text": "Translate Widget\n\n\n    \n    \n    \n\n\n\n\n\n\n\n\n\n\nR Resources\nR is an open-source statistical and data visualization software. It supports end-to-end analytics workflows, including data extraction, wrangling, cleaning, analysis, and visualization. All resources in this section are related to R/R Studio.",
+    "crumbs": [
+      "R Resources"
+    ]
+  },
+  {
+    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#case-study",
+    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#case-study",
+    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
+    "section": "Case study",
+    "text": "Case study\n\nFocused on diversity and inclusion (D&I)\nSourced from the book Predictive HR Analytics : Mastering the HR Metric\nWith data available here"
+  },
+  {
     "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#problem-statement",
     "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#problem-statement",
     "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
@@ -609,10 +204,143 @@
     "text": "Analysis question\nHow does the distribution of Black, Asian, or Minority Ethnic (BAME) employees vary across different professions?"
   },
   {
+    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#load-packages",
+    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#load-packages",
+    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
+    "section": "Load packages",
+    "text": "Load packages\n\n library(tidyverse)\n library(car)\n library(paletteer)\n library(kableExtra)"
+  },
+  {
     "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#data-set",
     "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#data-set",
     "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
     "section": "Data set",
     "text": "Data set\nFor this case study I used a data set available here.\n\nDescriptionData summary\n\n\n\nThe company, a hypothetical organization, comprises 29,976 employees in two functional areas across the UK, and these employees are organized into 928 teams.\nThe data set contains 30 variables.\nData type (in the data set): numeric for all variables.\n\n\n\n\ndiversity &lt;- read_csv(\"diversity2.csv\")\n\nskimr::skim(diversity)\n\n\n\nData summary\n\n\n\n\nName\n\n\ndiversity\n\n\n\n\nNumber of rows\n\n\n928\n\n\n\n\nNumber of columns\n\n\n30\n\n\n\n\n_______________________\n\n\n\n\n\n\nColumn type frequency:\n\n\n\n\n\n\nnumeric\n\n\n30\n\n\n\n\n________________________\n\n\n\n\n\n\nGroup variables\n\n\nNone\n\n\n\n\nVariable type: numeric\n\n\n\n\nskim_variable\n\n\nn_missing\n\n\ncomplete_rate\n\n\nmean\n\n\nsd\n\n\np0\n\n\np25\n\n\np50\n\n\np75\n\n\np100\n\n\nhist\n\n\n\n\n\n\nDepartmentGroupNumber\n\n\n0\n\n\n1.00\n\n\n470.62\n\n\n270.05\n\n\n1.00\n\n\n237.75\n\n\n470.50\n\n\n704.25\n\n\n937.00\n\n\n▇▇▇▇▇\n\n\n\n\nGroupSize\n\n\n1\n\n\n1.00\n\n\n32.30\n\n\n16.24\n\n\n10.00\n\n\n18.00\n\n\n28.00\n\n\n45.00\n\n\n71.00\n\n\n▇▆▃▃▂\n\n\n\n\nPercentMale\n\n\n1\n\n\n1.00\n\n\n58.95\n\n\n22.27\n\n\n1.00\n\n\n45.00\n\n\n65.00\n\n\n67.00\n\n\n100.00\n\n\n▁▃▅▇▃\n\n\n\n\nBAME\n\n\n182\n\n\n0.80\n\n\n0.12\n\n\n0.11\n\n\n0.00\n\n\n0.03\n\n\n0.09\n\n\n0.20\n\n\n0.45\n\n\n▇▃▂▂▁\n\n\n\n\nNumberTeamLeads\n\n\n1\n\n\n1.00\n\n\n4.61\n\n\n2.33\n\n\n1.00\n\n\n3.00\n\n\n4.00\n\n\n6.00\n\n\n10.00\n\n\n▅▇▅▃▂\n\n\n\n\nNumberFeMaleTeamLeads\n\n\n20\n\n\n0.98\n\n\n0.68\n\n\n1.06\n\n\n0.00\n\n\n0.00\n\n\n0.00\n\n\n1.00\n\n\n8.00\n\n\n▇▂▁▁▁\n\n\n\n\nLocation\n\n\n0\n\n\n1.00\n\n\n2.12\n\n\n0.85\n\n\n1.00\n\n\n1.00\n\n\n2.00\n\n\n3.00\n\n\n3.00\n\n\n▆▁▅▁▇\n\n\n\n\nLondonorNot\n\n\n0\n\n\n1.00\n\n\n1.43\n\n\n0.49\n\n\n1.00\n\n\n1.00\n\n\n1.00\n\n\n2.00\n\n\n2.00\n\n\n▇▁▁▁▆\n\n\n\n\nFunction\n\n\n1\n\n\n1.00\n\n\n1.46\n\n\n0.50\n\n\n1.00\n\n\n1.00\n\n\n1.00\n\n\n2.00\n\n\n2.00\n\n\n▇▁▁▁▇\n\n\n\n\nEMPsurvEngage_1\n\n\n1\n\n\n1.00\n\n\n88.14\n\n\n11.24\n\n\n22.00\n\n\n83.00\n\n\n91.00\n\n\n96.00\n\n\n100.00\n\n\n▁▁▁▂▇\n\n\n\n\nEMPsurvEngage_2\n\n\n1\n\n\n1.00\n\n\n87.50\n\n\n10.88\n\n\n45.00\n\n\n82.00\n\n\n90.00\n\n\n96.00\n\n\n100.00\n\n\n▁▁▂▅▇\n\n\n\n\nEMPsurvEngage_3\n\n\n1\n\n\n1.00\n\n\n85.63\n\n\n13.43\n\n\n33.00\n\n\n80.00\n\n\n89.00\n\n\n95.00\n\n\n100.00\n\n\n▁▁▁▃▇\n\n\n\n\nEMPsurvEngage_4\n\n\n1\n\n\n1.00\n\n\n75.98\n\n\n13.77\n\n\n29.00\n\n\n68.00\n\n\n78.00\n\n\n86.00\n\n\n100.00\n\n\n▁▂▅▇▅\n\n\n\n\nEMPsurvEngage_5\n\n\n1\n\n\n1.00\n\n\n91.49\n\n\n8.80\n\n\n44.00\n\n\n88.00\n\n\n93.00\n\n\n98.00\n\n\n100.00\n\n\n▁▁▁▂▇\n\n\n\n\nEMPsurvEngage_6\n\n\n1\n\n\n1.00\n\n\n68.60\n\n\n15.96\n\n\n11.00\n\n\n58.00\n\n\n69.00\n\n\n80.00\n\n\n100.00\n\n\n▁▂▆▇▃\n\n\n\n\nEMPsurvEngage_7\n\n\n1\n\n\n1.00\n\n\n89.98\n\n\n9.82\n\n\n25.00\n\n\n86.00\n\n\n92.00\n\n\n97.00\n\n\n100.00\n\n\n▁▁▁▂▇\n\n\n\n\nEMPsurvEngage_8\n\n\n1\n\n\n1.00\n\n\n66.75\n\n\n15.31\n\n\n0.00\n\n\n57.00\n\n\n68.00\n\n\n78.00\n\n\n100.00\n\n\n▁▁▅▇▃\n\n\n\n\nEMPsurvEngage_9\n\n\n1\n\n\n1.00\n\n\n76.64\n\n\n15.54\n\n\n10.00\n\n\n68.00\n\n\n79.00\n\n\n88.00\n\n\n100.00\n\n\n▁▁▃▇▇\n\n\n\n\nEMPsurvEngagement\n\n\n1\n\n\n1.00\n\n\n81.18\n\n\n10.02\n\n\n39.00\n\n\n75.00\n\n\n83.00\n\n\n89.00\n\n\n99.00\n\n\n▁▁▃▇▆\n\n\n\n\nEMPorgIntegrity1\n\n\n1\n\n\n1.00\n\n\n69.99\n\n\n14.33\n\n\n18.00\n\n\n61.00\n\n\n71.00\n\n\n80.00\n\n\n100.00\n\n\n▁▂▅▇▃\n\n\n\n\nEMPorgIntegrity2\n\n\n1\n\n\n1.00\n\n\n85.74\n\n\n10.94\n\n\n35.00\n\n\n80.00\n\n\n88.00\n\n\n94.00\n\n\n100.00\n\n\n▁▁▂▆▇\n\n\n\n\nEMPorgIntegrity3\n\n\n1\n\n\n1.00\n\n\n88.73\n\n\n10.31\n\n\n35.00\n\n\n83.00\n\n\n91.00\n\n\n96.00\n\n\n100.00\n\n\n▁▁▁▃▇\n\n\n\n\nEMPorgIntegrity4\n\n\n1\n\n\n1.00\n\n\n84.91\n\n\n10.88\n\n\n27.00\n\n\n80.00\n\n\n86.00\n\n\n92.00\n\n\n100.00\n\n\n▁▁▁▆▇\n\n\n\n\nEMPorgIntegrity5\n\n\n1\n\n\n1.00\n\n\n470.11\n\n\n269.76\n\n\n1.00\n\n\n237.50\n\n\n470.00\n\n\n703.50\n\n\n936.00\n\n\n▇▇▇▇▇\n\n\n\n\nEmpSurvOrgIntegrity\n\n\n1\n\n\n1.00\n\n\n159.89\n\n\n54.53\n\n\n54.00\n\n\n113.10\n\n\n164.60\n\n\n207.60\n\n\n258.20\n\n\n▅▇▇▇▇\n\n\n\n\nEMPsurvSUP1\n\n\n1\n\n\n1.00\n\n\n82.96\n\n\n10.65\n\n\n33.00\n\n\n77.00\n\n\n84.00\n\n\n91.00\n\n\n100.00\n\n\n▁▁▂▇▇\n\n\n\n\nEMPsurvSUP2\n\n\n1\n\n\n1.00\n\n\n85.24\n\n\n10.99\n\n\n30.00\n\n\n79.00\n\n\n87.00\n\n\n93.00\n\n\n100.00\n\n\n▁▁▂▆▇\n\n\n\n\nEMPsurvSUP3\n\n\n1\n\n\n1.00\n\n\n79.89\n\n\n12.72\n\n\n34.00\n\n\n73.00\n\n\n81.00\n\n\n89.00\n\n\n100.00\n\n\n▁▂▃▇▆\n\n\n\n\nEMPsurvSUP4\n\n\n1\n\n\n1.00\n\n\n81.35\n\n\n12.13\n\n\n27.00\n\n\n73.00\n\n\n82.00\n\n\n91.00\n\n\n100.00\n\n\n▁▁▃▇▇\n\n\n\n\nEmpSurvSupervisor\n\n\n1\n\n\n1.00\n\n\n82.36\n\n\n10.07\n\n\n35.75\n\n\n76.50\n\n\n83.50\n\n\n89.75\n\n\n100.00\n\n\n▁▁▂▇▆"
+  },
+  {
+    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#variables-of-interest",
+    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#variables-of-interest",
+    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
+    "section": "Variables of interest",
+    "text": "Variables of interest\n\nBAME: Percentage of the team comprised of Black, Asian, or Minority Ethnic employees.\nFunction: Function 1 = Sales staff (customer-facing roles) or 2 = Professional Service (non-customer-facing roles).\nThe data set contains both variables of interest as numbers.\nThe “BAME” variable is numeric, while the “Function” variable is categorical and needs to be transformed into a factor for analysis in R."
+  },
+  {
+    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#data-preparation",
+    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#data-preparation",
+    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
+    "section": "Data preparation",
+    "text": "Data preparation\n\nChange the variable “Function” to categorical by creating a new variable named “profession” with two levels “Sales Staff” and “Professional Service”.\n\n\n\nCode\n# Create a new variable named \"profession\" with two levels \"Sales Staff\" and \"Professional Service\"\n# Drop \"NA\" levels as they are not meaningful for the analysis\n\ndiversity &lt;- diversity|&gt;\n  mutate(profession = factor(Function,\n                           levels = c(1:2),\n                           labels = c(\"Sales Staff\", \"Professional Service\")))|&gt;\n  filter(profession != \"NA\")|&gt;\n  droplevels()"
+  },
+  {
+    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#how-does-the-distribution-of-bame-employees-vary-across-different-professions-i",
+    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#how-does-the-distribution-of-bame-employees-vary-across-different-professions-i",
+    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
+    "section": "How does the distribution of BAME employees vary across different professions? (I)",
+    "text": "How does the distribution of BAME employees vary across different professions? (I)\n\nBAME employees are distributed differently across the two professions. There are more “Sales Staff” teams with a lower percentage of BAME employees, while “Professional Service” teams have a more even distribution.\nIt’s essential to note that these findings are based on summary statistics and visual examinations, which may not be highly precise.\nTo gain more confidence in comparing BAME representation between the two professions and to deepen our understanding of the organization’s ethnicity dynamics, we will conduct an Independent Samples t-Test."
+  },
+  {
+    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#levenes-test-for-equality-of-variances",
+    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#levenes-test-for-equality-of-variances",
+    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
+    "section": "Levene’s Test for Equality of Variances",
+    "text": "Levene’s Test for Equality of Variances\nOne of the requirements for the independent Samples t-test is the homogeneity of variances (i.e., variances approximately equal across groups).\nHowever, if this requirement is violated and the sample sizes for each group differ, we can calculate t-test statistics. The independent samples t-test output also includes an approximate t-statistic, which doesn’t assume equal variances across populations. The Welch t-test statistic can be employed when equal variances between populations cannot be assumed.\nThe hypotheses\n\nH0: The population variances of “Sales Staff” and “Professional Service” are equal.\nH1: The population variances of “Sales Staff” and “Professional Service” are not equal.\n\n\nleveneTest(diversity$BAME, group = diversity$profession, center=mean)\n\nLevene's Test for Homogeneity of Variance (center = mean)\n       Df F value    Pr(&gt;F)    \ngroup   1  35.396 4.141e-09 ***\n      744                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nThe p-value is 4.141e-09, which is less than 0.05. This indicates very strong evidence against the null hypothesis, leading us to reject the null hypothesis of Levene’s Test.\nThis suggests that the variances of the two groups are not equal, meaning the assumption of homogeneity of variances is violated."
+  },
+  {
+    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#independent-samples-t-test-1",
+    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#independent-samples-t-test-1",
+    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
+    "section": "Independent Samples t-Test",
+    "text": "Independent Samples t-Test\n\nWe want to determine if there is a statistically significant difference between the mean percentages of BAME employees in the “Sales Staff” and “Professional Service” professions within this organization.\nTo achieve this, we can employ an Independent Samples t-Test to compare the means of BAME percentages for “Sales Staff” and “Professional Service.”\n\nThe hypotheses\n\nH0: The difference of the means is equal to 0\nH1: The difference of the means is not equal to 0.\n\n\nt.test(diversity$BAME ~ diversity$profession, var.equal = TRUE)\n\n\n    Two Sample t-test\n\ndata:  diversity$BAME by diversity$profession\nt = -5.7695, df = 744, p-value = 1.166e-08\nalternative hypothesis: true difference in means between group Sales Staff and group Professional Service is not equal to 0\n95 percent confidence interval:\n -0.06302979 -0.03102614\nsample estimates:\n         mean in group Sales Staff mean in group Professional Service \n                        0.09683168                         0.14385965 \n\nt.test(diversity$BAME ~ diversity$profession, var.equal = FALSE)\n\n\n    Welch Two Sample t-test\n\ndata:  diversity$BAME by diversity$profession\nt = -5.6553, df = 640.61, p-value = 2.345e-08\nalternative hypothesis: true difference in means between group Sales Staff and group Professional Service is not equal to 0\n95 percent confidence interval:\n -0.06335727 -0.03069866\nsample estimates:\n         mean in group Sales Staff mean in group Professional Service \n                        0.09683168                         0.14385965 \n\n\n\nThe result of Levene’s Test suggests that we should consider using the Welch Two Sample t-test because the variances of the two groups are not equal.\nThe p-value is 2.345e-08 for the t-test for unequal variances, which is less than 0.001. Therefore, we can conclude that there is a significant difference in the mean percentage of BAME employees between the two functions."
+  },
+  {
+    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#how-does-the-distribution-of-bame-employees-vary-across-different-professions-ii",
+    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#how-does-the-distribution-of-bame-employees-vary-across-different-professions-ii",
+    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
+    "section": "How does the distribution of BAME employees vary across different professions? (II)",
+    "text": "How does the distribution of BAME employees vary across different professions? (II)\n\nWhen comparing the “Sales Staff” and “Professional Service” functions, it becomes evident that the mean proportion of BAME staff is significantly lower in “Sales Staff” than in “Professional Service.”\nSpecifically, the average proportion of BAME staff in teams within the “Sales Staff” function is 9.7%, while in “Professional Service” teams, it stands at 14.39%.\nA more in-depth analysis reveals that the likelihood of this difference occurring by chance alone is less than 1 in 1,000, suggesting that there is a significant issue within the “Sales Staff” function that requires attention in the organization."
+  },
+  {
+    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#analyzing-bame-distribution-across-professional-functions",
+    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#analyzing-bame-distribution-across-professional-functions",
+    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
+    "section": "Analyzing BAME distribution across professional functions",
+    "text": "Analyzing BAME distribution across professional functions\n\nSummary statistics and graphical visualization offer a concise overview of the distribution of BAME employees in the two professions. It’s evident that more “Sales Staff” teams have a lower percentage of BAME employees, while “Professional Service” teams exhibit a more even distribution.\nThe results of the independent samples t-test, with a p-value close to 0, confirm a significant difference in the mean percentage of BAME employees between the two functions. This implies that there is an issue that needs attention within the “Sales Staff” function in the organization."
+  },
+  {
+    "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#recommendation",
+    "href": "posts/2023-10-11-summary-statistics-and-t-test/index.html#recommendation",
+    "title": "Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test",
+    "section": "Recommendation",
+    "text": "Recommendation\n\nAccording to our analysis, the organization faces challenges in BAME representation across professions, particularly in the “Sales Staff”.\nFurther research should be conducted to identify the factors influencing or associated with the diversity disparities between these two teams."
+  },
+  {
+    "objectID": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#load-packages",
+    "href": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#load-packages",
+    "title": "Key Driver Analysis to understand customer loyalty in a financial organization (case study)",
+    "section": "Load packages",
+    "text": "Load packages\n\n\nCode\nlibrary(tidyverse)\nlibrary(ggtext)\nsource(\"helper_functions.R\")\nsource(\"theme_msd.R\")\nlibrary(janitor)"
+  },
+  {
+    "objectID": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#data-set2",
+    "href": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#data-set2",
+    "title": "Key Driver Analysis to understand customer loyalty in a financial organization (case study)",
+    "section": "Data Set2",
+    "text": "Data Set2\n\nRead dataScan data\n\n\nThe data set includes responses from 2,507 customers and 8 variables.\n\n\nRows: 2,507\nColumns: 8\n$ Sat1             &lt;dbl&gt; 1, 2, 3, 3, NA, 3, 4, 1, 4, 3, 4, 3, 4, 5, 3, 3, 4, 4…\n$ Sat2             &lt;dbl&gt; 1, 3, 5, 4, NA, 3, 4, 2, 5, 4, 4, 4, 4, 5, 4, 4, 4, 4…\n$ Sat3             &lt;dbl&gt; 1, 3, 4, 4, NA, 3, 4, 1, NA, 3, 4, 3, 3, 4, 5, 3, 4, …\n$ Sat4             &lt;dbl&gt; 3, 3, 5, 3, NA, 3, 5, 1, 5, 3, 4, 3, 4, 5, 4, 4, 4, 4…\n$ CustSatMean      &lt;dbl&gt; 1.50, 2.75, 4.25, 3.50, NA, 3.00, 4.25, 1.25, 4.67, 3…\n$ Custloyalty      &lt;dbl&gt; 4, 2, 2, 3, 5, 3, 4, 1, 3, 3, 4, 4, 4, 4, 1, 4, 4, 4,…\n$ INvestMore       &lt;dbl&gt; 3, 1, 3, 3, 3, 3, 2, 1, 3, NA, 2, 3, 3, 3, 3, 2, NA, …\n$ SexOfSalesperson &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,…\n\n\n\n\nAll variables in the data set are numeric.\nFor each variable, there are missing values (NAs).\n\n\nCode\nskimr::skim(cssurvey_raw)\n\n\n\nData summary\n\n\nName\ncssurvey_raw\n\n\nNumber of rows\n2507\n\n\nNumber of columns\n8\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nnumeric\n8\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nSat1\n128\n0.95\n3.47\n1.04\n1\n3\n4.00\n4\n5\n▁▃▇▇▃\n\n\nSat2\n124\n0.95\n3.79\n0.95\n1\n3\n4.00\n4\n5\n▁▁▅▇▅\n\n\nSat3\n142\n0.94\n3.43\n1.10\n1\n3\n4.00\n4\n5\n▂▃▇▇▅\n\n\nSat4\n450\n0.82\n3.59\n0.98\n1\n3\n4.00\n4\n5\n▁▂▆▇▃\n\n\nCustSatMean\n66\n0.97\n3.56\n0.91\n1\n3\n3.67\n4\n5\n▁▂▆▇▆\n\n\nCustloyalty\n338\n0.87\n3.80\n1.10\n1\n3\n4.00\n5\n5\n▁▂▃▇▇\n\n\nINvestMore\n476\n0.81\n2.93\n0.82\n1\n3\n3.00\n3\n5\n▁▁▇▂▁\n\n\nSexOfSalesperson\n121\n0.95\n1.79\n0.41\n1\n2\n2.00\n2\n2\n▂▁▁▁▇"
+  },
+  {
+    "objectID": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#understanding-data-structure",
+    "href": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#understanding-data-structure",
+    "title": "Key Driver Analysis to understand customer loyalty in a financial organization (case study)",
+    "section": "Understanding data structure",
+    "text": "Understanding data structure\n\nData structure:\n\nThe dataset consists of 2.507 rows, as per the description provided by the data source.\nIt contains 8 variables. Seven of these represent the questions from the survey, and an additional variable calculates the mean value of the customer satisfaction survey responses."
+  },
+  {
+    "objectID": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#understanding-variables",
+    "href": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#understanding-variables",
+    "title": "Key Driver Analysis to understand customer loyalty in a financial organization (case study)",
+    "section": "Understanding variables",
+    "text": "Understanding variables\n\nData DictionaryProblems and Solutions\n\n\n\n\n\n\n\n\n\n\n\nVariable\nDetail\nUnit\nRange\n\n\n\n\nSat1\nThe salesperson understanding your needs\nnumeric\n1-5\n\n\nSat2\nThe salesperson seems confident\nnumeric\n1-5\n\n\nSat3\nThe salesperson has a recommendation\nnumeric\n1-5\n\n\nSat4\nThe salesperson is knowledgeable\nnumeric\n1-5\n\n\nCustSatMean\nValue derived from mathematical operation (mean)  of customer responses\nnumeric\n1-5\n\n\nCustloyalty\nLikelihood of reinvesting\nnumeric\n1-5\n\n\nINvestMore\nHow much they may or may not reinvest\nnumeric\n1-5\n\n\nSexOfSalesperson\nGender\nnumeric\n1-2\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariable\nProblem\nSolution\n\n\n\n\nSat1, Sat2, Sat3, Sat4\nvariables’names are not meaningful\nrename variables\n\n\nCustSatMean, Custloyalty, INvestMore\ninconsistent entries\nrename variables\n\n\nAll except CustSatMean\nvariable type is not numeric; they are ordinal and binary\nchange variable type\n\n\nAll except CustSatMean\nvariable labels\nassign labels"
+  },
+  {
+    "objectID": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#clean-name-and-rename-variables",
+    "href": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#clean-name-and-rename-variables",
+    "title": "Key Driver Analysis to understand customer loyalty in a financial organization (case study)",
+    "section": "Clean name and rename variables",
+    "text": "Clean name and rename variables\n\nProblemSolution\n\n\nCustSatMean, Custloyalty, INvestMore have inconsistent entries (e.g. IN..More).\n\n\n\nClean names and rename these variables\n\n\n\nCode\n# use janitor::clean_name()\n\n(cssurvey_clean &lt;- cssurvey_raw|&gt;\n   rename(invest_more = INvestMore,\n          cust_loyalty = Custloyalty)|&gt;\n    clean_names())\n\n\n# A tibble: 2,507 × 8\n    sat1  sat2  sat3  sat4 cust_sat_mean cust_loyalty invest_more\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;         &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;\n 1     1     1     1     3          1.5             4           3\n 2     2     3     3     3          2.75            2           1\n 3     3     5     4     5          4.25            2           3\n 4     3     4     4     3          3.5             3           3\n 5    NA    NA    NA    NA         NA               5           3\n 6     3     3     3     3          3               3           3\n 7     4     4     4     5          4.25            4           2\n 8     1     2     1     1          1.25            1           1\n 9     4     5    NA     5          4.67            3           3\n10     3     4     3     3          3.25            3          NA\n# ℹ 2,497 more rows\n# ℹ 1 more variable: sex_of_salesperson &lt;dbl&gt;"
+  },
+  {
+    "objectID": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#assign-labels-and-rename-variables",
+    "href": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#assign-labels-and-rename-variables",
+    "title": "Key Driver Analysis to understand customer loyalty in a financial organization (case study)",
+    "section": "Assign labels and rename variables",
+    "text": "Assign labels and rename variables\n\nProblemSolutionConfirm\n\n\n\nThe variable names ‘Sat1’, ‘Sat2’, ‘Sat3’, and ‘Sat4’ lack clarity. Although they are numeric in the data set, the data source classifies them as ordinal variables.\nThe variable ‘sex_of_salesperson’ could be more appropriately named as ‘gender’.\n\n\n\n\nCreate new variables based on the existing variables, rename variables, assign labels, and change variable type in factor.\n\n\n\nCode\n# Create new variables, assign labels, change variable type in factor\n\n(cssurvey_clean &lt;- cssurvey_clean |&gt;\n  mutate(undst_cust_need = factor(sat1,\n                         levels = c(1:5),\n                         labels = c(\"Very Dissatisfied\", \"Dissatisfied\", \"Neutral\", \"Satisfied\", \"Very Satisfied\")),\n         sales_confidence = factor(sat2,\n                         levels = c(1:5),\n                         labels = c(\"Very Dissatisfied\", \"Dissatisfied\", \"Neutral\", \"Satisfied\", \"Very Satisfied\")),\n         give_recomm = factor(sat3,\n                         levels = c(1:5),\n                         labels = c(\"Very Dissatisfied\", \"Dissatisfied\", \"Neutral\", \"Satisfied\", \"Very Satisfied\")),\n         product_know = factor(sat4,\n                         levels = c(1:5),\n                         labels = c(\"Very Dissatisfied\", \"Dissatisfied\", \"Neutral\", \"Satisfied\", \"Very Satisfied\")),\n         gender = factor(sex_of_salesperson,\n                           levels = c(1:2),\n                           labels = c(\"female\", \"male\"))))\n\n\n# A tibble: 2,507 × 13\n    sat1  sat2  sat3  sat4 cust_sat_mean cust_loyalty invest_more\n   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;         &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;\n 1     1     1     1     3          1.5             4           3\n 2     2     3     3     3          2.75            2           1\n 3     3     5     4     5          4.25            2           3\n 4     3     4     4     3          3.5             3           3\n 5    NA    NA    NA    NA         NA               5           3\n 6     3     3     3     3          3               3           3\n 7     4     4     4     5          4.25            4           2\n 8     1     2     1     1          1.25            1           1\n 9     4     5    NA     5          4.67            3           3\n10     3     4     3     3          3.25            3          NA\n# ℹ 2,497 more rows\n# ℹ 6 more variables: sex_of_salesperson &lt;dbl&gt;, undst_cust_need &lt;fct&gt;,\n#   sales_confidence &lt;fct&gt;, give_recomm &lt;fct&gt;, product_know &lt;fct&gt;, gender &lt;fct&gt;\n\n\n\n\n\n\nCode\ncssurvey_clean|&gt;\n  skimr::skim()\n\n\n\nData summary\n\n\nName\ncssurvey_clean\n\n\nNumber of rows\n2507\n\n\nNumber of columns\n13\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nfactor\n5\n\n\nnumeric\n8\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: factor\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nordered\nn_unique\ntop_counts\n\n\n\n\nundst_cust_need\n128\n0.95\nFALSE\n5\nSat: 828, Neu: 747, Ver: 393, Dis: 315\n\n\nsales_confidence\n124\n0.95\nFALSE\n5\nSat: 1014, Neu: 620, Ver: 562, Dis: 125\n\n\ngive_recomm\n142\n0.94\nFALSE\n5\nSat: 780, Neu: 717, Ver: 417, Dis: 313\n\n\nproduct_know\n450\n0.82\nFALSE\n5\nSat: 803, Neu: 648, Ver: 360, Dis: 183\n\n\ngender\n121\n0.95\nFALSE\n2\nmal: 1884, fem: 502\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nsat1\n128\n0.95\n3.47\n1.04\n1\n3\n4.00\n4\n5\n▁▃▇▇▃\n\n\nsat2\n124\n0.95\n3.79\n0.95\n1\n3\n4.00\n4\n5\n▁▁▅▇▅\n\n\nsat3\n142\n0.94\n3.43\n1.10\n1\n3\n4.00\n4\n5\n▂▃▇▇▅\n\n\nsat4\n450\n0.82\n3.59\n0.98\n1\n3\n4.00\n4\n5\n▁▂▆▇▃\n\n\ncust_sat_mean\n66\n0.97\n3.56\n0.91\n1\n3\n3.67\n4\n5\n▁▂▆▇▆\n\n\ncust_loyalty\n338\n0.87\n3.80\n1.10\n1\n3\n4.00\n5\n5\n▁▂▃▇▇\n\n\ninvest_more\n476\n0.81\n2.93\n0.82\n1\n3\n3.00\n3\n5\n▁▁▇▂▁\n\n\nsex_of_salesperson\n121\n0.95\n1.79\n0.41\n1\n2\n2.00\n2\n2\n▂▁▁▁▇"
+  },
+  {
+    "objectID": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#percentage-of-responses-in-the-customer-survey-data",
+    "href": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#percentage-of-responses-in-the-customer-survey-data",
+    "title": "Key Driver Analysis to understand customer loyalty in a financial organization (case study)",
+    "section": "Percentage of Responses in the Customer Survey Data",
+    "text": "Percentage of Responses in the Customer Survey Data\nSurveyed customers expressed satisfaction and high satisfaction with the ‘The salesperson seems confident’. However, they were less satisfied with ‘The salesperson understanding your needs’ and ‘The salesperson has a recommendation’.\nThe company might want to address these two aspects that customers are less satisfied with.\n\n\nCode\n# Get the column names of the initial dataset\ninitial_order &lt;- colnames(cssurvey_clean)[9:12]\n\n\n# Calculate percentages for each category for each survey question\n\nkda &lt;- cssurvey_clean |&gt;\n  drop_na()|&gt;\n  pivot_longer(cols = 9:12, names_to = \"question\", values_to = \"value\" )|&gt;\n  mutate(question= factor(question,\n                          levels= initial_order))|&gt;\n  count(question, value) |&gt;\n  group_by(question)|&gt;\n  mutate(prtc = round(n/sum(n) * 100),\n         prtc = ifelse(row_number() == n(), 100 - sum(prtc[-n()]), prtc)) |&gt;\n  pivot_wider(id_cols = question, names_from = value, values_from = prtc)\n\nkda$question &lt;- c(\"The salesperson \\nunderstanding your needs\",\n                 \"The salesperson \\nseems confident\",\n                 \"The salesperson \\nhas a recommendation\",\n                 \"The salesperson \\nis knowledgeable\")\n\nkda|&gt;\n  kableExtra::kable(col.names = c(\"Question\", \"Very Dissatisfied\", \"Dissatisfied\", \"Neutral\", \"Satisfied\", \"Very Satisfied\"),\n                    align = \"lccccc\",\n                    caption = \"Customer Satisfaction with Salesperson Competencies (%)\")\n\n\n\nCustomer Satisfaction with Salesperson Competencies (%)\n\n\nQuestion\nVery Dissatisfied\nDissatisfied\nNeutral\nSatisfied\nVery Satisfied\n\n\n\n\nThe salesperson understanding your needs\n4\n14\n33\n35\n14\n\n\nThe salesperson seems confident\n2\n6\n27\n43\n22\n\n\nThe salesperson has a recommendation\n5\n14\n31\n33\n17\n\n\nThe salesperson is knowledgeable\n3\n9\n33\n39\n16\n\n\n\n\n\n\n\n\n\nCode\ntheme_set(theme_msd() + theme(\n  axis.title.y = element_blank(),\n  axis.ticks.y = element_blank(),\n  axis.text.y = element_text(color = GRAY3, size = 10),\n  panel.border = element_blank(),\n  axis.line = element_line(),\n  axis.title.x = element_text(hjust = 0.03, color = GRAY6, size = 10),\n  axis.text.x = element_text(size = 8),\n  plot.subtitle = element_markdown(hjust = 0.65),\n  axis.line.y = element_blank()\n))\n\n\ndf &lt;- kda |&gt;\n  rename(Item = \"question\") |&gt;\n  pivot_longer(cols = -Item, names_to = \"Answer\", values_to = \"Value\") |&gt;\n  mutate(\n    Answer = factor(Answer, levels = c(\"Very Dissatisfied\", \"Dissatisfied\", \"Neutral\", \"Satisfied\", \"Very Satisfied\")),\n    Value = as.numeric(Value) /100\n  )\n\ndf$Answer &lt;- fct_rev(df$Answer)\n\n\n\ncolor_scale &lt;- c(\n  \"Very Dissatisfied\" = GRAY2,\n  \"Dissatisfied\" = GRAY2,\n  \"Neutral\" = GRAY9,\n  \"Satisfied\" = GRAY5,\n  \"Very Satisfied\" = GRAY5)\n\n\nformatted_subtitle &lt;- paste0(\n  \"&lt;span style='color:\", color_scale[1], \"'&gt;**\", names(color_scale)[1], \"**&lt;/span&gt;\",\n  \" | \",\n  \"&lt;span style='color:\", color_scale[2], \"'&gt;**\", names(color_scale)[2], \"**&lt;/span&gt;\",\n  \" | \",\n  \"&lt;span style='color:\", color_scale[3], \"'&gt;**\", names(color_scale)[3], \"**&lt;/span&gt;\",\n  \" | \",\n  \"&lt;span style='color:\", color_scale[4], \"'&gt;**\", names(color_scale)[4], \"**&lt;/span&gt;\",\n  \" | \",\n  \"&lt;span style='color:\", color_scale[5], \"'&gt;**\", names(color_scale)[5], \"**&lt;/span&gt;\"\n)\n\npt &lt;- df |&gt;\n  ggplot(aes(y = Item, x = Value, fill = Answer)) +\n  geom_bar(stat = \"Identity\", width = 0.65, color = \"white\") +\n  scale_fill_manual(values = color_scale, guide = \"none\") +\n  labs(\n    title = \"Customer Satisfaction with Salesperson Competencies \\n\",\n    subtitle = formatted_subtitle,\n    x = \"\\nPercent of total\"\n  ) +\n  scale_x_continuous(position = \"top\", \n                     breaks = seq(0,1,by = 0.2),\n                     labels = scales::percent_format(accuracy = 1)) +\n  lemon::coord_capped_cart(top = \"both\")\n\npt |&gt;\n  save_and_show_plot(width = 6, height = 4, \"FIG01.png\")"
+  },
+  {
+    "objectID": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#correlation",
+    "href": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#correlation",
+    "title": "Key Driver Analysis to understand customer loyalty in a financial organization (case study)",
+    "section": "Correlation",
+    "text": "Correlation\nAnother approach to analyzing the customer survey data is through correlation. Correlation is a statistical measure of the relationship between two variables, how they are interconnected.\nAmong the four questions on the survey, at this stage, I aim to identify which ones have the strongest correlation with the question related to customer loyalty: the likelihood of reinvestment.\n\n\nCode\n# Correlation for several pairs of variables\n     \ncor_cust_loyalty &lt;- cssurvey_clean |&gt;\n  select(sat1, sat2, sat3, sat4, cust_loyalty)|&gt;\n  cor(method = \"spearman\",\n      use = \"pairwise.complete.obs\")|&gt;\n  round(digits = 2)\n\nsurvey_quest = c(\"The salesperson understanding your needs\",\n                 \"The salesperson seems confident\",\n                 \"The salesperson has a recommendation\",\n                 \"The salesperson is knowledgeable\")\n\n                        \ncor_to_cust_loyalty = c(0.49, 0.37, 0.49, 0.40)\n                            \n(cor_matrix &lt;- tibble(survey_quest, cor_to_cust_loyalty)|&gt;\n    arrange(desc(cor_to_cust_loyalty))|&gt;\n  kableExtra::kable(col.names = c(\"Survey Question\", \"Correlation to \\nCustomer Loyalty\"),\n                    align = \"lr\",\n                    caption = \"Correlation of survey questions to customer loyalty\"))\n\n\n\nCorrelation of survey questions to customer loyalty\n\n\nSurvey Question\nCorrelation to Customer Loyalty\n\n\n\n\nThe salesperson understanding your needs\n0.49\n\n\nThe salesperson has a recommendation\n0.49\n\n\nThe salesperson is knowledgeable\n0.40\n\n\nThe salesperson seems confident\n0.37\n\n\n\n\n\n\n\n‘The salesperson understanding your needs’ and ‘The salesperson has a recommendation’ are the most highly correlated to the question related to loyalty: likelihood of reinvesting. The company might see these areas to focus in its efforts to improve customer loyalty."
+  },
+  {
+    "objectID": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#consolidating-the-percentage-and-correlation",
+    "href": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#consolidating-the-percentage-and-correlation",
+    "title": "Key Driver Analysis to understand customer loyalty in a financial organization (case study)",
+    "section": "Consolidating the Percentage and Correlation",
+    "text": "Consolidating the Percentage and Correlation\nIn this step, I will integrate the customer satisfaction questions and their correlation to customer loyalty into a unified view for enhanced insights. The ‘Customer Loyalty Importance’ is a calculated metric that combines satisfaction and the correlation in one measure. It allows us to rank survey questions by importance.\n\n\nCode\n# we need to consolidate data from \"kda\" data set and \"cor_matrix\" data set\n\n# define cor_matrix as data frame\n\ncor_matrix &lt;- as.data.frame(cor_matrix)\n\ncor_matrix &lt;- tibble(survey_quest, cor_to_cust_loyalty)\n\n\nkda_cor &lt;- bind_cols(kda, cor_matrix)\n  \n            \nkda_cor &lt;- kda_cor |&gt;\n  mutate(percent_dissatisfied = Dissatisfied + `Very Dissatisfied`,\n         percent_satisfied = Satisfied + `Very Satisfied`) |&gt;\n  group_by(percent_dissatisfied, cor_to_cust_loyalty) |&gt;\n  mutate(cust_loyalty_importance = percent_dissatisfied*cor_to_cust_loyalty)|&gt;\n  ungroup()\n \n\nkda_consolidate &lt;- kda_cor |&gt;\n  select(question, percent_dissatisfied, cor_to_cust_loyalty, cust_loyalty_importance)|&gt;\n  arrange(desc(cust_loyalty_importance))|&gt;\n  kableExtra::kable(col.names = c(\"Survey Question\", \"Percent Dissatisfaction\", \"Correlation to \\nCustomer Loyalty\", \"Customer Loyalty \\nImportance\"),\n                    align = \"lrrr\",\n                    caption = \"Customer Satisfaction items ranked by importance\")\n  \nkda_consolidate\n\n\n\nCustomer Satisfaction items ranked by importance\n\n\nSurvey Question\nPercent Dissatisfaction\nCorrelation to Customer Loyalty\nCustomer Loyalty Importance\n\n\n\n\nThe salesperson has a recommendation\n19\n0.49\n9.31\n\n\nThe salesperson understanding your needs\n18\n0.49\n8.82\n\n\nThe salesperson is knowledgeable\n12\n0.40\n4.80\n\n\nThe salesperson seems confident\n8\n0.37\n2.96\n\n\n\n\n\n\n\n\n\nCode\ntheme_set(theme_msd() + theme(\n  axis.title.y = element_blank(),\n  axis.ticks.y = element_blank(),\n  axis.text.y = element_text(color = GRAY3, size = 10),\n  panel.border = element_blank(),\n  axis.line = element_line(),\n  axis.title.x = element_text(hjust = 0.03, color = GRAY6, size = 9),\n  axis.text.x = element_text(color = GRAY3, size = 10),\n  plot.subtitle = element_markdown(hjust = 0),\n  axis.line.y = element_blank()\n))\n\n\nkda_consolidate_plot &lt;- kda_cor |&gt;\n  mutate(question = fct_reorder(question, cust_loyalty_importance))|&gt;\n  ggplot(aes(x = cust_loyalty_importance, y = question))+\n  geom_bar(stat = \"identity\", width = 0.6, color = GRAY2)+\n  geom_text(aes(label = cust_loyalty_importance), hjust = -0.15, size = 3.5)+\n  labs(\n    title = \"The sales person having a reccomendation and understanding customers \\nneeds are the issues that require some improvments \\n\",\n    subtitle = \"\",\n    x = \"Customer Loyalty Importance\"\n  )\n  \n  \nkda_consolidate_plot |&gt;\n  save_and_show_plot(width = 6.5, height = 4, \"FIG02.png\")"
+  },
+  {
+    "objectID": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#key-driver-analysis-output",
+    "href": "posts/2024-01-15-key-driver-analysis/key_driver_analysis.html#key-driver-analysis-output",
+    "title": "Key Driver Analysis to understand customer loyalty in a financial organization (case study)",
+    "section": "Key Driver Analysis Output",
+    "text": "Key Driver Analysis Output\n\n\nCode\ntheme_set(theme_msd())\n\nkda_quadrant &lt;- kda_cor |&gt;\n    pivot_longer(cols = 2:6, names_to = \"satisfaction\", values_to = \"score\")|&gt;\n    mutate(cor_to_cust_loyalty= as.numeric(cor_to_cust_loyalty))\n  \navg_cor &lt;- mean(kda_quadrant$cor_to_cust_loyalty)\navg_score &lt;- mean(kda_quadrant$score)\n \n kda_quadrant &lt;- kda_quadrant |&gt;\n   mutate(color = case_when(cor_to_cust_loyalty &gt;avg_cor & score &lt; avg_score & survey_quest == \"The salesperson understanding your needs\" ~ \"Understanding Needs\",\n                            cor_to_cust_loyalty &gt;avg_cor & score &lt; avg_score & survey_quest == \"The salesperson has a recommendation\"  ~ \"Has Recommendation\",\n                            cor_to_cust_loyalty &gt;avg_cor & score &gt; avg_score & survey_quest == \"The salesperson has a recommendation\" ~ \"Has Recommendation\",\n                             cor_to_cust_loyalty &gt;avg_cor & score &gt; avg_score & survey_quest == \"The salesperson understanding your needs\" ~ \"Understanding Needs\",\n                            TRUE ~ \"Other\"))\n \n \n category = c(\"Understanding Needs\" = \"#414040\",\n              \"Has Recommendation\" = \"#F79747\",\n              \"Other\" = \"#BFBEBE\")\n \n\n  formatted_subtitle &lt;- paste0(\n  \"&lt;span style='color:\", category[3], \"'&gt;**\", names(category)[3], \"**&lt;/span&gt;\",\n  \" | \",\n  \"&lt;span style='color:\", category[1], \"'&gt;**\", names(category)[1], \"**&lt;/span&gt;\",\n  \" | \",\n  \"&lt;span style='color:\", category[2], \"'&gt;**\", names(category)[2], \"**&lt;/span&gt;\",\n  \" | \")\n \n \n set.seed(123)\n\nkda_quadrant_plot &lt;- ggplot(kda_quadrant) + \n  geom_jitter(aes(x= cor_to_cust_loyalty,y= score, color = color), size = 5) +\n  scale_color_manual(values = category, guide = \"none\") +\n  scale_y_continuous(breaks = seq(0,50, by = 10), limits = c(-10, 50),\n                     labels = c(\"0\" = \"Very Dissatisfied\", \"10\" = \"10\", \"20\" = \"20\", \"30\" = \"30\", \"40\" = \"40\", \"50\" = \"Very Satisfied\"),\n                     expand = c(0,0)) +\n   scale_x_continuous(breaks = seq(0.3,0.6, by = 0.1), limits = c(0.3,0.6),\n                      labels = c(\"0.3\" = \"Low\", \"0.4\" = \"0.4\", \"0.5\" = \"0.5\", \"0.6\" = \"High\"),\n                      expand = c(0,0))+\n   labs(title = \"'Salesperson understand your needs' and \\n'Salesperson has a recommendation' \\n are the two most important factors in influencing customer loyalty \\n\",\n        subtitle = formatted_subtitle,\n        x = \"Correlation to Customer Loyalty\",\n        y = \"Customer Satisfaction Score\",\n        color = \"Category\") +\n    theme(axis.text.y = element_text(angle = 90, size = 6, color = GRAY2),\n          axis.text.x = element_text(size = 6, color = GRAY2),\n          axis.title.y = element_text(hjust = 1, size = 10),\n          axis.title.x = element_text(hjust = 0, size = 10),\n          plot.subtitle = element_markdown(hjust = 0.5))\n\n   \n\n kda_quadrant_plot |&gt;\n  save_and_show_plot(width = 6.5, height = 4, \"FIG03.png\")"
   }
 ]

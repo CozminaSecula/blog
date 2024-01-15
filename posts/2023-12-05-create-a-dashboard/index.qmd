@@ -11,6 +11,7 @@ execute:
   echo: true
   warning: false
 fig-align: center
+sidebar: false
 ---
 
 <br>Over the last few weeks, I have spent some time doing data analysis and visualization. The chosen tools for analysis, documenting, presenting, and sharing my work are R and Quarto. To acquire specific skills and knowledge, I adopted a project-based approach and designed small projects around my learning objectives. However, I encountered a challenge: how can I effectively display different visual data in one place, such as a dashboard? I needed a tool to simplify data presentation while allowing for tailored content. That's when I discovered [Quarto Dashboards](https://quarto.org/docs/dashboards/), a recent addition to Quarto. This feature allowed me to create a custom dashboard using R, complete with personalized colors and styles. In the following sections, I will share how I created the dashboard.
@@ -63,7 +64,7 @@ The primary questions guiding this analysis were:
 
 -   How does compensation compare across different departments, roles, experience levels, generations, and genders?
 
-Initially, I explored the data set to select variables essential for the analysis. The data set contains information about 1470 employees and 36 variables. To learn more about the data see [here](https://link.springer.com/chapter/10.1007/978-3-031-28674-2_1). For this project, focusing on compensation differences based on roles, departments, experience levels, and demographics, I selected 7 specific variables see [here](https://cozminasecula.github.io/dashboard/#data). 
+Initially, I explored the data set to select variables essential for the analysis. The data set contains information about 1470 employees and 36 variables. To learn more about the data see [here](https://link.springer.com/chapter/10.1007/978-3-031-28674-2_1). For this project, focusing on compensation differences based on roles, departments, experience levels, and demographics, I selected 7 specific variables see [here](https://cozminasecula.github.io/dashboard/#data).
 
 # Data Exploration
 

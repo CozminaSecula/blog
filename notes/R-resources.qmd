@@ -1,0 +1,46 @@
+---
+title: "R Resources"
+title-block-banner: true
+format: 
+ html: 
+  toc: true
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+#| label: load-libraries
+
+
+library(DT)
+
+```
+
+# R Resources
+
+[R](https://www.r-project.org/about.html) is an open-source statistical and data visualization software. It supports end-to-end analytics workflows, including data extraction, wrangling, cleaning, analysis, and visualization. All resources in this section are related to R/[R Studio](https://posit.co/products/open-source/rstudio/).
+
+```{r}
+#| column: page-right
+
+
+r_resource <- matrix(c('#clean data #draw plots', 
+               '#cheatsheets #functions #posit tools',
+               "This book will teach you how to do data science with R: You’ll learn how to get your data into R, get it into the most useful structure, transform it and visualize.",
+               "Concise, quick-reference guides that summarize key concepts, functions, and syntax for popular tools.",
+                'free online book',
+                'HTML versions of popular cheatsheets',
+                '<a href="https://r4ds.hadley.nz/">R for Data Science (2e)</a>',
+               '<a href="https://rstudio.github.io/cheatsheets/">Posit Cheatsheets</a>'), ncol = 4)
+
+colnames(r_resource) <- c('Category', 'Description', 'Type', 'Details')
+
+
+datatable(r_resource, escape = FALSE) 
+          
+
+
+
+
+```

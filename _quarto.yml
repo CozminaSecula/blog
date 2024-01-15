@@ -2,21 +2,26 @@ project:
   type: website
   output-dir: docs
 
+
 website:
-  title: "Cozmina Secula"
+  title: "Making sense of data"
   open-graph: true
+  
+  page-navigation: true
   
 
   navbar:
     title: false
     background: "#eee"
+    pinned: true
     left: 
       - href: index.qmd
         text: About
       - href: posts.qmd
         text: Posts
-      - href: notes.qmd
-        text: Notes
+      - href: notes/notes.qmd
+        text: Learning resources
+      
     right: 
       - icon: linkedin
         href: https://www.linkedin.com/in/cozminasecula/
@@ -30,13 +35,27 @@ website:
     left: >-
       &#169; 2024 Cozmina Secula &#8729; Made with [Quarto](https://quarto.org)
  
- 
+  sidebar: 
+    - id: Learning resources
+      title: "Learning resources"
+      collapse-level: 2
+      style: "floating"
+      align: left
+      contents:
+       - notes/notes.qmd
+       - notes/analytics-project.qmd
+       - notes/R-resources.qmd
+       - notes/quarto-tools.qmd
+
+     
       
 format:
   html:
     theme: custom.scss
     css: styles.css
     include-before-body: translate-widget.html
+    grid: 
+      sidebar-width: 200px
 
 editor: visual
 

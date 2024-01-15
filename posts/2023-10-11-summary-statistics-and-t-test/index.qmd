@@ -5,6 +5,7 @@ author: "Cozmina Secula"
 date: "2023-10-11"
 categories: [summary statistics, independent samples t-test, quantitative analysis]
 image: image2.jpeg
+sidebar: false
 ---
 
 # Introduction

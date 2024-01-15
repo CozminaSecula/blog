@@ -1,0 +1,557 @@
+---
+title: "Key Driver Analysis to understand customer loyalty in a financial organization (case study)"
+description: "Analysing customer input to try to understand what factors are most important in influencing customer loyalty."
+author: "Cozmina Secula"
+date: "2024-01-15"
+categories: [key driver analysis, data cleaning, data visualization]
+image: image.jpeg
+code-fold: true
+sidebar: false
+---
+
+# Problem statement
+
+A financial services organization wants to improve customer loyalty[^1]. However, the organization currently lacks an understanding of the key drivers that influence customer loyalty within the company.
+
+[^1]: The case study and the data description are sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916) by Dr. Martin R. Edwards and Kirsten Edwards
+
+# Analysis Question
+
+What are the key factors influencing customer loyalty within the organization?
+
+# Analysis objectives
+
+1.  To understand what factors are important in influencing customer loyalty.
+2.  To understand which aspects the organization should invest in to improve customer loyalty.
+
+# Methodology
+
+The financial services company carried out a survey. They asked customers who had interacted with a salesperson to assess specific elements of the salesperson’s competence. They were also asked to express their likelihood of reinvesting in the company and to specify the potential amount of their reinvestment. The final question concerned the salesperson’s gender.
+
+# Data collection method
+
+The survey included seven questions.
+
+::: {.panel-tabset group="language"}
+### Salesperson competencies
+
+Four were specifically related to key salesperson competency elements:
+
+1.  The salesperson understanding your needs.
+
+2.  The salesperson seems confident.
+
+3.  The salesperson has a recommendation.
+
+4.  The salesperson is knowledgeable.
+
+The customers were asked to grade the salesperson on a scale of 1 to 5, where 1 was ‘very dissatisfied’ and 5 was ‘very satisfied’.
+
+### Customer Loyalty
+
+Two question related to loyalty and asked customers to put themselves on a scale of 1 to 5 where:
+
+::: columns
+::: {.column width="50%"}
+5 Likelihood of reinvesting **(Custloyalty)**:
+
+1.  Definitely going to go elsewhere with my investments.
+
+2.  Thinking about going elsewhere with my money.
+
+3.  Not sure about where I will place my future investments.
+
+4.  Thinking about investing here again.
+
+5.  Definitely will invest here again.
+:::
+
+::: {.column width="50%"}
+6 How much they may or may not reinvest **(InvestMore)**:
+
+1.  Definitely will not invest more than now here.
+
+2.  Unlikely to invest more than now here.
+
+3.  Planning to invest 0–50 per cent more than now in this organization.
+
+4.  Planning to invest 50–100 per cent more in this organization.
+
+5.  Going to double my investment or more in this organization.
+:::
+:::
+
+### Gender
+
+The final question was about the gender of the sales person.
+
+7 Sex of sales person: 1 = female; 2 = male.
+:::
+
+# Data preparation
+
+## Load packages
+
+```{r}
+#| label: load-packages
+#| echo: true
+#| warning: false
+
+library(tidyverse)
+library(ggtext)
+source("helper_functions.R")
+source("theme_msd.R")
+library(janitor)
+
+```
+
+## Data Set[^2]
+
+[^2]: Data available [here](https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446)
+
+::: {.panel-tabset group="language"}
+### Read data
+
+The data set includes responses from 2,507 customers and 8 variables.
+
+```{r}
+#| label: read-data
+#| echo: false
+#| warning: false
+
+cssurvey_raw <- read_csv("cs-survey.csv")
+glimpse(cssurvey_raw)
+
+
+```
+
+### Scan data
+
+All variables in the data set are numeric.\
+For each variable, there are missing values (NAs).
+
+```{r}
+#| label: scan-data
+#| echo: true
+#| warning: false
+
+skimr::skim(cssurvey_raw)
+
+```
+:::
+
+## Understanding data structure
+
+-   Data structure:
+    -   The dataset consists of 2.507 rows, as per the description provided by the data source.
+    -   It contains 8 variables. Seven of these represent the questions from the survey, and an additional variable calculates the mean value of the customer satisfaction survey responses.
+
+## Understanding variables
+
+::: {.panel-tabset group="language"}
+### Data Dictionary
+
+| Variable         | Detail                                                                      | Unit    | Range |
+|------------------|-------------------|------------------|------------------|
+| Sat1             | The salesperson understanding your needs                                    | numeric | 1-5   |
+| Sat2             | The salesperson seems confident                                             | numeric | 1-5   |
+| Sat3             | The salesperson has a recommendation                                        | numeric | 1-5   |
+| Sat4             | The salesperson is knowledgeable                                            | numeric | 1-5   |
+| CustSatMean      | Value derived from mathematical operation (mean) <br> of customer responses | numeric | 1-5   |
+| Custloyalty      | Likelihood of reinvesting                                                   | numeric | 1-5   |
+| INvestMore       | How much they may or may not reinvest                                       | numeric | 1-5   |
+| SexOfSalesperson | Gender                                                                      | numeric | 1-2   |
+
+### Problems and Solutions
+
+| Variable                             | Problem                                                   | Solution             |
+|------------------------|------------------------|------------------------|
+| Sat1, Sat2, Sat3, Sat4               | variables'names are not meaningful                        | rename variables     |
+| CustSatMean, Custloyalty, INvestMore | inconsistent entries                                      | rename variables     |
+| All except CustSatMean               | variable type is not numeric; they are ordinal and binary | change variable type |
+| All except CustSatMean               | variable labels                                           | assign labels        |
+:::
+
+# Cleaning Data
+
+## Clean name and rename variables
+
+::: {.panel-tabset group="language"}
+### Problem
+
+CustSatMean, Custloyalty, INvestMore have inconsistent entries (e.g. IN..More).
+
+### Solution
+
+-   Clean names and rename these variables
+
+```{r}
+
+# use janitor::clean_name()
+
+(cssurvey_clean <- cssurvey_raw|>
+   rename(invest_more = INvestMore,
+          cust_loyalty = Custloyalty)|>
+    clean_names())
+
+
+```
+:::
+
+## Assign labels and rename variables
+
+::: {.panel-tabset group="language"}
+### Problem
+
+-   The variable names ‘Sat1’, ‘Sat2’, ‘Sat3’, and ‘Sat4’ lack clarity. Although they are numeric in the data set, the data source classifies them as ordinal variables.
+
+-   The variable ‘sex_of_salesperson’ could be more appropriately named as ‘gender’.
+
+### Solution
+
+-   Create new variables based on the existing variables, rename variables, assign labels, and change variable type in factor.
+
+```{r}
+#| label: assign-labels
+
+# Create new variables, assign labels, change variable type in factor
+
+(cssurvey_clean <- cssurvey_clean |>
+  mutate(undst_cust_need = factor(sat1,
+                         levels = c(1:5),
+                         labels = c("Very Dissatisfied", "Dissatisfied", "Neutral", "Satisfied", "Very Satisfied")),
+         sales_confidence = factor(sat2,
+                         levels = c(1:5),
+                         labels = c("Very Dissatisfied", "Dissatisfied", "Neutral", "Satisfied", "Very Satisfied")),
+         give_recomm = factor(sat3,
+                         levels = c(1:5),
+                         labels = c("Very Dissatisfied", "Dissatisfied", "Neutral", "Satisfied", "Very Satisfied")),
+         product_know = factor(sat4,
+                         levels = c(1:5),
+                         labels = c("Very Dissatisfied", "Dissatisfied", "Neutral", "Satisfied", "Very Satisfied")),
+         gender = factor(sex_of_salesperson,
+                           levels = c(1:2),
+                           labels = c("female", "male"))))
+
+
+```
+
+### Confirm
+
+```{r}
+cssurvey_clean|>
+  skimr::skim()
+
+
+```
+:::
+
+# Data Analysis
+
+To achieve the objectives of the analysis, I will conduct a key driver analysis[^3]. One of the goals of this analysis is to understand the factors influencing customer loyalty. I will start by reviewing the survey response percentages in the customer data.
+
+[^3]: I learned about this analysis in the book [People Analytics For Dummies](https://www.amazon.com/Analytics-Dummies-Business-Personal-Finance/dp/1119434769) by Mike West
+
+## Percentage of Responses in the Customer Survey Data
+
+Surveyed customers expressed satisfaction and high satisfaction with the ‘The salesperson seems confident’. However, they were less satisfied with ‘The salesperson understanding your needs’ and ‘The salesperson has a recommendation’.
+
+The company might want to address these two aspects that customers are less satisfied with.
+
+```{r}
+#| label: compute-percent
+
+# Get the column names of the initial dataset
+initial_order <- colnames(cssurvey_clean)[9:12]
+
+
+# Calculate percentages for each category for each survey question
+
+kda <- cssurvey_clean |>
+  drop_na()|>
+  pivot_longer(cols = 9:12, names_to = "question", values_to = "value" )|>
+  mutate(question= factor(question,
+                          levels= initial_order))|>
+  count(question, value) |>
+  group_by(question)|>
+  mutate(prtc = round(n/sum(n) * 100),
+         prtc = ifelse(row_number() == n(), 100 - sum(prtc[-n()]), prtc)) |>
+  pivot_wider(id_cols = question, names_from = value, values_from = prtc)
+
+kda$question <- c("The salesperson \nunderstanding your needs",
+                 "The salesperson \nseems confident",
+                 "The salesperson \nhas a recommendation",
+                 "The salesperson \nis knowledgeable")
+
+kda|>
+  kableExtra::kable(col.names = c("Question", "Very Dissatisfied", "Dissatisfied", "Neutral", "Satisfied", "Very Satisfied"),
+                    align = "lccccc",
+                    caption = "Customer Satisfaction with Salesperson Competencies (%)")
+  
+
+
+```
+
+```{r}
+#| label: data-viz-cust-sat
+
+
+theme_set(theme_msd() + theme(
+  axis.title.y = element_blank(),
+  axis.ticks.y = element_blank(),
+  axis.text.y = element_text(color = GRAY3, size = 10),
+  panel.border = element_blank(),
+  axis.line = element_line(),
+  axis.title.x = element_text(hjust = 0.03, color = GRAY6, size = 10),
+  axis.text.x = element_text(size = 8),
+  plot.subtitle = element_markdown(hjust = 0.65),
+  axis.line.y = element_blank()
+))
+
+
+df <- kda |>
+  rename(Item = "question") |>
+  pivot_longer(cols = -Item, names_to = "Answer", values_to = "Value") |>
+  mutate(
+    Answer = factor(Answer, levels = c("Very Dissatisfied", "Dissatisfied", "Neutral", "Satisfied", "Very Satisfied")),
+    Value = as.numeric(Value) /100
+  )
+
+df$Answer <- fct_rev(df$Answer)
+
+
+
+color_scale <- c(
+  "Very Dissatisfied" = GRAY2,
+  "Dissatisfied" = GRAY2,
+  "Neutral" = GRAY9,
+  "Satisfied" = GRAY5,
+  "Very Satisfied" = GRAY5)
+
+
+formatted_subtitle <- paste0(
+  "<span style='color:", color_scale[1], "'>**", names(color_scale)[1], "**</span>",
+  " | ",
+  "<span style='color:", color_scale[2], "'>**", names(color_scale)[2], "**</span>",
+  " | ",
+  "<span style='color:", color_scale[3], "'>**", names(color_scale)[3], "**</span>",
+  " | ",
+  "<span style='color:", color_scale[4], "'>**", names(color_scale)[4], "**</span>",
+  " | ",
+  "<span style='color:", color_scale[5], "'>**", names(color_scale)[5], "**</span>"
+)
+
+pt <- df |>
+  ggplot(aes(y = Item, x = Value, fill = Answer)) +
+  geom_bar(stat = "Identity", width = 0.65, color = "white") +
+  scale_fill_manual(values = color_scale, guide = "none") +
+  labs(
+    title = "Customer Satisfaction with Salesperson Competencies \n",
+    subtitle = formatted_subtitle,
+    x = "\nPercent of total"
+  ) +
+  scale_x_continuous(position = "top", 
+                     breaks = seq(0,1,by = 0.2),
+                     labels = scales::percent_format(accuracy = 1)) +
+  lemon::coord_capped_cart(top = "both")
+
+pt |>
+  save_and_show_plot(width = 6, height = 4, "FIG01.png")
+
+```
+
+## Correlation
+
+Another approach to analyzing the customer survey data is through correlation. Correlation is a statistical measure of the relationship between two variables, how they are interconnected.
+
+Among the four questions on the survey, at this stage, I aim to identify which ones have the strongest correlation with the question related to customer loyalty: the likelihood of reinvestment.
+
+```{r}
+#| label: correlation-coefficient
+
+# Correlation for several pairs of variables
+     
+cor_cust_loyalty <- cssurvey_clean |>
+  select(sat1, sat2, sat3, sat4, cust_loyalty)|>
+  cor(method = "spearman",
+      use = "pairwise.complete.obs")|>
+  round(digits = 2)
+
+survey_quest = c("The salesperson understanding your needs",
+                 "The salesperson seems confident",
+                 "The salesperson has a recommendation",
+                 "The salesperson is knowledgeable")
+
+                        
+cor_to_cust_loyalty = c(0.49, 0.37, 0.49, 0.40)
+                            
+(cor_matrix <- tibble(survey_quest, cor_to_cust_loyalty)|>
+    arrange(desc(cor_to_cust_loyalty))|>
+  kableExtra::kable(col.names = c("Survey Question", "Correlation to \nCustomer Loyalty"),
+                    align = "lr",
+                    caption = "Correlation of survey questions to customer loyalty"))
+
+
+```
+
+‘The salesperson understanding your needs’ and ‘The salesperson has a recommendation’ are the most highly correlated to the question related to loyalty: likelihood of reinvesting. The company might see these areas to focus in its efforts to improve customer loyalty.
+
+## Consolidating the Percentage and Correlation
+
+In this step, I will integrate the customer satisfaction questions and their correlation to customer loyalty into a unified view for enhanced insights. The 'Customer Loyalty Importance' is a calculated metric that combines satisfaction and the correlation in one measure. It allows us to rank survey questions by importance.
+
+```{r}
+#| label: consolidate-view-percentage-correlation
+
+# we need to consolidate data from "kda" data set and "cor_matrix" data set
+
+# define cor_matrix as data frame
+
+cor_matrix <- as.data.frame(cor_matrix)
+
+cor_matrix <- tibble(survey_quest, cor_to_cust_loyalty)
+
+
+kda_cor <- bind_cols(kda, cor_matrix)
+  
+            
+kda_cor <- kda_cor |>
+  mutate(percent_dissatisfied = Dissatisfied + `Very Dissatisfied`,
+         percent_satisfied = Satisfied + `Very Satisfied`) |>
+  group_by(percent_dissatisfied, cor_to_cust_loyalty) |>
+  mutate(cust_loyalty_importance = percent_dissatisfied*cor_to_cust_loyalty)|>
+  ungroup()
+ 
+
+kda_consolidate <- kda_cor |>
+  select(question, percent_dissatisfied, cor_to_cust_loyalty, cust_loyalty_importance)|>
+  arrange(desc(cust_loyalty_importance))|>
+  kableExtra::kable(col.names = c("Survey Question", "Percent Dissatisfaction", "Correlation to \nCustomer Loyalty", "Customer Loyalty \nImportance"),
+                    align = "lrrr",
+                    caption = "Customer Satisfaction items ranked by importance")
+  
+kda_consolidate
+
+```
+
+```{r}
+
+theme_set(theme_msd() + theme(
+  axis.title.y = element_blank(),
+  axis.ticks.y = element_blank(),
+  axis.text.y = element_text(color = GRAY3, size = 10),
+  panel.border = element_blank(),
+  axis.line = element_line(),
+  axis.title.x = element_text(hjust = 0.03, color = GRAY6, size = 9),
+  axis.text.x = element_text(color = GRAY3, size = 10),
+  plot.subtitle = element_markdown(hjust = 0),
+  axis.line.y = element_blank()
+))
+
+
+kda_consolidate_plot <- kda_cor |>
+  mutate(question = fct_reorder(question, cust_loyalty_importance))|>
+  ggplot(aes(x = cust_loyalty_importance, y = question))+
+  geom_bar(stat = "identity", width = 0.6, color = GRAY2)+
+  geom_text(aes(label = cust_loyalty_importance), hjust = -0.15, size = 3.5)+
+  labs(
+    title = "The sales person having a reccomendation and understanding customers \nneeds are the issues that require some improvments \n",
+    subtitle = "",
+    x = "Customer Loyalty Importance"
+  )
+  
+  
+kda_consolidate_plot |>
+  save_and_show_plot(width = 6.5, height = 4, "FIG02.png")
+
+
+```
+
+## Key Driver Analysis Output
+
+```{r}
+
+
+theme_set(theme_msd())
+
+kda_quadrant <- kda_cor |>
+    pivot_longer(cols = 2:6, names_to = "satisfaction", values_to = "score")|>
+    mutate(cor_to_cust_loyalty= as.numeric(cor_to_cust_loyalty))
+  
+avg_cor <- mean(kda_quadrant$cor_to_cust_loyalty)
+avg_score <- mean(kda_quadrant$score)
+ 
+ kda_quadrant <- kda_quadrant |>
+   mutate(color = case_when(cor_to_cust_loyalty >avg_cor & score < avg_score & survey_quest == "The salesperson understanding your needs" ~ "Understanding Needs",
+                            cor_to_cust_loyalty >avg_cor & score < avg_score & survey_quest == "The salesperson has a recommendation"  ~ "Has Recommendation",
+                            cor_to_cust_loyalty >avg_cor & score > avg_score & survey_quest == "The salesperson has a recommendation" ~ "Has Recommendation",
+                             cor_to_cust_loyalty >avg_cor & score > avg_score & survey_quest == "The salesperson understanding your needs" ~ "Understanding Needs",
+                            TRUE ~ "Other"))
+ 
+ 
+ category = c("Understanding Needs" = "#414040",
+              "Has Recommendation" = "#F79747",
+              "Other" = "#BFBEBE")
+ 
+
+  formatted_subtitle <- paste0(
+  "<span style='color:", category[3], "'>**", names(category)[3], "**</span>",
+  " | ",
+  "<span style='color:", category[1], "'>**", names(category)[1], "**</span>",
+  " | ",
+  "<span style='color:", category[2], "'>**", names(category)[2], "**</span>",
+  " | ")
+ 
+ 
+ set.seed(123)
+
+kda_quadrant_plot <- ggplot(kda_quadrant) + 
+  geom_jitter(aes(x= cor_to_cust_loyalty,y= score, color = color), size = 5) +
+  scale_color_manual(values = category, guide = "none") +
+  scale_y_continuous(breaks = seq(0,50, by = 10), limits = c(-10, 50),
+                     labels = c("0" = "Very Dissatisfied", "10" = "10", "20" = "20", "30" = "30", "40" = "40", "50" = "Very Satisfied"),
+                     expand = c(0,0)) +
+   scale_x_continuous(breaks = seq(0.3,0.6, by = 0.1), limits = c(0.3,0.6),
+                      labels = c("0.3" = "Low", "0.4" = "0.4", "0.5" = "0.5", "0.6" = "High"),
+                      expand = c(0,0))+
+   labs(title = "'Salesperson understand your needs' and \n'Salesperson has a recommendation' \n are the two most important factors in influencing customer loyalty \n",
+        subtitle = formatted_subtitle,
+        x = "Correlation to Customer Loyalty",
+        y = "Customer Satisfaction Score",
+        color = "Category") +
+    theme(axis.text.y = element_text(angle = 90, size = 6, color = GRAY2),
+          axis.text.x = element_text(size = 6, color = GRAY2),
+          axis.title.y = element_text(hjust = 1, size = 10),
+          axis.title.x = element_text(hjust = 0, size = 10),
+          plot.subtitle = element_markdown(hjust = 0.5))
+
+   
+
+ kda_quadrant_plot |>
+  save_and_show_plot(width = 6.5, height = 4, "FIG03.png")
+
+```
+
+# Recommendation
+
+The analysis reveals that the variables 'The salesperson is knowledgeable', 'The salesperson understanding your needs', and 'The salesperson has a recommendation' influence customer loyalty. However, only 'salesperson understanding your needs' and 'salesperson has a recommendation' are most important.
+
+To improve customer loyalty, the company could consider improving salespeople’s ability to understand customer needs. This may include active listening, asking relevant questions, and maintaining accurate records. Additionally, providing training for sales staff on making informed recommendations would likely result in a positive return on investment. Identifying employees skilled at understanding and advising customers from raw data and sharing these skills within the team could also be beneficial.
+
+# Summary
+
+In this post, I shared with you my key driver analysis. Here are the steps I followed:
+
+1.  First, I decided what I wanted to understand: What are the key factors influencing customer loyalty within our organization?
+
+2.  From the data available, I selected the measure to understand: customer loyalty (likelihood of reinvesting).
+
+3.  Understand the data.
+
+4.  Clean the data.
+
+5.  Analyze survey data, report the percentage of responses, and run a correlation to establish the strength of the relationship between potential factors and customer loyalty.
+
+6.  Use the correlation coefficient and the percentage of satisfied and dissatisfied responses to analyze the data.
+
+7.  Consider the strength of each factor’s relationship with customer loyalty and current company performance on those factors to focus on actions that will have the most impact.
