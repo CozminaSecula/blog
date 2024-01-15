@@ -18,17 +18,16 @@ Working on data-based projects while developing my R and Quarto skills, I gather
 
 ::: colums
 ::: {.column width="30%"}
-**Insight-Oriented\
-Data Projects Resources**\
+[**Insight-Oriented\
+Data Projects Resources**](https://cozminasecula.github.io/blog/notes/analytics-project.html)\
 This section provides\
 information on resources\
 that can be used for\
 insight-oriented data projects.
-
 :::
 
 ::: {.column width="35%"}
-**R Resources**\
+[**R Resources**](https://cozminasecula.github.io/blog/notes/R-resources.html)\
 
 This section\
 include links on resources\
@@ -38,7 +37,7 @@ with R.
 :::
 
 ::: {.column width="30%"}
-**Quarto Tools**\
+[**Quarto Tools**](https://cozminasecula.github.io/blog/notes/quarto-tools.html)\
 
 This section includes\
 tools, examples, and articles\
