@@ -152,7 +152,7 @@ skimr::skim(cssurvey_raw)
 ### Data Dictionary
 
 | Variable         | Detail                                                                      | Unit    | Range |
-|------------------|-------------------|------------------|------------------|
+|------------------|-----------------------------------------------------------------------------|---------|-------|
 | Sat1             | The salesperson understanding your needs                                    | numeric | 1-5   |
 | Sat2             | The salesperson seems confident                                             | numeric | 1-5   |
 | Sat3             | The salesperson has a recommendation                                        | numeric | 1-5   |
@@ -165,7 +165,7 @@ skimr::skim(cssurvey_raw)
 ### Problems and Solutions
 
 | Variable                             | Problem                                                   | Solution             |
-|------------------------|------------------------|------------------------|
+|--------------------------------------|-----------------------------------------------------------|----------------------|
 | Sat1, Sat2, Sat3, Sat4               | variables'names are not meaningful                        | rename variables     |
 | CustSatMean, Custloyalty, INvestMore | inconsistent entries                                      | rename variables     |
 | All except CustSatMean               | variable type is not numeric; they are ordinal and binary | change variable type |

@@ -1,6 +1,21 @@
 ---
 title: "Welcome"
 sidebar: false
+listing: 
+- id: blog
+  contents: 
+    - "./posts/*/index.qmd"
+  sort: date desc
+  type: grid
+  max-items: 9
+  page-size: 3
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  fields: [title, subtitle, image, categories] 
+  image-height: "200"
+  
+    
 ---
 
 # About the blog
@@ -9,8 +24,7 @@ sidebar: false
 
 When I started this journey, I had to make several choices. One was to choose the software for analyzing data. Although I was familiar with Excel, I began considering whether to enhance my Excel skills or start learning a statistical program. Ultimately, I decided to learn R, a statistical program. The R community offers many open resources that significantly help my learning process. In addition, I wanted to document and share my work. And Quarto became the perfect tool for me to do this. I was able to create this space where I can share my learning and my work.
 
-This blog is about my journey to make sense of data. It has two sections: one for storing and sharing projects, notes, and ideas, and another for sharing R and Quarto open resources I've gathered along the way. 
-I hope you will find it useful, and feel free to share it with anyone!
+This blog is about my journey to make sense of data. It has two sections: one for storing and sharing projects, notes, and ideas, and another for sharing R and Quarto open resources I've gathered along the way. I hope you will find it useful, and feel free to share it with anyone!
 
 # About me
 
@@ -22,5 +36,11 @@ With an extensive background in B2B sales and people management, I became intere
 
 After completing a research project with qualitative data, I started working with quantitative data. This led me to initiate Making Sense of Data blog, focusing on turning data into meaningful insights. I am also passionate about open-source knowledge.
 
-
 [{{< fa brands linkedin size=1.5x >}}](https://www.linkedin.com/in/cozminasecula/) [{{< fa brands github size=1.5x >}}](https://github.com/CozminaSecula) [{{< fa envelope title="An envelope" size=1.5x >}}](mailto:cozmina.secula@gmail.com)
+
+## From My Blog
+
+
+
+
+
