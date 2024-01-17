@@ -18,9 +18,7 @@ listing:
 
 # About the blog
 
-**Making Sense of Data** aims to help companies analyze employee-related data to improve business outcomes using an insight-oriented data approach rooted in the scientific method.
-
-When I started this journey, I had to make several choices. One was to choose the software for analyzing data. Although I was familiar with Excel, I began considering whether to enhance my Excel skills or start learning a statistical program. Ultimately, I decided to learn R, a statistical program. The R community offers many open resources that significantly help my learning process. In addition, I wanted to document and share my work. And Quarto became the perfect tool for me to do this. I was able to create this space where I can share my learning and my work.
+When I started to work with data, I had to make several choices. One was to choose the software for analyzing data. Although I was familiar with Excel, I began considering whether to enhance my Excel skills or start learning a statistical program. Ultimately, I decided to learn R, a statistical program. The R community offers many open resources that significantly help my learning process. In addition, I wanted to document and share my work. And Quarto became the perfect tool for me to do this. I was able to create this space where I can share my learning and my work.
 
 This blog is about my journey to make sense of people data. It has two sections: one for storing and sharing projects, notes, and ideas, and another for sharing R and Quarto open resources I've gathered along the way. I hope you will find it useful, and feel free to share it with anyone!
 
