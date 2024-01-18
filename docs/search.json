@@ -189,7 +189,7 @@
     "href": "notes/notes.html#why-this-space",
     "title": "Learning resources",
     "section": "Why this space?",
-    "text": "Why this space?\nWorking on data-based projects while developing my R and Quarto skills, I gathered resources to help myself. Learning from others inspired me to share these resources with anyone interested. This space is meant to be helpful for those looking to learn about insight-oriented data projects and related topics.",
+    "text": "Why this space?\nWorking on data-based projects while developing my R and Quarto skills, I gathered resources to help myself. Learning from others inspired me to share these resources with anyone interested. This space is meant to be helpful for those looking to learn about the R programming language, Quarto, and related topics.",
     "crumbs": [
       "Learning resources"
     ]
@@ -199,7 +199,7 @@
     "href": "notes/notes.html#what-is-in-this-space",
     "title": "Learning resources",
     "section": "What is in this space?",
-    "text": "What is in this space?\n\n\nInsight-Oriented\nData Projects Resources\nThis section provides\ninformation on resources\nthat can be used for\ninsight-oriented data projects.\n\n\nR Resources\n\nThis section\ninclude links on resources\nto learn data cleaning,\ndata analysis and visualization\nwith R.\n\n\nQuarto Tools\n\nThis section includes\ntools, examples, and articles\nrelated to Quarto\navailable on the internet.\n\n\n\nPlease note that this is a work in progress, and I am constantly adding resources.",
+    "text": "What is in this space?\n\n\nR Resources\n\nThis section includes links\nto resources to learn\nhow to perform data extraction,\nwrangling, cleaning, analysis,\nand visualization with R.\n\n\nQuarto Tools\n\nThis section includes links\nto tools, examples, and articles\nrelated to Quarto\navailable on the internet.\n\n\n\nPlease note that this is a work in progress, and I am constantly adding resources.",
     "crumbs": [
       "Learning resources"
     ]

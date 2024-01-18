@@ -12,35 +12,26 @@ format:
 
 ## Why this space?
 
-Working on data-based projects while developing my R and Quarto skills, I gathered resources to help myself. Learning from others inspired me to share these resources with anyone interested. This space is meant to be helpful for those looking to learn about insight-oriented data projects and related topics.
+Working on data-based projects while developing my R and Quarto skills, I gathered resources to help myself. Learning from others inspired me to share these resources with anyone interested. This space is meant to be helpful for those looking to learn about the R programming language, Quarto, and related topics.
 
 ## What is in this space?
 
 ::: colums
-::: {.column width="30%"}
-[**Insight-Oriented\
-Data Projects Resources**](https://cozminasecula.github.io/blog/notes/analytics-project.html)\
-This section provides\
-information on resources\
-that can be used for\
-insight-oriented data projects.
-:::
-
-::: {.column width="35%"}
+::: {.column width="40%"}
 [**R Resources**](https://cozminasecula.github.io/blog/notes/R-resources.html)\
 
-This section\
-include links on resources\
-to learn data cleaning,\
-data analysis and visualization\
-with R.
+This section includes links\
+to resources to learn\
+how to perform data extraction,\
+wrangling, cleaning, analysis,\
+and visualization with R.
 :::
 
-::: {.column width="30%"}
+::: {.column width="40%"}
 [**Quarto Tools**](https://cozminasecula.github.io/blog/notes/quarto-tools.html)\
 
-This section includes\
-tools, examples, and articles\
+This section includes links\
+to tools, examples, and articles\
 related to Quarto\
 available on the internet.\
 :::

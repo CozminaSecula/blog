@@ -43,7 +43,6 @@ website:
       align: left
       contents:
        - notes/notes.qmd
-       - notes/analytics-project.qmd
        - notes/R-resources.qmd
        - notes/quarto-tools.qmd
 
