@@ -156,7 +156,7 @@ skimr::skim(cssurvey_raw)
 ### Data Dictionary
 
 | Variable         | Detail                                                                      | Unit    | Range |
-|-----------|-----------------------------------------|-----------|-----------|
+|-------------|---------------------------------|-------------|-------------|
 | Sat1             | The salesperson understanding your needs                                    | numeric | 1-5   |
 | Sat2             | The salesperson seems confident                                             | numeric | 1-5   |
 | Sat3             | The salesperson has a recommendation                                        | numeric | 1-5   |
@@ -169,7 +169,7 @@ skimr::skim(cssurvey_raw)
 ### Problems and Solutions
 
 | Variable                             | Problem                                                   | Solution             |
-|----------------------|----------------------------------|-----------------|
+|----------------------|---------------------------------|------------------|
 | Sat1, Sat2, Sat3, Sat4               | variables'names are not meaningful                        | rename variables     |
 | CustSatMean, Custloyalty, INvestMore | inconsistent entries                                      | rename variables     |
 | All except CustSatMean               | variable type is not numeric; they are ordinal and binary | change variable type |
@@ -471,9 +471,10 @@ kda_consolidate_plot |>
 
 ```
 
-## Key Driver Analysis Output
+## Key Driver Analysis Findings
 
 ```{r}
+
 
 
 theme_set(theme_msd())
@@ -484,55 +485,60 @@ kda_quadrant <- kda_cor |>
   
 avg_cor <- mean(kda_quadrant$cor_to_cust_loyalty)
 avg_score <- mean(kda_quadrant$score)
+
+
  
  kda_quadrant <- kda_quadrant |>
    mutate(color = case_when(cor_to_cust_loyalty >avg_cor & score < avg_score & survey_quest == "The salesperson understanding your needs" ~ "Understanding Needs",
                             cor_to_cust_loyalty >avg_cor & score < avg_score & survey_quest == "The salesperson has a recommendation"  ~ "Has Recommendation",
                             cor_to_cust_loyalty >avg_cor & score > avg_score & survey_quest == "The salesperson has a recommendation" ~ "Has Recommendation",
                              cor_to_cust_loyalty >avg_cor & score > avg_score & survey_quest == "The salesperson understanding your needs" ~ "Understanding Needs",
-                            TRUE ~ "Other"))
+                            TRUE ~ "Other"),
+          shape = factor(case_when(satisfaction %in% c("Satisfied", "Very Satisfied") ~ 24,
+                            satisfaction %in% c("Dissatisfied", "Very Dissatisfied") ~ 25,
+                            TRUE ~ 21)),
+          fill = factor(case_when(color == "Understanding Needs" ~ "#231F20", 
+                                  color == "Has Recommendation" ~ "#F79747",
+                                  TRUE ~ "Other" )))
  
  
- category = c("Understanding Needs" = "#414040",
+ 
+ category = c("Understanding Needs" = "#231F20",
               "Has Recommendation" = "#F79747",
               "Other" = "#BFBEBE")
- 
 
-  formatted_subtitle <- paste0(
-  "<span style='color:", category[3], "'>**", names(category)[3], "**</span>",
-  " | ",
-  "<span style='color:", category[1], "'>**", names(category)[1], "**</span>",
-  " | ",
-  "<span style='color:", category[2], "'>**", names(category)[2], "**</span>",
-  " | ")
  
  
  set.seed(123)
 
+ 
 kda_quadrant_plot <- ggplot(kda_quadrant) + 
-  geom_jitter(aes(x= cor_to_cust_loyalty,y= score, color = color), size = 5) +
+  geom_jitter(aes(x= cor_to_cust_loyalty,y= score, color = color, shape = shape, fill = fill), size = 5) +
   scale_color_manual(values = category, guide = "none") +
-  scale_y_continuous(breaks = seq(0,50, by = 10), limits = c(-10, 50),
-                     labels = c("0" = "Very Dissatisfied", "10" = "10", "20" = "20", "30" = "30", "40" = "40", "50" = "Very Satisfied"),
+  scale_shape_manual(values = c(21, 24,25), labels = c("Neutral", "Satisfied & Very Satisfied", "Dissatisfied & Very Dissatisfied"))+
+  scale_fill_manual(values = c("#231F20", "#F79747","#BFBEBE" ), guide = "none") +
+  scale_y_continuous(breaks = seq(0,50, by = 10), limits = c(0, 50),
+                     labels = c("0" = "0", "10" = "10%", "20" = "20%", "30" = "30%", "40" = "40%", "50" = "50%" ),
                      expand = c(0,0)) +
    scale_x_continuous(breaks = seq(0.3,0.6, by = 0.1), limits = c(0.3,0.6),
                       labels = c("0.3" = "Low", "0.4" = "0.4", "0.5" = "0.5", "0.6" = "High"),
                       expand = c(0,0))+
-   labs(title = "'Salesperson understand your needs' and \n'Salesperson has a recommendation' \n are the two most important factors in influencing customer loyalty \n",
-        subtitle = formatted_subtitle,
+   labs(title = "What are the key factors influencing customer loyalty within the organization? \n",
+        subtitle = glue::glue("<span style='color:{category['Understanding Needs']}'>**Understanding Needs**</span> and <span style='color:{category['Has Recommendation']}'>**Has Recommendation**</span> <br> are the most important factors influencing customer loyalty."),
         x = "Correlation to Customer Loyalty",
-        y = "Customer Satisfaction Score",
-        color = "Category") +
-    theme(axis.text.y = element_text(angle = 90, size = 6, color = GRAY2),
-          axis.text.x = element_text(size = 6, color = GRAY2),
-          axis.title.y = element_text(hjust = 1, size = 10),
-          axis.title.x = element_text(hjust = 0, size = 10),
-          plot.subtitle = element_markdown(hjust = 0.5))
+        y = "Customer Satisfaction") +
+      theme(plot.subtitle = element_markdown(size = 12),
+            axis.text.y = element_text(size = 6, color = GRAY2, margin = margin(0, 6, 0, 10, "pt")),
+            axis.text.x = element_text(size = 6, color = GRAY2, margin = margin(6, 6, 10, 0, "pt"), hjust = 0.1),
+            axis.title.y = element_text(hjust = 1, size = 10, margin = margin(0, 0, 0, 10, "pt")),
+            axis.title.x = element_text(hjust = 0, size = 10, margin = margin(0, 0, 10, 0, "pt")),
+          legend.position = "top", legend.justification = "left", legend.title = element_blank(), legend.margin = margin(margin(6, 6, 10, 0, "pt")), legend.text = element_text(size = 9, color = GRAY6 ))
+          
 
-   
 
  kda_quadrant_plot |>
   save_and_show_plot(width = 6.5, height = 4, "FIG03.png")
+
 
 ```
 
