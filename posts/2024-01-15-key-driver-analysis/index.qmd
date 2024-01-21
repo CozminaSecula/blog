@@ -1,6 +1,6 @@
 ---
 title: "Key Driver Analysis to understand customer loyalty in a financial organization (case study)"
-description: "Analysing customer input to try to understand what factors are most important in influencing customer loyalty."
+description: "Analyzing a customer satisfaction survey to determine the most important factors influencing customer loyalty."
 author: "Cozmina Secula"
 date: "2024-01-15"
 categories: [key driver analysis, data cleaning, data visualization]
@@ -11,11 +11,13 @@ sidebar: false
 
 <br>
 
-In this case study, I will examine customer feedback to understand the key factors that impact customer satisfaction and loyalty.
+Each company aims to build a loyal customer base, as customers are more likely to reinvest in a company they trust. Customer loyalty is driven by satisfaction with products and services. Salespeople's competencies greatly influence customer loyalty. Therefore, many companies aim to understand essential factors for improving sales competencies that boost customer loyalty and repeat investments.
+
+This post will guide you on how to use key driver analysis to identify the essential factors that impact customer satisfaction and, consequently, customer loyalty.
 
 # Problem statement
 
-A financial services organization wants to improve customer loyalty[^1]. However, the organization currently lacks an understanding of the key drivers that influence customer loyalty within the company.
+A financial services organization wants to improve customer loyalty[^1], recognizing its importance in driving repeat investments. However, the organization currently lacks a comprehensive understanding of the key drivers, including sales competencies, that significantly influence customer loyalty within the company.
 
 [^1]: The case study and the data description are sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916) by Dr. Martin R. Edwards and Kirsten Edwards
 
@@ -156,7 +158,7 @@ skimr::skim(cssurvey_raw)
 ### Data Dictionary
 
 | Variable         | Detail                                                                      | Unit    | Range |
-|-------------|---------------------------------|-------------|-------------|
+|---------------|-----------------------------|---------------|---------------|
 | Sat1             | The salesperson understanding your needs                                    | numeric | 1-5   |
 | Sat2             | The salesperson seems confident                                             | numeric | 1-5   |
 | Sat3             | The salesperson has a recommendation                                        | numeric | 1-5   |
@@ -169,7 +171,7 @@ skimr::skim(cssurvey_raw)
 ### Problems and Solutions
 
 | Variable                             | Problem                                                   | Solution             |
-|----------------------|---------------------------------|------------------|
+|----------------------|--------------------------------|------------------|
 | Sat1, Sat2, Sat3, Sat4               | variables'names are not meaningful                        | rename variables     |
 | CustSatMean, Custloyalty, INvestMore | inconsistent entries                                      | rename variables     |
 | All except CustSatMean               | variable type is not numeric; they are ordinal and binary | change variable type |
@@ -544,7 +546,7 @@ kda_quadrant_plot <- ggplot(kda_quadrant) +
 
 # Recommendation
 
-The analysis reveals that the variables 'The salesperson is knowledgeable', 'The salesperson understanding your needs', and 'The salesperson has a recommendation' influence customer loyalty. However, only 'salesperson understanding your needs' and 'salesperson has a recommendation' are most important.
+The analysis reveals that 'The salesperson is knowledgeable', 'The salesperson understanding your needs', and 'The salesperson has a recommendation' influence customer loyalty. However, only 'salesperson understanding your needs' and 'salesperson has a recommendation' are most important.
 
 To improve customer loyalty, the company could consider improving salespeople’s ability to understand customer needs. This may include active listening, asking relevant questions, and maintaining accurate records. Additionally, providing training for sales staff on making informed recommendations would likely result in a positive return on investment. Identifying employees skilled at understanding and advising customers from raw data and sharing these skills within the team could also be beneficial.
 
