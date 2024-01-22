@@ -267,11 +267,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><br></p>
-<p>Each company aims to build a loyal customer base, as customers are more likely to reinvest in a company they trust. Customer loyalty is driven by satisfaction with products and services. Salespeople’s competencies greatly influence customer loyalty. Therefore, many companies aim to understand essential factors for improving sales competencies that boost customer loyalty and repeat investments.</p>
+<p>In the competitive business landscape, every organization strives to cultivate a loyal customer base. This loyalty, often a result of trust and satisfaction with a company’s products and services, is a key driver of repeat business. Consequently, companies are increasingly focusing on identifying and enhancing the critical factors influencing customer loyalty and encouraging repeat investments.</p>
 <p>This post will guide you on how to use key driver analysis to identify the essential factors that impact customer satisfaction and, consequently, customer loyalty.</p>
 <section id="problem-statement" class="level1">
 <h1>Problem statement</h1>
-<p>A financial services organization wants to improve customer loyalty<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, recognizing its importance in driving repeat investments. However, the organization currently lacks a comprehensive understanding of the key drivers, including sales competencies, that significantly influence customer loyalty within the company.</p>
+<p>A financial services organization intends to improve customer loyalty<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, recognizing its importance in driving repeat investments. However, the organization currently lacks an understanding of the key drivers that significantly influence customer loyalty within the company.</p>
 </section>
 <section id="analysis-question" class="level1">
 <h1>Analysis Question</h1>
@@ -286,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="methodology" class="level1">
 <h1>Methodology</h1>
-<p>The financial services company carried out a survey. They asked customers who had interacted with a salesperson to assess specific elements of the salesperson’s competence. They were also asked to express their likelihood of reinvesting in the company and to specify the potential amount of their reinvestment. The final question concerned the salesperson’s gender.</p>
+<p>The financial services company carried out a survey. Customers who had interacted with a salesperson were asked to evaluate specific elements of their competence. They were also asked to express their likelihood of reinvesting in the company and to specify the potential amount of their reinvestment. The final question concerned the salesperson’s gender.</p>
 </section>
 <section id="data-collection-method" class="level1">
 <h1>Data collection method</h1>
@@ -567,7 +567,7 @@ For each variable, there are missing values (NAs).</p>
 <li>Data structure:
 <ul>
 <li>The dataset consists of 2.507 rows, as per the description provided by the data source.</li>
-<li>It contains 8 variables. Seven of these represent the questions from the survey, and an additional variable calculates the mean value of the customer satisfaction survey responses.</li>
+<li>It contains 8 variables. Seven of them represent the questions from the survey, and an additional variable calculates the mean value of the customer satisfaction survey responses.</li>
 </ul></li>
 </ul>
 </section>
@@ -579,10 +579,10 @@ For each variable, there are missing values (NAs).</p>
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <table class="table">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 39%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 21%">
+<col style="width: 34%">
+<col style="width: 21%">
+<col style="width: 21%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -648,8 +648,8 @@ For each variable, there are missing values (NAs).</p>
 <table class="table">
 <colgroup>
 <col style="width: 30%">
-<col style="width: 44%">
-<col style="width: 25%">
+<col style="width: 43%">
+<col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1047,7 +1047,7 @@ For each variable, there are missing values (NAs).</p>
 </section>
 <section id="data-analysis" class="level1">
 <h1>Data Analysis</h1>
-<p>To achieve the objectives of the analysis, I will conduct a key driver analysis<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. One of the goals of this analysis is to understand the factors influencing customer loyalty. I will start by reviewing the survey response percentages in the customer data.</p>
+<p>In order to achieve the objectives of the analysis, I will conduct a key driver analysis<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. One of the goals of this analysis is to understand the factors influencing customer loyalty. I will start by reviewing the survey response percentages in the customer data.</p>
 <section id="percentage-of-responses-in-the-customer-survey-data" class="level2">
 <h2 class="anchored" data-anchor-id="percentage-of-responses-in-the-customer-survey-data">Percentage of Responses in the Customer Survey Data</h2>
 <p>Surveyed customers expressed satisfaction and high satisfaction with the ‘The salesperson seems confident’. However, they were less satisfied with ‘The salesperson understanding your needs’ and ‘The salesperson has a recommendation’.</p>
@@ -1269,11 +1269,11 @@ For each variable, there are missing values (NAs).</p>
 
 </div>
 </div>
-<p>‘The salesperson understanding your needs’ and ‘The salesperson has a recommendation’ are the most highly correlated to the question related to loyalty: likelihood of reinvesting. The company might see these areas to focus in its efforts to improve customer loyalty.</p>
+<p>‘The salesperson understanding your needs’ , ‘The salesperson has a recommendation’ , and ‘The salesperson is knowledgeable’ are the most highly correlated to the question related to loyalty (0.49, respectively 0.40). The company might see these areas to focus in its efforts to improve customer loyalty.</p>
 </section>
 <section id="consolidating-the-percentage-and-correlation" class="level2">
 <h2 class="anchored" data-anchor-id="consolidating-the-percentage-and-correlation">Consolidating the Percentage and Correlation</h2>
-<p>In this step, I will integrate the customer satisfaction questions and their correlation to customer loyalty into a unified view for enhanced insights. The ‘Customer Loyalty Importance’ is a calculated metric that combines satisfaction and the correlation in one measure. It allows us to rank survey questions by importance.</p>
+<p>In this step, I will integrate the customer satisfaction questions and their correlation to customer loyalty into a unified view for enhanced insights. To calculate the customer’s importance of loyalty, I calculated the percentage of dissatisfied and very dissatisfied customers in a single metric, percent dissatisfaction. The ‘Customer Loyalty Importance’ is a calculated metric that combines percent dissatisfaction and the correlation to customer loyalty in one measure (see the table below). It allows us to rank survey questions by importance.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1348,6 +1348,7 @@ For each variable, there are missing values (NAs).</p>
 
 </div>
 </div>
+<p>What is the data from the table telling us?</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1370,7 +1371,7 @@ For each variable, there are missing values (NAs).</p>
 <span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">width =</span> <span class="fl">0.6</span>, <span class="at">color =</span> GRAY2)<span class="sc">+</span></span>
 <span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> cust_loyalty_importance), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.15</span>, <span class="at">size =</span> <span class="fl">3.5</span>)<span class="sc">+</span></span>
 <span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"The sales person having a reccomendation and understanding customers </span><span class="sc">\n</span><span class="st">needs are the issues that require some improvments </span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"The sales person having a recommendation and understanding customers </span><span class="sc">\n</span><span class="st">needs are the issues that require some improvments </span><span class="sc">\n</span><span class="st">"</span>,</span>
 <span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">""</span>,</span>
 <span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Customer Loyalty Importance"</span></span>
 <span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  )</span>
@@ -1474,7 +1475,7 @@ For each variable, there are missing values (NAs).</p>
 <h1>Summary</h1>
 <p>In this post, I shared with you my key driver analysis. Here are the steps I followed:</p>
 <ol type="1">
-<li><p>First, I decided what I wanted to understand: What are the key factors influencing customer loyalty within our organization?</p></li>
+<li><p>First, I decided what I wanted to understand: What are the key factors influencing customer loyalty within the organization?</p></li>
 <li><p>From the data available, I selected the measure to understand: customer loyalty (likelihood of reinvesting).</p></li>
 <li><p>Understand the data.</p></li>
 <li><p>Clean the data.</p></li>

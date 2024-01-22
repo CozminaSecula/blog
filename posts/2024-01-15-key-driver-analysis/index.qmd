@@ -11,13 +11,13 @@ sidebar: false
 
 <br>
 
-Each company aims to build a loyal customer base, as customers are more likely to reinvest in a company they trust. Customer loyalty is driven by satisfaction with products and services. Salespeople's competencies greatly influence customer loyalty. Therefore, many companies aim to understand essential factors for improving sales competencies that boost customer loyalty and repeat investments.
+In the competitive business landscape, every organization strives to cultivate a loyal customer base. This loyalty, often a result of trust and satisfaction with a company’s products and services, is a key driver of repeat business. Consequently, companies are increasingly focusing on identifying and enhancing the critical factors influencing customer loyalty and encouraging repeat investments.
 
 This post will guide you on how to use key driver analysis to identify the essential factors that impact customer satisfaction and, consequently, customer loyalty.
 
 # Problem statement
 
-A financial services organization wants to improve customer loyalty[^1], recognizing its importance in driving repeat investments. However, the organization currently lacks a comprehensive understanding of the key drivers, including sales competencies, that significantly influence customer loyalty within the company.
+A financial services organization intends to improve customer loyalty[^1], recognizing its importance in driving repeat investments. However, the organization currently lacks an understanding of the key drivers that significantly influence customer loyalty within the company.
 
 [^1]: The case study and the data description are sourced from the book [Predictive HR Analytics : Mastering the HR Metric](https://www.amazon.com/Predictive-HR-Analytics-Mastering-Metric/dp/0749473916) by Dr. Martin R. Edwards and Kirsten Edwards
 
@@ -32,7 +32,7 @@ What are the key factors influencing customer loyalty within the organization?
 
 # Methodology
 
-The financial services company carried out a survey. They asked customers who had interacted with a salesperson to assess specific elements of the salesperson’s competence. They were also asked to express their likelihood of reinvesting in the company and to specify the potential amount of their reinvestment. The final question concerned the salesperson’s gender.
+The financial services company carried out a survey. Customers who had interacted with a salesperson were asked to evaluate specific elements of their competence. They were also asked to express their likelihood of reinvesting in the company and to specify the potential amount of their reinvestment. The final question concerned the salesperson’s gender.
 
 # Data collection method
 
@@ -150,7 +150,7 @@ skimr::skim(cssurvey_raw)
 
 -   Data structure:
     -   The dataset consists of 2.507 rows, as per the description provided by the data source.
-    -   It contains 8 variables. Seven of these represent the questions from the survey, and an additional variable calculates the mean value of the customer satisfaction survey responses.
+    -   It contains 8 variables. Seven of them represent the questions from the survey, and an additional variable calculates the mean value of the customer satisfaction survey responses.
 
 ## Understanding variables
 
@@ -158,7 +158,7 @@ skimr::skim(cssurvey_raw)
 ### Data Dictionary
 
 | Variable         | Detail                                                                      | Unit    | Range |
-|---------------|-----------------------------|---------------|---------------|
+|----------------|-------------------------|----------------|----------------|
 | Sat1             | The salesperson understanding your needs                                    | numeric | 1-5   |
 | Sat2             | The salesperson seems confident                                             | numeric | 1-5   |
 | Sat3             | The salesperson has a recommendation                                        | numeric | 1-5   |
@@ -171,7 +171,7 @@ skimr::skim(cssurvey_raw)
 ### Problems and Solutions
 
 | Variable                             | Problem                                                   | Solution             |
-|----------------------|--------------------------------|------------------|
+|----------------------|--------------------------------|-------------------|
 | Sat1, Sat2, Sat3, Sat4               | variables'names are not meaningful                        | rename variables     |
 | CustSatMean, Custloyalty, INvestMore | inconsistent entries                                      | rename variables     |
 | All except CustSatMean               | variable type is not numeric; they are ordinal and binary | change variable type |
@@ -254,7 +254,7 @@ cssurvey_clean|>
 
 # Data Analysis
 
-To achieve the objectives of the analysis, I will conduct a key driver analysis[^3]. One of the goals of this analysis is to understand the factors influencing customer loyalty. I will start by reviewing the survey response percentages in the customer data.
+In order to achieve the objectives of the analysis, I will conduct a key driver analysis[^3]. One of the goals of this analysis is to understand the factors influencing customer loyalty. I will start by reviewing the survey response percentages in the customer data.
 
 [^3]: I learned about this analysis in the book [People Analytics For Dummies](https://www.amazon.com/Analytics-Dummies-Business-Personal-Finance/dp/1119434769) by Mike West
 
@@ -400,11 +400,11 @@ cor_to_cust_loyalty = c(0.49, 0.37, 0.49, 0.40)
 
 ```
 
-‘The salesperson understanding your needs’ and ‘The salesperson has a recommendation’ are the most highly correlated to the question related to loyalty: likelihood of reinvesting. The company might see these areas to focus in its efforts to improve customer loyalty.
+‘The salesperson understanding your needs’ , ‘The salesperson has a recommendation’ , and 'The salesperson is knowledgeable' are the most highly correlated to the question related to loyalty (0.49, respectively 0.40). The company might see these areas to focus in its efforts to improve customer loyalty.
 
 ## Consolidating the Percentage and Correlation
 
-In this step, I will integrate the customer satisfaction questions and their correlation to customer loyalty into a unified view for enhanced insights. The 'Customer Loyalty Importance' is a calculated metric that combines satisfaction and the correlation in one measure. It allows us to rank survey questions by importance.
+In this step, I will integrate the customer satisfaction questions and their correlation to customer loyalty into a unified view for enhanced insights. To calculate the customer's importance of loyalty, I calculated the percentage of dissatisfied and very dissatisfied customers in a single metric, percent dissatisfaction. The 'Customer Loyalty Importance' is a calculated metric that combines percent dissatisfaction and the correlation to customer loyalty in one measure (see the table below). It allows us to rank survey questions by importance.
 
 ```{r}
 #| label: consolidate-view-percentage-correlation
@@ -440,6 +440,8 @@ kda_consolidate
 
 ```
 
+What is the data from the table telling us?
+
 ```{r}
 
 theme_set(theme_msd() + theme(
@@ -461,7 +463,7 @@ kda_consolidate_plot <- kda_cor |>
   geom_bar(stat = "identity", width = 0.6, color = GRAY2)+
   geom_text(aes(label = cust_loyalty_importance), hjust = -0.15, size = 3.5)+
   labs(
-    title = "The sales person having a reccomendation and understanding customers \nneeds are the issues that require some improvments \n",
+    title = "The sales person having a recommendation and understanding customers \nneeds are the issues that require some improvments \n",
     subtitle = "",
     x = "Customer Loyalty Importance"
   )
@@ -554,7 +556,7 @@ To improve customer loyalty, the company could consider improving salespeople’
 
 In this post, I shared with you my key driver analysis. Here are the steps I followed:
 
-1.  First, I decided what I wanted to understand: What are the key factors influencing customer loyalty within our organization?
+1.  First, I decided what I wanted to understand: What are the key factors influencing customer loyalty within the organization?
 
 2.  From the data available, I selected the measure to understand: customer loyalty (likelihood of reinvesting).
 
