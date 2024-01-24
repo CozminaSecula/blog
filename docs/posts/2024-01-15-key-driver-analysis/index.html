@@ -226,7 +226,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#percentage-of-responses-in-the-customer-survey-data" id="toc-percentage-of-responses-in-the-customer-survey-data" class="nav-link" data-scroll-target="#percentage-of-responses-in-the-customer-survey-data">Percentage of Responses in the Customer Survey Data</a></li>
   <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation">Correlation</a></li>
   <li><a href="#consolidating-the-percentage-and-correlation" id="toc-consolidating-the-percentage-and-correlation" class="nav-link" data-scroll-target="#consolidating-the-percentage-and-correlation">Consolidating the Percentage and Correlation</a></li>
-  <li><a href="#key-driver-analysis-findings" id="toc-key-driver-analysis-findings" class="nav-link" data-scroll-target="#key-driver-analysis-findings">Key Driver Analysis Findings</a></li>
+  <li><a href="#key-driver-analysis-resuts" id="toc-key-driver-analysis-resuts" class="nav-link" data-scroll-target="#key-driver-analysis-resuts">Key Driver Analysis Resuts</a></li>
   </ul></li>
   <li><a href="#recommendation" id="toc-recommendation" class="nav-link" data-scroll-target="#recommendation">Recommendation</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
@@ -579,10 +579,10 @@ For each variable, there are missing values (NAs).</p>
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <table class="table">
 <colgroup>
-<col style="width: 21%">
-<col style="width: 34%">
-<col style="width: 21%">
-<col style="width: 21%">
+<col style="width: 22%">
+<col style="width: 31%">
+<col style="width: 22%">
+<col style="width: 22%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1291,20 +1291,21 @@ For each variable, there are missing values (NAs).</p>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>            </span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>kda_cor <span class="ot">&lt;-</span> kda_cor <span class="sc">|&gt;</span></span>
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percent_dissatisfied =</span> Dissatisfied <span class="sc">+</span> <span class="st">`</span><span class="at">Very Dissatisfied</span><span class="st">`</span>,</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">percent_satisfied =</span> Satisfied <span class="sc">+</span> <span class="st">`</span><span class="at">Very Satisfied</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(percent_dissatisfied, cor_to_cust_loyalty) <span class="sc">|&gt;</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cust_loyalty_importance =</span> percent_dissatisfied<span class="sc">*</span>cor_to_cust_loyalty)<span class="sc">|&gt;</span></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>kda_consolidate <span class="ot">&lt;-</span> kda_cor <span class="sc">|&gt;</span></span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(question, percent_dissatisfied, cor_to_cust_loyalty, cust_loyalty_importance)<span class="sc">|&gt;</span></span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(cust_loyalty_importance))<span class="sc">|&gt;</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Survey Question"</span>, <span class="st">"Percent Dissatisfaction"</span>, <span class="st">"Correlation to </span><span class="sc">\n</span><span class="st">Customer Loyalty"</span>, <span class="st">"Customer Loyalty </span><span class="sc">\n</span><span class="st">Importance"</span>),</span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>                    <span class="at">align =</span> <span class="st">"lrrr"</span>,</span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>                    <span class="at">caption =</span> <span class="st">"Customer Satisfaction items ranked by importance"</span>)</span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>kda_consolidate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">percent_satisfied =</span> Satisfied <span class="sc">+</span> <span class="st">`</span><span class="at">Very Satisfied</span><span class="st">`</span>,</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">percent_neutral =</span> Neutral) <span class="sc">|&gt;</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(percent_dissatisfied, cor_to_cust_loyalty) <span class="sc">|&gt;</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cust_loyalty_importance =</span> percent_dissatisfied<span class="sc">*</span>cor_to_cust_loyalty)<span class="sc">|&gt;</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>kda_consolidate <span class="ot">&lt;-</span> kda_cor <span class="sc">|&gt;</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(question, percent_dissatisfied, cor_to_cust_loyalty, cust_loyalty_importance)<span class="sc">|&gt;</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(cust_loyalty_importance))<span class="sc">|&gt;</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Survey Question"</span>, <span class="st">"Percent Dissatisfaction"</span>, <span class="st">"Correlation to </span><span class="sc">\n</span><span class="st">Customer Loyalty"</span>, <span class="st">"Customer Loyalty </span><span class="sc">\n</span><span class="st">Importance"</span>),</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>                    <span class="at">align =</span> <span class="st">"lrrr"</span>,</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>                    <span class="at">caption =</span> <span class="st">"Customer Satisfaction items ranked by importance"</span>)</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>kda_consolidate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
@@ -1389,72 +1390,189 @@ For each variable, there are missing values (NAs).</p>
 </div>
 </div>
 </section>
-<section id="key-driver-analysis-findings" class="level2">
-<h2 class="anchored" data-anchor-id="key-driver-analysis-findings">Key Driver Analysis Findings</h2>
+<section id="key-driver-analysis-resuts" class="level2">
+<h2 class="anchored" data-anchor-id="key-driver-analysis-resuts">Key Driver Analysis Resuts</h2>
+<p>The findings of the key driver analysis are presented below in a key driver quadrant. It allows us to see the two intersecting information points: the correlation of the four survey questions to customer loyalty, our chosen indicator to understand (axis x), and the satisfaction of customers’ responses (axis y).</p>
+<p>The survey questions are divided into three categories:</p>
+<ul>
+<li><p><strong>Improve Weakness</strong>: The high correlation to customer loyalty (0.49) and the low percentages of customer satisfaction (dissatisfied and very dissatisfied) put the questions “the salesperson has a recommendation” (19) and “the salesperson understanding your needs” (18) in the lower right quadrant of the key driver analysis chart. On the upper side of this quadrant, it is important to note the significant percentage of neutral responses for these two questions.</p></li>
+<li><p><strong>Leverage Great</strong>: The high correlation to customer loyalty (0.49) and the high percentages of customer satisfaction (satisfied and very satisfied) put the questions “the salesperson has a recommendation” (50) and “the salesperson understands your needs” (49) in the upper right quadrant of the key driver analysis chart.</p></li>
+<li><p><strong>Disregard</strong>: In the rest of the survey questions, there is a range of satisfied and dissatisfied customer responses, but these questions are not as important concerning customer loyalty as the other two questions are. Therefore, these are not considered aspects the organization should focus on investing in to improve customer loyalty.</p></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Key driver analysis explores a wide range of measures to uncover what is most important in influencing the chosen objective. Key driver analysis helps you understand where to focus your energy and resources to obtain the results you are looking for.</p>
+</div>
+</div>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_msd</span>())</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>kda_quadrant <span class="ot">&lt;-</span> kda_cor <span class="sc">|&gt;</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">names_to =</span> <span class="st">"satisfaction"</span>, <span class="at">values_to =</span> <span class="st">"score"</span>)<span class="sc">|&gt;</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">cor_to_cust_loyalty=</span> <span class="fu">as.numeric</span>(cor_to_cust_loyalty))</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>avg_cor <span class="ot">&lt;-</span> <span class="fu">mean</span>(kda_quadrant<span class="sc">$</span>cor_to_cust_loyalty)</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>avg_score <span class="ot">&lt;-</span> <span class="fu">mean</span>(kda_quadrant<span class="sc">$</span>score)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Data ----</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># |- KDA Quadrant ----</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># First, I organize columns and rows in the data frame to make easier </span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># to work with. I made a column "sum_satisfaction" with 3 categories where</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># I summed up the percentage of categories satisfied and very satisfied, dissatisfied and very dissatisfied and neutral to keep the plot simple to visualize</span></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a> kda_quadrant <span class="ot">&lt;-</span> kda_quadrant <span class="sc">|&gt;</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">color =</span> <span class="fu">case_when</span>(cor_to_cust_loyalty <span class="sc">&gt;</span>avg_cor <span class="sc">&amp;</span> score <span class="sc">&lt;</span> avg_score <span class="sc">&amp;</span> survey_quest <span class="sc">==</span> <span class="st">"The salesperson understanding your needs"</span> <span class="sc">~</span> <span class="st">"Understanding Needs"</span>,</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>                            cor_to_cust_loyalty <span class="sc">&gt;</span>avg_cor <span class="sc">&amp;</span> score <span class="sc">&lt;</span> avg_score <span class="sc">&amp;</span> survey_quest <span class="sc">==</span> <span class="st">"The salesperson has a recommendation"</span>  <span class="sc">~</span> <span class="st">"Has Recommendation"</span>,</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>                            cor_to_cust_loyalty <span class="sc">&gt;</span>avg_cor <span class="sc">&amp;</span> score <span class="sc">&gt;</span> avg_score <span class="sc">&amp;</span> survey_quest <span class="sc">==</span> <span class="st">"The salesperson has a recommendation"</span> <span class="sc">~</span> <span class="st">"Has Recommendation"</span>,</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>                             cor_to_cust_loyalty <span class="sc">&gt;</span>avg_cor <span class="sc">&amp;</span> score <span class="sc">&gt;</span> avg_score <span class="sc">&amp;</span> survey_quest <span class="sc">==</span> <span class="st">"The salesperson understanding your needs"</span> <span class="sc">~</span> <span class="st">"Understanding Needs"</span>,</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>                            <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Other"</span>),</span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">shape =</span> <span class="fu">factor</span>(<span class="fu">case_when</span>(satisfaction <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Satisfied"</span>, <span class="st">"Very Satisfied"</span>) <span class="sc">~</span> <span class="dv">24</span>,</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>                            satisfaction <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Dissatisfied"</span>, <span class="st">"Very Dissatisfied"</span>) <span class="sc">~</span> <span class="dv">25</span>,</span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>                            <span class="cn">TRUE</span> <span class="sc">~</span> <span class="dv">21</span>)),</span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">fill =</span> <span class="fu">factor</span>(<span class="fu">case_when</span>(color <span class="sc">==</span> <span class="st">"Understanding Needs"</span> <span class="sc">~</span> <span class="st">"#231F20"</span>, </span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>                                  color <span class="sc">==</span> <span class="st">"Has Recommendation"</span> <span class="sc">~</span> <span class="st">"#F79747"</span>,</span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>                                  <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Other"</span> )))</span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a> category <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Understanding Needs"</span> <span class="ot">=</span> <span class="st">"#231F20"</span>,</span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Has Recommendation"</span> <span class="ot">=</span> <span class="st">"#F79747"</span>,</span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Other"</span> <span class="ot">=</span> <span class="st">"#BFBEBE"</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>kda_quadrant <span class="ot">&lt;-</span> kda_cor <span class="sc">|&gt;</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">names_to =</span> <span class="st">"satisfaction"</span>, <span class="at">values_to =</span> <span class="st">"score"</span>)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>kda_quadrant <span class="ot">&lt;-</span> kda_quadrant<span class="sc">|&gt;</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>), <span class="at">names_to =</span> <span class="st">"sum_satisfaction"</span>, <span class="at">values_to =</span> <span class="st">"percent_score"</span>)</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the theme for the plot</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_msd</span>()<span class="sc">+</span> <span class="fu">theme</span>(</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> GRAY6, <span class="at">size =</span> <span class="dv">9</span>),</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">color =</span> GRAY6, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">6</span>, <span class="dv">0</span>, <span class="dv">15</span>, <span class="dv">0</span>, <span class="st">"pt"</span>)),</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">color =</span> GRAY6, <span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">color =</span> GRAY6, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">0</span>, <span class="dv">15</span>, <span class="st">"pt"</span>))</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducible plot</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a> <span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>kda_quadrant_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(kda_quadrant) <span class="sc">+</span> </span>
-<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">x=</span> cor_to_cust_loyalty,<span class="at">y=</span> score, <span class="at">color =</span> color, <span class="at">shape =</span> shape, <span class="at">fill =</span> fill), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> category, <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">21</span>, <span class="dv">24</span>,<span class="dv">25</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Neutral"</span>, <span class="st">"Satisfied &amp; Very Satisfied"</span>, <span class="st">"Dissatisfied &amp; Very Dissatisfied"</span>))<span class="sc">+</span></span>
-<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#231F20"</span>, <span class="st">"#F79747"</span>,<span class="st">"#BFBEBE"</span> ), <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">50</span>, <span class="at">by =</span> <span class="dv">10</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">50</span>),</span>
-<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"0"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"10"</span> <span class="ot">=</span> <span class="st">"10%"</span>, <span class="st">"20"</span> <span class="ot">=</span> <span class="st">"20%"</span>, <span class="st">"30"</span> <span class="ot">=</span> <span class="st">"30%"</span>, <span class="st">"40"</span> <span class="ot">=</span> <span class="st">"40%"</span>, <span class="st">"50"</span> <span class="ot">=</span> <span class="st">"50%"</span> ),</span>
-<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>                     <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="fl">0.3</span>,<span class="fl">0.6</span>, <span class="at">by =</span> <span class="fl">0.1</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.3</span>,<span class="fl">0.6</span>),</span>
-<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>                      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"0.3"</span> <span class="ot">=</span> <span class="st">"Low"</span>, <span class="st">"0.4"</span> <span class="ot">=</span> <span class="st">"0.4"</span>, <span class="st">"0.5"</span> <span class="ot">=</span> <span class="st">"0.5"</span>, <span class="st">"0.6"</span> <span class="ot">=</span> <span class="st">"High"</span>),</span>
-<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>                      <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>))<span class="sc">+</span></span>
-<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>   <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"What are the key factors influencing customer loyalty within the organization? </span><span class="sc">\n</span><span class="st">"</span>,</span>
-<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"&lt;span style='color:{category['Understanding Needs']}'&gt;**Understanding Needs**&lt;/span&gt; and &lt;span style='color:{category['Has Recommendation']}'&gt;**Has Recommendation**&lt;/span&gt; &lt;br&gt; are the most important factors influencing customer loyalty."</span>),</span>
-<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Correlation to Customer Loyalty"</span>,</span>
-<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> <span class="st">"Customer Satisfaction"</span>) <span class="sc">+</span></span>
-<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme</span>(<span class="at">plot.subtitle =</span> <span class="fu">element_markdown</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
-<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>            <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>, <span class="at">color =</span> GRAY2, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="st">"pt"</span>)),</span>
-<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a>            <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>, <span class="at">color =</span> GRAY2, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="st">"pt"</span>), <span class="at">hjust =</span> <span class="fl">0.1</span>),</span>
-<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a>            <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="st">"pt"</span>)),</span>
-<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>            <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="st">"pt"</span>)),</span>
-<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.position =</span> <span class="st">"top"</span>, <span class="at">legend.justification =</span> <span class="st">"left"</span>, <span class="at">legend.title =</span> <span class="fu">element_blank</span>(), <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="fu">margin</span>(<span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="st">"pt"</span>)), <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>, <span class="at">color =</span> GRAY6 ))</span>
-<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a>          </span>
-<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot ----</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a><span class="co"># |- Palette ----</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>survey_quest_palette <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"The salesperson has a recommendation"</span> <span class="ot">=</span> <span class="st">"#1A242F"</span>,</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"The salesperson understanding your needs"</span> <span class="ot">=</span> <span class="st">"#94989D"</span>,</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"The salesperson seems confident"</span> <span class="ot">=</span> <span class="st">"#1A242F"</span>,</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"The salesperson is knowledgeable"</span> <span class="ot">=</span> <span class="st">"#1A242F"</span>,</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"dark_text"</span> <span class="ot">=</span> <span class="st">"#1A242F"</span>,</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"light_text"</span> <span class="ot">=</span> <span class="st">"#94989D"</span>)</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="co"># |- Shape ----</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>survey_quest_shape <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"The salesperson has a recommendation"</span> <span class="ot">=</span> <span class="dv">22</span>,</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"The salesperson understanding your needs"</span> <span class="ot">=</span> <span class="dv">21</span>,</span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"The salesperson seems confident"</span> <span class="ot">=</span> <span class="dv">0</span>,</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"The salesperson is knowledgeable"</span> <span class="ot">=</span> <span class="dv">1</span>)</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Create text grobs for the labels with a specific font size and color</span></span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>label1 <span class="ot">&lt;-</span> <span class="fu">textGrob</span>(<span class="st">"Very Dissatisfied"</span>, <span class="at">rot =</span> <span class="dv">90</span>, <span class="at">gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">9</span>, <span class="at">col =</span> GRAY6) )</span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>label2 <span class="ot">&lt;-</span> <span class="fu">textGrob</span>(<span class="st">"Neutral"</span>, <span class="at">rot =</span> <span class="dv">90</span>, <span class="at">gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">9</span>, <span class="at">col =</span> GRAY6))</span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>label3 <span class="ot">&lt;-</span> <span class="fu">textGrob</span>(<span class="st">"Very Satisfied"</span>, <span class="at">rot =</span> <span class="dv">90</span>, <span class="at">gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">9</span>, <span class="at">col =</span> GRAY6))</span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>label4 <span class="ot">&lt;-</span> <span class="fu">textGrob</span>(<span class="st">"Low"</span>, <span class="at">gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">9</span>, <span class="at">col =</span> GRAY6))</span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a>label5 <span class="ot">&lt;-</span> <span class="fu">textGrob</span>(<span class="st">"High"</span>, <span class="at">gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">9</span>, <span class="at">col =</span> GRAY6))</span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a><span class="co"># | Quadrant Plot ----</span></span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a><span class="co"># | - Quadrant Base Panel ----</span></span>
 <span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a> kda_quadrant_plot <span class="sc">|&gt;</span></span>
-<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">save_and_show_plot</span>(<span class="at">width =</span> <span class="fl">6.5</span>, <span class="at">height =</span> <span class="dv">4</span>, <span class="st">"FIG03.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a>quadrant_base <span class="ot">&lt;-</span> kda_quadrant<span class="sc">|&gt;</span></span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> cor_to_cust_loyalty,</span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percent_score))<span class="sc">+</span></span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),<span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.3</span>,<span class="fl">0.6</span>))<span class="sc">+</span></span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>),</span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">80</span>),</span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">80</span>), </span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"0"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"30"</span> <span class="ot">=</span> <span class="st">"30%"</span>, <span class="st">"50"</span> <span class="ot">=</span> <span class="st">"50%"</span>, <span class="st">"80"</span> <span class="ot">=</span> <span class="st">"80%"</span>))<span class="sc">+</span></span>
+<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a> <span class="co"># Add the labels to the plot using annotation_custom()</span></span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_custom</span>(<span class="at">grob =</span> label1, <span class="at">xmin =</span> <span class="fl">0.292</span>, <span class="at">xmax =</span> <span class="fl">0.292</span>, <span class="at">ymin =</span> <span class="dv">9</span>, <span class="at">ymax =</span> <span class="dv">9</span>) <span class="sc">+</span></span>
+<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_custom</span>(<span class="at">grob =</span> label2, <span class="at">xmin =</span> <span class="fl">0.292</span>, <span class="at">xmax =</span> <span class="fl">0.292</span>, <span class="at">ymin =</span> <span class="dv">36</span>, <span class="at">ymax =</span> <span class="dv">36</span>) <span class="sc">+</span></span>
+<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_custom</span>(<span class="at">grob =</span> label3, <span class="at">xmin =</span> <span class="fl">0.292</span>, <span class="at">xmax =</span> <span class="fl">0.292</span>, <span class="at">ymin =</span> <span class="dv">65</span>, <span class="at">ymax =</span> <span class="dv">65</span>) <span class="sc">+</span></span>
+<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_custom</span>(<span class="at">grob =</span> label4, <span class="at">ymin =</span> <span class="sc">-</span><span class="fl">2.5</span>, <span class="at">ymax =</span> <span class="sc">-</span><span class="fl">2.5</span>, <span class="at">xmin =</span> <span class="fl">0.35</span>, <span class="at">xmax =</span> <span class="fl">0.35</span>)<span class="sc">+</span></span>
+<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_custom</span>(<span class="at">grob =</span> label5, <span class="at">ymin =</span> <span class="sc">-</span><span class="fl">2.5</span>, <span class="at">ymax =</span> <span class="sc">-</span><span class="fl">2.5</span>, <span class="at">xmin =</span> <span class="fl">0.55</span>, <span class="at">xmax =</span> <span class="fl">0.55</span>)<span class="sc">+</span> </span>
+<span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">clip =</span> <span class="st">"off"</span>)<span class="sc">+</span></span>
+<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb14-81"><a href="#cb14-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-82"><a href="#cb14-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-83"><a href="#cb14-83" aria-hidden="true" tabindex="-1"></a><span class="co"># | - Quadrant Chart ----</span></span>
+<span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis labels and title</span></span>
+<span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a>labelled_quadrant <span class="ot">&lt;-</span>  quadrant_base <span class="sc">+</span></span>
+<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Correlation to customer loyalty"</span>,</span>
+<span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"Customer satisfaction survey"</span>,</span>
+<span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Customer Loyalty Key Driver Report</span><span class="sc">\n</span><span class="st">"</span>)<span class="sc">+</span></span>
+<span id="cb14-91"><a href="#cb14-91" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme</span>(<span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>,</span>
+<span id="cb14-92"><a href="#cb14-92" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">vjust =</span> <span class="dv">4</span>,</span>
+<span id="cb14-93"><a href="#cb14-93" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb14-94"><a href="#cb14-94" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>,</span>
+<span id="cb14-95"><a href="#cb14-95" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">vjust =</span> <span class="dv">0</span>,</span>
+<span id="cb14-96"><a href="#cb14-96" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb14-97"><a href="#cb14-97" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> GRAY2, <span class="at">size=</span> <span class="dv">12</span>),</span>
+<span id="cb14-98"><a href="#cb14-98" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span></span>
+<span id="cb14-99"><a href="#cb14-99" aria-hidden="true" tabindex="-1"></a>         )<span class="sc">+</span></span>
+<span id="cb14-100"><a href="#cb14-100" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb14-101"><a href="#cb14-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-102"><a href="#cb14-102" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-103"><a href="#cb14-103" aria-hidden="true" tabindex="-1"></a><span class="co"># add four rectangle type of annotations to fill the four quadrant areas</span></span>
+<span id="cb14-104"><a href="#cb14-104" aria-hidden="true" tabindex="-1"></a><span class="co"># create a border and split lines for the quadrant chart</span></span>
+<span id="cb14-105"><a href="#cb14-105" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-106"><a href="#cb14-106" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin =</span> <span class="fl">0.45</span>, <span class="at">xmax =</span> <span class="fl">0.60</span>, <span class="at">ymin =</span> <span class="dv">40</span>, <span class="at">ymax =</span> <span class="dv">80</span>, <span class="at">fill=</span> <span class="st">"#F8F9F9"</span>)<span class="sc">+</span></span>
+<span id="cb14-107"><a href="#cb14-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin =</span> <span class="fl">0.3</span>, <span class="at">xmax =</span> <span class="fl">0.60</span>, <span class="at">ymin =</span> <span class="dv">0</span>, <span class="at">ymax =</span> <span class="dv">80</span> , <span class="at">fill=</span> <span class="st">"#F8F9F9"</span>)<span class="sc">+</span></span>
+<span id="cb14-108"><a href="#cb14-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin =</span> <span class="fl">0.45</span>, <span class="at">xmax =</span> <span class="fl">0.60</span>, <span class="at">ymin =</span> <span class="dv">40</span>, <span class="at">ymax =</span> <span class="dv">80</span>, <span class="at">fill=</span> <span class="st">"white"</span>)<span class="sc">+</span></span>
+<span id="cb14-109"><a href="#cb14-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin =</span> <span class="fl">0.3</span>, <span class="at">xmax =</span> <span class="fl">0.60</span>, <span class="at">ymin =</span> <span class="dv">0</span>, <span class="at">ymax =</span> <span class="dv">80</span>, <span class="at">fill=</span> <span class="st">"white"</span>)<span class="sc">+</span></span>
+<span id="cb14-110"><a href="#cb14-110" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">"lightgrey"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="dv">3</span>))<span class="sc">+</span></span>
+<span id="cb14-111"><a href="#cb14-111" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span> <span class="dv">40</span>, <span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">linewidth =</span><span class="fl">1.5</span>)<span class="sc">+</span></span>
+<span id="cb14-112"><a href="#cb14-112" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span> <span class="fl">0.45</span>, <span class="at">color =</span> <span class="st">"lightgrey"</span>, <span class="at">linewidth =</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb14-113"><a href="#cb14-113" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb14-114"><a href="#cb14-114" aria-hidden="true" tabindex="-1"></a><span class="co"># add label to quadrant area</span></span>
+<span id="cb14-115"><a href="#cb14-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-116"><a href="#cb14-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">0.375</span>,</span>
+<span id="cb14-117"><a href="#cb14-117" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> <span class="dv">77</span>,</span>
+<span id="cb14-118"><a href="#cb14-118" aria-hidden="true" tabindex="-1"></a>                 <span class="at">label =</span> <span class="st">"DISREGARD"</span>),</span>
+<span id="cb14-119"><a href="#cb14-119" aria-hidden="true" tabindex="-1"></a>             <span class="at">label.padding =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">"mm"</span>),</span>
+<span id="cb14-120"><a href="#cb14-120" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="st">"lightgrey"</span>,</span>
+<span id="cb14-121"><a href="#cb14-121" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"white"</span>)<span class="sc">+</span></span>
+<span id="cb14-122"><a href="#cb14-122" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">0.525</span>,</span>
+<span id="cb14-123"><a href="#cb14-123" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> <span class="dv">77</span>,</span>
+<span id="cb14-124"><a href="#cb14-124" aria-hidden="true" tabindex="-1"></a>                 <span class="at">label =</span> <span class="st">"LEVERAGE GREAT"</span>),</span>
+<span id="cb14-125"><a href="#cb14-125" aria-hidden="true" tabindex="-1"></a>             <span class="at">label.padding =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">"mm"</span>),</span>
+<span id="cb14-126"><a href="#cb14-126" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="st">"lightgrey"</span>,</span>
+<span id="cb14-127"><a href="#cb14-127" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"white"</span>)<span class="sc">+</span></span>
+<span id="cb14-128"><a href="#cb14-128" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">0.525</span>,</span>
+<span id="cb14-129"><a href="#cb14-129" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> <span class="dv">3</span>,</span>
+<span id="cb14-130"><a href="#cb14-130" aria-hidden="true" tabindex="-1"></a>                 <span class="at">label =</span> <span class="st">"IMPROVE WEAKNESS"</span>),</span>
+<span id="cb14-131"><a href="#cb14-131" aria-hidden="true" tabindex="-1"></a>             <span class="at">label.padding =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">"mm"</span>),</span>
+<span id="cb14-132"><a href="#cb14-132" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="st">"lightgrey"</span>,</span>
+<span id="cb14-133"><a href="#cb14-133" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"white"</span>)<span class="sc">+</span></span>
+<span id="cb14-134"><a href="#cb14-134" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-135"><a href="#cb14-135" aria-hidden="true" tabindex="-1"></a><span class="co"># draw the questions survey to the chart with the position corresponding to their “customer satisfaction percent” value and “correlation to customer” value.</span></span>
+<span id="cb14-136"><a href="#cb14-136" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-137"><a href="#cb14-137" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">x =</span> cor_to_cust_loyalty,</span>
+<span id="cb14-138"><a href="#cb14-138" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percent_score,</span>
+<span id="cb14-139"><a href="#cb14-139" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> survey_quest,</span>
+<span id="cb14-140"><a href="#cb14-140" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> survey_quest,</span>
+<span id="cb14-141"><a href="#cb14-141" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> survey_quest),</span>
+<span id="cb14-142"><a href="#cb14-142" aria-hidden="true" tabindex="-1"></a>         <span class="at">size =</span> <span class="dv">5</span>,</span>
+<span id="cb14-143"><a href="#cb14-143" aria-hidden="true" tabindex="-1"></a>         <span class="at">alpha =</span> <span class="fl">0.8</span>)<span class="sc">+</span></span>
+<span id="cb14-144"><a href="#cb14-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb14-145"><a href="#cb14-145" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend.box =</span> <span class="st">"vertical"</span>,</span>
+<span id="cb14-146"><a href="#cb14-146" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="fu">unit</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="fl">0.45</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="st">"cm"</span>)),</span>
+<span id="cb14-147"><a href="#cb14-147" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb14-148"><a href="#cb14-148" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> GRAY6, <span class="at">size =</span> <span class="dv">9</span>)) <span class="sc">+</span></span>
+<span id="cb14-149"><a href="#cb14-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">shape =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb14-150"><a href="#cb14-150" aria-hidden="true" tabindex="-1"></a>         <span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb14-151"><a href="#cb14-151" aria-hidden="true" tabindex="-1"></a>         <span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))<span class="sc">+</span></span>
+<span id="cb14-152"><a href="#cb14-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> survey_quest_palette) <span class="sc">+</span></span>
+<span id="cb14-153"><a href="#cb14-153" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> survey_quest_shape) <span class="sc">+</span></span>
+<span id="cb14-154"><a href="#cb14-154" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> survey_quest_palette)</span>
+<span id="cb14-155"><a href="#cb14-155" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb14-156"><a href="#cb14-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-157"><a href="#cb14-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-158"><a href="#cb14-158" aria-hidden="true" tabindex="-1"></a>labelled_quadrant</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1468,8 +1586,13 @@ For each variable, there are missing values (NAs).</p>
 </section>
 <section id="recommendation" class="level1">
 <h1>Recommendation</h1>
-<p>The analysis reveals that ‘The salesperson is knowledgeable’, ‘The salesperson understanding your needs’, and ‘The salesperson has a recommendation’ influence customer loyalty. However, only ‘salesperson understanding your needs’ and ‘salesperson has a recommendation’ are most important.</p>
-<p>To improve customer loyalty, the company could consider improving salespeople’s ability to understand customer needs. This may include active listening, asking relevant questions, and maintaining accurate records. Additionally, providing training for sales staff on making informed recommendations would likely result in a positive return on investment. Identifying employees skilled at understanding and advising customers from raw data and sharing these skills within the team could also be beneficial.</p>
+<p>To improve customer loyalty, the company could consider:</p>
+<ul>
+<li>Improving salespeople’s ability to understand customer needs. This may include active listening, asking relevant questions, and maintaining accurate records.</li>
+<li>Providing training for sales staff on making informed recommendations. This would likely result in a positive return on investment.</li>
+<li>Identifying employees skilled at understanding and advising customers from raw data and sharing these skills within the team could also be beneficial.</li>
+<li>Investigate more about what happens to clients who declare themselves neutral and how to convert them into satisfied customers.</li>
+</ul>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>

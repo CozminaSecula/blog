@@ -158,7 +158,7 @@ skimr::skim(cssurvey_raw)
 ### Data Dictionary
 
 | Variable         | Detail                                                                      | Unit    | Range |
-|----------------|-------------------------|----------------|----------------|
+|-----------------|-----------------------|-----------------|-----------------|
 | Sat1             | The salesperson understanding your needs                                    | numeric | 1-5   |
 | Sat2             | The salesperson seems confident                                             | numeric | 1-5   |
 | Sat3             | The salesperson has a recommendation                                        | numeric | 1-5   |
@@ -171,7 +171,7 @@ skimr::skim(cssurvey_raw)
 ### Problems and Solutions
 
 | Variable                             | Problem                                                   | Solution             |
-|----------------------|--------------------------------|-------------------|
+|----------------------|-------------------------------|-------------------|
 | Sat1, Sat2, Sat3, Sat4               | variables'names are not meaningful                        | rename variables     |
 | CustSatMean, Custloyalty, INvestMore | inconsistent entries                                      | rename variables     |
 | All except CustSatMean               | variable type is not numeric; they are ordinal and binary | change variable type |
@@ -423,7 +423,8 @@ kda_cor <- bind_cols(kda, cor_matrix)
             
 kda_cor <- kda_cor |>
   mutate(percent_dissatisfied = Dissatisfied + `Very Dissatisfied`,
-         percent_satisfied = Satisfied + `Very Satisfied`) |>
+         percent_satisfied = Satisfied + `Very Satisfied`,
+         percent_neutral = Neutral) |>
   group_by(percent_dissatisfied, cor_to_cust_loyalty) |>
   mutate(cust_loyalty_importance = percent_dissatisfied*cor_to_cust_loyalty)|>
   ungroup()
@@ -475,82 +476,197 @@ kda_consolidate_plot |>
 
 ```
 
-## Key Driver Analysis Findings
+## Key Driver Analysis Resuts
+
+The findings of the key driver analysis are presented below in a key driver quadrant. It allows us to see the two intersecting information points: the correlation of the four survey questions to customer loyalty, our chosen indicator to understand (axis x), and the satisfaction of customers' responses (axis y).
+
+The survey questions are divided into three categories:
+
+ - **Improve Weakness**:  The high correlation to customer loyalty (0.49) and the low percentages of customer satisfaction (dissatisfied and very dissatisfied) put the questions "the salesperson has a recommendation" (19) and "the salesperson understanding your needs" (18) in the lower right quadrant of the key driver analysis chart. On the upper side of this quadrant, it is important to note the significant percentage of neutral responses for these two questions.
+ 
+ - **Leverage Great**: The high correlation to customer loyalty (0.49) and the high percentages of customer satisfaction (satisfied and very satisfied) put the questions "the salesperson has a recommendation" (50) and "the salesperson understands your needs" (49) in the upper right quadrant of the key driver analysis chart.
+ 
+ - **Disregard**: In the rest of the survey questions, there is a range of satisfied and dissatisfied customer responses, but these questions are not as important concerning customer loyalty as the other two questions are. Therefore, these are not considered aspects the organization should focus on investing in to improve customer loyalty.
+ 
+::: callout-important
+ 
+Key driver analysis explores a wide range of measures to uncover what is most important in influencing the chosen objective. Key driver analysis helps you understand where to focus your energy and resources to obtain the results you are looking for.
+:::
+
 
 ```{r}
 
+library(glue)
+library(grid)
 
+# Data ----
+# |- KDA Quadrant ----
 
-theme_set(theme_msd())
+# First, I organize columns and rows in the data frame to make easier 
+# to work with. I made a column "sum_satisfaction" with 3 categories where
+# I summed up the percentage of categories satisfied and very satisfied, dissatisfied and very dissatisfied and neutral to keep the plot simple to visualize
 
 kda_quadrant <- kda_cor |>
-    pivot_longer(cols = 2:6, names_to = "satisfaction", values_to = "score")|>
-    mutate(cor_to_cust_loyalty= as.numeric(cor_to_cust_loyalty))
+    pivot_longer(cols = 2:6, names_to = "satisfaction", values_to = "score")
+
+kda_quadrant <- kda_quadrant|>
+  pivot_longer(cols = c(4:6), names_to = "sum_satisfaction", values_to = "percent_score")
+
+# Set the theme for the plot
+
+theme_set(theme_msd()+ theme(
+  axis.text.y = element_text(color = GRAY6, size = 9),
+  axis.title.x = element_text(color = GRAY6, size = 10, margin = margin(6, 0, 15, 0, "pt")),
+  axis.title.y = element_text(color = GRAY6, size = 10),
+  axis.text.x = element_text(color = GRAY6, size = 9, margin = margin(0, 6, 0, 15, "pt"))
+))
+
+# Set seed for reproducible plot
+
+set.seed(123)
+
+
+# Plot ----
+# |- Palette ----
+survey_quest_palette <- list("The salesperson has a recommendation" = "#1A242F",
+                             "The salesperson understanding your needs" = "#94989D",
+                             "The salesperson seems confident" = "#1A242F",
+                             "The salesperson is knowledgeable" = "#1A242F",
+                             "dark_text" = "#1A242F",
+                             "light_text" = "#94989D")
+
+# |- Shape ----
+
+survey_quest_shape <- list("The salesperson has a recommendation" = 22,
+                             "The salesperson understanding your needs" = 21,
+                             "The salesperson seems confident" = 0,
+                             "The salesperson is knowledgeable" = 1)
+
+# Create text grobs for the labels with a specific font size and color
+
+label1 <- textGrob("Very Dissatisfied", rot = 90, gp = gpar(fontsize = 9, col = GRAY6) )
+label2 <- textGrob("Neutral", rot = 90, gp = gpar(fontsize = 9, col = GRAY6))
+label3 <- textGrob("Very Satisfied", rot = 90, gp = gpar(fontsize = 9, col = GRAY6))
+label4 <- textGrob("Low", gp = gpar(fontsize = 9, col = GRAY6))
+label5 <- textGrob("High", gp = gpar(fontsize = 9, col = GRAY6))
+
+
+
+# | Quadrant Plot ----
+# | - Quadrant Base Panel ----
+
+quadrant_base <- kda_quadrant|>
+  ggplot(aes(x = cor_to_cust_loyalty,
+             y = percent_score))+
+  scale_x_continuous(expand = c(0,0),limits = c(0.3,0.6))+
+  scale_y_continuous(expand = c(0,0),
+                     limits = c(0,80),
+                     breaks = c(0, 30, 50, 80), 
+                     labels = c("0" = "0", "30" = "30%", "50" = "50%", "80" = "80%"))+
+
+ # Add the labels to the plot using annotation_custom()
+   
+ 
+  annotation_custom(grob = label1, xmin = 0.292, xmax = 0.292, ymin = 9, ymax = 9) +
+  annotation_custom(grob = label2, xmin = 0.292, xmax = 0.292, ymin = 36, ymax = 36) +
+  annotation_custom(grob = label3, xmin = 0.292, xmax = 0.292, ymin = 65, ymax = 65) +
+  annotation_custom(grob = label4, ymin = -2.5, ymax = -2.5, xmin = 0.35, xmax = 0.35)+
+  annotation_custom(grob = label5, ymin = -2.5, ymax = -2.5, xmin = 0.55, xmax = 0.55)+ 
+  coord_cartesian(clip = "off")+
+  theme(axis.line = element_blank())
+ 
+   
+
+
+# | - Quadrant Chart ----
+
+# Set axis labels and title
+
+labelled_quadrant <-  quadrant_base +
+    labs(x = "Correlation to customer loyalty",
+         y = "Customer satisfaction survey",
+        title = "Customer Loyalty Key Driver Report\n")+
+   theme(axis.title.x = element_text(hjust = 0.5,
+                                     vjust = 4,
+                                     face = "bold"),
+         axis.title.y = element_text(hjust = 0.5,
+                                     vjust = 0,
+                                     face = "bold"),
+        plot.title = element_text(color = GRAY2, size= 12),
+        plot.title.position = "plot"
+         )+
+ 
+
   
-avg_cor <- mean(kda_quadrant$cor_to_cust_loyalty)
-avg_score <- mean(kda_quadrant$score)
-
-
- 
- kda_quadrant <- kda_quadrant |>
-   mutate(color = case_when(cor_to_cust_loyalty >avg_cor & score < avg_score & survey_quest == "The salesperson understanding your needs" ~ "Understanding Needs",
-                            cor_to_cust_loyalty >avg_cor & score < avg_score & survey_quest == "The salesperson has a recommendation"  ~ "Has Recommendation",
-                            cor_to_cust_loyalty >avg_cor & score > avg_score & survey_quest == "The salesperson has a recommendation" ~ "Has Recommendation",
-                             cor_to_cust_loyalty >avg_cor & score > avg_score & survey_quest == "The salesperson understanding your needs" ~ "Understanding Needs",
-                            TRUE ~ "Other"),
-          shape = factor(case_when(satisfaction %in% c("Satisfied", "Very Satisfied") ~ 24,
-                            satisfaction %in% c("Dissatisfied", "Very Dissatisfied") ~ 25,
-                            TRUE ~ 21)),
-          fill = factor(case_when(color == "Understanding Needs" ~ "#231F20", 
-                                  color == "Has Recommendation" ~ "#F79747",
-                                  TRUE ~ "Other" )))
- 
- 
- 
- category = c("Understanding Needs" = "#231F20",
-              "Has Recommendation" = "#F79747",
-              "Other" = "#BFBEBE")
-
- 
- 
- set.seed(123)
-
- 
-kda_quadrant_plot <- ggplot(kda_quadrant) + 
-  geom_jitter(aes(x= cor_to_cust_loyalty,y= score, color = color, shape = shape, fill = fill), size = 5) +
-  scale_color_manual(values = category, guide = "none") +
-  scale_shape_manual(values = c(21, 24,25), labels = c("Neutral", "Satisfied & Very Satisfied", "Dissatisfied & Very Dissatisfied"))+
-  scale_fill_manual(values = c("#231F20", "#F79747","#BFBEBE" ), guide = "none") +
-  scale_y_continuous(breaks = seq(0,50, by = 10), limits = c(0, 50),
-                     labels = c("0" = "0", "10" = "10%", "20" = "20%", "30" = "30%", "40" = "40%", "50" = "50%" ),
-                     expand = c(0,0)) +
-   scale_x_continuous(breaks = seq(0.3,0.6, by = 0.1), limits = c(0.3,0.6),
-                      labels = c("0.3" = "Low", "0.4" = "0.4", "0.5" = "0.5", "0.6" = "High"),
-                      expand = c(0,0))+
-   labs(title = "What are the key factors influencing customer loyalty within the organization? \n",
-        subtitle = glue::glue("<span style='color:{category['Understanding Needs']}'>**Understanding Needs**</span> and <span style='color:{category['Has Recommendation']}'>**Has Recommendation**</span> <br> are the most important factors influencing customer loyalty."),
-        x = "Correlation to Customer Loyalty",
-        y = "Customer Satisfaction") +
-      theme(plot.subtitle = element_markdown(size = 12),
-            axis.text.y = element_text(size = 6, color = GRAY2, margin = margin(0, 6, 0, 10, "pt")),
-            axis.text.x = element_text(size = 6, color = GRAY2, margin = margin(6, 6, 10, 0, "pt"), hjust = 0.1),
-            axis.title.y = element_text(hjust = 1, size = 10, margin = margin(0, 0, 0, 10, "pt")),
-            axis.title.x = element_text(hjust = 0, size = 10, margin = margin(0, 0, 10, 0, "pt")),
-          legend.position = "top", legend.justification = "left", legend.title = element_blank(), legend.margin = margin(margin(6, 6, 10, 0, "pt")), legend.text = element_text(size = 9, color = GRAY6 ))
+# add four rectangle type of annotations to fill the four quadrant areas
+# create a border and split lines for the quadrant chart
+  
+  annotate("rect", xmin = 0.45, xmax = 0.60, ymin = 40, ymax = 80, fill= "#F8F9F9")+
+  annotate("rect", xmin = 0.3, xmax = 0.60, ymin = 0, ymax = 80 , fill= "#F8F9F9")+
+  annotate("rect", xmin = 0.45, xmax = 0.60, ymin = 40, ymax = 80, fill= "white")+
+  annotate("rect", xmin = 0.3, xmax = 0.60, ymin = 0, ymax = 80, fill= "white")+
+  theme(panel.border = element_rect(colour = "lightgrey", fill = NA, linewidth = 3))+
+  geom_hline(yintercept= 40, color = "lightgrey", linewidth =1.5)+
+  geom_vline(xintercept= 0.45, color = "lightgrey", linewidth =1.5) +
           
+# add label to quadrant area
+
+  geom_label(aes(x = 0.375,
+                 y = 77,
+                 label = "DISREGARD"),
+             label.padding = unit(2, "mm"),
+             fill = "lightgrey",
+             color = "white")+
+  geom_label(aes(x = 0.525,
+                 y = 77,
+                 label = "LEVERAGE GREAT"),
+             label.padding = unit(2, "mm"),
+             fill = "lightgrey",
+             color = "white")+
+  geom_label(aes(x = 0.525,
+                 y = 3,
+                 label = "IMPROVE WEAKNESS"),
+             label.padding = unit(2, "mm"),
+             fill = "lightgrey",
+             color = "white")+
+  
+# draw the questions survey to the chart with the position corresponding to their “customer satisfaction percent” value and “correlation to customer” value.
+  
+   geom_jitter(aes(x = cor_to_cust_loyalty,
+             y = percent_score,
+             color = survey_quest,
+             shape = survey_quest,
+             fill = survey_quest),
+         size = 5,
+         alpha = 0.8)+
+  theme( legend.position = "top",
+         legend.box = "vertical",
+         legend.margin = margin(unit(c(0,-0.45,0,0), "cm")),
+         legend.title = element_blank(),
+         legend.text = element_text(color = GRAY6, size = 9)) +
+  guides(shape = guide_legend(nrow = 2, byrow = TRUE),
+         fill = guide_legend(nrow = 2, byrow = TRUE),
+         color = guide_legend(nrow = 2, byrow = TRUE))+
+  scale_colour_manual(values = survey_quest_palette) +
+  scale_shape_manual(values = survey_quest_shape) +
+  scale_fill_manual(values = survey_quest_palette)
+   
 
 
- kda_quadrant_plot |>
-  save_and_show_plot(width = 6.5, height = 4, "FIG03.png")
+labelled_quadrant
+
 
 
 ```
 
 # Recommendation
 
-The analysis reveals that 'The salesperson is knowledgeable', 'The salesperson understanding your needs', and 'The salesperson has a recommendation' influence customer loyalty. However, only 'salesperson understanding your needs' and 'salesperson has a recommendation' are most important.
+To improve customer loyalty, the company could consider:
 
-To improve customer loyalty, the company could consider improving salespeople’s ability to understand customer needs. This may include active listening, asking relevant questions, and maintaining accurate records. Additionally, providing training for sales staff on making informed recommendations would likely result in a positive return on investment. Identifying employees skilled at understanding and advising customers from raw data and sharing these skills within the team could also be beneficial.
+ - Improving salespeople’s ability to understand customer needs. This may include active listening, asking relevant questions, and maintaining accurate records.
+ - Providing training for sales staff on making informed recommendations. This would likely result in a positive return on investment.
+ - Identifying employees skilled at understanding and advising customers from raw data and sharing these skills within the team could also be beneficial.
+ - Investigate more about what happens to clients who declare themselves neutral and how to convert them into satisfied customers.
 
 # Summary
 
