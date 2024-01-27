@@ -25,14 +25,15 @@ library(DT)
 #| column: page-right
 
 
-r_resource <- matrix(c('#{dplyr}package #datamanipulation',
-                       '#rbasics  #datamanipulation',                                         '#rupdates  #rcommunity',
+r_resource <- matrix(c('#{tidyverse} #updatesin2023',
+                       '#{dplyr}package #datamanipulation',
+                       '#rbasics  #datamanipulation',                                                     '#rupdates  #rcommunity',
                        '#clean data  #draw plots', 
-               '#cheatsheets #functions #posit tools',
+                       '#cheatsheets #functions #posit tools',
                
                
                
-               
+               "Summarize the highlights of tidyverse updates that are most relevant to teaching data science with the tidyverse, particularly to new learners.",
                "The most common functions for data manipulation and data management using the {dplyr} package (illustrated on a data frame).",
                "Introduction to data analysis with R, how to create and manipulate vectors, factors, lists and data frames.",
                "There are a lot of great blogs, tutorials, and other resource formats that are coming out daily. R Weekly keeps track of these great things in the R community and makes them accessible to everyone.",
@@ -41,7 +42,7 @@ r_resource <- matrix(c('#{dplyr}package #datamanipulation',
                
                
                
-               
+                'Blog post on updates for the {tidyverse} package',
                 'Tutorial on using the {dplyr} package',
                 'Tutorial on the main functions to manipulate data in R',
                 'R Weekly Updates',
@@ -50,7 +51,7 @@ r_resource <- matrix(c('#{dplyr}package #datamanipulation',
 
                
                
-               
+               '<a href="https://www.tidyverse.org/blog/2023/08/teach-tidyverse-23/">Teaching the tidyverse in 2023</a>',
                '<a href="https://statsandr.com/blog/introduction-to-data-manipulation-in-r-with-dplyr/">Data manipulation with {dplyr} package</a>',
                '<a href="https://statsandr.com/blog/data-manipulation-in-r/">Data manipulation with base R</a>',
                '<a href="https://rweekly.org/about">Weekly Updates from the Entire R Community</a>',

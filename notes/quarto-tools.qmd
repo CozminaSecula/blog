@@ -29,17 +29,20 @@ If you want to start your journey with Quarto, I recommend the [Quarto documenta
 ```{r}
 #| column: page-right
 
-qt <- matrix(c('#quartotip',
+qt <- matrix(c('#quartoblog',
+               '#quartotip',
                '#buildblog',
                '#documenting #r #reporting', 
                '#documenting #r #reporting',
                
+               "News, tips, and commentary about all things Quarto.",
                "A website that highlights a tip for Quarto every day for a month.",
                " An in-depth guide that shows how to build a blog with Quarto. A great resource that helps you start your own blog.",
                "Generate documents, presentations and more. Produce HTML, PDF, MS Word, reveal.js, MS Powerpoint, Beamer, websites, blogs, books",
                "Data reporting and communication",
                
                
+                "news/tips",
                 "tips/tweets",
                 'tutorial',
                 'html',
@@ -47,6 +50,7 @@ qt <- matrix(c('#quartotip',
                
                
                
+                '<a href="https://quarto.org/docs/blog/?mkt_tok=NzA5LU5YTi03MDYAAAGQ5fTVLmGr4bpji3VCeurW-Rc9KW-fIauAW-sPq-_BdOjOeOhAsZIWEalm9rGLlhmcASyuaMU8mxlOEjqYewCFl3vtt6sFUtsw5dIxJGTSExo">Quarto Blog</a>',
                '<a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/">A Quarto tip a day</a>',
                 '<a href="https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html">The ultimate guide to starting a Quarto blog</a>',
                 '<a href="https://rstudio.github.io/cheatsheets/html/quarto.html">Publish and Share with Quarto :: Cheatsheet</a>',
