@@ -11,6 +11,8 @@ sidebar: false
 
 <br>
 
+<iframe src="file:///C:/Users/cozmi/OneDrive/Documents/Github/blog/docs/slides/key-driver-analysis.html#/" width="100%" height="500px"></iframe>
+
 In the competitive business landscape, every organization strives to cultivate a loyal customer base. This loyalty, often a result of trust and satisfaction with a company’s products and services, is a key driver of repeat business. Consequently, companies are increasingly focusing on identifying and enhancing the critical factors influencing customer loyalty and encouraging repeat investments.
 
 This post will guide you on how to use key driver analysis to identify the essential factors that impact customer satisfaction and, consequently, customer loyalty.
@@ -158,7 +160,7 @@ skimr::skim(cssurvey_raw)
 ### Data Dictionary
 
 | Variable         | Detail                                                                      | Unit    | Range |
-|------------------|--------------------|------------------|------------------|
+|------------------|-------------------|------------------|------------------|
 | Sat1             | The salesperson understanding your needs                                    | numeric | 1-5   |
 | Sat2             | The salesperson seems confident                                             | numeric | 1-5   |
 | Sat3             | The salesperson has a recommendation                                        | numeric | 1-5   |
