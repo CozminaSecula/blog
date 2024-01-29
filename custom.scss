@@ -57,33 +57,7 @@ p {
    font-weight: bold
 }
 
-.presentation-download {
-    font-family: $headings-font-family;
-    background-color: #666;
-    border-color: #666;
-    color: $white;
 
-    &:hover {
-        background-color: #c4d6e2;
-        border-color: #c4d6e2;
-        color: $black;
-    }
-}
-
-
-// iframes for slides embedded 
-
-iframe.slide-deck {
-   width: 100%;
-}
-
-.ar4x3 {
-  aspect-ratio: 4 / 3;  
-}
-
-.ar3x2 {
-  aspect-ratio: 3 / 2;  
-}
 
 // icon-links
 .icon-link {
@@ -125,6 +99,17 @@ iframe.slide-deck {
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus,{
   color: $sandstone-blue;
+}
+
+
+// slide iframes
+
+.slides {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-style: solid;
+  border-width: 1px;
 }
 
 

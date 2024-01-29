@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.514">
+<meta name="generator" content="quarto-1.5.4">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Making sense of data - Quarto Tools</title>
+<title>Making sense of data – Quarto Tools</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,6 +60,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -85,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
@@ -230,8 +231,8 @@ ul.task-list li input[type="checkbox"] {
 <p><br></p>
 <div class="cell page-columns page-full">
 <div class="cell-output-display column-page-right">
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a9fcbc28f058d5aa6715" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a9fcbc28f058d5aa6715">{"x":{"filter":"none","vertical":false,"data":[["#quartoblog","#quartotip","#buildblog","#documenting #r #reporting","#documenting #r #reporting"],["News, tips, and commentary about all things Quarto.","A website that highlights a tip for Quarto every day for a month."," An in-depth guide that shows how to build a blog with Quarto. A great resource that helps you start your own blog.","Generate documents, presentations and more. Produce HTML, PDF, MS Word, reveal.js, MS Powerpoint, Beamer, websites, blogs, books","Data reporting and communication"],["news/tips","tips/tweets","tutorial","html","pdf"],["<a href=\"https://quarto.org/docs/blog/?mkt_tok=NzA5LU5YTi03MDYAAAGQ5fTVLmGr4bpji3VCeurW-Rc9KW-fIauAW-sPq-_BdOjOeOhAsZIWEalm9rGLlhmcASyuaMU8mxlOEjqYewCFl3vtt6sFUtsw5dIxJGTSExo\">Quarto Blog<\/a>","<a href=\"https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/\">A Quarto tip a day<\/a>","<a href=\"https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html\">The ultimate guide to starting a Quarto blog<\/a>","<a href=\"https://rstudio.github.io/cheatsheets/html/quarto.html\">Publish and Share with Quarto :: Cheatsheet<\/a>","<a href=\"https://res.cloudinary.com/dyd911kmh/image/upload/v1676540721/Marketing/Blog/Quarto_Cheat_Sheet.pdf\">Quarto Cheat Sheet<\/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Category<\/th>\n      <th>Description<\/th>\n      <th>Type<\/th>\n      <th>Details<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d29e3daf34570942a1e5" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d29e3daf34570942a1e5">{"x":{"filter":"none","vertical":false,"data":[["#quartoblog","#quartotip","#buildblog","#documenting #r #reporting","#documenting #r #reporting"],["News, tips, and commentary about all things Quarto.","A website that highlights a tip for Quarto every day for a month."," An in-depth guide that shows how to build a blog with Quarto. A great resource that helps you start your own blog.","Generate documents, presentations and more. Produce HTML, PDF, MS Word, reveal.js, MS Powerpoint, Beamer, websites, blogs, books","Data reporting and communication"],["news/tips","tips/tweets","tutorial","html","pdf"],["<a href=\"https://quarto.org/docs/blog/?mkt_tok=NzA5LU5YTi03MDYAAAGQ5fTVLmGr4bpji3VCeurW-Rc9KW-fIauAW-sPq-_BdOjOeOhAsZIWEalm9rGLlhmcASyuaMU8mxlOEjqYewCFl3vtt6sFUtsw5dIxJGTSExo\">Quarto Blog<\/a>","<a href=\"https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/\">A Quarto tip a day<\/a>","<a href=\"https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html\">The ultimate guide to starting a Quarto blog<\/a>","<a href=\"https://rstudio.github.io/cheatsheets/html/quarto.html\">Publish and Share with Quarto :: Cheatsheet<\/a>","<a href=\"https://res.cloudinary.com/dyd911kmh/image/upload/v1676540721/Marketing/Blog/Quarto_Cheat_Sheet.pdf\">Quarto Cheat Sheet<\/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Category<\/th>\n      <th>Description<\/th>\n      <th>Type<\/th>\n      <th>Details<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
@@ -367,27 +368,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -402,10 +382,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -414,8 +398,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
