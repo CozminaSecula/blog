@@ -21,6 +21,7 @@ $sky2: #4D79A2; //paler
 $gray: #393A3B;
 $gray2: #747576; //paler
 
+
 $white: #fff !default;
 $black: #000 !default;
 
@@ -39,7 +40,7 @@ $darker-gray: #687178 !default;
 
 // Links
 
-$link-color: #00407A;
+$link-color: $sky;
 
 
 
@@ -62,9 +63,9 @@ p {
 // icon-links
 .icon-link {
     background-color: transparent;
-    color: $primary;
+    color: $sky;
     border: 2px solid !important;
-    border-color: $primary;
+    border-color: $sky;
     padding: 5px .4rem 5px .4rem !important;
     margin-top: 4px;
     margin-right: 8px;
@@ -75,9 +76,9 @@ p {
 }
 
 .icon-link:hover{
-    background-color: $primary;
-    border-color: $primary;
-    color: $body-bg;
+    background-color: $gray2;
+    border-color: $gray2;
+    color: $gray2;
     text-decoration: none;
 }
 
@@ -98,7 +99,7 @@ p {
 .nav-tabs .nav-link,
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus,{
-  color: $sandstone-blue;
+  color: $sky;
 }
 
 
@@ -112,4 +113,16 @@ p {
   border-width: 1px;
 }
 
+.page-link.active, .active>.page-link {
+    z-index: 3;
+    color: $gray2;
+    background-color: $gray2;
+    border-color: $gray2;
+    border-color: 2px solid !important;
+}
+
+a {
+    color: $gray2;
+    
+}
 

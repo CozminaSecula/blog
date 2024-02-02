@@ -38,8 +38,8 @@ The financial services company carried out a survey. Customers who had interacte
 
 The survey included seven questions.
 
-::: {.panel-tabset group="language"}
-### Salesperson competencies
+::: {.panel-tabset group="datacollection"}
+## Salesperson competencies
 
 Four were specifically related to key salesperson competency elements:
 
@@ -53,7 +53,7 @@ Four were specifically related to key salesperson competency elements:
 
 The customers were asked to grade the salesperson on a scale of 1 to 5, where 1 was ‘very dissatisfied’ and 5 was ‘very satisfied’.
 
-### Customer Loyalty
+## Customer Loyalty
 
 Two question related to loyalty and asked customers to put themselves on a scale of 1 to 5 where:
 
@@ -87,7 +87,7 @@ Two question related to loyalty and asked customers to put themselves on a scale
 :::
 :::
 
-### Gender
+## Gender
 
 The final question was about the gender of the sales person.
 
@@ -115,7 +115,7 @@ library(janitor)
 
 [^2]: Data available [here](https://www.koganpage.com/hr-learning-development/predictive-hr-analytics-9780749484446)
 
-::: {.panel-tabset group="language"}
+::: {.panel-tabset group="dataset"}
 ### Read data
 
 The data set includes responses from 2,507 customers and 8 variables.
@@ -154,7 +154,7 @@ skimr::skim(cssurvey_raw)
 
 ## Understanding variables
 
-::: {.panel-tabset group="language"}
+::: {.panel-tabset group="variables"}
 ### Data Dictionary
 
 | Variable         | Detail                                                                      | Unit    | Range |
@@ -182,7 +182,7 @@ skimr::skim(cssurvey_raw)
 
 ## Clean name and rename variables
 
-::: {.panel-tabset group="language"}
+::: {.panel-tabset group="cleandata"}
 ### Problem
 
 CustSatMean, Custloyalty, INvestMore have inconsistent entries (e.g. IN..More).
@@ -206,7 +206,7 @@ CustSatMean, Custloyalty, INvestMore have inconsistent entries (e.g. IN..More).
 
 ## Assign labels and rename variables
 
-::: {.panel-tabset group="language"}
+::: {.panel-tabset group="namevariables"}
 ### Problem
 
 -   The variable names ‘Sat1’, ‘Sat2’, ‘Sat3’, and ‘Sat4’ lack clarity. Although they are numeric in the data set, the data source classifies them as ordinal variables.
@@ -261,7 +261,6 @@ In order to achieve the objectives of the analysis, I will conduct a key driver 
 ## Percentage of Responses in the Customer Survey Data
 
 Surveyed customers expressed satisfaction and high satisfaction with the ‘The salesperson seems confident’. However, they were less satisfied with ‘The salesperson understanding your needs’ and ‘The salesperson has a recommendation’.
-
 
 ```{r}
 #| label: compute-percent
