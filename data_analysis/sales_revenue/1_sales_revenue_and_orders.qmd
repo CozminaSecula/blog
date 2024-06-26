@@ -8,7 +8,6 @@ date: "2024-06-26"
 categories: [data analysis, data visualization, sales data]
 ---
 
-
 ## Questions and Solutions
 
 1.  **What is the annual variation in sales revenue and number of orders?**
@@ -63,16 +62,13 @@ con <- DBI::dbConnect(RPostgres::Postgres(),
 dbListTables(conn = con) ## list tables in the database
 ```
 
-
 The data used to answer the questions can be found in two tables: `orders` and `order_details`.
 
 #### Entity Relationship Diagram.
 
-![](clipboard-1292639816.png){fig-align="center" width="326"}
-Source [DBeaver](https://dbeaver.io/)
+![](clipboard-1292639816.png){fig-align="center" width="326"} Source [DBeaver](https://dbeaver.io/)
 
 ## What is the annual variation in sales revenue and number of orders?
-
 
 ```{r}
 
@@ -170,7 +166,6 @@ How about the monthly sales?
 
 To have the monthly sales revenue and number of orders, the previous query is modified as follows:
 
-
 ```{r}
 
 monthly_revenue <- "
@@ -224,7 +219,6 @@ max_order_date <- max(sales_revenue_tbl$end_date)
 ```
 
 The graph shows that the sales generally increase over time. However, there is much variation from one month to another. As there is month-over-month sales variation we can use the `lag()` function (SQL) to help to find the delta.
-
 
 ```{r}
 
@@ -415,7 +409,15 @@ month_data_year_avg_rev_plot + plot_spacer() + month_data_year_avg_order_plot+ p
 -   The highest values for sales revenue are at the beginning and the end of the year while the lowest values are in the first half of the year. This indicates that the business can have seasonal fluctuations in sales.
 -   This is also supported by the number of orders placed each month. The highest number of orders is in the second half of the year which can explain the increased revenue at the final of the year.
 
-Knowing in which months the business performs below or above the average can help in the strategic planning of the company and the allocation of resources. - For example : - when the sales volumes are low the business can design loyalty programs that encourage repeated business during slower months; - during off-peak times the company can plan training programs to ensure that the staff are fully equipped for busy periods; - targeted campaigns by allocating budgets to peak seasons to maximize returns or promotions during low-performing months to increase sales.
+Knowing in which months the business performs below or above the average can help in the strategic planning of the company and the allocation of resources.
+
+-   For example :
+
+    -    when the sales volumes are low the business can design loyalty programs that encourage repeated business during slower months;
+
+    -    during off-peak times the company can plan training programs to ensure that the staff are fully equipped for busy periods;
+
+    -    targeted campaigns by allocating budgets to peak seasons to maximize returns or promotions during low-performing months to increase sales.
 
 Comparing monthly sales data to yearly averages is a powerful analytical tool that provides deep insights into business performance, aids in strategic planning and drives informed decision-making. It allows businesses to adapt proactively to changes, optimize operations, and achieve better financial outcomes.
 
