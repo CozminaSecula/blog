@@ -10,6 +10,12 @@
     ]
   },
   {
+    "listing": "/data_analysis.html",
+    "items": [
+      "/data_analysis/sales_revenue/1_sales_revenue_and_orders.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/posts/2024-01-15-key-driver-analysis/index.html",

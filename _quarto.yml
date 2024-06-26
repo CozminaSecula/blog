@@ -19,8 +19,8 @@ website:
         text: About
       - href: posts.qmd
         text: Posts
-      - href: notes/notes.qmd
-        text: Learning resources
+      - href: data_analysis.qmd
+        text: Data Analysis
       
     right: 
       - icon: linkedin
@@ -35,18 +35,7 @@ website:
     left: >-
       &#169; 2024 Cozmina Secula &#8729; Made with [Quarto](https://quarto.org)
  
-  sidebar: 
-    - id: Learning resources
-      title: "Learning resources"
-      collapse-level: 2
-      style: "floating"
-      align: left
-      contents:
-       - notes/notes.qmd
-       - notes/R-resources.qmd
-       - notes/quarto-tools.qmd
 
-     
       
 format:
   html:

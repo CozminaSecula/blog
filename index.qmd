@@ -25,18 +25,13 @@ This blog is about my journey to make sense of people data. It has two sections:
 
 # About me
 
-
 ![](profile.jpg){style="float:left; padding: 0 10px 0 0;" fig-alt="Headshot of Cozmina Secula" width="225"}
-
 
 **Cozmina Secula**, Creator of Making Sense of Data blog
 
 With an extensive background in B2B sales and people management, I became interested in using data to answer questions during a master’s program in strategic human resource management at "Alexandru Ioan Cuza" University, Iasi.
 
-After completing a research project with qualitative data, I started working with quantitative data. This led me to initiate Making Sense of Data blog, focusing on people analytics projects.
-I am also passionate about open-source knowledge.
-
-
+After completing a research project with qualitative data, I started working with quantitative data. This led me to initiate Making Sense of Data blog, focusing on people analytics projects. I am also passionate about open-source knowledge.
 
 <br>
 

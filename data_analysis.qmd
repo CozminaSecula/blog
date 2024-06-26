@@ -1,0 +1,10 @@
+---
+title: "Data Analysis"
+subtitle: "Using SQL and R for data analysis to provide answers to business questions."
+listing:
+  contents: data_analysis
+  type: table
+  fields: [title, tools, description]
+page-layout: full
+title-block-banner: true
+---
