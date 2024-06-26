@@ -119,10 +119,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:site_name" content="Making sense of data">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
@@ -168,12 +168,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Sales Revenue and Orders</h1>
+                  <div>
+        <div class="description">
+          <p>Analyzing annual and monthly sales revenue and orders using data from the Northwind database.</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">data analysis</div>
+                <div class="quarto-category">data visualization</div>
+                <div class="quarto-category">sales data</div>
+              </div>
+                  </div>
+  </div>
     
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Cozmina Secula </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 26, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#questions-and-solutions" id="toc-questions-and-solutions" class="nav-link active" data-scroll-target="#questions-and-solutions">Questions and Solutions</a></li>
+  <li><a href="#steps-to-answer-the-questions" id="toc-steps-to-answer-the-questions" class="nav-link" data-scroll-target="#steps-to-answer-the-questions">Steps to answer the questions</a>
+  <ul class="collapse">
+  <li><a href="#tools-used-to-achieve-this" id="toc-tools-used-to-achieve-this" class="nav-link" data-scroll-target="#tools-used-to-achieve-this">Tools used to achieve this</a></li>
+  </ul></li>
+  <li><a href="#what-is-the-annual-variation-in-sales-revenue-and-number-of-orders" id="toc-what-is-the-annual-variation-in-sales-revenue-and-number-of-orders" class="nav-link" data-scroll-target="#what-is-the-annual-variation-in-sales-revenue-and-number-of-orders">What is the annual variation in sales revenue and number of orders?</a>
+  <ul class="collapse">
+  <li><a href="#insights" id="toc-insights" class="nav-link" data-scroll-target="#insights">Insights</a></li>
+  </ul></li>
+  <li><a href="#what-is-the-monthly-variation-in-sales-revenue" id="toc-what-is-the-monthly-variation-in-sales-revenue" class="nav-link" data-scroll-target="#what-is-the-monthly-variation-in-sales-revenue">What is the monthly variation in sales revenue?</a>
+  <ul class="collapse">
+  <li><a href="#insights-1" id="toc-insights-1" class="nav-link" data-scroll-target="#insights-1">Insights</a></li>
+  </ul></li>
+  <li><a href="#how-do-monthly-revenue-and-orders-compare-to-the-yearly-average" id="toc-how-do-monthly-revenue-and-orders-compare-to-the-yearly-average" class="nav-link" data-scroll-target="#how-do-monthly-revenue-and-orders-compare-to-the-yearly-average">How do monthly revenue and orders compare to the yearly average?</a>
+  <ul class="collapse">
+  <li><a href="#insights-2" id="toc-insights-2" class="nav-link" data-scroll-target="#insights-2">Insights</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
@@ -197,45 +262,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Sales Revenue and Orders</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">data analysis</div>
-    <div class="quarto-category">data visualization</div>
-    <div class="quarto-category">sales data</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    <p>Analyzing annual and monthly sales revenue and orders using data from the Northwind database.</p>
-  </div>
-</div>
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Cozmina Secula </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 26, 2024</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header>
 
 
 <section id="questions-and-solutions" class="level2">
@@ -456,8 +484,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a487b36d244a6945d2d7" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a487b36d244a6945d2d7">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23"],["1996-07-01","1996-08-01","1996-09-01","1996-10-01","1996-11-01","1996-12-01","1997-01-01","1997-02-01","1997-03-01","1997-04-01","1997-05-01","1997-06-01","1997-07-01","1997-08-01","1997-09-01","1997-10-01","1997-11-01","1997-12-01","1998-01-01","1998-02-01","1998-03-01","1998-04-01","1998-05-01"],[59,69,57,73,66,81,85,79,77,81,96,76,77,84,95,106,89,114,152,122,178,180,59],[30192,26609,27636,41204,49704,50953,66693,41207,39980,55699,56824,39088,55465,49982,59733,70328,45913,77476,100855,104562,109825,134631,19899]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>sales_month<\/th>\n      <th>total_number<\/th>\n      <th>monthly_revenue<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"scrollY":true,"columnDefs":[{"className":"dt-right","targets":[2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d2eadc033443a13ed0d8" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d2eadc033443a13ed0d8">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23"],["1996-07-01","1996-08-01","1996-09-01","1996-10-01","1996-11-01","1996-12-01","1997-01-01","1997-02-01","1997-03-01","1997-04-01","1997-05-01","1997-06-01","1997-07-01","1997-08-01","1997-09-01","1997-10-01","1997-11-01","1997-12-01","1998-01-01","1998-02-01","1998-03-01","1998-04-01","1998-05-01"],[59,69,57,73,66,81,85,79,77,81,96,76,77,84,95,106,89,114,152,122,178,180,59],[30192,26609,27636,41204,49704,50953,66693,41207,39980,55699,56824,39088,55465,49982,59733,70328,45913,77476,100855,104562,109825,134631,19899]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>sales_month<\/th>\n      <th>total_number<\/th>\n      <th>monthly_revenue<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"scrollY":true,"columnDefs":[{"className":"dt-right","targets":[2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 <p>Monthly sales revenue and number of orders</p>
 </div>
 </div>
@@ -524,8 +552,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c794bcf9cf46aa1689fd" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-c794bcf9cf46aa1689fd">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23"],["1996-07-01","1996-08-01","1996-09-01","1996-10-01","1996-11-01","1996-12-01","1997-01-01","1997-02-01","1997-03-01","1997-04-01","1997-05-01","1997-06-01","1997-07-01","1997-08-01","1997-09-01","1997-10-01","1997-11-01","1997-12-01","1998-01-01","1998-02-01","1998-03-01","1998-04-01","1998-05-01"],[59,69,57,73,66,81,85,79,77,81,96,76,77,84,95,106,89,114,152,122,178,180,59],[30192,26609,27636,41204,49704,50953,66693,41207,39980,55699,56824,39088,55465,49982,59733,70328,45913,77476,100855,104562,109825,134631,19899],[30192,30192,26609,27636,41204,49704,50953,66693,41207,39980,55699,56824,39088,55465,49982,59733,70328,45913,77476,100855,104562,109825,134631],[0,-3583,1027,13568,8500,1249,15740,-25486,-1227,15719,1125,-17736,16377,-5483,9751,10595,-24415,31563,23379,3707,5263,24806,-114732]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>sales_month<\/th>\n      <th>total_number<\/th>\n      <th>monthly_revenue<\/th>\n      <th>prev_month_revenue<\/th>\n      <th>delta_revenue<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"scrollY":true,"columnDefs":[{"className":"dt-right","targets":[2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-46f4cc4172851d4f6039" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-46f4cc4172851d4f6039">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23"],["1996-07-01","1996-08-01","1996-09-01","1996-10-01","1996-11-01","1996-12-01","1997-01-01","1997-02-01","1997-03-01","1997-04-01","1997-05-01","1997-06-01","1997-07-01","1997-08-01","1997-09-01","1997-10-01","1997-11-01","1997-12-01","1998-01-01","1998-02-01","1998-03-01","1998-04-01","1998-05-01"],[59,69,57,73,66,81,85,79,77,81,96,76,77,84,95,106,89,114,152,122,178,180,59],[30192,26609,27636,41204,49704,50953,66693,41207,39980,55699,56824,39088,55465,49982,59733,70328,45913,77476,100855,104562,109825,134631,19899],[30192,30192,26609,27636,41204,49704,50953,66693,41207,39980,55699,56824,39088,55465,49982,59733,70328,45913,77476,100855,104562,109825,134631],[0,-3583,1027,13568,8500,1249,15740,-25486,-1227,15719,1125,-17736,16377,-5483,9751,10595,-24415,31563,23379,3707,5263,24806,-114732]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>sales_month<\/th>\n      <th>total_number<\/th>\n      <th>monthly_revenue<\/th>\n      <th>prev_month_revenue<\/th>\n      <th>delta_revenue<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"scrollY":true,"columnDefs":[{"className":"dt-right","targets":[2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 <p>Monthly sales revenue and number of orders</p>
 </div>
 </div>
@@ -608,8 +636,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-728c3b89e7e591e0ab6d" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-728c3b89e7e591e0ab6d">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],["1997-01-01","1997-02-01","1997-03-01","1997-04-01","1997-05-01","1997-06-01","1997-07-01","1997-08-01","1997-09-01","1997-10-01","1997-11-01","1997-12-01"],[85,79,77,81,96,76,77,84,95,106,89,114],[66693,41207,39980,55699,56824,39088,55465,49982,59733,70328,45913,77476]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year_month<\/th>\n      <th>monthly_orders<\/th>\n      <th>monthly_revenue<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"scrollY":true,"columnDefs":[{"className":"dt-right","targets":[2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-858a6ae9a91526060d24" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-858a6ae9a91526060d24">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],["1997-01-01","1997-02-01","1997-03-01","1997-04-01","1997-05-01","1997-06-01","1997-07-01","1997-08-01","1997-09-01","1997-10-01","1997-11-01","1997-12-01"],[85,79,77,81,96,76,77,84,95,106,89,114],[66693,41207,39980,55699,56824,39088,55465,49982,59733,70328,45913,77476]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year_month<\/th>\n      <th>monthly_orders<\/th>\n      <th>monthly_revenue<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"scrollY":true,"columnDefs":[{"className":"dt-right","targets":[2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 <p>Monthly sales data and Yearly averages</p>
 </div>
 </div>
@@ -1097,6 +1125,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="CozminaSecula/blogComments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 <footer class="footer">

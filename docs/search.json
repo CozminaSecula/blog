@@ -137,7 +137,7 @@
     "href": "data_analysis.html",
     "title": "Data Analysis",
     "section": "",
-    "text": "Translate Widget\n\n\n    \n    \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\ntools\n\n\nDescription\n\n\n\n\n\n\nSales Revenue and Orders\n\n\nSQL, R, Github\n\n\nAnalyzing annual and monthly sales revenue and orders using data from the Northwind database. \n\n\n\n\n\nNo matching items"
+    "text": "Translate Widget\n\n\n    \n    \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\ntools\n\n\nDescription\n\n\n\n\n\n\nSales Revenue and Orders\n\n\nSQL, R, Git/Github\n\n\nAnalyzing annual and monthly sales revenue and orders using data from the Northwind database. \n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -184,9 +184,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome",
+    "title": "About",
     "section": "",
-    "text": "Translate Widget\n\n\n    \n    \n    \n\n\n\n\n\n\n\n\n\nAbout the blog\nWhen I started to work with data, I had to make several choices. One was to choose the software for analyzing data. Although I was familiar with Excel, I began considering whether to enhance my Excel skills or start learning a statistical program. Ultimately, I decided to learn R, a programming language for statistical computing and data visualization. The R community offers many open resources that significantly help my learning process. In addition, I wanted to document and share my work. And Quarto became the perfect tool for me to do this. I was able to create this space where I can share my learning and my work.\nThis blog is about my journey to make sense of people data. It has two sections: one for storing and sharing projects, notes, and ideas, and another for sharing R and Quarto open resources I’ve gathered along the way. I hope you will find it useful, and feel free to share it with anyone!\n\n\nAbout me\n\nCozmina Secula, Creator of Making Sense of Data blog\nWith an extensive background in B2B sales and people management, I became interested in using data to answer questions during a master’s program in strategic human resource management at “Alexandru Ioan Cuza” University, Iasi.\nAfter completing a research project with qualitative data, I started working with quantitative data. This led me to initiate Making Sense of Data blog, focusing on people analytics projects. I am also passionate about open-source knowledge.\n\n\n\nFrom My Blog\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKey Driver Analysis to understand customer loyalty in a financial organization (case study)\n\n\n\nkey driver analysis\n\n\ndata cleaning\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreating a Dashboard with Quarto\n\n\n\ndashboard\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test\n\n\n\nsummary statistics\n\n\nindependent samples t-test\n\n\nquantitative analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test\n\n\n\ncross-table\n\n\nchi-squared test\n\n\nquantitative analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEmployees’ perception of well-being at work: A qualitative study\n\n\n\nqualitative analysis\n\n\nempirical study\n\n\nwell-being at work\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Translate Widget\n    \n    \n    \nI transitioned careers from sales manager to data analyst.\nPreviously, I have worked +17 years in business-to-business sales having various roles.\nI am passionate about making sense of data and working on problems in the data space. I have experience analyzing data using SQL and R and creating data visualizations in R using ggplot."
   },
   {
     "objectID": "notes/notes.html#why-this-space",

@@ -1,6 +1,6 @@
 ---
 title: Sales Revenue and Orders
-tools: SQL, R, Github
+tools: SQL, R, Git/Github
 description: |
   Analyzing annual and monthly sales revenue and orders using data from the Northwind database.
 author: "Cozmina Secula"
@@ -413,11 +413,11 @@ Knowing in which months the business performs below or above the average can hel
 
 -   For example :
 
-    -    when the sales volumes are low the business can design loyalty programs that encourage repeated business during slower months;
+    -   when the sales volumes are low the business can design loyalty programs that encourage repeated business during slower months;
 
-    -    during off-peak times the company can plan training programs to ensure that the staff are fully equipped for busy periods;
+    -   during off-peak times the company can plan training programs to ensure that the staff are fully equipped for busy periods;
 
-    -    targeted campaigns by allocating budgets to peak seasons to maximize returns or promotions during low-performing months to increase sales.
+    -   targeted campaigns by allocating budgets to peak seasons to maximize returns or promotions during low-performing months to increase sales.
 
 Comparing monthly sales data to yearly averages is a powerful analytical tool that provides deep insights into business performance, aids in strategic planning and drives informed decision-making. It allows businesses to adapt proactively to changes, optimize operations, and achieve better financial outcomes.
 
