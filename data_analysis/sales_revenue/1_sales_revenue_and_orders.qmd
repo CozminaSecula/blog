@@ -1,6 +1,6 @@
 ---
 title: Sales Revenue and Orders
-tools: SQL, R, Git/Github
+tools: SQL, R, RStudio, Quarto, Git/Github
 description: |
   Analyzing annual and monthly sales revenue and orders using data from the Northwind database.
 author: "Cozmina Secula"
@@ -8,9 +8,11 @@ date: "2024-06-26"
 categories: [data analysis, data visualization, sales data]
 ---
 
-## Questions and Solutions
+For this analysis, I will use sales data from Northwind database[^1] to answer the following questions:
 
-1.  **What is the annual variation in sales revenue and number of orders?**
+[^1]: The Northwind database is a sample database that was originally created by Microsoft for demonstrating the features of their database management systems. It contains a variety of tables and data related to a fictional company called Northwind Traders, which imports and exports specialty foods from around the world.
+
+1.  **What is the annual sales revenue and number of orders?**
 
 2.  **What is the monthly variation in sales revenue?**
 
@@ -27,8 +29,6 @@ categories: [data analysis, data visualization, sales data]
 4.  Data Visualization
 
 5.  Data Interpretation
-
-### Tools used to achieve this
 
 #### Prerequisites
 
@@ -64,11 +64,13 @@ dbListTables(conn = con) ## list tables in the database
 
 The data used to answer the questions can be found in two tables: `orders` and `order_details`.
 
-#### Entity Relationship Diagram.
+#### Entity Relationship Diagram
 
-![](clipboard-1292639816.png){fig-align="center" width="326"} Source [DBeaver](https://dbeaver.io/)
+![](clipboard-1292639816.png){fig-align="center" width="326"}
 
-## What is the annual variation in sales revenue and number of orders?
+Source [DBeaver](https://dbeaver.io/)
+
+## What is the annual sales revenue and number of orders?
 
 ```{r}
 
@@ -116,18 +118,6 @@ total_revenue <- ggplot(sales_revenue_tbl, aes(x = year, y =(total_revenue/1000)
   )+
    theme_minimal()
 
-
-total_revenue <- ggplot(sales_revenue_tbl, aes(x = year, y =(total_revenue/1000)))+
-  geom_col()+
-  geom_text(aes(label = round(total_revenue/1000)), vjust = 1.5, color = "white")+
-  scale_y_continuous(labels = scales::dollar_format())+
-  labs(
-    title = "Total Sales Revenue per Year - Thousands",
-    x = NULL,
-    y = "Sales $M"
-  )+
-   theme_minimal()
-
 order_number <- ggplot(sales_revenue_tbl, aes(x = year, y = as.numeric(order_number)))+
   geom_col()+
   geom_text(aes(label = as.numeric(order_number)), vjust = 1.5, color = "white")+
@@ -156,9 +146,9 @@ avg_revenue <- ggplot(sales_revenue_tbl, aes(x = year, y = avg_revenue))+
 
 ### Insights
 
--   As 1996 and 1998 are shorter than 1997, interpreting comparisons is difficult.
--   The sales revenue and the number of orders for the first five months of 1998 are greater than those for the last five months for the year of 1996. Since the comparison is not for the same period or consecutive years, it is difficult to determine if the sales are trending upward, downward, or flat. However even though the context is different, we can say that we have an evolution with sales revenue doubling in five months in 1998 compared with five months in 1996.
--   For each year, the average dollar amount of sales increases from year to year based on the average dollar amount of sales.
+-   The available periods for 1996 and 1998 are shorter than those for 1997, making it difficult to interpret comparisons.
+-   The graph shows that the sales revenue and the number of orders for the first four months of 1998 are greater than those for the last six months of the year 1996. However, since the data is not for the same period or consecutive years, it is difficult to determine the sales trend. Even though the context is different, we can say that sales revenue doubled in the first four months of 1998 compared with the last six months of 1996.
+-   In the absence of data for an entire year for more than one year, we can look at the average dollar amount of sales. Based on the average dollar amount of sales, the graph shows an increase from year to year.
 
 How about the monthly sales?
 
@@ -187,6 +177,8 @@ monthly_revenue_tbl <- (dbGetQuery(con, monthly_revenue))
 
 datatable(monthly_revenue_tbl, options = list(pageLength = 5, scrollY = TRUE))
 ```
+
+Next, let's create a graph to visualize the monthly sales data.
 
 ```{r}
 #| echo: true
@@ -218,7 +210,7 @@ max_order_date <- max(sales_revenue_tbl$end_date)
 
 ```
 
-The graph shows that the sales generally increase over time. However, there is much variation from one month to another. As there is month-over-month sales variation we can use the `lag()` function (SQL) to help to find the delta.
+The graph shows that there is much variation from one month to another. As there is month-over-month sales variation we can use the `lag()` function (SQL) to help to see the differences.
 
 ```{r}
 
@@ -257,14 +249,16 @@ monthly_var_revenue_tbl <- (dbGetQuery(con, monthly_var_revenue))
 datatable(monthly_var_revenue_tbl, options = list(pageLength = 5, scrollY = TRUE))
 ```
 
-The graph above shows that data has a left-tailed distribution. We can use the `summary()` function (R) to return descriptive statistics.
+Also, based on the graph, it is evident that the data follows a left-tailed distribution. I will utilize the `summary()` function in R to examine the descriptive statistics.
 
 ```{r}
 median(monthly_var_revenue_tbl$delta_revenue)
 (summary_delta_revenue <- summary(monthly_var_revenue_tbl$delta_revenue))
 ```
 
-We can see that the median is positive (\$3.707) while the mean is negative: (447.5). Month-over-month sales data shows a wide spread between the lower and upper quartiles.
+The median is positive (\$3.707) while the mean is negative: (447.5). Month-over-month sales data shows a wide spread between the lower and upper quartiles.
+
+The plot below shows how the sales vary month-over-month.
 
 ```{r}
 #| echo: true
@@ -296,7 +290,8 @@ We can see that the median is positive (\$3.707) while the mean is negative: (44
 
 ### Insights
 
--   With real data, we would want to investigate more to understand the business context that occurred in May of 1998. With these data, we know that the data collection ended at the beginning of May 1998 which can explain the gap compared with the previous month.
+-   With real data, we would want to investigate more to understand the business context that occurred in May of 1998.
+-   From the data available in the Northwind database, we know that the data collection ended at the beginning of May 1998 which can explain the high difference compared with the previous month.
 
 We have the data for the entire year of 1997 and we can look at revenue and number of orders together and compare the monthly data to the yearly average. By comparing monthly sales to yearly average, businesses can identify which months consistently perform above or below average, helping in informing various business decisions.
 
@@ -337,22 +332,30 @@ datatable(month_data_year_avg_tbl, options = list(pageLength = 5, scrollY = TRUE
 ```
 
 ```{r}
+
+(yearly_revenue_average <- mean(month_data_year_avg_tbl$monthly_revenue))
+(yearly_order_average <- mean(month_data_year_avg_tbl$monthly_orders))
+
+```
+
+
+```{r}
 #| echo: true
 #| code-fold: true
 #| fig-width: 7.5
 #| fig-height: 5
 
-yearly_rev_avg <- mean(month_data_year_avg_tbl$monthly_revenue)
+
 month_data_year_avg_rev_plot <- ggplot(month_data_year_avg_tbl, aes(x = year_month, y = monthly_revenue))+
   geom_line()+
   scale_x_date(date_labels = "%m", date_minor_breaks = "1 month")+
   scale_y_continuous(labels = scales::dollar_format())+
-  geom_hline(yintercept = yearly_rev_avg ,
+  geom_hline(yintercept = yearly_revenue_average ,
              color = "darkred",
              linetype = "dashed")+
   annotate("text",
            x = min(month_data_year_avg_tbl$year_month),
-           y = yearly_rev_avg +1000,
+           y = yearly_revenue_average +1000,
            label = "AVG",
            color = "darkred",
            hjust = 0
@@ -371,16 +374,15 @@ month_data_year_avg_rev_plot <- ggplot(month_data_year_avg_tbl, aes(x = year_mon
   theme_minimal()
 
 
-yearly_order_avg <- mean(month_data_year_avg_tbl$monthly_orders)
 month_data_year_avg_order_plot <- ggplot(month_data_year_avg_tbl, aes(x = year_month, y = as.numeric(monthly_orders)))+
   geom_line()+
   scale_x_date(date_labels = "%m", date_minor_breaks = "1 month")+
-  geom_hline(yintercept = yearly_order_avg ,
+  geom_hline(yintercept = yearly_order_average,
              color = "darkred",
              linetype = "dashed")+
   annotate("text",
            x = min(month_data_year_avg_tbl$year_month),
-           y = yearly_order_avg +1,
+           y = yearly_order_average +1,
            label = "AVG",
            color = "darkred",
            hjust = 0
