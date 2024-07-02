@@ -147,7 +147,7 @@ avg_revenue <- ggplot(sales_revenue_tbl, aes(x = year, y = avg_revenue))+
 ### Insights
 
 -   The available periods for 1996 and 1998 are shorter than those for 1997, making it difficult to interpret comparisons.
--   The graph shows that the sales revenue and the number of orders for the first four months of 1998 are greater than those for the last six months of the year 1996. However, since the data is not for the same period or consecutive years, it is difficult to determine the sales trend. Even though the context is different, we can say that sales revenue doubled in the first four months of 1998 compared with the last six months of 1996.
+-   The graph shows that the sales revenue and the number of orders for the first five months of 1998 are greater than those for the last six months of the year 1996. However, since the data is not for the same period or consecutive years, it is difficult to determine the sales trend. Even though the context is different, we can say that sales revenue doubled in the first four months of 1998 compared with the last six months of 1996.
 -   In the absence of data for an entire year for more than one year, we can look at the average dollar amount of sales. Based on the average dollar amount of sales, the graph shows an increase from year to year.
 
 How about the monthly sales?
@@ -297,8 +297,6 @@ We have the data for the entire year of 1997 and we can look at revenue and numb
 
 ## How do monthly revenue and orders compare to the yearly average?
 
-#### SQL Query
-
 ```{r}
 
 month_data_year_avg <- "
@@ -337,7 +335,6 @@ datatable(month_data_year_avg_tbl, options = list(pageLength = 5, scrollY = TRUE
 (yearly_order_average <- mean(month_data_year_avg_tbl$monthly_orders))
 
 ```
-
 
 ```{r}
 #| echo: true

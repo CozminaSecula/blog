@@ -5,5 +5,7 @@ listing:
   contents: data_analysis
   type: table
   fields: [title, tools, description]
+  field-display-names: 
+    tools: "Tools"
 title-block-banner: true
 ---
