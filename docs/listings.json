@@ -12,7 +12,8 @@
   {
     "listing": "/data_analysis.html",
     "items": [
-      "/data_analysis/sales_revenue/1_sales_revenue_and_orders.html"
+      "/data_analysis/sales_revenue/1_sales_revenue_and_orders.html",
+      "/data_analysis/time_series/1_time_series.html"
     ]
   },
   {
