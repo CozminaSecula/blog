@@ -17,6 +17,6 @@ about:
 comments: false
 ---
 
-I am passionate about making sense of data and working on problems in the data space. I have experience analyzing data using SQL and R and creating data visualizations in R using ggplot.
+I am passionate about making sense of data and working on problems in the data space. I have experience analyzing data using SQL and R and creating data visualizations in R using ggplot2.
 
 Previously, I have worked +17 years in business-to-business sales having various roles.

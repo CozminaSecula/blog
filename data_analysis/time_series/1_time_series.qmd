@@ -172,7 +172,7 @@ annotations <- data.frame(
 
 For the next analyses, I will look at sales at `new and used car dealers`, two of the subcategories included in the retail sales dataset.
 
-## Comparing `New Car Dealers` with `Used car dealer` yearly sales
+## Comparing yearly sales of `new car dealers` with `used car dealers`
 
 ```{r}
 
@@ -244,7 +244,7 @@ new_used_car_sales_tbl <- new_used_car_sales_tbl |>
 
 ```
 
-## What were the trends in `new and used car` dealer sales percentages?
+## What were the trends in `new and used car dealer` sales percentages?
 
 ```{r}
 new_and_used_car_sales_percent <- "
@@ -292,7 +292,7 @@ datatable(new_and_used_car_sales_percent_tbl, options = list(pageLength = 5, scr
 
 ```
 
-## During the past few decades, how have sales of `new and used cars` varied in dollars and percent?
+## During the past few decades, how have sales of `new and used cars dealers` varied in dollars and percent?
 
 ```{r}
 gap_percent_sales_cars <- "
@@ -352,7 +352,7 @@ percent_sales_cars_tbl_plot <- ggplot(gap_percent_sales_cars_tbl, aes(x = year, 
   scale_y_continuous(breaks = seq(600, 1300, 100),
                      labels = scales::percent_format(scale = 1))+
   labs(
-    subtitle = 'After 1993, the percent difference between sales at \nnew cars and used cars dealers decreased (even though it \nincreased a bit in 2001) and then continued to \ndecrease until 2009 when it reached its lowest value. \nThen, the percent diffrenece increased until 2014, and \nagain decreased until 2020, returning to 2009 values.',
+    subtitle = 'After 1993, the percent difference between sales at \nnew cars and used cars dealers decreased (even though it \nincreased a bit in 2001) and then continued to \ndecrease until 2009 when it reached its lowest value. \nThen, the percent difference increased until 2014, and \nagain decreased until 2020, returning to 2009 values.',
     x = 'Year',
     y = 'Percent'
     )+
