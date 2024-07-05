@@ -42,13 +42,13 @@ con <- DBI::dbConnect(RPostgres::Postgres(),
                  bigint = "integer") # change integer64 to integer
 ```
 
-The fields used from the dataset for analysis are: 
+The fields used from the dataset for analysis are:
 
-- `sales_month`(month and year)
-- `kind_of_business`(details of subcategories of retail sales) 
-- `sales` (sales figures in millions of US dollars).
+-   `sales_month`(month and year)
+-   `kind_of_business`(details of subcategories of retail sales)
+-   `sales` (sales figures in millions of US dollars).
 
-### Subcategories of retail sales 
+### Subcategories of retail sales
 
 ```{r}
 rs_subcategories <- "
