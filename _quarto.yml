@@ -19,8 +19,6 @@ website:
         text: About
       - href: posts.qmd
         text: Posts
-      - href: data_analysis.qmd
-        text: Data Analysis
       
     right: 
       - icon: linkedin
