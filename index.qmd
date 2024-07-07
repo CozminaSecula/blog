@@ -1,8 +1,8 @@
 ---
-title: "About"
+title: "Cozmina Secula"
 image: profile.jpg
 about:
-  template: jolla
+  template: trestles
   links: 
     - icon: linkedin
       text: Linkedin
@@ -19,6 +19,14 @@ comments: false
 
 <br>
 
-I am passionate about making sense of data and working on problems in the data space. I have experience analyzing data using SQL and R and creating data visualizations in R using ggplot2.
+Hi! I'm Cozmina.
 
-Previously, I have worked +17 years in business-to-business sales having various roles.
+A passionate about making sense of data and working on problems in the data space.
+
+In my work, I bring with me:
+
+-   Skills and knowledge: database basics, SQL for data analysis, R programming language (ggplot2 for data visualization).
+
+-   Relevant skills I developed in more than 17 years working in business-to-business direct sales such as communication, understanding business needs, acting as a business partner and advisor, planning, analyzing, and implementing projects to obtain the desired results.
+
+-   Ability and desire to learn, motivation, curiosity, and professionalism.
