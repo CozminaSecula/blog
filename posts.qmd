@@ -1,6 +1,6 @@
 ---
 title: "Posts"
-subtitle: "This is a place where I share some of my work."
+subtitle: "This is where I store and share some of my work in practicing data analysis and visualization."
 listing:
   contents: posts
   sort: "date desc"
