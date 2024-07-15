@@ -81,8 +81,6 @@ WHERE y."IdYear" = 23
   AND u."IdUnit" = 16
 ORDER BY "Value";')
 
-
-# Filter for only four indicators
 dii_filtered <- dii_eu_countries |>
   select(Year, Country, Indicator, Unit,Value) |>
   filter(Indicator == 'Enterprises with at least low (basic) digital intensity index (DII Version 3)') |>
