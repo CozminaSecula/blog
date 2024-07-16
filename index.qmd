@@ -21,12 +21,12 @@ comments: false
 
 Hi! I'm Cozmina.
 
-A passionate about making sense of data and working on problems in the data space.
+A passionate about making sense of data with a focus on data analysis and visualization.
 
-My work is a combination of:
+My work is the result of a combination of the following:
 
--   Relevant skills I developed in more than 17 years working in business-to-business direct sales such as communication, understanding business needs, acting as a business partner and advisor, planning, analyzing, and implementing projects to obtain the desired results.
+-   Over 17 years of experience in B2B direct sales, where I acted as a business partner and advisor, planning, analyzing, and implementing projects to achieve the desired results.
 
--   Skills and knowledge of various techniques and tools for data analysis and visualization such as relational databases, SQL for data analysis, and R programming language.
+-   Knowledge of relational databases, SQL for data analysis, and the R programming language.
 
--   Desire to learn, motivation, curiosity, and professionalism.
+-   Continuous learning, curiosity, and professionalism.

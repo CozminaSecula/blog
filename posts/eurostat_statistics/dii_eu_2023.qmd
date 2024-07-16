@@ -6,14 +6,11 @@ date: "2024-07-15"
 categories: [data analysis, data visualization, eurostat, digital intensity index]
 ---
 
-
 ![](./dii_eu_2023.png)
 
+## EU's Digital Intensity Index (DII)
 
-
-## EU's Digital Intensity Index (DII) 
-
-[Digital Intensity Index (DII)](https://circabc.europa.eu/ui/group/89577311-0f9b-4fc0-b8c2-2aaa7d3ccb91/library/84b390d2-6a83-4dae-8aba-37c18557eb5b/details) is a composite indicator, derived from the survey on ICT usage and e-commerce in enterprises.
+[Digital Intensity Index (DII)](https://circabc.europa.eu/ui/group/89577311-0f9b-4fc0-b8c2-2aaa7d3ccb91/library/84b390d2-6a83-4dae-8aba-37c18557eb5b/details) is a composite indicator, derived from the EU survey on ICT usage and e-commerce in enterprises.
 
 The indicator is calculated based on 12 variables, with each of the variables having a score of 1 point. The DII distinguishes four levels of digital intensity for each enterprise:
 
@@ -90,7 +87,7 @@ dii_filtered <- dii_eu_countries |>
 datatable(dii_filtered, 
           options = list(pageLength = 5, 
           scrollY = TRUE),
-          caption = "Source: EUROSTAT (https://ec.europa.eu/eurostat/web/digital-economy-and-society/\ndatabase/comprehensive-database)" 
+          caption = "Source: Eurostat (https://ec.europa.eu/eurostat/web/digital-economy-and-society/\ndatabase/comprehensive-database)" 
 )
 
 ```
@@ -111,8 +108,6 @@ The DII composition varies between different survey years, depending on the ques
 10. Use any AI technology.
 11. Enterprises having ERP software package to share information between different functional areas.
 12. Enterprises using Customer Relationship Management (CRM).
-
-The biggest proportion of enterprises (that participated in the survey) reaching a very high level of the DII in 2023 was in Finland (13.01%), followed by Malta (11.43%) and the Netherlands (10.97%). On the other hand, enterprises in Romania (72.07%), Bulgaria (70.64%) and Greece (56.17%) have very low digital intensity.
 
 More information about Digital Intensity Index [here](https://ec.europa.eu/eurostat/cache/metadata/en/isoc_e_dii_esmsip2.htm).
 
