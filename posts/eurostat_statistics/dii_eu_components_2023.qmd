@@ -4,7 +4,7 @@ description: "Comparative Analysis of the EU's Digital Intensity Index's 12 comp
 author: "Cozmina Secula"
 date: "2024-07-24"
 categories: [data analysis, data visualization, eurostat, digital intensity index]
-image: dii_eu_components_bar_plot.png
+image: dii_eu_components_2023.png
 ---
 
 <br>
@@ -13,7 +13,7 @@ In [the previous post on analyzing EU's Digital Intensity Index](https://cozmina
 
 In this post, using data analysis and visualization techniques and tools, I analyze the components of the DII index for each EU country, specifically, I will answer the question:
 
--   **Which countries score highest or lowest on the EU's digital intensity index's 12 components?**
+-   **Which countries rank highest or lowest on the EU's digital intensity index across twelve components?**
 
 ### Prerequisites
 
@@ -310,7 +310,7 @@ max_min_value  |>
 
 ```
 
-## Which countries score highest or lowest on the EU's digital intensity index's 12 components?
+## Which countries rank highest or lowest on the EU's digital intensity index across twelve components?
 
 ```{r}
 #| echo: true
@@ -389,56 +389,50 @@ ggsave(plot, filename = "dii_eu_components_bar_plot.png",
 
 ```
 
-![](dii_eu_components_bar_plot.png)
-
-
+![](dii_eu_components_2023.png)
 
 #### **Highest score**
 
-- The largest percentage of **enterprises having the fastest fixed line internet connection of at least 30 Mbps is in Romania, with 96.6%**.
+-   The largest percentage of **enterprises having the fastest fixed line internet connection of at least 30 Mbps is in Romania, with 96.6%**.
 
-- **87.1% of enterprises that use any social media are in Malta**, which is the highest score. This country also has the highest percentage, **21.8%, of enterprises where web sales are more than 1% of total turnover and B2C web sales more than 10% of the web sales**.
+-   **87.1% of enterprises that use any social media are in Malta**, which is the highest score. This country also has the highest percentage, **21.8%, of enterprises where web sales are more than 1% of total turnover and B2C web sales more than 10% of the web sales**.
 
-- **In Sweden, the highest percentage of enterprises, 83.6%, have more than 50% of employees with internet access for business purposes**.
+-   **In Sweden, the highest percentage of enterprises, 83.6%, have more than 50% of employees with internet access for business purposes**.
 
-- **Finland**, the country with a very high digital intensity index level, scored highest on four out of twelve components:
- 
-  - **78.3% of enterprises buy cloud computing services used over the internet**
-  - **73% of enterprises buy sophisticated or intermediate cloud computing services**
-  - **53.6 % of enterprises use two or more social media**
-  - **49.4% of enterprises use CRM software**
-  
-- **Denmark** scored highest on three out of twelve components of the digital intensity index:
+-   **Finland**, the country with a very high digital intensity index level, scored highest on four out of twelve components:
 
-  - **67.3% of enterprises that ERP software** 
-  - **36.5% of enterprises have e-commerce sales of at least 1% turnover**
-  - **15.2% of enterprises use any AI technology**
+    -   **78.3% of enterprises buy cloud computing services used over the internet**
+    -   **73% of enterprises buy sophisticated or intermediate cloud computing services**
+    -   **53.6 % of enterprises use two or more social media**
+    -   **49.4% of enterprises use CRM software**
 
-- **Data analytics for the enterprise is performed by the enterprise's own employees or by an external provider* is a new component added in 2023, replacing the "Enterprise use IoT". The highest score was in **Hungary where 53.2% of enterprises use data analytics**.
+-   **Denmark** scored highest on three out of twelve components of the digital intensity index:
+
+    -   **67.3% of enterprises that ERP software**
+    -   **36.5% of enterprises have e-commerce sales of at least 1% turnover**
+    -   **15.2% of enterprises use any AI technology**
+
+-   **Data analytics for the enterprise is performed by the enterprise's own employees or by an external provider** is a new component added in 2023, replacing the "Enterprise use IoT". **The highest score was in Hungary where 53.2% of enterprises use data analytics**.
 
 #### **Lowest score**
 
-- **Hungary** is the country with **68.9% of enterprises having the fastest fixed line internet connection of at least 30 Mbps**.
+-   **Hungary** is the country with **68.9% of enterprises having the fastest fixed line internet connection of at least 30 Mbps**.
 
-- In **Slovenia, only 19.1% of enterprises use data analytics**, the lowest score among the EU countries.
+-   In **Slovenia, only 19.1% of enterprises use data analytics**, the lowest score among the EU countries.
 
-- In **Luxembourg, only 9.4% of of enterprises have e-commerce sales of at least 1% turnover**.
+-   In **Luxembourg, only 9.4% of of enterprises have e-commerce sales of at least 1% turnover**.
 
-- **Romania** the country with a very low digital intensity index level, scored lowest on four out of twelve components:
+-   **Romania** the country with a very low digital intensity index level, scored lowest on four out of twelve components:
 
-  - **25.6% of enterprises have more than 50% of employees with internet access for business purposes**.
-  - **10.1% of enterprises use CRM software**
-  - **3.1% of enterprises where web sales are more than 1% of total turnover and B2C web sales more than 10% of the web sales**.
-  - **1.5% of enterprises use any AI technology**
-  
-- **Bulgaria** scored lowest on five out of twelve component sof the digital intensity index:
+    -   **25.6% of enterprises have more than 50% of employees with internet access for business purposes**.
+    -   **10.1% of enterprises use CRM software**
+    -   **3.1% of enterprises where web sales are more than 1% of total turnover and B2C web sales more than 10% of the web sales**.
+    -   **1.5% of enterprises use any AI technology**
 
-  - **38% of enterprises use any social media**
-  - **17.5% of enterprises buy cloud computing services used over the internet**
-  - **14.2% of enterprises buy sophisticated or intermediate cloud computing services**
-  - **21.7% of enterprises have ERP software**
-  - **13.6% of enterprises use two or more social media**
+-   **Bulgaria** scored lowest on five out of twelve component sof the digital intensity index:
 
-
-
-
+    -   **38% of enterprises use any social media**
+    -   **17.5% of enterprises buy cloud computing services used over the internet**
+    -   **14.2% of enterprises buy sophisticated or intermediate cloud computing services**
+    -   **21.7% of enterprises have ERP software**
+    -   **13.6% of enterprises use two or more social media**
