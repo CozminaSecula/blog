@@ -13,7 +13,7 @@ In [the previous post on analyzing EU's Digital Intensity Index](https://cozmina
 
 In this post, using data analysis and visualization techniques and tools, I analyze the components of the DII index for each EU country, specifically, I will answer the question:
 
--   **Which countries rank highest or lowest on the EU's digital intensity index across twelve components?**
+-   **Which countries rank highest or lowest on the EU's digital intensity index 12 components?**
 
 ### Prerequisites
 
@@ -310,7 +310,7 @@ max_min_value  |>
 
 ```
 
-## Which countries rank highest or lowest on the EU's digital intensity index across twelve components?
+## Which countries rank highest or lowest on the EU's digital intensity index 12 components?
 
 ```{r}
 #| echo: true
