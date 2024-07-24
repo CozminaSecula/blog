@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/eurostat_statistics/dii_eu_components_2023.html",
       "/posts/eurostat_statistics/dii_eu_2023.html",
       "/posts/time_series/1_time_series.html",
       "/posts/sales_revenue/1_sales_revenue_and_orders.html",
