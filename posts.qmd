@@ -1,6 +1,6 @@
 ---
-title: "Posts"
-subtitle: "This is where I store and share some of my work in practicing data analysis and visualization."
+title: "Cozmina Secula"
+subtitle: "I am passionate about making sense of data for better decisions and actions. This is the space where I store and share some of my work in practicing data analysis and visualization."
 listing:
   contents: posts
   sort: "date desc"
@@ -14,5 +14,4 @@ listing:
   fields: [date, title, description, categories, image]
 page-layout: full
 title-block-banner: true
-sidebar: false
 ---

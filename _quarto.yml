@@ -14,20 +14,16 @@ website:
     title: false
     background: "#eee"
     pinned: true
-    left: 
-      - href: index.qmd
-        text: About
-      - href: posts.qmd
-        text: Posts
+
       
     right: 
+      - icon: envelope
+        href: mailto:cozmina.secula@gmail.com
       - icon: linkedin
         href: https://www.linkedin.com/in/cozminasecula/
       - icon: github
         href: https://github.com/CozminaSecula
-      - icon: envelope
-        href: mailto:cozmina.secula@gmail.com
- 
+
  
   page-footer: 
     left: >-
@@ -40,8 +36,7 @@ format:
     theme: custom.scss
     css: styles.css
     include-before-body: translate-widget.html
-    grid: 
-      sidebar-width: 200px
+
 
 editor: visual
 

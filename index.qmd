@@ -17,16 +17,3 @@ about:
 comments: false
 ---
 
-<br>
-
-Hi! I'm Cozmina.
-
-A passionate about making sense of data with a focus on data analysis and visualization.
-
-My work is the result of a combination of the following:
-
--   Over 17 years of experience in B2B direct sales, where I acted as a business partner and advisor, planning, analyzing, and implementing projects to achieve the desired results.
-
--   Knowledge of relational databases, SQL for data analysis, and the R programming language.
-
--   Continuous learning, curiosity, and growth mindset.
