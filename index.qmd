@@ -1,7 +1,7 @@
 ---
 title: "Cozmina Secula"
 subtitle: |
-  Data Analysis, Data Visualization
+  Data Analysis | Data Visualization
 image: profile.jpg
 about:
   id: exp
