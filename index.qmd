@@ -1,19 +1,46 @@
 ---
 title: "Cozmina Secula"
+subtitle: |
+  Data Analysis, Data Visualization
 image: profile.jpg
 about:
-  template: trestles
+  id: exp
+  template: solana
+  image-width: 9em
+  image-shape: round
   links: 
+    - icon: envelope
+      text: Email
+      href: mailto:cozmina.secula@gmail.com
     - icon: linkedin
       text: Linkedin
       href: https://www.linkedin.com/in/cozminasecula/
     - icon: github
       text: Github
       href: https://github.com/CozminaSecula
-    - icon: envelope
-      text: Email
-      href: mailto:cozmina.secula@gmail.com
+listing:
+- id: posts
+  contents:
+    - "./posts/*/index.qmd"
+  sort: date desc
+  type: grid
+  grid-columns: 3
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  fields: [title, image]
+  max-items: 10
+  image-height: "150"
 
 comments: false
 ---
 
+::: {#exp}
+:::
+
+I am passionate about making sense of data for better decisions and actions. <br>This is the space where I store and share some of my work in practicing data analysis and visualization.
+
+<br>
+
+::: {#posts}
+:::

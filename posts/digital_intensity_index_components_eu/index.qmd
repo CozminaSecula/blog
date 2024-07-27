@@ -9,11 +9,11 @@ image: dii_eu_components_2023.png
 
 <br>
 
-In [the previous post on analyzing EU's Digital Intensity Index](https://cozminasecula.github.io/blog/posts/eurostat_statistics/dii_eu_2023.html), I enumerated the 12 components of the index. As a result of learning more about the index's components, I was curious to know how the enterprises that participated in the survey performed for each component.
+In [the previous post on analyzing EU's Digital Intensity Index](https://cozminasecula.github.io/blog/posts/eurostat_statistics/dii_eu_2023.html), I enumerated the 12 components of the index. As a result of learning more about the index's components, I was curious to know how the enterprises that participated in the survey performed on each component.
 
-In this post, using data analysis and visualization techniques and tools, I analyze the components of the DII index for each EU country, specifically, I will answer the question:
+In this post, I analyze the components of the DII index for each EU country, specifically, I will answer the question:
 
--   **Which countries rank highest or lowest on the EU's digital intensity index 12 components?**
+-   **Which countries rank highest or lowest on the twelve components of the EU’s digital intensity index?**
 
 ### Prerequisites
 
@@ -47,7 +47,7 @@ sleep_default <- 3
 
 # Data viz
 
-source("theme/theme_ts.R")
+source("theme_ts.R")
 
 # set figure parameters for knitr
 knitr::opts_chunk$set(
@@ -81,7 +81,7 @@ con <- DBI::dbConnect(RPostgres::Postgres(),
 
 ## 1. Build Data Set for Analysis
 
-For this analysis, I used open data provided by Eurostat, the [results of the EU survey on ICT usage and e-commerce in enterprises 2023, available in MS-Access format](https://ec.europa.eu/eurostat/web/digital-economy-and-society/database/comprehensive-database). This format allowed me to work with database files and make the data set I needed for the analysis.
+For this analysis, I use open data provided by Eurostat, the [results of the EU survey on ICT usage and e-commerce in enterprises 2023, available in MS-Access format](https://ec.europa.eu/eurostat/web/digital-economy-and-society/database/comprehensive-database). This format allows me to work with database files and make the data set I need for the analysis.
 
 ```{r}
 #| echo: true
@@ -150,9 +150,9 @@ The model questionnaire on ICT usage and e-commerce in enterprises provides a la
 
 #### The structure, data types, and content of the data set.
 
--   There are 822 observations and 11 variables.
--   The data type is a string (character) for all variables except the `Value` variable which is of data type numeric (double).
--   There are missing values only for the `Flags` and `Note` variables which is ok because these variables have values only if there is something special to mention.
+-   The data set includes 822 observations and 11 variables.
+-   The data type is string (character) for all variables except the `Value` variable which is of data type numeric (double).
+-   Only the `Flags` and `Note` variables are missing values. These variables have values only if there is something special to mention.
 
 ```{r}
 #| code-fold: true
@@ -182,8 +182,6 @@ The data set contains the following variables:
 ## Data Cleaning
 
 As we see, there are no necessary missing values to address and the data type is correct for each variable.
-
-The variable's names are written with capital letters. It is a good practice to use lowercase. However, for this analysis, I will keep them as they are.
 
 The `Indicator` values are too long to be displayed when visualizing the data and I will change them with a shorter version.
 
@@ -219,7 +217,7 @@ head(data_cleaned)
 
 #### Identify outliers (IQR method)
 
-One more thing I will do on data cleaning step, is to see if there are outliers. An outlier is a data point that lies outside the overall pattern in a distribution. To detect outliers in the data set I will use the interquartile range (IQR) method. This method indicates that any values in a boxplot that fall outside of Q1 and Q3 are considered outliers. First, let's visualize the distribution.
+One more thing I will do in this step is to investigate if there are outliers. An outlier is a data point that lies outside the overall pattern in a distribution. To detect outliers in the data set I will use the interquartile range (IQR) method. This method indicates that any values in a boxplot that fall outside of Q1 and Q3 are considered outliers. First, let's visualize the distribution.
 
 ```{r}
 #| echo: true
@@ -244,9 +242,9 @@ ggplot(data_cleaned, aes(x = Indicator_code, y = Value))+
 
 ```
 
-The graph shows that the components "Access to the internet for over 50% of employees" and "Use CRM software" have values that lies outside the overall pattern in the distribution.
+The chart shows that the components "Access to the internet for over 50% of employees" and "Use CRM software" have values that lies outside the overall pattern in the distribution.
 
-Next, I will investigate more to find out more about these values.
+Next, I will investigate to find out more about these values.
 
 ```{r}
 #| echo: true
@@ -310,7 +308,7 @@ max_min_value  |>
 
 ```
 
-## Which countries rank highest or lowest on the EU's digital intensity index 12 components?
+## Which countries rank highest or lowest on the twelve components of the EU’s digital intensity index?
 
 ```{r}
 #| echo: true
