@@ -222,6 +222,8 @@ One more thing I will do in this step is to investigate if there are outliers. A
 ```{r}
 #| echo: true
 #| code-fold: true
+#| warning: false
+#| message: false
 
 ggplot(data_cleaned, aes(x = Indicator_code, y = Value))+
   geom_boxplot(width = 0.1, color = "black", alpha = 0.2) +
