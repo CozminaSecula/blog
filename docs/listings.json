@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/digital_skills_indicator_eda(I)/index.html",
       "/posts/digital_intensity_index_components_eu/index.html",
       "/posts/digital_intensity_index_eu/index.html",
       "/posts/time_series/1_time_series.html",
@@ -16,6 +17,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/digital_skills_indicator_eda(I)/index.html",
       "/posts/digital_intensity_index_components_eu/index.html",
       "/posts/digital_intensity_index_eu/index.html",
       "/posts/2024-01-15-key-driver-analysis/index.html",

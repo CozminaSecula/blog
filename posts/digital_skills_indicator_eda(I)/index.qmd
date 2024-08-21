@@ -1,0 +1,671 @@
+---
+title: "Analyzing the Digital Skills Indicator in the Context of the EU Digital Decade"
+description: "An analysis of the components of the Digital Skills Indicator using data from the EU surveys on ICT (Information and Communication Technology) use in households and by individuals provided by Eurostat."
+author: "Cozmina Secula"
+date: "2024-08-21"
+categories: [data analysis, data visualization, eurostat, digital skills indicator]
+image: dsi_eu_histogram.png
+code-link: true
+code-tools: true
+code-fold: true
+code-summary: "Show the code"
+---
+
+<br>
+
+This post examines the composite indicators of the EU Digital Decade, with a focus on the Digital Skills Indicator (DSI). Previously, I explored the [Digital Intensity Index](https://cozminasecula.github.io/blog/posts/digital_intensity_index_components_eu/), which measures the digital transformation of businesses. This time, the focus is on the DSI, which assess the human capital dimension of the EU Digital Economy and Society Index (DESI).
+
+The goal of this analysis is to improve our understanding of the current state of digital competencies within the EU population and to evaluate the progress made in 2023 compared to 2021. First, I will provide an overview of composite indicators and introduce the DSI. Then, using open data from Eurostat, I will perform an exploratory analysis of the DSI components and conclude by sharing key insights from the analysis.
+
+## Introducing Digital Skills Indicator
+
+In this section, I introduce the Digital Skills Indicator (DSI), a composite measure used to assess the digital competencies of individuals across the EU.
+
+Before diving into composite indicators, it is essential to understand what indicators are. **Indicators** are tools used across various fields, such as economics, education, health, and environmental science, to monitor changes, trends, or conditions. You might already be familiar with key performance indicators (KPIs), which are quantitative or qualitative measures used to track progress toward specific goals. However, when dealing with complex, multi-dimensional issues, individual indicators may not suffice. This is where composite indicators come into play.
+
+### Composite indicators
+
+**Composite indicators** aggregate multiple individual indicators into a single, comprehensive measure, offering a summarized view of complex phenomena. For instance, the Human Development Index (HDI) combines indicators like life expectancy, education level, and income to measure a country’s overall development.
+
+Creating a composite indicator involves several steps: selecting relevant individual indicators, normalizing them (especially when they are on different scales), assigning weights based on their importance, and then aggregating them into a final score. The primary purpose of composite indicators is to simplify complex data, making it easier to interpret, compare, and communicate findings, particularly in broad, multi-dimensional contexts.
+
+### Digital Skills Indicator
+
+The Digital Skills Indicator (DSI) is crucial for tracking the EU’s progress toward its Digital Decade goals, specifically the target that by 2030, at least 80% of citizens aged 16-74 will possess at least basic digital skills.
+
+The DSI is a composite indicator derived from surveys on ICT (Information and Communication Technology) use in households and by individuals. It assesses five key areas: information and data literacy, communication and collaboration, digital content creation, safety, and problem-solving. The assumption is that individuals who perform specific digital activities possess the corresponding skills. To be classified as having at least basic digital skills, individuals must demonstrate competence in at least one activity in each of these areas.
+
+The DSI focuses on people aged 16-74[^1], and for detailed information on DSI levels and the activities related to each skill, Eurostat provides comprehensive [metadata](https://ec.europa.eu/eurostat/cache/metadata/en/isoc_sk_dskl_i21_esmsip2.htm).
+
+[^1]: Source: [Digital Economy and Society. Information on data](https://ec.europa.eu/eurostat/web/digital-economy-and-society/information-data#Information%20on%20variables,%20countries,%20and%20data%20collection)
+
+## Competence Areas[^2]
+
+[^2]: Source: [DigComp Framework](https://joint-research-centre.ec.europa.eu/oldpage-digcomp/digcomp-framework_en)
+
+The Digital Skills Indicator covers five core competence areas, which are essential for assessing digital skills:
+
+::: column-page
+::: grid-container
+::: grid-item
+**Information and Data Literacy**
+
+-   Articulate information needs.
+
+-   Locate and retrieve digital data, information, and content.
+
+-   Judge the relevance of the source and its content.
+
+-   Store, manage, and organize digital data, information, and content.
+:::
+
+::: grid-item
+**Communication and Collaboration**
+
+-   Interact, communicate, and collaborate through digital technologies.
+
+-   Be aware of cultural and generational diversity.
+
+-   Participate in society through public and private digital services.
+
+-   Manage one’s digital presence, identity, and reputation.
+:::
+
+::: grid-item
+**Digital Content Creation**
+
+-   Create and edit digital content.
+
+-   Improve and integrate information and content into an existing body of knowledge.
+
+-   Understand how copyright and licenses are to be applied.
+
+-   Know how to give understandable instructions for a computer system.
+:::
+
+::: grid-item
+**Safety**
+
+-   Protect devices, content, personal data, and privacy in digital environments.
+
+-   Protect physical and psychological health.
+
+-   Be aware of digital technologies for social well-being and social inclusion.
+
+-   Be aware of the environmental impact of digital technologies and their use.
+:::
+
+::: grid-item
+**Problem Solving**
+
+-   Identify needs and problems in digital environments.
+
+-   Resolve conceptual problems and problem situations in digital environments.
+
+-   Use digital tools to innovate processes and products.
+
+-   Keep up-to-date with the digital evolution.
+:::
+:::
+:::
+
+## Why Understanding Digital Skills Data Matters
+
+In today’s increasingly digital world, possessing digital skills is a necessity. Understanding DSI data is crucial as it provides insights into the current state of digital competencies within the EU population. This data is vital for policymakers, educators, businesses, and individuals to identify areas where digital skills are lacking, target interventions, and monitor progress toward digital literacy goals. Staying informed about digital skills data ensures that societies can effectively participate in the digital economy, foster innovation, and close the digital divide.
+
+## Exploratory Data Analysis
+
+The Exploratory Data Analysis (EDA) focuses on understanding DSI data, uncovering patterns, and generating hypotheses for further research. This involves visualizing data, calculating summary statistics, and identifying trends and relationships among variables.
+
+The key question guiding this analysis is: *What do the distributions of the Digital Skills Indicator components for 2021 and 2023 reveal about the overall shifts in digital skills across the EU population?*
+
+### Data Collection
+
+The data analyzed in this post is sourced from Eurostat’s database on individuals’ digital skills. The analysis uses several packages, including `eurostat`[^3] for data retrieval, `tidyverse`[^4] for data manipulation and visualization, `janitor`[^5] for data cleaning, `reactable`[^6] for interactive tables and `patchwork`[^7] for plot composition.
+
+[^3]: Lahti L., Huovari J., Kainu M., and Biecek P. (2017). Retrieval and analysis of Eurostat open data with the eurostat package. The R Journal 9(1), pp. 385-392. doi: 10.32614/RJ-2017-019 Lahti, L., Huovari J., Kainu M., Biecek P., Hernangomez D., Antal D., and Kantanen P. (2023). eurostat: Tools for Eurostat Open Data \[Computer software\]. R package version 4.0.0. https://github.com/rOpenGov/eurostat
+
+[^4]: Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to the tidyverse.” *Journal of Open Source Software*, *4*(43), 1686. doi:10.21105/joss.01686 <https://doi.org/10.21105/joss.01686>.
+
+[^5]: Firke S (2023). *janitor: Simple Tools for Examining and Cleaning Dirty Data*. R package version 2.2.0, <https://CRAN.R-project.org/package=janitor>.
+
+[^6]: Lin G (2023). *reactable: Interactive Data Tables for R*. R package version 0.4.4, <https://CRAN.R-project.org/package=reactable>.
+
+[^7]: Pedersen T (2024). *patchwork: The Composer of Plots*. https://patchwork.data-imaginist.com, https://github.com/thomasp85/patchwork.
+
+#### Packages
+
+```{r}
+#| label: load-packages
+#| warning: false
+#| message: false
+
+library(eurostat)
+library(tidyverse)
+library(janitor)
+library(reactable)
+library(patchwork)
+
+source("theme_ts.R")
+
+```
+
+#### Download data
+
+```{r}
+#| label: download-data
+#| message: false
+#| warning: false
+
+
+# Search for the data set
+
+search_results <- search_eurostat("isoc_sk_dskl_i21", column = "code")
+
+id <- search_results$code[1]
+
+# Retrieve data 
+
+dat <- get_eurostat(id,
+                    time_format = "num",
+                    type = "label",
+                    stringsAsFactors = TRUE)
+
+glimpse(dat)
+
+
+```
+
+#### Explore data set
+
+```{r}
+#| label: data-set-exploration
+#| message: false
+#| warning: false
+
+skimr::skim(dat)
+
+
+```
+
+In this data there are 397.473 observations recorded, each having the following properties:
+
+1.  `freq` - the frequency of data collection
+2.  `ind_type` - individual type
+3.  `ind_is` - information society indicator
+4.  `unit` - unit of measure the value is expressed on
+5.  `geo` - geopolitical entity, country
+6.  `TIME PERIOD` - time, the year the survey was carried on
+7.  `values` - values
+
+There are 54 individual type with missing values. I will keep them as they are, as the data may not exist.
+
+For more detailed information about the dataset, refer to [metadata on individuals' level of digital skills](https://ec.europa.eu/eurostat/cache/metadata/en/isoc_sk_dskl_i21_esmsip2.htm).
+
+#### Data Cleaning
+
+```{r}
+#| label: rename-columns
+#| warning: false
+#| message: false
+
+# Rename columns
+
+digital_skills <- dat |>
+  mutate(category = as.factor(ind_type),
+         indicator = as.factor(indic_is),
+         country = as.factor(geo),
+         year = as.factor(TIME_PERIOD),
+         value = as.numeric(values)) |>
+  select(year, country, indicator, category, unit, value)
+
+glimpse(digital_skills)
+
+```
+
+### Summary Statistics
+
+This section explores the data related to the DSI components using using measures of central tendency (mean, median) and measures of spread (minimum, maximum, standard deviation).
+
+#### Filtering data
+
+The dataset is filtered to include the five digital skills areas and overall digital skills, each categorized into three proficiency levels: “Above basic skills,” “Basic skills,” and “Basic or above basic skills (at least basic digital skills).” The analysis focuses on EU member states and the European Union - 27 countries (as of 2020), considering only the “percentage of individuals” as a unit and “all individuals” as the category.
+
+```{r}
+#| label: filter-indicators
+#| warning: false
+#| message: false
+
+
+digital_skills_filtered <- digital_skills |>
+  filter(!indicator %in% c("Individuals with online information and communication skills",
+                           "Individuals with limited overall digital skills (two out of five component indicators are at basic or above basic level)",
+                           "Individuals with low overall digital skills (four out of five component indicators are at basic or above basic level)",
+                           "Individuals with narrow overall digital skills (three out of five component indicators are at basic or above basic level)",
+                           "Digital skills could not be assessed because the individual has not used the internet in the last 3 months",
+                           "Individuals with no overall digital skills"),
+         !country %in% c("Türkiye", "North Macedonia","Montenegro", "Switzerland", "Bosnia and Herzegovina","Euro area (EA11-1999, EA12-2001, EA13-2007, EA15-2008, EA16-2009, EA17-2011, EA18-2014, EA19-2015, EA20-2023)", "Iceland", "Serbia", "Norway", "Albania" ),
+         unit == "Percentage of individuals",
+         category == "All Individuals") |>
+  mutate(value = round(value, 2),
+         country = ifelse(country == "European Union - 27 countries (from 2020)", "EU", country)) |>
+  select(year, country, indicator, category, unit, value)
+
+```
+
+### Measures of central tendency
+
+```{r}
+#| label: summary-statistics
+#| warning: false
+#| message: false
+
+# Summarize the data
+
+digital_skills_summary <- digital_skills_filtered |>
+  filter(country != "EU") |>
+  group_by(indicator, year) |>
+  summarise(
+    mean = round(mean(value, na.rm = TRUE), 2),
+    median = round(median(value, na.rm = TRUE), 2),
+    count = n(),
+    minimum = min(value, na.rm = TRUE), 
+    maximum = max(value, na.rm = TRUE),
+    standard_deviation = round(sd(value, na.rm = TRUE),2)
+  ) |>
+  ungroup() |>
+
+  # Extract `digital skills` and `indicator level` from the `indicator` column
+ mutate(
+    digital_skills = case_when(
+      str_detect(indicator, "communication and collaboration") ~ "Communication and Collaboration Skills",
+      str_detect(indicator, "digital content creation") ~ "Digital Content Creation Skills",
+      str_detect(indicator, "information and data literacy") ~ "Information and Data Literacy Skills",
+      str_detect(indicator, "overall digital skills") ~ "Overall Digital Skills",
+      str_detect(indicator, "problem solving skills") ~ "Problem Solving Skills",
+      str_detect(indicator, "safety skills") ~ "Safety Skills"
+    ),
+    indicator_level = case_when(
+      # Special case for overall digital skills with basic level
+      str_detect(indicator, "basic overall digital skills \\(all five component indicators are at basic or above basic level, without being all above basic\\)") ~ 
+        "Individuals with basic skills",
+      
+      # Other cases using ifelse() to handle the overall digital skills
+      str_detect(indicator, "overall digital skills") ~ ifelse(
+        str_detect(indicator, "basic or above basic"), 
+        "Individuals with basic or above basic skills", 
+        "Individuals with above basic skills"
+      ),
+      
+      # General cases
+      str_detect(indicator, "basic or above basic") ~ "Individuals with basic or above basic skills",
+      str_detect(indicator, "above basic") ~ "Individuals with above basic skills",
+      str_detect(indicator, "basic") ~ "Individuals with basic skills"
+    )
+  ) |>
+  select(digital_skills, indicator_level, year, mean, median, count, minimum, maximum, standard_deviation)
+
+
+
+```
+
+```{r}
+#| label: reactable-grouping-aggregation
+#| warning: false
+#| message: false
+#| column: page
+
+reactable(digital_skills_summary,
+          searchable = TRUE,
+          showPageInfo = TRUE,
+          groupBy = c("digital_skills","year"),
+          columnGroups = list(
+            colGroup("Indicator", columns = c("digital_skills", "indicator_level"), sticky = "left"),
+            colGroup("Year", columns = "year", sticky = "left"),
+            colGroup("Summary Statistics", columns = c("mean", "median", "count", "minimum", "maximum", "standard_deviation"))),
+          columns = list(digital_skills = colDef(minWidth = 300, defaultSortOrder = "asc"),
+                         indicator_level = colDef(minWidth = 300, defaultSortOrder = "asc")),
+          defaultSorted = c("digital_skills","indicator_level"),
+          resizable = TRUE,
+          wrap = FALSE,
+          bordered = TRUE
+          )
+
+
+```
+
+### Measures of spread
+
+#### Filter the data set
+
+```{r}
+#| label: distribution
+#| message: false
+#| warning: false
+
+
+# Summarize the data
+
+digital_skills_distrib <- digital_skills_filtered |>
+  filter(country != "EU") |>
+  mutate(
+    digital_skills = case_when(
+      str_detect(indicator, "communication and collaboration") ~ "Communication and Collaboration Skills",
+      str_detect(indicator, "digital content creation") ~ "Digital Content Creation Skills",
+      str_detect(indicator, "information and data literacy") ~ "Information and Data Literacy Skills",
+      str_detect(indicator, "overall digital skills") ~ "Overall Digital Skills",
+      str_detect(indicator, "problem solving skills") ~ "Problem Solving Skills",
+      str_detect(indicator, "safety skills") ~ "Safety Skills"
+    ),
+    indicator_level = case_when(
+      # Special case for overall digital skills with basic level
+      str_detect(indicator, "basic overall digital skills \\(all five component indicators are at basic or above basic level, without being all above basic\\)") ~ 
+        "Individuals with basic skills",
+      
+      # Other cases using ifelse() to handle the overall digital skills
+      str_detect(indicator, "overall digital skills") ~ ifelse(
+        str_detect(indicator, "basic or above basic"), 
+        "Individuals with basic or above basic skills", 
+        "Individuals with above basic skills"
+      ),
+      
+      # General cases
+      str_detect(indicator, "basic or above basic") ~ "Individuals with basic or above basic skills",
+      str_detect(indicator, "above basic") ~ "Individuals with above basic skills",
+      str_detect(indicator, "basic") ~ "Individuals with basic skills"
+    )
+  ) |>
+  select(year, country, digital_skills, indicator_level, value)
+
+```
+
+### Distribution Summary
+
+::: {.panel-tabset .nav-pills}
+### Histogram
+
+```{r}
+#| label: histogram
+#| warning: false
+#| message: false
+#| fig-width: 8
+#| fig-height: 10.5
+#| fig-dpi: 300
+
+
+# Set global font family
+theme_set(theme_minimal(base_family = "Roboto"))
+
+# Prepare data (pivot_wider)
+digital_skills_hist <- digital_skills_distrib |>
+  pivot_wider(names_from = indicator_level, values_from = value) |>
+  clean_names()
+
+# Define color for each proficiency level
+colors <- c("Above Basic Skills" = "white",  
+            "Basic Skills" = "white",        
+            "Basic or Above Skills" = "white") 
+
+
+# Function to generate the plots for each skill
+plot_skill_histograms <- function(data, skill) {
+  skill_data <- data |>
+    filter(digital_skills == skill)
+
+
+  # Basic Skills plot
+  plot_basic <- ggplot(skill_data, aes(x = individuals_with_basic_skills)) +
+    geom_histogram(color = "#252525",
+                   fill = colors["Basic Skills"],
+                   binwidth = function(x) (max(x) - min(x)) / 5) +
+    geom_vline(aes(xintercept = mean(individuals_with_basic_skills,
+                   na.rm = TRUE)), 
+                   color = "#252525", 
+                   linetype = "dashed",
+                   linewidth = 1) +
+    facet_grid(. ~ year) +
+    labs(y = "Frequency",
+         x = "", 
+         title = skill) +
+    theme_ts() +
+    theme(plot.title = element_text(size = 10, 
+                                    hjust = 0,  
+                                    color = "#525252"),
+          axis.title.y = element_text(size = 10, 
+                                      margin = margin(r = 10), 
+                                      color = "#525252"),
+          axis.text = element_text(size = 8.5, 
+                                   color = "#525252"),
+          strip.text = element_blank(),
+          panel.grid.minor = element_blank())
+
+
+
+  # Above Basic Skills plot
+  plot_above_basic <- ggplot(skill_data, aes(x = individuals_with_above_basic_skills)) +
+    geom_histogram(color = "#33645FFF", 
+                   fill = colors["Above Basic Skills"], 
+                   binwidth = function(x) (max(x) - min(x)) / 5) +
+    geom_vline(aes(xintercept = mean(individuals_with_above_basic_skills,                       na.rm = TRUE)), 
+                   color = "#33645FFF", 
+                   linetype = "dashed", 
+                   linewidth = 1) +
+    facet_grid(. ~ year) +
+    labs(y = "", 
+         x = "") +
+    theme_ts() +
+    theme(plot.title = element_blank(),
+          axis.title.y = element_blank(),
+          axis.text = element_text(size = 8.5, 
+                                   color = "#525252"),
+          strip.text = element_blank(),
+          panel.grid.minor = element_blank())
+
+  
+  # Basic or Above Skills plot
+  plot_basic_or_above <- ggplot(skill_data, aes(x = individuals_with_basic_or_above_basic_skills)) +
+    geom_histogram(color = "#9D1B1FFF",
+                   fill = colors["Basic or Above Skills"], 
+                   binwidth = function(x) (max(x) - min(x)) / 5) +
+    geom_vline(aes(xintercept =   mean(individuals_with_basic_or_above_basic_skills, 
+                   na.rm = TRUE)), 
+                   color = "#9D1B1FFF", 
+                   linetype = "dashed", 
+                   linewidth = 1) +
+    facet_grid(. ~ year) +
+    labs(y = "", 
+         x = "") +
+    theme_ts() +
+    theme(plot.title = element_blank(),
+          axis.title.y = element_blank(),
+          axis.text = element_text(size = 8.5, 
+                                   color = "#525252"),
+          strip.text = element_blank(),
+          panel.grid.minor = element_blank())
+
+  # Combine the three plots into a single row
+  combined_plot <- plot_basic + plot_above_basic + plot_basic_or_above +  plot_layout(ncol = 3,
+               widths = c(1.1, 1.1, 1.1), 
+               guides = "collect")
+  
+  return(combined_plot)
+}
+
+# List of skills
+skills_list <- c("Communication and Collaboration Skills",
+                 "Digital Content Creation Skills",
+                 "Information and Data Literacy Skills",
+                 "Problem Solving Skills",
+                 "Safety Skills",
+                 "Overall Digital Skills")
+
+# Generate and combine all plots using patchwork
+all_plots <- lapply(skills_list, function(skill) plot_skill_histograms(digital_skills_hist, skill)) |>
+  wrap_plots(ncol = 1)
+
+
+# Create a custom legend plot 
+legend_plot <- ggplot() +
+  # Row 1: Proficiency Level annotations
+  annotate("text", x = 0.15, y = 0.98, label = "Basic Skills", size = 4, hjust = 0, color = "#252525") +
+  annotate("text", x = 1.15, y = 0.98, label = "Above Basic Skills", size = 4, hjust = 0, color = "#33645FFF") +
+  annotate("text", x = 2.1, y = 0.98, label = "Basic or Above Skills", size = 4, hjust = 0, color = "#9D1B1FFF") +
+  # Row 2: Year annotations
+  annotate("text", x = 0.08, y = 0.9, label = "2021", size = 4, hjust = 0, color = "#252525") +
+  annotate("text", x = 0.48, y = 0.9, label = "2023", size = 4, hjust = 0, color = "#252525") +
+  annotate("text", x = 1.1, y = 0.9, label = "2021", size = 4, hjust = 0, color = "#33645FFF") +
+  annotate("text", x = 1.6, y = 0.9, label = "2023", size = 4, hjust = 0, color = "#33645FFF") +
+  annotate("text", x = 2.1, y = 0.9, label = "2021", size = 4, hjust = 0, color = "#9D1B1FFF") +
+  annotate("text", x = 2.7, y = 0.9, label = "2023", size = 4, hjust = 1, color = "#9D1B1FFF") +
+  # Adjust themes to avoid extra elements
+  theme_void() +
+  theme(plot.margin = margin(0, 0, 0.5, 0, "cm")) +
+  coord_cartesian(clip = "off") # Ensure text isn't clipped
+# Adjust spacing
+legend_plot <- legend_plot + plot_layout(heights = unit(1, "cm"))
+
+
+
+# Combine the custom legend with the main plot
+histogram_plot <- (legend_plot / all_plots) +
+  plot_layout(heights = c(0.05, 0.95)) + # Adjust the height of the legend
+  plot_annotation(
+    title = "Distribution of Digital Skills by Proficiency Level",
+    subtitle = "% of individuals | age 16-74 | EU countries",
+    theme = theme(plot.title = element_text(size = 20,
+                                            color = "#252525", 
+                                            face = "bold", 
+                                            margin = margin(b = 10)),
+                  plot.subtitle = element_text(size = 16,
+                                            color = "#525252", 
+                                            margin = margin(b = 15))
+)
+  )
+
+
+```
+
+### Boxplot
+
+```{r}
+#| label: boxplot
+#| warning: false
+#| message: false
+#| fig-width: 7.5
+#| fig-height: 10
+#| fig-dpi: 300
+
+# Set global font family
+theme_set(theme_minimal(base_family = "Roboto"))
+
+color_palette = c("Individuals with basic skills" = "#252525",
+                  "Individuals with above basic skills" = "#33645FFF",
+                  "Individuals with basic or above basic skills" = "#9D1B1FFF")
+
+
+# Reorder digital_skills so "Overall Digital Skills" appears last
+digital_skills_distrib <- digital_skills_distrib |>
+  mutate(digital_skills = fct_relevel(digital_skills, "Overall Digital Skills", after = Inf))
+
+boxplot_plot <- ggplot(digital_skills_distrib,
+       aes(x = value,
+           y = indicator_level,
+           color = indicator_level)) +
+  geom_violin() +
+  geom_boxplot(width = 0.3, alpha = 0.5) +
+  scale_color_manual(values = color_palette, 
+                    labels = c("Individuals with basic skills" = "Basic Skills",
+                              "Individuals with above basic skills" = "Above Basic Skills", 
+                              "Individuals with basic or above basic skills" = "Basic or Above Skills")) +
+  scale_x_continuous(position = "top", labels = scales::percent_format(scale = 1)) +
+  facet_grid(digital_skills ~ year, labeller = label_wrap_gen(10), switch = "y") +
+  theme_minimal() +
+  labs(
+    title = "Distribution of Digital Skills by Proficiency Level",
+    subtitle = "% of individuals | age 16-74 | EU countries",
+  ) +
+  theme_ts() +
+  theme(
+    axis.title = element_blank(),
+    axis.text.y = element_blank(),
+    axis.text.x = element_text(size = 10, color = "#525252"),
+    axis.line.x = element_line(color = "grey90"),
+    axis.ticks.x = element_line(color = "#525252"),
+    strip.text.y.left = element_text(size = 10, color = "#525252",
+                              angle = 0, hjust = 0), 
+    strip.text.x = element_text(size = 12, color = "#525252"),
+    strip.placement = "outside",
+    strip.background = element_blank(),
+    panel.grid.minor = element_blank(),
+    legend.title = element_blank(),
+    legend.text = element_text(size = 9, color = "#525252"),
+    legend.justification.top = 0,
+    panel.spacing = unit(1.5, "lines"),
+    plot.title = element_text(size = 20, color = "#252525"),
+    plot.subtitle = element_text(size = 16, color = "#525252")
+  )
+
+```
+:::
+
+::: column-screen-inset
+::: grid
+::: g-col-6
+![Histogram[^8]](dsi_eu_histogram.png)
+:::
+
+::: g-col-6
+![Boxplot[^9]](dsi_eu_boxplot.png)
+:::
+:::
+:::
+
+[^8]: [Histogram](https://flowingdata.com/wp-content/themes/fd-modern-6-0/images/chart-types/histogram.png) ![](images/clipboard-249601241.png)
+
+
+[^9]: [Reading a Box-and-Whisker Plot](https://i0.wp.com/flowingdata.com/wp-content/uploads/2008/02/box-plot-explained.gif?w=1090) ![](images/clipboard-3227116470.png)
+
+
+## Trends in Digital Skills Across Categories, Years, and Skill Levels
+
+Below are some key observations beased on the above analysis:
+
+1.  **General Trends Over Time**
+
+Across all skill categories, there is a general improvement in skill levels from 2021 to 2023. For example, the percentage of individuals with above basic *Communication and Collaboration skills* increased from 79.96% in 2021 to 82.84% in 2023. Similarly, individuals with above basic *Problem-solving skills* saw an increase from 55.53% in 2021 to 58.05% in 2023. These improvements suggest that the EU is making positive steps toward achieving its 2030 digital skills goals. However, the progress also highlights the need for sustained efforts to ensure that all areas of digital competency are advancing at a similar pace.
+
+2.  **Strengths and Opportunities in Digital Skills Development**
+
+The data shows a notable concentration of individuals with above-basic skills, especially in categories like *Communication and Collaboration* and *Information and Data Literacy*. For example, in 2023, while only 6.64% of individuals had basic communication and collaboration skills, 82.84% had above-basic skills. This indicates a strong proficiency at higher levels in these areas, reflecting significant progress. However, this pattern is not consistent across all skill categories. In areas such as *Safety*, *Problem-solving* and *Digital Content Creation*, the proportion of individuals with above-basic skills is much lower, highlighting the need for targeted efforts to boost advanced competencies in these critical domains.
+
+3.  **Overall Digital Skills**
+
+When examining *Overall Digital Skills*, the percentage of individuals with above basic skills is considerably lower compared to specific skills. In 2023, only 28.98% of individuals had above basic overall digital skills. This suggests that while people may excel in specific areas, comprehensive digital proficiency across all indicators remains a challenge.
+
+4.  **At Least Basic Skills**
+
+The distinction between basic or above basic (at least basic skills) and "above basic" skill levels shows that a significant portion of individuals meet at least the basic criteria, but fewer achieve above basic proficiency. For example, in 2023, 57.63% of individuals had basic or above basic *Overall Digital skills*, but only 28.98% reached above basic proficiency. This highlights the need for policies aimed at helping more individuals advance to above basic level. Such progress is crucial for the EU to meet its ambitious digital skills goals.
+
+5.  **Safety and Digital Content Creation Skills**
+
+The data indicates that *Safety* and *Digital Content Creation skills* are generally weaker compared to other areas. In 2021, only 43.65% of individuals had above basic safety skills, and 46.56% had above basic digital content creation skills. In contrast, higher percentages were observed in areas like *Information and Data Literacy* (74.42%) and *Communication and Collaboration* (79.96%). This trend continues in 2023, suggesting a need for targeted initiatives to improve safety and content creation skills.Targeted initiatives, such as specialized training programs or awareness campaigns, could help improve competencies in these critical domains.
+
+6.  **Range of Skills Levels**
+
+There is considerable variation across regions or countries, as implied by the minimum and maximum values. For instance, in 2023, the range for above basic *Problem-solving skills* spans from 21.93% to 87.4%, indicating a significant gap between the most and least proficient groups. Although country-specific details I will explore in a separate analysis, the overall variation highlights the need for tailored interventions that address the unique challenges faced by different regions within the EU.
+
+7.  **Stability of Median Values**
+
+The median values across years are generally stable, indicating that improvements in mean values are not driven by outliers. This stability suggests consistent progress across the population rather than isolated improvements among a few groups. However, there are some exceptions, such as in *Problem-solving skills* and *Overall Digital skills*, basic or above skills, where extreme values are more prominent.
+
+8.  **Variability of skills**
+
+There is low variability in basic skills. For example, the standard deviations for basic skills, such as *Information and Data Literacy Skills* and *Communication and Collaboration Skills*, are low, indicating consistent skill levels among individuals. In contrast, there is higher variability in above basic skills. The standard deviations for above basic skills, particularly in *Digital Content Creation* and *Information and Data Literacy*, are significantly higher, reflecting greater differences in proficiency levels among individuals.
+
+Among the six categories, *Problem Solving Skills* and *Safety Skills* exhibit the highest variability, suggesting a wide range of abilities within these areas.
+
+## Conclusion
+
+The data analysis reveals both progress and challenges in the development of digital skills across the EU. While improvements from 2021 to 2023 are encouraging, disparities in skill levels and the slower progress in certain areas, such as *Safety* and *Digital Content Creation*, indicate that more targeted policies and initiatives are necessary.
+
+Overall, while there is positive momentum, the findings suggest that achieving comprehensive digital proficiency across the EU will require continued and targeted efforts. Addressing regional disparities and focusing on advancing individuals from basic to above basic skills will be crucial for meeting the EU’s 2030 digital literacy goals.
