@@ -4,14 +4,12 @@ listing:
   contents: posts
   sort: "date desc"
   type: default
-  categories: false
-  sort-ui: false
-  filter-ui: false
-  fields: [title, author, categories,description, date, image]
-toc: false
-comments: false
-format: 
-  html: 
-    page-layout: full
-title-block-banner: false
+  grid-columns: 3
+  image-height: 250px
+  page-size: 50
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  fields: [date, title, description, categories, image]
+page-layout: full
 ---
