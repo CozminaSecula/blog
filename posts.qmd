@@ -3,7 +3,7 @@ title: "Posts"
 listing:
   contents: posts
   sort: "date desc"
-  type: default
+  type: grid
   grid-columns: 3
   image-height: 250px
   page-size: 50
