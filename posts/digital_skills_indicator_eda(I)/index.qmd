@@ -1,6 +1,6 @@
 ---
 title: "Analyzing the Digital Skills Indicator in the Context of the EU Digital Decade"
-description: "An analysis of the components of the Digital Skills Indicator using data from the EU surveys on ICT (Information and Communication Technology) use in households and by individuals provided by Eurostat."
+description: "An Exploratory Data Analysis of the components of the Digital Skills Indicator using data from the EU surveys on ICT use in households and by individuals provided by Eurostat."
 author: "Cozmina Secula"
 date: "2024-08-21"
 categories: [data analysis, data visualization, eurostat, digital skills indicator]
@@ -13,15 +13,15 @@ code-summary: "Show the code"
 
 <br>
 
-This post examines the composite indicators of the EU Digital Decade, with a focus on the Digital Skills Indicator (DSI). Previously, I explored the [Digital Intensity Index](https://cozminasecula.github.io/blog/posts/digital_intensity_index_components_eu/), which measures the digital transformation of businesses. This time, the focus is on the DSI, which assess the human capital dimension of the EU Digital Economy and Society Index (DESI).
+This post is part of a series that examines the composite indicators of the EU [Digital Decade](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/europes-digital-decade-digital-targets-2030_en). Previously, I explored the [Digital Intensity Index](https://cozminasecula.github.io/blog/posts/digital_intensity_index_components_eu/), which measures the digital transformation of businesses. This time, the focus is on the Digital Skills Indicator (DSI), which is one of key performance indicators in the context of the Digital Decade.
 
-The goal of this analysis is to improve our understanding of the current state of digital competencies within the EU population and to evaluate the progress made in 2023 compared to 2021. First, I will provide an overview of composite indicators and introduce the DSI. Then, using open data from Eurostat, I will perform an exploratory analysis of the DSI components and conclude by sharing key insights from the analysis.
+The goal of this analysis is to improve our understanding of the current state of digital competencies within the EU population and to evaluate the progress made in 2023 compared to 2021. First, I will provide an overview of composite indicators and introduce the DSI. Then, using open data from Eurostat, I will perform an exploratory data analysis of the DSI components and conclude by sharing key insights from the analysis.
 
 ## Introducing Digital Skills Indicator
 
-In this section, I introduce the Digital Skills Indicator (DSI), a composite measure used to assess the digital competencies of individuals across the EU.
+In this section, I introduce the Digital Skills Indicator, a composite measure used to assess the digital competencies of individuals across the EU.
 
-Before diving into composite indicators, it is essential to understand what indicators are. **Indicators** are tools used across various fields, such as economics, education, health, and environmental science, to monitor changes, trends, or conditions. You might already be familiar with key performance indicators (KPIs), which are quantitative or qualitative measures used to track progress toward specific goals. However, when dealing with complex, multi-dimensional issues, individual indicators may not suffice. This is where composite indicators come into play.
+Before diving into composite indicators, it is essential to understand what indicators are. **Indicators** are tools used across various fields, such as economics, education, health, and environmental science, to monitor changes, trends, or conditions. You might already be familiar with key performance indicators (KPIs), which are quantitative or qualitative measures used to track progress toward specific goals. However, hen addressing complex, multi-dimensional issues, relying on individual indicators alone may not be sufficient. This is where composite indicators come into play.
 
 ### Composite indicators
 
@@ -31,7 +31,7 @@ Creating a composite indicator involves several steps: selecting relevant indivi
 
 ### Digital Skills Indicator
 
-The Digital Skills Indicator (DSI) is crucial for tracking the EU’s progress toward its Digital Decade goals, specifically the target that by 2030, at least 80% of citizens aged 16-74 will possess at least basic digital skills.
+The Digital Skills Indicator (DSI) is essential for monitoring the EU’s progress towards its Digital Decade goals. Specifically, it aims for at least 80% of citizens aged 16-74 to possess basic digital skills by 2030.
 
 The DSI is a composite indicator derived from surveys on ICT (Information and Communication Technology) use in households and by individuals. It assesses five key areas: information and data literacy, communication and collaboration, digital content creation, safety, and problem-solving. The assumption is that individuals who perform specific digital activities possess the corresponding skills. To be classified as having at least basic digital skills, individuals must demonstrate competence in at least one activity in each of these areas.
 
@@ -39,89 +39,22 @@ The DSI focuses on people aged 16-74[^1], and for detailed information on DSI le
 
 [^1]: Source: [Digital Economy and Society. Information on data](https://ec.europa.eu/eurostat/web/digital-economy-and-society/information-data#Information%20on%20variables,%20countries,%20and%20data%20collection)
 
-## Competence Areas[^2]
-
-[^2]: Source: [DigComp Framework](https://joint-research-centre.ec.europa.eu/oldpage-digcomp/digcomp-framework_en)
-
-The Digital Skills Indicator covers five core competence areas, which are essential for assessing digital skills:
-
-::: column-page
-::: grid-container
-::: grid-item
-**Information and Data Literacy**
-
--   Articulate information needs.
-
--   Locate and retrieve digital data, information, and content.
-
--   Judge the relevance of the source and its content.
-
--   Store, manage, and organize digital data, information, and content.
-:::
-
-::: grid-item
-**Communication and Collaboration**
-
--   Interact, communicate, and collaborate through digital technologies.
-
--   Be aware of cultural and generational diversity.
-
--   Participate in society through public and private digital services.
-
--   Manage one’s digital presence, identity, and reputation.
-:::
-
-::: grid-item
-**Digital Content Creation**
-
--   Create and edit digital content.
-
--   Improve and integrate information and content into an existing body of knowledge.
-
--   Understand how copyright and licenses are to be applied.
-
--   Know how to give understandable instructions for a computer system.
-:::
-
-::: grid-item
-**Safety**
-
--   Protect devices, content, personal data, and privacy in digital environments.
-
--   Protect physical and psychological health.
-
--   Be aware of digital technologies for social well-being and social inclusion.
-
--   Be aware of the environmental impact of digital technologies and their use.
-:::
-
-::: grid-item
-**Problem Solving**
-
--   Identify needs and problems in digital environments.
-
--   Resolve conceptual problems and problem situations in digital environments.
-
--   Use digital tools to innovate processes and products.
-
--   Keep up-to-date with the digital evolution.
-:::
-:::
-:::
 
 ## Why Understanding Digital Skills Data Matters
 
-In today’s increasingly digital world, possessing digital skills is a necessity. Understanding DSI data is crucial as it provides insights into the current state of digital competencies within the EU population. This data is vital for policymakers, educators, businesses, and individuals to identify areas where digital skills are lacking, target interventions, and monitor progress toward digital literacy goals. Staying informed about digital skills data ensures that societies can effectively participate in the digital economy, foster innovation, and close the digital divide.
+In today’s digital world, possessing digital skills is a necessity. Understanding DSI data is essential as it provides insights into the current state of digital competencies within the EU population. This data is vital for policymakers, educators, businesses, and individuals to identify areas where digital skills are lacking, target interventions, and monitor progress toward digital literacy goals. Staying informed about digital skills data ensures that societies can effectively participate in the digital economy, foster innovation, and close the digital divide.
 
 ## Exploratory Data Analysis
 
-The Exploratory Data Analysis (EDA) focuses on understanding DSI data, uncovering patterns, and generating hypotheses for further research. This involves visualizing data, calculating summary statistics, and identifying trends and relationships among variables.
+Exploratory Data Analysis (EDA) focuses on understanding DSI data, identifying patterns, and generating hypotheses for further analysis. This involves visualizing data, calculating summary statistics, and identifying trends and relationships among variables.
 
 The key question guiding this analysis is: *What do the distributions of the Digital Skills Indicator components for 2021 and 2023 reveal about the overall shifts in digital skills across the EU population?*
 
 ### Data Collection
 
-The data analyzed in this post is sourced from Eurostat’s database on individuals’ digital skills. The analysis uses several packages, including `eurostat`[^3] for data retrieval, `tidyverse`[^4] for data manipulation and visualization, `janitor`[^5] for data cleaning, `reactable`[^6] for interactive tables and `patchwork`[^7] for plot composition.
+The data analyzed in this post is sourced from Eurostat’s database on individuals’ digital skills.
+
+The analysis uses several packages, including `eurostat`[^3] for data retrieval, `tidyverse`[^4] for data manipulation and visualization, `janitor`[^5] for data cleaning, `reactable`[^6] for interactive tables and `patchwork`[^7] for plot composition.
 
 [^3]: Lahti L., Huovari J., Kainu M., and Biecek P. (2017). Retrieval and analysis of Eurostat open data with the eurostat package. The R Journal 9(1), pp. 385-392. doi: 10.32614/RJ-2017-019 Lahti, L., Huovari J., Kainu M., Biecek P., Hernangomez D., Antal D., and Kantanen P. (2023). eurostat: Tools for Eurostat Open Data \[Computer software\]. R package version 4.0.0. https://github.com/rOpenGov/eurostat
 
@@ -157,22 +90,19 @@ source("theme_ts.R")
 #| message: false
 #| warning: false
 
-
 # Search for the data set
-
 search_results <- search_eurostat("isoc_sk_dskl_i21", column = "code")
 
 id <- search_results$code[1]
 
 # Retrieve data 
-
 dat <- get_eurostat(id,
                     time_format = "num",
                     type = "label",
                     stringsAsFactors = TRUE)
 
+# Inspect the structure of the data set
 glimpse(dat)
-
 
 ```
 
@@ -188,21 +118,23 @@ skimr::skim(dat)
 
 ```
 
-In this data there are 397.473 observations recorded, each having the following properties:
+The data set contains 397.473 rows and 7 columns. Here are the columns and their data types:
 
-1.  `freq` - the frequency of data collection
-2.  `ind_type` - individual type
-3.  `ind_is` - information society indicator
-4.  `unit` - unit of measure the value is expressed on
-5.  `geo` - geopolitical entity, country
-6.  `TIME PERIOD` - time, the year the survey was carried on
-7.  `values` - values
+1.  `freq` - factor, representing the frequency of data collection
+2.  `ind_type` - factor, representing the category of individuals surveyed
+3.  `ind_is` - factor, representing the specific digital skills indicator
+4.  `unit` - factor, describing the unit of measure
+5.  `geo` - factor, representing the country name
+6.  `TIME PERIOD` - numeric, representing the year of the survey 
+7.  `values` - numeric, representing the actual value of the indicator in percentage
 
-There are 54 individual type with missing values. I will keep them as they are, as the data may not exist.
+There are 54 `ind_type` with 14185 missing values. I will keep them as they are, as the data may not exist.
 
 For more detailed information about the dataset, refer to [metadata on individuals' level of digital skills](https://ec.europa.eu/eurostat/cache/metadata/en/isoc_sk_dskl_i21_esmsip2.htm).
 
-#### Data Cleaning
+### Data Cleaning
+
+#### Rename columns
 
 ```{r}
 #| label: rename-columns
@@ -223,9 +155,6 @@ glimpse(digital_skills)
 
 ```
 
-### Summary Statistics
-
-This section explores the data related to the DSI components using using measures of central tendency (mean, median) and measures of spread (minimum, maximum, standard deviation).
 
 #### Filtering data
 
@@ -253,7 +182,12 @@ digital_skills_filtered <- digital_skills |>
 
 ```
 
-### Measures of central tendency
+
+### Summary Statistics
+
+This section explores the data related to the DSI components using using measures of central tendency (mean, median) and measures of spread (minimum, maximum, standard deviation).
+
+#### Measures of central tendency
 
 ```{r}
 #| label: summary-statistics
@@ -261,7 +195,6 @@ digital_skills_filtered <- digital_skills |>
 #| message: false
 
 # Summarize the data
-
 digital_skills_summary <- digital_skills_filtered |>
   filter(country != "EU") |>
   group_by(indicator, year) |>
@@ -305,8 +238,6 @@ digital_skills_summary <- digital_skills_filtered |>
   ) |>
   select(digital_skills, indicator_level, year, mean, median, count, minimum, maximum, standard_deviation)
 
-
-
 ```
 
 ```{r}
@@ -320,8 +251,8 @@ reactable(digital_skills_summary,
           showPageInfo = TRUE,
           groupBy = c("digital_skills","year"),
           columnGroups = list(
-            colGroup("Indicator", columns = c("digital_skills", "indicator_level"), sticky = "left"),
-            colGroup("Year", columns = "year", sticky = "left"),
+            colGroup("Indicator", columns = c("digital_skills", "indicator_level")),
+            colGroup("Year", columns = "year"),
             colGroup("Summary Statistics", columns = c("mean", "median", "count", "minimum", "maximum", "standard_deviation"))),
           columns = list(digital_skills = colDef(minWidth = 300, defaultSortOrder = "asc"),
                          indicator_level = colDef(minWidth = 300, defaultSortOrder = "asc")),
@@ -330,22 +261,18 @@ reactable(digital_skills_summary,
           wrap = FALSE,
           bordered = TRUE
           )
-
-
 ```
 
-### Measures of spread
+#### Measures of spread
 
-#### Filter the data set
+##### Filter the data set
 
 ```{r}
 #| label: distribution
 #| message: false
 #| warning: false
 
-
 # Summarize the data
-
 digital_skills_distrib <- digital_skills_filtered |>
   filter(country != "EU") |>
   mutate(
@@ -615,52 +542,51 @@ boxplot_plot <- ggplot(digital_skills_distrib,
 :::
 
 ::: g-col-6
-![Boxplot[^9]](dsi_eu_boxplot.png)
+![Boxplot[^10]](dsi_eu_boxplot.png)
 :::
 :::
 :::
 
 [^8]: [Histogram](https://flowingdata.com/wp-content/themes/fd-modern-6-0/images/chart-types/histogram.png) ![](images/clipboard-249601241.png)
 
+[^9]: [Histogram](https://flowingdata.com/wp-content/themes/fd-modern-6-0/images/chart-types/histogram.png) ![](images/clipboard-249601241.png)
 
-[^9]: [Reading a Box-and-Whisker Plot](https://i0.wp.com/flowingdata.com/wp-content/uploads/2008/02/box-plot-explained.gif?w=1090) ![](images/clipboard-3227116470.png)
+[^10]: [Boxplot](https://i0.wp.com/flowingdata.com/wp-content/uploads/2008/02/box-plot-explained.gif?w=1090) ![](images/clipboard-3227116470.png)
 
+[^11]: [Boxplot](https://i0.wp.com/flowingdata.com/wp-content/uploads/2008/02/box-plot-explained.gif?w=1090) ![](images/clipboard-3227116470.png)
 
 ## Trends in Digital Skills Across Categories, Years, and Skill Levels
 
-Below are some key observations beased on the above analysis:
+Below are some key observations based on the above analysis:
 
 1.  **General Trends Over Time**
 
-Across all skill categories, there is a general improvement in skill levels from 2021 to 2023. For example, the percentage of individuals with above basic *Communication and Collaboration skills* increased from 79.96% in 2021 to 82.84% in 2023. Similarly, individuals with above basic *Problem-solving skills* saw an increase from 55.53% in 2021 to 58.05% in 2023. These improvements suggest that the EU is making positive steps toward achieving its 2030 digital skills goals. However, the progress also highlights the need for sustained efforts to ensure that all areas of digital competency are advancing at a similar pace.
+Across all skill categories, there is a general improvement in skill levels from 2021 to 2023. For example, the percentage of individuals with above basic *Communication and Collaboration* skills increased from 79.96% in 2021 to 82.84% in 2023. Similarly, individuals with above basic *Problem-solving* skills saw an increase from 55.53% in 2021 to 58.05% in 2023. These improvements suggest that the EU is making positive steps toward achieving its 2030 digital skills goals. However, the progress also highlights the need for sustained efforts to ensure that all areas of digital competency are advancing at a similar pace.
 
 2.  **Strengths and Opportunities in Digital Skills Development**
 
-The data shows a notable concentration of individuals with above-basic skills, especially in categories like *Communication and Collaboration* and *Information and Data Literacy*. For example, in 2023, while only 6.64% of individuals had basic communication and collaboration skills, 82.84% had above-basic skills. This indicates a strong proficiency at higher levels in these areas, reflecting significant progress. However, this pattern is not consistent across all skill categories. In areas such as *Safety*, *Problem-solving* and *Digital Content Creation*, the proportion of individuals with above-basic skills is much lower, highlighting the need for targeted efforts to boost advanced competencies in these critical domains.
+The data shows a notable concentration of individuals with above basic skills, especially in categories like *Communication and Collaboration* and *Information and Data Literacy*. For example, in 2023, while only 6.64% of individuals had basic communication and collaboration skills, 82.84% had above-basic skills. This indicates a strong proficiency at higher levels in these areas, reflecting significant progress. However, this pattern is not consistent across all skill categories. In areas such as *Safety*, *Problem-solving* and *Digital Content Creation*, the proportion of individuals with above basic skills is much lower, highlighting the need for targeted efforts to boost advanced competencies in these critical domains.
 
 3.  **Overall Digital Skills**
 
 When examining *Overall Digital Skills*, the percentage of individuals with above basic skills is considerably lower compared to specific skills. In 2023, only 28.98% of individuals had above basic overall digital skills. This suggests that while people may excel in specific areas, comprehensive digital proficiency across all indicators remains a challenge.
 
-4.  **At Least Basic Skills**
 
-The distinction between basic or above basic (at least basic skills) and "above basic" skill levels shows that a significant portion of individuals meet at least the basic criteria, but fewer achieve above basic proficiency. For example, in 2023, 57.63% of individuals had basic or above basic *Overall Digital skills*, but only 28.98% reached above basic proficiency. This highlights the need for policies aimed at helping more individuals advance to above basic level. Such progress is crucial for the EU to meet its ambitious digital skills goals.
+4.  **Safety and Digital Content Creation Skills**
 
-5.  **Safety and Digital Content Creation Skills**
+The data indicates that *Safety* and *Digital Content Creation* skills are generally weaker compared to other areas. In 2021, only 43.65% of individuals had above basic safety skills, and 46.56% had above basic digital content creation skills. In contrast, higher percentages were observed in areas like *Information and Data Literacy* (74.42%) and *Communication and Collaboration* (79.96%). This trend continues in 2023, suggesting a need for targeted initiatives to improve safety and content creation skills.Targeted initiatives, such as specialized training programs or awareness campaigns, could help improve competencies in these critical domains.
 
-The data indicates that *Safety* and *Digital Content Creation skills* are generally weaker compared to other areas. In 2021, only 43.65% of individuals had above basic safety skills, and 46.56% had above basic digital content creation skills. In contrast, higher percentages were observed in areas like *Information and Data Literacy* (74.42%) and *Communication and Collaboration* (79.96%). This trend continues in 2023, suggesting a need for targeted initiatives to improve safety and content creation skills.Targeted initiatives, such as specialized training programs or awareness campaigns, could help improve competencies in these critical domains.
+5.  **Range of Skills Levels**
 
-6.  **Range of Skills Levels**
+There is considerable variation across regions or countries, as implied by the minimum and maximum values. For instance, in 2023, the range for above basic *Problem-solving* skills spans from 21.93% to 87.4%, indicating a significant gap between the most and least proficient groups. Although country-specific details I will explore in a separate analysis, the overall variation highlights the need for tailored interventions that address the unique challenges faced by different regions within the EU.
 
-There is considerable variation across regions or countries, as implied by the minimum and maximum values. For instance, in 2023, the range for above basic *Problem-solving skills* spans from 21.93% to 87.4%, indicating a significant gap between the most and least proficient groups. Although country-specific details I will explore in a separate analysis, the overall variation highlights the need for tailored interventions that address the unique challenges faced by different regions within the EU.
+6.  **Stability of Median Values**
 
-7.  **Stability of Median Values**
+The median values across years are generally stable, indicating that improvements in mean values are not driven by outliers. This stability suggests consistent progress across the population rather than isolated improvements among a few groups. However, there are some exceptions, such as in *Problem-solving* skills and *Overall Digital skills*, basic or above skills, where extreme values are more prominent.
 
-The median values across years are generally stable, indicating that improvements in mean values are not driven by outliers. This stability suggests consistent progress across the population rather than isolated improvements among a few groups. However, there are some exceptions, such as in *Problem-solving skills* and *Overall Digital skills*, basic or above skills, where extreme values are more prominent.
+7.  **Variability of skills**
 
-8.  **Variability of skills**
-
-There is low variability in basic skills. For example, the standard deviations for basic skills, such as *Information and Data Literacy Skills* and *Communication and Collaboration Skills*, are low, indicating consistent skill levels among individuals. In contrast, there is higher variability in above basic skills. The standard deviations for above basic skills, particularly in *Digital Content Creation* and *Information and Data Literacy*, are significantly higher, reflecting greater differences in proficiency levels among individuals.
+There is low variability in basic skills. For example, the standard deviations for basic skills, such as *Information and Data Literacy* and *Communication and Collaboration* skills, are low, indicating consistent skill levels among individuals. In contrast, there is higher variability in above basic skills. The standard deviations for above basic skills, particularly in *Digital Content Creation* and *Information and Data Literacy*, are significantly higher, reflecting greater differences in proficiency levels among individuals.
 
 Among the six categories, *Problem Solving Skills* and *Safety Skills* exhibit the highest variability, suggesting a wide range of abilities within these areas.
 
