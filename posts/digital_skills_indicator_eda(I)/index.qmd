@@ -303,10 +303,28 @@ digital_skills_distrib <- digital_skills_filtered |>
 
 ```
 
-### Distribution Summary
+### Visualization
+
+The visualization presents the distribution of digital skills by proficiency level across EU countries, divided into three categories: Basic Skills, Above Basic Skills, and Basic or Above Skills. The data is compared between two years, 2021 and 2023, across five skill components :
+
+Communication and Collaboration Skills
+Digital Content Creation Skills
+Information and Data Literacy Skills
+Problem Solving Skills
+Safety Skills
+
+and Overall Digital Skills
 
 ::: {.panel-tabset .nav-pills}
 ### Histogram
+
+The histograms show the frequency distribution of proficiency levels across EU countries.
+
+- Basic Skills: The histograms for basic skills generally show that most EU countries have a low to moderate percentage of individuals with basic digital skills, with some variability between 2021 and 2023. There is a slight shift in distribution between the two years for most components, indicating possible changes in proficiency levels over time.
+
+- Above Basic Skills: The histograms for above basic skills show higher proficiency levels. The data for 2023 often shows a broader spread or a slight shift compared to 2021, suggesting an increase in higher proficiency levels in some countries.
+
+- Basic or Above Skills: The combined category shows that the majority of countries have a high percentage of individuals with at least basic digital skills. The distributions are generally skewed towards higher values, with some movement between the years.
 
 ```{r}
 #| label: histogram
@@ -339,14 +357,9 @@ plot_skill_histograms <- function(data, skill) {
 
   # Basic Skills plot
   plot_basic <- ggplot(skill_data, aes(x = individuals_with_basic_skills)) +
-    geom_histogram(color = "#252525",
+    geom_histogram(color = "#222222",
                    fill = colors["Basic Skills"],
                    binwidth = function(x) (max(x) - min(x)) / 5) +
-    geom_vline(aes(xintercept = mean(individuals_with_basic_skills,
-                   na.rm = TRUE)), 
-                   color = "#252525", 
-                   linetype = "dashed",
-                   linewidth = 1) +
     facet_grid(. ~ year) +
     labs(y = "Frequency",
          x = "", 
@@ -370,10 +383,6 @@ plot_skill_histograms <- function(data, skill) {
     geom_histogram(color = "#33645FFF", 
                    fill = colors["Above Basic Skills"], 
                    binwidth = function(x) (max(x) - min(x)) / 5) +
-    geom_vline(aes(xintercept = mean(individuals_with_above_basic_skills,                       na.rm = TRUE)), 
-                   color = "#33645FFF", 
-                   linetype = "dashed", 
-                   linewidth = 1) +
     facet_grid(. ~ year) +
     labs(y = "", 
          x = "") +
@@ -391,11 +400,6 @@ plot_skill_histograms <- function(data, skill) {
     geom_histogram(color = "#9D1B1FFF",
                    fill = colors["Basic or Above Skills"], 
                    binwidth = function(x) (max(x) - min(x)) / 5) +
-    geom_vline(aes(xintercept =   mean(individuals_with_basic_or_above_basic_skills, 
-                   na.rm = TRUE)), 
-                   color = "#9D1B1FFF", 
-                   linetype = "dashed", 
-                   linewidth = 1) +
     facet_grid(. ~ year) +
     labs(y = "", 
          x = "") +
@@ -431,12 +435,12 @@ all_plots <- lapply(skills_list, function(skill) plot_skill_histograms(digital_s
 # Create a custom legend plot 
 legend_plot <- ggplot() +
   # Row 1: Proficiency Level annotations
-  annotate("text", x = 0.15, y = 0.98, label = "Basic Skills", size = 4, hjust = 0, color = "#252525") +
+  annotate("text", x = 0.15, y = 0.98, label = "Basic Skills", size = 4, hjust = 0, color = "#222222") +
   annotate("text", x = 1.15, y = 0.98, label = "Above Basic Skills", size = 4, hjust = 0, color = "#33645FFF") +
   annotate("text", x = 2.1, y = 0.98, label = "Basic or Above Skills", size = 4, hjust = 0, color = "#9D1B1FFF") +
   # Row 2: Year annotations
-  annotate("text", x = 0.08, y = 0.9, label = "2021", size = 4, hjust = 0, color = "#252525") +
-  annotate("text", x = 0.48, y = 0.9, label = "2023", size = 4, hjust = 0, color = "#252525") +
+  annotate("text", x = 0.08, y = 0.9, label = "2021", size = 4, hjust = 0, color = "#222222") +
+  annotate("text", x = 0.48, y = 0.9, label = "2023", size = 4, hjust = 0, color = "#222222") +
   annotate("text", x = 1.1, y = 0.9, label = "2021", size = 4, hjust = 0, color = "#33645FFF") +
   annotate("text", x = 1.6, y = 0.9, label = "2023", size = 4, hjust = 0, color = "#33645FFF") +
   annotate("text", x = 2.1, y = 0.9, label = "2021", size = 4, hjust = 0, color = "#9D1B1FFF") +
@@ -469,7 +473,15 @@ histogram_plot <- (legend_plot / all_plots) +
 
 ```
 
-### Boxplot
+### Boxplot and Violin Plot
+
+The boxplots summarize the distribution of digital skills proficiency across EU countries by displaying the median (middle line), quartiles (the box), and potential outliers (dots outside the whiskers).
+
+The violin plots add context by illustrating the density of the data, showing how the values are distributed across different proficiency levels.
+
+For example, in "Problem Solving Skills" (Basic Skills), the boxplot shows the central 50% of countries within the box, with a clear median line. Also, the boxplot shows us clearly the outliers (extreme values), small circles or dots, indicating countries with significantly different proficiency levels compared to others. 
+
+In another example, "Communication and Collaboration Skills" (Above Basic Skills, 2023), the boxplot shows that the central 50% of countries have proficiency levels roughly between 70% and 90%, with the median at about 80%.
 
 ```{r}
 #| label: boxplot
