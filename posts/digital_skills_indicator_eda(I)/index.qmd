@@ -31,7 +31,7 @@ Creating a composite indicator involves several steps: selecting relevant indivi
 
 ### Digital Skills Indicator
 
-The Digital Skills Indicator (DSI) is essential for monitoring the EU’s progress towards its Digital Decade goals. Specifically, it aims for at least 80% of citizens aged 16-74 to possess basic digital skills by 2030.
+The Digital Skills Indicator (DSI) is essential for monitoring the EU’s progress towards its Digital Decade goals. Specifically, the 2030 target is that at least 80% of citizens aged 16-74 have at least basic digital skills.
 
 The DSI is a composite indicator derived from surveys on ICT (Information and Communication Technology) use in households and by individuals. It assesses five key areas: information and data literacy, communication and collaboration, digital content creation, safety, and problem-solving. The assumption is that individuals who perform specific digital activities possess the corresponding skills. To be classified as having at least basic digital skills, individuals must demonstrate competence in at least one activity in each of these areas.
 
@@ -156,7 +156,7 @@ glimpse(digital_skills)
 
 #### Filtering data
 
-The dataset is filtered to include the five digital skills areas and overall digital skills, each categorized into three proficiency levels: “Above basic skills,” “Basic skills,” and “Basic or above basic skills (at least basic digital skills).” The analysis focuses on EU member states and the European Union - 27 countries (as of 2020), considering only the “percentage of individuals” as a unit and “all individuals” as the category.
+The dataset is filtered to include the five digital skills areas and overall digital skills, each categorized into three proficiency levels: “Above basic skills,” “Basic skills,” and “Basic or above basic skills (at least basic digital skills).” The analysis focuses on EU member states and the European Union - 27 countries (as of 2020), considering the “percentage of individuals” as a unit and “all individuals” as the category.
 
 ```{r}
 #| label: filter-indicators
@@ -182,7 +182,7 @@ digital_skills_filtered <- digital_skills |>
 
 ### Summary Statistics
 
-This section explores the data related to the DSI components using using measures of central tendency (mean, median) and measures of spread (minimum, maximum, standard deviation).
+This section explores the data related to the DSI components using measures of central tendency (mean, median) and measures of spread (minimum, maximum, standard deviation).
 
 #### Measures of central tendency
 
@@ -307,11 +307,7 @@ digital_skills_distrib <- digital_skills_filtered |>
 
 The visualization presents the distribution of digital skills by proficiency level across EU countries, divided into three categories: Basic Skills, Above Basic Skills, and Basic or Above Skills. The data is compared between two years, 2021 and 2023, across five skill components :
 
-Communication and Collaboration Skills
-Digital Content Creation Skills
-Information and Data Literacy Skills
-Problem Solving Skills
-Safety Skills
+Communication and Collaboration Skills Digital Content Creation Skills Information and Data Literacy Skills Problem Solving Skills Safety Skills
 
 and Overall Digital Skills
 
@@ -320,11 +316,11 @@ and Overall Digital Skills
 
 The histograms show the frequency distribution of proficiency levels across EU countries.
 
-- Basic Skills: The histograms for basic skills generally show that most EU countries have a low to moderate percentage of individuals with basic digital skills, with some variability between 2021 and 2023. There is a slight shift in distribution between the two years for most components, indicating possible changes in proficiency levels over time.
+-   Basic Skills: The histograms for basic skills generally show that most EU countries have a low to moderate percentage of individuals with basic digital skills, with some variability between 2021 and 2023. There is a slight shift in distribution between the two years for most components, indicating possible changes in proficiency levels over time.
 
-- Above Basic Skills: The histograms for above basic skills show higher proficiency levels. The data for 2023 often shows a broader spread or a slight shift compared to 2021, suggesting an increase in higher proficiency levels in some countries.
+-   Above Basic Skills: The histograms for above basic skills show higher proficiency levels. The data for 2023 often shows a broader spread or a slight shift compared to 2021, suggesting an increase in higher proficiency levels in some countries.
 
-- Basic or Above Skills: The combined category shows that the majority of countries have a high percentage of individuals with at least basic digital skills. The distributions are generally skewed towards higher values, with some movement between the years.
+-   Basic or Above Skills: The combined category shows that the majority of countries have a high percentage of individuals with at least basic digital skills. The distributions are generally skewed towards higher values, with some movement between the years.
 
 ```{r}
 #| label: histogram
@@ -479,7 +475,7 @@ The boxplots summarize the distribution of digital skills proficiency across EU 
 
 The violin plots add context by illustrating the density of the data, showing how the values are distributed across different proficiency levels.
 
-For example, in "Problem Solving Skills" (Basic Skills), the boxplot shows the central 50% of countries within the box, with a clear median line. Also, the boxplot shows us clearly the outliers (extreme values), small circles or dots, indicating countries with significantly different proficiency levels compared to others. 
+For example, in "Problem Solving Skills" (Basic Skills), the boxplot shows the central 50% of countries within the box, with a clear median line. Also, the boxplot shows us clearly the outliers (extreme values), small circles or dots, indicating countries with significantly different proficiency levels compared to others.
 
 In another example, "Communication and Collaboration Skills" (Above Basic Skills, 2023), the boxplot shows that the central 50% of countries have proficiency levels roughly between 70% and 90%, with the median at about 80%.
 
