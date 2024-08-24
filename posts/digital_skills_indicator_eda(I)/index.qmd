@@ -13,15 +13,15 @@ code-summary: "Show the code"
 
 <br>
 
-This post is part of a series that examines the composite indicators of the EU [Digital Decade](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/europes-digital-decade-digital-targets-2030_en). Previously, I explored the [Digital Intensity Index](https://cozminasecula.github.io/blog/posts/digital_intensity_index_components_eu/), which measures the digital transformation of businesses. This time, the focus is on the Digital Skills Indicator (DSI), which is one of key performance indicators in the context of the Digital Decade.
+This post is part of a series that examines the composite indicators of the EU [Digital Decade](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/europes-digital-decade-digital-targets-2030_en). Previously, I explored the [Digital Intensity Index](https://cozminasecula.github.io/blog/posts/digital_intensity_index_components_eu/), which measures the digital transformation of businesses. This time, the focus is on the Digital Skills Indicator (DSI), one of key performance indicators in the context of the Digital Decade.
 
-The goal of this analysis is to improve our understanding of the current state of digital competencies within the EU population and to evaluate the progress made in 2023 compared to 2021. First, I will provide an overview of composite indicators and introduce the DSI. Then, using open data from Eurostat, I will perform an exploratory data analysis of the DSI components and conclude by sharing key insights from the analysis.
+The goal of this analysis is to improve our understanding of the current state of digital competencies within the EU population and to evaluate the progress made in 2023 compared to 2021. First, I will provide an overview of composite indicators and introduce the DSI. Then, I will use data from Eurostat to conduct an exploratory data analysis of the DSI components and share key insights from the analysis.
 
 ## Introducing Digital Skills Indicator
 
 In this section, I introduce the Digital Skills Indicator, a composite measure used to assess the digital competencies of individuals across the EU.
 
-Before diving into composite indicators, it is essential to understand what indicators are. **Indicators** are tools used across various fields, such as economics, education, health, and environmental science, to monitor changes, trends, or conditions. You might already be familiar with key performance indicators (KPIs), which are quantitative or qualitative measures used to track progress toward specific goals. However, when addressing complex, multi-dimensional issues, relying on individual indicators alone may not be sufficient. This is where composite indicators come into play.
+First, I will introduce indicators. **Indicators** are tools used across various fields, such as economics, education, health, and environmental science, to monitor changes, trends, or conditions. You might already be familiar with key performance indicators (KPIs), which are quantitative or qualitative measures used to track progress toward specific goals. However, when addressing complex, multi-dimensional issues, relying on individual indicators alone may not be enough. This is where composite indicators come into play.
 
 ### Composite indicators
 
@@ -35,9 +35,7 @@ The Digital Skills Indicator (DSI) is essential for monitoring the EU’s progre
 
 The DSI is a composite indicator derived from surveys on ICT (Information and Communication Technology) use in households and by individuals. It assesses five key areas: information and data literacy, communication and collaboration, digital content creation, safety, and problem-solving. The assumption is that individuals who perform specific digital activities possess the corresponding skills. To be classified as having at least basic digital skills, individuals must demonstrate competence in at least one activity in each of these areas.
 
-The DSI focuses on people aged 16-74[^1], and for detailed information on DSI levels and the activities related to each skill, Eurostat provides comprehensive [metadata](https://ec.europa.eu/eurostat/cache/metadata/en/isoc_sk_dskl_i21_esmsip2.htm).
-
-[^1]: Source: [Digital Economy and Society. Information on data](https://ec.europa.eu/eurostat/web/digital-economy-and-society/information-data#Information%20on%20variables,%20countries,%20and%20data%20collection)
+For detailed information on DSI levels and the activities related to each skill, Eurostat provides comprehensive [metadata](https://ec.europa.eu/eurostat/cache/metadata/en/isoc_sk_dskl_i21_esmsip2.htm).
 
 ## Why Understanding Digital Skills Data Matters
 
@@ -53,17 +51,17 @@ The key question guiding this analysis is: *What do the distributions of the Dig
 
 The data analyzed is sourced from Eurostat’s database on individuals’ digital skills.
 
-The analysis uses several packages, including `eurostat`[^2] for data retrieval, `tidyverse`[^3] for data manipulation and visualization, `janitor`[^4] for data cleaning, `reactable`[^5] for interactive tables and `patchwork`[^6] for plot composition.
+The analysis uses several packages, including `eurostat`[^1] for data retrieval, `tidyverse`[^2] for data manipulation and visualization, `janitor`[^3] for data cleaning, `reactable`[^4] for interactive tables and `patchwork`[^5] for plot composition.
 
-[^2]: Lahti L., Huovari J., Kainu M., and Biecek P. (2017). Retrieval and analysis of Eurostat open data with the eurostat package. The R Journal 9(1), pp. 385-392. doi: 10.32614/RJ-2017-019 Lahti, L., Huovari J., Kainu M., Biecek P., Hernangomez D., Antal D., and Kantanen P. (2023). eurostat: Tools for Eurostat Open Data \[Computer software\]. R package version 4.0.0. https://github.com/rOpenGov/eurostat
+[^1]: Lahti L., Huovari J., Kainu M., and Biecek P. (2017). Retrieval and analysis of Eurostat open data with the eurostat package. The R Journal 9(1), pp. 385-392. doi: 10.32614/RJ-2017-019 Lahti, L., Huovari J., Kainu M., Biecek P., Hernangomez D., Antal D., and Kantanen P. (2023). eurostat: Tools for Eurostat Open Data \[Computer software\]. R package version 4.0.0. https://github.com/rOpenGov/eurostat
 
-[^3]: Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to the tidyverse.” *Journal of Open Source Software*, *4*(43), 1686. doi:10.21105/joss.01686 <https://doi.org/10.21105/joss.01686>.
+[^2]: Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to the tidyverse.” *Journal of Open Source Software*, *4*(43), 1686. doi:10.21105/joss.01686 <https://doi.org/10.21105/joss.01686>.
 
-[^4]: Firke S (2023). *janitor: Simple Tools for Examining and Cleaning Dirty Data*. R package version 2.2.0, <https://CRAN.R-project.org/package=janitor>.
+[^3]: Firke S (2023). *janitor: Simple Tools for Examining and Cleaning Dirty Data*. R package version 2.2.0, <https://CRAN.R-project.org/package=janitor>.
 
-[^5]: Lin G (2023). *reactable: Interactive Data Tables for R*. R package version 0.4.4, <https://CRAN.R-project.org/package=reactable>.
+[^4]: Lin G (2023). *reactable: Interactive Data Tables for R*. R package version 0.4.4, <https://CRAN.R-project.org/package=reactable>.
 
-[^6]: Pedersen T (2024). *patchwork: The Composer of Plots*. https://patchwork.data-imaginist.com, https://github.com/thomasp85/patchwork.
+[^5]: Pedersen T (2024). *patchwork: The Composer of Plots*. https://patchwork.data-imaginist.com, https://github.com/thomasp85/patchwork.
 
 #### Packages
 
@@ -129,7 +127,7 @@ The data set contains 397.473 rows and 7 columns. Here are the columns and their
 
 There are 54 `ind_type` with 14185 missing values. I will keep them as they are, as the data may not exist.
 
-For more detailed information about the dataset, refer to [metadata on individuals' level of digital skills](https://ec.europa.eu/eurostat/cache/metadata/en/isoc_sk_dskl_i21_esmsip2.htm).
+For more detailed information about the data set, refer to [metadata on individuals' level of digital skills](https://ec.europa.eu/eurostat/cache/metadata/en/isoc_sk_dskl_i21_esmsip2.htm).
 
 ### Data Cleaning
 
@@ -156,7 +154,7 @@ glimpse(digital_skills)
 
 #### Filtering data
 
-The dataset is filtered to include the five digital skills areas and overall digital skills, each categorized into three proficiency levels: “Above basic skills,” “Basic skills,” and “Basic or above basic skills (at least basic digital skills).” The analysis focuses on EU member states and the European Union - 27 countries (as of 2020), considering the “percentage of individuals” as a unit and “all individuals” as the category.
+The data set is filtered to include the five digital skills areas and overall digital skills, each categorized into three proficiency levels: “Above basic skills,” “Basic skills,” and “Basic or above basic skills (at least basic digital skills).” The analysis focuses on EU member states and the European Union - 27 countries (as of 2020), considering the “percentage of individuals” as a unit and “all individuals” as the category. After filtering data for variables of interest, the data set contains no missing values.
 
 ```{r}
 #| label: filter-indicators
@@ -305,9 +303,17 @@ digital_skills_distrib <- digital_skills_filtered |>
 
 ### Visualization
 
-The visualization presents the distribution of digital skills by proficiency level across EU countries, divided into three categories: Basic Skills, Above Basic Skills, and Basic or Above Skills. The data is compared between two years, 2021 and 2023, across five skill components :
+The visualizations show the distribution of digital skills by proficiency level across EU countries, divided into three categories: Basic Skills, Above Basic Skills, and Basic or Above Skills. The data is compared between two years, 2021 and 2023, across five skill components :
 
-Communication and Collaboration Skills Digital Content Creation Skills Information and Data Literacy Skills Problem Solving Skills Safety Skills
+-   Communication and Collaboration Skills
+
+-   Digital Content Creation Skills
+
+-   Information and Data Literacy Skills
+
+-   Problem Solving Skills
+
+-   Safety Skills
 
 and Overall Digital Skills
 
@@ -543,22 +549,22 @@ boxplot_plot <- ggplot(digital_skills_distrib,
 ::: column-screen-inset
 ::: grid
 ::: g-col-6
-![Histogram[^7]](dsi_eu_histogram.png)
+![Histogram[^6]](dsi_eu_histogram.png)
 :::
 
 ::: g-col-6
-![Boxplot[^9]](dsi_eu_boxplot.png)
+![Boxplot[^8]](dsi_eu_boxplot.png)
 :::
 :::
 :::
+
+[^6]: [Histogram](https://flowingdata.com/wp-content/themes/fd-modern-6-0/images/chart-types/histogram.png) ![](images/clipboard-249601241.png)
 
 [^7]: [Histogram](https://flowingdata.com/wp-content/themes/fd-modern-6-0/images/chart-types/histogram.png) ![](images/clipboard-249601241.png)
 
-[^8]: [Histogram](https://flowingdata.com/wp-content/themes/fd-modern-6-0/images/chart-types/histogram.png) ![](images/clipboard-249601241.png)
+[^8]: [Boxplot](https://i0.wp.com/flowingdata.com/wp-content/uploads/2008/02/box-plot-explained.gif?w=1090) ![](images/clipboard-3227116470.png)
 
 [^9]: [Boxplot](https://i0.wp.com/flowingdata.com/wp-content/uploads/2008/02/box-plot-explained.gif?w=1090) ![](images/clipboard-3227116470.png)
-
-[^10]: [Boxplot](https://i0.wp.com/flowingdata.com/wp-content/uploads/2008/02/box-plot-explained.gif?w=1090) ![](images/clipboard-3227116470.png)
 
 ## Trends in Digital Skills Across Categories, Years, and Skill Levels
 
