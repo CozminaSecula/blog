@@ -502,5 +502,47 @@
     "title": "Analyzing the Digital Skills Indicator in the Context of the EU Digital Decade",
     "section": "Footnotes",
     "text": "Footnotes\n\nLahti L., Huovari J., Kainu M., and Biecek P. (2017). Retrieval and analysis of Eurostat open data with the eurostat package. The R Journal 9(1), pp. 385-392. doi: 10.32614/RJ-2017-019 Lahti, L., Huovari J., Kainu M., Biecek P., Hernangomez D., Antal D., and Kantanen P. (2023). eurostat: Tools for Eurostat Open Data [Computer software]. R package version 4.0.0. https://github.com/rOpenGov/eurostat↩︎\nWickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to the tidyverse.” Journal of Open Source Software, 4(43), 1686. doi:10.21105/joss.01686 https://doi.org/10.21105/joss.01686.↩︎\nFirke S (2023). janitor: Simple Tools for Examining and Cleaning Dirty Data. R package version 2.2.0, https://CRAN.R-project.org/package=janitor.↩︎\nLin G (2023). reactable: Interactive Data Tables for R. R package version 0.4.4, https://CRAN.R-project.org/package=reactable.↩︎\nPedersen T (2024). patchwork: The Composer of Plots. https://patchwork.data-imaginist.com, https://github.com/thomasp85/patchwork.↩︎\nHistogram ↩︎\nBoxplot ↩︎"
+  },
+  {
+    "objectID": "weekly_dataviz.html",
+    "href": "weekly_dataviz.html",
+    "title": "Weekly DataViz",
+    "section": "",
+    "text": "Translate Widget\n\n\n    \n    \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeekly DataViz 2024-09-04\n\n\n\n\n\nCountries with the Most Holidays 2024\n\n\n\n\n\nSep 4, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "weekly_dataviz/week_1_2024_09__02/index.html",
+    "href": "weekly_dataviz/week_1_2024_09__02/index.html",
+    "title": "Making sense of data",
+    "section": "",
+    "text": "Translate Widget"
+  },
+  {
+    "objectID": "weekly_dataviz/week_1_2024_09__02/index.html#countries-with-the-most-holidays-2024",
+    "href": "weekly_dataviz/week_1_2024_09__02/index.html#countries-with-the-most-holidays-2024",
+    "title": "Weekly DataViz 2024-09-04",
+    "section": "Countries with the Most Holidays 2024",
+    "text": "Countries with the Most Holidays 2024\nThe data set, from MakeOver Monday (2024/w36), contains information on public holidays for various countries. It includes the following columns:\n\ncountry: The name of the country.\nCountriesWithTheMostHolidaysNumberOfPublicHolidays: The number of public holidays in 2024.\nCountriesWithTheMostHolidaysAdditionalDetails: Additional details about the holidays for some countries, though most of this column is missing data."
+  },
+  {
+    "objectID": "weekly_dataviz/week_1_2024_09__02/index.html#my-dataviz",
+    "href": "weekly_dataviz/week_1_2024_09__02/index.html#my-dataviz",
+    "title": "Weekly DataViz 2024-09-04",
+    "section": "My DataViz",
+    "text": "My DataViz\nThe visualization is a bar chart. This makes it easy to compare the number of public holidays across different countries.\n\nShow the codelibrary(tidyverse)\nsource(\"theme_ts.R\")\n\n\nraw_df &lt;- read_csv(\"countries-with-the-most-holidays-2024.csv\")\n\nraw_df |&gt;\n  mutate(Country = fct_reorder(country, CountriesWithTheMostHolidaysNumberOfPublicHolidays)) |&gt;\n  ggplot(aes(x = CountriesWithTheMostHolidaysNumberOfPublicHolidays, y = Country)) +  \n  geom_bar(stat = \"identity\",\n           position = \"dodge\",\n           width = 0.9,\n           fill = \"#7F9DA7FF\") +\n  geom_vline(xintercept = 0) +\n  scale_x_continuous( name = \"X Axis (Bottom)\",\n                      sec.axis = sec_axis(~., name = \"X Axis (Top)\") ) +\n  labs(\n    x = \"\",\n    y = \"\",\n    title = str_wrap(\"Nepal has the world's highest number of public holidays, with 35 annually\",\n                     width = 50),\n    subtitle = \"Number of Public Holidays\",\n    caption = \"Data Source: https://data.world/makeovermonday/2024w36-countries-with-the-most-holidays-2024\"\n  ) +\n  theme_ts() +\n  theme(axis.text.y = element_text(size = 10,\n                                   hjust = 0,\n                                   lineheight = 1.5,\n                                   color = \"#828282\"),\n        axis.text.x = element_text(size = 10,\n                                   color = \"#828282\"),\n        panel.grid.major.y = element_blank(),\n        panel.grid.major.x = element_line(color = \"#7F9DA7FF\",\n                                          linetype = \"dotted\"),\n        axis.ticks.x = element_line(linewidth = 0.5, color = \"#929497\"),\n        axis.ticks.length = unit(.25, \"cm\"),\n        plot.subtitle = element_text(hjust = 0.33, color = \"#646369\"),\n        plot.title = element_text(color = \"#414040\"),\n        plot.caption = element_text(hjust = 0, color = \"#828282\"),\n        plot.caption.position = \"plot\")"
+  },
+  {
+    "objectID": "weekly_dataviz/week_1_2024_09__02/index.html#insights-from-the-data",
+    "href": "weekly_dataviz/week_1_2024_09__02/index.html#insights-from-the-data",
+    "title": "Weekly DataViz 2024-09-04",
+    "section": "Insights from the Data",
+    "text": "Insights from the Data\n\nWide Range of Public Holidays: The number of public holidays across different countries varies significantly, ranging from 8 to 39 days. The average number of public holidays is approximately 14.\nCountries with the Most Holidays: Nepal has the highest number of public holidays at 39. Following Nepal, Myanmar has 32 holidays, while Iran and Sri Lanka have 26 and 25 holidays, respectively. These countries stand out significantly above the average.\nMajority Below Average: Most countries (54 out of 81) have fewer holidays than the average of 14 days.\n\nTools\nThis visualization was made using R and packages tidyverse1 and ggplot22."
+  },
+  {
+    "objectID": "weekly_dataviz/week_1_2024_09__02/index.html#footnotes",
+    "href": "weekly_dataviz/week_1_2024_09__02/index.html#footnotes",
+    "title": "Weekly DataViz 2024-09-04",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nWickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A,   Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to  the tidyverse.” _Journal of Open Source Software_, *4*(43), 1686. doi:10.21105/joss.01686 &lt;https://doi.org/10.21105/joss.01686&gt;.\n↩︎\n\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.\n↩︎"
   }
 ]

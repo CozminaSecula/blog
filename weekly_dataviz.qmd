@@ -1,0 +1,14 @@
+---
+title: "Weekly DataViz"
+listing:
+  contents: weekly_dataviz
+  sort: "date desc"
+  type: default
+  page-size: 10
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title, description, subtitle]
+page-layout: full
+comments: false
+---

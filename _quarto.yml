@@ -19,6 +19,8 @@ website:
         href: index.qmd
       - text: Posts
         href: posts.qmd
+      - text: Weekly DataViz
+        href: weekly_dataviz.qmd
 
       
     right: 

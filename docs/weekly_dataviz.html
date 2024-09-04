@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Making sense of data – Cozmina Secula</title>
+<title>Making sense of data – Weekly DataViz</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,6 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -69,20 +70,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-posts .list');
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-description','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-posts'] = new List('listing-posts', options);
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -127,13 +128,11 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Making sense of data - Cozmina Secula">
-<meta property="og:description" content="Data Analysis | Data Visualization">
-<meta property="og:image" content="profile.jpg">
+<meta property="og:title" content="Making sense of data - Weekly DataViz">
 <meta property="og:site_name" content="Making sense of data">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -146,7 +145,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -154,7 +153,7 @@ window.Quarto = {
 <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./weekly_dataviz.html"> 
+    <a class="nav-link active" href="./weekly_dataviz.html" aria-current="page"> 
 <span class="menu-text">Weekly DataViz</span></a>
   </li>  
 </ul>
@@ -182,12 +181,12 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 
 
@@ -211,166 +210,56 @@ window.Quarto = {
 
 
 
-
-
-
-<div class="quarto-about-solana column-body content">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cozmina Secula</h1>
-<p class="subtitle lead"></p><p>Data Analysis | Data Visualization</p><p></p>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header> <div class="about-links">
-  <a href="mailto:cozmina.secula@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-  <a href="https://www.linkedin.com/in/cozminasecula/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">Linkedin</span>
-  </a>
-  <a href="https://github.com/CozminaSecula" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-</div>
-      <div class="about-contents"><div id="exp">
-</div></div>
-    </div>
-    <img src="profile.jpg" class="about-image
-  round " style="height: 9em; width: 9em;">
-  </div>
+<h1 class="title">Weekly DataViz</h1>
 </div>
 
-<p>I am passionate about making sense of data for better decisions and actions. <br>This is the space where I store and share some of my work in practicing data analysis and visualization.</p>
-<p><br></p>
-<div id="listing-posts" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="data analysis,data visualization,eurostat,digital skills indicator" data-listing-date-sort="1724187600000" data-listing-file-modified-sort="1724482548755" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5707">
-<a href="./posts/digital_skills_indicator_eda(I)/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/digital_skills_indicator_eda(I)/dsi_eu_histogram.png" class="thumbnail-image card-img" style="height: 150;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Analyzing the Digital Skills Indicator in the Context of the EU Digital Decade
-</h5>
+
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1725397200000" data-listing-file-modified-sort="1725438296815" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="783">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./weekly_dataviz/week_1_2024_09__02/index.html" class="no-external">Weekly DataViz 2024-09-04</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./weekly_dataviz/week_1_2024_09__02/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./weekly_dataviz/week_1_2024_09__02/index.html" class="no-external">Countries with the Most Holidays 2024</a>
 </div>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="data analysis,data visualization,eurostat,digital intensity index" data-listing-date-sort="1721768400000" data-listing-file-modified-sort="1722324699424" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3598">
-<a href="./posts/digital_intensity_index_components_eu/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/digital_intensity_index_components_eu/dii_eu_components_2023.png" class="thumbnail-image card-img" style="height: 150;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-The components of EU’s Digital Intensity Index (DII) in 2023
-</h5>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="data analysis,data visualization,eurostat,digital intensity index" data-listing-date-sort="1720990800000" data-listing-file-modified-sort="1724267728628" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="781">
-<a href="./posts/digital_intensity_index_eu/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="posts\digital_intensity_index_eu\dii_eu_2023.png" style="height: 150;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-EU’s Digital Intensity Index (DII) in 2023
-</h5>
-</div>
+<div class="metadata">
+<a href="./weekly_dataviz/week_1_2024_09__02/index.html" class="no-external">
+<div class="listing-date">
+Sep 4, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="key driver analysis,data cleaning,data visualization" data-listing-date-sort="1705269600000" data-listing-file-modified-sort="1719430840957" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="28" data-listing-word-count-sort="5432">
-<a href="./posts/2024-01-15-key-driver-analysis/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2024-01-15-key-driver-analysis/image.jpeg" class="thumbnail-image card-img" style="height: 150;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Key Driver Analysis to understand customer loyalty in a financial organization (case study)
-</h5>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="dashboard,data visualization" data-listing-date-sort="1701727200000" data-listing-file-modified-sort="1706467082705" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="843">
-<a href="./posts/2023-12-05-create-a-dashboard/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2023-12-05-create-a-dashboard/image.jpeg" class="thumbnail-image card-img" style="height: 150;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Creating a Dashboard with Quarto
-</h5>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="summary statistics,independent samples t-test,quantitative analysis" data-listing-date-sort="1696971600000" data-listing-file-modified-sort="1706895275295" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1960">
-<a href="./posts/2023-10-11-summary-statistics-and-t-test/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2023-10-11-summary-statistics-and-t-test/image2.jpeg" class="thumbnail-image card-img" style="height: 150;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent Samples t-Test
-</h5>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="cross-table,chi-squared test,quantitative analysis" data-listing-date-sort="1694638800000" data-listing-file-modified-sort="1704441280832" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1582">
-<a href="./posts/2023-09-14-cross-tables-and-chi-squared-test/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2023-09-14-cross-tables-and-chi-squared-test/image.jpeg" class="thumbnail-image card-img" style="height: 150;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Unlocking Insights (I): Analyzing Categorical Data with Cross-Table and Chi-Squared Test
-</h5>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="7" data-categories="qualitative analysis,empirical study,well-being at work" data-listing-date-sort="1694466000000" data-listing-file-modified-sort="1704441428663" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="271">
-<a href="./posts/employee-well-being-at-work/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/employee-well-being-at-work/wordcloud.jpg" class="thumbnail-image card-img" style="height: 150;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Employees’ perception of well-being at work: A qualitative study
-</h5>
-</div>
-</div>
-</a>
 </div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div>
-
-
-
-
-
-</main> <!-- /main -->
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -391,6 +280,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
