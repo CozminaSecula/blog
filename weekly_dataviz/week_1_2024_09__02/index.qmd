@@ -3,6 +3,7 @@ title: "Weekly DataViz 2024-09-04"
 description: "Countries with the Most Holidays 2024"
 author: "Cozmina Secula"
 date: "2024-09-4"
+image: countries_with_the_most_public_holidays.png
 code-link: true
 code-tools: true
 code-fold: true
@@ -20,7 +21,7 @@ The data set, from [MakeOver Monday](https://makeovermonday.co.uk/) (2024/w36), 
 -   CountriesWithTheMostHolidaysNumberOfPublicHolidays: The number of public holidays in 2024.
 -   CountriesWithTheMostHolidaysAdditionalDetails: Additional details about the holidays for some countries, though most of this column is missing data.
 
-## My DataViz
+## The visualization
 
 The visualization is a bar chart. This makes it easy to compare the number of public holidays across different countries.
 
@@ -89,10 +90,11 @@ raw_df |>
 This visualization was made using R and packages tidyverse[^1] and ggplot2[^2].
 
 [^1]:
-```         
-Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A,   Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to  the tidyverse.” _Journal of Open Source Software_, *4*(43), 1686. doi:10.21105/joss.01686 <https://doi.org/10.21105/joss.01686>.
-```
+    ```         
+    Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A,   Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to  the tidyverse.” _Journal of Open Source Software_, *4*(43), 1686. doi:10.21105/joss.01686 <https://doi.org/10.21105/joss.01686>.
+    ```
+
 [^2]:
-```         
-H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
-```
+    ```         
+    H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
+    ```

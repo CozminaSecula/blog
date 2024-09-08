@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.4">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Making sense of data – Posts</title>
+<title>Posts – Making sense of data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,7 +78,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-date','listing-title','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
+      page: 9,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
@@ -97,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -128,7 +129,7 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Making sense of data - Posts">
+<meta property="og:title" content="Posts – Making sense of data">
 <meta property="og:site_name" content="Making sense of data">
 </head>
 
@@ -139,7 +140,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -175,7 +176,7 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -186,27 +187,49 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="SQL">SQL <span class="quarto-category-count">(2)</span></div><div class="category" data-category="chi-squared test">chi-squared test <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cross-table">cross-table <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dashboard">dashboard <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data analysis">data analysis <span class="quarto-category-count">(5)</span></div><div class="category" data-category="data cleaning">data cleaning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data visualization">data visualization <span class="quarto-category-count">(7)</span></div><div class="category" data-category="digital intensity index">digital intensity index <span class="quarto-category-count">(2)</span></div><div class="category" data-category="digital skills indicator">digital skills indicator <span class="quarto-category-count">(1)</span></div><div class="category" data-category="empirical study">empirical study <span class="quarto-category-count">(1)</span></div><div class="category" data-category="eurostat">eurostat <span class="quarto-category-count">(3)</span></div><div class="category" data-category="independent samples t-test">independent samples t-test <span class="quarto-category-count">(1)</span></div><div class="category" data-category="key driver analysis">key driver analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="qualitative analysis">qualitative analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quantitative analysis">quantitative analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="sales data">sales data <span class="quarto-category-count">(1)</span></div><div class="category" data-category="summary statistics">summary statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="time series">time series <span class="quarto-category-count">(1)</span></div><div class="category" data-category="trends">trends <span class="quarto-category-count">(1)</span></div><div class="category" data-category="well-being at work">well-being at work <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="SQL">SQL <span class="quarto-category-count">(2)</span></div><div class="category" data-category="chi-squared test">chi-squared test <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cross-table">cross-table <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dashboard">dashboard <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data analysis">data analysis <span class="quarto-category-count">(5)</span></div><div class="category" data-category="data cleaning">data cleaning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data visualization">data visualization <span class="quarto-category-count">(7)</span></div><div class="category" data-category="digital intensity index">digital intensity index <span class="quarto-category-count">(2)</span></div><div class="category" data-category="digital skills indicator">digital skills indicator <span class="quarto-category-count">(1)</span></div><div class="category" data-category="empirical study">empirical study <span class="quarto-category-count">(1)</span></div><div class="category" data-category="eurostat">eurostat <span class="quarto-category-count">(3)</span></div><div class="category" data-category="key driver analysis">key driver analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="qualitative analysis">qualitative analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quantitative analysis">quantitative analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="sales data">sales data <span class="quarto-category-count">(1)</span></div><div class="category" data-category="summary statistics">summary statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="t-test">t-test <span class="quarto-category-count">(1)</span></div><div class="category" data-category="time series">time series <span class="quarto-category-count">(1)</span></div><div class="category" data-category="trends">trends <span class="quarto-category-count">(1)</span></div><div class="category" data-category="well-being at work">well-being at work <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
 
 
+
+
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Translate Widget</title>
 
 
+
+
+
     <div id="google_translate_element"></div>
+
     <script type="text/javascript">
+
         function googleTranslateElementInit() {
+
             new google.translate.TranslateElement(
+
                 {pageLanguage: 'en'},
+
                 'google_translate_element'
+
             );
+
         }
+
     </script>
+
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+
 
 
 
@@ -263,7 +286,7 @@ window.Quarto = {
 <a href="./posts/digital_skills_indicator_eda(I)/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/digital_skills_indicator_eda(I)/dsi_eu_histogram.png" class="thumbnail-image card-img" style="height: 250px;">
+<img loading="lazy" src="./posts/digital_skills_indicator_eda(I)/dsi_eu_histogram.png" class="thumbnail-image card-img" style="height: 250px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -299,7 +322,7 @@ Aug 21, 2024
 <a href="./posts/digital_intensity_index_components_eu/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/digital_intensity_index_components_eu/dii_eu_components_2023.png" class="thumbnail-image card-img" style="height: 250px;">
+<img loading="lazy" src="./posts/digital_intensity_index_components_eu/dii_eu_components_2023.png" class="thumbnail-image card-img" style="height: 250px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -440,7 +463,7 @@ Jun 26, 2024
 <a href="./posts/2024-01-15-key-driver-analysis/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2024-01-15-key-driver-analysis/image.jpeg" class="thumbnail-image card-img" style="height: 250px;">
+<img loading="lazy" src="./posts/2024-01-15-key-driver-analysis/image.jpeg" class="thumbnail-image card-img" style="height: 250px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -473,7 +496,7 @@ Jan 15, 2024
 <a href="./posts/2023-12-05-create-a-dashboard/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2023-12-05-create-a-dashboard/image.jpeg" class="thumbnail-image card-img" style="height: 250px;">
+<img loading="lazy" src="./posts/2023-12-05-create-a-dashboard/image.jpeg" class="thumbnail-image card-img" style="height: 250px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -499,11 +522,11 @@ Dec 5, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="7" data-categories="summary statistics,independent samples t-test,quantitative analysis" data-listing-date-sort="1696971600000" data-listing-file-modified-sort="1706895275295" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1960">
+<div class="g-col-1" data-index="7" data-categories="summary statistics,t-test,quantitative analysis" data-listing-date-sort="1696971600000" data-listing-file-modified-sort="1725787014079" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1960">
 <a href="./posts/2023-10-11-summary-statistics-and-t-test/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2023-10-11-summary-statistics-and-t-test/image2.jpeg" class="thumbnail-image card-img" style="height: 250px;">
+<img loading="lazy" src="./posts/2023-10-11-summary-statistics-and-t-test/image2.jpeg" class="thumbnail-image card-img" style="height: 250px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -513,8 +536,8 @@ Unlocking Insights (II): Analyzing Data with Summary Statistics and Independent 
 <div class="listing-category" onclick="window.quartoListingCategory('summary statistics'); return false;">
 summary statistics
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('independent samples t-test'); return false;">
-independent samples t-test
+<div class="listing-category" onclick="window.quartoListingCategory('t-test'); return false;">
+t-test
 </div>
 <div class="listing-category" onclick="window.quartoListingCategory('quantitative analysis'); return false;">
 quantitative analysis
@@ -536,7 +559,7 @@ Oct 11, 2023
 <a href="./posts/2023-09-14-cross-tables-and-chi-squared-test/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2023-09-14-cross-tables-and-chi-squared-test/image.jpeg" class="thumbnail-image card-img" style="height: 250px;">
+<img loading="lazy" src="./posts/2023-09-14-cross-tables-and-chi-squared-test/image.jpeg" class="thumbnail-image card-img" style="height: 250px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -569,7 +592,7 @@ Sep 14, 2023
 <a href="./posts/employee-well-being-at-work/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/employee-well-being-at-work/wordcloud.jpg" class="thumbnail-image card-img" style="height: 250px;">
+<img loading="lazy" data-src="./posts/employee-well-being-at-work/wordcloud.jpg" class="thumbnail-image card-img" style="height: 250px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -602,6 +625,9 @@ Sep 12, 2023
 <div class="listing-no-matching d-none">
 No matching items
 </div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -638,18 +664,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -681,7 +696,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -716,7 +771,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

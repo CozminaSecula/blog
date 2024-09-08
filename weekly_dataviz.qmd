@@ -8,7 +8,7 @@ listing:
   categories: false
   sort-ui: false
   filter-ui: false
-  fields: [date, title, description, subtitle]
+  fields: [date, title, description, subtitle, image]
 page-layout: full
 comments: false
 ---
