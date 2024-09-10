@@ -1,0 +1,48 @@
+---
+title: "Weekly DataViz 2024-09-10"
+description: "Child and Infant Mortality"
+author: "Cozmina Secula"
+date: "2024-09-10"
+image: child_mortality_rate.png
+code-link: true
+code-tools: true
+code-fold: true
+code-summary: "Show the code"
+title-block-banner: true
+---
+
+<br>
+
+## *Child and Infant Mortality*
+
+The data set used in this project is from [MakeOver Monday](https://makeovermonday.co.uk/) (2024/w37). It includes information about various countries, spanning from 1751 to 2021, and provides estimates of the child mortality rate (under five years old) per 100 live births[^1].
+
+[^1]: Source: United Nations Inter-agency Group for Child Mortality Estimation (2023); Gapminder (2015) – [with major processing](https://ourworldindata.org/grapher/child-mortality?time=earliest..latest#sources-and-processing) by Our World in Data.
+
+## The visualization
+
+For this week’s challenge, I chose to recreate the original visualization. Given that the data set covers over 237 entities, I liked the approach of allowing users to select specific countries to display. This interactive feature enhances the user experience, letting them explore the data more personally. It also gave me the opportunity to learn the basics of creating and deploying a Shiny app[^2].
+
+[^2]: <https://cozmina-secula.shinyapps.io/child-mortality-rate/>
+
+<br>
+
+<iframe src="https://cozmina-secula.shinyapps.io/child-mortality-rate/" width="120%" height="800" frameborder="0">
+
+</iframe>
+
+### Tools
+
+The visualization and the app were created using R, along with the following packages:
+
+-   **`tidyverse`**: A collection of R packages for data manipulation, visualization, and workflow improvement.
+
+-   **`janitor`**: Provides simple functions for cleaning data.
+
+-   **`plotly`**: Enables interactive, web-based visualizations.
+
+-   **`shiny`**: A framework for building interactive web applications directly from R.
+
+-   **`shinyWidgets`**: Adds additional UI elements to improve Shiny apps.
+
+-   **`paletteer`**: Provides access to a wide range of color palettes.
