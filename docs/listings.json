@@ -7,13 +7,11 @@
     ]
   },
   {
-    "listing": "/posts.html",
+    "listing": "/index.html",
     "items": [
       "/posts/digital_skills_indicator_eda(I)/index.html",
       "/posts/digital_intensity_index_components_eu/index.html",
       "/posts/digital_intensity_index_eu/index.html",
-      "/posts/time_series/1_time_series.html",
-      "/posts/sales_revenue/1_sales_revenue_and_orders.html",
       "/posts/2024-01-15-key-driver-analysis/index.html",
       "/posts/2023-12-05-create-a-dashboard/index.html",
       "/posts/2023-10-11-summary-statistics-and-t-test/index.html",
@@ -22,11 +20,13 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/posts.html",
     "items": [
       "/posts/digital_skills_indicator_eda(I)/index.html",
       "/posts/digital_intensity_index_components_eu/index.html",
       "/posts/digital_intensity_index_eu/index.html",
+      "/posts/time_series/1_time_series.html",
+      "/posts/sales_revenue/1_sales_revenue_and_orders.html",
       "/posts/2024-01-15-key-driver-analysis/index.html",
       "/posts/2023-12-05-create-a-dashboard/index.html",
       "/posts/2023-10-11-summary-statistics-and-t-test/index.html",
