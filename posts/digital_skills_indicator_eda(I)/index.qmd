@@ -1,5 +1,5 @@
 ---
-title: "Analyzing the Digital Skills Indicator in the Context of the EU Digital Decade"
+title: "Analyzing the Digital Skills Indicator in the Context of the EU Digital Decade (Part I)"
 description: "An Exploratory Data Analysis of the components of the Digital Skills Indicator using data from the EU surveys on ICT use in households and by individuals provided by Eurostat."
 author: "Cozmina Secula"
 date: "2024-08-21"
@@ -560,8 +560,11 @@ boxplot_plot <- ggplot(digital_skills_distrib,
 
 [^6]: [Histogram](https://flowingdata.com/wp-content/themes/fd-modern-6-0/images/chart-types/histogram.png) ![](images/clipboard-249601241.png)
 
+[^7]: [Histogram](https://flowingdata.com/wp-content/themes/fd-modern-6-0/images/chart-types/histogram.png) ![](images/clipboard-249601241.png)
+
 [^8]: [Boxplot](https://i0.wp.com/flowingdata.com/wp-content/uploads/2008/02/box-plot-explained.gif?w=1090) ![](images/clipboard-3227116470.png)
 
+[^9]: [Boxplot](https://i0.wp.com/flowingdata.com/wp-content/uploads/2008/02/box-plot-explained.gif?w=1090) ![](images/clipboard-3227116470.png)
 
 ## Trends in Digital Skills Across Categories, Years, and Skill Levels
 
