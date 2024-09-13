@@ -1,5 +1,5 @@
 ---
-title: "Weekly DataViz 2024-09-10"
+title: "DataViz 2024-09-10"
 description: "Child and Infant Mortality"
 author: "Cozmina Secula"
 date: "2024-09-10"
