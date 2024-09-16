@@ -102,54 +102,24 @@ p <- plot_data |>
         ) 
 
 # Save the plot with text
-png("working_hours_eu.png", 
+ggsave(p, filename = "working_hours_eu.png", 
     height = 8.5, 
     width = 8, 
     units = "in", 
-    res = 300)
+    dpi = 300)
 
-# Draw the plot
-print(p)
-
-# Add text using grid.text()
-grid.text(
-  "Romania had the \nhighest average \npart-time hours (26.7) \nin 2023\nand the smallest \nfull-time vs part-time \ndifference (13.2).",
-  x = 0.83,  
-  y = 0.36, 
-  just = "left",
-  gp = gpar(col = "#414040",
-            fontsize = 8,
-            fontfamily = "Georgia",
-            fontface = "bold")
-)
-
-
-grid.text(
-  "In 2023, \nfull-time employees \nworked an average of \n39 hours per week, while \npart-time employees\nworked 21.7 hours.",
-  x = 0.70,  
-  y = 0.80,  
-  just = "left",
-  gp = gpar(col = "#414040",
-            fontsize = 8,
-            fontfamily = "Georgia",
-            fontface = "bold")
-)
-
-grid.text(
-  "The average weekly work \nhours for EU employees \nin 2023 were 36.1. \nOnly in Cyprus, Romania, \nFrance, and Lithuania, \nemployees worked more \nhours in 2023 than in 2014.",
-  x = 0.07,  
-  y = 0.19,  
-  just = "left",
-  gp = gpar(col = "#414040",
-            fontsize = 8,
-            fontfamily = "Georgia",
-            fontface = "bold")
-)
-
-dev.off()
 ```
 
 ![](working_hours_eu.png)
+
+## Insights from the Data
+
+- The average weekly work hours for EU employees in 2023 were 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014.
+
+- In 2023, full-time employees worked an average of 39 hours per week, while part-time employees worked 21.7 hours.
+
+- Romania had the highest average part-time hours (26.7) in 2023 and the smallest full-time vs part-time difference (13.2).
+
 
 ## Tools
 
