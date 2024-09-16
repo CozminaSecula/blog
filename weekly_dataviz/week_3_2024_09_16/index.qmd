@@ -113,7 +113,7 @@ print(p)
 
 # Add text using grid.text()
 grid.text(
-  "In 2023, \nRomania had the \nhighest average \npart-time hours (26.7) \nand the smallest \nfull-time vs part-time \ndifference (13.2).",
+  "Romania had the \nhighest average \npart-time hours (26.7) \nin 2023\nand the smallest \nfull-time vs part-time \ndifference (13.2).",
   x = 0.83,  
   y = 0.36, 
   just = "left",
@@ -136,7 +136,7 @@ grid.text(
 )
 
 grid.text(
-  "In 2023, \nEU employees averaged \n36.1 weekly hours. \nOnly in Cyprus, Romania, \nFrance, and Lithuania, \nemployees worked more \nhours in 2023 than in 2014.",
+  "The average weekly work \nhours for EU employees \nin 2023 were 36.1. \nOnly in Cyprus, Romania, \nFrance, and Lithuania, \nemployees worked more \nhours in 2023 than in 2014.",
   x = 0.07,  
   y = 0.19,  
   just = "left",
@@ -166,5 +166,4 @@ This visualization was made using R and the packages:
 
 [^3]: Wilke C, Wiernik B (2022). *ggtext: Improved Text Rendering Support for 'ggplot2'*. R package version 0.1.2, <https://CRAN.R-project.org/package=ggtext>.
 
-[^4]: R Core Team (2023). _R: A Language and Environment for Statistical Computing_. R Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.
-  
+[^4]: R Core Team (2023). *R: A Language and Environment for Statistical Computing*. R Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.
