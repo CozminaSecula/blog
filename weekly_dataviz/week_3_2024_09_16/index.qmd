@@ -30,7 +30,6 @@ For this challenge, I explored the average working hours of full-time and part-t
 library(tidyverse)
 library(geofacet)
 library(ggtext)
-library(grid)
 
 windowsFonts(Georgia = windowsFont("Georgia"))
 
@@ -116,7 +115,6 @@ ggsave(p, filename = "working_hours_eu.png",
 
 ![](working_hours_eu.png)
 
-
 ## Tools
 
 This visualization was made using R and the packages:
@@ -124,7 +122,6 @@ This visualization was made using R and the packages:
 -   **`ggplot2`**[^1] - for creating data visualizations.
 -   **`geofacet`**[^2]- for the creation of geographical faceted plots arranged in spatial grid layouts
 -   **`ggtext`**[^3] - for text formatting in ggplot2
--   **`grid`**[^4]- for building and arranging graphics in R
 
 [^1]: H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
 
@@ -132,4 +129,4 @@ This visualization was made using R and the packages:
 
 [^3]: Wilke C, Wiernik B (2022). *ggtext: Improved Text Rendering Support for 'ggplot2'*. R package version 0.1.2, <https://CRAN.R-project.org/package=ggtext>.
 
-[^4]: R Core Team (2023). *R: A Language and Environment for Statistical Computing*. R Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>.
+
