@@ -120,7 +120,7 @@ ggsave(p, filename = "working_hours_eu.png",
 This visualization was made using R and the packages:
 
 -   **`ggplot2`**[^1] - for creating data visualizations.
--   **`geofacet`**[^2]- for the creation of geographical faceted plots arranged in spatial grid layouts
+-   **`geofacet`**[^2]- provides geofaceting functionality for ggplot2
 -   **`ggtext`**[^3] - for text formatting in ggplot2
 
 [^1]: H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
@@ -128,5 +128,3 @@ This visualization was made using R and the packages:
 [^2]: Hafen R (2023). *geofacet: 'ggplot2' Faceting Utilities for Geographical Data*. R package version 0.2.1, <https://github.com/hafen/geofacet>.
 
 [^3]: Wilke C, Wiernik B (2022). *ggtext: Improved Text Rendering Support for 'ggplot2'*. R package version 0.1.2, <https://CRAN.R-project.org/package=ggtext>.
-
-
