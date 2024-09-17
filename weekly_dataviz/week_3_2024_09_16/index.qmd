@@ -43,7 +43,7 @@ eu_grid1$name[eu_grid1$name == "Czech Republic"] <- "Czechia"
 palette_worktime <- c("Full-time" = "#950404FF",
                       "Part-time" = "#0F542FFF")
 
-bg_color <- "#F1F0EA"
+bg_color <- "#FBFBF9"
 
 title <- paste0("How many hours do Europeans work each week?")
 
@@ -106,7 +106,7 @@ p <- plot_data |>
         ) 
 
 ggsave(p, filename = "working_hours_eu.png", 
-    height = 12, 
+    height = 11, 
     width = 10.5,
     bg = bg_color,
     units = "in", 
