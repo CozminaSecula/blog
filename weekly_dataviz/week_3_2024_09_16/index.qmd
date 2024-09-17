@@ -46,7 +46,7 @@ bg_color <- "#FBFBF9"
 
 title <- paste0("How Many Hours do Europeans Work Each Week?")
 
-subtitle <- paste0("The average weekly work hours for EU employees in 2023 were 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014. <br>In 2023, EU <span style='color:#950404FF'><b>full-time</b></span> employees worked an average of 39 hours per week, while <span style='color:#0F542FFF'><b>part-time</b></span> employees worked 21.7 hours. Romania had the highest average <span style='color:#0F542FFF'><b>part-time</b></span> hours, 26.7.")
+subtitle <- paste0("The average weekly work hours for EU employees in 2023 was 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014. <br>In 2023, EU <span style='color:#950404FF'><b>full-time</b></span> employees worked an average of 39 hours per week, while <span style='color:#0F542FFF'><b>part-time</b></span> employees worked 21.7 hours. Romania had the highest average <span style='color:#0F542FFF'><b>part-time</b></span> hours, at 26.7.")
 
 
 plot_data <- data_set |>
