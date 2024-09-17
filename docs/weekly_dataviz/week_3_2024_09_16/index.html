@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Cozmina Secula">
 <meta name="dcterms.date" content="2024-09-16">
-<meta name="description" content="How many hours do Europeans work each week?">
+<meta name="description" content="How Many Hours do Europeans Work Each Week?">
 <title>DataViz 2024-09-16 – Making sense of data</title>
 <style>
 code{white-space: pre-wrap;}
@@ -98,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script><link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="DataViz 2024-09-16 – Making sense of data">
-<meta property="og:description" content="How many hours do Europeans work each week?">
+<meta property="og:description" content="How Many Hours do Europeans Work Each Week?">
 <meta property="og:image" content="working_hours_eu.png">
 <meta property="og:site_name" content="Making sense of data">
 </head>
@@ -151,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="quarto-title-block"><div><h1 class="title">DataViz 2024-09-16</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
                   <div>
         <div class="description">
-          How many hours do Europeans work each week?
+          How Many Hours do Europeans Work Each Week?
         </div>
       </div>
                 </div>
@@ -195,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             );
         }
     </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script><p><br></p>
-<section id="how-many-hours-do-europeans-work-each-week" class="level2"><h2 class="anchored" data-anchor-id="how-many-hours-do-europeans-work-each-week"><em>How many hours do Europeans work each week?</em></h2>
+<section id="how-many-hours-do-europeans-work-each-week" class="level2"><h2 class="anchored" data-anchor-id="how-many-hours-do-europeans-work-each-week"><em>How Many Hours do Europeans Work Each Week?</em></h2>
 <p>This week’s DataViz is inspired by the <a href="https://www.linkedin.com/company/romaniandata/posts/?feedView=all">RomanianDATA Tribe</a> challenge for September 2024. The data set, sourced from <a href="https://ec.europa.eu/eurostat/databrowser/product/page/LFSA_EWHAIS">Eurostat</a>, includes information on the average number of actual weekly hours of work in the main job, by sex, age, professional status, full-time/part-time and occupation.</p>
 </section><section id="the-visualization" class="level2"><h2 class="anchored" data-anchor-id="the-visualization">The Visualization</h2>
 <p>For this challenge, I explored the average working hours of full-time and part-time EU employees aged 20-64 from 2014 to 2023. The visualization uses small multiples plots arranged in a map formation to show EU countries’ average working hours over time.</p>
@@ -219,9 +219,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span></span>
 <span><span class="va">bg_color</span> <span class="op">&lt;-</span> <span class="st">"#FBFBF9"</span></span>
 <span></span>
-<span><span class="va">title</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"How many hours do Europeans work each week?"</span><span class="op">)</span></span>
+<span><span class="va">title</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"How Many Hours do Europeans Work Each Week?"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">subtitle</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"The average weekly work hours for EU employees in 2023 were 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014. &lt;br&gt;In 2023, &lt;span style='color:#950404FF'&gt;&lt;b&gt;full-time&lt;/b&gt;&lt;/span&gt; employees worked an average of 39 hours per week, while &lt;span style='color:#0F542FFF'&gt;&lt;b&gt;part-time&lt;/b&gt;&lt;/span&gt; employees worked 21.7 hours. Romania had the highest average &lt;span style='color:#0F542FFF'&gt;&lt;b&gt;part-time&lt;/b&gt;&lt;/span&gt; hours, 26.7."</span><span class="op">)</span></span>
+<span><span class="va">subtitle</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"The average weekly work hours for EU employees in 2023 were 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014. &lt;br&gt;In 2023, EU &lt;span style='color:#950404FF'&gt;&lt;b&gt;full-time&lt;/b&gt;&lt;/span&gt; employees worked an average of 39 hours per week, while &lt;span style='color:#0F542FFF'&gt;&lt;b&gt;part-time&lt;/b&gt;&lt;/span&gt; employees worked 21.7 hours. Romania had the highest average &lt;span style='color:#0F542FFF'&gt;&lt;b&gt;part-time&lt;/b&gt;&lt;/span&gt; hours, 26.7."</span><span class="op">)</span></span>
 <span></span>
 <span></span>
 <span><span class="va">plot_data</span> <span class="op">&lt;-</span> <span class="va">data_set</span> <span class="op">|&gt;</span></span>
@@ -288,12 +288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p><img src="working_hours_eu.png" class="img-fluid"></p>
-</section><section id="insights-from-the-data" class="level2"><h2 class="anchored" data-anchor-id="insights-from-the-data">Insights from the Data</h2>
-<ul>
-<li><p>The average weekly work hours for EU employees in 2023 were 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014.</p></li>
-<li><p>In 2023, full-time employees worked an average of 39 hours per week, while part-time employees worked 21.7 hours.</p></li>
-<li><p>Romania had the highest average part-time hours (26.7) in 2023 and the smallest full-time vs part-time difference (13.2).</p></li>
-</ul></section><section id="tools" class="level2"><h2 class="anchored" data-anchor-id="tools">Tools</h2>
+</section><section id="tools" class="level2"><h2 class="anchored" data-anchor-id="tools">Tools</h2>
 <p>This visualization was made using R and the packages:</p>
 <ul>
 <li>
@@ -788,7 +783,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "DataViz 2024-09-16"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "How many hours do Europeans work each week?"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "How Many Hours do Europeans Work Each Week?"</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Cozmina Secula"</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-09-16"</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> working_hours_eu.png</span></span>
@@ -801,7 +796,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>&lt;br&gt;</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## *How many hours do Europeans work each week?*</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## *How Many Hours do Europeans Work Each Week?*</span></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>This week's DataViz is inspired by the <span class="co">[</span><span class="ot">RomanianDATA Tribe</span><span class="co">](https://www.linkedin.com/company/romaniandata/posts/?feedView=all)</span> challenge for September 2024. The data set, sourced from <span class="co">[</span><span class="ot">Eurostat</span><span class="co">](https://ec.europa.eu/eurostat/databrowser/product/page/LFSA_EWHAIS)</span>, includes information on the average number of actual weekly hours of work in the main job, by sex, age, professional status, full-time/part-time and occupation.</span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
@@ -833,9 +828,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>bg_color <span class="ot">&lt;-</span> <span class="st">"#FBFBF9"</span></span>
 <span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"How many hours do Europeans work each week?"</span>)</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"How Many Hours do Europeans Work Each Week?"</span>)</span>
 <span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>subtitle <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"The average weekly work hours for EU employees in 2023 were 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014. &lt;br&gt;In 2023, &lt;span style='color:#950404FF'&gt;&lt;b&gt;full-time&lt;/b&gt;&lt;/span&gt; employees worked an average of 39 hours per week, while &lt;span style='color:#0F542FFF'&gt;&lt;b&gt;part-time&lt;/b&gt;&lt;/span&gt; employees worked 21.7 hours. Romania had the highest average &lt;span style='color:#0F542FFF'&gt;&lt;b&gt;part-time&lt;/b&gt;&lt;/span&gt; hours, 26.7."</span>)</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>subtitle <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"The average weekly work hours for EU employees in 2023 were 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014. &lt;br&gt;In 2023, EU &lt;span style='color:#950404FF'&gt;&lt;b&gt;full-time&lt;/b&gt;&lt;/span&gt; employees worked an average of 39 hours per week, while &lt;span style='color:#0F542FFF'&gt;&lt;b&gt;part-time&lt;/b&gt;&lt;/span&gt; employees worked 21.7 hours. Romania had the highest average &lt;span style='color:#0F542FFF'&gt;&lt;b&gt;part-time&lt;/b&gt;&lt;/span&gt; hours, 26.7."</span>)</span>
 <span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> data_set <span class="sc">|&gt;</span></span>
@@ -904,30 +899,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="al">![](working_hours_eu.png)</span></span>
 <span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a><span class="fu">## Insights from the Data</span></span>
-<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The average weekly work hours for EU employees in 2023 were 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014.</span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>In 2023, full-time employees worked an average of 39 hours per week, while part-time employees worked 21.7 hours.</span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Romania had the highest average part-time hours (26.7) in 2023 and the smallest full-time vs part-time difference (13.2).</span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tools</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tools</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>This visualization was made using R and the packages:</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`ggplot2`**<span class="ot">[^1]</span> - for creating data visualizations.</span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`geofacet`**<span class="ot">[^2]</span>- for the creation of geographical faceted plots arranged in spatial grid layouts</span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`ggtext`**<span class="ot">[^3]</span> - for text formatting in ggplot2</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`grid`**<span class="ot">[^4]</span>- for building and arranging graphics in R</span>
 <span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>This visualization was made using R and the packages:</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.</span>
 <span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`ggplot2`**<span class="ot">[^1]</span> - for creating data visualizations.</span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`geofacet`**<span class="ot">[^2]</span>- for the creation of geographical faceted plots arranged in spatial grid layouts</span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`ggtext`**<span class="ot">[^3]</span> - for text formatting in ggplot2</span>
-<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`grid`**<span class="ot">[^4]</span>- for building and arranging graphics in R</span>
-<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.</span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="ot">[^2]: </span>Hafen R (2023). *geofacet: 'ggplot2' Faceting Utilities for Geographical Data*. R package version 0.2.1, <span class="ot">&lt;https://github.com/hafen/geofacet&gt;</span>.</span>
-<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="ot">[^3]: </span>Wilke C, Wiernik B (2022). *ggtext: Improved Text Rendering Support for 'ggplot2'*. R package version 0.1.2, <span class="ot">&lt;https://CRAN.R-project.org/package=ggtext&gt;</span>.</span>
-<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="ot">[^4]: </span>R Core Team (2023). *R: A Language and Environment for Statistical Computing*. R Foundation for Statistical Computing, Vienna, Austria. <span class="ot">&lt;https://www.R-project.org/&gt;</span>.</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="ot">[^2]: </span>Hafen R (2023). *geofacet: 'ggplot2' Faceting Utilities for Geographical Data*. R package version 0.2.1, <span class="ot">&lt;https://github.com/hafen/geofacet&gt;</span>.</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="ot">[^3]: </span>Wilke C, Wiernik B (2022). *ggtext: Improved Text Rendering Support for 'ggplot2'*. R package version 0.1.2, <span class="ot">&lt;https://CRAN.R-project.org/package=ggtext&gt;</span>.</span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a><span class="ot">[^4]: </span>R Core Team (2023). *R: A Language and Environment for Statistical Computing*. R Foundation for Statistical Computing, Vienna, Austria. <span class="ot">&lt;https://www.R-project.org/&gt;</span>.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

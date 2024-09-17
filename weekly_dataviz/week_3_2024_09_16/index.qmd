@@ -1,6 +1,6 @@
 ---
 title: "DataViz 2024-09-16"
-description: "How many hours do Europeans work each week?"
+description: "How Many Hours do Europeans Work Each Week?"
 author: "Cozmina Secula"
 date: "2024-09-16"
 image: working_hours_eu.png
@@ -13,7 +13,7 @@ title-block-banner: true
 
 <br>
 
-## *How many hours do Europeans work each week?*
+## *How Many Hours do Europeans Work Each Week?*
 
 This week's DataViz is inspired by the [RomanianDATA Tribe](https://www.linkedin.com/company/romaniandata/posts/?feedView=all) challenge for September 2024. The data set, sourced from [Eurostat](https://ec.europa.eu/eurostat/databrowser/product/page/LFSA_EWHAIS), includes information on the average number of actual weekly hours of work in the main job, by sex, age, professional status, full-time/part-time and occupation.
 
@@ -45,9 +45,9 @@ palette_worktime <- c("Full-time" = "#950404FF",
 
 bg_color <- "#FBFBF9"
 
-title <- paste0("How many hours do Europeans work each week?")
+title <- paste0("How Many Hours do Europeans Work Each Week?")
 
-subtitle <- paste0("The average weekly work hours for EU employees in 2023 were 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014. <br>In 2023, <span style='color:#950404FF'><b>full-time</b></span> employees worked an average of 39 hours per week, while <span style='color:#0F542FFF'><b>part-time</b></span> employees worked 21.7 hours. Romania had the highest average <span style='color:#0F542FFF'><b>part-time</b></span> hours, 26.7.")
+subtitle <- paste0("The average weekly work hours for EU employees in 2023 were 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014. <br>In 2023, EU <span style='color:#950404FF'><b>full-time</b></span> employees worked an average of 39 hours per week, while <span style='color:#0F542FFF'><b>part-time</b></span> employees worked 21.7 hours. Romania had the highest average <span style='color:#0F542FFF'><b>part-time</b></span> hours, 26.7.")
 
 
 plot_data <- data_set |>
@@ -116,13 +116,6 @@ ggsave(p, filename = "working_hours_eu.png",
 
 ![](working_hours_eu.png)
 
-## Insights from the Data
-
--   The average weekly work hours for EU employees in 2023 were 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014.
-
--   In 2023, full-time employees worked an average of 39 hours per week, while part-time employees worked 21.7 hours.
-
--   Romania had the highest average part-time hours (26.7) in 2023 and the smallest full-time vs part-time difference (13.2).
 
 ## Tools
 
