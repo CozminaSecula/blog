@@ -4,4 +4,13 @@
 .Ruserdata
 
 /.quarto/
-
+/translate-widget.html/
+/styles.css/
+/README_files/
+/README.html/
+/profile.jpg/
+/plot output/
+/helper_functions.R/
+/about.qmd/
+/_site/
+/_freeze/
