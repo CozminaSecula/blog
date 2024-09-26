@@ -62,7 +62,7 @@ title_font <- "roboto_slab"
 #| Define colors and fonts ----------------------------------------------------------
 
 text_col <- "grey10"
-bg_col <- "#f5f4ef"
+bg_col <- "#FBFBF9"
 
 # Data wrangling ----------------------------------------------------------
 
