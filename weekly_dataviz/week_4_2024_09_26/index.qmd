@@ -15,15 +15,15 @@ title-block-banner: true
 
 ## *Eu Enterprises and Data Analytics in 2023*
 
-Some time ago, I looked at the components of the **EU Digital Intensity Index (DII)**. One of these components is the **Data Analytics Indicator**. This week’s data visualization shows the adoption of data analytics by EU enterprises in 2023.\
+Some time ago, I looked at the components of the [**EU Digital Intensity Index (DII)**](https://cozminasecula.github.io/blog/posts/digital_intensity_index_components_eu/). One of these components is the **Data Analytics Indicator**. This week’s data visualization shows the adoption of data analytics by EU enterprises in 2023.\
 
-> Data analytics refers to the use of technologies, techniques or software tools for analysing data to extract patterns, trends and insights to make conclusions, predictions and better decision-making with the aim of improving performance (e.g., increase production, reduce costs). Data may be extracted from your own enterprise’ data source or from external sources (e.g., suppliers, customers, government) (source Eurostat).
+> **Data analytics** refers to the use of technologies, techniques or software tools for analysing data to extract patterns, trends and insights to make conclusions, predictions and better decision-making with the aim of improving performance (e.g., increase production, reduce costs). Data may be extracted from your own enterprise’ data source or from external sources (e.g., suppliers, customers, government) (source Eurostat).
 
 The **Data Analytics Indicator** was introduced in the **DII** by the EU in 2023. Previously, the indicator was focused on **Big Data**.
 
 ## The Visualization
 
-The visualization is a **slope chart** (also known as a **slope graph**). It compares the percentage of businesses in different EU countries that adopted **Big Data** (2020) and **Data Analytics** (2023). The chart shows the changes over time for each country, with sloping lines indicating increases or decreases. It is important to note that **data analytics** includes a broader set of technologies compared to **Big Data**, so the comparison between 2023 and 2020 is not for the same technologies.
+The visualization is a slope chart (also known as a slope graph), illustrating the changes in the percentage of EU enterprises that adopted **Big Data** in 2020 and **Data Analytics** in 2023. It’s important to note that this is not a direct comparison of identical indicators. In 2023, the **Data Analytics** indicator replaced the **Big Data** indicator in the **(DII)**. Since **Data Analytics** covers a broader range of technologies, the chart reflects how adoption rates shifted when the indicator was changed, rather than comparing the same technologies across both years.
 
 ```{r}
 #| label: DataViz
@@ -118,8 +118,7 @@ caption <- paste0("**Graphic**: Cozmina Secula<br>**Data**: Eurostat,
 
 title <- paste0("EU Enterprises and Data Analytics in 2023")
 
-callout <- paste0("EU and national efforts <br>may need increased investment <br>and focus to achieve the
-                  <br>75% data analytics adoption by 2030")
+callout <- paste0("The shift to the Data Analytics <br>indicator led to progress for EU countries. <br>However, increased EU and national <br>efforts may be needed to reach<br> 75% adoption by 2030.")
 
 # Define the countries of interest
 highlight_countries <- c("Hungary", "Croatia", "Denmark", "Romania", "Malta", "EU")
@@ -298,11 +297,13 @@ ggsave(p, filename = "da_plot.png",
 
 ## Insights
 
--   **Hungary and Croatia** have shown the highest adoption rates in 2023, with Hungary leading at **53%** and Croatia close behind at **52%**. This indicates that these countries are progressing quickly toward the EU goal.
+-   Hungary and Croatia show the highest adoption rates in 2023, with Hungary leading at 53% and Croatia close behind at 52%. These high rates reflect how quickly these countries have adapted to the broader **Data Analytics** technologies, moving toward the EU's goal for business adoption of data analytics.
 
--   **Romania** lags significantly behind, with just **22%** adoption in 2023, suggesting it may need **additional support or initiatives** to catch up.
+-   The transition from **Big Data** to **Data Analytics** has resulted in some progress for Romania. However, Romania remains significantly behind, with only 22% adoption in 2023, indicating that it may require additional support or strategic initiatives to meet the EU's digital transformation objectives for this indicator.
 
--   **Malta** and the **EU average** (EU 27) show moderate growth, with Malta rising from **30% to 36%** and the EU average reaching **33%**. This suggests steady progress but still falls short of the EU's long-term target.
+-   **Malta** shows moderate growth, from 30% to 36% .
+
+-   Although adoption rates shifted for all countries when the indicator was changed, resulting in some progress, both EU and national efforts may need increased investment and focus to achieve 75% data analytics adoption by 2030.
 
 ## Tools
 
