@@ -108,7 +108,7 @@ data_plot <- dd_data_year_da |>
 
 subtitle <- paste0(
   "In the EU, 33% of enterprises use data analytics, <br>with a target of 75% by 2030.<br>",
-  "<span style='font-size:13px'>% of enterprises (10 persons employed or more) using data analytics</span>"
+  "<span style='font-size:13px'>% of enterprises (10 persons employed or more)</span>"
 )
 
 caption <- paste0("**Graphic**: Cozmina Secula<br>**Data**: Eurostat,
