@@ -107,7 +107,7 @@ data_plot <- dd_data_year_da |>
 # Plot --------------------------------------------------------------------
 
 subtitle <- paste0(
-  "In the EU, 33% of enterprises use data analytics, <br>with a target of 75% by 2030.<br>",
+  "In the EU, 33% of enterprises use data analytics, with a <br>target of 75% by 2030.<br>",
   "<span style='font-size:13px'>% of enterprises (10 persons employed or more)</span>"
 )
 
@@ -118,7 +118,7 @@ caption <- paste0("**Graphic**: Cozmina Secula<br>**Data**: Eurostat,
 
 title <- paste0("EU Enterprises and Data Analytics in 2023")
 
-callout <- paste0("EU countries improved their <br>performance when Big Data <br>was replaced with Data Analytics <br>indicator. However, increased EU and <br>national efforts may be needed <br>to reach 75% adoption by 2030.")
+callout <- paste0("EU countries improved their <br>performance when the <b>Data <br> Analytics</b> indicator replaced <b>Big Data</b>.<br> However, increased EU and <br>national efforts may be needed <br>to reach 75% adoption by 2030.")
 
 # Define the countries of interest
 highlight_countries <- c("Hungary", "Croatia", "Denmark", "Romania", "Malta", "EU")
