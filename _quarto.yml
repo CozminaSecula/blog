@@ -41,7 +41,6 @@ website:
 format:
   html:
     theme: custom.scss
-    css: styles.css
     include-before-body: translate-widget.html
 
 

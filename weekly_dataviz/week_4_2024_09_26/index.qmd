@@ -1,6 +1,6 @@
 ---
 title: "DataViz 2024-09-26"
-description: "Eu Enterprises and Data Analytics in 2023"
+description: "EU Enterprises and Data Analytics in 2023"
 author: "Cozmina Secula"
 date: "2024-09-26"
 image: da_plot.png
@@ -13,7 +13,7 @@ title-block-banner: true
 
 <br>
 
-## *Eu Enterprises and Data Analytics in 2023*
+## *EU Enterprises and Data Analytics in 2023*
 
 Some time ago, I looked at the components of the [**EU Digital Intensity Index (DII)**](https://cozminasecula.github.io/blog/posts/digital_intensity_index_components_eu/). One of these components is the **Data Analytics Indicator**. This week’s data visualization shows the adoption of data analytics by EU enterprises in 2023.\
 
