@@ -4,7 +4,35 @@
     "href": "weekly_dataviz.html",
     "title": "Weekly DataViz",
     "section": "",
-    "text": "Translate Widget\n\n\n\n\n\n    \n\n    \n\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-10-01\n\n\n\n\n\nFinancial Markets Historical Performance\n\n\n\n\n\nOct 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-26\n\n\n\n\n\nEU Enterprises and Data Analytics in 2023\n\n\n\n\n\nSep 26, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-16\n\n\n\n\n\nHow Many Hours do Europeans Work Each Week?\n\n\n\n\n\nSep 16, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-10\n\n\n\n\n\nChild and Infant Mortality\n\n\n\n\n\nSep 10, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-04\n\n\n\n\n\nCountries with the Most Holidays 2024\n\n\n\n\n\nSep 4, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "Translate Widget\n\n\n\n\n\n    \n\n    \n\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-26\n\n\n\n\n\nEU Enterprises and Data Analytics in 2023\n\n\n\n\n\nSep 26, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-16\n\n\n\n\n\nHow Many Hours do Europeans Work Each Week?\n\n\n\n\n\nSep 16, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-10\n\n\n\n\n\nChild and Infant Mortality\n\n\n\n\n\nSep 10, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-04\n\n\n\n\n\nCountries with the Most Holidays 2024\n\n\n\n\n\nSep 4, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "weekly_dataviz/week_3_2024_09_16/index.html#how-many-hours-do-europeans-work-each-week",
+    "href": "weekly_dataviz/week_3_2024_09_16/index.html#how-many-hours-do-europeans-work-each-week",
+    "title": "DataViz 2024-09-16",
+    "section": "How Many Hours do Europeans Work Each Week?",
+    "text": "How Many Hours do Europeans Work Each Week?\nThis week’s DataViz is inspired by the RomanianDATA Tribe challenge for September 2024. The data set, sourced from Eurostat, includes information on the average number of actual weekly hours of work in the main job, by sex, age, professional status, full-time/part-time and occupation."
+  },
+  {
+    "objectID": "weekly_dataviz/week_3_2024_09_16/index.html#the-visualization",
+    "href": "weekly_dataviz/week_3_2024_09_16/index.html#the-visualization",
+    "title": "DataViz 2024-09-16",
+    "section": "The Visualization",
+    "text": "The Visualization\nFor this challenge, I explored the average working hours of full-time and part-time EU employees aged 20-64 from 2014 to 2023. The visualization uses small multiples plots arranged in a map formation to show EU countries’ average working hours over time.\n\nShow the code# Load packages\nlibrary(tidyverse)\nlibrary(geofacet)\nlibrary(ggtext)\n\nwindowsFonts(Georgia = windowsFont(\"Georgia\"))\n\n# Load data\ndata_set &lt;- read_csv(\"working_hours_eu.csv\")\n\neu_grid1 &lt;- eu_grid1[eu_grid1$name != \"United Kingdom\", ]\neu_grid1$name[eu_grid1$name == \"Czech Republic\"] &lt;- \"Czechia\"\n\npalette_worktime &lt;- c(\"Full-time\" = \"#950404FF\",\n                      \"Part-time\" = \"#0F542FFF\")\n\nbg_color &lt;- \"#FBFBF9\"\n\ntitle &lt;- paste0(\"How Many Hours do Europeans Work Each Week?\")\n\nsubtitle &lt;- paste0(\"The average weekly work hours for EU employees in 2023 was 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014. &lt;br&gt;In 2023, EU &lt;span style='color:#950404FF'&gt;&lt;b&gt;full-time&lt;/b&gt;&lt;/span&gt; employees worked an average of 39 hours per week, while &lt;span style='color:#0F542FFF'&gt;&lt;b&gt;part-time&lt;/b&gt;&lt;/span&gt; employees worked 21.7 hours. Romania had the highest average &lt;span style='color:#0F542FFF'&gt;&lt;b&gt;part-time&lt;/b&gt;&lt;/span&gt; hours, at 26.7.\")\n\n\nplot_data &lt;- data_set |&gt;\n  filter(worktime %in% c(\"Full-time\", \"Part-time\"),\n         sex == \"Total\") |&gt;\n  select(geo, year, worktime, values)\n\n\n\np &lt;- plot_data |&gt;\n  ggplot(aes(\n    x = year,\n    y = values,\n    color = worktime)\n    ) +\n  geom_line(size = 0.8) +\n  facet_geo(vars(geo),\n            grid = \"eu_grid1\") +\n  scale_x_continuous(breaks = seq(min(plot_data$year), max(plot_data$year), 3)) +\n  scale_color_manual(values = palette_worktime) +\n  labs(\n    x = NULL,\n    y = NULL,\n    title = title,\n    subtitle = str_wrap(subtitle, width = 60), \n    caption = str_glue(\"**Data:** Eurostat (lfsa_ewhais, 2024)\")\n  ) +\n  theme_minimal() +\n  theme(strip.text = element_text(family = \"Georgia\", size = 10),\n        panel.spacing = unit(1, \"lines\"),\n        axis.text.x = element_text(hjust = 1),\n        legend.position = \"none\",\n        panel.grid.minor = element_blank(),\n        axis.text = element_text(family = \"Georgia\",\n                             color = \"#414040\",\n                             size = 9,\n                             hjust = 0.5),\n        plot.title = element_markdown(color = \"#414040\", \n                              size = 22,\n                              family = \"Georgia\",\n                              face = \"bold\",\n                              margin = margin(0, 0, 12, 0)),\n        plot.title.position = \"plot\",\n        plot.subtitle = element_textbox_simple(size = 15,\n                                          vjust = 1,\n                                          margin = margin(0, 0, 12, 0),\n                                          color = \"#646369\",\n                                          family = \"Georgia\"),\n       plot.caption = element_textbox_simple(color = \"#828282\" ,\n                                    size = 10, \n                                    hjust = 0,\n                                    family = \"Georgia\",\n                                    margin = margin(12, 0,0, 0)),\n       plot.caption.position = \"plot\",\n       plot.margin = margin(10,10,10,10)\n        ) \n\nggsave(p, filename = \"working_hours_eu.png\", \n    height = 11, \n    width = 10.5,\n    bg = bg_color,\n    units = \"in\", \n    dpi = 300)"
+  },
+  {
+    "objectID": "weekly_dataviz/week_3_2024_09_16/index.html#tools",
+    "href": "weekly_dataviz/week_3_2024_09_16/index.html#tools",
+    "title": "DataViz 2024-09-16",
+    "section": "Tools",
+    "text": "Tools\nThis visualization was made using R and the packages:\n\n\nggplot21 - for creating data visualizations.\n\ngeofacet2- provides geofaceting functionality for ggplot2\n\nggtext3 - for text formatting in ggplot2"
+  },
+  {
+    "objectID": "weekly_dataviz/week_3_2024_09_16/index.html#footnotes",
+    "href": "weekly_dataviz/week_3_2024_09_16/index.html#footnotes",
+    "title": "DataViz 2024-09-16",
+    "section": "Footnotes",
+    "text": "Footnotes\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.↩︎\nHafen R (2023). geofacet: ‘ggplot2’ Faceting Utilities for Geographical Data. R package version 0.2.1, https://github.com/hafen/geofacet.↩︎\nWilke C, Wiernik B (2022). ggtext: Improved Text Rendering Support for ‘ggplot2’. R package version 0.1.2, https://CRAN.R-project.org/package=ggtext.↩︎"
   },
   {
     "objectID": "weekly_dataviz/week_1_2024_09__02/index.html#countries-with-the-most-holidays-2024",
@@ -298,14 +326,14 @@
     "href": "index.html#posts",
     "title": "Cozmina Secula",
     "section": "Posts",
-    "text": "Posts\n\n\n\n\n\n\n\n\n\n\n\nAnalyzing the Digital Skills Indicator in the Context of the EU Digital Decade (Part II)\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnalyzing the Digital Skills Indicator in the Context of the EU Digital Decade (Part I)\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe components of EU’s Digital Intensity Index (DII) in 2023\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nSee all posts \n\n\n\nWeekly DataViz\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-10-01\n\n\nFinancial Markets Historical Performance\n\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-26\n\n\nEU Enterprises and Data Analytics in 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-16\n\n\nHow Many Hours do Europeans Work Each Week?\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nSee all dataviz"
+    "text": "Posts\n\n\n\n\n\n\n\n\n\n\n\nAnalyzing the Digital Skills Indicator in the Context of the EU Digital Decade (Part II)\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnalyzing the Digital Skills Indicator in the Context of the EU Digital Decade (Part I)\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe components of EU’s Digital Intensity Index (DII) in 2023\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nSee all posts \n\n\n\nWeekly DataViz\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-26\n\n\nEU Enterprises and Data Analytics in 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-16\n\n\nHow Many Hours do Europeans Work Each Week?\n\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-10\n\n\nChild and Infant Mortality\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nSee all dataviz"
   },
   {
     "objectID": "index.html#weekly-dataviz",
     "href": "index.html#weekly-dataviz",
     "title": "Cozmina Secula",
     "section": "Weekly DataViz",
-    "text": "Weekly DataViz\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-10-01\n\n\nFinancial Markets Historical Performance\n\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-26\n\n\nEU Enterprises and Data Analytics in 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-16\n\n\nHow Many Hours do Europeans Work Each Week?\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nSee all dataviz"
+    "text": "Weekly DataViz\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-26\n\n\nEU Enterprises and Data Analytics in 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-16\n\n\nHow Many Hours do Europeans Work Each Week?\n\n\n\n\n\n\n\n\n\n\n\n\n\nDataViz 2024-09-10\n\n\nChild and Infant Mortality\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nSee all dataviz"
   },
   {
     "objectID": "posts/2023-10-11-summary-statistics-and-t-test/index.html#case-study",
@@ -609,55 +637,6 @@
     "text": "Footnotes\n\n\nSource: United Nations Inter-agency Group for Child Mortality Estimation (2023); Gapminder (2015) – with major processing by Our World in Data.↩︎\nhttps://cozmina-secula.shinyapps.io/child-mortality-rate/↩︎"
   },
   {
-    "objectID": "index.html#subscribe-to-receive-weekly-updates",
-    "href": "index.html#subscribe-to-receive-weekly-updates",
-    "title": "Cozmina Secula",
-    "section": "Subscribe to receive weekly updates",
-    "text": "Subscribe to receive weekly updates\n\n\n\nSubscribe to Our Newsletter\n\n\n\n&lt;label for=\"mce-EMAIL\"&gt;Email Address &lt;span class=\"asterisk\"&gt;*&lt;/span&gt;&lt;/label&gt;\n&lt;input type=\"email\" name=\"EMAIL\" class=\"required email\" id=\"mce-EMAIL\" required&gt;\n\n\n\n&lt;input type=\"text\" name=\"b_cc31bfae25ff34986ab933a62_16b95d1a75\" tabindex=\"-1\" value=\"\"&gt;\n\n\n\n&lt;input type=\"submit\" value=\"Subscribe\" name=\"subscribe\" id=\"mc-embedded-subscribe\" class=\"button\"&gt;"
-  },
-  {
-    "objectID": "weekly_dataviz/week_3_2024_09_16/index.html",
-    "href": "weekly_dataviz/week_3_2024_09_16/index.html",
-    "title": "Making sense of data",
-    "section": "",
-    "text": "Translate Widget"
-  },
-  {
-    "objectID": "weekly_dataviz/week_3_2024_09_16/index.html#how-many-hours-do-europeans-work-each-week",
-    "href": "weekly_dataviz/week_3_2024_09_16/index.html#how-many-hours-do-europeans-work-each-week",
-    "title": "DataViz 2024-09-16",
-    "section": "How Many Hours do Europeans Work Each Week?",
-    "text": "How Many Hours do Europeans Work Each Week?\nThis week’s DataViz is inspired by the RomanianDATA Tribe challenge for September 2024. The data set, sourced from Eurostat, includes information on the average number of actual weekly hours of work in the main job, by sex, age, professional status, full-time/part-time and occupation."
-  },
-  {
-    "objectID": "weekly_dataviz/week_3_2024_09_16/index.html#the-visualization",
-    "href": "weekly_dataviz/week_3_2024_09_16/index.html#the-visualization",
-    "title": "DataViz 2024-09-16",
-    "section": "The Visualization",
-    "text": "The Visualization\nFor this challenge, I explored the average working hours of full-time and part-time EU employees aged 20-64 from 2014 to 2023. The visualization uses small multiples plots arranged in a map formation to show EU countries’ average working hours over time.\n\nShow the code# Load packages\nlibrary(tidyverse)\nlibrary(geofacet)\nlibrary(ggtext)\n\nwindowsFonts(Georgia = windowsFont(\"Georgia\"))\n\n# Load data\ndata_set &lt;- read_csv(\"working_hours_eu.csv\")\n\neu_grid1 &lt;- eu_grid1[eu_grid1$name != \"United Kingdom\", ]\neu_grid1$name[eu_grid1$name == \"Czech Republic\"] &lt;- \"Czechia\"\n\npalette_worktime &lt;- c(\"Full-time\" = \"#950404FF\",\n                      \"Part-time\" = \"#0F542FFF\")\n\nbg_color &lt;- \"#FBFBF9\"\n\ntitle &lt;- paste0(\"How Many Hours do Europeans Work Each Week?\")\n\nsubtitle &lt;- paste0(\"The average weekly work hours for EU employees in 2023 was 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014. &lt;br&gt;In 2023, EU &lt;span style='color:#950404FF'&gt;&lt;b&gt;full-time&lt;/b&gt;&lt;/span&gt; employees worked an average of 39 hours per week, while &lt;span style='color:#0F542FFF'&gt;&lt;b&gt;part-time&lt;/b&gt;&lt;/span&gt; employees worked 21.7 hours. Romania had the highest average &lt;span style='color:#0F542FFF'&gt;&lt;b&gt;part-time&lt;/b&gt;&lt;/span&gt; hours, at 26.7.\")\n\n\nplot_data &lt;- data_set |&gt;\n  filter(worktime %in% c(\"Full-time\", \"Part-time\"),\n         sex == \"Total\") |&gt;\n  select(geo, year, worktime, values)\n\n\n\np &lt;- plot_data |&gt;\n  ggplot(aes(\n    x = year,\n    y = values,\n    color = worktime)\n    ) +\n  geom_line(size = 0.8) +\n  facet_geo(vars(geo),\n            grid = \"eu_grid1\") +\n  scale_x_continuous(breaks = seq(min(plot_data$year), max(plot_data$year), 3)) +\n  scale_color_manual(values = palette_worktime) +\n  labs(\n    x = NULL,\n    y = NULL,\n    title = title,\n    subtitle = str_wrap(subtitle, width = 60), \n    caption = str_glue(\"**Data:** Eurostat (lfsa_ewhais, 2024)\")\n  ) +\n  theme_minimal() +\n  theme(strip.text = element_text(family = \"Georgia\", size = 10),\n        panel.spacing = unit(1, \"lines\"),\n        axis.text.x = element_text(hjust = 1),\n        legend.position = \"none\",\n        panel.grid.minor = element_blank(),\n        axis.text = element_text(family = \"Georgia\",\n                             color = \"#414040\",\n                             size = 9,\n                             hjust = 0.5),\n        plot.title = element_markdown(color = \"#414040\", \n                              size = 22,\n                              family = \"Georgia\",\n                              face = \"bold\",\n                              margin = margin(0, 0, 12, 0)),\n        plot.title.position = \"plot\",\n        plot.subtitle = element_textbox_simple(size = 15,\n                                          vjust = 1,\n                                          margin = margin(0, 0, 12, 0),\n                                          color = \"#646369\",\n                                          family = \"Georgia\"),\n       plot.caption = element_textbox_simple(color = \"#828282\" ,\n                                    size = 10, \n                                    hjust = 0,\n                                    family = \"Georgia\",\n                                    margin = margin(12, 0,0, 0)),\n       plot.caption.position = \"plot\",\n       plot.margin = margin(10,10,10,10)\n        ) \n\nggsave(p, filename = \"working_hours_eu.png\", \n    height = 11, \n    width = 10.5,\n    bg = bg_color,\n    units = \"in\", \n    dpi = 300)"
-  },
-  {
-    "objectID": "weekly_dataviz/week_3_2024_09_16/index.html#tools",
-    "href": "weekly_dataviz/week_3_2024_09_16/index.html#tools",
-    "title": "DataViz 2024-09-16",
-    "section": "Tools",
-    "text": "Tools\nThis visualization was made using R and the packages:\n\n\nggplot21 - for creating data visualizations.\n\ngeofacet2- provides geofaceting functionality for ggplot2\n\nggtext3 - for text formatting in ggplot2"
-  },
-  {
-    "objectID": "weekly_dataviz/week_3_2024_09_16/index.html#footnotes",
-    "href": "weekly_dataviz/week_3_2024_09_16/index.html#footnotes",
-    "title": "DataViz 2024-09-16",
-    "section": "Footnotes",
-    "text": "Footnotes\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.↩︎\nHafen R (2023). geofacet: ‘ggplot2’ Faceting Utilities for Geographical Data. R package version 0.2.1, https://github.com/hafen/geofacet.↩︎\nWilke C, Wiernik B (2022). ggtext: Improved Text Rendering Support for ‘ggplot2’. R package version 0.1.2, https://CRAN.R-project.org/package=ggtext.↩︎"
-  },
-  {
-    "objectID": "weekly_dataviz/week_3_2024_09_16/index.html#insights-from-the-data",
-    "href": "weekly_dataviz/week_3_2024_09_16/index.html#insights-from-the-data",
-    "title": "DataViz 2024-09-16",
-    "section": "Insights from the Data",
-    "text": "Insights from the Data\n\nThe average weekly work hours for EU employees in 2023 were 36.1. Only in Cyprus, Romania, France, and Lithuania, employees worked more hours in 2023 than in 2014.\nIn 2023, full-time employees worked an average of 39 hours per week, while part-time employees worked 21.7 hours.\nRomania had the highest average part-time hours (26.7) in 2023 and the smallest full-time vs part-time difference (13.2)."
-  },
-  {
     "objectID": "weekly_dataviz/week_4_2024_09_26/index.html#eu-enterprises-and-data-analytics-in-2023",
     "href": "weekly_dataviz/week_4_2024_09_26/index.html#eu-enterprises-and-data-analytics-in-2023",
     "title": "DataViz 2024-09-26",
@@ -691,12 +670,5 @@
     "title": "DataViz 2024-09-26",
     "section": "Footnotes",
     "text": "Footnotes\n\nWickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to the tidyverse.” Journal of Open Source Software, 4(43), 1686. doi:10.21105/joss.01686 https://doi.org/10.21105/joss.01686.↩︎\nSlowikowski K (2023). ggrepel: Automatically Position Non-Overlapping Text Labels with ‘ggplot2’. R package version 0.9.4, https://CRAN.R-project.org/package=ggrepel.↩︎\nWilke C, Wiernik B (2022). ggtext: Improved Text Rendering Support for ‘ggplot2’. R package version 0.1.2, https://CRAN.R-project.org/package=ggtext.↩︎\nEdwards S (2023). lemon: Freshing Up your ‘ggplot2’ Plots. R package version 0.4.7, https://CRAN.R-project.org/package=lemon.↩︎\nQiu Y, details. aotisSfAf (2023). showtext: Using Fonts More Easily in R Graphs. R package version 0.9-6, https://CRAN.R-project.org/package=showtext.↩︎"
-  },
-  {
-    "objectID": "weekly_dataviz/week_5_2024_10_01/index.html#financial-markets-historical-performance",
-    "href": "weekly_dataviz/week_5_2024_10_01/index.html#financial-markets-historical-performance",
-    "title": "DataViz 2024-10-01",
-    "section": "Financial Markets Historical Performance",
-    "text": "Financial Markets Historical Performance\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 800\n\nlibrary(tidyverse)\nlibrary(janitor)\nlibrary(plotly)\nlibrary(shinyWidgets)\nlibrary(ggrepel)\nlibrary(shiny)\n\n\nraw_df &lt;- read_csv(\"stock_indices_performance.csv\")\ndf_returns_p &lt;- raw_df |&gt;\n  pivot_longer(cols = c(\"EURO STOXX 50\",\"FTSE 100\", \"MSCI China\", \"Nasdaq-100\", \"NYSE Arca Gold Bugs\", \"S&P 500\"),\n               names_to = \"index\",\n               values_to = \"performance\") |&gt;\n  mutate(performance = as.numeric(str_remove(performance, \"%\")))|&gt;\n  clean_names()\n\n\n# Customize colors for the indices\nindex_colors &lt;- c(\n  \"EURO STOXX 50\" = \"#174A7E\",\n  \"FTSE 100\" = \"#c97b1d\",\n  \"MSCI China\" = \"#800000\",\n  \"Nasdaq-100\" = \"#95B3D7\",\n  \"NYSE Arca Gold Bugs\" = \"#fdbf11\",\n  \"S&P 500\" = \"#0C8040\"\n)\n\nsource(\"2024_09_30/theme_rdv.R\")\n\n# Define indices\nindex &lt;- unique(df_returns_p$index)\n\n\n# Define UI\nui &lt;- fluidPage(\n  # Main title and subtitle together\n  fluidRow(\n    column(12,\n           h1(\"Stock Index Annual Returns (2009-2023)\", style = \"font-family: Lato; font-size: 30px;\"),  # Main title\n           h4(HTML(\"EuroStoxx 50, FTSE 100, MSCI China, Nasdaq-100, NYSE Arca Gold BUGS,&lt;br&gt; and S&P 500: annual returns over the past 14 years.\"), style = \"font-family: Lato; font-size: 20px;\") # Subtitle with styling\n    )\n  ),\n\n  # Set the sidebar to be on the right side\n  sidebarLayout(\n    mainPanel(\n      plotlyOutput(\"plot\"),  # Plot on the left side\n\n      # Add the source information below the plot\n      fluidRow(\n        column(12,\n               p(\n                 \"Data source: \",\n                 tags$a(href = \"https://data.world/makeovermonday/financial-markets-historical-performance\", \"Makeover Monday/Financial Markets Historical Performance\"),  # Example source link\n                 style = \"font-size: 12px; color: grey; margin-top: 20px;\"),\n               br(),\n               \"SOURCE & ARTICLE:\",\n               tags$a(href = \"https://curvo.eu/backtest/en/compare-indexes/euro-stoxx-50-vs-ftse-100-vs-msci-china-vs-nasdaq-100-vs-nyse-arca-gold-bugs-vs-sp-500?currency=usd#annual-returns\", \"EURO STOXX 50 vs FTSE 100 vs MSCI China vs Nasdaq-100 vs NYSE Arca &lt;br&gt; Gold BUGS vs S&P 500: historical performance\")\n        )\n      )\n    ),\n\n    sidebarPanel(\n      # MultiInput with indices names only\n      multiInput(\n        inputId = \"indices\",\n        label = \"Select Index:\",\n        choices = index,  # Only index names\n        selected = c(\"Nasdaq-100\", \"S&P 500\")\n      ),\n      # Slider for year range input\n      sliderInput(\"yearRange\", \"Year Range:\",\n                  min = min(df_returns_p$year),\n                  max = max(df_returns_p$year),\n                  value = c(min(df_returns_p$year),\n                            max(df_returns_p$year)),\n                  step = 1)\n    )\n  )\n)\n\n# Define server logic\nserver &lt;- function(input, output) {\n\n  # Ensure the year column is numeric (if it's a factor, this would be problematic)\n  df_returns_p$year &lt;- as.numeric(as.character(df_returns_p$year))\n\n  filtered_data &lt;- reactive({\n    df_returns_p |&gt;\n      filter(year &gt;= input$yearRange[1] & year &lt;= input$yearRange[2]) |&gt;\n      filter(index %in% input$indices)\n  })\n\n  output$plot &lt;- renderPlotly({\n    # Create ggplot object\n    p2 &lt;- ggplot(filtered_data(),\n                aes(y = performance,\n                    x = year,\n                    color = index)) +\n      geom_line(aes(group = index, colour = index), size = 0.4) +\n      geom_point(size = 1.9) +\n      geom_hline(yintercept = 0,\n                 colour = \"#000000\",\n                 linewidth = 0.5) +\n      scale_color_manual(values = index_colors) +\n      scale_y_continuous(limits = c(-70, 70),\n                         breaks = seq(-70, 70, by = 10),\n                         labels = scales::percent_format(scale = 1)) +\n      scale_x_continuous(limits = c(2009, 2023),\n                         breaks = seq(2009, 2023, by = 2)) +\n      labs(\n        title = \"\",\n        x = \"\",\n        y = \"\"\n      ) +\n      theme_rdv() +\n      theme(legend.position = \"none\")\n    # Convert ggplot object to plotly object\n    ggplotly(p2, tooltip = c(\"index\", \"year\", \"performance\"))\n  })\n}\n\n# Run the application\nshinyApp(ui = ui, server = server)"
   }
 ]

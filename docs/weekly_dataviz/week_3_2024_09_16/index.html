@@ -96,7 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="styles.css">
+}</script>
 <meta property="og:title" content="DataViz 2024-09-16 – Making sense of data">
 <meta property="og:description" content="How Many Hours do Europeans Work Each Week?">
 <meta property="og:image" content="working_hours_eu.png">
@@ -183,7 +183,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><p><br></p>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Translate Widget</title>
+<div id="google_translate_element"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+    </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script><p><br></p>
 <section id="how-many-hours-do-europeans-work-each-week" class="level2"><h2 class="anchored" data-anchor-id="how-many-hours-do-europeans-work-each-week"><em>How Many Hours do Europeans Work Each Week?</em></h2>
 <p>This week’s DataViz is inspired by the <a href="https://www.linkedin.com/company/romaniandata/posts/?feedView=all">RomanianDATA Tribe</a> challenge for September 2024. The data set, sourced from <a href="https://ec.europa.eu/eurostat/databrowser/product/page/LFSA_EWHAIS">Eurostat</a>, includes information on the average number of actual weekly hours of work in the main job, by sex, age, professional status, full-time/part-time and occupation.</p>
 </section><section id="the-visualization" class="level2"><h2 class="anchored" data-anchor-id="the-visualization">The Visualization</h2>
