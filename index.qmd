@@ -31,18 +31,6 @@ listing:
   fields: [title, image]
   max-items: 3
   image-height: 300px
-- id: weekly_dataviz
-  contents:
-    - "./weekly_dataviz/*/index.qmd"
-  sort: date desc
-  type: grid
-  grid-columns: 3
-  categories: false
-  sort-ui: false
-  filter-ui: false
-  fields: [title, description, image]
-  max-items: 3  
-  image-height: 300px
 
 comments: false
 ---
@@ -62,14 +50,5 @@ I am passionate about making sense of data for better decisions and actions. <br
 
 ::: {style="text-align: right"}
 <p><a href="posts.qmd" class="btn btn-lg" style="background-color: #eee; color: black; ">See all posts </a></p>
-:::
-
-## Weekly DataViz
-
-::: {#weekly_dataviz}
-:::
-
-::: {style="text-align: right"}
-<p><a href="weekly_dataviz.qmd" class="btn btn-lg" style="background-color: #eee; color: black;">See all dataviz </a></p>
 :::
 :::

@@ -122,10 +122,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../posts.html"> 
 <span class="menu-text">Posts</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../weekly_dataviz.html"> 
-<span class="menu-text">Weekly DataViz</span></a>
-  </li>  
 </ul>
 <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item compact">
@@ -1238,511 +1234,508 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**How has each country's DSI score changed from 2021 to 2023?**</span>
 <span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prerequisites</span></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### Packages</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load packages</span></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggbeeswarm)</span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reactable)</span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmltools)</span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtext)</span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prerequisites</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### Packages</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load packages</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggbeeswarm)</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reactable)</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmltools)</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtext)</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="fu">windowsFonts</span>(<span class="st">"Palatino linotype"</span> <span class="ot">=</span> <span class="fu">windowsFont</span>(<span class="st">"Palatino linotype"</span>))</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="fu">windowsFonts</span>(<span class="st">"Palatino linotype"</span> <span class="ot">=</span> <span class="fu">windowsFont</span>(<span class="st">"Palatino linotype"</span>))</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.width =</span> <span class="dv">7</span>,        </span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.asp =</span> <span class="fl">0.618</span>,      </span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.retina =</span> <span class="dv">3</span>,       </span>
-<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.align =</span> <span class="st">"center"</span>, </span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>  <span class="at">dpi =</span> <span class="dv">300</span>             </span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.width =</span> <span class="dv">7</span>,        </span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.asp =</span> <span class="fl">0.618</span>,      </span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.retina =</span> <span class="dv">3</span>,       </span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.align =</span> <span class="st">"center"</span>, </span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>  <span class="at">dpi =</span> <span class="dv">300</span>             </span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Set</span></span>
 <span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Set</span></span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>I will use the data set already cleaned in <span class="co">[</span><span class="ot">EDA (part I)</span><span class="co">]</span>(https://cozminasecula.github.io/blog/posts/digital_skills_indicator_eda(I)/).</span>
 <span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>I will use the data set already cleaned in <span class="co">[</span><span class="ot">EDA (part I)</span><span class="co">]</span>(https://cozminasecula.github.io/blog/posts/digital_skills_indicator_eda(I)/).</span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load data </span></span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"eda_data.csv"</span>)</span>
-<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a><span class="fu">## **What does the distribution of DSI scores in 2023 look like compared to 2021?**</span></span>
-<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a><span class="fu">### Summary Statistics</span></span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: prepare data </span></span>
-<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a>digital_skills_summary <span class="ot">&lt;-</span> raw_data <span class="sc">|&gt;</span></span>
-<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Keep only "at least basic skills" for Overall Digital Skills </span></span>
-<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>indicator <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Individuals with above basic overall digital skills (all five component indicators are at above basic level)"</span>,</span>
-<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"Individuals with basic overall digital skills (all five component indicators are at basic or above basic level, without being all above basic)"</span></span>
-<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>)) <span class="sc">|&gt;</span></span>
-<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Extract `digital skills` and `indicator level` from the `indicator` column</span></span>
-<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a> <span class="fu">mutate</span>(</span>
-<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">digital_skills =</span> <span class="fu">case_when</span>(</span>
-<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"communication and collaboration"</span>) <span class="sc">~</span> <span class="st">"Communication and Collaboration Skills"</span>,</span>
-<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"digital content creation"</span>) <span class="sc">~</span> <span class="st">"Digital Content Creation Skills"</span>,</span>
-<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"information and data literacy"</span>) <span class="sc">~</span> <span class="st">"Information and Data Literacy Skills"</span>,</span>
-<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"overall digital skills"</span>) <span class="sc">~</span> <span class="st">"Overall Digital Skills"</span>,</span>
-<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"problem solving skills"</span>) <span class="sc">~</span> <span class="st">"Problem Solving Skills"</span>,</span>
-<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"safety skills"</span>) <span class="sc">~</span> <span class="st">"Safety Skills"</span></span>
-<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a>    <span class="at">indicator_level =</span> <span class="fu">case_when</span>(</span>
-<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Special case for overall digital skills with at least basic level</span></span>
-<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"basic overall digital skills </span><span class="sc">\\</span><span class="st">(all five component indicators are at basic or above basic level</span><span class="sc">\\</span><span class="st">)"</span>) <span class="sc">~</span> </span>
-<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a>        <span class="st">"At least basic skills"</span>,</span>
-<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a>      <span class="co"># General cases</span></span>
-<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"basic or above basic"</span>) <span class="sc">~</span> <span class="st">"Basic or above basic skills"</span>,</span>
-<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"above basic"</span>) <span class="sc">~</span> <span class="st">"Above basic skills"</span>,</span>
-<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"basic"</span>) <span class="sc">~</span> <span class="st">"Basic skills"</span>)</span>
-<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load data </span></span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"eda_data.csv"</span>)</span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## **What does the distribution of DSI scores in 2023 look like compared to 2021?**</span></span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="fu">### Summary Statistics</span></span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: prepare data </span></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a>digital_skills_summary <span class="ot">&lt;-</span> raw_data <span class="sc">|&gt;</span></span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Keep only "at least basic skills" for Overall Digital Skills </span></span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>indicator <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Individuals with above basic overall digital skills (all five component indicators are at above basic level)"</span>,</span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"Individuals with basic overall digital skills (all five component indicators are at basic or above basic level, without being all above basic)"</span></span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a>)) <span class="sc">|&gt;</span></span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Extract `digital skills` and `indicator level` from the `indicator` column</span></span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a> <span class="fu">mutate</span>(</span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>    <span class="at">digital_skills =</span> <span class="fu">case_when</span>(</span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"communication and collaboration"</span>) <span class="sc">~</span> <span class="st">"Communication and Collaboration Skills"</span>,</span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"digital content creation"</span>) <span class="sc">~</span> <span class="st">"Digital Content Creation Skills"</span>,</span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"information and data literacy"</span>) <span class="sc">~</span> <span class="st">"Information and Data Literacy Skills"</span>,</span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"overall digital skills"</span>) <span class="sc">~</span> <span class="st">"Overall Digital Skills"</span>,</span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"problem solving skills"</span>) <span class="sc">~</span> <span class="st">"Problem Solving Skills"</span>,</span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"safety skills"</span>) <span class="sc">~</span> <span class="st">"Safety Skills"</span></span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a>    <span class="at">indicator_level =</span> <span class="fu">case_when</span>(</span>
+<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Special case for overall digital skills with at least basic level</span></span>
+<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"basic overall digital skills </span><span class="sc">\\</span><span class="st">(all five component indicators are at basic or above basic level</span><span class="sc">\\</span><span class="st">)"</span>) <span class="sc">~</span> </span>
+<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a>        <span class="st">"At least basic skills"</span>,</span>
+<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a>      <span class="co"># General cases</span></span>
+<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"basic or above basic"</span>) <span class="sc">~</span> <span class="st">"Basic or above basic skills"</span>,</span>
+<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"above basic"</span>) <span class="sc">~</span> <span class="st">"Above basic skills"</span>,</span>
+<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a>      <span class="fu">str_detect</span>(indicator, <span class="st">"basic"</span>) <span class="sc">~</span> <span class="st">"Basic skills"</span>)</span>
+<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot Data (I)</span></span>
 <span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot Data (I)</span></span>
-<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a>country_codes <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a>  <span class="at">Country =</span> <span class="fu">c</span>(<span class="st">"Austria"</span>, <span class="st">"Belgium"</span>, <span class="st">"Bulgaria"</span>, <span class="st">"Croatia"</span>, <span class="st">"Cyprus"</span>, <span class="st">"Czechia"</span>, <span class="st">"Denmark"</span>, </span>
-<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Estonia"</span>, <span class="st">"Finland"</span>, <span class="st">"France"</span>, <span class="st">"Germany"</span>, <span class="st">"Greece"</span>, <span class="st">"Hungary"</span>, <span class="st">"Ireland"</span>, </span>
-<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Italy"</span>, <span class="st">"Latvia"</span>, <span class="st">"Lithuania"</span>, <span class="st">"Luxembourg"</span>, <span class="st">"Malta"</span>, <span class="st">"Netherlands"</span>, </span>
-<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Poland"</span>, <span class="st">"Portugal"</span>, <span class="st">"Romania"</span>, <span class="st">"Slovakia"</span>, <span class="st">"Slovenia"</span>, <span class="st">"Spain"</span>, <span class="st">"Sweden"</span>, <span class="st">"EU_27"</span>),</span>
-<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a>  <span class="at">ISO_Code =</span> <span class="fu">c</span>(<span class="st">"AT"</span>, <span class="st">"BE"</span>, <span class="st">"BG"</span>, <span class="st">"HR"</span>, <span class="st">"CY"</span>, <span class="st">"CZ"</span>, <span class="st">"DK"</span>, <span class="st">"EE"</span>, <span class="st">"FI"</span>, <span class="st">"FR"</span>, <span class="st">"DE"</span>, </span>
-<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a>               <span class="st">"GR"</span>, <span class="st">"HU"</span>, <span class="st">"IE"</span>, <span class="st">"IT"</span>, <span class="st">"LV"</span>, <span class="st">"LT"</span>, <span class="st">"LU"</span>, <span class="st">"MT"</span>, <span class="st">"NL"</span>, <span class="st">"PL"</span>, <span class="st">"PT"</span>, <span class="st">"RO"</span>, </span>
-<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a>               <span class="st">"SK"</span>, <span class="st">"SI"</span>, <span class="st">"ES"</span>, <span class="st">"SE"</span>, <span class="st">"EU"</span>)</span>
-<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a>dsi <span class="ot">&lt;-</span> digital_skills_summary <span class="sc">|&gt;</span></span>
-<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(digital_skills <span class="sc">==</span> <span class="st">"Overall Digital Skills"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, country, value) <span class="sc">|&gt;</span></span>
-<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, <span class="at">values_from =</span> value) <span class="sc">|&gt;</span></span>
-<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
-<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">2021</span><span class="st">`</span>,</span>
-<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">2023</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">2023</span><span class="st">`</span>,</span>
-<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a>    <span class="at">Country =</span> country</span>
-<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Change =</span> <span class="st">`</span><span class="at">2023</span><span class="st">`</span> <span class="sc">-</span> <span class="st">`</span><span class="at">2021</span><span class="st">`</span>,</span>
-<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="st">`</span><span class="at">2021</span><span class="st">`</span>, <span class="dv">1</span>),</span>
-<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">2023</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="st">`</span><span class="at">2023</span><span class="st">`</span>, <span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(country_codes, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Country"</span> <span class="ot">=</span> <span class="st">"Country"</span>))</span>
+<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a>country_codes <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a>  <span class="at">Country =</span> <span class="fu">c</span>(<span class="st">"Austria"</span>, <span class="st">"Belgium"</span>, <span class="st">"Bulgaria"</span>, <span class="st">"Croatia"</span>, <span class="st">"Cyprus"</span>, <span class="st">"Czechia"</span>, <span class="st">"Denmark"</span>, </span>
+<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Estonia"</span>, <span class="st">"Finland"</span>, <span class="st">"France"</span>, <span class="st">"Germany"</span>, <span class="st">"Greece"</span>, <span class="st">"Hungary"</span>, <span class="st">"Ireland"</span>, </span>
+<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Italy"</span>, <span class="st">"Latvia"</span>, <span class="st">"Lithuania"</span>, <span class="st">"Luxembourg"</span>, <span class="st">"Malta"</span>, <span class="st">"Netherlands"</span>, </span>
+<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Poland"</span>, <span class="st">"Portugal"</span>, <span class="st">"Romania"</span>, <span class="st">"Slovakia"</span>, <span class="st">"Slovenia"</span>, <span class="st">"Spain"</span>, <span class="st">"Sweden"</span>, <span class="st">"EU_27"</span>),</span>
+<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a>  <span class="at">ISO_Code =</span> <span class="fu">c</span>(<span class="st">"AT"</span>, <span class="st">"BE"</span>, <span class="st">"BG"</span>, <span class="st">"HR"</span>, <span class="st">"CY"</span>, <span class="st">"CZ"</span>, <span class="st">"DK"</span>, <span class="st">"EE"</span>, <span class="st">"FI"</span>, <span class="st">"FR"</span>, <span class="st">"DE"</span>, </span>
+<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a>               <span class="st">"GR"</span>, <span class="st">"HU"</span>, <span class="st">"IE"</span>, <span class="st">"IT"</span>, <span class="st">"LV"</span>, <span class="st">"LT"</span>, <span class="st">"LU"</span>, <span class="st">"MT"</span>, <span class="st">"NL"</span>, <span class="st">"PL"</span>, <span class="st">"PT"</span>, <span class="st">"RO"</span>, </span>
+<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a>               <span class="st">"SK"</span>, <span class="st">"SI"</span>, <span class="st">"ES"</span>, <span class="st">"SE"</span>, <span class="st">"EU"</span>)</span>
+<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a>dsi <span class="ot">&lt;-</span> digital_skills_summary <span class="sc">|&gt;</span></span>
+<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(digital_skills <span class="sc">==</span> <span class="st">"Overall Digital Skills"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, country, value) <span class="sc">|&gt;</span></span>
+<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, <span class="at">values_from =</span> value) <span class="sc">|&gt;</span></span>
+<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">2021</span><span class="st">`</span>,</span>
+<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">2023</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">2023</span><span class="st">`</span>,</span>
+<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a>    <span class="at">Country =</span> country</span>
+<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Change =</span> <span class="st">`</span><span class="at">2023</span><span class="st">`</span> <span class="sc">-</span> <span class="st">`</span><span class="at">2021</span><span class="st">`</span>,</span>
+<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="st">`</span><span class="at">2021</span><span class="st">`</span>, <span class="dv">1</span>),</span>
+<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">2023</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="st">`</span><span class="at">2023</span><span class="st">`</span>, <span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(country_codes, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Country"</span> <span class="ot">=</span> <span class="st">"Country"</span>))</span>
+<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot Longer</span></span>
 <span id="cb6-141"><a href="#cb6-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot Longer</span></span>
-<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a>dsi_longer <span class="ot">&lt;-</span> dsi <span class="sc">|&gt;</span></span>
-<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">`</span><span class="at">2021</span><span class="st">`</span><span class="sc">:</span> <span class="st">`</span><span class="at">2023</span><span class="st">`</span>,</span>
-<span id="cb6-147"><a href="#cb6-147" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
-<span id="cb6-148"><a href="#cb6-148" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Country, year, value)</span>
-<span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a>dsi_longer_summary <span class="ot">&lt;-</span> dsi_longer <span class="sc">|&gt;</span></span>
-<span id="cb6-152"><a href="#cb6-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">!=</span> <span class="st">"EU"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
-<span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb6-155"><a href="#cb6-155" aria-hidden="true" tabindex="-1"></a>    <span class="at">count =</span> <span class="fu">n</span>(),</span>
-<span id="cb6-156"><a href="#cb6-156" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">round</span>(<span class="fu">mean</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>),</span>
-<span id="cb6-157"><a href="#cb6-157" aria-hidden="true" tabindex="-1"></a>    <span class="at">median =</span> <span class="fu">round</span>(<span class="fu">median</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>),</span>
-<span id="cb6-158"><a href="#cb6-158" aria-hidden="true" tabindex="-1"></a>    <span class="at">minimum =</span> <span class="fu">min</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb6-159"><a href="#cb6-159" aria-hidden="true" tabindex="-1"></a>    <span class="at">maximum =</span> <span class="fu">max</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb6-160"><a href="#cb6-160" aria-hidden="true" tabindex="-1"></a>    <span class="at">std_dev =</span> <span class="fu">round</span>(<span class="fu">sd</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),<span class="dv">2</span>),</span>
-<span id="cb6-161"><a href="#cb6-161" aria-hidden="true" tabindex="-1"></a>    <span class="at">iqr =</span> <span class="fu">round</span>(<span class="fu">IQR</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),<span class="dv">2</span>)</span>
-<span id="cb6-162"><a href="#cb6-162" aria-hidden="true" tabindex="-1"></a>  ) </span>
-<span id="cb6-163"><a href="#cb6-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-164"><a href="#cb6-164" aria-hidden="true" tabindex="-1"></a>dsi_longer_summary <span class="sc">|&gt;</span></span>
-<span id="cb6-165"><a href="#cb6-165" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Summary Statistics"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-166"><a href="#cb6-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Palatino linotype"</span>)</span>
-<span id="cb6-167"><a href="#cb6-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-168"><a href="#cb6-168" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-169"><a href="#cb6-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-170"><a href="#cb6-170" aria-hidden="true" tabindex="-1"></a><span class="fu">### Visualizing Distribution</span></span>
-<span id="cb6-171"><a href="#cb6-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-174"><a href="#cb6-174" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-175"><a href="#cb6-175" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: data viz distribution</span></span>
-<span id="cb6-176"><a href="#cb6-176" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-177"><a href="#cb6-177" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb6-178"><a href="#cb6-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a>dsi_longer <span class="ot">&lt;-</span> dsi <span class="sc">|&gt;</span></span>
+<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">`</span><span class="at">2021</span><span class="st">`</span><span class="sc">:</span> <span class="st">`</span><span class="at">2023</span><span class="st">`</span>,</span>
+<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Country, year, value)</span>
+<span id="cb6-147"><a href="#cb6-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-148"><a href="#cb6-148" aria-hidden="true" tabindex="-1"></a>dsi_longer_summary <span class="ot">&lt;-</span> dsi_longer <span class="sc">|&gt;</span></span>
+<span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Country <span class="sc">!=</span> <span class="st">"EU"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
+<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb6-152"><a href="#cb6-152" aria-hidden="true" tabindex="-1"></a>    <span class="at">count =</span> <span class="fu">n</span>(),</span>
+<span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">round</span>(<span class="fu">mean</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>),</span>
+<span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a>    <span class="at">median =</span> <span class="fu">round</span>(<span class="fu">median</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>),</span>
+<span id="cb6-155"><a href="#cb6-155" aria-hidden="true" tabindex="-1"></a>    <span class="at">minimum =</span> <span class="fu">min</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb6-156"><a href="#cb6-156" aria-hidden="true" tabindex="-1"></a>    <span class="at">maximum =</span> <span class="fu">max</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-157"><a href="#cb6-157" aria-hidden="true" tabindex="-1"></a>    <span class="at">std_dev =</span> <span class="fu">round</span>(<span class="fu">sd</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),<span class="dv">2</span>),</span>
+<span id="cb6-158"><a href="#cb6-158" aria-hidden="true" tabindex="-1"></a>    <span class="at">iqr =</span> <span class="fu">round</span>(<span class="fu">IQR</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),<span class="dv">2</span>)</span>
+<span id="cb6-159"><a href="#cb6-159" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb6-160"><a href="#cb6-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-161"><a href="#cb6-161" aria-hidden="true" tabindex="-1"></a>dsi_longer_summary <span class="sc">|&gt;</span></span>
+<span id="cb6-162"><a href="#cb6-162" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Summary Statistics"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-163"><a href="#cb6-163" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Palatino linotype"</span>)</span>
+<span id="cb6-164"><a href="#cb6-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-165"><a href="#cb6-165" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-166"><a href="#cb6-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-167"><a href="#cb6-167" aria-hidden="true" tabindex="-1"></a><span class="fu">### Visualizing Distribution</span></span>
+<span id="cb6-168"><a href="#cb6-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-171"><a href="#cb6-171" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-172"><a href="#cb6-172" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: data viz distribution</span></span>
+<span id="cb6-173"><a href="#cb6-173" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb6-174"><a href="#cb6-174" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb6-175"><a href="#cb6-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-176"><a href="#cb6-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-177"><a href="#cb6-177" aria-hidden="true" tabindex="-1"></a>year_color <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"#33645FB3"</span>,</span>
+<span id="cb6-178"><a href="#cb6-178" aria-hidden="true" tabindex="-1"></a>                <span class="st">`</span><span class="at">2023</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"#9D1B1FB3"</span>) </span>
 <span id="cb6-179"><a href="#cb6-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-180"><a href="#cb6-180" aria-hidden="true" tabindex="-1"></a>year_color <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"#33645FB3"</span>,</span>
-<span id="cb6-181"><a href="#cb6-181" aria-hidden="true" tabindex="-1"></a>                <span class="st">`</span><span class="at">2023</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"#9D1B1FB3"</span>) </span>
-<span id="cb6-182"><a href="#cb6-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-183"><a href="#cb6-183" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to find the first two and last two values </span></span>
-<span id="cb6-184"><a href="#cb6-184" aria-hidden="true" tabindex="-1"></a>find_first_last <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
-<span id="cb6-185"><a href="#cb6-185" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">|&gt;</span></span>
-<span id="cb6-186"><a href="#cb6-186" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
-<span id="cb6-187"><a href="#cb6-187" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(value) <span class="sc">|&gt;</span></span>
-<span id="cb6-188"><a href="#cb6-188" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, (<span class="fu">n</span>() <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">:</span><span class="fu">n</span>())) <span class="sc">|&gt;</span></span>
-<span id="cb6-189"><a href="#cb6-189" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Country, year, value)</span>
-<span id="cb6-190"><a href="#cb6-190" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-191"><a href="#cb6-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-192"><a href="#cb6-192" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to label specific countries</span></span>
-<span id="cb6-193"><a href="#cb6-193" aria-hidden="true" tabindex="-1"></a>label_specific_countries <span class="ot">&lt;-</span> <span class="cf">function</span>(df, country_list) {</span>
-<span id="cb6-194"><a href="#cb6-194" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">|&gt;</span></span>
-<span id="cb6-195"><a href="#cb6-195" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Country <span class="sc">%in%</span> country_list) <span class="sc">|&gt;</span></span>
-<span id="cb6-196"><a href="#cb6-196" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Country, year, value)</span>
-<span id="cb6-197"><a href="#cb6-197" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-180"><a href="#cb6-180" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to find the first two and last two values </span></span>
+<span id="cb6-181"><a href="#cb6-181" aria-hidden="true" tabindex="-1"></a>find_first_last <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
+<span id="cb6-182"><a href="#cb6-182" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">|&gt;</span></span>
+<span id="cb6-183"><a href="#cb6-183" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
+<span id="cb6-184"><a href="#cb6-184" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(value) <span class="sc">|&gt;</span></span>
+<span id="cb6-185"><a href="#cb6-185" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, (<span class="fu">n</span>() <span class="sc">-</span> <span class="dv">1</span>)<span class="sc">:</span><span class="fu">n</span>())) <span class="sc">|&gt;</span></span>
+<span id="cb6-186"><a href="#cb6-186" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Country, year, value)</span>
+<span id="cb6-187"><a href="#cb6-187" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-188"><a href="#cb6-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-189"><a href="#cb6-189" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to label specific countries</span></span>
+<span id="cb6-190"><a href="#cb6-190" aria-hidden="true" tabindex="-1"></a>label_specific_countries <span class="ot">&lt;-</span> <span class="cf">function</span>(df, country_list) {</span>
+<span id="cb6-191"><a href="#cb6-191" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">|&gt;</span></span>
+<span id="cb6-192"><a href="#cb6-192" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Country <span class="sc">%in%</span> country_list) <span class="sc">|&gt;</span></span>
+<span id="cb6-193"><a href="#cb6-193" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Country, year, value)</span>
+<span id="cb6-194"><a href="#cb6-194" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-195"><a href="#cb6-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-196"><a href="#cb6-196" aria-hidden="true" tabindex="-1"></a><span class="co"># Find first two and last two values </span></span>
+<span id="cb6-197"><a href="#cb6-197" aria-hidden="true" tabindex="-1"></a>first_last <span class="ot">&lt;-</span> <span class="fu">find_first_last</span>(dsi_longer)</span>
 <span id="cb6-198"><a href="#cb6-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-199"><a href="#cb6-199" aria-hidden="true" tabindex="-1"></a><span class="co"># Find first two and last two values </span></span>
-<span id="cb6-200"><a href="#cb6-200" aria-hidden="true" tabindex="-1"></a>first_last <span class="ot">&lt;-</span> <span class="fu">find_first_last</span>(dsi_longer)</span>
-<span id="cb6-201"><a href="#cb6-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-202"><a href="#cb6-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-203"><a href="#cb6-203" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsi_longer,</span>
-<span id="cb6-204"><a href="#cb6-204" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">y =</span> year, <span class="at">color =</span> year)) <span class="sc">+</span>  </span>
-<span id="cb6-205"><a href="#cb6-205" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_quasirandom</span>(<span class="at">orientation =</span> <span class="cn">NULL</span>, </span>
-<span id="cb6-206"><a href="#cb6-206" aria-hidden="true" tabindex="-1"></a>                   <span class="at">varwidth =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb6-207"><a href="#cb6-207" aria-hidden="true" tabindex="-1"></a>                   <span class="at">dodge.width =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
-<span id="cb6-208"><a href="#cb6-208" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(</span>
-<span id="cb6-209"><a href="#cb6-209" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">group =</span> year), <span class="at">fun =</span> median, <span class="at">fun.min =</span> median, <span class="at">fun.max =</span> median,</span>
-<span id="cb6-210"><a href="#cb6-210" aria-hidden="true" tabindex="-1"></a>    <span class="at">geom =</span> <span class="st">"crossbar"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">lwd =</span> <span class="fl">0.2</span>,</span>
-<span id="cb6-211"><a href="#cb6-211" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.75</span>)</span>
-<span id="cb6-212"><a href="#cb6-212" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb6-213"><a href="#cb6-213" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Label the first two and last two by value</span></span>
-<span id="cb6-214"><a href="#cb6-214" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data =</span> first_last, <span class="fu">aes</span>(<span class="at">label =</span> Country), </span>
-<span id="cb6-215"><a href="#cb6-215" aria-hidden="true" tabindex="-1"></a>                  <span class="at">nudge_x =</span> <span class="fl">0.1</span>,  </span>
-<span id="cb6-216"><a href="#cb6-216" aria-hidden="true" tabindex="-1"></a>                  <span class="at">direction =</span> <span class="st">"y"</span>, </span>
-<span id="cb6-217"><a href="#cb6-217" aria-hidden="true" tabindex="-1"></a>                  <span class="at">hjust =</span> <span class="fl">0.3</span>, </span>
-<span id="cb6-218"><a href="#cb6-218" aria-hidden="true" tabindex="-1"></a>                  <span class="at">vjust =</span> <span class="dv">1</span>,</span>
-<span id="cb6-219"><a href="#cb6-219" aria-hidden="true" tabindex="-1"></a>                  <span class="at">family =</span> <span class="st">"Palatino linotype"</span>,</span>
-<span id="cb6-220"><a href="#cb6-220" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size =</span> <span class="fl">4.5</span>) <span class="sc">+</span></span>
-<span id="cb6-221"><a href="#cb6-221" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
-<span id="cb6-222"><a href="#cb6-222" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">100</span>),</span>
-<span id="cb6-223"><a href="#cb6-223" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">20</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">20</span>)) <span class="sc">+</span></span>
-<span id="cb6-224"><a href="#cb6-224" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb6-225"><a href="#cb6-225" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb6-226"><a href="#cb6-226" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"Distribution of Digital Skills &lt;br&gt;(at least basic skills)"</span>),</span>
-<span id="cb6-227"><a href="#cb6-227" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"&lt;span style='color:#9D1B1FB3'&gt;&lt;b&gt;2023&lt;/b&gt;&lt;/span&gt; compared to &lt;span style='color:#33645FB3'&gt;&lt;b&gt;2021&lt;/b&gt;&lt;/span&gt;"</span>),</span>
-<span id="cb6-228"><a href="#cb6-228" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"% of individuals"</span>) <span class="sc">+</span></span>
-<span id="cb6-229"><a href="#cb6-229" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> year_color) <span class="sc">+</span></span>
-<span id="cb6-230"><a href="#cb6-230" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb6-231"><a href="#cb6-231" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb6-232"><a href="#cb6-232" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb6-233"><a href="#cb6-233" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb6-234"><a href="#cb6-234" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#646369"</span>,</span>
-<span id="cb6-235"><a href="#cb6-235" aria-hidden="true" tabindex="-1"></a>                               <span class="at">family =</span> <span class="st">"Palatino linotype"</span>,</span>
-<span id="cb6-236"><a href="#cb6-236" aria-hidden="true" tabindex="-1"></a>                               <span class="at">size =</span> <span class="dv">12</span>),</span>
-<span id="cb6-237"><a href="#cb6-237" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>,</span>
-<span id="cb6-238"><a href="#cb6-238" aria-hidden="true" tabindex="-1"></a>                               <span class="at">color =</span> <span class="st">"#646369"</span>,</span>
-<span id="cb6-239"><a href="#cb6-239" aria-hidden="true" tabindex="-1"></a>                               <span class="at">family =</span> <span class="st">"Palatino linotype"</span>,</span>
-<span id="cb6-240"><a href="#cb6-240" aria-hidden="true" tabindex="-1"></a>                               <span class="at">size =</span> <span class="dv">14</span>),</span>
-<span id="cb6-241"><a href="#cb6-241" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb6-242"><a href="#cb6-242" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_markdown</span>(<span class="at">color =</span> <span class="st">"#414040"</span>, </span>
-<span id="cb6-243"><a href="#cb6-243" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> <span class="dv">24</span>,</span>
-<span id="cb6-244"><a href="#cb6-244" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">family =</span> <span class="st">"Palatino linotype"</span>,</span>
-<span id="cb6-245"><a href="#cb6-245" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">face =</span> <span class="st">"bold"</span>,</span>
-<span id="cb6-246"><a href="#cb6-246" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">0</span>)),</span>
-<span id="cb6-247"><a href="#cb6-247" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb6-248"><a href="#cb6-248" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">size =</span> <span class="dv">20</span>,</span>
-<span id="cb6-249"><a href="#cb6-249" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">vjust =</span> <span class="dv">1</span>,</span>
-<span id="cb6-250"><a href="#cb6-250" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">0</span>),</span>
-<span id="cb6-251"><a href="#cb6-251" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">color =</span> <span class="st">"#646369"</span>,</span>
-<span id="cb6-252"><a href="#cb6-252" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">family =</span> <span class="st">"Palatino linotype"</span>)</span>
-<span id="cb6-253"><a href="#cb6-253" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb6-254"><a href="#cb6-254" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_richtext</span>(</span>
-<span id="cb6-255"><a href="#cb6-255" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">59</span>, <span class="at">y =</span> <span class="fl">2.55</span>, <span class="at">label =</span> <span class="st">"Median: 58.95 %"</span>), </span>
-<span id="cb6-256"><a href="#cb6-256" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="st">"Palatino linotype"</span>, <span class="at">size =</span> <span class="fl">4.5</span>, <span class="at">lineheight =</span> <span class="fl">1.2</span>, </span>
-<span id="cb6-257"><a href="#cb6-257" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"#414040"</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">1.03</span>, </span>
-<span id="cb6-258"><a href="#cb6-258" aria-hidden="true" tabindex="-1"></a>    <span class="at">label.color =</span> <span class="cn">NA</span>, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb6-259"><a href="#cb6-259" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-260"><a href="#cb6-260" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_richtext</span>(</span>
-<span id="cb6-261"><a href="#cb6-261" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">54.5</span>, <span class="at">y =</span> <span class="fl">1.56</span>, <span class="at">label =</span> <span class="st">"Median: 55.25 %"</span>), </span>
-<span id="cb6-262"><a href="#cb6-262" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="st">"Palatino linotype"</span>, <span class="at">size =</span> <span class="fl">4.5</span>, <span class="at">lineheight =</span> <span class="fl">1.2</span>, </span>
-<span id="cb6-263"><a href="#cb6-263" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"#414040"</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">1.03</span>, </span>
-<span id="cb6-264"><a href="#cb6-264" aria-hidden="true" tabindex="-1"></a>    <span class="at">label.color =</span> <span class="cn">NA</span>, <span class="at">fill =</span> <span class="cn">NA</span>) </span>
-<span id="cb6-265"><a href="#cb6-265" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-199"><a href="#cb6-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-200"><a href="#cb6-200" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsi_longer,</span>
+<span id="cb6-201"><a href="#cb6-201" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">y =</span> year, <span class="at">color =</span> year)) <span class="sc">+</span>  </span>
+<span id="cb6-202"><a href="#cb6-202" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_quasirandom</span>(<span class="at">orientation =</span> <span class="cn">NULL</span>, </span>
+<span id="cb6-203"><a href="#cb6-203" aria-hidden="true" tabindex="-1"></a>                   <span class="at">varwidth =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb6-204"><a href="#cb6-204" aria-hidden="true" tabindex="-1"></a>                   <span class="at">dodge.width =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
+<span id="cb6-205"><a href="#cb6-205" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(</span>
+<span id="cb6-206"><a href="#cb6-206" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">group =</span> year), <span class="at">fun =</span> median, <span class="at">fun.min =</span> median, <span class="at">fun.max =</span> median,</span>
+<span id="cb6-207"><a href="#cb6-207" aria-hidden="true" tabindex="-1"></a>    <span class="at">geom =</span> <span class="st">"crossbar"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">lwd =</span> <span class="fl">0.2</span>,</span>
+<span id="cb6-208"><a href="#cb6-208" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.75</span>)</span>
+<span id="cb6-209"><a href="#cb6-209" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-210"><a href="#cb6-210" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Label the first two and last two by value</span></span>
+<span id="cb6-211"><a href="#cb6-211" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data =</span> first_last, <span class="fu">aes</span>(<span class="at">label =</span> Country), </span>
+<span id="cb6-212"><a href="#cb6-212" aria-hidden="true" tabindex="-1"></a>                  <span class="at">nudge_x =</span> <span class="fl">0.1</span>,  </span>
+<span id="cb6-213"><a href="#cb6-213" aria-hidden="true" tabindex="-1"></a>                  <span class="at">direction =</span> <span class="st">"y"</span>, </span>
+<span id="cb6-214"><a href="#cb6-214" aria-hidden="true" tabindex="-1"></a>                  <span class="at">hjust =</span> <span class="fl">0.3</span>, </span>
+<span id="cb6-215"><a href="#cb6-215" aria-hidden="true" tabindex="-1"></a>                  <span class="at">vjust =</span> <span class="dv">1</span>,</span>
+<span id="cb6-216"><a href="#cb6-216" aria-hidden="true" tabindex="-1"></a>                  <span class="at">family =</span> <span class="st">"Palatino linotype"</span>,</span>
+<span id="cb6-217"><a href="#cb6-217" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size =</span> <span class="fl">4.5</span>) <span class="sc">+</span></span>
+<span id="cb6-218"><a href="#cb6-218" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb6-219"><a href="#cb6-219" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">100</span>),</span>
+<span id="cb6-220"><a href="#cb6-220" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">20</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb6-221"><a href="#cb6-221" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-222"><a href="#cb6-222" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-223"><a href="#cb6-223" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"Distribution of Digital Skills &lt;br&gt;(at least basic skills)"</span>),</span>
+<span id="cb6-224"><a href="#cb6-224" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"&lt;span style='color:#9D1B1FB3'&gt;&lt;b&gt;2023&lt;/b&gt;&lt;/span&gt; compared to &lt;span style='color:#33645FB3'&gt;&lt;b&gt;2021&lt;/b&gt;&lt;/span&gt;"</span>),</span>
+<span id="cb6-225"><a href="#cb6-225" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"% of individuals"</span>) <span class="sc">+</span></span>
+<span id="cb6-226"><a href="#cb6-226" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> year_color) <span class="sc">+</span></span>
+<span id="cb6-227"><a href="#cb6-227" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb6-228"><a href="#cb6-228" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-229"><a href="#cb6-229" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-230"><a href="#cb6-230" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-231"><a href="#cb6-231" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#646369"</span>,</span>
+<span id="cb6-232"><a href="#cb6-232" aria-hidden="true" tabindex="-1"></a>                               <span class="at">family =</span> <span class="st">"Palatino linotype"</span>,</span>
+<span id="cb6-233"><a href="#cb6-233" aria-hidden="true" tabindex="-1"></a>                               <span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb6-234"><a href="#cb6-234" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>,</span>
+<span id="cb6-235"><a href="#cb6-235" aria-hidden="true" tabindex="-1"></a>                               <span class="at">color =</span> <span class="st">"#646369"</span>,</span>
+<span id="cb6-236"><a href="#cb6-236" aria-hidden="true" tabindex="-1"></a>                               <span class="at">family =</span> <span class="st">"Palatino linotype"</span>,</span>
+<span id="cb6-237"><a href="#cb6-237" aria-hidden="true" tabindex="-1"></a>                               <span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb6-238"><a href="#cb6-238" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb6-239"><a href="#cb6-239" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_markdown</span>(<span class="at">color =</span> <span class="st">"#414040"</span>, </span>
+<span id="cb6-240"><a href="#cb6-240" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">size =</span> <span class="dv">24</span>,</span>
+<span id="cb6-241"><a href="#cb6-241" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">family =</span> <span class="st">"Palatino linotype"</span>,</span>
+<span id="cb6-242"><a href="#cb6-242" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">face =</span> <span class="st">"bold"</span>,</span>
+<span id="cb6-243"><a href="#cb6-243" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">0</span>)),</span>
+<span id="cb6-244"><a href="#cb6-244" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb6-245"><a href="#cb6-245" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_textbox_simple</span>(<span class="at">size =</span> <span class="dv">20</span>,</span>
+<span id="cb6-246"><a href="#cb6-246" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">vjust =</span> <span class="dv">1</span>,</span>
+<span id="cb6-247"><a href="#cb6-247" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">0</span>),</span>
+<span id="cb6-248"><a href="#cb6-248" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">color =</span> <span class="st">"#646369"</span>,</span>
+<span id="cb6-249"><a href="#cb6-249" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">family =</span> <span class="st">"Palatino linotype"</span>)</span>
+<span id="cb6-250"><a href="#cb6-250" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-251"><a href="#cb6-251" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_richtext</span>(</span>
+<span id="cb6-252"><a href="#cb6-252" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">59</span>, <span class="at">y =</span> <span class="fl">2.55</span>, <span class="at">label =</span> <span class="st">"Median: 58.95 %"</span>), </span>
+<span id="cb6-253"><a href="#cb6-253" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="st">"Palatino linotype"</span>, <span class="at">size =</span> <span class="fl">4.5</span>, <span class="at">lineheight =</span> <span class="fl">1.2</span>, </span>
+<span id="cb6-254"><a href="#cb6-254" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"#414040"</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">1.03</span>, </span>
+<span id="cb6-255"><a href="#cb6-255" aria-hidden="true" tabindex="-1"></a>    <span class="at">label.color =</span> <span class="cn">NA</span>, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb6-256"><a href="#cb6-256" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-257"><a href="#cb6-257" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_richtext</span>(</span>
+<span id="cb6-258"><a href="#cb6-258" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">54.5</span>, <span class="at">y =</span> <span class="fl">1.56</span>, <span class="at">label =</span> <span class="st">"Median: 55.25 %"</span>), </span>
+<span id="cb6-259"><a href="#cb6-259" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="st">"Palatino linotype"</span>, <span class="at">size =</span> <span class="fl">4.5</span>, <span class="at">lineheight =</span> <span class="fl">1.2</span>, </span>
+<span id="cb6-260"><a href="#cb6-260" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"#414040"</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">1.03</span>, </span>
+<span id="cb6-261"><a href="#cb6-261" aria-hidden="true" tabindex="-1"></a>    <span class="at">label.color =</span> <span class="cn">NA</span>, <span class="at">fill =</span> <span class="cn">NA</span>) </span>
+<span id="cb6-262"><a href="#cb6-262" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-263"><a href="#cb6-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-264"><a href="#cb6-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-265"><a href="#cb6-265" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb6-266"><a href="#cb6-266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-267"><a href="#cb6-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-268"><a href="#cb6-268" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-269"><a href="#cb6-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-270"><a href="#cb6-270" aria-hidden="true" tabindex="-1"></a>The chart presents the distribution of digital skills (at least basic skills) for 2023 compared to 2021 across EU countries. The data is divided into two groups, with 2023 represented in red and 2021 in green.</span>
-<span id="cb6-271"><a href="#cb6-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-272"><a href="#cb6-272" aria-hidden="true" tabindex="-1"></a><span class="fu">### Main observations:</span></span>
-<span id="cb6-273"><a href="#cb6-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-274"><a href="#cb6-274" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The median percentage of individuals with at least basic digital skills increased from 55.25% in 2021 to 58.95% in 2023. This indicates a general improvement in digital skill levels across the surveyed countries.</span>
-<span id="cb6-275"><a href="#cb6-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-276"><a href="#cb6-276" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Finland and the Netherlands consistently stand out with the highest percentages of individuals with basic digital skills in both 2021 and 2023. This shows that these countries have maintained their digital skills advantage.</span>
-<span id="cb6-277"><a href="#cb6-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-278"><a href="#cb6-278" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>On the other hand, Romania and Bulgaria have the lowest percentages of individuals with basic digital skills in both years. While Bulgaria shows some improvement in 2023, Romania remains stagnant at its 2021 level.</span>
-<span id="cb6-279"><a href="#cb6-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-280"><a href="#cb6-280" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Both years show a relatively even spread of countries around the 50%–70% range. This suggests that most countries are gradually converging towards having most individuals with at least basic digital skills, although the rate of improvement varies.</span>
-<span id="cb6-281"><a href="#cb6-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-282"><a href="#cb6-282" aria-hidden="true" tabindex="-1"></a>Overall, the graph shows an encouraging trend towards higher digital skills levels in 2023 compared to 2021, with a notable improvement in the median. However, the digital divide remains, as evidenced by the extremes: countries like Finland and the Netherlands are leading, while Romania and Bulgaria continue to lag behind. The data suggest a general trend of incremental improvements in at least basic digital skills across most countries.</span>
-<span id="cb6-283"><a href="#cb6-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-284"><a href="#cb6-284" aria-hidden="true" tabindex="-1"></a><span class="fu">## **How has each country's DSI score changed from 2021 to 2023?**</span></span>
-<span id="cb6-285"><a href="#cb6-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-288"><a href="#cb6-288" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-289"><a href="#cb6-289" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: reactable</span></span>
-<span id="cb6-290"><a href="#cb6-290" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb6-291"><a href="#cb6-291" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-292"><a href="#cb6-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-293"><a href="#cb6-293" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart function for percentage points</span></span>
-<span id="cb6-294"><a href="#cb6-294" aria-hidden="true" tabindex="-1"></a>bar_chart_pos_neg <span class="ot">&lt;-</span> <span class="cf">function</span>(label, value, </span>
-<span id="cb6-295"><a href="#cb6-295" aria-hidden="true" tabindex="-1"></a>                              <span class="at">max_value =</span> <span class="dv">1</span>, </span>
-<span id="cb6-296"><a href="#cb6-296" aria-hidden="true" tabindex="-1"></a>                              <span class="at">height =</span> <span class="st">"1rem"</span>,</span>
-<span id="cb6-297"><a href="#cb6-297" aria-hidden="true" tabindex="-1"></a>                              <span class="at">pos_fill =</span> <span class="st">"#33645FFF"</span>, </span>
-<span id="cb6-298"><a href="#cb6-298" aria-hidden="true" tabindex="-1"></a>                              <span class="at">neg_fill =</span> <span class="st">"#9D1B1FFF"</span>) {</span>
-<span id="cb6-299"><a href="#cb6-299" aria-hidden="true" tabindex="-1"></a>  neg_chart <span class="ot">&lt;-</span> <span class="fu">div</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="at">flex =</span> <span class="st">"1 1 0"</span>))</span>
-<span id="cb6-300"><a href="#cb6-300" aria-hidden="true" tabindex="-1"></a>  pos_chart <span class="ot">&lt;-</span> <span class="fu">div</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="at">flex =</span> <span class="st">"1 1 0"</span>))</span>
-<span id="cb6-301"><a href="#cb6-301" aria-hidden="true" tabindex="-1"></a>  width <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">abs</span>(value <span class="sc">/</span> max_value) <span class="sc">*</span> <span class="dv">100</span>, <span class="st">"%"</span>)</span>
-<span id="cb6-302"><a href="#cb6-302" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-303"><a href="#cb6-303" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (value <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
-<span id="cb6-304"><a href="#cb6-304" aria-hidden="true" tabindex="-1"></a>    bar <span class="ot">&lt;-</span> <span class="fu">div</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="at">marginLeft =</span> <span class="st">"0.5rem"</span>, </span>
-<span id="cb6-305"><a href="#cb6-305" aria-hidden="true" tabindex="-1"></a>                            <span class="at">background =</span> neg_fill, </span>
-<span id="cb6-306"><a href="#cb6-306" aria-hidden="true" tabindex="-1"></a>                            <span class="at">width =</span> width, </span>
-<span id="cb6-307"><a href="#cb6-307" aria-hidden="true" tabindex="-1"></a>                            <span class="at">height =</span> height))</span>
-<span id="cb6-308"><a href="#cb6-308" aria-hidden="true" tabindex="-1"></a>    chart <span class="ot">&lt;-</span> <span class="fu">div</span>(</span>
-<span id="cb6-309"><a href="#cb6-309" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">list</span>(<span class="at">display =</span> <span class="st">"flex"</span>, </span>
-<span id="cb6-310"><a href="#cb6-310" aria-hidden="true" tabindex="-1"></a>                   <span class="at">alignItems =</span> <span class="st">"center"</span>, </span>
-<span id="cb6-311"><a href="#cb6-311" aria-hidden="true" tabindex="-1"></a>                   <span class="at">justifyContent =</span> <span class="st">"flex-end"</span>),</span>
-<span id="cb6-312"><a href="#cb6-312" aria-hidden="true" tabindex="-1"></a>      label,</span>
-<span id="cb6-313"><a href="#cb6-313" aria-hidden="true" tabindex="-1"></a>      bar</span>
-<span id="cb6-314"><a href="#cb6-314" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb6-315"><a href="#cb6-315" aria-hidden="true" tabindex="-1"></a>    neg_chart <span class="ot">&lt;-</span> <span class="fu">tagAppendChild</span>(neg_chart, chart)</span>
-<span id="cb6-316"><a href="#cb6-316" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb6-317"><a href="#cb6-317" aria-hidden="true" tabindex="-1"></a>    bar <span class="ot">&lt;-</span> <span class="fu">div</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="at">marginRight =</span> <span class="st">"0.5rem"</span>, </span>
-<span id="cb6-318"><a href="#cb6-318" aria-hidden="true" tabindex="-1"></a>                            <span class="at">background =</span> pos_fill, </span>
-<span id="cb6-319"><a href="#cb6-319" aria-hidden="true" tabindex="-1"></a>                            <span class="at">width =</span> width, </span>
-<span id="cb6-320"><a href="#cb6-320" aria-hidden="true" tabindex="-1"></a>                            <span class="at">height =</span> height))</span>
-<span id="cb6-321"><a href="#cb6-321" aria-hidden="true" tabindex="-1"></a>    chart <span class="ot">&lt;-</span> <span class="fu">div</span>(</span>
-<span id="cb6-322"><a href="#cb6-322" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">list</span>(<span class="at">display =</span> <span class="st">"flex"</span>, </span>
-<span id="cb6-323"><a href="#cb6-323" aria-hidden="true" tabindex="-1"></a>                              <span class="at">alignItems =</span> <span class="st">"center"</span>),</span>
-<span id="cb6-324"><a href="#cb6-324" aria-hidden="true" tabindex="-1"></a>      bar, </span>
-<span id="cb6-325"><a href="#cb6-325" aria-hidden="true" tabindex="-1"></a>      label)</span>
-<span id="cb6-326"><a href="#cb6-326" aria-hidden="true" tabindex="-1"></a>    pos_chart <span class="ot">&lt;-</span> <span class="fu">tagAppendChild</span>(pos_chart, chart)</span>
-<span id="cb6-327"><a href="#cb6-327" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-328"><a href="#cb6-328" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-329"><a href="#cb6-329" aria-hidden="true" tabindex="-1"></a>  <span class="fu">div</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="at">display =</span> <span class="st">"flex"</span>), </span>
-<span id="cb6-330"><a href="#cb6-330" aria-hidden="true" tabindex="-1"></a>      neg_chart, </span>
-<span id="cb6-331"><a href="#cb6-331" aria-hidden="true" tabindex="-1"></a>      pos_chart)</span>
-<span id="cb6-332"><a href="#cb6-332" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-267"><a href="#cb6-267" aria-hidden="true" tabindex="-1"></a>The chart presents the distribution of digital skills (at least basic skills) for 2023 compared to 2021 across EU countries. The data is divided into two groups, with 2023 represented in red and 2021 in green.</span>
+<span id="cb6-268"><a href="#cb6-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-269"><a href="#cb6-269" aria-hidden="true" tabindex="-1"></a><span class="fu">### Main observations:</span></span>
+<span id="cb6-270"><a href="#cb6-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-271"><a href="#cb6-271" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The median percentage of individuals with at least basic digital skills increased from 55.25% in 2021 to 58.95% in 2023. This indicates a general improvement in digital skill levels across the surveyed countries.</span>
+<span id="cb6-272"><a href="#cb6-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-273"><a href="#cb6-273" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Finland and the Netherlands consistently stand out with the highest percentages of individuals with basic digital skills in both 2021 and 2023. This shows that these countries have maintained their digital skills advantage.</span>
+<span id="cb6-274"><a href="#cb6-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-275"><a href="#cb6-275" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>On the other hand, Romania and Bulgaria have the lowest percentages of individuals with basic digital skills in both years. While Bulgaria shows some improvement in 2023, Romania remains stagnant at its 2021 level.</span>
+<span id="cb6-276"><a href="#cb6-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-277"><a href="#cb6-277" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Both years show a relatively even spread of countries around the 50%–70% range. This suggests that most countries are gradually converging towards having most individuals with at least basic digital skills, although the rate of improvement varies.</span>
+<span id="cb6-278"><a href="#cb6-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-279"><a href="#cb6-279" aria-hidden="true" tabindex="-1"></a>Overall, the graph shows an encouraging trend towards higher digital skills levels in 2023 compared to 2021, with a notable improvement in the median. However, the digital divide remains, as evidenced by the extremes: countries like Finland and the Netherlands are leading, while Romania and Bulgaria continue to lag behind. The data suggest a general trend of incremental improvements in at least basic digital skills across most countries.</span>
+<span id="cb6-280"><a href="#cb6-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-281"><a href="#cb6-281" aria-hidden="true" tabindex="-1"></a><span class="fu">## **How has each country's DSI score changed from 2021 to 2023?**</span></span>
+<span id="cb6-282"><a href="#cb6-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-285"><a href="#cb6-285" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-286"><a href="#cb6-286" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: reactable</span></span>
+<span id="cb6-287"><a href="#cb6-287" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb6-288"><a href="#cb6-288" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb6-289"><a href="#cb6-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-290"><a href="#cb6-290" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart function for percentage points</span></span>
+<span id="cb6-291"><a href="#cb6-291" aria-hidden="true" tabindex="-1"></a>bar_chart_pos_neg <span class="ot">&lt;-</span> <span class="cf">function</span>(label, value, </span>
+<span id="cb6-292"><a href="#cb6-292" aria-hidden="true" tabindex="-1"></a>                              <span class="at">max_value =</span> <span class="dv">1</span>, </span>
+<span id="cb6-293"><a href="#cb6-293" aria-hidden="true" tabindex="-1"></a>                              <span class="at">height =</span> <span class="st">"1rem"</span>,</span>
+<span id="cb6-294"><a href="#cb6-294" aria-hidden="true" tabindex="-1"></a>                              <span class="at">pos_fill =</span> <span class="st">"#33645FFF"</span>, </span>
+<span id="cb6-295"><a href="#cb6-295" aria-hidden="true" tabindex="-1"></a>                              <span class="at">neg_fill =</span> <span class="st">"#9D1B1FFF"</span>) {</span>
+<span id="cb6-296"><a href="#cb6-296" aria-hidden="true" tabindex="-1"></a>  neg_chart <span class="ot">&lt;-</span> <span class="fu">div</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="at">flex =</span> <span class="st">"1 1 0"</span>))</span>
+<span id="cb6-297"><a href="#cb6-297" aria-hidden="true" tabindex="-1"></a>  pos_chart <span class="ot">&lt;-</span> <span class="fu">div</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="at">flex =</span> <span class="st">"1 1 0"</span>))</span>
+<span id="cb6-298"><a href="#cb6-298" aria-hidden="true" tabindex="-1"></a>  width <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">abs</span>(value <span class="sc">/</span> max_value) <span class="sc">*</span> <span class="dv">100</span>, <span class="st">"%"</span>)</span>
+<span id="cb6-299"><a href="#cb6-299" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-300"><a href="#cb6-300" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (value <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb6-301"><a href="#cb6-301" aria-hidden="true" tabindex="-1"></a>    bar <span class="ot">&lt;-</span> <span class="fu">div</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="at">marginLeft =</span> <span class="st">"0.5rem"</span>, </span>
+<span id="cb6-302"><a href="#cb6-302" aria-hidden="true" tabindex="-1"></a>                            <span class="at">background =</span> neg_fill, </span>
+<span id="cb6-303"><a href="#cb6-303" aria-hidden="true" tabindex="-1"></a>                            <span class="at">width =</span> width, </span>
+<span id="cb6-304"><a href="#cb6-304" aria-hidden="true" tabindex="-1"></a>                            <span class="at">height =</span> height))</span>
+<span id="cb6-305"><a href="#cb6-305" aria-hidden="true" tabindex="-1"></a>    chart <span class="ot">&lt;-</span> <span class="fu">div</span>(</span>
+<span id="cb6-306"><a href="#cb6-306" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">list</span>(<span class="at">display =</span> <span class="st">"flex"</span>, </span>
+<span id="cb6-307"><a href="#cb6-307" aria-hidden="true" tabindex="-1"></a>                   <span class="at">alignItems =</span> <span class="st">"center"</span>, </span>
+<span id="cb6-308"><a href="#cb6-308" aria-hidden="true" tabindex="-1"></a>                   <span class="at">justifyContent =</span> <span class="st">"flex-end"</span>),</span>
+<span id="cb6-309"><a href="#cb6-309" aria-hidden="true" tabindex="-1"></a>      label,</span>
+<span id="cb6-310"><a href="#cb6-310" aria-hidden="true" tabindex="-1"></a>      bar</span>
+<span id="cb6-311"><a href="#cb6-311" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-312"><a href="#cb6-312" aria-hidden="true" tabindex="-1"></a>    neg_chart <span class="ot">&lt;-</span> <span class="fu">tagAppendChild</span>(neg_chart, chart)</span>
+<span id="cb6-313"><a href="#cb6-313" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb6-314"><a href="#cb6-314" aria-hidden="true" tabindex="-1"></a>    bar <span class="ot">&lt;-</span> <span class="fu">div</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="at">marginRight =</span> <span class="st">"0.5rem"</span>, </span>
+<span id="cb6-315"><a href="#cb6-315" aria-hidden="true" tabindex="-1"></a>                            <span class="at">background =</span> pos_fill, </span>
+<span id="cb6-316"><a href="#cb6-316" aria-hidden="true" tabindex="-1"></a>                            <span class="at">width =</span> width, </span>
+<span id="cb6-317"><a href="#cb6-317" aria-hidden="true" tabindex="-1"></a>                            <span class="at">height =</span> height))</span>
+<span id="cb6-318"><a href="#cb6-318" aria-hidden="true" tabindex="-1"></a>    chart <span class="ot">&lt;-</span> <span class="fu">div</span>(</span>
+<span id="cb6-319"><a href="#cb6-319" aria-hidden="true" tabindex="-1"></a>      <span class="at">style =</span> <span class="fu">list</span>(<span class="at">display =</span> <span class="st">"flex"</span>, </span>
+<span id="cb6-320"><a href="#cb6-320" aria-hidden="true" tabindex="-1"></a>                              <span class="at">alignItems =</span> <span class="st">"center"</span>),</span>
+<span id="cb6-321"><a href="#cb6-321" aria-hidden="true" tabindex="-1"></a>      bar, </span>
+<span id="cb6-322"><a href="#cb6-322" aria-hidden="true" tabindex="-1"></a>      label)</span>
+<span id="cb6-323"><a href="#cb6-323" aria-hidden="true" tabindex="-1"></a>    pos_chart <span class="ot">&lt;-</span> <span class="fu">tagAppendChild</span>(pos_chart, chart)</span>
+<span id="cb6-324"><a href="#cb6-324" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-325"><a href="#cb6-325" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-326"><a href="#cb6-326" aria-hidden="true" tabindex="-1"></a>  <span class="fu">div</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="at">display =</span> <span class="st">"flex"</span>), </span>
+<span id="cb6-327"><a href="#cb6-327" aria-hidden="true" tabindex="-1"></a>      neg_chart, </span>
+<span id="cb6-328"><a href="#cb6-328" aria-hidden="true" tabindex="-1"></a>      pos_chart)</span>
+<span id="cb6-329"><a href="#cb6-329" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-330"><a href="#cb6-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-331"><a href="#cb6-331" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the maximum value for scaling (use absolute maximum from relevant columns)</span></span>
+<span id="cb6-332"><a href="#cb6-332" aria-hidden="true" tabindex="-1"></a>max_change <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">abs</span>(dsi<span class="sc">$</span>Change))</span>
 <span id="cb6-333"><a href="#cb6-333" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-334"><a href="#cb6-334" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the maximum value for scaling (use absolute maximum from relevant columns)</span></span>
-<span id="cb6-335"><a href="#cb6-335" aria-hidden="true" tabindex="-1"></a>max_change <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">abs</span>(dsi<span class="sc">$</span>Change))</span>
+<span id="cb6-334"><a href="#cb6-334" aria-hidden="true" tabindex="-1"></a><span class="co"># Define composite indicator columns</span></span>
+<span id="cb6-335"><a href="#cb6-335" aria-hidden="true" tabindex="-1"></a>composite_indicator_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2021"</span>, <span class="st">"2023"</span>, <span class="st">"Change"</span>)</span>
 <span id="cb6-336"><a href="#cb6-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-337"><a href="#cb6-337" aria-hidden="true" tabindex="-1"></a><span class="co"># Define composite indicator columns</span></span>
-<span id="cb6-338"><a href="#cb6-338" aria-hidden="true" tabindex="-1"></a>composite_indicator_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2021"</span>, <span class="st">"2023"</span>, <span class="st">"Change"</span>)</span>
-<span id="cb6-339"><a href="#cb6-339" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-340"><a href="#cb6-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-341"><a href="#cb6-341" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to generate a color based on the score (percentage)</span></span>
-<span id="cb6-342"><a href="#cb6-342" aria-hidden="true" tabindex="-1"></a>get_score_color <span class="ot">&lt;-</span> <span class="cf">function</span>(score, </span>
-<span id="cb6-343"><a href="#cb6-343" aria-hidden="true" tabindex="-1"></a>                            <span class="at">min_score =</span> <span class="dv">0</span>, </span>
-<span id="cb6-344"><a href="#cb6-344" aria-hidden="true" tabindex="-1"></a>                            <span class="at">max_score =</span> <span class="dv">100</span>) {</span>
-<span id="cb6-345"><a href="#cb6-345" aria-hidden="true" tabindex="-1"></a><span class="co"># Blue palette transition</span></span>
-<span id="cb6-346"><a href="#cb6-346" aria-hidden="true" tabindex="-1"></a>  blue_pal <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">rgb</span>(<span class="fu">colorRamp</span>(<span class="fu">c</span>(<span class="st">"#77BAB2"</span>,<span class="st">"#33655F"</span>))(x),</span>
-<span id="cb6-347"><a href="#cb6-347" aria-hidden="true" tabindex="-1"></a>                              <span class="at">maxColorValue =</span> <span class="dv">255</span>)</span>
+<span id="cb6-337"><a href="#cb6-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-338"><a href="#cb6-338" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to generate a color based on the score (percentage)</span></span>
+<span id="cb6-339"><a href="#cb6-339" aria-hidden="true" tabindex="-1"></a>get_score_color <span class="ot">&lt;-</span> <span class="cf">function</span>(score, </span>
+<span id="cb6-340"><a href="#cb6-340" aria-hidden="true" tabindex="-1"></a>                            <span class="at">min_score =</span> <span class="dv">0</span>, </span>
+<span id="cb6-341"><a href="#cb6-341" aria-hidden="true" tabindex="-1"></a>                            <span class="at">max_score =</span> <span class="dv">100</span>) {</span>
+<span id="cb6-342"><a href="#cb6-342" aria-hidden="true" tabindex="-1"></a><span class="co"># Blue palette transition</span></span>
+<span id="cb6-343"><a href="#cb6-343" aria-hidden="true" tabindex="-1"></a>  blue_pal <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">rgb</span>(<span class="fu">colorRamp</span>(<span class="fu">c</span>(<span class="st">"#77BAB2"</span>,<span class="st">"#33655F"</span>))(x),</span>
+<span id="cb6-344"><a href="#cb6-344" aria-hidden="true" tabindex="-1"></a>                              <span class="at">maxColorValue =</span> <span class="dv">255</span>)</span>
+<span id="cb6-345"><a href="#cb6-345" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-346"><a href="#cb6-346" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize the score to the range [0, 1]</span></span>
+<span id="cb6-347"><a href="#cb6-347" aria-hidden="true" tabindex="-1"></a>  normalized <span class="ot">&lt;-</span> (score <span class="sc">-</span> min_score) <span class="sc">/</span> (max_score <span class="sc">-</span> min_score)</span>
 <span id="cb6-348"><a href="#cb6-348" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-349"><a href="#cb6-349" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize the score to the range [0, 1]</span></span>
-<span id="cb6-350"><a href="#cb6-350" aria-hidden="true" tabindex="-1"></a>  normalized <span class="ot">&lt;-</span> (score <span class="sc">-</span> min_score) <span class="sc">/</span> (max_score <span class="sc">-</span> min_score)</span>
-<span id="cb6-351"><a href="#cb6-351" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-352"><a href="#cb6-352" aria-hidden="true" tabindex="-1"></a><span class="co"># Return the color for the normalized score</span></span>
-<span id="cb6-353"><a href="#cb6-353" aria-hidden="true" tabindex="-1"></a>  <span class="fu">blue_pal</span>(normalized)</span>
-<span id="cb6-354"><a href="#cb6-354" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-355"><a href="#cb6-355" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-356"><a href="#cb6-356" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to generate the donut chart with a color</span></span>
-<span id="cb6-357"><a href="#cb6-357" aria-hidden="true" tabindex="-1"></a>donut_chart <span class="ot">&lt;-</span> <span class="cf">function</span>(value, color) {</span>
-<span id="cb6-358"><a href="#cb6-358" aria-hidden="true" tabindex="-1"></a>  <span class="co"># All units are in rem for relative scaling</span></span>
-<span id="cb6-359"><a href="#cb6-359" aria-hidden="true" tabindex="-1"></a>  radius <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
-<span id="cb6-360"><a href="#cb6-360" aria-hidden="true" tabindex="-1"></a>  diameter <span class="ot">&lt;-</span> <span class="fl">3.75</span></span>
-<span id="cb6-361"><a href="#cb6-361" aria-hidden="true" tabindex="-1"></a>  center <span class="ot">&lt;-</span> diameter <span class="sc">/</span> <span class="dv">2</span></span>
-<span id="cb6-362"><a href="#cb6-362" aria-hidden="true" tabindex="-1"></a>  width <span class="ot">&lt;-</span> <span class="fl">0.25</span></span>
-<span id="cb6-363"><a href="#cb6-363" aria-hidden="true" tabindex="-1"></a>  slice_length <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">*</span> radius</span>
-<span id="cb6-364"><a href="#cb6-364" aria-hidden="true" tabindex="-1"></a>  slice_offset <span class="ot">&lt;-</span> slice_length <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> value <span class="sc">/</span> <span class="dv">100</span>)</span>
-<span id="cb6-365"><a href="#cb6-365" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-366"><a href="#cb6-366" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate SVG donut chart</span></span>
-<span id="cb6-367"><a href="#cb6-367" aria-hidden="true" tabindex="-1"></a>  donut_chart <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
-<span id="cb6-368"><a href="#cb6-368" aria-hidden="true" tabindex="-1"></a>    <span class="st">'&lt;svg width="'</span>, diameter, <span class="st">'rem" height="'</span>, diameter, <span class="st">'rem" style="transform: rotate(-90deg);" focusable="false"&gt;'</span>,</span>
-<span id="cb6-369"><a href="#cb6-369" aria-hidden="true" tabindex="-1"></a>    <span class="st">'&lt;circle cx="'</span>, center, <span class="st">'rem" cy="'</span>, center, <span class="st">'rem" r="'</span>, radius, <span class="st">'rem" fill="none" stroke-width="'</span>, width, <span class="st">'rem" stroke="rgba(0,0,0,0.1)"&gt;&lt;/circle&gt;'</span>,</span>
-<span id="cb6-370"><a href="#cb6-370" aria-hidden="true" tabindex="-1"></a>    <span class="st">'&lt;circle cx="'</span>, center, <span class="st">'rem" cy="'</span>, center, <span class="st">'rem" r="'</span>, radius, <span class="st">'rem" fill="none" stroke-width="'</span>, width, <span class="st">'rem" stroke="'</span>, color, <span class="st">'"'</span>,</span>
-<span id="cb6-371"><a href="#cb6-371" aria-hidden="true" tabindex="-1"></a>    <span class="st">' stroke-dasharray="'</span>, slice_length, <span class="st">'rem" stroke-dashoffset="'</span>, slice_offset, <span class="st">'rem"&gt;&lt;/circle&gt;'</span>,</span>
-<span id="cb6-372"><a href="#cb6-372" aria-hidden="true" tabindex="-1"></a>    <span class="st">'&lt;/svg&gt;'</span></span>
-<span id="cb6-373"><a href="#cb6-373" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb6-374"><a href="#cb6-374" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-375"><a href="#cb6-375" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Label in the center</span></span>
-<span id="cb6-376"><a href="#cb6-376" aria-hidden="true" tabindex="-1"></a>  label <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
-<span id="cb6-377"><a href="#cb6-377" aria-hidden="true" tabindex="-1"></a>    <span class="st">'&lt;div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)"&gt;'</span>,</span>
-<span id="cb6-378"><a href="#cb6-378" aria-hidden="true" tabindex="-1"></a>    value, <span class="st">'%&lt;/div&gt;'</span></span>
-<span id="cb6-379"><a href="#cb6-379" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb6-380"><a href="#cb6-380" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-381"><a href="#cb6-381" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Final donut chart HTML</span></span>
-<span id="cb6-382"><a href="#cb6-382" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(<span class="st">'&lt;div style="display: inline-flex; position: relative; width: '</span>, diameter, <span class="st">'rem; height: '</span>, diameter, <span class="st">'rem;"&gt;'</span>, </span>
-<span id="cb6-383"><a href="#cb6-383" aria-hidden="true" tabindex="-1"></a>         donut_chart, </span>
-<span id="cb6-384"><a href="#cb6-384" aria-hidden="true" tabindex="-1"></a>         label, </span>
-<span id="cb6-385"><a href="#cb6-385" aria-hidden="true" tabindex="-1"></a>         <span class="st">'&lt;/div&gt;'</span>)</span>
-<span id="cb6-386"><a href="#cb6-386" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-387"><a href="#cb6-387" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-388"><a href="#cb6-388" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-389"><a href="#cb6-389" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a mapping from ISO codes to the flag URLs</span></span>
-<span id="cb6-390"><a href="#cb6-390" aria-hidden="true" tabindex="-1"></a>flag_urls <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb6-391"><a href="#cb6-391" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AT"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/at.svg"</span>,</span>
-<span id="cb6-392"><a href="#cb6-392" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BE"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/be.svg"</span>,</span>
-<span id="cb6-393"><a href="#cb6-393" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BG"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/bg.svg"</span>,</span>
-<span id="cb6-394"><a href="#cb6-394" aria-hidden="true" tabindex="-1"></a>  <span class="st">"HR"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/hr.svg"</span>,</span>
-<span id="cb6-395"><a href="#cb6-395" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CY"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/cy.svg"</span>,</span>
-<span id="cb6-396"><a href="#cb6-396" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CZ"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/cz.svg"</span>,</span>
-<span id="cb6-397"><a href="#cb6-397" aria-hidden="true" tabindex="-1"></a>  <span class="st">"DK"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/dk.svg"</span>,</span>
-<span id="cb6-398"><a href="#cb6-398" aria-hidden="true" tabindex="-1"></a>  <span class="st">"EE"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/ee.svg"</span>,</span>
-<span id="cb6-399"><a href="#cb6-399" aria-hidden="true" tabindex="-1"></a>  <span class="st">"FI"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/fi.svg"</span>,</span>
-<span id="cb6-400"><a href="#cb6-400" aria-hidden="true" tabindex="-1"></a>  <span class="st">"FR"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/fr.svg"</span>,</span>
-<span id="cb6-401"><a href="#cb6-401" aria-hidden="true" tabindex="-1"></a>  <span class="st">"DE"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/de.svg"</span>,</span>
-<span id="cb6-402"><a href="#cb6-402" aria-hidden="true" tabindex="-1"></a>  <span class="st">"GR"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/gr.svg"</span>,</span>
-<span id="cb6-403"><a href="#cb6-403" aria-hidden="true" tabindex="-1"></a>  <span class="st">"HU"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/hu.svg"</span>,</span>
-<span id="cb6-404"><a href="#cb6-404" aria-hidden="true" tabindex="-1"></a>  <span class="st">"IE"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/ie.svg"</span>,</span>
-<span id="cb6-405"><a href="#cb6-405" aria-hidden="true" tabindex="-1"></a>  <span class="st">"IT"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/it.svg"</span>,</span>
-<span id="cb6-406"><a href="#cb6-406" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LV"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/lv.svg"</span>,</span>
-<span id="cb6-407"><a href="#cb6-407" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LT"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/lt.svg"</span>,</span>
-<span id="cb6-408"><a href="#cb6-408" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LU"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/lu.svg"</span>,</span>
-<span id="cb6-409"><a href="#cb6-409" aria-hidden="true" tabindex="-1"></a>  <span class="st">"MT"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/mt.svg"</span>,</span>
-<span id="cb6-410"><a href="#cb6-410" aria-hidden="true" tabindex="-1"></a>  <span class="st">"NL"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/nl.svg"</span>,</span>
-<span id="cb6-411"><a href="#cb6-411" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PL"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/pl.svg"</span>,</span>
-<span id="cb6-412"><a href="#cb6-412" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PT"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/pt.svg"</span>,</span>
-<span id="cb6-413"><a href="#cb6-413" aria-hidden="true" tabindex="-1"></a>  <span class="st">"RO"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/ro.svg"</span>,</span>
-<span id="cb6-414"><a href="#cb6-414" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SK"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/sk.svg"</span>,</span>
-<span id="cb6-415"><a href="#cb6-415" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SI"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/si.svg"</span>,</span>
-<span id="cb6-416"><a href="#cb6-416" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ES"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/es.svg"</span>,</span>
-<span id="cb6-417"><a href="#cb6-417" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SE"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/se.svg"</span>,</span>
-<span id="cb6-418"><a href="#cb6-418" aria-hidden="true" tabindex="-1"></a>  <span class="st">"EU"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/eu.svg"</span>  <span class="co"># For EU_27</span></span>
-<span id="cb6-419"><a href="#cb6-419" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-349"><a href="#cb6-349" aria-hidden="true" tabindex="-1"></a><span class="co"># Return the color for the normalized score</span></span>
+<span id="cb6-350"><a href="#cb6-350" aria-hidden="true" tabindex="-1"></a>  <span class="fu">blue_pal</span>(normalized)</span>
+<span id="cb6-351"><a href="#cb6-351" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-352"><a href="#cb6-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-353"><a href="#cb6-353" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to generate the donut chart with a color</span></span>
+<span id="cb6-354"><a href="#cb6-354" aria-hidden="true" tabindex="-1"></a>donut_chart <span class="ot">&lt;-</span> <span class="cf">function</span>(value, color) {</span>
+<span id="cb6-355"><a href="#cb6-355" aria-hidden="true" tabindex="-1"></a>  <span class="co"># All units are in rem for relative scaling</span></span>
+<span id="cb6-356"><a href="#cb6-356" aria-hidden="true" tabindex="-1"></a>  radius <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb6-357"><a href="#cb6-357" aria-hidden="true" tabindex="-1"></a>  diameter <span class="ot">&lt;-</span> <span class="fl">3.75</span></span>
+<span id="cb6-358"><a href="#cb6-358" aria-hidden="true" tabindex="-1"></a>  center <span class="ot">&lt;-</span> diameter <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb6-359"><a href="#cb6-359" aria-hidden="true" tabindex="-1"></a>  width <span class="ot">&lt;-</span> <span class="fl">0.25</span></span>
+<span id="cb6-360"><a href="#cb6-360" aria-hidden="true" tabindex="-1"></a>  slice_length <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">*</span> radius</span>
+<span id="cb6-361"><a href="#cb6-361" aria-hidden="true" tabindex="-1"></a>  slice_offset <span class="ot">&lt;-</span> slice_length <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> value <span class="sc">/</span> <span class="dv">100</span>)</span>
+<span id="cb6-362"><a href="#cb6-362" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-363"><a href="#cb6-363" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate SVG donut chart</span></span>
+<span id="cb6-364"><a href="#cb6-364" aria-hidden="true" tabindex="-1"></a>  donut_chart <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
+<span id="cb6-365"><a href="#cb6-365" aria-hidden="true" tabindex="-1"></a>    <span class="st">'&lt;svg width="'</span>, diameter, <span class="st">'rem" height="'</span>, diameter, <span class="st">'rem" style="transform: rotate(-90deg);" focusable="false"&gt;'</span>,</span>
+<span id="cb6-366"><a href="#cb6-366" aria-hidden="true" tabindex="-1"></a>    <span class="st">'&lt;circle cx="'</span>, center, <span class="st">'rem" cy="'</span>, center, <span class="st">'rem" r="'</span>, radius, <span class="st">'rem" fill="none" stroke-width="'</span>, width, <span class="st">'rem" stroke="rgba(0,0,0,0.1)"&gt;&lt;/circle&gt;'</span>,</span>
+<span id="cb6-367"><a href="#cb6-367" aria-hidden="true" tabindex="-1"></a>    <span class="st">'&lt;circle cx="'</span>, center, <span class="st">'rem" cy="'</span>, center, <span class="st">'rem" r="'</span>, radius, <span class="st">'rem" fill="none" stroke-width="'</span>, width, <span class="st">'rem" stroke="'</span>, color, <span class="st">'"'</span>,</span>
+<span id="cb6-368"><a href="#cb6-368" aria-hidden="true" tabindex="-1"></a>    <span class="st">' stroke-dasharray="'</span>, slice_length, <span class="st">'rem" stroke-dashoffset="'</span>, slice_offset, <span class="st">'rem"&gt;&lt;/circle&gt;'</span>,</span>
+<span id="cb6-369"><a href="#cb6-369" aria-hidden="true" tabindex="-1"></a>    <span class="st">'&lt;/svg&gt;'</span></span>
+<span id="cb6-370"><a href="#cb6-370" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-371"><a href="#cb6-371" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-372"><a href="#cb6-372" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Label in the center</span></span>
+<span id="cb6-373"><a href="#cb6-373" aria-hidden="true" tabindex="-1"></a>  label <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
+<span id="cb6-374"><a href="#cb6-374" aria-hidden="true" tabindex="-1"></a>    <span class="st">'&lt;div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)"&gt;'</span>,</span>
+<span id="cb6-375"><a href="#cb6-375" aria-hidden="true" tabindex="-1"></a>    value, <span class="st">'%&lt;/div&gt;'</span></span>
+<span id="cb6-376"><a href="#cb6-376" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-377"><a href="#cb6-377" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-378"><a href="#cb6-378" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Final donut chart HTML</span></span>
+<span id="cb6-379"><a href="#cb6-379" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(<span class="st">'&lt;div style="display: inline-flex; position: relative; width: '</span>, diameter, <span class="st">'rem; height: '</span>, diameter, <span class="st">'rem;"&gt;'</span>, </span>
+<span id="cb6-380"><a href="#cb6-380" aria-hidden="true" tabindex="-1"></a>         donut_chart, </span>
+<span id="cb6-381"><a href="#cb6-381" aria-hidden="true" tabindex="-1"></a>         label, </span>
+<span id="cb6-382"><a href="#cb6-382" aria-hidden="true" tabindex="-1"></a>         <span class="st">'&lt;/div&gt;'</span>)</span>
+<span id="cb6-383"><a href="#cb6-383" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-384"><a href="#cb6-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-385"><a href="#cb6-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-386"><a href="#cb6-386" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a mapping from ISO codes to the flag URLs</span></span>
+<span id="cb6-387"><a href="#cb6-387" aria-hidden="true" tabindex="-1"></a>flag_urls <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb6-388"><a href="#cb6-388" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AT"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/at.svg"</span>,</span>
+<span id="cb6-389"><a href="#cb6-389" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BE"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/be.svg"</span>,</span>
+<span id="cb6-390"><a href="#cb6-390" aria-hidden="true" tabindex="-1"></a>  <span class="st">"BG"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/bg.svg"</span>,</span>
+<span id="cb6-391"><a href="#cb6-391" aria-hidden="true" tabindex="-1"></a>  <span class="st">"HR"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/hr.svg"</span>,</span>
+<span id="cb6-392"><a href="#cb6-392" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CY"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/cy.svg"</span>,</span>
+<span id="cb6-393"><a href="#cb6-393" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CZ"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/cz.svg"</span>,</span>
+<span id="cb6-394"><a href="#cb6-394" aria-hidden="true" tabindex="-1"></a>  <span class="st">"DK"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/dk.svg"</span>,</span>
+<span id="cb6-395"><a href="#cb6-395" aria-hidden="true" tabindex="-1"></a>  <span class="st">"EE"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/ee.svg"</span>,</span>
+<span id="cb6-396"><a href="#cb6-396" aria-hidden="true" tabindex="-1"></a>  <span class="st">"FI"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/fi.svg"</span>,</span>
+<span id="cb6-397"><a href="#cb6-397" aria-hidden="true" tabindex="-1"></a>  <span class="st">"FR"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/fr.svg"</span>,</span>
+<span id="cb6-398"><a href="#cb6-398" aria-hidden="true" tabindex="-1"></a>  <span class="st">"DE"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/de.svg"</span>,</span>
+<span id="cb6-399"><a href="#cb6-399" aria-hidden="true" tabindex="-1"></a>  <span class="st">"GR"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/gr.svg"</span>,</span>
+<span id="cb6-400"><a href="#cb6-400" aria-hidden="true" tabindex="-1"></a>  <span class="st">"HU"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/hu.svg"</span>,</span>
+<span id="cb6-401"><a href="#cb6-401" aria-hidden="true" tabindex="-1"></a>  <span class="st">"IE"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/ie.svg"</span>,</span>
+<span id="cb6-402"><a href="#cb6-402" aria-hidden="true" tabindex="-1"></a>  <span class="st">"IT"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/it.svg"</span>,</span>
+<span id="cb6-403"><a href="#cb6-403" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LV"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/lv.svg"</span>,</span>
+<span id="cb6-404"><a href="#cb6-404" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LT"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/lt.svg"</span>,</span>
+<span id="cb6-405"><a href="#cb6-405" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LU"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/lu.svg"</span>,</span>
+<span id="cb6-406"><a href="#cb6-406" aria-hidden="true" tabindex="-1"></a>  <span class="st">"MT"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/mt.svg"</span>,</span>
+<span id="cb6-407"><a href="#cb6-407" aria-hidden="true" tabindex="-1"></a>  <span class="st">"NL"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/nl.svg"</span>,</span>
+<span id="cb6-408"><a href="#cb6-408" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PL"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/pl.svg"</span>,</span>
+<span id="cb6-409"><a href="#cb6-409" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PT"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/pt.svg"</span>,</span>
+<span id="cb6-410"><a href="#cb6-410" aria-hidden="true" tabindex="-1"></a>  <span class="st">"RO"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/ro.svg"</span>,</span>
+<span id="cb6-411"><a href="#cb6-411" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SK"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/sk.svg"</span>,</span>
+<span id="cb6-412"><a href="#cb6-412" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SI"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/si.svg"</span>,</span>
+<span id="cb6-413"><a href="#cb6-413" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ES"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/es.svg"</span>,</span>
+<span id="cb6-414"><a href="#cb6-414" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SE"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/se.svg"</span>,</span>
+<span id="cb6-415"><a href="#cb6-415" aria-hidden="true" tabindex="-1"></a>  <span class="st">"EU"</span> <span class="ot">=</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/eu.svg"</span>  <span class="co"># For EU_27</span></span>
+<span id="cb6-416"><a href="#cb6-416" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-417"><a href="#cb6-417" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-418"><a href="#cb6-418" aria-hidden="true" tabindex="-1"></a>dsi_no_iso <span class="ot">&lt;-</span> dsi<span class="sc">|&gt;</span></span>
+<span id="cb6-419"><a href="#cb6-419" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>ISO_Code)  <span class="co"># Remove ISO_Code column</span></span>
 <span id="cb6-420"><a href="#cb6-420" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-421"><a href="#cb6-421" aria-hidden="true" tabindex="-1"></a>dsi_no_iso <span class="ot">&lt;-</span> dsi<span class="sc">|&gt;</span></span>
-<span id="cb6-422"><a href="#cb6-422" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>ISO_Code)  <span class="co"># Remove ISO_Code column</span></span>
-<span id="cb6-423"><a href="#cb6-423" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-424"><a href="#cb6-424" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating the final container with title, subtitle, and table</span></span>
-<span id="cb6-425"><a href="#cb6-425" aria-hidden="true" tabindex="-1"></a>final_table <span class="ot">&lt;-</span> <span class="fu">div</span>(</span>
-<span id="cb6-426"><a href="#cb6-426" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Title and Subtitle</span></span>
-<span id="cb6-427"><a href="#cb6-427" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h1</span>(<span class="st">"Digital Skills Indicator by Country"</span>, </span>
-<span id="cb6-428"><a href="#cb6-428" aria-hidden="true" tabindex="-1"></a>     <span class="at">style =</span> <span class="st">"text-align: left; font-family: sans-serif;"</span>),</span>
-<span id="cb6-429"><a href="#cb6-429" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">"Changes in 2023 compared to 2021"</span>, </span>
-<span id="cb6-430"><a href="#cb6-430" aria-hidden="true" tabindex="-1"></a>     <span class="at">style =</span> <span class="st">"text-align: left; font-family: sans-serif; color: gray;"</span>),</span>
-<span id="cb6-431"><a href="#cb6-431" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-432"><a href="#cb6-432" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Table (reactable output)</span></span>
-<span id="cb6-433"><a href="#cb6-433" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reactable</span>(</span>
-<span id="cb6-434"><a href="#cb6-434" aria-hidden="true" tabindex="-1"></a>    dsi_no_iso,</span>
-<span id="cb6-435"><a href="#cb6-435" aria-hidden="true" tabindex="-1"></a>    <span class="at">showPageSizeOptions =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb6-436"><a href="#cb6-436" aria-hidden="true" tabindex="-1"></a>    <span class="at">pageSizeOptions =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">28</span>),</span>
-<span id="cb6-437"><a href="#cb6-437" aria-hidden="true" tabindex="-1"></a>    <span class="at">defaultPageSize =</span> <span class="dv">10</span>,</span>
-<span id="cb6-438"><a href="#cb6-438" aria-hidden="true" tabindex="-1"></a>    <span class="at">searchable =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb6-439"><a href="#cb6-439" aria-hidden="true" tabindex="-1"></a>    <span class="at">defaultSorted =</span> <span class="st">"2023"</span>,</span>
-<span id="cb6-440"><a href="#cb6-440" aria-hidden="true" tabindex="-1"></a>    <span class="at">defaultSortOrder =</span> <span class="st">"desc"</span>,</span>
-<span id="cb6-441"><a href="#cb6-441" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(<span class="at">fontFamily =</span> <span class="st">"sans serif"</span>, </span>
-<span id="cb6-442"><a href="#cb6-442" aria-hidden="true" tabindex="-1"></a>                 <span class="at">borderColor =</span> <span class="st">"#DADADA"</span>),</span>
-<span id="cb6-443"><a href="#cb6-443" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">list</span>(</span>
-<span id="cb6-444"><a href="#cb6-444" aria-hidden="true" tabindex="-1"></a>      <span class="at">Country =</span> <span class="fu">colDef</span>(</span>
-<span id="cb6-445"><a href="#cb6-445" aria-hidden="true" tabindex="-1"></a>        <span class="at">cell =</span> <span class="cf">function</span>(value, index) {</span>
-<span id="cb6-446"><a href="#cb6-446" aria-hidden="true" tabindex="-1"></a>          ISO_Code <span class="ot">&lt;-</span> dsi<span class="sc">$</span>ISO_Code[index]  <span class="co"># Get the ISO code for the current row</span></span>
-<span id="cb6-447"><a href="#cb6-447" aria-hidden="true" tabindex="-1"></a>          flag_url <span class="ot">&lt;-</span> flag_urls[[ISO_Code]]  <span class="co"># Get the flag URL using the ISO code</span></span>
-<span id="cb6-448"><a href="#cb6-448" aria-hidden="true" tabindex="-1"></a>          <span class="cf">if</span> (<span class="fu">is.null</span>(flag_url)) {</span>
-<span id="cb6-449"><a href="#cb6-449" aria-hidden="true" tabindex="-1"></a>            flag_url <span class="ot">&lt;-</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/default.svg"</span>  <span class="co"># Default image URL</span></span>
-<span id="cb6-450"><a href="#cb6-450" aria-hidden="true" tabindex="-1"></a>          }</span>
-<span id="cb6-451"><a href="#cb6-451" aria-hidden="true" tabindex="-1"></a>          <span class="fu">div</span>(</span>
-<span id="cb6-452"><a href="#cb6-452" aria-hidden="true" tabindex="-1"></a>            <span class="at">class =</span> <span class="st">"country-container"</span>,</span>
-<span id="cb6-453"><a href="#cb6-453" aria-hidden="true" tabindex="-1"></a>            <span class="at">style =</span> <span class="st">"display: flex; align-items: center;"</span>,</span>
-<span id="cb6-454"><a href="#cb6-454" aria-hidden="true" tabindex="-1"></a>            <span class="fu">img</span>(<span class="at">class =</span> <span class="st">"flag-url"</span>, </span>
-<span id="cb6-455"><a href="#cb6-455" aria-hidden="true" tabindex="-1"></a>                <span class="at">alt =</span> <span class="fu">paste</span>(value, <span class="st">"flag"</span>), </span>
-<span id="cb6-456"><a href="#cb6-456" aria-hidden="true" tabindex="-1"></a>                <span class="at">src =</span> flag_url, </span>
-<span id="cb6-457"><a href="#cb6-457" aria-hidden="true" tabindex="-1"></a>                <span class="at">style =</span> <span class="st">"width: 70px; height: 30px; margin-right: 10px;"</span>),</span>
-<span id="cb6-458"><a href="#cb6-458" aria-hidden="true" tabindex="-1"></a>            <span class="fu">span</span>(<span class="at">class =</span> <span class="st">"country-name"</span>, </span>
-<span id="cb6-459"><a href="#cb6-459" aria-hidden="true" tabindex="-1"></a>                 value, </span>
-<span id="cb6-460"><a href="#cb6-460" aria-hidden="true" tabindex="-1"></a>                 <span class="at">style =</span> <span class="st">"font-weight: bold;"</span>)</span>
-<span id="cb6-461"><a href="#cb6-461" aria-hidden="true" tabindex="-1"></a>          )</span>
-<span id="cb6-462"><a href="#cb6-462" aria-hidden="true" tabindex="-1"></a>        },</span>
-<span id="cb6-463"><a href="#cb6-463" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb6-464"><a href="#cb6-464" aria-hidden="true" tabindex="-1"></a>        <span class="at">align =</span> <span class="st">"left"</span>,</span>
-<span id="cb6-465"><a href="#cb6-465" aria-hidden="true" tabindex="-1"></a>        <span class="at">minWidth =</span> <span class="dv">120</span>,</span>
-<span id="cb6-466"><a href="#cb6-466" aria-hidden="true" tabindex="-1"></a>        <span class="at">html =</span> <span class="cn">TRUE</span>  <span class="co"># Ensure HTML content rendering for flag and country name</span></span>
-<span id="cb6-467"><a href="#cb6-467" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb6-468"><a href="#cb6-468" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb6-469"><a href="#cb6-469" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">colDef</span>(</span>
-<span id="cb6-470"><a href="#cb6-470" aria-hidden="true" tabindex="-1"></a>        <span class="at">cell =</span> <span class="cf">function</span>(value) {</span>
-<span id="cb6-471"><a href="#cb6-471" aria-hidden="true" tabindex="-1"></a>          <span class="co"># Calculate the color for the current score</span></span>
-<span id="cb6-472"><a href="#cb6-472" aria-hidden="true" tabindex="-1"></a>          color <span class="ot">&lt;-</span> <span class="fu">get_score_color</span>(value, </span>
-<span id="cb6-473"><a href="#cb6-473" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">min_score =</span> <span class="fu">min</span>(dsi<span class="sc">$</span><span class="st">`</span><span class="at">2021</span><span class="st">`</span>), </span>
-<span id="cb6-474"><a href="#cb6-474" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">max_score =</span> <span class="fu">max</span>(dsi<span class="sc">$</span><span class="st">`</span><span class="at">2021</span><span class="st">`</span>))</span>
-<span id="cb6-475"><a href="#cb6-475" aria-hidden="true" tabindex="-1"></a>          <span class="fu">as.character</span>(<span class="fu">donut_chart</span>(value, color))  <span class="co"># Convert HTML structure to a character string</span></span>
-<span id="cb6-476"><a href="#cb6-476" aria-hidden="true" tabindex="-1"></a>        },</span>
-<span id="cb6-477"><a href="#cb6-477" aria-hidden="true" tabindex="-1"></a>        <span class="at">align =</span> <span class="st">"center"</span>,</span>
-<span id="cb6-478"><a href="#cb6-478" aria-hidden="true" tabindex="-1"></a>        <span class="at">minWidth =</span> <span class="dv">160</span>,</span>
-<span id="cb6-479"><a href="#cb6-479" aria-hidden="true" tabindex="-1"></a>        <span class="at">html =</span> <span class="cn">TRUE</span>  <span class="co"># Enable HTML content rendering in the table cell</span></span>
-<span id="cb6-480"><a href="#cb6-480" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb6-481"><a href="#cb6-481" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb6-482"><a href="#cb6-482" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">2023</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">colDef</span>(</span>
-<span id="cb6-483"><a href="#cb6-483" aria-hidden="true" tabindex="-1"></a>        <span class="at">cell =</span> <span class="cf">function</span>(value) {</span>
-<span id="cb6-484"><a href="#cb6-484" aria-hidden="true" tabindex="-1"></a>          <span class="co"># Calculate the color for the current score</span></span>
-<span id="cb6-485"><a href="#cb6-485" aria-hidden="true" tabindex="-1"></a>          color <span class="ot">&lt;-</span> <span class="fu">get_score_color</span>(value, </span>
-<span id="cb6-486"><a href="#cb6-486" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">min_score =</span> <span class="fu">min</span>(dsi<span class="sc">$</span><span class="st">`</span><span class="at">2023</span><span class="st">`</span>), </span>
-<span id="cb6-487"><a href="#cb6-487" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">max_score =</span> <span class="fu">max</span>(dsi<span class="sc">$</span><span class="st">`</span><span class="at">2023</span><span class="st">`</span>))</span>
-<span id="cb6-488"><a href="#cb6-488" aria-hidden="true" tabindex="-1"></a>          <span class="fu">as.character</span>(<span class="fu">donut_chart</span>(value, color))  <span class="co"># Convert HTML structure to a character string</span></span>
-<span id="cb6-489"><a href="#cb6-489" aria-hidden="true" tabindex="-1"></a>        },</span>
-<span id="cb6-490"><a href="#cb6-490" aria-hidden="true" tabindex="-1"></a>        <span class="at">align =</span> <span class="st">"center"</span>,</span>
-<span id="cb6-491"><a href="#cb6-491" aria-hidden="true" tabindex="-1"></a>        <span class="at">minWidth =</span> <span class="dv">160</span>,</span>
-<span id="cb6-492"><a href="#cb6-492" aria-hidden="true" tabindex="-1"></a>        <span class="at">html =</span> <span class="cn">TRUE</span>  <span class="co"># Enable HTML content rendering in the table cell</span></span>
-<span id="cb6-493"><a href="#cb6-493" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb6-494"><a href="#cb6-494" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb6-495"><a href="#cb6-495" aria-hidden="true" tabindex="-1"></a>      <span class="at">Change =</span> <span class="fu">colDef</span>(</span>
-<span id="cb6-496"><a href="#cb6-496" aria-hidden="true" tabindex="-1"></a>        <span class="at">cell =</span> <span class="cf">function</span>(value) {</span>
-<span id="cb6-497"><a href="#cb6-497" aria-hidden="true" tabindex="-1"></a>          label <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">round</span>(value, <span class="dv">1</span>)) </span>
-<span id="cb6-498"><a href="#cb6-498" aria-hidden="true" tabindex="-1"></a>          <span class="fu">span</span>(<span class="at">style =</span> <span class="st">"font-weight: bold;"</span>,</span>
-<span id="cb6-499"><a href="#cb6-499" aria-hidden="true" tabindex="-1"></a>               <span class="fu">bar_chart_pos_neg</span>(label,</span>
-<span id="cb6-500"><a href="#cb6-500" aria-hidden="true" tabindex="-1"></a>                                 value, </span>
-<span id="cb6-501"><a href="#cb6-501" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">max_value =</span> max_change))</span>
-<span id="cb6-502"><a href="#cb6-502" aria-hidden="true" tabindex="-1"></a>        },</span>
-<span id="cb6-503"><a href="#cb6-503" aria-hidden="true" tabindex="-1"></a>        <span class="at">align =</span> <span class="st">"center"</span>,</span>
-<span id="cb6-504"><a href="#cb6-504" aria-hidden="true" tabindex="-1"></a>        <span class="at">minWidth =</span> <span class="dv">150</span></span>
-<span id="cb6-505"><a href="#cb6-505" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb6-506"><a href="#cb6-506" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb6-507"><a href="#cb6-507" aria-hidden="true" tabindex="-1"></a>    <span class="at">defaultColGroup =</span> <span class="fu">colGroup</span>(<span class="at">headerVAlign =</span> <span class="st">"bottom"</span>),</span>
-<span id="cb6-508"><a href="#cb6-508" aria-hidden="true" tabindex="-1"></a>    <span class="at">columnGroups =</span> <span class="fu">list</span>(</span>
-<span id="cb6-509"><a href="#cb6-509" aria-hidden="true" tabindex="-1"></a>      <span class="fu">colGroup</span>(<span class="at">name =</span> <span class="st">"Digital Skills Indicator"</span>, </span>
-<span id="cb6-510"><a href="#cb6-510" aria-hidden="true" tabindex="-1"></a>               <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"2021"</span>, <span class="st">"2023"</span>, <span class="st">"Change"</span>))</span>
-<span id="cb6-511"><a href="#cb6-511" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb6-512"><a href="#cb6-512" aria-hidden="true" tabindex="-1"></a>    <span class="at">defaultColDef =</span> <span class="fu">colDef</span>(</span>
-<span id="cb6-513"><a href="#cb6-513" aria-hidden="true" tabindex="-1"></a>      <span class="at">vAlign =</span> <span class="st">"center"</span>,</span>
-<span id="cb6-514"><a href="#cb6-514" aria-hidden="true" tabindex="-1"></a>      <span class="at">headerVAlign =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb6-515"><a href="#cb6-515" aria-hidden="true" tabindex="-1"></a>      <span class="at">class =</span> <span class="st">"cell"</span>,</span>
-<span id="cb6-516"><a href="#cb6-516" aria-hidden="true" tabindex="-1"></a>      <span class="at">headerClass =</span> <span class="st">"header"</span></span>
-<span id="cb6-517"><a href="#cb6-517" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb6-518"><a href="#cb6-518" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb6-519"><a href="#cb6-519" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-421"><a href="#cb6-421" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating the final container with title, subtitle, and table</span></span>
+<span id="cb6-422"><a href="#cb6-422" aria-hidden="true" tabindex="-1"></a>final_table <span class="ot">&lt;-</span> <span class="fu">div</span>(</span>
+<span id="cb6-423"><a href="#cb6-423" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Title and Subtitle</span></span>
+<span id="cb6-424"><a href="#cb6-424" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h1</span>(<span class="st">"Digital Skills Indicator by Country"</span>, </span>
+<span id="cb6-425"><a href="#cb6-425" aria-hidden="true" tabindex="-1"></a>     <span class="at">style =</span> <span class="st">"text-align: left; font-family: sans-serif;"</span>),</span>
+<span id="cb6-426"><a href="#cb6-426" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2</span>(<span class="st">"Changes in 2023 compared to 2021"</span>, </span>
+<span id="cb6-427"><a href="#cb6-427" aria-hidden="true" tabindex="-1"></a>     <span class="at">style =</span> <span class="st">"text-align: left; font-family: sans-serif; color: gray;"</span>),</span>
+<span id="cb6-428"><a href="#cb6-428" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-429"><a href="#cb6-429" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Table (reactable output)</span></span>
+<span id="cb6-430"><a href="#cb6-430" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reactable</span>(</span>
+<span id="cb6-431"><a href="#cb6-431" aria-hidden="true" tabindex="-1"></a>    dsi_no_iso,</span>
+<span id="cb6-432"><a href="#cb6-432" aria-hidden="true" tabindex="-1"></a>    <span class="at">showPageSizeOptions =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-433"><a href="#cb6-433" aria-hidden="true" tabindex="-1"></a>    <span class="at">pageSizeOptions =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">28</span>),</span>
+<span id="cb6-434"><a href="#cb6-434" aria-hidden="true" tabindex="-1"></a>    <span class="at">defaultPageSize =</span> <span class="dv">10</span>,</span>
+<span id="cb6-435"><a href="#cb6-435" aria-hidden="true" tabindex="-1"></a>    <span class="at">searchable =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb6-436"><a href="#cb6-436" aria-hidden="true" tabindex="-1"></a>    <span class="at">defaultSorted =</span> <span class="st">"2023"</span>,</span>
+<span id="cb6-437"><a href="#cb6-437" aria-hidden="true" tabindex="-1"></a>    <span class="at">defaultSortOrder =</span> <span class="st">"desc"</span>,</span>
+<span id="cb6-438"><a href="#cb6-438" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(<span class="at">fontFamily =</span> <span class="st">"sans serif"</span>, </span>
+<span id="cb6-439"><a href="#cb6-439" aria-hidden="true" tabindex="-1"></a>                 <span class="at">borderColor =</span> <span class="st">"#DADADA"</span>),</span>
+<span id="cb6-440"><a href="#cb6-440" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">list</span>(</span>
+<span id="cb6-441"><a href="#cb6-441" aria-hidden="true" tabindex="-1"></a>      <span class="at">Country =</span> <span class="fu">colDef</span>(</span>
+<span id="cb6-442"><a href="#cb6-442" aria-hidden="true" tabindex="-1"></a>        <span class="at">cell =</span> <span class="cf">function</span>(value, index) {</span>
+<span id="cb6-443"><a href="#cb6-443" aria-hidden="true" tabindex="-1"></a>          ISO_Code <span class="ot">&lt;-</span> dsi<span class="sc">$</span>ISO_Code[index]  <span class="co"># Get the ISO code for the current row</span></span>
+<span id="cb6-444"><a href="#cb6-444" aria-hidden="true" tabindex="-1"></a>          flag_url <span class="ot">&lt;-</span> flag_urls[[ISO_Code]]  <span class="co"># Get the flag URL using the ISO code</span></span>
+<span id="cb6-445"><a href="#cb6-445" aria-hidden="true" tabindex="-1"></a>          <span class="cf">if</span> (<span class="fu">is.null</span>(flag_url)) {</span>
+<span id="cb6-446"><a href="#cb6-446" aria-hidden="true" tabindex="-1"></a>            flag_url <span class="ot">&lt;-</span> <span class="st">"https://hatscripts.github.io/circle-flags/flags/default.svg"</span>  <span class="co"># Default image URL</span></span>
+<span id="cb6-447"><a href="#cb6-447" aria-hidden="true" tabindex="-1"></a>          }</span>
+<span id="cb6-448"><a href="#cb6-448" aria-hidden="true" tabindex="-1"></a>          <span class="fu">div</span>(</span>
+<span id="cb6-449"><a href="#cb6-449" aria-hidden="true" tabindex="-1"></a>            <span class="at">class =</span> <span class="st">"country-container"</span>,</span>
+<span id="cb6-450"><a href="#cb6-450" aria-hidden="true" tabindex="-1"></a>            <span class="at">style =</span> <span class="st">"display: flex; align-items: center;"</span>,</span>
+<span id="cb6-451"><a href="#cb6-451" aria-hidden="true" tabindex="-1"></a>            <span class="fu">img</span>(<span class="at">class =</span> <span class="st">"flag-url"</span>, </span>
+<span id="cb6-452"><a href="#cb6-452" aria-hidden="true" tabindex="-1"></a>                <span class="at">alt =</span> <span class="fu">paste</span>(value, <span class="st">"flag"</span>), </span>
+<span id="cb6-453"><a href="#cb6-453" aria-hidden="true" tabindex="-1"></a>                <span class="at">src =</span> flag_url, </span>
+<span id="cb6-454"><a href="#cb6-454" aria-hidden="true" tabindex="-1"></a>                <span class="at">style =</span> <span class="st">"width: 70px; height: 30px; margin-right: 10px;"</span>),</span>
+<span id="cb6-455"><a href="#cb6-455" aria-hidden="true" tabindex="-1"></a>            <span class="fu">span</span>(<span class="at">class =</span> <span class="st">"country-name"</span>, </span>
+<span id="cb6-456"><a href="#cb6-456" aria-hidden="true" tabindex="-1"></a>                 value, </span>
+<span id="cb6-457"><a href="#cb6-457" aria-hidden="true" tabindex="-1"></a>                 <span class="at">style =</span> <span class="st">"font-weight: bold;"</span>)</span>
+<span id="cb6-458"><a href="#cb6-458" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb6-459"><a href="#cb6-459" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb6-460"><a href="#cb6-460" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb6-461"><a href="#cb6-461" aria-hidden="true" tabindex="-1"></a>        <span class="at">align =</span> <span class="st">"left"</span>,</span>
+<span id="cb6-462"><a href="#cb6-462" aria-hidden="true" tabindex="-1"></a>        <span class="at">minWidth =</span> <span class="dv">120</span>,</span>
+<span id="cb6-463"><a href="#cb6-463" aria-hidden="true" tabindex="-1"></a>        <span class="at">html =</span> <span class="cn">TRUE</span>  <span class="co"># Ensure HTML content rendering for flag and country name</span></span>
+<span id="cb6-464"><a href="#cb6-464" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb6-465"><a href="#cb6-465" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb6-466"><a href="#cb6-466" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">2021</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">colDef</span>(</span>
+<span id="cb6-467"><a href="#cb6-467" aria-hidden="true" tabindex="-1"></a>        <span class="at">cell =</span> <span class="cf">function</span>(value) {</span>
+<span id="cb6-468"><a href="#cb6-468" aria-hidden="true" tabindex="-1"></a>          <span class="co"># Calculate the color for the current score</span></span>
+<span id="cb6-469"><a href="#cb6-469" aria-hidden="true" tabindex="-1"></a>          color <span class="ot">&lt;-</span> <span class="fu">get_score_color</span>(value, </span>
+<span id="cb6-470"><a href="#cb6-470" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">min_score =</span> <span class="fu">min</span>(dsi<span class="sc">$</span><span class="st">`</span><span class="at">2021</span><span class="st">`</span>), </span>
+<span id="cb6-471"><a href="#cb6-471" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">max_score =</span> <span class="fu">max</span>(dsi<span class="sc">$</span><span class="st">`</span><span class="at">2021</span><span class="st">`</span>))</span>
+<span id="cb6-472"><a href="#cb6-472" aria-hidden="true" tabindex="-1"></a>          <span class="fu">as.character</span>(<span class="fu">donut_chart</span>(value, color))  <span class="co"># Convert HTML structure to a character string</span></span>
+<span id="cb6-473"><a href="#cb6-473" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb6-474"><a href="#cb6-474" aria-hidden="true" tabindex="-1"></a>        <span class="at">align =</span> <span class="st">"center"</span>,</span>
+<span id="cb6-475"><a href="#cb6-475" aria-hidden="true" tabindex="-1"></a>        <span class="at">minWidth =</span> <span class="dv">160</span>,</span>
+<span id="cb6-476"><a href="#cb6-476" aria-hidden="true" tabindex="-1"></a>        <span class="at">html =</span> <span class="cn">TRUE</span>  <span class="co"># Enable HTML content rendering in the table cell</span></span>
+<span id="cb6-477"><a href="#cb6-477" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb6-478"><a href="#cb6-478" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb6-479"><a href="#cb6-479" aria-hidden="true" tabindex="-1"></a>      <span class="st">`</span><span class="at">2023</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">colDef</span>(</span>
+<span id="cb6-480"><a href="#cb6-480" aria-hidden="true" tabindex="-1"></a>        <span class="at">cell =</span> <span class="cf">function</span>(value) {</span>
+<span id="cb6-481"><a href="#cb6-481" aria-hidden="true" tabindex="-1"></a>          <span class="co"># Calculate the color for the current score</span></span>
+<span id="cb6-482"><a href="#cb6-482" aria-hidden="true" tabindex="-1"></a>          color <span class="ot">&lt;-</span> <span class="fu">get_score_color</span>(value, </span>
+<span id="cb6-483"><a href="#cb6-483" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">min_score =</span> <span class="fu">min</span>(dsi<span class="sc">$</span><span class="st">`</span><span class="at">2023</span><span class="st">`</span>), </span>
+<span id="cb6-484"><a href="#cb6-484" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">max_score =</span> <span class="fu">max</span>(dsi<span class="sc">$</span><span class="st">`</span><span class="at">2023</span><span class="st">`</span>))</span>
+<span id="cb6-485"><a href="#cb6-485" aria-hidden="true" tabindex="-1"></a>          <span class="fu">as.character</span>(<span class="fu">donut_chart</span>(value, color))  <span class="co"># Convert HTML structure to a character string</span></span>
+<span id="cb6-486"><a href="#cb6-486" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb6-487"><a href="#cb6-487" aria-hidden="true" tabindex="-1"></a>        <span class="at">align =</span> <span class="st">"center"</span>,</span>
+<span id="cb6-488"><a href="#cb6-488" aria-hidden="true" tabindex="-1"></a>        <span class="at">minWidth =</span> <span class="dv">160</span>,</span>
+<span id="cb6-489"><a href="#cb6-489" aria-hidden="true" tabindex="-1"></a>        <span class="at">html =</span> <span class="cn">TRUE</span>  <span class="co"># Enable HTML content rendering in the table cell</span></span>
+<span id="cb6-490"><a href="#cb6-490" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb6-491"><a href="#cb6-491" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb6-492"><a href="#cb6-492" aria-hidden="true" tabindex="-1"></a>      <span class="at">Change =</span> <span class="fu">colDef</span>(</span>
+<span id="cb6-493"><a href="#cb6-493" aria-hidden="true" tabindex="-1"></a>        <span class="at">cell =</span> <span class="cf">function</span>(value) {</span>
+<span id="cb6-494"><a href="#cb6-494" aria-hidden="true" tabindex="-1"></a>          label <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">round</span>(value, <span class="dv">1</span>)) </span>
+<span id="cb6-495"><a href="#cb6-495" aria-hidden="true" tabindex="-1"></a>          <span class="fu">span</span>(<span class="at">style =</span> <span class="st">"font-weight: bold;"</span>,</span>
+<span id="cb6-496"><a href="#cb6-496" aria-hidden="true" tabindex="-1"></a>               <span class="fu">bar_chart_pos_neg</span>(label,</span>
+<span id="cb6-497"><a href="#cb6-497" aria-hidden="true" tabindex="-1"></a>                                 value, </span>
+<span id="cb6-498"><a href="#cb6-498" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">max_value =</span> max_change))</span>
+<span id="cb6-499"><a href="#cb6-499" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb6-500"><a href="#cb6-500" aria-hidden="true" tabindex="-1"></a>        <span class="at">align =</span> <span class="st">"center"</span>,</span>
+<span id="cb6-501"><a href="#cb6-501" aria-hidden="true" tabindex="-1"></a>        <span class="at">minWidth =</span> <span class="dv">150</span></span>
+<span id="cb6-502"><a href="#cb6-502" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb6-503"><a href="#cb6-503" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb6-504"><a href="#cb6-504" aria-hidden="true" tabindex="-1"></a>    <span class="at">defaultColGroup =</span> <span class="fu">colGroup</span>(<span class="at">headerVAlign =</span> <span class="st">"bottom"</span>),</span>
+<span id="cb6-505"><a href="#cb6-505" aria-hidden="true" tabindex="-1"></a>    <span class="at">columnGroups =</span> <span class="fu">list</span>(</span>
+<span id="cb6-506"><a href="#cb6-506" aria-hidden="true" tabindex="-1"></a>      <span class="fu">colGroup</span>(<span class="at">name =</span> <span class="st">"Digital Skills Indicator"</span>, </span>
+<span id="cb6-507"><a href="#cb6-507" aria-hidden="true" tabindex="-1"></a>               <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"2021"</span>, <span class="st">"2023"</span>, <span class="st">"Change"</span>))</span>
+<span id="cb6-508"><a href="#cb6-508" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb6-509"><a href="#cb6-509" aria-hidden="true" tabindex="-1"></a>    <span class="at">defaultColDef =</span> <span class="fu">colDef</span>(</span>
+<span id="cb6-510"><a href="#cb6-510" aria-hidden="true" tabindex="-1"></a>      <span class="at">vAlign =</span> <span class="st">"center"</span>,</span>
+<span id="cb6-511"><a href="#cb6-511" aria-hidden="true" tabindex="-1"></a>      <span class="at">headerVAlign =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb6-512"><a href="#cb6-512" aria-hidden="true" tabindex="-1"></a>      <span class="at">class =</span> <span class="st">"cell"</span>,</span>
+<span id="cb6-513"><a href="#cb6-513" aria-hidden="true" tabindex="-1"></a>      <span class="at">headerClass =</span> <span class="st">"header"</span></span>
+<span id="cb6-514"><a href="#cb6-514" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-515"><a href="#cb6-515" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb6-516"><a href="#cb6-516" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-517"><a href="#cb6-517" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-518"><a href="#cb6-518" aria-hidden="true" tabindex="-1"></a><span class="co"># Render the content </span></span>
+<span id="cb6-519"><a href="#cb6-519" aria-hidden="true" tabindex="-1"></a><span class="fu">browsable</span>(final_table)</span>
 <span id="cb6-520"><a href="#cb6-520" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-521"><a href="#cb6-521" aria-hidden="true" tabindex="-1"></a><span class="co"># Render the content </span></span>
-<span id="cb6-522"><a href="#cb6-522" aria-hidden="true" tabindex="-1"></a><span class="fu">browsable</span>(final_table)</span>
-<span id="cb6-523"><a href="#cb6-523" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-524"><a href="#cb6-524" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-525"><a href="#cb6-525" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-526"><a href="#cb6-526" aria-hidden="true" tabindex="-1"></a>The interactive table presents the digital skills indicator for 2023 and 2021 for EU countries. It also shows the change in percentage points, indicating how the indicator changed in 2023 compared to 2021.</span>
-<span id="cb6-527"><a href="#cb6-527" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-528"><a href="#cb6-528" aria-hidden="true" tabindex="-1"></a><span class="fu">### Main Observations</span></span>
-<span id="cb6-529"><a href="#cb6-529" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-530"><a href="#cb6-530" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Hungary and Czechia made significant progress, with an increase in the DSI of 9.8pp and 9.4pp, respectively, in 2023.</span>
-<span id="cb6-531"><a href="#cb6-531" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-532"><a href="#cb6-532" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>At the EU level, the score increased by 1.6pp to 55.6% in 2023.</span>
-<span id="cb6-533"><a href="#cb6-533" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-534"><a href="#cb6-534" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Latvia and Croatia experienced negative changes, with decreases of 5.5pp and 4.4pp, respectively, compared to 2021.</span>
-<span id="cb6-535"><a href="#cb6-535" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-536"><a href="#cb6-536" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion </span></span>
-<span id="cb6-537"><a href="#cb6-537" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-538"><a href="#cb6-538" aria-hidden="true" tabindex="-1"></a>While there has been an improvement in digital skills at the EU level, and some countries have made significant progress, the gap between countries with lower scores and those with higher scores remains large. More focus and targeted policies are needed for countries that have not progressed in improving digital skills from 2021 to 2023. To achieve the goal of having at least 80% of citizens aged 16–74 possess basic digital skills by 2030, all countries need to make progress, and no one should be left behind. </span>
+<span id="cb6-521"><a href="#cb6-521" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-522"><a href="#cb6-522" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-523"><a href="#cb6-523" aria-hidden="true" tabindex="-1"></a>The interactive table presents the digital skills indicator for 2023 and 2021 for EU countries. It also shows the change in percentage points, indicating how the indicator changed in 2023 compared to 2021.</span>
+<span id="cb6-524"><a href="#cb6-524" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-525"><a href="#cb6-525" aria-hidden="true" tabindex="-1"></a><span class="fu">### Main Observations</span></span>
+<span id="cb6-526"><a href="#cb6-526" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-527"><a href="#cb6-527" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Hungary and Czechia made significant progress, with an increase in the DSI of 9.8pp and 9.4pp, respectively, in 2023.</span>
+<span id="cb6-528"><a href="#cb6-528" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-529"><a href="#cb6-529" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>At the EU level, the score increased by 1.6pp to 55.6% in 2023.</span>
+<span id="cb6-530"><a href="#cb6-530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-531"><a href="#cb6-531" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Latvia and Croatia experienced negative changes, with decreases of 5.5pp and 4.4pp, respectively, compared to 2021.</span>
+<span id="cb6-532"><a href="#cb6-532" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-533"><a href="#cb6-533" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb6-534"><a href="#cb6-534" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-535"><a href="#cb6-535" aria-hidden="true" tabindex="-1"></a>While there has been an improvement in digital skills at the EU level, and some countries have made significant progress, the gap between countries with lower scores and those with higher scores remains large. More focus and targeted policies are needed for countries that have not progressed in improving digital skills from 2021 to 2023. To achieve the goal of having at least 80% of citizens aged 16–74 possess basic digital skills by 2030, all countries need to make progress, and no one should be left behind.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

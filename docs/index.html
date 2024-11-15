@@ -94,34 +94,6 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-weekly_dataviz .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-description','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-weekly_dataviz'] = new List('listing-weekly_dataviz', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -179,10 +151,6 @@ window.Quarto = {
   <li class="nav-item">
     <a class="nav-link" href="./posts.html"> 
 <span class="menu-text">Posts</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./weekly_dataviz.html"> 
-<span class="menu-text">Weekly DataViz</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -303,7 +271,21 @@ window.Quarto = {
 <div class="column-body-outset-right">
 <div id="listing-posts" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="data analysis,data visualization,eurostat,digital skills indicator" data-listing-date-sort="1726088400000" data-listing-file-modified-sort="1726165599668" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4710">
+<div class="g-col-1" data-index="0" data-categories="data visualization,charts,resources" data-listing-date-sort="1731276000000" data-listing-file-modified-sort="1731661788176" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="578">
+<a href="./posts/2024-11-11-chart-q1/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/2024-11-11-chart-q1/images/clipboard-4028353448.png" class="thumbnail-image card-img" style="height: 300px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+What are the main types of charts, and how do they differ in their use cases?
+</h5>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="data analysis,data visualization,eurostat,digital skills indicator" data-listing-date-sort="1726088400000" data-listing-file-modified-sort="1731661139587" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4714">
 <a href="./posts/digital_skills_indicator_eda(II)/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -317,7 +299,7 @@ Analyzing the Digital Skills Indicator in the Context of the EU Digital Decade (
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="data analysis,data visualization,eurostat,digital skills indicator" data-listing-date-sort="1724187600000" data-listing-file-modified-sort="1728064397029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5707">
+<div class="g-col-1" data-index="2" data-categories="data analysis,data visualization,eurostat,digital skills indicator" data-listing-date-sort="1724187600000" data-listing-file-modified-sort="1728064397029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5707">
 <a href="./posts/digital_skills_indicator_eda(I)/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -326,20 +308,6 @@ Analyzing the Digital Skills Indicator in the Context of the EU Digital Decade (
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Analyzing the Digital Skills Indicator in the Context of the EU Digital Decade (Part I)
-</h5>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="data analysis,data visualization,eurostat,digital intensity index" data-listing-date-sort="1721768400000" data-listing-file-modified-sort="1726481260577" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3598">
-<a href="./posts/digital_intensity_index_components_eu/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/digital_intensity_index_components_eu/dii_eu_components_2023.png" class="thumbnail-image card-img" style="height: 300px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-The components of EU’s Digital Intensity Index (DII) in 2023
 </h5>
 </div>
 </div>
@@ -355,72 +323,6 @@ No matching items
 <a href="./posts.html" class="btn btn-lg" style="background-color: #eee; color: black; ">See all posts </a>
 </p>
 </div>
-<section id="weekly-dataviz" class="level2">
-<h2 data-anchor-id="weekly-dataviz">Weekly DataViz</h2>
-<div id="listing-weekly_dataviz" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1727989200000" data-listing-file-modified-sort="1728065444128" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1427">
-<a href="./weekly_dataviz/week_5_2024_10_01/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./weekly_dataviz/week_5_2024_10_01/index_lineplot.png" class="thumbnail-image card-img" style="height: 300px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-DataViz 2024-10-04
-</h5>
-<div class="card-text listing-description">
-Financial Markets Historical Performance
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1727298000000" data-listing-file-modified-sort="1727806893238" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2908">
-<a href="./weekly_dataviz/week_4_2024_09_26/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./weekly_dataviz/week_4_2024_09_26/da_plot.png" class="thumbnail-image card-img" style="height: 300px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-DataViz 2024-09-26
-</h5>
-<div class="card-text listing-description">
-EU Enterprises and Data Analytics in 2023
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1726434000000" data-listing-file-modified-sort="1727381839379" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1151">
-<a href="./weekly_dataviz/week_3_2024_09_16/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./weekly_dataviz/week_3_2024_09_16/working_hours_eu.png" class="thumbnail-image card-img" style="height: 300px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-DataViz 2024-09-16
-</h5>
-<div class="card-text listing-description">
-How Many Hours do Europeans Work Each Week?
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-<div style="text-align: right">
-<p>
-<a href="./weekly_dataviz.html" class="btn btn-lg" style="background-color: #eee; color: black;">See all dataviz </a>
-</p>
-</div>
-</section>
 </div>
 
 
